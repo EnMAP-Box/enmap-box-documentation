@@ -25,7 +25,7 @@ means spectra can be directly collected from an image. Furthermore, external lib
 
 A new view appears where you can start to collect spectra.
 
-.. figure:: /img/SpecLib_overview.PNG
+.. figure:: /img/SpecLib_overview.png
    :width: 100%
 
    Overview of the Spectral Library Window with several collected and labeled spectra and main tools

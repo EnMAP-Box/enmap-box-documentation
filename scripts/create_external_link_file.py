@@ -1,6 +1,5 @@
 import pathlib
 import re
-
 import qgis.PyQt.QtCore
 import qgis.PyQt.QtGui
 import qgis.PyQt.QtWidgets
