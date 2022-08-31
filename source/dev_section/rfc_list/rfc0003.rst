@@ -1,0 +1,259 @@
+RFC 3: Temporal Properties
+==========================
+
+Author: Andreas Janz
+
+Contact: andreas.janz@geo.hu-berlin.de
+
+Started: 2021-12-24
+
+Last modified: 2021-12-26
+
+Status: Proposed
+
+Summary
+-------
+
+It is proposed to implement functions or methods for reading and writing temporal properties from/to **QGIS PAM**,
+while also concidering the existing **QgsRasterLayerTemporalProperties** layer properties for **QgsRasterLayer**.
+
+A survey of software (QGIS, GDAL, ENVI, Google Earth Engine) and EO product metadata formats (Landsat, Sentinel-2, EnMAP, DESIS)
+shows that there is no clear naming convention for temporal properties. We observe two types of temporal annotation:
+a) specification of a scene **center time**, and b) specification of a **temporal range** (**start time** and **end time**).
+
+The specification of scene **center time** may be sufficient for individual images (e.g. a single Landsat scene),
+but is not suitable for larger area products like daily MODIS composite products,
+or other derived cloud-free composites using scenes from a **temporal range** (e.g. a full year).
+
+Thus, we propose to use the more general **temporal range** concept.
+Usecases where a **center time** is sufficient, may just specify the **start time**.
+
+We further propose to support spectral-temporal **timeseries stacks**
+(e.g. a stack of Landsat images, or a stack of cloud-free full-year NDVI composites).
+This would allow proper plotting of spectral-temporal timeseries profiles,
+which is currently (v3.9) not well supported in the EnMAP-Box.
+
+API support will be implemented in the **enmapboxprocessing.rasterreader.RasterReader** class.
+
+Motivation
+----------
+
+Temporal property naming convensions in software and EO product metadata formats are quite diverse.
+
+QGIS
+    QGIS has functionality for managing temporal properties (**QgsRasterLayerTemporalProperties**) of a **QgsRasterLayer**::
+
+        >>>layer.temporalProperties()
+        >>>layer.temporalProperties().fixedTemporalRange()
+        >>>layer.temporalProperties().fixedTemporalRange().begin()
+        >>>layer.temporalProperties().fixedTemporalRange().end()
+        <qgis._core.QgsRasterLayerTemporalProperties object>
+        <qgis._core.QgsDateTimeRange object>
+        PyQt5.QtCore.QDateTime(2021, 12, 24, 0, 0, 0, 0)
+        PyQt5.QtCore.QDateTime(2021, 12, 25, 0, 0, 0, 0)
+
+GDAL
+    The GDAL Raster Data Model suggests to specify **ACQUISITIONDATETIME** as dataset-level IMAGERY-domain metadata::
+
+        # see https://gdal.org/user/raster_data_model.html#imagery-domain-remote-sensing
+        <PAMDataset>
+          <Metadata domain="IMAGERY">
+            <MDI key="ACQUISITIONDATETIME">2021-12-24T12:30:42.123</MDI>
+          </Metadata>
+
+
+    ENVI files may specify the **acquisition time** as dataset-level ENVI-domain metadata::
+
+        <PAMDataset>
+          <Metadata domain="ENVI">
+            <MDI key="acquisition_time">2021-12-24T12:30:42.123</MDI>
+          </Metadata>
+
+
+    GeoTiff files may specify the **TIFFTAG_DATETIME** baseline TIFF tag as dataset-level metadata::
+
+        <PAMDataset>
+          <Metadata>
+            <MDI key="TIFFTAG_DATETIME">2019:12:12 19:10:18</MDI>
+          </Metadata>
+
+    Since some software use the TIFFTAG_DATETIME to store file creation/manipulation time,
+    and EO data provider don't use it to specify acquisition time, we propose to ignore it.
+
+
+Google Earth Engine
+    Google Earth Engine images specify **system:time_start** and **system:time_end** properties in milliseconds since Unix Epoch (1970-01-01T00:00:00)::
+
+        Image MODIS/006/MOD09GA/2012_03_09
+            properties
+                system:time_start: 1331251200000        # 2012-03-09T00:00:00
+                system:time_end: 1331337600000          # 2012-03-10T00:00:00
+
+
+Landsat products
+    Landsat products specify **DATE_ACQUIRED** and **SCENE_CENTER_TIME** properties in the *MTL.txt metadata file::
+
+        GROUP = LANDSAT_METADATA_FILE
+          GROUP = IMAGE_ATTRIBUTES
+            DATE_ACQUIRED = 2021-07-24
+            SCENE_CENTER_TIME = "09:56:22.1248370Z"
+
+
+Sentinel-2 products
+    Sentinel-2 products specify **PRODUCT_START_TIME** and **PRODUCT_STOP_TIME** properties in the MTD_MSIL2A.xml metadata file::
+
+        <n1:Level-2A_User_Product ...
+            <n1:General_Info>
+                <Product_Info>
+                    <PRODUCT_START_TIME>2020-08-16T10:10:31.024Z</PRODUCT_START_TIME>
+                    <PRODUCT_STOP_TIME>2020-08-16T10:10:31.024Z</PRODUCT_STOP_TIME>
+
+
+EnMAP and DESIS products
+    EnMAP and DESIS products specify **startTime** and **endTime** properties in the METADATA.xml metadata file::
+
+        <hsi_doc ...>
+          <base>
+            <temporalCoverage>
+              <startTime>2019-12-03T02:14:39.035473Z</startTime>
+              <endTime>2019-12-03T02:14:43.381243Z</endTime>
+
+PRISMA products
+    PRISMA products specify **Product_StartTime** and **Product_StopTime** properties in each HE5 sub-dataset::
+
+        Product_StartTime=2020-11-07T10:14:04.343999
+        Product_StopTime=2020-11-07T10:14:08.649690
+
+
+The survey shows that there is no clear naming convention for temporal properties. We observe two types of temporal annotation:
+a) specification of a scene **center time**, and b) specification of a **temporal range** (**start time** and **end time**).
+
+All formats only take single scene images into account.
+None of the formats is suitable for specifying temporal properties of a **timeseries stack**
+(e.g. a stack of Landsat images, or a stack of cloud-free full-year NDVI composites),
+where each band may have an individual **temporal range**.
+
+The here proposed approach will integrate temporal property handling into **QGIS PAM** management,
+while honoring well known software format and naming conventions, and available **QgsRasterLayerTemporalProperties** information.
+This allows to set/update temporal properties for **QgsRasterLayer** objects, which is critical for GUI applications.
+It also takes care of information stored as **GDAL PAM**.
+
+A key feature is the support for **timeseries stacks**,
+that is a prerequisite for proper plotting of spectral-temporal timeseries data,
+which is not well supported in the EnMAP-Box.
+We currently (v3.9) only support single content timeseries stacks (e.g. a stack of NDVI bands).
+where time information is specified as *decimal years* in the ENVI-domain *wavelength* item.
+This quite hacky approach is well known in the ENVI Classic community for creating temporal profile plots.
+
+We propose the following approach for fetching band-specific temporal properties.
+
+Approach
+--------
+
+Band-wise temporal **start time** and **end time** properties are fetched with the following priorisation:
+
+1. Look at **QGIS PAM** band-level default-domain.
+This is mainly relevant for GUI applications, where we need to set/update temporal properties using **QgsRasterLayer** objects::
+
+    startTime: QDateTime = layer.customProperty('QGISPAM/band/42//start_time')
+    endTime = layer.customProperty('QGISPAM/band/42//end_time')
+
+
+2. Look at **GDAL PAM** band-level default-domain::
+
+    startTime = parseDateTimeString(gdalDataset.GetRasterBand(42).GetMetadataItem('start_time'))
+    endTime = parseDateTimeString(gdalDataset.GetRasterBand(42).GetMetadataItem('end_time'))
+
+
+3. Look at **GDAL PAM** dataset-level IMAGERY-domain.
+This follows the GDAL Raster Data Model specification, that assumes the **ACQUISITIONDATETIME** to be set to this location::
+
+    centerTime = parseDateTimeString(gdalDataset.GetMetadataItem('ACQUISITIONDATETIME', 'IMAGERY'))
+
+
+3. Look at **GDAL PAM** dataset-level ENVI-domain.
+This follows the behaviour of the ENVI driver, that sets the **acquisition time** to this location::
+
+    centerTime = parseDateTimeString(gdalDataset.GetMetadataItem('acquisition_time', 'ENVI'))
+
+
+Note that the *parseDateTimeString* function is assumed to parse timestamps into **QDateTime** objects.
+It is proposed to support the following formats::
+
+    2021-12-24                  # date
+    2021-12-24T12:30:42.123...  # date time
+    1640349042123               # Unix epoche timestamp in milliseconds since 1970-01-01T00:00:00.000
+
+Also note that we don't support the various sensor product and software naming conventions presented in the survey above.
+We assume that the acquisition time is properly set to the **GDAL PAM** dataset-level IMAGERY-domain during product import.
+
+Guide line 1:
+    If you need to set band-wise temporal properties in a processing algorithm:
+    set it to the **GDAL PAM** band-level default-domain.
+    This way, i) the information is accessible with the GDAL API,
+    and ii) consecutive band subsetting via gdal.Translate and gdal.BuildVrt can easily copy the band domains to the destination dataset.
+
+Guide line 2:
+    If you need to set/update metadata in a GUI application: set it to **QGIS PAM**.
+    This is most flexible and secure.
+    The temporal properties are i) available as custom layer properties,
+    ii) stored in the QGIS project,
+    and iii) can be saved to QML layer style files.
+
+Guide line 3:
+    Do not update **GDAL PAM** \*.aux.xml file,
+    while the corresponding source is opened as a **QgsRasterLayer** in QGIS.
+    QGIS will potentially overwrite any changes, when closing the layer.
+
+Implementation
+--------------
+
+Technically, we don't need any new functions or methods, because we fully rely on **QGIS PAM** and the **QgsRasterLayerTemporalProperties**.
+
+But, the handling of property keys, and the assurance of fetching priorities,
+can be tedious and should be encapsulated in util functions or methods.
+An example implementation is given by the **RasterReader** class.
+
+To query temporal properties for band 42, we can use::
+
+    from enmapboxprocessing.rasterreader import RasterReader
+
+    reader = RasterReader(layer)
+    startTime = reader.startTime(42)
+    endTime = reader.endTime(42)
+    centerTime = reader.centerTime(42)  # derives temporal range center time
+
+
+In case of a standart image, where all bands share the same time range, you may skip the band number::
+
+    startTime = reader.startTime()
+    endTime = reader.endTime()
+    centerTime = reader.centerTime()
+
+
+To set temporal properties use::
+
+    # for band 42
+    reader.setStartTime(startTime, 42)
+    reader.setEndTime(endTime, 42)
+
+    # for each band
+    reader.setStartTime(startTime)
+    reader.setEndTime(endTime)
+
+
+Find the band whose **center time** is closest to christmas eve.
+If multiple bands match, the first is returned.::
+
+    bandNo = reader.findCenterTime(QDateTime(2021, 12, 24, 18, 00))
+
+Use **temporal properties** and **spectral properties** (see RFC 2) together for a full description of a **spectral-temporal timeseries**::
+
+    for bandNo in range(1, layer.bandCount() + 1):
+        startTime, endTime = reader.temporalRange(bandNo)
+        centerTime = reader.centerTime(bandNo)
+        wavelength = reader.wavelength(bandNo)
+        print(startTime, endTime, centerTime, wavelength)
+
+
+Also check out the RasterReader unittests: https://bitbucket.org/hu-geomatics/enmap-box/src/develop/enmapboxprocessing/test/test_rasterreaderrfc3.py

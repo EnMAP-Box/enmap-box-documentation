@@ -1,0 +1,124 @@
+RFC 1: Enhanced GDAL PAM for QGIS Raster Layers
+===============================================
+
+Author: Andreas Janz
+
+Contact: andreas.janz@geo.hu-berlin.de
+
+Started: 2021-12-23
+
+Last modified: 2022-01-10
+
+Status: Proposed
+
+Summary
+-------
+
+It is proposed that the well known GDAL raster metadata handling is extented to QgsRasterLayer objects via the custom
+layer property interface. This approach is refered to as **QGIS PAM** (in analogy to the existing **GDAL PAM**).
+
+By default, information is fetched from QGIS PAM first, and, if not available, from GDAL PAM as usual.
+
+Edits to QGIS PAM are stored as map layer custom properties (QgsMapLayer.customProperties),
+which are stored in-memory at the layer object, inside the QGIS project, and inside layer QML style file.
+
+API support for QGIS PAM management will be implemented in the **enmapboxprocessing.rasterreader.RasterReader** class.
+
+Motivation
+----------
+
+GDAL organises raster metadata in a PAM (Persistent Auxiliary Metadata) \*.aux.xml file.
+Reading and writing GDAL PAM items is done via gdal.Dataset and gdal.Band objects.
+
+Currently we restrict metadata handling to GDAL raster. Metadata IO is implemented using the GDAL API:
+
+On the dataset level we use::
+
+    value = gdal.Dataset.GetMetadataItem(key, domain)
+    valueDict = gdal.Dataset.GetMetadata(domain)
+    valuesDictDict = gdal.Dataset.GetMetadata_Dict()
+
+    gdal.Dataset.SetMetadataItem(key, value, domain)
+    gdal.Dataset.SetMetadata(valueDict, domain)
+    gdal.Dataset.SetMetadata_Dict(valueDictDict)
+
+On the band level we use::
+
+    value = gdal.Band.GetMetadataItem(key, domain)
+    valueDict = gdal.Band.GetMetadata(domain)
+    valuesDictDict = gdal.Band.GetMetadata_Dict()
+
+    gdal.Band.SetMetadataItem(key, value, domain)
+    gdal.Band.SetMetadata(valueDict, domain)
+    gdal.Band.SetMetadata_Dict(valueDictDict)
+
+This is fully sufficient for raster processing, but can be limiting in GUI applications,
+where we usually don’t use **gdal.Dataset**, but **QgsRasterLayer** objects.
+
+Problem: QgsRasterLayer class can’t access GDAL PAM directly.
+We need to re-open the layer source via gdal.Open, which is usually fine for read-access.
+But when writing new items to the GDAL PAM aux.xml file, the approach fails,
+because QGIS will overwrite the aux.xml file again, when the QgsRasterLayer object is closed.
+
+Approach
+--------
+
+We introduce another level of abstraction on top of GDAL PAM, using QGIS custom properties (i.e. **QGIS PAM**)
+
+On the dataset level we use the following standardized property key format::
+
+    value = layer.customProperty('QGISPAM/dataset/<domain>/<key>')
+
+    layer.setCustomProperty('QGISPAM/dataset/<domain>/<key>', value)
+
+
+On the band level we use::
+
+    value = layer.customProperty('QGISPAM/band/<bandNo>/<domain>/<key>')
+
+    layer.setCustomProperty('QGISPAM/band/<bandNo>/<domain>/<key>', value)
+
+
+An application that queries metadata from a raster source should use the following priorities:
+
+1. Check **QGIS PAM** first.
+2. If not found, check **GDAL PAM** afterwards.
+3. If still not found, use a suitable fallback value.
+
+Technically: **QGIS PAM** shadows **GDAL PAM**
+
+Guide line 1:
+    If you need to set metadata in a processing algorithm: set it to **GDAL PAM**, so that GDAL can read it later!
+
+Guide line 2:
+    If you need to set/update metadata in a GUI application: set it to **QGIS PAM**.
+
+Implementation
+--------------
+
+Technically, we don't need any new functions or methods, because we fully rely on the layer custom property interface.
+
+But, the handling of property keys, and QGIS PAM over GDAL PAM priority, can be tedious and should be encapsulated in utils
+functions or methods. An example implementation is given by the **RasterReader** class.
+
+On the dataset level we can use::
+
+    from enmapboxprocessing.rasterreader import RasterReader
+
+    reader = RasterReader(layer)
+    value = reader.metadataItem(key, domain)
+
+    reader.setMetadataItem(key, value, domain)
+
+
+On the band level we use::
+
+    from enmapboxprocessing.rasterreader import RasterReader
+
+    reader = RasterReader(layer)
+    value = reader.metadataItem(key, domain, bandNo)
+
+    reader.setMetadataItem(key, value, domain, bandNo)
+
+
+Also check out the RasterReader unittests: https://bitbucket.org/hu-geomatics/enmap-box/src/develop/enmapboxprocessing/test/test_rasterreaderrfc1.py

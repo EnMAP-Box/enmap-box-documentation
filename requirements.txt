@@ -1,0 +1,8 @@
+# this file lists packages that are required to run the EnMAP-Box AND can be installed with pip
+# see https://pip.pypa.io/en/stable/reference/pip_install/#requirements-file-format
+
+###### Requirements to build the documentation with sphinx ######
+sphinx
+sphinxnotes-strike
+docutils<0.17
+sphinx_rtd_theme  # >=0.3.0

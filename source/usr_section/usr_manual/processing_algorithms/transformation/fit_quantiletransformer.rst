@@ -1,0 +1,82 @@
+.. _Fit QuantileTransformer:
+
+***********************
+Fit QuantileTransformer
+***********************
+
+Transform `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ using quantiles information.
+This method transforms the features to follow a uniform or a normal distribution. Therefore, for a given `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_, this transformation tends to spread out the most frequent values. It also reduces the impact of (marginal) outliers: this is therefore a robust preprocessing scheme.
+The transformation is applied on each feature independently. First an estimate of the cumulative distribution function of a feature is used to map the original values to a uniform distribution. The obtained values are then mapped to the desired `output <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ distribution using the associated quantile function. Features values of new/unseen data that fall below or above the fitted range will be mapped to the bounds of the output distribution. Note that this transform is non-linear. It may distort linear correlations between variables measured at the same scale but renders variables measured at different scales more directly comparable.
+
+**Parameters**
+
+
+:guilabel:`Transformer` [string]
+    Scikit-learn python code. See `QuantileTransformer <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.QuantileTransformer.html>`_ for information on different parameters.
+
+    Default::
+
+        from sklearn.preprocessing import QuantileTransformer
+        
+        transformer = QuantileTransformer()
+
+:guilabel:`Raster layer with features` [raster]
+    `Raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ data `X <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-x>`_ used for fitting the `transformer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-transformer>`_. Mutually exclusive with parameter: `Training dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-training-dataset>`_
+
+
+:guilabel:`Sample size` [number]
+    Approximate number of `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ drawn from raster. If 0, whole raster will be used. Note that this is only a hint for limiting the number of rows and columns.
+
+    Default: *1000*
+
+
+:guilabel:`Training dataset` [file]
+    `Training dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-training-dataset>`_ `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ used for fitting the `transformer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-transformer>`_. Mutually exclusive with parameter: `Raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_
+
+**Outputs**
+
+
+:guilabel:`Output transformer` [fileDestination]
+    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:FitQuantiletransformer``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    transformer: Transformer
+    	Default value:	from sklearn.preprocessing import QuantileTransformer
+    
+    transformer = QuantileTransformer()
+    	Argument type:	string
+    	Acceptable values:
+    		- String value
+    featureRaster: Raster layer with features (optional)
+    	Argument type:	raster
+    	Acceptable values:
+    		- Path to a raster layer
+    sampleSize: Sample size (optional)
+    	Default value:	1000
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    dataset: Training dataset (optional)
+    	Argument type:	file
+    	Acceptable values:
+    		- Path to a file
+    outputTransformer: Output transformer
+    	Argument type:	fileDestination
+    	Acceptable values:
+    		- Path for new file
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputTransformer: <outputFile>
+    	Output transformer
+    
+    

@@ -1,0 +1,86 @@
+.. _Fit StandardScaler:
+
+******************
+Fit StandardScaler
+******************
+
+Standardize `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ by removing the mean and scaling to unit variance.
+The standard score of a `sample <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ x is calculated as:
+z = (x - u) / s
+where u is the mean of the training `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ or zero if with_mean=False, and s is the standard deviation of the training samples or one if with_std=False.
+Centering and scaling happen independently on each `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ by computing the relevant statistics on the samples in the training set. Mean and standard deviation are then stored to be used on later data using transform.
+Standardization of a `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ is a common requirement for many machine learning `estimators <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-estimator>`_: they might behave badly if the individual features do not more or less look like standard normally distributed data (e.g. Gaussian with 0 mean and unit variance).
+For instance many elements used in the objective function of a learning algorithm (such as the RBF kernel of Support Vector Machines or the L1 and L2 regularizers of linear models) assume that all features are centered around 0 and have variance in the same order. If a feature has a variance that is orders of magnitude larger that others, it might dominate the objective function and make the `estimator <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-estimator>`_ unable to learn from other features correctly as expected.
+
+**Parameters**
+
+
+:guilabel:`Transformer` [string]
+    Scikit-learn python code. See `StandardScaler <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html>`_ for information on different parameters.
+
+    Default::
+
+        from sklearn.preprocessing import StandardScaler
+        
+        transformer = StandardScaler()
+
+:guilabel:`Raster layer with features` [raster]
+    `Raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ data `X <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-x>`_ used for fitting the `transformer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-transformer>`_. Mutually exclusive with parameter: `Training dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-training-dataset>`_
+
+
+:guilabel:`Sample size` [number]
+    Approximate number of `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ drawn from raster. If 0, whole raster will be used. Note that this is only a hint for limiting the number of rows and columns.
+
+    Default: *1000*
+
+
+:guilabel:`Training dataset` [file]
+    `Training dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-training-dataset>`_ `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ used for fitting the `transformer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-transformer>`_. Mutually exclusive with parameter: `Raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_
+
+**Outputs**
+
+
+:guilabel:`Output transformer` [fileDestination]
+    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:FitStandardscaler``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    transformer: Transformer
+    	Default value:	from sklearn.preprocessing import StandardScaler
+    
+    transformer = StandardScaler()
+    	Argument type:	string
+    	Acceptable values:
+    		- String value
+    featureRaster: Raster layer with features (optional)
+    	Argument type:	raster
+    	Acceptable values:
+    		- Path to a raster layer
+    sampleSize: Sample size (optional)
+    	Default value:	1000
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    dataset: Training dataset (optional)
+    	Argument type:	file
+    	Acceptable values:
+    		- Path to a file
+    outputTransformer: Output transformer
+    	Argument type:	fileDestination
+    	Acceptable values:
+    		- Path for new file
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputTransformer: <outputFile>
+    	Output transformer
+    
+    

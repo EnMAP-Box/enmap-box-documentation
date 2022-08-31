@@ -1,0 +1,91 @@
+.. _Create grid:
+
+***********
+Create grid
+***********
+
+Create an empty raster that can be used as a `grid <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-grid>`_.
+
+**Parameters**
+
+
+:guilabel:`CRS` [crs]
+    Destination coordinate reference system.
+
+
+:guilabel:`Extent` [extent]
+    Destination extent.
+
+
+:guilabel:`Size units` [enum]
+    Units to use when defining target raster size/resolution.
+
+
+:guilabel:`Width / horizontal resolution` [number]
+    Target width if size units is "Pixels", or horizontal resolution if size units is "Georeferenced units".
+
+    Default: *0*
+
+
+:guilabel:`Height / vertical resolution` [number]
+    Target height if size units is "Pixels", or vertical resolution if size units is "Georeferenced units".
+
+    Default: *0*
+
+**Outputs**
+
+
+:guilabel:`Output grid` [rasterDestination]
+    Raster file destination.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:CreateGrid``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    crs: CRS
+    	Argument type:	crs
+    	Acceptable values:
+    		- CRS as an auth ID (e.g. 'EPSG:3111')
+    		- CRS as a PROJ4 string (e.g. 'PROJ4:…')
+    		- CRS as a WKT string (e.g. 'WKT:…')
+    		- Path to a layer. The CRS of the layer is used.
+    extent: Extent
+    	Argument type:	extent
+    	Acceptable values:
+    		- A comma delimited string of x min, x max, y min, y max. E.g. '4,10,101,105'
+    		- Path to a layer. The extent of the layer is used.
+    unit: Size units
+    	Argument type:	enum
+    	Available values:
+    		- 0: Pixels
+    		- 1: Georeferenced units
+    	Acceptable values:
+    		- Number of selected option, e.g. '1'
+    		- Comma separated list of options, e.g. '1,3'
+    width: Width / horizontal resolution
+    	Default value:	0
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    hight: Height / vertical resolution
+    	Default value:	0
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    outputGrid: Output grid
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputGrid: <outputRaster>
+    	Output grid
+    
+    

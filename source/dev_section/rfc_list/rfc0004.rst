@@ -1,0 +1,145 @@
+RFC 4: Band Properties
+======================
+
+Author: Andreas Janz
+
+Contact: andreas.janz@geo.hu-berlin.de
+
+Started: 2022-01-09
+
+Last modified: 2022-01-10
+
+Status: Proposed
+
+Summary
+-------
+
+It is proposed to implement functions or methods for reading and writing  band properties from/to **QGIS PAM**.
+
+So far we identified the following band properties to be required or useful:
+
+- band **name**
+- Spectral Properties (see RFC 2): **wavelength, wavelength units, fwhm, bad band multiplier**
+- Temporal Properties (see RFC 3): **start time, end time**
+- Data Properties: **offset, scale**, **no data value**
+
+API support will be implemented in the **enmapboxprocessing.rasterreader.RasterReader** class.
+
+GUI support will be implemented in the **qps.layerconfigwidgets.rasterbands.RasterBandPropertiesConfigWidget** class.
+
+Motivation
+----------
+
+Band property management is a cruitial, but a not well support raster layer preparation step in QGIS and the EnMAP-Box.
+
+We need for example:
+
+- band **name** information to subset or match raster bands by name instead of band numbers, and for setting proper names for reports
+- **wavelength** information for plotting spectral profiles
+- **time** information for plotting temporal profiles
+- **bad band multipliers** to exclude noisy bands from specific plotting/analysis tasks
+- data **offset** and **scale** information for scaling data stored as integer into 0 to 1 reflectance range
+
+Spectral and Temporal Properties is already detailed in RFC 2 and 3.
+
+Note that band **no data value** handling is fully supported by QGIS API directly via **QgsRasterDataProvider** methods:
+**setNoDataValue, setUserNoDataValue, setUseSourceNoDataValue, sourceHasNoDataValue, sourceNoDataValue, userNoDataValues, useSourceNoDataValue**.
+
+Problem
+    Band **name**, **offset** and **scale** information can be accessed via **QgsRasterLayer** methods,
+    but can't be modified. This is especially limiting in GUI applications, where we usually have a read-only handle to
+    a raster source that we aren't supposed to modify.
+
+The here proposed approach will integrate band property handling into **QGIS PAM** management.
+This allows to set/update band properties for **QgsRasterLayer** objects, which is critical for GUI applications.
+It also takes care of information stored as **GDAL PAM**.
+
+We propose the following approach for fetching band-specific properties.
+
+Approach
+--------
+
+Note that fetching Spectral and Temporal Properties is already detailed in RFC 2 and 3.
+
+Band-wise properties are fetched with the following priorisation.
+
+1. Look at **QGIS PAM** band-level default-domain.
+This is mainly relevant for GUI applications, where we need to set/update band properties using **QgsRasterLayer** objects::
+
+    bandName: str = layer.customProperty('QGISPAM/band/42//name')
+    offset: floast = layer.customProperty('QGISPAM/band/42//offset')
+    scale: float = layer.customProperty('QGISPAM/band/42//scale')
+
+Note that those information is only concidered by EnMAP-Box applications and algorithms and always ignored by QGIS and GDAL.
+To manifest those changes you are required to translate the layer to an intermediate VRT using the EnMAP-Box **Translate raster layer** algorithm,
+which will transfer all **QGIS PAM** information to **GDAL PAM**.
+
+2. Use **QgsRasterLayer** and **QgsRasterDataProvider** methods for accessing the band **name**, **offset** and **scale**::
+This is mainly relevant for processing algorithms::
+
+    bandName = layer.bandName(42)
+    offset = layer.dataProvider().bandOffset(42)
+    scale = layer.dataProvider().bandScale(42)
+
+Note that when reading raster band data, the application or algorithm is responsible for properly applying the band **offset** and **scale**.
+Notice that GDAL won't scale data automatically, when calling **gdal.Band.ReadAsArray()**.
+On the contrary, QGIS will automatically scale the data using the **QgsRasterDataProvider.bandOffset** and **QgsRasterDataProvider.bandScale** information,
+but will ignore potential modifications stored in **QGIS PAM**.
+
+For that reason, we highly encourage the use of the **RasterReader.array** methode for reading raster data, which will take care of all the data scaling details.
+
+Guide line 1:
+    If you need to set band-wise properties in a processing algorithm:
+    set it to the **GDAL PAM** band-level default-domain or use approriate **gdal.Band** methods.
+    This way, i) the information is accessible with the GDAL API,
+    and ii) consecutive band subsetting via gdal.Translate and gdal.BuildVrt can easily copy the band domains to the destination dataset.
+
+Guide line 2:
+    If you need to set/update band properties in a GUI application: set it to **QGIS PAM**.
+    This is most flexible and secure.
+    The band properties are i) available as custom layer properties,
+    ii) stored in the QGIS project,
+    and iii) can be saved to QML layer style files.
+    Note that those modifications are only used by EnMAP-Box applications and algorithms, QGIS and GDAL will ignore it!
+    To manifest those changes in **GDAL PAM**, translate the layer to an intermediate VRT using the EnMAP-Box **Translate raster layer** algorithm.
+
+Guide line 3:
+    Do not update **GDAL PAM** \*.aux.xml file,
+    while the corresponding source is opened as a **QgsRasterLayer** in QGIS.
+    QGIS will potentially overwrite any changes, when closing the layer.
+
+
+Implementation
+--------------
+
+Technically, we don't need any new functions or methods, because we fully rely on existing QGIS/GDAL API functionality.
+
+But, the handling of property keys, the assurance of fetching priorities, and proper data scaling,
+can be tedious and should be encapsulated in util functions or methods.
+An example implementation is given by the **RasterReader** class.
+
+Note that Spectral and Temporal Properties is already detailed in RFC 2 and 3.
+
+To query band properties for band 42, we can use::
+
+    from enmapboxprocessing.rasterreader import RasterReader
+
+    reader = RasterReader(layer)
+    bandName = reader.bandName(42)
+    bandOffset = reader.bandOffset(42)
+    bandScale = reader.bandScale(42)
+
+
+To set band properties use::
+
+    reader.setBandName('band 42 (0.685000 Micrometers)', 42)
+    reader.setBandOffset(0, 42)
+    reader.setBandScale(10000, 42)
+
+To read (scaled) band data use::
+
+    array = reader.array(bandList=[42])
+    maskArray = reader.maskArray(array, bandList=[42])
+
+
+Also check out the RasterReader unittests: https://bitbucket.org/hu-geomatics/enmap-box/src/develop/enmapboxprocessing/test/test_rasterreaderrfc4.py

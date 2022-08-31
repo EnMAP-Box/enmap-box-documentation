@@ -1,0 +1,76 @@
+body {
+    font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+}
+
+div.field-item {
+    display: block;
+    width: 60%;
+    margin-left: 20%;
+}
+
+#imgCarousel {
+    position: relative;
+    margin-top: 30px;
+}
+
+#imgCarousel li {
+    text-align: center;
+}
+
+#imgCarousel img {
+    border: none;
+    padding:0;
+}
+
+#imgCarousel h5 {
+    margin: 0;
+}
+
+#imgCarousel button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#imgCarousel .slider__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    margin-top: -9px;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    background: #ccc;
+    margin-top: -30px;
+    transform: scale(0.7);
+    opacity: 1;
+    box-shadow: none;
+}
+
+#imgCarousel h4 {
+    color:#1E517E;
+}
+
+#imgCarousel .slider__arrow:hover {
+    background:#1E517E
+}
+
+#imgCarousel .slider__arrow--prev {
+    left:10px;
+}
+
+#imgCarousel .slider__arrow--next {
+    right:10px;
+}
+
+.slider__arrow svg {
+margin-top:2px;
+}
+
+.slider__arrow svg path {
+fill: #fff;
+}

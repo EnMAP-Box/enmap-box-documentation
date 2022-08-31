@@ -1,0 +1,170 @@
+.. _Aggregate raster layer bands:
+
+****************************
+Aggregate raster layer bands
+****************************
+
+Compute various aggregation functions over all `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_, while ignoring `no data values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_.
+
+**Parameters**
+
+
+:guilabel:`Raster layer` [raster]
+    A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ to be aggregated.
+
+
+:guilabel:`Aggregation functions` [enum]
+    Functions to be used. Number and order of selected functions equals number and order of `output <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
+
+**Outputs**
+
+
+:guilabel:`Output raster layer` [rasterDestination]
+    Raster file destination.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:AggregateRasterLayerBands``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    raster: Raster layer
+    	Argument type:	raster
+    	Acceptable values:
+    		- Path to a raster layer
+    function: Aggregation functions
+    	Argument type:	enum
+    	Available values:
+    		- 0: arithmetic mean
+    		- 1: standard deviation
+    		- 2: variance
+    		- 3: minimum
+    		- 4: median
+    		- 5: maximum
+    		- 6: sum
+    		- 7: product
+    		- 8: range
+    		- 9: interquartile range
+    		- 10: any true
+    		- 11: all true
+    		- 12: arg minimum
+    		- 13: arg maximum
+    		- 14: 0-th percentile
+    		- 15: 1-th percentile
+    		- 16: 2-th percentile
+    		- 17: 3-th percentile
+    		- 18: 4-th percentile
+    		- 19: 5-th percentile
+    		- 20: 6-th percentile
+    		- 21: 7-th percentile
+    		- 22: 8-th percentile
+    		- 23: 9-th percentile
+    		- 24: 10-th percentile
+    		- 25: 11-th percentile
+    		- 26: 12-th percentile
+    		- 27: 13-th percentile
+    		- 28: 14-th percentile
+    		- 29: 15-th percentile
+    		- 30: 16-th percentile
+    		- 31: 17-th percentile
+    		- 32: 18-th percentile
+    		- 33: 19-th percentile
+    		- 34: 20-th percentile
+    		- 35: 21-th percentile
+    		- 36: 22-th percentile
+    		- 37: 23-th percentile
+    		- 38: 24-th percentile
+    		- 39: 25-th percentile
+    		- 40: 26-th percentile
+    		- 41: 27-th percentile
+    		- 42: 28-th percentile
+    		- 43: 29-th percentile
+    		- 44: 30-th percentile
+    		- 45: 31-th percentile
+    		- 46: 32-th percentile
+    		- 47: 33-th percentile
+    		- 48: 34-th percentile
+    		- 49: 35-th percentile
+    		- 50: 36-th percentile
+    		- 51: 37-th percentile
+    		- 52: 38-th percentile
+    		- 53: 39-th percentile
+    		- 54: 40-th percentile
+    		- 55: 41-th percentile
+    		- 56: 42-th percentile
+    		- 57: 43-th percentile
+    		- 58: 44-th percentile
+    		- 59: 45-th percentile
+    		- 60: 46-th percentile
+    		- 61: 47-th percentile
+    		- 62: 48-th percentile
+    		- 63: 49-th percentile
+    		- 64: 50-th percentile
+    		- 65: 51-th percentile
+    		- 66: 52-th percentile
+    		- 67: 53-th percentile
+    		- 68: 54-th percentile
+    		- 69: 55-th percentile
+    		- 70: 56-th percentile
+    		- 71: 57-th percentile
+    		- 72: 58-th percentile
+    		- 73: 59-th percentile
+    		- 74: 60-th percentile
+    		- 75: 61-th percentile
+    		- 76: 62-th percentile
+    		- 77: 63-th percentile
+    		- 78: 64-th percentile
+    		- 79: 65-th percentile
+    		- 80: 66-th percentile
+    		- 81: 67-th percentile
+    		- 82: 68-th percentile
+    		- 83: 69-th percentile
+    		- 84: 70-th percentile
+    		- 85: 71-th percentile
+    		- 86: 72-th percentile
+    		- 87: 73-th percentile
+    		- 88: 74-th percentile
+    		- 89: 75-th percentile
+    		- 90: 76-th percentile
+    		- 91: 77-th percentile
+    		- 92: 78-th percentile
+    		- 93: 79-th percentile
+    		- 94: 80-th percentile
+    		- 95: 81-th percentile
+    		- 96: 82-th percentile
+    		- 97: 83-th percentile
+    		- 98: 84-th percentile
+    		- 99: 85-th percentile
+    		- 100: 86-th percentile
+    		- 101: 87-th percentile
+    		- 102: 88-th percentile
+    		- 103: 89-th percentile
+    		- 104: 90-th percentile
+    		- 105: 91-th percentile
+    		- 106: 92-th percentile
+    		- 107: 93-th percentile
+    		- 108: 94-th percentile
+    		- 109: 95-th percentile
+    		- 110: 96-th percentile
+    		- 111: 97-th percentile
+    		- 112: 98-th percentile
+    		- 113: 99-th percentile
+    		- 114: 100-th percentile
+    	Acceptable values:
+    		- Number of selected option, e.g. '1'
+    		- Comma separated list of options, e.g. '1,3'
+    outputRaster: Output raster layer
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputRaster: <outputRaster>
+    	Output raster layer
+    
+    

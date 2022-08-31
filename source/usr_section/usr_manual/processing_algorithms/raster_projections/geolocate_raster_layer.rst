@@ -1,0 +1,151 @@
+.. _Geolocate raster layer:
+
+**********************
+Geolocate raster layer
+**********************
+
+Geolocate a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ using geolocation arrays. See `Geolocation Arrays <https://gdal.org/development/rfc/rfc4_geolocate.html>`_ in the GDAL documentation for details on the concept and parameters.
+
+**Parameters**
+
+
+:guilabel:`Raster layer` [raster]
+    A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ to be geolocated.
+
+
+:guilabel:`X locations raster layer` [raster]
+    A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ containing the x geolocation array.
+
+
+:guilabel:`Y locations raster layer` [raster]
+    A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ containing the `y <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-y>`_ geolocation array.
+
+
+:guilabel:`Grid` [raster]
+    The destination `grid <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-grid>`_. If skipped, the grid CRS is set to the CRS of the geolocation arrays, extent and resolution is controlled by gdal.Warp defaults.
+
+
+:guilabel:`Locations CRS` [crs]
+    The coordinate reference system of the geolocation arrays.
+
+    Default: *<QgsCoordinateReferenceSystem: EPSG:4326>*
+
+
+:guilabel:`No data value` [number]
+    Value used to fill no data regions introduced by warping.
+
+
+:guilabel:`X locations band` [band]
+    The x coordinates `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
+
+
+:guilabel:`Y locations band` [band]
+    The `y <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-y>`_ coordinates `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
+
+
+:guilabel:`Pixel offset` [number]
+    Pixel offset into geo-located data of left geolocation pixel.
+
+    Default: *0*
+
+
+:guilabel:`Line offset` [number]
+    Line offset into geo-located data of top geolocation pixel.
+
+    Default: *0*
+
+
+:guilabel:`Pixel step` [number]
+    Each geolocation pixel represents this many geolocated pixels.
+
+    Default: *1*
+
+
+:guilabel:`Line step` [number]
+    Each geolocation pixel represents this many geolocated lines.
+
+    Default: *1*
+
+**Outputs**
+
+
+:guilabel:`Output raster layer` [rasterDestination]
+    Raster file destination.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:GeolocateRasterLayer``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    raster: Raster layer
+    	Argument type:	raster
+    	Acceptable values:
+    		- Path to a raster layer
+    xRaster: X locations raster layer
+    	Argument type:	raster
+    	Acceptable values:
+    		- Path to a raster layer
+    yRaster: Y locations raster layer
+    	Argument type:	raster
+    	Acceptable values:
+    		- Path to a raster layer
+    grid: Grid (optional)
+    	Argument type:	raster
+    	Acceptable values:
+    		- Path to a raster layer
+    crs: Locations CRS (optional)
+    	Default value:	EPSG:4326
+    	Argument type:	crs
+    	Acceptable values:
+    		- CRS as an auth ID (e.g. 'EPSG:3111')
+    		- CRS as a PROJ4 string (e.g. 'PROJ4:…')
+    		- CRS as a WKT string (e.g. 'WKT:…')
+    		- Path to a layer. The CRS of the layer is used.
+    noDataValue: No data value (optional)
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    xBand: X locations band (optional)
+    	Argument type:	band
+    	Acceptable values:
+    		- Integer value representing an existing raster band number
+    yBand: Y locations band (optional)
+    	Argument type:	band
+    	Acceptable values:
+    		- Integer value representing an existing raster band number
+    pixelOffset: Pixel offset (optional)
+    	Default value:	0
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    lineOffset: Line offset (optional)
+    	Default value:	0
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    pixelStep: Pixel step (optional)
+    	Default value:	1
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    lineStep: Line step (optional)
+    	Default value:	1
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    outputGeolocatedRaster: Output raster layer
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputGeolocatedRaster: <outputRaster>
+    	Output raster layer
+    
+    

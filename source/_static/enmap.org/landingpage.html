@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EnMAP-Box</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!--
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.2.7/dist/css/glide.core.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.2.7/dist/glide.min.js"></script>
+        <link rel="stylesheet" href="landingpage.css">
+
+
+    </head>
+    <body>
+<div class="field-item">
+
+                            <link rel="stylesheet"
+                              href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.2.7/dist/css/glide.core.min.css">
+                            <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.2.7/dist/glide.min.js"></script>
+
+                            <h1>EnMAP-Box</h1>
+                            The EnMAP-Box is free and open source <a href="https://www.qgis.org">QGIS</a> to visualize
+                            and process remote sensing raster data.
+                            It is particularly developed to handle imaging spectroscopy data, as from the upcoming <a
+                              href="https://www.enmap.org">EnMAP sensor</a>.
+
+
+                            <div id="imgCarousel">
+                              <!-- Wrapper for slides -->
+                              <div class="glide__track" data-glide-el="track">
+                                <ul class="glide__slides">
+                                  <li >
+                                    <img style="max-height:300px;max-width:60vw" src="img/enmapbox_logo.svg" alt="EnMAP-Box Logo">
+
+                                      <h4>A QGIS Plugin for Hyperspectral Remote Sensing</h4>
+
+                                  </li>
+
+                                  <li >
+                                    <img style="max-height:300px;max-width:60vw" src="img/screenshot_gui.png" alt="GUI">
+
+                                      <h4>Graphical User Interface</h4>
+
+                                  </li>
+
+                                  <li >
+                                    <img style="max-height:300px;max-width:60vw" src="img/screenshot_speclibviewer.png" alt="Spectral Libraries">
+
+                                      <h4>Spectral Libraries</h4>
+
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <!-- Left and right controls -->
+                              <div class="slider__arrows" data-glide-el="controls">
+                                <button class="slider__arrow slider__arrow--prev glide__arrow glide__arrow--prev"
+                                  data-ref="fadereveal[el]" data-glide-dir="<" data-sr-id="8">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                      d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z">
+                                    </path>
+                                  </svg>
+                                </button>
+
+                                <button class="slider__arrow slider__arrow--next glide__arrow glide__arrow--next"
+                                  data-ref="fadereveal[el]" data-glide-dir=">" data-sr-id="9">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                      d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z">
+                                    </path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+
+                            <script>
+                              new Glide('#imgCarousel', {
+                                type: 'carousel',
+                                autoplay: 3000,
+                                animationDuration:1000,
+                              }).mount()
+                            </script>
+
+                            <h2>Highlights</h2>
+                            <ul>
+                              <li>an easy-to-use graphical user interface for the visualization of vector and raster
+                                data sources in parallel and in spatially linked maps</li>
+                              <li>collection and visualisation of spectral profiles spectral libraries. Spectral
+                                profiles can come from different sources, e.g. raster images, field spectrometer or
+                                table-sheets.</li>
+                              <li>enhances the QGIS Processing Framework with many algorithms commonly used in remote
+                                sensing and imaging spectroscopy, e.g. support vector machines or random forest based
+                                raster
+                                classification, regression, cluster approaches from the <a
+                                  href="https://scikit-learn.org/stable/index.html">scikit-learn</a> library.
+                              </li>
+                              <li>applications specific to imaging spectroscopy and the EnMAP program, e.g. the
+                                simulation of spectral profiles, atmospheric correction
+                                of EnMAP data, mapping of geological classes from EnMAP data and more...</li>
+
+                            </ul>
+
+
+
+                            <h2>License</h2>
+                            The EnMAP-Box is released under the GNU General Public License (GPL) Version 3 or above. A
+                            copy of this licence can be found at <a
+                              href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html/</a>.
+
+
+                            <h2>Links</h2>
+                            <ul class="list-inline">
+                              <li>Documentation <a
+                                  href="https://enmap-box.readthedocs.io">https://enmap-box.readthedocs.io</a></li>
+                              <li>Source Code <a
+                                  href="https://bitbucket.org/hu-geomatics/enmap-box">https://bitbucket.org/hu-geomatics/enmap-box</a>
+                              </li>
+                              <li>QGIS Plugin<a
+                                  href="http://plugins.qgis.org/plugins/enmapboxplugin/">http://plugins.qgis.org/plugins/enmapboxplugin/</a>
+                              </li>
+                              <li>Issue Tracker <a
+                                  href="https://bitbucket.org/hu-geomatics/enmap-box/issues">https://bitbucket.org/hu-geomatics/enmap-box/issues</a>
+                              </li>
+                              <li>Changelog <a
+                                  href="https://bitbucket.org/hu-geomatics/enmap-box/src/develop/CHANGELOG">https://bitbucket.org/hu-geomatics/enmap-box/src/develop/CHANGELOG</a>
+                              </li>
+
+                            </ul>
+                            <!--<span class="pull-right"><a href="#">Back to top</a></span>-->
+                          </div>
+    </body>
+</html>
