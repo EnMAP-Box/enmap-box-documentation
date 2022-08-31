@@ -11,33 +11,27 @@
 #
 # All configuration values have a default; values that are commented out
 # serve to show the default.
-import configparser
 import datetime
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
-import pathlib
-import sys
 import re
-from unittest.mock import Mock
 import numpy as np
-
+from PyQt5.QtGui import QImage
 
 # from now on, always assume that we are building on RTD
 
 os.environ['READTHEDOCS'] = 'True'
 
 autodoc_mock_imports = ['vrtbuilder',
-                        'gdal', 'sklearn', 'numpy', 'scipy', 'matplotlib', 'matplotlib.pyplot', 'scipy.interpolate',
+                        'gdal', 'sklearn', 'numpy', 'scipy',
+                        'matplotlib', 'matplotlib.pyplot', 'scipy.interpolate',
                         'qgis', 'qgis.utils', 'qgis.core', 'qgis.gui',
                         'processing', 'processing.core.ProcessingConfig',
                         ]
 autodoc_warningiserror = False
-
-
-from PyQt5.QtGui import QImage
 
 
 def convert2png(pathSVG: str):
@@ -123,7 +117,8 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
-# A string of reStructuredText that will be included at the beginning of every source file that is read.
+# A string of reStructuredText that will be included at the
+# beginning of every source file that is read.
 # rst_epilog = """
 # .. include:: /icon_links.rst
 # """
@@ -216,8 +211,11 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'EnMAP-Box3.tex', u'EnMAP-Box 3 Documentation',
-     u'Andreas Janz, Benjamin Jakimow, Sebastian van der Linden, Patrick Hostert', 'manual'),
+    (master_doc,
+     'EnMAP-Box3.tex',
+     u'EnMAP-Box 3 Documentation',
+     u'Andreas Janz, Benjamin Jakimow, Sebastian van der Linden, Patrick Hostert',
+     'manual'),
 ]
 
 # -- Options for manual page output ---------------------------------------
@@ -243,9 +241,11 @@ texinfo_documents = [
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
 
-# adding this because in pycookbook a lot of text is referencing classes, which cannot be found by sphinx
+# adding this because in pycookbook a lot of text is referencing classes,
+# which cannot be found by sphinx
 # eg: Map canvas is implemented as :class:`QgsMapCanvas` ...
-# I hope somebody will create the real references for these so they can be removed here...
+# I hope somebody will create the real references for these,
+# so they can be removed here...
 nitpicky = True
 nitpick_ignore = [('py:class', 'QAction'),
                   ('py:class', 'QDomElement'),

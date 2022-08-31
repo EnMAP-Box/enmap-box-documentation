@@ -20,7 +20,7 @@ for n in ['level_1', 'level_2']:
 importSettings = {'vector_layer': lyrV, 'fields': fields}
 profiles = RasterLayerSpectralLibraryIO.importProfiles(enmap, importSettings=importSettings)
 for i, p in enumerate(profiles):
-    name = 'Profile {} ({},{})'.format(i+1, p.attribute('px_x'), p.attribute('px_y'))
+    name = 'Profile {} ({},{})'.format(i + 1, p.attribute('px_x'), p.attribute('px_y'))
     p.setAttribute('name', name)
 speclib = SpectralLibraryUtils.createSpectralLibrary()
 speclib.startEditing()
@@ -32,7 +32,6 @@ slw.show()
 if True:
     settings = speclibSettings()
     settings.setValue('SpectralProcessingDialog/algorithmId',
-                      #'enmapbox:CreateClassificationDatasetFromCategorizedRasterLayerAndFeatureRaster'
                       'enmapbox:SpectralResamplingToPrisma'
                       )
     parameters = dict()
@@ -43,4 +42,3 @@ if True:
 slw.actionShowSpectralProcessingDialog.trigger()
 
 QgsApplication.exec_()
-

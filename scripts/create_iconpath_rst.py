@@ -16,14 +16,17 @@ assert DIR_SOURCE.is_dir(), 'Documentation source directory does not exist'
 assert DIR_ICONS.is_dir(), 'Documentation source icon directory does not exist'
 
 if os.environ.get('ENMAPBOX_REPO'):
-    DIR_ENMAPBOX_REPO = pathlib.Path(os.environ.get('ENMAPBOX_REPO', '<missing>'))
+    DIR_ENMAPBOX_REPO = \
+        pathlib.Path(os.environ.get('ENMAPBOX_REPO', '<missing>'))
 else:
-    # assume that repositories for EnMAP-Box documentation and EnMAP-Box source code are in the same directory
+    # assume that repositories for EnMAP-Box documentation and
+    # EnMAP-Box source code are in the same directory
     DIR_ENMAPBOX_REPO = DIR_REPO.parent / 'enmap-box'
 assert DIR_ENMAPBOX_REPO.is_dir(), 'EnMAP-Box Repo not defined / not found'
 
-ENMAPBOX_ICON_DIRS = [DIR_ENMAPBOX_REPO / 'enmapbox/gui/ui/icons',
-                      DIR_ENMAPBOX_REPO / 'enmapbox/qgispluginsupport/qps/ui/icons']
+ENMAPBOX_ICON_DIRS = \
+    [DIR_ENMAPBOX_REPO / 'enmapbox/gui/ui/icons',
+     DIR_ENMAPBOX_REPO / 'enmapbox/qgispluginsupport/qps/ui/icons']
 
 PATH_RST = DIR_SOURCE / 'icon_links.rst'
 rx_extensions = re.compile(r'\.(svg|png)$')
