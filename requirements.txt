@@ -4,5 +4,5 @@
 ###### Requirements to build the documentation with sphinx ######
 sphinx
 sphinxnotes-strike
-docutils<0.17
+docutils
 sphinx_rtd_theme  # >=0.3.0
