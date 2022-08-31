@@ -212,17 +212,14 @@ Before you create a pull request, please check the following:
 Documentation
 =============
 
-The EnMAP-Box documentation is based on `Sphinx-build reStructured text <http://www.sphinx-doc.org/en/master/>`_ and hosted at https://enmap-box.readthedocs.io .
-The *.rst files are located in the repositories :code:`doc/source` folder.
+The EnMAP-Box documentation is based on `Sphinx-build reStructured text <http://www.sphinx-doc.org/en/master/>`_
+and hosted at https://enmap-box.readthedocs.io .
 
-To build and text the documentation on your local system, navigate into the :code:`doc` folder and run the make file::
+The documentation source code, i.e. *.rst files, are hosted in the :code:`/source` folder in
+https://github.com/EnMAP-Box/enmap-box-documentation
 
-    $ cd doc
-    $ make html
-
-This will start Sphinx and create the HTML documentation into folder :code:`doc/build`.
-Open :code:`doc/build/html/index.html` to visualize it in your web browser.
-
+Please read https://github.com/EnMAP-Box/enmap-box-documentation#readme for how you can
+contribute to the EnMAP-Box documentation repository.
 
 .. _contribute_licensing:
 
