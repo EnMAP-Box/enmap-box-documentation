@@ -1,14 +1,14 @@
 # EnMAP-Box Documentation
-This is the documentation of EnMAP-Box
-
+This repository contains the EnMAP-Box Documentation
 
 # Requirements
-To build the documentation with Sphinx the packages listed in `requirements.txt` need to be installed.
+The packages in `requirements.txt` need to be installed.
 
-
-For some maintenance scripts in `/scripts` it is required that the EnMAP-Box source code repository
-(`enmap-box`) is located in the same folder as this documentation  (`enmap-box-documentation`).
-Furthermore, they need to be started in a PyQGIS environment, i.e. you can run `import qgis` in python.
+Maintenance scripts in `/scripts` may require additional packages from PyQGIS and the EnMAP-Box source code.
+They require that:
+- a PyQGIS environment is available, i.e. you can run `import qgis`
+- the EnMAP-Box source code repository (`enmap-box`) is installed into the same folder as this 
+  documentation repository (`enmap-box-documentation`).
 
 
 # Build the documentation
