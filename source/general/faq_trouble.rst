@@ -18,7 +18,7 @@ Bug report & feedback
 
 .. |link_bitbucket| raw:: html
 
-   <a href="https://bitbucket.org/hu-geomatics/enmap-box/issues/new" target="_blank">issue tracker</a>
+   <a href="https://github.com/EnMAP-Box/enmap-box/issues/new" target="_blank">issue tracker</a>
 
 
 .. note:: Your feedback is more than welcome! In case you encounter any problems with the EnMAP-Box or have
@@ -135,7 +135,7 @@ suggest new entries!
 
   .. code-block:: batch
 
-     python3 -m pip install -r https://bitbucket.org/hu-geomatics/enmap-box/raw/develop/requirements.txt
+     python3 -m pip install -r https://github.com/EnMAP-Box/enmap-box/raw/develop/requirements.txt
 
   If the method above did not work for some reason, try installing the packages listed in the :file:`requirements.txt` line by line, e.g.
   ``python3 -m pip install numpy`` and so on.
@@ -219,5 +219,5 @@ Known Issues
 Here is a list of known issues, that aren't fixed easily,
 and/or only affect a specific version of QGIS or operating system:
 
-https://bitbucket.org/hu-geomatics/enmap-box/issues?component=known+issue&status=on+hold
+https://github.com/EnMAP-Box/enmap-box/issues?component=known+issue&status=on+hold
 

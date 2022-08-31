@@ -6,7 +6,7 @@ How to contribute
 The EnMAP-Box is a freely available, platform-independent software designed to process hyperspectral remote sensing data,
 and particularly developed to handle data from the EnMAP sensor.
 
-The EnMAP-Box source code is hosted in a public git repository at https://bitbucket.org/hu-geomatics/enmap-box.
+The EnMAP-Box source code is hosted in a public git repository at https://github.com/EnMAP-Box/enmap-box.
 
 Approved `QGIS plugin <www.qgis.org>`_ versions (“production releases”) are available in the QGIS Plugin Repository https://plugins.qgis.org/plugins/enmapboxplugin/.
 
@@ -22,15 +22,15 @@ Submit a bug report or feature request
 ======================================
 
 In case you experience issues with the EnMAP-Box, do not hesitate to submit a
-ticket to our `Issue Tracker <https://bitbucket.org/hu-geomatics/enmap-box/issues>`_. You are also welcome
+ticket to our `Issue Tracker <https://github.com/EnMAP-Box/enmap-box/issues>`_. You are also welcome
 to post feature requests or pull requests.
 
 It is recommended to check that your issue complies with the
 following rules before submitting:
 
 *  Verify that your issue is not being currently addressed by other
-   `issues <https://bitbucket.org/hu-geomatics/enmap-box/issues?q=>`_
-   or `pull requests <https://bitbucket.org/hu-geomatics/enmap-box/pull-requests/>`_.
+   `issues <https://github.com/EnMAP-Box/enmap-box/issues??q=is%3Aissue+is%3Aopen`_
+   or `pull requests <https://github.com/EnMAP-Box/enmap-box/pulls/>`_.
 
 *  If you are submitting a bug report, please:
 
@@ -48,7 +48,7 @@ following rules before submitting:
     * Please ensure that code snippets and error messages are formatted in appropriate code blocks.
 
     .. note::
-        You can use this `Markdown syntax <https://confluence.atlassian.com/bitbucketserver/markdown-syntax-guide-776639995.html>`_
+        You can use this `Markdown syntax <https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax>`_
         to style your issues.
 
 
@@ -59,7 +59,7 @@ Provide source code
 ===================
 
 If your are not an EnMAP-Box core developer, the preferred way to contribute your code code is to use
-`pull requests <https://www.atlassian.com/git/tutorials/making-a-pull-request>`_.
+`pull requests <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request>`_.
 
 
 1. :ref:`Fork the EnMAP-Box repository<contribute_fork>`
@@ -71,13 +71,13 @@ If your are not an EnMAP-Box core developer, the preferred way to contribute you
 
 .. _contribute_fork:
 
-1. Create a fork on Bitbucket
------------------------------
+1. Create a fork on GitHub
+--------------------------
 
 Forking the EnMAP-box repository allows you to modify the EnMAP-Box code as you like and backup your contributions in a
-separated Bitbucket repository. To create a fork,
+separated GitHub repository. To create a fork,
 
-1. log in to bitbucket.org and visit https://bitbucket.org/hu-geomatics/enmap-box
+1. log in to GitHub and visit https://github.com/EnMAP-Box/enmap-box
 
 2. Click '+' and `Fork this repository`
 
@@ -87,13 +87,12 @@ separated Bitbucket repository. To create a fork,
 
      <div><video width="90%" controls muted><source src="../_static/videos/forking.1.create.fork.mp4"
                 type="video/mp4">Your browser does not support HTML5 video.</video>
-     <p><i>Create an EnMAP-Box fork in bitbucket.org</i></p></div>
+     <p><i>Create an EnMAP-Box fork in GitHub</i></p></div>
 
 
-Please read https://confluence.atlassian.com/bitbucket/forking-a-repository-221449527.html for details how you can create your own fork
-of the EnMAP-Box repository.
+Please read https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks
+for details how you can create your own fork of the EnMAP-Box repository.
 
-Please note that forking in bitbucket.org does not copy git lfs tracked files: https://support.atlassian.com/bitbucket-cloud/docs/current-limitations-for-git-lfs-with-bitbucket/#Git-LFS-files-are-not-copied-when-a-repo-is-forked
 
 .. _contribute_clone:
 
@@ -102,7 +101,7 @@ Please note that forking in bitbucket.org does not copy git lfs tracked files: h
 
 Clone *enmap-box-fork* to your local disk::
 
-    git clone git@bitbucket.com/myusername/enmap-box-fork.git -n
+    git clone git@github.com/myusername/enmap-box-fork.git -n
 
 You might see some git lfs errors. Ignore them.
 
@@ -114,12 +113,7 @@ Go into the repository folder and force to checkout the *develop* branch.
 You can ignore *smuge errors*.
 Add the EnMAP-Box repository as *upstream* repository::
 
-    git remote add upstream https://bitbucket.org/hu-geomatics/enmap-box
-
-
-Now fetch *git lfs* files from the upstream directory::
-
-    git lfs fetch upstream
+    git remote add upstream https://github.com/EnMAP-Box/enmap-box
 
 
 .. note::
@@ -133,7 +127,7 @@ Now fetch *git lfs* files from the upstream directory::
 
         $git push
 
-    to upload them to the remote bitbucket.com/myusername/enmap-box-fork.git
+    to upload them to the remote github.com/myusername/enmap-box-fork.git
 
 Now install python requirements and run the initial setup for the EnMAP-Box repository, as described in :ref:`dev_installation`
 
@@ -169,7 +163,7 @@ Even better, use GnuPG-signed commits (-S).
 5. Push changes back to your fork
 ---------------------------------
 
-A push will upload your changes to bitbucket.com/myusername/enmap-box-fork.git::
+A push will upload your changes to github.com/myusername/enmap-box-fork.git::
 
     $ git push
 
@@ -179,7 +173,7 @@ A push will upload your changes to bitbucket.com/myusername/enmap-box-fork.git::
 ------------------------
 
 
-Open the Bitbucket webpage of your fork and create a pull request.
+Open the GitHub webpage of your fork and create a pull request.
 The pull request will inform us on the changed you made.
 
 Before you create a pull request, please check the following:
@@ -230,7 +224,7 @@ The software produced for the EnMAP-Box is licensed according to the terms of th
 the Free Software Foundation, either version 3 of the License (SPDX short identifier: GPL-3.0), or (if desired) any later version.
 See either https://www.gnu.org/licenses/gpl-3.0.en.html or https://opensource.org/licenses/GPL-3.0 for further details of the license.
 
-A copy of this license is part of the EnMAP-Box repository (`LICENSE.txt <https://bitbucket.org/hu-geomatics/enmap-box/src/master/LICENSE.md>`_) and delivered with each release of an EnMAP-Box plugin.
+A copy of this license is part of the EnMAP-Box repository (`LICENSE.txt <https://github.com/EnMAP-Box/enmap-box/blob/main/LICENSE.md>`_) and delivered with each release of an EnMAP-Box plugin.
 
 The EnMAP-Box documentation is published under the terms of the Creative Commons 1.0 Universal (CC0) License.
 See https://creativecommons.org/publicdomain/zero/1.0/legalcode for further details of the license.
@@ -266,7 +260,7 @@ Each source code contribution to the central repository should include a referen
     ***************************************************************************
     """
 
-An example from the source code can be found here: `enmapbox/__init__.py <https://bitbucket.org/hu-geomatics/enmap-box/src/develop/enmapbox/__init__.py>`_
+An example from the source code can be found here: `enmapbox/__init__.py <https://github.com/EnMAP-Box/enmap-box/blob/main/enmapbox/__init__.py>`_
 
 Images and other multimedia content from the EnMAP-Box documentation, i.e files within the EnMAP-Box repositories :code:`doc/source` folder,
 are published under the terms of the `CC0 license <https://creativecommons.org/publicdomain/zero/1.0/legalcode>`_.

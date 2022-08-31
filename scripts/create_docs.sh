@@ -1,6 +1,5 @@
 #!/bin/bash
-
-cd ..
+pwd
 set -e
 if grep -qEi "(MINGW64_NT|Microsoft|WSL)" /proc/version &> /dev/null ; then
     echo "Run Sphinx on Windows 10 Bash"

@@ -33,7 +33,7 @@ Related websites
 ****************
 
 - `Environmental Mapping and Analysis Program (EnMAP) <http://www.enmap.org/>`_
-- `Source code repository <https://bitbucket.org/hu-geomatics/enmap-box/src/develop/>`_
+- `Source code repository <https://github.com/EnMAP-Box/enmap-box/blob/main/>`_
 - `HYPERedu on eo-college <https://eo-college.org/resource-spectrum/hyperspectral//>`_
 
 
@@ -46,7 +46,7 @@ EnMAP-Box Version 3.10 released
 June 09, 2022
 
 A new EnMAP-Box version has been released.
-A list of all improvements can be found in the `changelog <https://bitbucket.org/hu-geomatics/enmap-box/src/develop/CHANGELOG.rst>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.rst>`_.
 
 
 EnMAP-Box Version 3.9 released
@@ -55,7 +55,7 @@ EnMAP-Box Version 3.9 released
 Oct. 10, 2021
 
 A new EnMAP-Box version has been released.
-A list of all improvements can be found in the `changelog <https://bitbucket.org/hu-geomatics/enmap-box/src/develop/CHANGELOG.rst>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.rst>`_.
 
 EnMAP-Box Workshop 2021
 =======================
@@ -89,7 +89,7 @@ Oct. 27, 2020
 
 A new EnMAP-Box version has been released. It includes product readers for EnMAP L1B, L2C and L2A, PRISMA L2D
 and DESIS L2A images, and a first version of Spectral Math in the QGIS Expression Builder.
-A list of all improvements can be found in the `changelog <https://bitbucket.org/hu-geomatics/enmap-box/src/develop/CHANGELOG.rst>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.rst>`_.
 
 
 FOSSGIS 2020

@@ -69,7 +69,7 @@ just open ``doc/build/html/index.html`` in your webbrowser of choice.
 Publish the EnMAP-Box
 =====================
 
-Official EnMAP-Box plugin *master* versions are named like ``enmapboxplugin.3.3.20190214T1125.master.zip``. They need to be uploaded
+Official EnMAP-Box plugin *master* versions are named like ``enmapboxplugin.3.3.20190214T1125.main.zip``. They need to be uploaded
 to http://plugins.qgis.org/plugins/ using an OSGeo account.
 
 Other versions, e.g. *development snapshots* are named like ``enmapboxplugin.3.3.20190214T1125.develop.zip`` or ``enmapboxplugin.3.3.20190214T1125.my_feature_branch.zip``

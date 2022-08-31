@@ -1,7 +1,7 @@
 EnMAP-Box repository
 ####################
 
-The EnMAP-Box source code is hosted in a Git repository at https://bitbucket.org/hu-geomatics/enmap-box
+The EnMAP-Box source code is hosted in a Git repository at https://github.com/EnMAP-Box/enmap-box
 
 .. _dev_enmapox_repo_structure:
 
@@ -87,7 +87,7 @@ Install the EnMAP-Box repository
     .. code-block:: batch
 
         cd <my_repositories>
-        git clone --recurse-submodules git@bitbucket.org:hu-geomatics/enmap-box.git
+        git clone --recurse-submodules git@github.com:EnMAP-Box/enmap-box.git
         cd enmapbox
         git config --local include.path ../.gitconfig
 

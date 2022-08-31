@@ -256,4 +256,4 @@ Use **temporal properties** and **spectral properties** (see RFC 2) together for
         print(startTime, endTime, centerTime, wavelength)
 
 
-Also check out the RasterReader unittests: https://bitbucket.org/hu-geomatics/enmap-box/src/develop/enmapboxprocessing/test/test_rasterreaderrfc3.py
+Also check out the RasterReader unittests: https://github.com/EnMAP-Box/enmap-box/blob/main/enmapboxprocessing/test/test_rasterreaderrfc3.py

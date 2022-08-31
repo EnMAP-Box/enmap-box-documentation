@@ -100,7 +100,7 @@ a) OSGeo4W (Windows)
 2. Setup development environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://bitbucket.org/hu-geomatics/enmap-box/src/develop/scripts/OSGeo4W/
+1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/src/develop/scripts/OSGeo4W/
    to a local folder, e.g. your windows desktop
 2. Modify the `qgis-env.bat` config section to fit to your local environment, i.e. set the correct paths to your
    local OSGeoW installation and PyCharm executable
@@ -182,7 +182,7 @@ it is often much easier to install additional python packages while admin rights
 
 .. code-block:: batch
 
-   conda env create --name qgis_stable --file https://bitbucket.org/hu-geomatics/enmap-box/raw/develop/conda_environment.yml
+   conda env create --name qgis_stable --file https://github.com/EnMAP-Box/enmap-box/raw/develop/conda_environment.yml
 
 .. tip::
 
@@ -522,8 +522,9 @@ Qt version used by QGIS.
         5. add :code:`set GIT_SSH=C:\Program Files\PuTTY\plink.exe` to your startup script
         6. there is an issue with a frozen command line when a server is connected the first time with ssh
            (see https://stackoverflow.com/questions/33240137/git-clone-pull-continually-freezing-at-store-key-in-cache)
-           to solve it, start putty and connect try to the server once per SSH (e.g. to bitbucket.org). puty will save its fingerprint
-        7. now you can call git push using ssh authentification in background
+           to solve it, start putty and connect to the server once per SSH (e.g. to github.com).
+           putty will save its fingerprint
+        7. now you can call git push using ssh authentication in background
 
 OSGeo4W for Devs
 ================
