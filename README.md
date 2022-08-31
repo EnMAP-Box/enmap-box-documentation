@@ -1,5 +1,7 @@
 # EnMAP-Box Documentation
-This repository contains the EnMAP-Box Documentation
+This repository contains the EnMAP-Box Documentation hosted in https://enmap-box.readthedocs.io
+
+
 
 # Requirements
 The packages in `requirements.txt` need to be installed.
