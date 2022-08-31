@@ -14,7 +14,8 @@ They require that:
 
 # Branching
 
-The `main` branch contains corresponds to the `develop` branch of the EnMAP-Box source code. 
+The `main` branch contains corresponds to the `develop` branch of the EnMAP-Box source code (
+will be changed to `main` after the EnMAP-Box source code to github.)
 
 Release branches, e.g. `release_3.10` contain the documentation related to the corresponding EnMAP-Box versions 
 as they are released in the QGIS plugin repository.
