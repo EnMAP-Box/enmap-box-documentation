@@ -1,6 +1,15 @@
 # EnMAP-Box Documentation
 This repository contains the EnMAP-Box Documentation
 
+# Structure
+
+| Folder   | Content                                                 |
+|----------|---------------------------------------------------------|
+| source   | Documentation files (*.rst)                             |
+| scripts  | Maintenance scripts, e.g. to generate *.rst files       |
+| snippets | Python snippets, e.g. to create widgets for screenshots |
+
+
 # Requirements
 The packages in `requirements.txt` need to be installed.
 
