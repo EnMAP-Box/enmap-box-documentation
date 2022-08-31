@@ -27,19 +27,19 @@ Agency, granted by the Federal Ministry of Economic Affairs and Energy (BMWi; gr
    |hu|, |ug|, |gfz|, |dlr|, |bmwi|
 
 
-.. |hu| image:: /../../enmapbox/gui/ui/icons/logo_hu-berlin.svg
+.. |hu| image:: ../img/logos/logo_hu-berlin.svg
    :target: https://www.geographie.hu-berlin.de/en/professorships/eol
 
-.. |ug| image:: /img/logo_ug.png
+.. |ug| image:: ../img/logos/logo_ug.png
    :target: https://geo.uni-greifswald.de/eo
 
-.. |gfz| image:: /../../enmapbox/gui/ui/icons/logo_gfz.svg
+.. |gfz| image:: ../img/logos/logo_gfz.svg
    :target: https://www.gfz-potsdam.de/startseite/
 
-.. |dlr| image:: /../../enmapbox/gui/ui/icons/logo_dlr.svg
+.. |dlr| image:: ../img/logos/logo_dlr.svg
    :target: https://www.dlr.de/content/de/artikel/missionen-projekte/enmap-der-deutsche-hyperspektralsatellit-zur-erdbeobachtung.html
 
-.. |bmwi| image:: /img/bmwi.jpg
+.. |bmwi| image:: /img/logos/bmwi.jpg
 
 |
 

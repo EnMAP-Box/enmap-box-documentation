@@ -72,7 +72,7 @@ an overview of remote sensing of forest AGB and [4]_ for a companion study using
 =======
 
 :download:`You can download the data for this exercise here:`
-https://box.hu-berlin.de/f/d73fa3ba95c143388832/?dl=1
+    https://box.hu-berlin.de/f/d73fa3ba95c143388832/?dl=1
 
 The tutorial data contains a simulated hyperspectral EnMAP image, plot-based AGB references
 as well as a land cover map for a small study area located in Sonoma County, California, USA. The simulated EnMAP
@@ -141,27 +141,29 @@ Exercise A: Getting started with the EnMAP-Box
 * The EnMAP-Box offers **Map Views** (Map #) for visualizing raster and vector data. Click the |viewlist_mapdock| icon to open a
   new Map View and drag :file:`enmap_sonoma.bsq` from the :guilabel:`Data Sources` panel into Map #1.
 
-   * In addition to a new Map View opening, a corresponding Data View entry is created in the :guilabel:`Data Views` panel
-     which shows all data currently loaded in a given Map View.
+* In addition to a new Map View opening, a corresponding Data View entry is created in the :guilabel:`Data Views` panel
+  which shows all data currently loaded in a given Map View.
 
-   * The :file:`enmap_sonoma.bsq` image will be displayed as true color RGB composite. True color rendering is based on predefined
-     RGB band combinations (R: 658 nm, G: 569 nm, B: 479 nm) stored in the QGIS Style File :file:`enmap_sonoma.qml`.
+* The :file:`enmap_sonoma.bsq` image will be displayed as true color RGB composite. True color rendering is based on predefined
+  RGB band combinations (R: 658 nm, G: 569 nm, B: 479 nm) stored in the QGIS Style File :file:`enmap_sonoma.qml`.
 
-.. image:: img/ex_a_agb_tutorial_figure_3.png
-   :width: 100%
+  .. image:: img/ex_a_agb_tutorial_figure_3.png
+     :width: 100%
 
-   * To assign a different RGB combination to the RGB channels, right click on the dataset in the :guilabel:`Data Views` panel, select
-     :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`. Set Render type to Multiband color and select bands to display in the
-     red, green and blue color channels. Choose appropriate Min/Max Value Settings (e.g. Cumulative Count Cut: 2-98%).
-     Common RGB combinations are listed below.
 
-     .. csv-table::
-        :header-rows: 1
+* To assign a different RGB combination to the RGB channels, right click on the dataset in the :guilabel:`Data Views` panel, select
+ :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`. Set Render type to Multiband color and select bands to display in the
+ red, green and blue color channels. Choose appropriate Min/Max Value Settings (e.g. Cumulative Count Cut: 2-98%).
+ Common RGB combinations are listed below.
 
-        Combination, Red, Green, Blue
-        TrueColor, 658 nm, 569 nm, 479 nm
-        nIR, 847 nm, 658 nm, 569 nm
-        swIR, 847 nm,1645 nm, 658 nm
+
+ .. csv-table::
+    :header-rows: 1
+
+    Combination, Red, Green, Blue
+    TrueColor, 658 nm, 569 nm, 479 nm
+    nIR, 847 nm, 658 nm, 569 nm
+    swIR, 847 nm,1645 nm, 658 nm
 
 .. image:: img/ex_a_agb_tutorial_figure_4.png
    :width: 100%
@@ -240,15 +242,16 @@ Exercise A: Getting started with the EnMAP-Box
 * By default, vector files are displayed with a single uniform symbol. To change this symbology, right
   click on :file:`agb_sonoma.gpkg` in the :guilabel:`Data Views` panel, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`
   in the Layer Properties window. You can now change the symbology in accordance to the QGIS functionality.
-   * Select :guilabel:`Graduated` from the dropdown menu, and select ``biomass`` in :guilabel:`Value` and ``Color`` in :guilabel:`Method`.
-   * Set the :guilabel:`Color ramp` to run from white to green.
-   * Press :guilabel:`Classify` and then :guilabel:`OK` to display the biomass values associated with each point.
+
+    * Select :guilabel:`Graduated` from the dropdown menu, and select ``biomass`` in :guilabel:`Value` and ``Color`` in :guilabel:`Method`.
+    * Set the :guilabel:`Color ramp` to run from white to green.
+    * Press :guilabel:`Classify` and then :guilabel:`OK` to display the biomass values associated with each point.
 
 .. image:: img/ex_a_agb_tutorial_figure_6.png
    :width: 100%
 
 7. Extract & visualize image spectra
-===================================
+====================================
 
 * The EnMAP-Box offers **Spectral Library Windows** (SpectralLibrary #) for visualizing spectra and handling
   their metadata.
@@ -257,9 +260,10 @@ Exercise A: Getting started with the EnMAP-Box
   window by selecting the |viewlist_spectrumdock| icon on the toolbar.
 * Next, import spectral profiles from other sources by clicking at the |speclib_add| icon in the SpectralLibrary #1
   menu. Specify the following settings:
-   * :guilabel:`Format` = Raster Layer
-   * |mIconCollapse| :guilabel:`Options`: Raster = :file:`enmap_sonoma.bsq`, Vector = :file:`agb_sonoma.gpkg`
-   * |mIconCollapse| :guilabel:`Field Value Import`: Click on the |mSourceFields| icon, select ``biomass`` and click :guilabel:`OK`.
+
+    * :guilabel:`Format` = Raster Layer
+    * |mIconCollapse| :guilabel:`Options`: Raster = :file:`enmap_sonoma.bsq`, Vector = :file:`agb_sonoma.gpkg`
+    * |mIconCollapse| :guilabel:`Field Value Import`: Click on the |mSourceFields| icon, select ``biomass`` and click :guilabel:`OK`.
 
 * Terminate the Import Spectral Profile dialogue with :guilabel:`OK`. A spectral library is automatically built based on the
   geographic location of each point in the vector file. The associated attribute information is displayed in the table on the right.
@@ -305,6 +309,7 @@ Exercise B: Regression based mapping of AGB
 * To create the Regression Dataset from a raster and a vector layer, click on the |processing_collapse|
   icon and choose :guilabel:`Create regression dataset (from continuous-valued vector layer and feature raster)`.
   A new widget will be opened. Run the dialog with the following inputs:
+
     * :guilabel:`Continuous-valued vector layer`: select :file:`agb_sonoma.gpkg`
     * :guilabel:`Raster layer with features`: select :file:`enmap_sonoma.bsq`
     * :guilabel:`Fields with targets`: select attribute ``biomass``
@@ -402,9 +407,11 @@ Exercise C: Compare AGB estimates with the NDVI
 
 * The **ImageMath** tool in the EnMAP-Box allows users to apply a mathematical operation, python function or user defined function to an image.
   In the following sections, you will utilize standard numpy array processing protocols
-   * to calculate a NDVI map from two bands of our EnMAP imagery,
-   * to generate a forest mask from the NLCD land cover map,
-   * and to apply a forest mask to both the NDVI and AGB maps.
+
+    * to calculate a NDVI map from two bands of our EnMAP imagery,
+    * to generate a forest mask from the NLCD land cover map,
+    * and to apply a forest mask to both the NDVI and AGB maps.
+
 * Close all opened Map/Spectral Library Windows. Display :file:`enmap_sonoma.bsq`, :file:`nlcd_sonoma.bsq`
   and :file:`agb_estimation.bsq` in a single or in multiple Map Views.
 * Open the **ImageMath** application by going to :guilabel:`Applications` then selecting |numpy| :guilabel:`ImageMath`
@@ -421,7 +428,7 @@ Exercise C: Compare AGB estimates with the NDVI
 .. image:: img/ex_c_agb_tutorial_figure_1.png
    :width: 100%
 
-.. |numpy| image:: /../../enmapbox/coreapps/enmapboxapplications/imagemathapp/icons/numpy.png
+.. |numpy| image:: img/icons/numpy.png
    :height: 26px
 
 
@@ -603,11 +610,11 @@ Learning Activities
 
 .. admonition:: Learning Activities
 
-* **C1**: Why was it necessary to mask the AGB results?
-* **C2**: What relationships can you see between AGB and NDVI? Do these relationships hold true if you look at
-  the un-masked AGB and NDVI maps?
-* **C3**: Given the relationships between AGB and NDVI, do you think NDVI could be used to map AGB?
-  What limitations would you expect from such a model?
+    * **C1**: Why was it necessary to mask the AGB results?
+    * **C2**: What relationships can you see between AGB and NDVI? Do these relationships hold true if you look at
+      the un-masked AGB and NDVI maps?
+    * **C3**: Given the relationships between AGB and NDVI, do you think NDVI could be used to map AGB?
+      What limitations would you expect from such a model?
 
 
 

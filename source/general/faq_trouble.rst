@@ -140,9 +140,6 @@ suggest new entries!
   If the method above did not work for some reason, try installing the packages listed in the :file:`requirements.txt` line by line, e.g.
   ``python3 -m pip install numpy`` and so on.
 
-  .. literalinclude:: /../../requirements.txt
-     :caption: requirements.txt
-
 ....
 
 .. _faq_numba:
@@ -184,6 +181,7 @@ suggest new entries!
   .. code-block:: bash
 
      sudo apt-get install python3-pyqt5.qtopengl
+
 
 ....
 

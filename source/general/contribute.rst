@@ -29,7 +29,7 @@ It is recommended to check that your issue complies with the
 following rules before submitting:
 
 *  Verify that your issue is not being currently addressed by other
-   `issues <https://github.com/EnMAP-Box/enmap-box/issues??q=is%3Aissue+is%3Aopen`_
+   `issues <https://github.com/EnMAP-Box/enmap-box/issues??q=is%3Aissue+is%3Aopen>`_
    or `pull requests <https://github.com/EnMAP-Box/enmap-box/pulls/>`_.
 
 *  If you are submitting a bug report, please:
@@ -83,10 +83,10 @@ separated GitHub repository. To create a fork,
 
 3. Select a name and workspace for your EnMAP-Box fork, hereafter called *enmap-box-fork*
 
-  .. raw:: html
+..  .. raw:: html
 
-     <div><video width="90%" controls muted><source src="../_static/videos/forking.1.create.fork.mp4"
-                type="video/mp4">Your browser does not support HTML5 video.</video>
+..    <div><video width="90%" controls muted><source src="../_static/videos/forking.1.create.fork.mp4"
+..                type="video/mp4">Your browser does not support HTML5 video.</video>
      <p><i>Create an EnMAP-Box fork in GitHub</i></p></div>
 
 

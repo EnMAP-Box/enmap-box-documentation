@@ -3,13 +3,13 @@ import re
 import os
 import shutil
 from os.path import basename, splitext, getmtime
-from enmapbox.qgispluginsupport.qps.utils import file_search
+from utils import file_search
 
 # source dir (location of conf.py)
 
 # Repo for EnMAP-Box documentation
-DIR_REPO = pathlib.Path(__file__).parents[2]
-DIR_SOURCE = DIR_REPO / 'doc' / 'source'
+DIR_REPO = pathlib.Path(__file__).parents[1]
+DIR_SOURCE = DIR_REPO / 'source'
 
 DIR_ICONS = DIR_SOURCE / 'img' / 'icons'
 assert DIR_SOURCE.is_dir(), 'Documentation source directory does not exist'
