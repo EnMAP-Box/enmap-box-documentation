@@ -7,7 +7,7 @@ version: 2
 
 
 sphinx:
-  configuration: doc/source/conf.py
+  configuration: source/conf.py
 
 formats:
   - htmlzip
@@ -17,8 +17,5 @@ python:
   install:
     - requirements:  requirements.txt
 
-submodules:
-  include:
-  - enmapbox/qgispluginsupport
 
 
