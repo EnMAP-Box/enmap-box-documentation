@@ -18,8 +18,6 @@
 import os
 import re
 
-from PyQt5.QtGui import QImage
-
 # from now on, always assume that we are building on RTD
 
 os.environ['READTHEDOCS'] = 'True'
@@ -31,13 +29,6 @@ autodoc_mock_imports = ['vrtbuilder',
                         'processing', 'processing.core.ProcessingConfig',
                         ]
 autodoc_warningiserror = False
-
-
-def convert2png(pathSVG: str):
-    if os.path.isfile(pathSVG) and pathSVG.endswith('.svg'):
-        pathPNG = re.sub(r'\.svg$', '.png', pathSVG)
-        image = QImage(pathSVG)
-        image.save(pathPNG)
 
 
 # -- General configuration ------------------------------------------------
