@@ -22,12 +22,6 @@ import re
 
 os.environ['READTHEDOCS'] = 'True'
 
-autodoc_mock_imports = ['vrtbuilder',
-                        'gdal', 'sklearn', 'numpy', 'scipy',
-                        'matplotlib', 'matplotlib.pyplot', 'scipy.interpolate',
-                        'qgis', 'qgis.utils', 'qgis.core', 'qgis.gui',
-                        'processing', 'processing.core.ProcessingConfig',
-                        ]
 autodoc_warningiserror = False
 
 
