@@ -64,7 +64,7 @@ Jun, 07, 2021
 
 The next EnMAP-Box workshop will be held online on 21-23 June, 2021.
 The workshop aims to demonstrate the current state of the EnMAP-Box by way of presentations, live demos with Q&A and self-paced tutorials.
-Registration for up to 250 participants is now open at the `workshop website <https://github.com/hu-geomatics/enmap-box/wiki/events/Workshop_2021>`_.
+Registration for up to 250 participants is now open at the `workshop website <https://bitbucket.org/hu-geomatics/enmap-box/wiki/events/Workshop_2021>`_.
 
 
 .. figure:: img/events/workshop2021.banner.png

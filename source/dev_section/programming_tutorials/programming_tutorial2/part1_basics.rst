@@ -713,7 +713,7 @@ However, the icon is available:
 
 * if we load the missing resources manually
 
-Long story short, download the `qgsresources.zip <https://github.com/hu-geomatics/enmap-box-workshop2019/downloads/qgisresources.zip>`_
+Long story short, download the `qgsresources.zip <https://bitbucket.org/hu-geomatics/enmap-box-workshop2019/downloads/qgisresources.zip>`_
 and extract it into the enmapbox root folder:
 
 .. image:: img/pycharm_qgisresources.png

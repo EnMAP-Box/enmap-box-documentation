@@ -15,7 +15,7 @@ Setup your programming project
     .. code-block:: batch
 
         cd <workshop folder>
-        git clone https://github.com/hu-geomatics/enmap-box-workshop2019.git
+        git clone https://bitbucket.org/hu-geomatics/enmap-box-workshop2019.git
         cd enmap-box-workshop2019
         git checkout develop
 
