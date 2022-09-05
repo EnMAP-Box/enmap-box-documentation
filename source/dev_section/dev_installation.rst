@@ -36,7 +36,7 @@ its submodules by:
 .. code-block:: bash
 
     cd my_repositories
-    git clone --recurse-submodules git@bitbucket.org:hu-geomatics/enmap-box.git
+    git clone --recurse-submodules git@github.com:EnMAP-Box/enmap-box.git
     cd enmap-box
     git config --local include.path ../.gitconfig
 
