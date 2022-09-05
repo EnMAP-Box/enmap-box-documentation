@@ -149,7 +149,7 @@ Install the EnMAP-Box repository
 Install / Update EnMAP-Box Testdata
 ===================================
 
-The most-recent EnMAP-Box testdata is hosted on https://bitbucket.org/hu-geomatics/enmap-box-testdata/get/master.zip
+The most-recent EnMAP-Box testdata is hosted on https://github.com/hu-geomatics/enmap-box-testdata/get/master.zip
 If missing or outdatet, it will be downloaded and installed after a user
 clicks on `Project > Load Example Data`. The downloaded data will be extracted into
 ``<root>/enmapboxtestdata``, with ``<root>`` either being the EnMAP-Box repository folder or the QGIS plugin installation

@@ -73,7 +73,7 @@ Official EnMAP-Box plugin *master* versions are named like ``enmapboxplugin.3.3.
 to http://plugins.qgis.org/plugins/ using an OSGeo account.
 
 Other versions, e.g. *development snapshots* are named like ``enmapboxplugin.3.3.20190214T1125.develop.zip`` or ``enmapboxplugin.3.3.20190214T1125.my_feature_branch.zip``
-and might be distributed using the repositories download section https://bitbucket.org/hu-geomatics/enmap-box/downloads/.
+and might be distributed using the repositories download section https://github.com/hu-geomatics/enmap-box/downloads/.
 
 Updates to the EnMAP-Box documentation (folder ``doc/source``) are detected by readthedocs
 when pushed to the *develop* or *master* branch of the EnMAP-Box repository.

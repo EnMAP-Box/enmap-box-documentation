@@ -21,7 +21,7 @@ Please make sure to setup your environment by following the steps in the *Setup*
        :ref:`installation instructions for developers <dev_installation>`.
 
     #. Download the
-       `EnMAP-Box Workshop 2019 Repository <https://bitbucket.org/hu-geomatics/enmap-box-workshop2019/get/develop.zip>`_
+       `EnMAP-Box Workshop 2019 Repository <https://github.com/hu-geomatics/enmap-box-workshop2019/get/develop.zip>`_
        and unzip the content to a location of your choice (e.g. ``C:\source\enmap-box-workshop2019``)
 
     #. Start **PyCharm**, open the **Settings** dialog: *File > Settings...*
