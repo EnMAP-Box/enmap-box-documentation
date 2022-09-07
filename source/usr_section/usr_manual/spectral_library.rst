@@ -2,126 +2,54 @@
 
 .. _spectral_libraries:
 
+==================
 Spectral Libraries
-******************
-
-A *Spectral Library* is a collection of profiles with arbitrary profile-wise data and metadata,
-stored as pickled dictionaries inside (multiple) binary fields. Dictionary items are:
-
-* x: list of x values (e.g. wavelength)
-* y: list of y values (e.g. surface reflectance)
-* xUnit: x value units (e.g. nanometers)
-* yUnit: y value units (e.g. ???)
-* bbl: the bad bands list
+==================
+A *Spectral Library* is a library is a vector layer with a layer field designated to store spectral profiles.
 
 
-Spectral Library Window |viewlist_spectrumdock|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Spectral Library View |viewlist_spectrumdock|
+=============================================
 
-The *Spectral Library Window* can be used to visualize, collect and label spectra. It directly interacts with the Map Window(s), which
+The *Spectral Library View* can be used to visualize, collect and label spectra. It directly interacts with the Map View(s), which
 means spectra can be directly collected from an image. Furthermore, external libraries (ENVI Spectral Library) can be imported.
 
-* Add a new spectral library window by using the *Add Spectral Library Window* |viewlist_spectrumdock| button in the toolbar or open a new window from the menu bar :menuselection:`View --> Add Spectral Library Window`.
+*Add a new spectral library view by using the *Add Spectral Library View* |viewlist_spectrumdock| button in the toolbar or open a new window from the menu bar :menuselection:`View --> Add Spectral Library Window`.
 
 A new view appears where you can start to collect spectra.
 
-.. figure:: /img/SpecLib_overview.png
+.. figure:: /img/SpecLib_overview.PNG
    :width: 100%
 
-   Overview of the Spectral Library Window with several collected and labeled spectra and main tools
-
-
-* To import an existing library use the *Import Spectral Library* |speclib_add| button.
-* Possible formats to be imported: *ENVI Spectral Library, Geopackage, ASD Field Spectrometer measurements, Raster Layer.*
-
-.. figure:: /img/SpecLib_ImportFormts.png
-   :width: 60%
-
-* You can also import ASD Field Spectrometer measurements and map and modify the imported profiles and attributes accordingly.
-
-.. figure:: /img/SpecLib_addASDProfiles.png
-   :width: 60%
+   Overview of the Spectral Library view with several collected and labeled spectra and main tools
 
 **Buttons of the Spectral Library Window:**
 
-.. list-table::
+.. csv-table::
+   :header: "Button", "Description", "Button", "Description"
    :widths: auto
-   :header-rows: 1
 
-   * - Button
-     - Description
-   * - |plus_green|
-     - Adds currently overlaid profiles
-       to the spectral library
-   * - |profile_add_auto|
-     - Activate to add profiles automatically
-       into the spectral library
-   * - |speclib_add|
-     - Import Spectral Library
-   * - |speclib_save|
-     - Save Spectral Library
-   * - |legend|
-     - Activate to change spectra representation
-   * - |speclib_usevectorrenderer|
-     - Activate to use colors from map vector symbology
-   * - |system|
-     - Enter the Spectral Library Layer Properties
-   * - |mActionToggleEditing|
-     - Toggle editing mode
-   * - |mActionMultiEdit|
-     - Toggle multi editing mode
-   * - |mActionSaveAllEdits|
-     - Save edits
-   * - |mActionRefresh|
-     - Reload the table
-   * - |mActionNewTableRow|
-     - Add feature
-   * - |mActionDeleteSelected|
-     - Delete selected features
-   * - |mActionEditCut|
-     - Cut selected rows to clipboard
-   * - |mActionEditCopy|
-     - Copy selected rows to clipboard
-   * - |mActionEditPaste|
-     - Paste features from clipboard
-   * - |mIconExpressionSelect|
-     - Select by Expression
-   * - |mActionSelectAll|
-     - Selects all elements in
-       the spectral library
-   * - |mActionInvertSelection|
-     - Inverts the current selection
-   * - |mActionDeselectAll|
-     - Remove selection (deselect everything)
-   * - |mActionSelectedToTop|
-     - Move selection to the top
-   * - |mActionFilter2|
-     - Select / filter features using form
-   * - |mActionPanToSelected|
-     - Pan map to selected rows
-   * - |mActionZoomToSelected|
-     - Zoom map to selected rows
-   * - |mActionNewAttribute|
-     - Add New field
-   * - |mActionDeleteAttribute|
-     - Delete field
-   * - |mActionConditionalFormatting|
-     - Conditional formatting
-   * - |mAction|
-     - Actions
-   * - |mActionFormView|
-     - Switch to form view
-   * - |mActionOpenTable|
-     - Switch to table view
-   * - |profile_processing|
-     - Spectral Processing Dialog
-   * - |mActionCalculateField|
-     - Enables the calculation of new attribute fields
+   |plus_green|, "Add currently overlaid profiles to the spectral library", |profile_add_auto|, "Activate to add profiles automatically into the spectral library"
+   |speclib_add|, "Import Spectral Library", |speclib_save|, "Save Spectral Library"
+   |legend|, "Activate to change spectra representation", |speclib_usevectorrenderer|, "Activate to use colors from map vector symbology"
+   |system|, "Enter the Spectral Library Layer Properties", |mActionToggleEditing|, "Toggle editing mode"
+   |mActionMultiEdit|, "Toggle multi editing mode", |mActionSaveAllEdits|, "Save edits"
+   |mActionRefresh|, "Reload the table", |mActionNewTableRow|, "Add feature"
+   |mActionDeleteSelected|, "Delete selected features", |mActionEditCut|, "Cut selected rows to clipboard"
+   |mActionEditCopy|, "Copy selected rows to clipboard", |mActionEditPaste|, "Paste features from clipboard"
+   |mIconExpressionSelect|, "Select by Expression", |mActionSelectAll|, "Select all elements in the spectral library"
+   |mActionInvertSelection|, "Invert the current selection", |mActionDeselectAll|, "Remove selection (deselect everything)"
+   |mActionSelectedToTop|, "Move selection to the top", |mActionFilter2|, "Select / filter features using form"
+   |mActionPanToSelected|, "Pan map to selected rows", |mActionZoomToSelected|, "Zoom map to selected rows"
+   |mActionNewAttribute|, "Add New field", |mActionDeleteAttribute|, "Delete field"
+   |mActionConditionalFormatting|, "Conditional formatting", |mAction|, "Actions"
+   |mActionFormView|, "Switch to form view", |mActionOpenTable|, "Switch to table view"
+   |profile_processing|, "Spectral Processing Dialog", |mActionCalculateField|, "Enable to calculate new attribute fields"
 
 .. _spectral_profile_sources:
 
 Spectral Profile Sources
-~~~~~~~~~~~~~~~~~~~~~~~~
+========================
 
 This menu manages the connection between raster sources and spectral library windows.
 
@@ -131,6 +59,7 @@ This menu manages the connection between raster sources and spectral library win
     Overview of the Spectral Profile Sources Window with two labeled spectra and main functionalities
 
 **Buttons of the Profile Sources**
+----------------------------------
 
 .. csv-table::
    :header-rows: 1
@@ -174,6 +103,7 @@ This menu manages the connection between raster sources and spectral library win
    Sample5x5Mean, Extracts the mean spectral signature of the pixel at the selected location and its adjacent pixels in a 5x5 neighborhood.
 
 **Calculating profiles**
+------------------------
 
 Different spectral profiles can be calculated in the **Spectral Profile Sources** window.
 
@@ -195,10 +125,10 @@ Different spectral profiles can be calculated in the **Spectral Profile Sources*
     ..
 
 Working with the Spectral Library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=================================
 
 Collecting spectra
-^^^^^^^^^^^^^^^^^^
+------------------
 
 * Make sure to enable the |profile| button in the menu bar and open a raster from which you want to collect spectra in a new *Map Window*.
 * Click on a desired location in the *Map Window*. The pixels spectral profile at this location will now be shown in
@@ -220,24 +150,25 @@ If you now click into the image, the spectra is automatically added and named as
     ..
 
 The attribute table
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 **Adding information**
+~~~~~~~~~~~~~~~~~~~~~~
 
-* Add additional fields to the table, e.g. in order to add information to every spectrum (id, name, classification label, ...).
-* Enable the *Editing mode* by activating  |mActionToggleEditing|.
-* Now you can use the |mActionNewAttribute| button to add a new field (mind the type!).
+Add additional fields to the table, e.g. in order to add information to every spectrum (id, name, classification label, ...).
+
+1. Enable the *Editing mode* by activating  |mActionToggleEditing|.
+2. Now you can use the |mActionNewAttribute| button to add a new field (mind the type!).
 
 .. figure:: /img/SpecLib_addNewField.png
     :width: 80%
 
     ..
 
-* After the new column is added, you can add information by double-clicking it.
-* To delete a column, use the *Delete field button* |mActionDeleteAttribute|
+3.  Add information to the new column by double-clicking it.
+4.  Delete a column, by using the *Delete field button* |mActionDeleteAttribute|
 
-* When you add a new attribute to the table, you can also choose to use it to store new spectral profiles by checking the **Use to store spectral profiles** checkbox.
-* String, text and binary format can be used to store spectral profiles.
+.. tip::  When you add a new attribute to the table, you can also choose to use it to store new spectral profiles by checking the **Use to store spectral profiles** checkbox. String, text and binary format can be used to store spectral profiles.
 
 *Adding information through layer properties window*
 
@@ -289,6 +220,7 @@ The field calculator allows you to modify or assess spectra and calculate new co
     ..
 
 **Selecting spectra**
+~~~~~~~~~~~~~~~~~~~~~
 
 Spectra can be selected in the attribute table and in the plot window itself. Selected spectra will be highlighted (blue background in the table; thicker line in a different color in the plot window).
 
@@ -314,6 +246,7 @@ You can also select and filter spectra with the common vector filter and selecti
     ..
 
 **Show coordinates of collected spectra in map view**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Locations of spectra (if available) can be visualized as a point layer by right-clicking into the map window, and selecting :guilabel:`Add Spectral Library`
 
@@ -323,7 +256,7 @@ Locations of spectra (if available) can be visualized as a point layer by right-
     ..
 
 Visualization settings
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 .. figure:: /img/SpecLib_VisualSettings.png
     :width: 100%
@@ -343,6 +276,7 @@ The visualization settings of the spectral library allow you to customize the vi
 * The *Current Profiles* section shows you all the spectra that have been collected but do not yet appear in the attribute table. To add the spectra to the attribute table, first activate the |plus_green| button.
 
 **Changing the units**
+~~~~~~~~~~~~~~~~~~~~~~
 
 You can change the units of the axis by either right-clicking into the spectral library and navigating to the respective option. Or in the visualization settings |legend| under *General Settings*
 
@@ -351,7 +285,8 @@ You can change the units of the axis by either right-clicking into the spectral 
 
     ..
 
-**Colorize spectra by attribute:**
+**Colorize spectra by attribute**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Spectra can be colorized according to their attributes, e.g. their class name.
 
@@ -370,7 +305,7 @@ Spectra can be colorized according to their attributes, e.g. their class name.
     :width: 100%
 
 Spectral Processing
-~~~~~~~~~~~~~~~~~~~
+===================
 
 The idea of spectral processing is to use the spectral profiles obtained from a raster image to test and modify raster algorithms, i.e. the spectral profiles are transferred to a temporary raster image and thus different algorithms can be calculated.
 
@@ -393,65 +328,16 @@ Text fields (strings) are converted to a one-band classification grid, profile f
 .. figure:: /img/SpecLib_specProDialog.png
    :width: 80%
 
-Labelled Spectral Library
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Importing and Exporting a Spectral Library
+==========================================
 
-The labelled spectral library extents the default .sli format by adding additional metadata information (e.g., class labels, class colors).
-This information is stored by adding a .csv and .json file to the default spectral library, so that the labelled spectral library consists of
+* To import an existing library use the *Import Spectral Library* |speclib_add| button.
+* Possible formats to be imported: *ENVI Spectral Library, Geopackage, ASD Field Spectrometer measurements, Raster Layer.*
 
-* .sli file (ENVI standard)
-* .hdr file (ENVI standard)
-* .csv file (containing the additional information)
+.. figure:: /img/SpecLib_ImportFormts.png
+   :width: 60%
 
-  * should be comma-separated csv
-  * should have same basename as .sli file
-  * first row stores the headers, where the first element has to be the spectra names as specified in the .hdr file:
+* You can also import ASD Field Spectrometer measurements and map and modify the imported profiles and attributes accordingly.
 
-    .. code-block::
-
-       spectra names, attribute1, attribute2
-
-  * Example from the EnMAP-Box test dataset:
-
-    .. figure:: /img/speclib_csv_example.png
-       :width: 100%
-
-* .json file (stores class name and class color information)
-
-  * should have same basename as .sli file
-  * class name and color information should be provided for every attribute in the csv:
-
-    .. code-block:: json
-
-      {
-        "attribute_name": {
-          "categories":  [
-            [0, "unclassified", [0, 0, 0]],
-            [1, "class1", [230, 0, 0]],
-            [2, "class2", [56, 168, 0]],
-            [3, "class3", [168, 112, 0]],
-            [4, "class4", [0,100,255]]
-          ],
-          "no data value": 0,
-          "description": "Classification"
-      }
-
-  * The keys ``categories``, ``no data value`` and ``description`` should not be altered. But change ``attribute_name`` according to your data.
-  * ``no data value`` should be supplied
-  * Example from the EnMAP-Box test dataset:
-
-    .. figure:: /img/speclib_json_example.png
-       :width: 100%
-
-
-
-.. aufbau: .sli + .hdr + csv
-
-.. hdr: (ENVI standard) wichtig wavelength information
-
-.. csv header names referenzieren zu spectra names in hdr datei
-
-.. zweite csv:
-.. classification case: Klassenname; KLassenname (rgb tuple) ,basename.attributname.classdef.csv
-
-.. regression case: klasse + farbtuple + nodata wert  , basename.attributname.regrdef.csv
+.. figure:: /img/SpecLib_addASDProfiles.png
+   :width: 60%

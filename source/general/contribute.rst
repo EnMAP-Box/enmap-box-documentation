@@ -213,7 +213,7 @@ The documentation source code, i.e. *.rst files, are hosted in the :code:`/sourc
 https://github.com/EnMAP-Box/enmap-box-documentation
 
 Please read https://github.com/EnMAP-Box/enmap-box-documentation#readme for how you can
-contribute to the EnMAP-Box documentation repository.
+contribute to the EnMAP-Box documentation repository and the :ref:`Style Guide <documentation_style_guide>` for a more detailed overview of the general styling.
 
 .. _contribute_licensing:
 
