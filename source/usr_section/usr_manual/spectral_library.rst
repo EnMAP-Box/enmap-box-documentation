@@ -122,7 +122,6 @@ Different spectral profiles can be calculated in the **Spectral Profile Sources*
 .. figure:: /img/SpecLib_CalculateSpectraVisualization.png
     :width: 100%
 
-    ..
 
 Working with the Spectral Library
 =================================

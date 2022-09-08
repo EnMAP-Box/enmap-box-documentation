@@ -47,10 +47,8 @@ Numbering
 If you want to describe a specific workflow or tutorial for the user, use numbering for the individual steps.
 This way it is easier for the user to distinguish between information and actual steps and to follow along easily.
 
-.. image:: /img/numbering_workflow.png
+.. figure:: /img/numbering_workflow.png
    :width: 100%
-   :align: center
-   :class: with-border
 
 *Fig. 1: Workflow example with numbering*
 
@@ -68,10 +66,8 @@ Screenshots with explanations
 * Description to the left of the screenshot at the level of the function to be explained
 * Description text in box right-justified
 
-.. image:: /img/screenshots_with_description.png
+.. figure:: /img/screenshots_with_description.png
    :width: 100%
-   :align: center
-   :class: with-border
 
 *Fig. 2: Example of adding a screenshot with explanation.*
 
@@ -80,19 +76,15 @@ Positioning of info boxes and images
 
 Info boxes, tooltips and notes should be aligned with the preceding text, i.e., if the info box follows a bulleted list, the box should also be indented.
 
-.. image:: /img/infoboxes.png
+.. figure:: /img/infoboxes.png
    :width: 100%
-   :align: center
-   :class: with-border
 
 *Fig. 3: Example of placing info boxes within / after bullet points.*
 
 Images should always be centred, but can vary in size (adjust according to readability).
 Also add a caption to the image if it is not placed between two bullet points.
 
-.. image:: /img/images_caption_example.png
+.. figure:: /img/images_caption_example.png
    :width: 100%
-   :align: center
-   :class: with-border
 
 *Fig. 4: Placement of images for (a) within bullet points, (b) after body text*
