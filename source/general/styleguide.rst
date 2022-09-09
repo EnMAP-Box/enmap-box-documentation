@@ -50,7 +50,7 @@ This way it is easier for the user to distinguish between information and actual
 .. figure:: /img/numbering_workflow.png
    :width: 100%
 
-*Fig. 1: Workflow example with numbering*
+*Workflow example with numbering*
 
 
 2. Figures & Screenshots
@@ -61,15 +61,16 @@ Screenshots with explanations
 
 * Font: Verdana
 * Size: 14 pt
+* Text color: RGB – 61-61-61
 * Line color: RGB – 192-0-0
 * Line width: 1 pt
 * Description to the left of the screenshot at the level of the function to be explained
-* Description text in box right-justified
+* Description text in box right-aligned
 
 .. figure:: /img/screenshots_with_description.png
    :width: 100%
 
-*Fig. 2: Example of adding a screenshot with explanation.*
+*Example of adding a screenshot with explanation.*
 
 Positioning of info boxes and images
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,7 +80,7 @@ Info boxes, tooltips and notes should be aligned with the preceding text, i.e., 
 .. figure:: /img/infoboxes.png
    :width: 100%
 
-*Fig. 3: Example of placing info boxes within / after bullet points.*
+*Example of placing info boxes within / after bullet points.*
 
 Images should always be centred, but can vary in size (adjust according to readability).
 Also add a caption to the image if it is not placed between two bullet points.
@@ -87,4 +88,4 @@ Also add a caption to the image if it is not placed between two bullet points.
 .. figure:: /img/images_caption_example.png
    :width: 100%
 
-*Fig. 4: Placement of images for (a) within bullet points, (b) after body text*
+*Placement of images for (a) within bullet points, (b) after body text*
