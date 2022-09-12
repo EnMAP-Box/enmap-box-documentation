@@ -16,15 +16,12 @@ FAQ & Troubleshooting
 Bug report & feedback
 =====================
 
-.. |link_bitbucket| raw:: html
-
-   <a href="https://github.com/EnMAP-Box/enmap-box/issues/new" target="_blank">issue tracker</a>
-
-
 .. note:: Your feedback is more than welcome! In case you encounter any problems with the EnMAP-Box or have
           suggestions of any kind for improving it (or this documentation), please let us know!
 
-          **Please report issues (bugs, suggestions etc.) via our** |link_bitbucket|.
+          **Please report issues** `here <https://github.com/EnMAP-Box/enmap-box/issues/new>`_
+
+          **For questions use** `GitHub Discussions <https://github.com/EnMAP-Box/enmap-box/discussions>`_
 
 Contact
 =======
@@ -32,7 +29,8 @@ Contact
 **E-Mail:** enmapbox@enmap.org
 
 
-**Newsletter**: Subscribe to the EnMAP mailing list to be informed about new EnMAP-Box releases and other EnMAP related news at www.enmap.org/contact
+**Newsletter**: Subscribe to the EnMAP mailing list to be informed about new EnMAP-Box releases and other EnMAP related news.
+Click `here <https://www.enmap.org/contact/>`_ for more information.
 
 |
 
@@ -135,7 +133,7 @@ suggest new entries!
 
   .. code-block:: batch
 
-     python3 -m pip install -r https://github.com/EnMAP-Box/enmap-box/raw/develop/requirements.txt
+     python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
 
   If the method above did not work for some reason, try installing the packages listed in the :file:`requirements.txt` line by line, e.g.
   ``python3 -m pip install numpy`` and so on.
