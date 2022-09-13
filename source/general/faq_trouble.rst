@@ -215,5 +215,6 @@ Known Issues
 Here is a list of known issues, that aren't fixed easily,
 and/or only affect a specific version of QGIS or operating system:
 
-https://github.com/EnMAP-Box/enmap-box/issues?component=known+issue&status=on+hold
+* https://github.com/EnMAP-Box/enmap-box/labels/known%20issue
+* Historic (old repository): https://bitbucket.org/hu-geomatics/enmap-box/issues?component=known+issue&status=on+hold
 
