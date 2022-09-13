@@ -125,6 +125,7 @@ Two Presentations by EnMAP-Box developers Andreas Rabe and Benjamin Jakimow at t
     general/contribute.rst
     general/roadmap.rst
     general/glossary.rst
+    general/styleguide.rst
 
 ..  toctree::
     :maxdepth: 2
