@@ -3,7 +3,7 @@ EnGeoMAP 3.1 Tutorial
 ******************************************************************
    
 
-**EnGeoMAP**\ **3.1 the EnMAP Geological Mapper for Mineral Classification (EnGeoMAP)**
+**EnGeoMAP 3.1 the EnMAP Geological Mapper for Mineral Classification (EnGeoMAP)**
 
 Authors: Helge L. C. Daempfling, Nicole Köllner, Saeid Asadzadeh
 
@@ -31,40 +31,34 @@ EnGeoMAPhas been primarily designed for EnMAP data, yet it works for
 most full-range hyperspectral sensor suites, provided that VNIR and
 SWIR data are all available.
 
-   .. rubric:: 1.   Data Preparation andRequirements
-      :name: data-preparation-and-requirements
+.. rubric:: 1.   Data Preparation andRequirements
+   :name: data-preparation-and-requirements
 
-   *Hyperspectral Data:*
+*Hyperspectral Data:*
+---------------------
 
+The hyperspectral data cubes must be in the Band Sequential (BSQ)
+format conforming to L3Harris ENVI header file information (.hdr)
 
-   The hyperspectral data cubes must be in the Band Sequential (BSQ)
-   format conforming to L3Harris ENVI header file information (.hdr)
-
-   -      Overlapping bands need to be removed from the dataset i.e.,
+   - Overlapping bands need to be removed from the dataset i.e.,
    the wavelength succession vector in the header files need to be
    strictly ascending.
-
-    
-
-   -      Clipping and interpolation are required in both strong water
+   
+   - Clipping and interpolation are required in both strong water
    vapor residuals at 940 nm and 1130 nm to assure an artifact-reduced
    analysis result.
 
-    
-
-   -      Nanometer (nm) is the recommended wavelength unit, and the
+   - Nanometer (nm) is the recommended wavelength unit, and the
    floating-point or unsigned integer (ranging from 0-10000, as is
    common for many imaging spectrometers) is recommended for the
    reflectance values.
 
-    
-
-   -      Adaptive filtering is suggested to further reduce noise and
+   - Adaptive filtering is suggested to further reduce noise and
    artifacts from reflectance data.
 
-    
 
-   *Spectral Library Files:*
+*Spectral Library Files:*
+-------------------------
 
    The spectral library files also must be in Band Sequential (BSQ)
    format according to the L3Harris ENVI header file information (.hdr).
