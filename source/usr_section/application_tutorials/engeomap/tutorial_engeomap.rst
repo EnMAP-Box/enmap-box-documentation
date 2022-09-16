@@ -262,8 +262,7 @@ overview of the data products and suffixes.
 --------------------
 
 Algorithm, Python code, and GUI was developed by Christian Mielke.
-Current version GUI and algorithm product adjustments (EnGeoMAP
-version 3.1) by Helge L. C. Daempfling.
+Current version GUI and algorithm product adjustments (EnGeoMAP version 3.1) by Helge L. C. Daempfling.
 
  6. Further Reading
 --------------------
