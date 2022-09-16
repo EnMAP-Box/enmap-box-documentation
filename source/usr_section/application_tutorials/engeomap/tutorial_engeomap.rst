@@ -33,9 +33,9 @@ SWIR data are all available.
 
 .. rubric:: 1.   Data Preparation andRequirements
    :name: data-preparation-and-requirements
+   ----------------------------------------
 
 *Hyperspectral Data:*
----------------------
 
 The hyperspectral data cubes must be in the Band Sequential (BSQ)
 format conforming to L3Harris ENVI header file information (.hdr)
