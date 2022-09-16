@@ -94,7 +94,7 @@ Figure 1: Color scheme CSV file example opened in a text editor. Here the legend
 
 .. figure::  img/fig2.png
 
-Figure2: Color scheme CSV file example opened in a spreadsheet
+Figure 2: Color scheme CSV file example opened in a spreadsheet
 editor. Here the legend includes four different endmembers.
 
 =====================================
