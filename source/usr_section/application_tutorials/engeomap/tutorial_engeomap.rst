@@ -1,13 +1,13 @@
 ******************************************************************
 EnGeoMAP 3.1 Tutorial
 ******************************************************************
-   
+
 
 **EnGeoMAP 3.1 the EnMAP Geological Mapper for Mineral Classification (EnGeoMAP)**
 
 Authors: Helge L. C. Daempfling, Nicole Köllner, Saeid Asadzadeh
 
-Contributions: Christian Mielke-, Friederike Koerting, Friederike Klos, 
+Contributions: Christian Mielke-, Friederike Koerting, Friederike Klos,
 Christian Rogass, Nina K. Boesche, Agnieszka Kuras, Christopher Loy
 
 **Introduction to EnGeoMAP 3.1**
@@ -43,7 +43,7 @@ The hyperspectral data cubes must be in the Band Sequential (BSQ)
 format conforming to L3Harris ENVI header file information (.hdr)
 
 - Overlapping bands need to be removed from the dataset i.e., the wavelength succession vector in the header files need to be strictly ascending.
-   
+
 - Clipping and interpolation are required in both strong water vapor residuals at 940 nm and 1130 nm to assure an artifact-reduced analysis result.
 
 - Nanometer (nm) is the recommended wavelength unit, and the floating-point or unsigned integer (ranging from 0-10000, as is common for many imaging spectrometers) is recommended for the reflectance values.
@@ -76,7 +76,7 @@ section).
 
 =====================================
 *RGB Color Scheme CSV file:*
-=====================================  
+=====================================
 
 The RGB (R\ ed, G\ reen, B\ lue) color scheme needs to be provided by
 the user in a CSV file format (UTF-8). The entries have to be in the
@@ -97,9 +97,9 @@ Figure 1: Color scheme CSV file example opened in a text editor. Here the legend
 Figure2: Color scheme CSV file example opened in a spreadsheet
 editor. Here the legend includes four different endmembers.
 
-===================================== 
+=====================================
 *Example / Test Data:*
-===================================== 
+=====================================
 
 Test data for EnGeoMAP can be downloaded here:
 
@@ -112,7 +112,7 @@ of each endmember for visual representation.
 
 2. How to use/run the EnGeoMAP toolbox
 --------------------------------------
-      
+
 
 Figure 3 shows how you get access to the EnGeoMAP toolbox.
 
@@ -182,7 +182,7 @@ The first band of each of the sorted results is then used in the
 spatial module together with the CSV file to provide a color-coded
 best fit (highest correlation score) material map and highest
 abundance (highest BVLS fraction) map.
-   
+
 .. figure::  img/fig5.png
 
 Figure 5: Basic processing workflow for EnGeoMAP 3.1 with modules,
@@ -281,5 +281,6 @@ Literature
 2. Clark, R.N.; Swayze, G.A.; Livo, K.E.; Kokaly, R.F.; Sutley, S.J.; Dalton, J.B.; McDougal, R.R.; Gent, C.A. Imaging spectroscopy: Earth and planetary remote sensing with the USGS Tetracorder and expert systems. J. Geophys. Res. Planets 2003, 108.
 
 3. Kokaly, R.F. Spectroscopic remote sensing for material identification, vegetation characterization, and mapping. Proc. SPIE 2012, 8390.
-   
+
 4. Clark, R.N.; Swayze, G.A.; Wise, R.; Livo, E.; Hoefen, T.M.; Kokaly, R.F.; Sutley, S.J. USGS Digital Spectral Library Splib06a; U.S. Geological Survey: Denver, CO, USA, 2007.
+
