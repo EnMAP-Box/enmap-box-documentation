@@ -16,8 +16,8 @@ Christian Rogass, Nina K. Boesche, Agnieszka Kuras, Christopher Loy
 The EnMAP geological mapper (EnGeoMAP), as part of the EnMAP Box, is
 an expert-system-based tool for the processing and characterization
 of geologic surface cover types from hyperspectral data in general
-and EnMAP satellite data in particular. The EnGeoMAP 3.1 algorithm is
-based on EnGeoMAP 2.0, developed by Christian Mielke (Mielke et al., 2016).
+and EnMAP satellite data in particular. EnGeoMAP 3.1 is
+based on the EnGeoMAP 2.0 algorithm developed by Christian Mielke (Mielke et al., 2016).
 
 EnGeoMAP 3.1 is optimized for Windows 10 and 11 and the Windows version of QGIS (LTS).
 
