@@ -31,12 +31,13 @@ EnGeoMAPhas been primarily designed for EnMAP data, yet it works for
 most full-range hyperspectral sensor suites, provided that VNIR and
 SWIR data are all available.
 
-=====================================
-1.   Data Preparation andRequirements
-=====================================
 
+1.   Data Preparation andRequirements
+-------------------------------------
+
+=====================================
 *Hyperspectral Data:*
----------------------
+=====================================
 
 The hyperspectral data cubes must be in the Band Sequential (BSQ)
 format conforming to L3Harris ENVI header file information (.hdr)
