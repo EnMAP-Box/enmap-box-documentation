@@ -32,7 +32,7 @@ most full-range hyperspectral sensor suites, provided that VNIR and
 SWIR data are all available.
 
 
-1.   Data Preparation andRequirements
+1.   Data Preparation and Requirements
 -------------------------------------
 
 =====================================
@@ -63,8 +63,7 @@ entries of the spectral library are plotted according to the RGB
 color code from the CSV file (see the RGB Color Scheme CSV file
 section).
 
-- Overlapping bands need to be removed from the dataset i.e., the wavelength succession vector in the header files need to be
-   strictly ascending.
+- Overlapping bands need to be removed from the dataset i.e., the wavelength succession vector in the header files need to be strictly ascending.
 
 - For field-measured spectral libraries: Clipping and interpolation are required both strong water vapor residuals at 940 nm and at 1130 nm to assure an artifact-reduced analysis result.
 
