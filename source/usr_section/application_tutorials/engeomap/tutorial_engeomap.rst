@@ -1,7 +1,7 @@
-
+*
    
    
-  *EnGeoMAP**\ **3.1 Tutorial**
+   *EnGeoMAP**\ **3.1 Tutorial**
 
    **EnGeoMAP**\ **3.1 the EnMAP Geological Mapper for Mineral
    Classification (EnGeoMAP)**
