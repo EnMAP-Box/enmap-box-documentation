@@ -140,7 +140,7 @@ selection will lead to an error.
 The user can choose the minimum reflectance threshold in the VNIR and
 SWIR regions. The values should be chosen depending on the noisiness
 of the data. They should be as low as possible for data with a good
-SNR. - Standard settings are recommended according to Fig. 5.
+SNR. - Standard settings are recommended according to Figure 5.
 
 The minimum fit threshold sets the lower cutoff value for the minimum
 acceptable valid spectral correlation value between the image
