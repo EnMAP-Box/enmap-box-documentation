@@ -125,9 +125,9 @@ The EnMAP-Box provides a graphical user interface (GUI) for EnGeoMAP
 3.1 (Figure 4). The three main input fields for the location of the
 user input files comprises:
 
-- The hyperspectral image data
+- The hyperspectral image data
 
-- The spectral library file
+- The spectral library file
 
 - The CSV color file
 
@@ -192,70 +192,70 @@ EnGeoMAP3.1 provides  6 data products which are identifiable by their
 suffixes to the original filename (basename). See Table 1 for an
 overview of the data products and suffixes.
 
-   +-----------------------------------+-----------------------------------+
-   | *\_correlation_result*            | Raw correlation scores from the   |
-   |                                   | spectral module for               |
-   |                                   | characteristic absorption         |
-   |                                   | features.                         |
-   |                                   |                                   |
-   |                                   |                                   |
-   +-----------------------------------+-----------------------------------+
-   | *\_best_matches_best_fit_coleur*  | Results relating to the highest   |
-   |                                   | correlation score. The data       |
-   |                                   | product is based on sorted        |
-   |                                   | correlation scores (the first     |
-   |                                   | band contains the highest score   |
-   |                                   | values, the second the second     |
-   |                                   | highest scores and so on)         |
-   |                                   |                                   |
-   |                                   |                                   |
-   +-----------------------------------+-----------------------------------+
-   | **                                | The material / geological         |
-   | \_best_fit_coleur_class_geotiff** | classification thematic map       |
-   |                                   |                                   |
-   |                                   | Standard RGB color maps assigned  |
-   |                                   | from the sorted Band 1 of the     |
-   |                                   | best_matches results using the    |
-   |                                   | .csv colorfile. It can be         |
-   |                                   | directly viewed with the image    |
-   |                                   | viewer of your choice.            |
-   |                                   |                                   |
-   |                                   | Class images,can be used for a    |
-   |                                   | quick legend generation within    |
-   |                                   | the QGIS map composer.            |
-   |                                   |                                   |
-   |                                   |                                   |
-   +-----------------------------------+-----------------------------------+
-   | *\_abundance_result*              | Raw B\ ounded V\ alue L\ east     |
-   |                                   | S\ quares (BVLS) unmixing scores  |
-   |                                   | from the spectral module for      |
-   |                                   | characteristic absorption         |
-   |                                   | features.                         |
-   |                                   |                                   |
-   |                                   |                                   |
-   +-----------------------------------+-----------------------------------+
-   | *\_a                              | Highest abundance (highest BVLS   |
-   | bundance_unmix_best_unmix_coleur* | fraction) sorted color map.       |
-   |                                   |                                   |
-   |                                   |                                   |
-   +-----------------------------------+-----------------------------------+
-   | **\_abundance_unmix_\_            | The (BVLS unmixing) abundance map |
-   | best_unmix_coleur_class_geotiff** | result.                           |
-   |                                   |                                   |
-   |                                   | Standard RGB color maps assigned  |
-   |                                   | from the sorted Band 1 of the     |
-   |                                   | best_unmix (highest BVLS          |
-   |                                   | fraction) results using the .csv  |
-   |                                   | color file. It can be directly    |
-   |                                   | viewed with the image viewer of   |
-   |                                   | your choice.                      |
-   |                                   |                                   |
-   |                                   | Class images,can be used for a    |
-   |                                   | quick legend generation within    |
-   |                                   | the QGIS map composer.            |
-   |                                   |                                   |
-   |                                   |                                   |
-   +-----------------------------------+-----------------------------------+
++-----------------------------------+-----------------------------------+
+| *\_correlation_result*            | Raw correlation scores from the   |
+|                                   | spectral module for               |
+|                                   | characteristic absorption         |
+|                                   | features.                         |
+|                                   |                                   |
+|                                   |                                   |
++-----------------------------------+-----------------------------------+
+| *\_best_matches_best_fit_coleur*  | Results relating to the highest   |
+|                                   | correlation score. The data       |
+|                                   | product is based on sorted        |
+|                                   | correlation scores (the first     |
+|                                   | band contains the highest score   |
+|                                   | values, the second the second     |
+|                                   | highest scores and so on)         |
+|                                   |                                   |
+|                                   |                                   |
++-----------------------------------+-----------------------------------+
+| **                                | The material / geological         |
+| \_best_fit_coleur_class_geotiff** | classification thematic map       |
+|                                   |                                   |
+|                                   | Standard RGB color maps assigned  |
+|                                   | from the sorted Band 1 of the     |
+|                                   | best_matches results using the    |
+|                                   | .csv colorfile. It can be         |
+|                                   | directly viewed with the image    |
+|                                   | viewer of your choice.            |
+|                                   |                                   |
+|                                   | Class images,can be used for a    |
+|                                   | quick legend generation within    |
+|                                   | the QGIS map composer.            |
+|                                   |                                   |
+|                                   |                                   |
++-----------------------------------+-----------------------------------+
+| *\_abundance_result*              | Raw B\ ounded V\ alue L\ east     |
+|                                   | S\ quares (BVLS) unmixing scores  |
+|                                   | from the spectral module for      |
+|                                   | characteristic absorption         |
+|                                   | features.                         |
+|                                   |                                   |
+|                                   |                                   |
++-----------------------------------+-----------------------------------+
+| *\_a                              | Highest abundance (highest BVLS   |
+| bundance_unmix_best_unmix_coleur* | fraction) sorted color map.       |
+|                                   |                                   |
+|                                   |                                   |
++-----------------------------------+-----------------------------------+
+| **\_abundance_unmix_\_            | The (BVLS unmixing) abundance map |
+| best_unmix_coleur_class_geotiff** | result.                           |
+|                                   |                                   |
+|                                   | Standard RGB color maps assigned  |
+|                                   | from the sorted Band 1 of the     |
+|                                   | best_unmix (highest BVLS          |
+|                                   | fraction) results using the .csv  |
+|                                   | color file. It can be directly    |
+|                                   | viewed with the image viewer of   |
+|                                   | your choice.                      |
+|                                   |                                   |
+|                                   | Class images,can be used for a    |
+|                                   | quick legend generation within    |
+|                                   | the QGIS map composer.            |
+|                                   |                                   |
+|                                   |                                   |
++-----------------------------------+-----------------------------------+
 
 
 5. Acknowledgements
