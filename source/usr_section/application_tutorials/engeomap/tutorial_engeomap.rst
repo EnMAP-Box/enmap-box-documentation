@@ -11,7 +11,7 @@ Contributions: Christian Mielke-, Friederike Koerting, Friederike Klos,
 Christian Rogass, Nina K. Boesche, Agnieszka Kuras, Christopher Loy
 
 **Introduction to EnGeoMAP 3.1**
---------------------------------
+---------------------------------
 
 The EnMAP geological mapper (EnGeoMAP), as part of the EnMAP Box, is
 an expert-system-based tool for the processing and characterization
@@ -277,17 +277,12 @@ Hyperspectral Mineral Identification for the German EnMAP Space
 Mission.
 
 Literature
+------------
 
-   1. Mielke, C.; Rogass, C.; Boesche, N.; Segl, K.; Altenberger, U.
-      EnGeoMAP 2.0—Automated Hyperspectral Mineral Identification for
-      the German EnMAP Space Mission. Remote Sens. 2016, 8, 127.
-   2. Clark, R.N.; Swayze, G.A.; Livo, K.E.; Kokaly, R.F.; Sutley, S.J.;
-      Dalton, J.B.; McDougal, R.R.; Gent, C.A. Imaging spectroscopy:
-      Earth and planetary remote sensing with the USGS Tetracorder and
-      expert systems. J. Geophys. Res. Planets 2003, 108.
-   3. Kokaly, R.F. Spectroscopic remote sensing for material
-      identification, vegetation characterization, and mapping. Proc.
-      SPIE 2012, 8390.
-   4. Clark, R.N.; Swayze, G.A.; Wise, R.; Livo, E.; Hoefen, T.M.;
-      Kokaly, R.F.; Sutley, S.J. USGS Digital Spectral Library Splib06a;
-      U.S. Geological Survey: Denver, CO, USA, 2007.
+1. Mielke, C.; Rogass, C.; Boesche, N.; Segl, K.; Altenberger, U. EnGeoMAP 2.0—Automated Hyperspectral Mineral Identification for the German EnMAP Space Mission. Remote Sens. 2016, 8, 127.
+
+2. Clark, R.N.; Swayze, G.A.; Livo, K.E.; Kokaly, R.F.; Sutley, S.J.; Dalton, J.B.; McDougal, R.R.; Gent, C.A. Imaging spectroscopy: Earth and planetary remote sensing with the USGS Tetracorder and expert systems. J. Geophys. Res. Planets 2003, 108.
+
+3. Kokaly, R.F. Spectroscopic remote sensing for material identification, vegetation characterization, and mapping. Proc. SPIE 2012, 8390.
+   
+4. Clark, R.N.; Swayze, G.A.; Wise, R.; Livo, E.; Hoefen, T.M.; Kokaly, R.F.; Sutley, S.J. USGS Digital Spectral Library Splib06a; U.S. Geological Survey: Denver, CO, USA, 2007.
