@@ -210,8 +210,8 @@ overview of the data products and suffixes.
 |                                   |                                   |
 +-----------------------------------+-----------------------------------+
 |                                   | The material / geological         |
-| *\_best_fit_coleur*               | classification thematic map       |
-|  * _class_geotiff*                |                                   |
+| *\_best_fit_coleur_class_geotiff* | classification thematic map       |
+|                                   |                                   |
 |                                   | Standard RGB color maps assigned  |
 |                                   | from the sorted Band 1 of the     |
 |                                   | best_matches results using the    |
