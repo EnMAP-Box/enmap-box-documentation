@@ -158,7 +158,7 @@ in the subsequent notification window.
 A status indicator in the lower right corner shows if the software is
 still processing the data or is ready to process new data.
 
-.. figure::  img/fig4.png
+.. figure::  img/fig4_0.png
 
 Figure 4: The graphical user interface (GUI) of EnGeoMAP 3.1.
 
