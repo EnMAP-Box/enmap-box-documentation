@@ -272,12 +272,11 @@ version 3.1) by Helge L. C. Daempfling.
  ------------------
 
 For theoretical background information on EnGeoMAP algorithm please
-consider reading Mielke et al. (2016) EnGeoMAP 2.0—Automated
+consider reading Mielke et al. (2016) EnGeoMAP 2.0 Automated
 Hyperspectral Mineral Identification for the German EnMAP Space
 Mission.
 
 Literature
-----------
 
    1. Mielke, C.; Rogass, C.; Boesche, N.; Segl, K.; Altenberger, U.
       EnGeoMAP 2.0—Automated Hyperspectral Mineral Identification for
