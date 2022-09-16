@@ -19,7 +19,7 @@ of geologic surface cover types from hyperspectral data in general
 and EnMAP satellite data in particular. The EnGeoMAP 3.1 algorithm is
 based on EnGeoMAP 2.0, developed by Christian Mielke (Mielke et al., 2016).
 
-EnGeoMAP3.1 is optimized for Windows 10 and 11 and the Windows version of QGIS (LTS).
+EnGeoMAP 3.1 is optimized for Windows 10 and 11 and the Windows version of QGIS (LTS).
 
 The software requires a hyperspectral reflectance data cube, a
 spectral library with user-defined endmembers, and a user-supplied
@@ -31,30 +31,23 @@ EnGeoMAPhas been primarily designed for EnMAP data, yet it works for
 most full-range hyperspectral sensor suites, provided that VNIR and
 SWIR data are all available.
 
-.. rubric:: 1.   Data Preparation andRequirements
-   :name: data-preparation-and-requirements
-   ----------------------------------------
+=====================================
+1.   Data Preparation andRequirements
+=====================================
 
 *Hyperspectral Data:*
+---------------------
 
 The hyperspectral data cubes must be in the Band Sequential (BSQ)
 format conforming to L3Harris ENVI header file information (.hdr)
 
-   - Overlapping bands need to be removed from the dataset i.e.,
-   the wavelength succession vector in the header files need to be
-   strictly ascending.
+- Overlapping bands need to be removed from the dataset i.e., the wavelength succession vector in the header files need to be strictly ascending.
    
-   - Clipping and interpolation are required in both strong water
-   vapor residuals at 940 nm and 1130 nm to assure an artifact-reduced
-   analysis result.
+- Clipping and interpolation are required in both strong water vapor residuals at 940 nm and 1130 nm to assure an artifact-reduced analysis result.
 
-   - Nanometer (nm) is the recommended wavelength unit, and the
-   floating-point or unsigned integer (ranging from 0-10000, as is
-   common for many imaging spectrometers) is recommended for the
-   reflectance values.
+- Nanometer (nm) is the recommended wavelength unit, and the floating-point or unsigned integer (ranging from 0-10000, as is common for many imaging spectrometers) is recommended for the reflectance values.
 
-   - Adaptive filtering is suggested to further reduce noise and
-   artifacts from reflectance data.
+- Adaptive filtering is suggested to further reduce noise and artifacts from reflectance data.
 
 
 *Spectral Library Files:*
