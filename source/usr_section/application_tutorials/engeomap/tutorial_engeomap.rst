@@ -103,7 +103,7 @@ editor. Here the legend includes four different endmembers.
 
 Test data for EnGeoMAP can be downloaded here:
 
-https://nextcloud.gfz-potsdam.de/s/oWF6GHdRGBk4e6y
+' https://nextcloud.gfz-potsdam.de/s/oWF6GHdRGBk4e6y ' 
 
 The dataset contains a hyperspectral EO-1 Hyperion image data cube
 which was acquired over the Gamsberg Mine (South Africa) prior to its
@@ -266,7 +266,7 @@ Current version GUI and algorithm product adjustments (EnGeoMAP
 version 3.1) by Helge L. C. Daempfling.
 
  6. Further Reading
- -------------------
+--------------------
 
 For theoretical background information on EnGeoMAP algorithm please
 consider reading Mielke et al. (2016) EnGeoMAP 2.0 Automated
