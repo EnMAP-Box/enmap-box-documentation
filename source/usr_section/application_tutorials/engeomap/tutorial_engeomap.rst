@@ -132,12 +132,11 @@
 
    Test data for EnGeoMAP can be downloaded here:
 
-   https://nextcloud.gfz-potsdam.de/s/y4FsWzSPBpAW4Aj
+   https://nextcloud.gfz-potsdam.de/s/oWF6GHdRGBk4e6y
 
    The dataset contains a hyperspectral EO-1 Hyperion image data cube
    which was acquired over the Gamsberg Mine (South Africa) prior to its
-   opening, a field-based spectral library with the header file adjusted
-   (set to ENVI Standard), and a CSV color file defining the color codes
+   opening, a field-based spectral library, and a CSV color file defining the color codes
    of each endmember for visual representation.
 
    .. rubric:: 2. How to use/run the EnGeoMAP toolbox
