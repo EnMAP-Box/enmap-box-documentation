@@ -46,173 +46,154 @@ format conforming to L3Harris ENVI header file information (.hdr)
    
 - Clipping and interpolation are required in both strong water vapor residuals at 940 nm and 1130 nm to assure an artifact-reduced analysis result.
 
-- Nanometer (nm) is the recommended wavelength unit, and the floating-point or unsigned integer (ranging from 0-10000, as is common for many imaging spectrometers) is recommended for the reflectance values.
+- Nanometer (nm) is the recommended wavelength unit, and the floating-point or unsigned integer (ranging from 0-10000, as is common for many imaging spectrometers) is recommended for the reflectance values.
 
-- Adaptive filtering is suggested to further reduce noise and artifacts from reflectance data.
+- Adaptive filtering is suggested to further reduce noise and artifacts from reflectance data.
 
-
+=====================================
 *Spectral Library Files:*
--------------------------
+=====================================
 
-   The spectral library files also must be in Band Sequential (BSQ)
-   format according to the L3Harris ENVI header file information (.hdr).
-   The necessary spectral library files can be prepared with the EnMAP
-   Box spectral library wizard or with any other software that is able
-   to write spectral library files in band sequential (BSQ) format. The
-   entries of the spectral library are plotted according to the RGB
-   color code from the CSV file (see the RGB Color Scheme CSV file
-   section).
+The spectral library files also must be in Band Sequential (BSQ)
+format according to the L3Harris ENVI header file information (.hdr).
+The necessary spectral library files can be prepared with the EnMAP
+Box spectral library wizard or with any other software that is able
+to write spectral library files in band sequential (BSQ) format. The
+entries of the spectral library are plotted according to the RGB
+color code from the CSV file (see the RGB Color Scheme CSV file
+section).
 
-   -      Overlapping bands need to be removed from the dataset i.e.,
-   the wavelength succession vector in the header files need to be
+- Overlapping bands need to be removed from the dataset i.e., the wavelength succession vector in the header files need to be
    strictly ascending.
 
-    
+- For field-measured spectral libraries: Clipping and interpolation are required both strong water vapor residuals at 940 nm and at 1130 nm to assure an artifact-reduced analysis result.
 
-   -      For field-measured spectral libraries: Clipping and
-   interpolation are required both strong water vapor residuals at 940
-   nm and at 1130 nm to assure an artifact-reduced analysis result.
+- Nanometer (nm) is recommended as wavelength unit, as well as float or an unsigned integer from 0-10000 (standard for many imaging spectrometers) for the reflectance values.
 
-    
-
-   -      Nanometer (nm) is recommended as wavelength unit, as well as
-   float or an unsigned integer from 0-10000 (standard for many imaging
-   spectrometers) for the reflectance values.
-
-    
-
-   -      Adaptive filtering is suggested to further reduce noise and
+- Adaptive filtering is suggested to further reduce noise and
    artifacts.
 
-    
-
-   -      The spectral library should be resampled to the spectral
+- The spectral library should be resampled to the spectral
    resolution of the reflectance data cube for the two datasets to match
    spectrally.
 
-    
+=====================================
+*RGB Color Scheme CSV file:*
+=====================================  
 
-   *RGB Color Scheme CSV file:*
-   
-
-   The RGB (R\ ed, G\ reen, B\ lue) color scheme needs to be provided by
-   the user in a CSV file format (UTF-8). The entries have to be in the
-   right order and matching to the entries of the spectral library.
-   Through the CSV color file, the user can choose the colors with which
-   EnGeoMAP classifies the according library entries in the
-   hyperspectral image. There are several online tools available to
-   visualize RGB color code for a preview of the chosen colors. CSV
-   files can either be edited with a standard text editor (Figure 1) or
-   spreadsheet editor (Figure 2).
+The RGB (R\ ed, G\ reen, B\ lue) color scheme needs to be provided by
+the user in a CSV file format (UTF-8). The entries have to be in the
+right order and matching to the entries of the spectral library.
+Through the CSV color file, the user can choose the colors with which
+EnGeoMAP classifies the according library entries in the
+hyperspectral image. There are several online tools available to
+visualize RGB color code for a preview of the chosen colors. CSV
+files can either be edited with a standard text editor (Figure 1) or
+spreadsheet editor (Figure 2).
 
 .. figure::  img/fig1.png
 
-   Figure 1: Color scheme CSV file example opened in a text editor. Here
-   the legend includes four different endmembers.
+Figure 1: Color scheme CSV file example opened in a text editor. Here the legend includes four different endmembers.
 
 .. figure::  img/fig2.png
 
-   Figure2: Color scheme CSV file example opened in a spreadsheet
-   editor. Here the legend includes four different endmembers.
+Figure2: Color scheme CSV file example opened in a spreadsheet
+editor. Here the legend includes four different endmembers.
 
-    
+===================================== 
+*Example / Test Data:*
+===================================== 
 
-   *Example / Test Data:*
-   
-
-   Test data for EnGeoMAP can be downloaded here:
+Test data for EnGeoMAP can be downloaded here:
 
    https://nextcloud.gfz-potsdam.de/s/oWF6GHdRGBk4e6y
 
-   The dataset contains a hyperspectral EO-1 Hyperion image data cube
-   which was acquired over the Gamsberg Mine (South Africa) prior to its
-   opening, a field-based spectral library, and a CSV color file defining the color codes
-   of each endmember for visual representation.
+The dataset contains a hyperspectral EO-1 Hyperion image data cube
+which was acquired over the Gamsberg Mine (South Africa) prior to its
+opening, a field-based spectral library, and a CSV color file defining the color codes
+of each endmember for visual representation.
 
-   .. rubric:: 2. How to use/run the EnGeoMAP toolbox
-      :name: how-to-userun-the-engeomap-toolbox
+2. How to use/run the EnGeoMAP toolbox
+--------------------------------------
+      
 
-   Figure 3 shows how you get access to the EnGeoMAP toolbox.
+Figure 3 shows how you get access to the EnGeoMAP toolbox.
 
-    
 .. figure::  img/fig3.png
 
-   Figure 3: Access to EnGeoMAP.
+Figure 3: Access to EnGeoMAP.
 
-    
 
-    
+The EnMAP-Box provides a graphical user interface (GUI) for EnGeoMAP
+3.1 (Figure 4). The three main input fields for the location of the
+user input files comprises:
 
-   The EnMAP-Box provides a graphical user interface (GUI) for EnGeoMAP
-   3.1 (Figure 4). The three main input fields for the location of the
-   user input files comprises:
+- The hyperspectral image data
 
-   -      The hyperspectral image data
+- The spectral library file
 
-   -      The spectral library file
+- The CSV color file
 
-   -      The CSV color file
+Note: For the hyperspectral data and the library file only the path
+to the main files are required. The header (.hdr) files need to be in
+the same folder as the reflectance data files and are loaded
+automatically by the software. Choosing the header files in the data
+selection will lead to an error.
 
-   Note: For the hyperspectral data and the library file only the path
-   to the main files are required. The header (.hdr) files need to be in
-   the same folder as the reflectance data files and are loaded
-   automatically by the software. Choosing the header files in the data
-   selection will lead to an error.
+The user can choose the minimum reflectance threshold in the VNIR and
+SWIR regions. The values should be chosen depending on the noisiness
+of the data. They should be as low as possible for data with a good
+SNR. - Standard settings are recommended according to Fig. 5.
 
-   The user can choose the minimum reflectance threshold in the VNIR and
-   SWIR regions. The values should be chosen depending on the noisiness
-   of the data. They should be as low as possible for data with a good
-   SNR. - Standard settings are recommended according to Fig. 5.
+The minimum fit threshold sets the lower cutoff value for the minimum
+acceptable valid spectral correlation value between the image
+spectrum and the library spectra. Values below this threshold are set
+to zero.
 
-   The minimum fit threshold sets the lower cutoff value for the minimum
-   acceptable valid spectral correlation value between the image
-   spectrum and the library spectra. Values below this threshold are set
-   to zero.
+For the unmixing data products, the maximum number of endmembers
+needs to be set by the user. The default is set to 10 (see Results
+section). This number should not exceed the total number of
+endmembers embedded in the spectral library file.
 
-   For the unmixing data products, the maximum number of endmembers
-   needs to be set by the user. The default is set to 10 (see Results
-   section). This number should not exceed the total number of
-   endmembers embedded in the spectral library file.
+Processing is started by pressing the OK button and then pressing OK
+in the subsequent notification window.
 
-   Processing is started by pressing the OK button and then pressing OK
-   in the subsequent notification window.
-
-   A status indicator in the lower right corner shows if the software is
-   still processing the data or is ready to process new data.
-
+A status indicator in the lower right corner shows if the software is
+still processing the data or is ready to process new data.
 
 .. figure::  img/fig4.png
 
-   Figure 4: The graphical user interface (GUI) of EnGeoMAP 3.1.
+Figure 4: The graphical user interface (GUI) of EnGeoMAP 3.1.
 
-   .. rubric:: 4. The Results
-      :name: the-results
 
-   The preprocessing module within EnGeoMAP extracts the characteristic
-   absorption features of the input spectra (Figure 5). These features
-   are then used in a weighted fitting operation in the spectral module
-   to calculate the material similarity scores of the unknown pixel
-   spectrum compared to the reference library. According to those fit
-   values, a user defined minimum fit threshold may now be applied to
-   only use those library spectra in a B\ ounded V\ alue L\ east
-   S\ quares (BVLS) unmixing meeting the user-defined threshold (see
-   Figure 4 option: Minimum Fit Threshold Weighted Fitting). The
-   resulting unmixing as well as the correlation data cube are then
-   sorted in descending order.
+4. The Results
+--------------
 
-   The first band of each of the sorted results is then used in the
-   spatial module together with the CSV file to provide a color-coded
-   best fit (highest correlation score) material map and highest
-   abundance (highest BVLS fraction) map.
+The preprocessing module within EnGeoMAP extracts the characteristic
+absorption features of the input spectra (Figure 5). These features
+are then used in a weighted fitting operation in the spectral module
+to calculate the material similarity scores of the unknown pixel
+spectrum compared to the reference library. According to those fit
+values, a user defined minimum fit threshold may now be applied to
+only use those library spectra in a B\ ounded V\ alue L\ east
+S\ quares (BVLS) unmixing meeting the user-defined threshold (see
+Figure 4 option: Minimum Fit Threshold Weighted Fitting). The
+resulting unmixing as well as the correlation data cube are then
+sorted in descending order.
+
+The first band of each of the sorted results is then used in the
+spatial module together with the CSV file to provide a color-coded
+best fit (highest correlation score) material map and highest
+abundance (highest BVLS fraction) map.
    
 .. figure::  img/fig5.png
 
-   Figure 5: Basic processing workflow for EnGeoMAP 3.1 with modules,
-   input and output highlighted.
+Figure 5: Basic processing workflow for EnGeoMAP 3.1 with modules,
+input and output highlighted.
 
-   EnGeoMAP3.1 provides  6 data products which are identifiable by their
-   suffixes to the original filename (basename). See Table 1 for an
-   overview of the data products and suffixes.
+EnGeoMAP3.1 provides  6 data products which are identifiable by their
+suffixes to the original filename (basename). See Table 1 for an
+overview of the data products and suffixes.
 
    +-----------------------------------+-----------------------------------+
    | *\_correlation_result*            | Raw correlation scores from the   |
@@ -279,30 +260,24 @@ format conforming to L3Harris ENVI header file information (.hdr)
    |                                   |                                   |
    +-----------------------------------+-----------------------------------+
 
-   .. rubric::
-      :name: section
 
-    
+5. Acknowledgements
+-------------------
 
-   .. rubric:: 5. Acknowledgements
-      :name: acknowledgements
+Algorithm, Python code, and GUI was developed by Christian Mielke.
+Current version GUI and algorithm product adjustments (EnGeoMAP
+version 3.1) by Helge L. C. Daempfling.
 
-   Algorithm, Python code, and GUI was developed by Christian Mielke.
-   Current version GUI and algorithm product adjustments (EnGeoMAP
-   version 3.1) by Helge L. C. Daempfling.
+ 6. Further Reading
+ ------------------
 
-   .. rubric:: 6. Further Reading
-      :name: further-reading
+For theoretical background information on EnGeoMAP algorithm please
+consider reading Mielke et al. (2016) EnGeoMAP 2.0—Automated
+Hyperspectral Mineral Identification for the German EnMAP Space
+Mission.
 
-   For theoretical background information on EnGeoMAP algorithm please
-   consider reading Mielke et al. (2016) EnGeoMAP 2.0—Automated
-   Hyperspectral Mineral Identification for the German EnMAP Space
-   Mission.
-
-    
-
-   .. rubric:: Literature
-      :name: literature
+Literature
+----------
 
    1. Mielke, C.; Rogass, C.; Boesche, N.; Segl, K.; Altenberger, U.
       EnGeoMAP 2.0—Automated Hyperspectral Mineral Identification for
