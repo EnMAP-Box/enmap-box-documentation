@@ -118,12 +118,12 @@
    files can either be edited with a standard text editor (Figure 1) or
    spreadsheet editor (Figure 2).
 
-.. figure::  img/fig1.PNG
+.. figure::  img/fig1.png
 
    Figure 1: Color scheme CSV file example opened in a text editor. Here
    the legend includes four different endmembers.
 
-.. figure::  img/fig2.PNG
+.. figure::  img/fig2.png
 
    Figure2: Color scheme CSV file example opened in a spreadsheet
    editor. Here the legend includes four different endmembers.
@@ -147,7 +147,7 @@
    Figure 3 shows how you get access to the EnGeoMAP toolbox.
 
     
-.. figure::  img/fig3.PNG
+.. figure::  img/fig3.png
 
    Figure 3: Access to EnGeoMAP.
 
@@ -193,7 +193,7 @@
    still processing the data or is ready to process new data.
 
 
-.. figure::  img/fig4.PNG
+.. figure::  img/fig4.png
 
    Figure 4: The graphical user interface (GUI) of EnGeoMAP 3.1.
 
@@ -217,7 +217,7 @@
    best fit (highest correlation score) material map and highest
    abundance (highest BVLS fraction) map.
    
-.. figure::  img/fig5.PNG
+.. figure::  img/fig5.png
 
    Figure 5: Basic processing workflow for EnGeoMAP 3.1 with modules,
    input and output highlighted.
