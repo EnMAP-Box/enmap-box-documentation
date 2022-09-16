@@ -233,8 +233,9 @@ overview of the data products and suffixes.
 |                                   |                                   |
 |                                   |                                   |
 +-----------------------------------+-----------------------------------+
-| *\_a                              | Highest abundance (highest BVLS   |
-| bundance_unmix_best_unmix_coleur* | fraction) sorted color map.       |
+| *\_abundance_unmix_best_unmix     | Highest abundance (highest BVLS   |
+|   _coleur*                        | fraction) sorted color map.       |
+|                                   |                                   |
 |                                   |                                   |
 |                                   |                                   |
 +-----------------------------------+-----------------------------------+
