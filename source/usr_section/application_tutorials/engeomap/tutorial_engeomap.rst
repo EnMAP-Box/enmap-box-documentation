@@ -1,13 +1,11 @@
-*
+
    
-   ******************************************************************
-   EnGeoMAP 3.1 Tutorial
-   ******************************************************************
+   
+  *EnGeoMAP**\ **3.1 Tutorial**
 
-   =================================================================
-   The EnMAP Geological Mapper for Mineral Classification (EnGeoMAP)
-   =================================================================
-
+   **EnGeoMAP**\ **3.1 the EnMAP Geological Mapper for Mineral
+   Classification (EnGeoMAP)**
+  
    Authors: Helge L. C. Daempfling, Nicole Köllner, Saeid Asadzadeh
 
    Contributions: Christian Mielke-, Friederike Koerting, Friederike
