@@ -7,7 +7,7 @@ EnGeoMAP 3.1 Tutorial
 
 Authors: Helge L. C. Daempfling, Nicole Köllner, Saeid Asadzadeh
 
-Contributions: Christian Mielke-, Friederike Koerting, Friederike Klos,
+Contributions: Christian Mielke, Friederike Koerting, Friederike Klos,
 Christian Rogass, Nina K. Boesche, Agnieszka Kuras, Christopher Loy
 
 **Introduction to EnGeoMAP 3.1**
