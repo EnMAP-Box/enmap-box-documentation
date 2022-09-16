@@ -70,12 +70,9 @@ section).
 
 - Nanometer (nm) is recommended as wavelength unit, as well as float or an unsigned integer from 0-10000 (standard for many imaging spectrometers) for the reflectance values.
 
-- Adaptive filtering is suggested to further reduce noise and
-   artifacts.
+- Adaptive filtering is suggested to further reduce noise and artifacts.
 
-- The spectral library should be resampled to the spectral
-   resolution of the reflectance data cube for the two datasets to match
-   spectrally.
+- The spectral library should be resampled to the spectral resolution of the reflectance data cube for the two datasets to match spectrally.
 
 =====================================
 *RGB Color Scheme CSV file:*
@@ -106,7 +103,7 @@ editor. Here the legend includes four different endmembers.
 
 Test data for EnGeoMAP can be downloaded here:
 
-   https://nextcloud.gfz-potsdam.de/s/oWF6GHdRGBk4e6y
+https://nextcloud.gfz-potsdam.de/s/oWF6GHdRGBk4e6y
 
 The dataset contains a hyperspectral EO-1 Hyperion image data cube
 which was acquired over the Gamsberg Mine (South Africa) prior to its
@@ -262,14 +259,14 @@ overview of the data products and suffixes.
 
 
 5. Acknowledgements
--------------------
+--------------------
 
 Algorithm, Python code, and GUI was developed by Christian Mielke.
 Current version GUI and algorithm product adjustments (EnGeoMAP
 version 3.1) by Helge L. C. Daempfling.
 
  6. Further Reading
- ------------------
+ -------------------
 
 For theoretical background information on EnGeoMAP algorithm please
 consider reading Mielke et al. (2016) EnGeoMAP 2.0 Automated
