@@ -3,40 +3,33 @@ EnGeoMAP 3.1 Tutorial
 ******************************************************************
    
 
+**EnGeoMAP**\ **3.1 the EnMAP Geological Mapper for Mineral Classification (EnGeoMAP)**
 
-   **EnGeoMAP**\ **3.1 the EnMAP Geological Mapper for Mineral
-   Classification (EnGeoMAP)**
-  
-   Authors: Helge L. C. Daempfling, Nicole Köllner, Saeid Asadzadeh
+Authors: Helge L. C. Daempfling, Nicole Köllner, Saeid Asadzadeh
 
-   Contributions: Christian Mielke-, Friederike Koerting, Friederike
-   Klos, Christian Rogass, Nina K. Boesche, Agnieszka Kuras, Christopher
-   Loy
+Contributions: Christian Mielke-, Friederike Koerting, Friederike Klos, 
+Christian Rogass, Nina K. Boesche, Agnieszka Kuras, Christopher Loy
 
-    
+**Introduction to EnGeoMAP 3.1**
+--------------------------------
 
-   **Introduction to EnGeoMAP 3.1**
+The EnMAP geological mapper (EnGeoMAP), as part of the EnMAP Box, is
+an expert-system-based tool for the processing and characterization
+of geologic surface cover types from hyperspectral data in general
+and EnMAP satellite data in particular. The EnGeoMAP 3.1 algorithm is
+based on EnGeoMAP 2.0, developed by Christian Mielke (Mielke et al., 2016).
 
+EnGeoMAP3.1 is optimized for Windows 10 and 11 and the Windows version of QGIS (LTS).
 
-   The EnMAP geological mapper (EnGeoMAP), as part of the EnMAP Box, is
-   an expert-system-based tool for the processing and characterization
-   of geologic surface cover types from hyperspectral data in general
-   and EnMAP satellite data in particular. The EnGeoMAP 3.1 algorithm is
-   based on EnGeoMAP 2.0, developed by Christian Mielke (Mielke et al.,
-   2016).
+The software requires a hyperspectral reflectance data cube, a
+spectral library with user-defined endmembers, and a user-supplied
+color scheme as inputs to run. The software then classifies the
+hyperspectral data based on the provided endmembers and represents it
+according to the supplied color scheme.
 
-   EnGeoMAP3.1 is optimized for Windows 10 and 11 and the Windows
-   version of QGIS (LTS).
-
-   The software requires a hyperspectral reflectance data cube, a
-   spectral library with user-defined endmembers, and a user-supplied
-   color scheme as inputs to run. The software then classifies the
-   hyperspectral data based on the provided endmembers and represents it
-   according to the supplied color scheme.
-
-   EnGeoMAPhas been primarily designed for EnMAP data, yet it works for
-   most full-range hyperspectral sensor suites, provided that VNIR and
-   SWIR data are all available.
+EnGeoMAPhas been primarily designed for EnMAP data, yet it works for
+most full-range hyperspectral sensor suites, provided that VNIR and
+SWIR data are all available.
 
    .. rubric:: 1.   Data Preparation andRequirements
       :name: data-preparation-and-requirements
