@@ -17,7 +17,7 @@
     
 
    **Introduction to EnGeoMAP 3.1**
-   --------------------------------
+
 
    The EnMAP geological mapper (EnGeoMAP), as part of the EnMAP Box, is
    an expert-system-based tool for the processing and characterization
@@ -43,7 +43,7 @@
       :name: data-preparation-and-requirements
 
    *Hyperspectral Data:*
-   ---------------------
+
 
    The hyperspectral data cubes must be in the Band Sequential (BSQ)
    format conforming to L3Harris ENVI header file information (.hdr)
@@ -73,7 +73,6 @@
     
 
    *Spectral Library Files:*
-   -------------------------
 
    The spectral library files also must be in Band Sequential (BSQ)
    format according to the L3Harris ENVI header file information (.hdr).
@@ -114,7 +113,7 @@
     
 
    *RGB Color Scheme CSV file:*
-   ----------------------------
+   
 
    The RGB (R\ ed, G\ reen, B\ lue) color scheme needs to be provided by
    the user in a CSV file format (UTF-8). The entries have to be in the
@@ -139,7 +138,7 @@
     
 
    *Example / Test Data:*
-   ----------------------
+   
 
    Test data for EnGeoMAP can be downloaded here:
 
