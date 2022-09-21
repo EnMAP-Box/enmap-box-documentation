@@ -26,9 +26,11 @@ In addition to the two guidelines mentioned above, we have developed some simple
 Basic inline markup
 ~~~~~~~~~~~~~~~~~~~
 
-* *text* (italics) to emphasize something
-* **text** (bold) to emphasize something strongly
-* ``text`` (2 backquotes) for code samples, variables, filenames, etc.
+Use
+
+* on asterisk for *italic text* (``*italic text*``) to emphasize something
+* two asterisk for **bold text** (``**bold text**``) to emphasize something strongly
+* two backquotes for ``code examples`` (````code examples````), variables, filenames, etc.
 
 In addition, when describing a workflow of some algorithm or tool, use the following instructions.
 
@@ -44,8 +46,15 @@ In addition, when describing a workflow of some algorithm or tool, use the follo
 Numbering
 ~~~~~~~~~
 
-If you want to describe a specific workflow or tutorial for the user, use numbering for the individual steps.
-This way it is easier for the user to distinguish between information and actual steps and to follow along easily.
+Use numbering to describe individual steps. This makes it is easier to distinguish
+between information and actual steps and to follow them easily:
+
+.. code-block::
+
+ 1. Enable the *Editing mode* by activating |mActionToggleEditing|.
+ 2. Now you can use the |mActionNewAttribute| button to add a new field (mind the type!)
+ ...
+
 
 .. figure:: /img/numbering_workflow.png
    :width: 100%

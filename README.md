@@ -7,10 +7,18 @@ This repository contains the EnMAP-Box Documentation hosted in https://enmap-box
 The packages in `requirements.txt` need to be installed.
 
 Maintenance scripts in `/scripts` may require additional packages from PyQGIS and the EnMAP-Box source code.
-They require that:
+They may require that:
 - a PyQGIS environment is available, i.e. you can run `import qgis`
-- the EnMAP-Box source code repository (`enmap-box`) is installed into the same folder as this 
-  documentation repository (`enmap-box-documentation`).
+- the EnMAP-Box source code repository (`enmap-box`) is either 
+    
+  a) installed into the same folder
+    ````
+    <repositories>/enmap-box
+                  /enmap-box-documentation
+    ```` 
+  or 
+  
+  b) specified by the environmental variable `ENMAPBOX_REPO=<repositories>/enmap-box`
 
 # Branching
 
@@ -32,5 +40,7 @@ as they are released in the QGIS plugin repository.
 
 # Build the documentation
 
-Open a terminal and run (linux) `make html`, or (windows) `make.bat html`.
+* open a bash shell and run `./scripts/create_docs.sh` (windows/linux bash shell), or 
+* run (linux) `make html`, or (windows) `make.bat html`.
+
 
