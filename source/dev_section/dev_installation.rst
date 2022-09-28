@@ -83,7 +83,7 @@ a) OSGeo4W (Windows)
     * 'Root Directory' (should be your `OSGEO4W` directory)
     * Select Local Package Directory (default)
     * Select Your Internet Connect (default Direct Connection)
-    * Choose A Download Site (default http://download.osgeo.org )
+    * Choose A Download Site (default https://download.osgeo.org )
 
 4. Select Packages to install / update
 
@@ -100,7 +100,7 @@ a) OSGeo4W (Windows)
 2. Setup development environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/src/develop/scripts/OSGeo4W/
+1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/tree/main/scripts/OSGeo4W
    to a local folder, e.g. your windows desktop
 2. Modify the `qgis-env.bat` config section to fit to your local environment, i.e. set the correct paths to your
    local OSGeoW installation and PyCharm executable
@@ -171,7 +171,7 @@ e) Setup Conda (all platforms)
     At this date (2022-01-18) conda is stucked at QGIS 3.18, which the official QGIS is at 3.22
 
 
-The installation of QGIS within a `conda <https://docs.conda.io>`_ /
+The installation of QGIS within a `conda <https://docs.conda.io/en/latest>`_ /
 `anaconda <https://www.anaconda.com/>`_ environment is (almost) the same on macOS, windows or linux. Using conda
 it is often much easier to install additional python packages while admin rights are not required.`
 
@@ -188,7 +188,7 @@ it is often much easier to install additional python packages while admin rights
 
    Depending on the components and applications you like to use, it might be required to install more packages.
    If you cloned the EnMAP-Box repository you can also point to the local :file:`conda_environment.yml`.
-   Edit the ``--name`` or the YAML file itself as you wish. For more information on creating and managing conda environments visit the `conda documentation <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file>`_
+   Edit the ``--name`` or the YAML file itself as you wish. For more information on creating and managing conda environments visit the `conda documentation <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#creating-an-environment-from-an-environment-yml-file>`_
 
 ..
     .. tip::
@@ -218,7 +218,7 @@ it is often much easier to install additional python packages while admin rights
 
 
 
-3.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment>`_
+3.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
     the new environment
 
     .. code-block:: batch
@@ -453,7 +453,7 @@ own source-code documentation as ``.qch`` file as well.
 2.  Download the ``*.qch*`` files which contain:
 
     * the Qt API documentation files: https://github.com/PierreRaybaut/PyQtdoc
-    * the QGIS API documentation  `qgis.qch <https://qgis.org/api/qgis.qch>`_
+    * the QGIS API documentation  `qgis.qch <https://api.qgis.org/api/qgis.qch>`_
 
 
     Go to *Preferences > Add* and add the following ``*.qch`` files
@@ -630,9 +630,9 @@ Debug QGIS with Visual Studio
 References
 ==========
 
-- Git -the simple guide (no deep shit) http://rogerdudler.github.io/git-guide/
+- Git -the simple guide (no deep shit) https://rogerdudler.github.io/git-guide/
 - Qt5 C++ API https://doc.qt.io/qt-5/
-- QGIS C++ API https://qgis.org/api/
+- QGIS C++ API https://api.qgis.org/api/
 - QGIS Python https://qgis.org/pyqgis
 - QGIS Python developer cookbook https://docs.qgis.org/3.4/en/docs/pyqgis_developer_cookbook
 

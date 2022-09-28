@@ -12,7 +12,7 @@ The implementation is based on libsvm. The fit time complexity is more than quad
 
 
 :guilabel:`Regressor` [string]
-    Scikit-learn python code. See `SVR <http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html>`_, `GridSearchCV <http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html>`_, `StandardScaler <http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html>`_ for information on different parameters.
+    Scikit-learn python code. See `SVR <https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html>`_, `GridSearchCV <https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html>`_, `StandardScaler <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html>`_ for information on different parameters.
 
     Default::
 

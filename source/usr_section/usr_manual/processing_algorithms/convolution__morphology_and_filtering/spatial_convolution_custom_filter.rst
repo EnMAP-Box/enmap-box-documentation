@@ -14,7 +14,7 @@ Create a spatial 2D filter kernel from list or array.
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `CustomKernel <http://docs.astropy.org/en/stable/api/astropy.convolution.CustomKernel.html>`_ for information on different parameters.
+    Python code. See `CustomKernel <https://docs.astropy.org/en/stable/en/stable/api/astropy.convolution.CustomKernel.html>`_ for information on different parameters.
 
     Default::
 

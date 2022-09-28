@@ -70,7 +70,7 @@ Publish the EnMAP-Box
 =====================
 
 Official EnMAP-Box plugin *master* versions are named like ``enmapboxplugin.3.3.20190214T1125.main.zip``. They need to be uploaded
-to http://plugins.qgis.org/plugins/ using an OSGeo account.
+to https://plugins.qgis.org/plugins/ using an OSGeo account.
 
 Other versions, e.g. *development snapshots* are named like ``enmapboxplugin.3.3.20190214T1125.develop.zip`` or ``enmapboxplugin.3.3.20190214T1125.my_feature_branch.zip``
 and might be distributed using the repositories download section https://bitbucket.org/hu-geomatics/enmap-box/downloads/.

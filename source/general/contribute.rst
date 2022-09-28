@@ -8,7 +8,7 @@ and particularly developed to handle data from the EnMAP sensor.
 
 The EnMAP-Box source code is hosted in a public git repository at https://github.com/EnMAP-Box/enmap-box.
 
-Approved `QGIS plugin <www.qgis.org>`_ versions (“production releases”) are available in the QGIS Plugin Repository https://plugins.qgis.org/plugins/enmapboxplugin/.
+Approved `QGIS plugin <https://www.qgis.org/en/site>`_ versions (“production releases”) are available in the QGIS Plugin Repository https://plugins.qgis.org/plugins/enmapboxplugin/.
 
 
 The development of the EnMAP-Box is funded within the EnMAP scientific preparation program under the
@@ -206,8 +206,8 @@ Before you create a pull request, please check the following:
 Documentation
 =============
 
-The EnMAP-Box documentation is based on `Sphinx-build reStructured text <http://www.sphinx-doc.org/en/master/>`_
-and hosted at https://enmap-box.readthedocs.io .
+The EnMAP-Box documentation is based on `Sphinx-build reStructured text <https://www.sphinx-doc.org/en/master/>`_
+and hosted at https://enmap-box.readthedocs.io/en/latest .
 
 The documentation source code, i.e. *.rst files, are hosted in the :code:`/source` folder in
 https://github.com/EnMAP-Box/enmap-box-documentation
@@ -256,7 +256,7 @@ Each source code contribution to the central repository should include a referen
         GNU General Public License for more details.
 
         You should have received a copy of the GNU General Public License
-        along with this software. If not, see <http://www.gnu.org/licenses/>.
+        along with this software. If not, see <https://www.gnu.org/licenses/>.
     ***************************************************************************
     """
 

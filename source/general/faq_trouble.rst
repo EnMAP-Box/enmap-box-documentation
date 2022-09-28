@@ -50,7 +50,7 @@ suggest new entries!
   Please cite the EnMAP-Box as::
 
       EnMAP-Box Developers (2019): EnMAP-Box 3 - A QGIS Plugin to process and visualize
-      hyperspectral remote sensing data. https://enmap-box.readthedocs.io
+      hyperspectral remote sensing data. https://enmap-box.readthedocs.io/en/latest
 
   BibTeX:
 
@@ -60,7 +60,7 @@ suggest new entries!
      author = {EnMAP-Box Developers},
      title = {EnMAP-Box 3 - A QGIS Plugin to process and visualize hyperspectral remote sensing data},
      year = 2019,
-     url = {https://enmap-box.readthedocs.io}
+     url = {https://enmap-box.readthedocs.io/en/latest}
      }
 
   For the general idea behind the EnMAP-Box please refer to:
@@ -104,7 +104,7 @@ suggest new entries!
   * default OSGeo4W root directory :guilabel:`Next`
   * local temp directory :guilabel:`Next`
   * direct connection :guilabel:`Next`
-  * Select downloadsite ``http://download.osgeo.ogr`` :guilabel:`Next`
+  * Select downloadsite ``https://download.osgeo.ogr`` :guilabel:`Next`
 
   Then use the textbox to filter, select and install the following packages (see video below for help):
 

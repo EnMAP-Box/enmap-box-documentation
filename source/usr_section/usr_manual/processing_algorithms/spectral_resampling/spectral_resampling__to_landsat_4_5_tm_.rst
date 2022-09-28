@@ -5,7 +5,7 @@ Spectral resampling (to Landsat 4/5 TM)
 ***************************************
 
 Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ by applying `spectral response function <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-response-function>`_ convolution.
-For more information see the `Landsat <https://www.usgs.gov/core-science-systems/nli/landsat/landsat-satellite-missions>`_ missions website.
+For more information see the `Landsat <https://www.usgs.gov/landsat-missions/landsat-satellite-missions>`_ missions website.
 
 **Parameters**
 

@@ -15,7 +15,7 @@ The Gaussian filter is a filter with great smoothing properties. It is isotropic
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `Gaussian1DKernel <http://docs.astropy.org/en/stable/api/astropy.convolution.Gaussian1DKernel.html>`_ for information on different parameters.
+    Python code. See `Gaussian1DKernel <https://docs.astropy.org/en/stable/en/stable/api/astropy.convolution.Gaussian1DKernel.html>`_ for information on different parameters.
 
     Default::
 

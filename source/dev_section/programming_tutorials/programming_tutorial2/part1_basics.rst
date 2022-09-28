@@ -97,7 +97,7 @@ You now learned to:
 
 
 This tutorial addresses GIS and remote sensing people, so let's use the
-`QGIS API <https://qgis.org/api/>`_ to visualize *real world* spatial data.
+`QGIS API <https://api.qgis.org/api/>`_ to visualize *real world* spatial data.
 
 Similar to the Qt framework and its QApplication_, we need to initialize the QGIS API first by
 creating a QgsApplication_. To simplify a couple issues, we use the EnMAP-Box API to do so::
@@ -158,7 +158,7 @@ Of course we can visualize local files like from the EnMAP-Box testdata as well:
 
 
 The canvas CRS can be set to any CRS of choice. This becomes impressive when reprojecting the global google satellite map
-into a non-global UTM Zone, like that for 32N(`EPSG code 32632 <http://spatialreference.org/ref/epsg/32632/>`_)::
+into a non-global UTM Zone, like that for 32N(`EPSG code 32632 <https://spatialreference.org/ref/epsg/32632/>`_)::
 
     from qgis.core import QgsCoordinateReferenceSystem
     canvas.setDestinationCrs(QgsCoordinateReferenceSystem('EPSG:32632'))
@@ -382,7 +382,7 @@ Graphical User Interfaces react on various types of user interactions and inputs
 
 * a text box that changes its background color into red when its input becomes invalid
 
-With Qt, such interactions are often realized with `Signals and Slots <target="_blank" https://doc.qt.io/qt-5/signalsandslots.html>`_ .
+With Qt, such interactions are often realized with `Signals and Slots <https://doc.qt.io/qt-5/signalsandslots.html>`_ .
 All widgets can emit signals to inform other widgets or objects about changes and events. In Qt terminology, functions
 that are triggered by a signal are called *slots*.
 
@@ -682,7 +682,7 @@ we want to collect Spectral Profiles.::
 
 .. tip::
 
-    The function ``enmapbox.gui.utils.loadUi(...)`` enhances the `loadui` described in http://pyqt.sourceforge.net/Docs/PyQt5/designer.html  by
+    The function ``enmapbox.gui.utils.loadUi(...)`` enhances the `loadui` described in https://www.riverbankcomputing.com/static/Docs/PyQt5/designer.html  by
     taking care on QGIS and Python specific issues.
 
 We can now open the `EnMAPBoxWorkshopUI` from python::
@@ -749,7 +749,7 @@ the first exercises.
 In this case we (i) use a widget as a placeholder that is available in the widget box and that (ii) our widget-of-interest inherits from.
 
 In our `EnMAPBoxWorkshopUI` we like to plot spectral profiles for which we use a
-`pyqtgraph.PlotWidget <http://www.pyqtgraph.org/documentation/widgets/plotwidget.html>`_. This widget is not available in
+`pyqtgraph.PlotWidget <https://pyqtgraph.readthedocs.io/en/latest/widgets/plotwidget.html>`_. This widget is not available in
 the widget box, but it inherits from QGraphicsView_. Therefore we can promote our QGraphicView (object name `plotWidget`)
 into a `pyqtgraph.PlotWidget`::
 

@@ -110,7 +110,7 @@ For the sake of simplicity, let's define a simple function and a QgsProcessingAl
     class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
         """
         Exemplary implementation of a QgsProcessingAlgorithm.
-        See https://qgis.org/api/classQgsProcessingAlgorithm.html for API documentation
+        See https://api.qgis.org/api/classQgsProcessingAlgorithm.html for API documentation
         """
         def __init__(self):
             super(ExampleProcessingAlgorithm, self).__init__()
@@ -235,28 +235,28 @@ EMB_APPLICATION_PATH  string                list of directories (separated by ';
 Further links and sources
 =========================
 
-* https://docs.python.org/devguide
+* https://devguide.python.org/
 
 Git for Beginners
 -----------------
 
-* http://rogerdudler.github.io/git-guide/
-* http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf
+* https://rogerdudler.github.io/git-guide/
+* https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf
 
 
 PyQGIS
 ------
 
-* https://www.qgis.org/api/
+* https://api.qgis.org/api/
 * https://webgeodatavore.github.io/pyqgis-samples/
-* http://plugins.qgis.org/planet/
+* https://plugins.qgis.org/planet/
 * https://www.qgis.org/en/site/getinvolved/development/index.html
 
 
 Python Code Documentation
 -------------------------
 
-* http://www.sphinx-doc.org/en/stable/tutorial.html
-* https://docs.python.org/devguide/documenting.html
-* http://docutils.sourceforge.net/rst.html
+* https://www.sphinx-doc.org/en/master/usage/quickstart.html
+* https://devguide.python.org/documenting/
+* https://docutils.sourceforge.io/rst.html
 * https://sphinx-rtd-theme.readthedocs.io/en/latest/index.html
