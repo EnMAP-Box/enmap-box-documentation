@@ -172,7 +172,7 @@ suggest new entries!
   On some systems we experiences problems related to a missing OpenGL support (e.g `Issue #299 <https://bitbucket.org/hu-geomatics/enmap-box/issues/299/image-cube-qt-issues-on-linux>`_)
 
   1. Ensure that you have installed OpenGL drivers that support your graphic card
-  2. Ensure that `PyOpenGL <http://pyopengl.sourceforge.net>`_  is installed::
+  2. Ensure that `PyOpenGL <https://pyopengl.sourceforge.net>`_  is installed::
      $ python3 -m pip install PyOpenGL
   On Linux, it might be necessary to install the Python bindings for QtOpenGL in order to start the Image Cube tool.
 
