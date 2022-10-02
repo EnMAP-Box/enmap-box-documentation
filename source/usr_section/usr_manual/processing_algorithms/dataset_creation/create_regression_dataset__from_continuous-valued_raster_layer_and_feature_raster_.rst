@@ -47,7 +47,7 @@ Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossar
     	Argument type:	band
     	Acceptable values:
     		- Integer value representing an existing raster band number
-    outputClassificationDataset: Output dataset
+    outputRegressionDataset: Output dataset
     	Argument type:	fileDestination
     	Acceptable values:
     		- Path for new file
@@ -56,7 +56,7 @@ Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossar
     Outputs
     ----------------
     
-    outputClassificationDataset: <outputFile>
+    outputRegressionDataset: <outputFile>
     	Output dataset
     
     

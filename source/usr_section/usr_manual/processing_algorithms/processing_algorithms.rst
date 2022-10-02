@@ -10,6 +10,7 @@ Processing Algorithms
     clustering/index.rst
     convolution__morphology_and_filtering/index.rst
     dataset_creation/index.rst
+    debugging/index.rst
     export_data/index.rst
     feature_selection/index.rst
     import_data/index.rst

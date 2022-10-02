@@ -1,7 +1,7 @@
 import json
 
 from enmapbox import initAll
-from enmapbox.exampledata import enmap, landcover_points
+from enmapbox.exampledata import enmap, landcover_point
 from enmapbox.qgispluginsupport.qps.speclib import speclibSettings
 from enmapbox.qgispluginsupport.qps.speclib.core.spectrallibrary import SpectralLibraryUtils
 from enmapbox.qgispluginsupport.qps.speclib.gui.spectrallibrarywidget import SpectralLibraryWidget
@@ -11,7 +11,7 @@ from qgis.core import QgsVectorLayer, QgsApplication, QgsFields
 
 app = start_app()
 initAll()
-lyrV = QgsVectorLayer(landcover_points, 'Landcover')
+lyrV = QgsVectorLayer(landcover_point, 'Landcover')
 
 fields = QgsFields(RASTER_FIELDS)
 for n in ['level_1', 'level_2']:

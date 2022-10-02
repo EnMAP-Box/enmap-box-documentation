@@ -3,7 +3,7 @@ from tut1_app1.core import regressionBasedUnmixing
 
 regressionBasedUnmixing(filename='fraction.bsq',
                         rasterFilename=enmapboxtestdata.enmap,
-                        vectorFilename=enmapboxtestdata.landcover_polygons,
+                        vectorFilename=enmapboxtestdata.landcover_polygon,
                         classAttribute='level_3_id')
 
 if True: # show the result in a viewer

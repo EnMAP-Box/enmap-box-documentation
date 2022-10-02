@@ -29,7 +29,7 @@ A random forest is a meta `estimator <https://enmap-box.readthedocs.io/en/latest
 
 **Command-line usage**
 
-``>qgis_process help enmapbox:FitRandomforestclassifier``::
+``>qgis_process help enmapbox:FitRandomforestclassifier4Modeler``::
 
     ----------------
     Arguments

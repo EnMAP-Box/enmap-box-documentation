@@ -4,7 +4,7 @@
 Regression workflow
 *******************
 
-The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_ workflow combines `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_ fitting, map prediction and accuracy assessment.
+The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_ workflow combines `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_ fitting and map prediction.Optionally, the `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance of the regressor can be assessed.
 
 **Parameters**
 
@@ -18,21 +18,25 @@ The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.htm
 
 
 :guilabel:`Raster layer with features` [raster]
-    A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ used as `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_.
+    A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ used as `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ for mapping. `Regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_ features and raster bands are matched by name. Will be ignored, if map prediction is skipped.
 
 
 :guilabel:`Number of cross-validation folds` [number]
-    The number of folds used for assessing `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance.
+    The number of folds used for assessing `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance. Will be ignored, if the cross-validation performance assessment is skipped.
 
     Default: *10*
 
 
-:guilabel:`Open output report in webbrowser after running algorithm` [boolean]
-    Whether to open the output report in the web browser.
+:guilabel:`Open output cross-validation regressor performance report in webbrowser after running algorithm` [boolean]
+    Whether to open the `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance report in the web browser. Will be ignored, if the cross-validation performance assessment is skipped.
 
     Default: *True*
 
 **Outputs**
+
+
+:guilabel:`Output cross-validation regressor performance report` [fileDestination]
+    Output `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance report file destination.
 
 
 :guilabel:`Output regressor` [fileDestination]
@@ -40,11 +44,7 @@ The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.htm
 
 
 :guilabel:`Output regression layer` [rasterDestination]
-    Raster file destination.
-
-
-:guilabel:`Output regressor performance report` [fileDestination]
-    Output report file destination.
+    Predicted map file destination.
 
 **Command-line usage**
 
@@ -71,12 +71,16 @@ The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.htm
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
-    openReport: Open output report in webbrowser after running algorithm
+    openReport: Open output cross-validation regressor performance report in webbrowser after running algorithm
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    outputRegressorPerformance: Output cross-validation regressor performance report (optional)
+    	Argument type:	fileDestination
+    	Acceptable values:
+    		- Path for new file
     outputRegressor: Output regressor
     	Argument type:	fileDestination
     	Acceptable values:
@@ -85,20 +89,16 @@ The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.htm
     	Argument type:	rasterDestination
     	Acceptable values:
     		- Path for new raster layer
-    outputRegressorPerformance: Output regressor performance report (optional)
-    	Argument type:	fileDestination
-    	Acceptable values:
-    		- Path for new file
     
     ----------------
     Outputs
     ----------------
     
+    outputRegressorPerformance: <outputHtml>
+    	Output cross-validation regressor performance report
     outputRegressor: <outputFile>
     	Output regressor
     outputRegression: <outputRaster>
     	Output regression layer
-    outputRegressorPerformance: <outputHtml>
-    	Output regressor performance report
     
     

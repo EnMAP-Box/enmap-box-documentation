@@ -108,7 +108,7 @@ Convert raster data between different formats, potentially performing some opera
 
 
 :guilabel:`Output options` [string]
-    Output format and creation options.
+    Output format and creation options. The default format is GeoTiff with creation options: INTERLEAVE=BAND, COMPRESS=LZW, TILED=YES, BIGTIFF=YES
 
     Default: **
 

@@ -15,7 +15,7 @@ Processing.initialize()
 # run algorithm
 alg = RegressionBasedUnmixingProcessingAlgorithm()
 io = {alg.P_RASTER: enmapboxtestdata.enmap,
-      alg.P_VECTOR: enmapboxtestdata.landcover_polygons,
+      alg.P_VECTOR: enmapboxtestdata.landcover_polygon,
       alg.P_FIELD: 'level_2_id',
       alg.P_COVERAGE: 0.9,
       alg.P_OVERSAMPLING: 10,
