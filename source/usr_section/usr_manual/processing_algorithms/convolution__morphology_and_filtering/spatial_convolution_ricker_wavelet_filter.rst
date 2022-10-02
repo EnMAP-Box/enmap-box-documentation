@@ -15,7 +15,7 @@ The Ricker Wavelet, or inverted Gaussian-Laplace filter, is a bandpass filter. I
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `RickerWavelet2DKernel <http://docs.astropy.org/en/stable/api/astropy.convolution.RickerWavelet2DKernel.html>`_ for information on different parameters.
+    Python code. See `RickerWavelet2DKernel <https://docs.astropy.org/en/stable/en/stable/api/astropy.convolution.RickerWavelet2DKernel.html>`_ for information on different parameters.
 
     Default::
 

@@ -68,7 +68,7 @@ Here is a test setup using the EnMAP-Box testdata:
 
 .. admonition:: Task
 
-    - Start PyCharm via the `PyCharm Start Script <https://enmap-box.readthedocs.io/en/latest/dev_section/dev_installation.html#ide-start-script>`_.
+    - Start PyCharm via the `PyCharm Start Script <https://enmap-box.readthedocs.io/en/latest/dev_section/dev_installation.html#setup-development-environment>`_.
 
     - Open and run the **test_core.py** script (right click into the editor and click **Run 'test_core'**).
 
@@ -280,7 +280,7 @@ For all ``valid`` pixels, extract the raster ``profiles`` and class fraction ``l
 
 .. tip::
 
-    `Numpy array indexing <https://docs.scipy.org/doc/numpy/user/basics.indexing.html>`_
+    `Numpy array indexing <https://numpy.org/doc/stable/user/basics.indexing.html>`_
     can become quite complex. Get yourself familiarized with it.
 
 
@@ -366,7 +366,7 @@ Write the ``fractionArray`` as a ``fractionRaster`` and set the no data value.
 .. tip::
 
     Get yourself familiarized with the full list of
-    `GDAL Raster Formats <https://www.gdal.org/formats_list.html>`_.
+    `GDAL Raster Formats <https://gdal.org/formats_list.html>`_.
 
 ----
 
@@ -487,7 +487,7 @@ This defines the auto-generated GUI.
 .. tip::
 
     Get yourself familiarized with the full list of QGIS processing parameters.
-    In the `QGIS API Class List <https://qgis.org/api/annotated.html>`_,
+    In the `QGIS API Class List <https://api.qgis.org/api/annotated.html>`_,
     search [Ctrl+F] for the term **QgsProcessingParameter** to find the list of available parameters.
 
     .. image:: pt1/parameter_list.png
@@ -520,7 +520,7 @@ Also note **try-except** idiom, that is used to handle any uncatched exceptions.
 .. tip::
 
     Get yourself familiarized with the full list of evaluation methods.
-    In the `QgsProcessingAlgorithm <https://qgis.org/api/classQgsProcessingAlgorithm.html>`_ documentation,
+    In the `QgsProcessingAlgorithm <https://api.qgis.org/api/classQgsProcessingAlgorithm.html>`_ documentation,
     search [Ctrl+F] for the term **parameterAs** to find the list of available evaluation methods.
 
     .. image:: pt1/parameterAs_list.png
@@ -529,7 +529,7 @@ Also note **try-except** idiom, that is used to handle any uncatched exceptions.
 
 .. tip::
 
-    Get yourself familiarized with the `QgsProcessingFeedback <https://qgis.org/api/classQgsProcessingFeedback.html>`_ class,
+    Get yourself familiarized with the `QgsProcessingFeedback <https://api.qgis.org/api/classQgsProcessingFeedback.html>`_ class,
     which exposes various methods for providing progress feedback from the algorithm to the GUI.
 
 ----

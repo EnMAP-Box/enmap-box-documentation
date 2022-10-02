@@ -8,7 +8,7 @@ Processing Data Types
 Raster
 ======
 
-* Can be any `GDAL readable raster format <https://www.gdal.org/formats_list.html>`_
+* Can be any `GDAL readable raster format <https://gdal.org/formats_list.html>`_
 
 .. Any GDAL readable raster
 .. no data wert wichtig (band-wise) -> hinweis auf metadata editor: auslesen und ändern dieses wertes
@@ -20,7 +20,7 @@ Raster
 Vector
 ======
 
-* Can be any `OGR readable vector format <https://www.gdal.org/ogr_formats.html>`_
+* Can be any `OGR readable vector format <https://gdal.org/ogr_formats.html>`_
 * A vector layer is a list of features, where every feature consists of a geometry and attributes
 .. Layer from any OGR readable vector dataset
 .. brief intro into vector layer (geometry + attribute) = feature

@@ -15,7 +15,7 @@ This kernel models the diffraction pattern of a circular aperture. This kernel i
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `AiryDisk2DKernel <http://docs.astropy.org/en/stable/api/astropy.convolution.AiryDisk2DKernel.html>`_ for information on different parameters.
+    Python code. See `AiryDisk2DKernel <https://docs.astropy.org/en/stable/en/stable/api/astropy.convolution.AiryDisk2DKernel.html>`_ for information on different parameters.
 
     Default::
 

@@ -4,7 +4,7 @@ Setup
 #####
 
 #. It is assumed that you already followed the
-   `installation instruction <https://enmap-box.readthedocs.io/en/latest/dev_section/dev_installation_slim.html>`_.
+   `installation instruction <https://enmap-box.readthedocs.io/en/latest/dev_section/dev_installation.html>`_.
 
 #. Download the materials for
    `Application Tutorial 1 <https://box.hu-berlin.de/f/01d6196ab1e34956bd5d/?dl=1>`_ (227 MB).

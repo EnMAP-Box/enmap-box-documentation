@@ -34,7 +34,7 @@ Agency, granted by the Federal Ministry of Economic Affairs and Energy (BMWi; gr
    :target: https://geo.uni-greifswald.de/eo
 
 .. |gfz| image:: ../img/logos/logo_gfz.svg
-   :target: https://www.gfz-potsdam.de/startseite/
+   :target: https://www.gfz-potsdam.de/
 
 .. |dlr| image:: ../img/logos/logo_dlr.svg
    :target: https://www.dlr.de/content/de/artikel/missionen-projekte/enmap-der-deutsche-hyperspektralsatellit-zur-erdbeobachtung.html

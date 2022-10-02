@@ -16,15 +16,12 @@ FAQ & Troubleshooting
 Bug report & feedback
 =====================
 
-.. |link_bitbucket| raw:: html
-
-   <a href="https://github.com/EnMAP-Box/enmap-box/issues/new" target="_blank">issue tracker</a>
-
-
 .. note:: Your feedback is more than welcome! In case you encounter any problems with the EnMAP-Box or have
           suggestions of any kind for improving it (or this documentation), please let us know!
 
-          **Please report issues (bugs, suggestions etc.) via our** |link_bitbucket|.
+          **Please report issues** `here <https://github.com/EnMAP-Box/enmap-box/issues/new>`_
+
+          **For questions use** `GitHub Discussions <https://github.com/EnMAP-Box/enmap-box/discussions>`_
 
 Contact
 =======
@@ -32,7 +29,8 @@ Contact
 **E-Mail:** enmapbox@enmap.org
 
 
-**Newsletter**: Subscribe to the EnMAP mailing list to be informed about new EnMAP-Box releases and other EnMAP related news at www.enmap.org/contact
+**Newsletter**: Subscribe to the EnMAP mailing list to be informed about new EnMAP-Box releases and other EnMAP related news.
+Click `here <https://www.enmap.org/contact/>`_ for more information.
 
 |
 
@@ -52,7 +50,7 @@ suggest new entries!
   Please cite the EnMAP-Box as::
 
       EnMAP-Box Developers (2019): EnMAP-Box 3 - A QGIS Plugin to process and visualize
-      hyperspectral remote sensing data. https://enmap-box.readthedocs.io
+      hyperspectral remote sensing data. https://enmap-box.readthedocs.io/en/latest
 
   BibTeX:
 
@@ -62,7 +60,7 @@ suggest new entries!
      author = {EnMAP-Box Developers},
      title = {EnMAP-Box 3 - A QGIS Plugin to process and visualize hyperspectral remote sensing data},
      year = 2019,
-     url = {https://enmap-box.readthedocs.io}
+     url = {https://enmap-box.readthedocs.io/en/latest}
      }
 
   For the general idea behind the EnMAP-Box please refer to:
@@ -106,7 +104,7 @@ suggest new entries!
   * default OSGeo4W root directory :guilabel:`Next`
   * local temp directory :guilabel:`Next`
   * direct connection :guilabel:`Next`
-  * Select downloadsite ``http://download.osgeo.ogr`` :guilabel:`Next`
+  * Select downloadsite ``https://download.osgeo.ogr`` :guilabel:`Next`
 
   Then use the textbox to filter, select and install the following packages (see video below for help):
 
@@ -135,7 +133,7 @@ suggest new entries!
 
   .. code-block:: batch
 
-     python3 -m pip install -r https://github.com/EnMAP-Box/enmap-box/raw/develop/requirements.txt
+     python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
 
   If the method above did not work for some reason, try installing the packages listed in the :file:`requirements.txt` line by line, e.g.
   ``python3 -m pip install numpy`` and so on.
@@ -174,7 +172,7 @@ suggest new entries!
   On some systems we experiences problems related to a missing OpenGL support (e.g `Issue #299 <https://bitbucket.org/hu-geomatics/enmap-box/issues/299/image-cube-qt-issues-on-linux>`_)
 
   1. Ensure that you have installed OpenGL drivers that support your graphic card
-  2. Ensure that `PyOpenGL <http://pyopengl.sourceforge.net>`_  is installed::
+  2. Ensure that `PyOpenGL <https://pyopengl.sourceforge.net>`_  is installed::
      $ python3 -m pip install PyOpenGL
   On Linux, it might be necessary to install the Python bindings for QtOpenGL in order to start the Image Cube tool.
 
@@ -217,5 +215,6 @@ Known Issues
 Here is a list of known issues, that aren't fixed easily,
 and/or only affect a specific version of QGIS or operating system:
 
-https://github.com/EnMAP-Box/enmap-box/issues?component=known+issue&status=on+hold
+* https://github.com/EnMAP-Box/enmap-box/labels/known%20issue
+* Historic (old repository): https://bitbucket.org/hu-geomatics/enmap-box/issues?component=known+issue&status=on+hold
 

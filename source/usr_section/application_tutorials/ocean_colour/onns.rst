@@ -18,7 +18,7 @@ Satellites observe the oceans, coasts and inland waters. Water quality parameter
 using the in-water algorithm ONNS, which has been developed at the `Institute of Coastal Research at the Helmholtz-Zentrum
 Geesthacht <https://hzg.de/institutes_platforms/coastal_research/operational_systems/remote_sensing/index.php.en>`_.
 The EnMAP-Box is a free and open source plug-in for QGIS to visualize
-and process satellite remote sensing data with special emphasis to the hyperspectral `EnMAP <http://www.enmap.org/>`_ sensor.
+and process satellite remote sensing data with special emphasis to the hyperspectral `EnMAP <https://www.enmap.org/>`_ sensor.
 The following tutorial describes the usability and functionality of the Python-based ONNS processing tool in the EnMAP-Box.
 
 

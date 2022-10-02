@@ -32,8 +32,8 @@ Key features
 Related websites
 ****************
 
-- `Environmental Mapping and Analysis Program (EnMAP) <http://www.enmap.org/>`_
-- `Source code repository <https://github.com/EnMAP-Box/enmap-box/blob/main/>`_
+- `Environmental Mapping and Analysis Program (EnMAP) <https://www.enmap.org/>`_
+- `Source code repository <https://github.com/EnMAP-Box/enmap-box/tree/main/>`_
 - `HYPERedu on eo-college <https://eo-college.org/resource-spectrum/hyperspectral//>`_
 
 
@@ -125,6 +125,7 @@ Two Presentations by EnMAP-Box developers Andreas Rabe and Benjamin Jakimow at t
     general/contribute.rst
     general/roadmap.rst
     general/glossary.rst
+    general/styleguide.rst
 
 ..  toctree::
     :maxdepth: 2

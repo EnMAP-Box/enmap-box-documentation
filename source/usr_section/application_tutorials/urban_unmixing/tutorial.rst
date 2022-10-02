@@ -102,7 +102,7 @@ The tutorial dataset is a subset extracted from the Berlin-Urban-Gradient datase
 Please cite the dataset as follows:
 
 .. [4] Okujeni, Akpona; van der Linden, Sebastian; Hostert, Patrick (2016): Berlin-Urban-Gradient dataset 2009 -
-       An EnMAP Preparatory Flight Campaign (Datasets). V. 1.2. GFZ Data Services. http://doi.org/10.5880/enmap.2016.008
+       An EnMAP Preparatory Flight Campaign (Datasets). V. 1.2. GFZ Data Services. https://doi.org/10.5880/enmap.2016.008
 
 |
 

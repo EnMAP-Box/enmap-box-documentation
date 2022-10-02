@@ -84,8 +84,8 @@ you just need to provide a file-path or other unique resource identifier via ``e
 A the EnMAP-Box uses the QGIS API to visualize spatial data, we can add OpenGIS Web Services (OWS)
 like Web Map Services (WMS) and Web Feature Services (WFS) as well::
 
-    wmsUri = 'referer=OpenStreetMap%20contributors,%20under%20ODbL&type=xyz&url=http://tiles.wmflabs.org/hikebike/%7Bz%7D/%7Bx%7D/%7By%7D.png&zmax=17&zmin=1'
-    wfsUri = r'restrictToRequestBBOX=''1'' srsname=''EPSG:25833'' typename=''fis:re_postleit'' url=''http://fbinter.stadt-berlin.de/fb/wfs/geometry/senstadt/re_postleit'' version=''auto'''
+    wmsUri = 'referer=OpenStreetMap%20contributors,%20under%20ODbL&type=xyz&url=https://tiles.wmflabs.org/hikebike/%7Bz%7D/%7Bx%7D/%7By%7D.png&zmax=17&zmin=1'
+    wfsUri = r'restrictToRequestBBOX=''1'' srsname=''EPSG:25833'' typename=''fis:re_postleit'' url=''https://fbinter.stadt-berlin.de/fb/wfs/geometry/senstadt/re_postleit'' version=''auto'''
     enmapBox.addSource(wmsUri, name="Open Street Map")
     enmapBox.addSource(wfsUri, name='Berlin PLZ')
 
@@ -196,7 +196,7 @@ The shell printouts should be like:
 ======================
 
 The EnMAP-Box `Docks` to visualize spatial data and spectral libraries. `Docks` are based on the
-`pyqtgraphDock <http://www.pyqtgraph.org/documentation/index.html>`_ which inherits QDockWidget_, but can be
+`pyqtgraphDock <https://pyqtgraph.readthedocs.io/en/latest/index.html>`_ which inherits QDockWidget_, but can be
 arranged much more flexible, e.g. in nested layouts. We use these `Docks` as containers for specialized widgets,
 in particular the `enmapbox.gui.mapcanvas.MapCanvas` (as `MapDock`) and the `SpectralLibraryWidget` (`SpectralLibraryDock`).
 

@@ -4,15 +4,15 @@
 Fit LinearSVC
 *************
 
-Linear Support Vector `Classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_. 
-Similar to SVC with parameter kernel='linear', but implemented in terms of liblinear rather than libsvm, so it has more flexibility in the choice of penalties and loss functions and should scale better to large numbers of `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_. 
+Linear Support Vector `Classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_.
+Similar to SVC with parameter kernel='linear', but implemented in terms of liblinear rather than libsvm, so it has more flexibility in the choice of penalties and loss functions and should scale better to large numbers of `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
 This `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ supports both dense and sparse input and the multiclass support is handled according to a one-vs-the-rest scheme.
 
 **Parameters**
 
 
 :guilabel:`Classifier` [string]
-    Scikit-learn python code. See `LinearSVC <http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_, `GridSearchCV <http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html>`_, `StandardScaler <http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html>`_ for information on different parameters.
+    Scikit-learn python code. See `LinearSVC <https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html>`_, `GridSearchCV <https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html>`_, `StandardScaler <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html>`_ for information on different parameters.
 
     Default::
 

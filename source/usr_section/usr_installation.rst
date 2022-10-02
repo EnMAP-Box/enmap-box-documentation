@@ -81,11 +81,11 @@ Before you can install QGIS from the downloaded disk image, you need to allow yo
 
 The EnMAP-Box core plugin requires several python packages:
 
-* `numpy <http://www.numpy.org/>`_
-* `scipy <https://www.scipy.org>`_
-* `scikit-learn <http://scikit-learn.org/stable/index.html>`_
+* `numpy <https://numpy.org/ >`_
+* `scipy <https://scipy.org >`_
+* `scikit-learn <https://scikit-learn.org/stable/index.html>`_
 * `matplotlib <https://matplotlib.org/>`_
-* `astropy <http://docs.astropy.org>`_ (**optional**, relevant for certain processing algorithms)
+* `astropy <https://docs.astropy.org/en/stable>`_ (**optional**, relevant for certain processing algorithms)
 
 
 In the following we demonstrate two variants for installing the required Python packages:
@@ -149,7 +149,7 @@ Windows
 
    .. code-block:: batch
 
-      python3 -m pip install -r https://github.com/EnMAP-Box/enmap-box/raw/develop/requirements.txt
+      python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
 
 
    Now all packages will be installed automatically. After completion, the shell should show something like this:
@@ -182,8 +182,12 @@ Linux
 
    .. code-block:: bash
 
-      python3 -m pip install -r https://github.com/EnMAP-Box/enmap-box/raw/develop/requirements.txt
+      python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
 
+   .. note::
+
+      You might also consider to create a virtual environment (``python3 -m venv``), install the packages as described, set
+      ``system-site-packages = true`` in the ``pyvenv.cfg``, activate this virtual environment and start ``qgis`` from there.
 |
 
 .. _install-packages-mac:
@@ -198,7 +202,7 @@ To install single python packages like the astropy package, open the Terminal an
 
 To install all packages required, call::
 
-   /Applications/QGIS.app/Contents/MacOS/bin/pip3 install -r https://github.com/EnMAP-Box/enmap-box/raw/develop/requirements.txt
+   /Applications/QGIS.app/Contents/MacOS/bin/pip3 install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
 
 
 More details on the QGIS packaging mechanism for macOS can be found `here <https://www.lutraconsulting.co.uk/blog/2020/10/01/qgis-macos-package/>`_.
