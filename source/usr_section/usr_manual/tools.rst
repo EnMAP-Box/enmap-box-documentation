@@ -11,12 +11,20 @@ Tools
 Add Product
 ===========
 
-todo
+Import a satellite product into the EnMAP-Box via the main menu or by drag&drop from your file explorer.
+
+..  youtube:: G7UE-DIhXi8
+    :width: 100%
+    :privacy_mode:
 
 Add Web Map Services (WMS)
 ==========================
 
-todo
+Add a predefined WMS layer.
+
+..  youtube:: SRJPh4bxcnw
+    :width: 100%
+    :privacy_mode:
 
 Band Statistics
 ===============
