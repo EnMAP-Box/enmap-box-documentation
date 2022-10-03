@@ -9,6 +9,7 @@ User Manual
    spectral_library.rst
    tools.rst
    applications.rst
+   eo4q.rst
    processing_algorithms/processing_algorithms.rst
    testdataset.rst
 

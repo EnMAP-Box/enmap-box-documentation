@@ -21,8 +21,6 @@ Classification Workflow (advanced)
 The Classification Workflow application let's you easily perform classification analysis and mapping tasks using
 remote sensing data.
 
-
-
 Quick Mapping
 -------------
 
@@ -227,11 +225,6 @@ EnPT (EnMAP Processing Tool)
 
 Please visit `EnPT Tutorial<https://enmap.git-pages.gfz-potsdam.de/GFZ_Tools_EnMAP_BOX/EnPT/doc/tutorial.html>`_ for more information.
 
-GEE Time Series Explorer
-========================
-
-todo: integrate docs from https://geetimeseriesexplorer.readthedocs.io
-
 GFZ EnGeoMAP
 ============
 
@@ -239,11 +232,6 @@ todo
 
 Image Math (deprecated)
 =======================
-
-todo
-
-Profile Analytics
-=================
 
 todo
 
