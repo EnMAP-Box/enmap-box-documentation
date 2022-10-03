@@ -4,5 +4,6 @@
 ###### Requirements to build the documentation with sphinx ######
 sphinx
 sphinxnotes-strike
+sphinxcontrib-youtube
 docutils
 sphinx_rtd_theme  # >=0.3.0
