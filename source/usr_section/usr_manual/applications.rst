@@ -5,98 +5,18 @@
 Applications
 ************
 
-.. TODO add ensomap https://gitext.gfz-potsdam.de/stephane/HYSOMA-ENSOMAP
+Agricultural Applications
+=========================
 
-ImageMath
-=========
+Please visit `LMU Vegetation Apps Documentation <https://enmap-box-lmu-vegetation-apps.readthedocs.io/en/latest/>`_ for more information.
 
-.. _synthMix:
+Classification Dataset Manager
+==============================
 
-Regression-based unmixing (synthMix)
-====================================
+todo
 
-You can find the Regression-based unmixing in the menu bar :menuselection:`Applications --> Regression-based unmixing (synthMix)`
-
-.. seealso:: Have a look at the :ref:`Urban Unmixing Tutorial <tut_urban_unmixing>` for a use case example of the Regression-based unmixing Application.
-
-
-Input Parameters:
-
-* **Inputs**
-
-  * :guilabel:`Endmember Library`: Select spectral library
-  * :guilabel:`Class Attribute`: Specify the attribute which contains class/material information.
-  * :guilabel:`Spectral Image`: Specify spectral image on which unmixing should be applied.
-
-* **Class Selection**
-
-  * :guilabel:`Target Classes` |combo|: Specify the desired target classes (which are derived from the Class Attribute field specified above).
-    Can be used to select only a subset of target classes from a spectral library.
-
-* **Mixing Parameters**
-
-  * :guilabel:`Number of Synthetic Mixtures per Class`: Amount of mixtures to be generated per class.
-  * :guilabel:`Include Original Library Endmembers` |cb0|: Whether to include the original spectra in the training library.
-  * :guilabel:`Mixing Complexity Probabilities`: Defines the likelihood of creating a binary, ternary or fourfold mixture. For example,
-    by specifing the probabilities as ``0.5``, ``0.5``, ``0``, it is equally likely that binary and ternary mixtures are created, whereas no fourfold mixtures will be generated.
-    Enter decimals between 0.0-1.0 (all three probabilities need to sum up to 1).
-
-    * 2EM: Likelihood of creating a binary mixture (2 endmembers)
-    * 3EM: Likelihood of creating a ternary mixture (3 endmembers)
-    * 4EM: Likelihood of creating a fourfold mixture (4 endmembers)
-  * :guilabel:`Allow Within-Class Mixtures` |cb0|: Whether to allow mixtures between signatures of the same endmember.
-  * :guilabel:`Class Probabilities` |combo| *(Proportional | Equalized)*: In case of proportional class probabilities the number of
-    mixtures of a class in the output library will be proportional to the number of spectra in the input library of that class. In case of equalized,
-    all classes will be represented equally.
-
-* **Regression Algorithm**
-
- * In the :guilabel:`Regressor` |combo| dropdown menu you can choose different regressors (e.g. Random Forest, Support Vector Regression, Kernel Ridge Regression)
-  * |mIconCollapse| :guilabel:`Model parameters`: Specify the parameters of the selected regressor.
-
-     .. hint::
-
-        Scikit-learn python syntax is used here, which means you can specify model parameters accordingly. Have a look at
-        the scikit-learn documentation on the individual parameters, e.g. for the `RandomForestRegressor <https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html>`_
-
-  * :guilabel:`Use Ensemble` |cb0|: If enabled, more than one iteration of mixing, training and prediction will be performed.
-    The results of each iteration will be combined into a final ensemble result (see :guilabel:`Decision Fusion (Ensemble)` on how results should be combined).
-  * :guilabel:`Ensemble Size`: Specify the size of the ensemble (number of iterations).
-
-* **Outputs**
-
- * :guilabel:`Folder`: Specify an output folder where results will be written to.
- * :guilabel:`Name`: Basename of the output files
-
- * |mIconCollapse| :guilabel:`Advanced`
-
-   * :guilabel:`Decision Fusion (Ensemble)` |combo| *(median | mean | iqr | std)*: Select one or multiple options of the kind of
-     decision fusion (how individal predictions of the ensemble will be combined)
-   * :guilabel:`Save` Check the following to save additional outputs ...
-
-     * :guilabel:`Training Samples` |cb0|: Save the training samples
-     * :guilabel:`Predictions` |cb0|: Save the individual predictions of the ensemble
-     * :guilabel:`Models` |cb0|: Save the model files
-   * :guilabel:`Create Class Fraction RGB` |cb0|: Generates a RGB visualisation based on the weighted sum of class colors and corresponding fractions
-   * :guilabel:`Derive Classification from Fraction Map` |cb0|: Save classification from fraction map (class with the highest fraction will be assigned)
-
-
-.. admonition:: Run the regression-based unmixing
-
-   Once all parameters are entered, press the |action| button to start the regression-based unmixing.
-
-|
-
-....
-
-|
-
-.. _Classification Workflow:
-
-Classification Workflow
-=======================
-
-You can find this application in the menu bar :menuselection:`Applications --> Classification Workflow`
+Classification Workflow (advanced)
+==================================
 
 The Classification Workflow application let's you easily perform classification analysis and mapping tasks using
 remote sensing data.
@@ -203,13 +123,10 @@ Log
 ---
 
 
-
-|
-
 .. _Classification Workflow Classic:
 
-Classification Workflow Classic
-===============================
+Classification Workflow (deprecated)
+====================================
 
 You can find this application in the menu bar :menuselection:`Applications --> Classification Workflow Classic`
 
@@ -300,18 +217,43 @@ Input Parameters:
 
    Once all parameters are entered, press the |action| button to start the classification workflow.
 
-|
+EO Time Series Viewer
+=====================
 
-....
+Please visit `EO Time Series Viewer Documentation <https://eo-time-series-viewer.readthedocs.io/en/latest/>`_ for more information.
 
-|
+EnPT (EnMAP Processing Tool)
+============================
 
-.. _Regression Workflow:
+Please visit `EnPT Tutorial<https://enmap.git-pages.gfz-potsdam.de/GFZ_Tools_EnMAP_BOX/EnPT/doc/tutorial.html>`_ for more information.
 
-Regression Workflow
-===================
+GEE Time Series Explorer
+========================
 
-You can find the Regression Workflow in the menu bar :menuselection:`Applications --> Classification Workflow`
+todo: integrate docs from https://geetimeseriesexplorer.readthedocs.io
+
+GFZ EnGeoMAP
+============
+
+todo
+
+Image Math (deprecated)
+=======================
+
+todo
+
+Profile Analytics
+=================
+
+todo
+
+Regression Dataset Manager
+==========================
+
+todo
+
+Regression Workflow (deprecated)
+================================
 
 .. seealso:: Have a look at the :ref:`Biomass Mapping Tutorial <tutorial_biomass>` for a use case example of the Regression Workflow Application.
 
@@ -366,12 +308,7 @@ Input Parameters:
    Once all parameters are entered, press the |action| button to start the regression workflow.
 
 
-EO Time Series Viewer
-=====================
+Spectral Index Creator
+==================================
 
-Please visit `EO Time Series Viewer Documentation <https://eo-time-series-viewer.readthedocs.io/en/latest/>`_ for more information.
-
-Agricultural Applications
-=========================
-
-Please visit `LMU Vegetation Apps Documentation <https://enmap-box-lmu-vegetation-apps.readthedocs.io/en/latest/>`_ for more information.
+todo
