@@ -13,7 +13,14 @@ Please visit `LMU Vegetation Apps Documentation <https://enmap-box-lmu-vegetatio
 Classification Dataset Manager
 ==============================
 
-todo
+The Classification Dataset Manager allows a) to create a new dataset from various sources,
+b) presents class statistics,
+c) supports editing of class names and colors, and
+d) let's you easily draw a random sample.
+
+..  youtube:: qRUrVb6jWbA
+    :width: 100%
+    :privacy_mode:
 
 Classification Workflow (advanced)
 ==================================
@@ -21,20 +28,15 @@ Classification Workflow (advanced)
 The Classification Workflow application let's you easily perform classification analysis and mapping tasks using
 remote sensing data.
 
+..  youtube:: oi7GeQCik3M
+    :width: 100%
+    :privacy_mode:
+
 Quick Mapping
 -------------
 
 In the **Quick Mapping** section you can very easily define your training dataset, fit a classifier and predict a
 classification layer, with only a few clicks.
-
-E.g. use EnMAP-Box testdata together with a Random Forest classifier:
-
-.. image:: ../../general/img/categorized_vector_layer_2.png
-    :width: 32%
-.. image:: ../../general/img/raster_layer.png
-    :width: 32%
-.. image:: ../../general/img/categorized_raster_layer.png
-    :width: 32%
 
 For a more elaborated analysis see the **Detailed Analysis** section.
 

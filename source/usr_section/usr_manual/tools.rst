@@ -109,7 +109,7 @@ color canons for each band (it's currently more a prototype).
 HSV Color Raster Renderer
 =========================
 
-The HSV Color Raster Renderer allows to visualize 3 bands using the HSV (Hue, Saturation, Value (black)) color model.
+The HSV Color Raster Renderer allows to visualize 3 bands using the HSV (Hue, Saturation, Value/Black) color model.
 Find a mapping example here: https://landmonitoring.earth/portal/ ; select Maps > Global Landcover Dynamics 2016-2020
 
 .. todo::
@@ -224,6 +224,7 @@ Scatter Plot
 ============
 
 The Scatter Plot allows to plot two raster bands or vector fields against each other.
+The visualization of both, denstity and scatter is supported.
 
 ..  youtube:: bMfklHoEqJc
     :width: 100%
