@@ -29,45 +29,96 @@ Add a predefined WMS layer.
 Band Statistics
 ===============
 
-todo
+The Band Statistics tool reports band histograms and basic statistics like min, max, mean and standard deviation.
+
+..  youtube:: tS2B9EsHutY
+    :width: 100%
+    :privacy_mode:
 
 Bivariate Color Raster Renderer
 ===============
 
-todo
+The Bivariate Color Raster Renderer allows to visualize two bands using a 2d color ramp.
+Find a mapping example here: https://www.joshuastevens.net/cartography/make-a-bivariate-choropleth-map/
+
+..  youtube:: TW3hrWKLpbs
+    :width: 100%
+    :privacy_mode:
 
 Class Fraction/Probability Renderer and Statistics
 ==================================================
 
-todo
+The Class Fraction/Probability Renderer allows  allows to visualize arbitrary many fraction/probability bands
+at the same time, using the original class colors.
+
+..  youtube:: fflhmRl_Npw
+    :width: 100%
+    :privacy_mode:
 
 Classification Statistics
 =========================
 
-todo
+The Classification Statistics tool reports class histograms and area covered in percentage, pixel and map units.
+
+..  youtube:: Go7tRzwKPvs
+    :width: 100%
+    :privacy_mode:
+
 
 CMYK Color Raster Renderer
 ==========================
 
-todo
+The CMYK Color Raster Renderer allows to visualize 4 bands using the CMYK (Cyan, Magenta, Yellow, and Key/Black)
+color model. Find a mapping example here: https://adventuresinmapping.com/2018/10/31/cmyk-vice/
+
+..  youtube:: aVy9WXM3Q84
+    :width: 100%
+    :privacy_mode:
 
 Color Space Explorer
 ====================
 
-todo
+The Color Space Explorer allows
+a) to select random and predefined RBG band combinations, and
+b) to animate RGB bands.
+
+..  youtube:: e5SLW1pB06A
+    :width: 100%
+    :privacy_mode:
+
 
 Decorrelation Stretch Renderer
 ==============================
 
-todo
+The Decorrelation Stretch Renderer allows to visualize 3 band. It removes the high correlation commonly found in
+optical bands to produce a more colorful color composite image.
+
+.. figure:: ./img/DecorrelationStretchRenderer.png
+   :align: center
 
 Enhanced Multiband Color Renderer
 =================================
 
-todo
+The Ehanced Multiband Color Renderer allows to visualize arbitrary many bands at the same time using individual
+color canons for each band (it's currently more a prototype).
+
+.. todo::
+
+    Find a good dataset and make a video.
 
 HSV Color Raster Renderer
 =========================
+
+The HSV Color Raster Renderer allows to visualize 3 bands using the HSV (Hue, Saturation, Value (black)) color model.
+Find a mapping example here: https://landmonitoring.earth/portal/ ; select Maps > Global Landcover Dynamics 2016-2020
+
+.. todo::
+
+    Find a good dataset, that is comparable to the *Global Landcover Dynamics 2016-2020* from GeoVille,
+    and make a video.
+
+.. figure:: ./img/HSVColorRasterRenderer.png
+   :align: center
 
 Image Cube
 ==========
@@ -106,8 +157,6 @@ The 3D scene contains the following elements:
 
 .. image:: /img/imagecube_gui_slices.png
 
-todo
-
 Metadata Viewer
 ===============
 
@@ -116,7 +165,17 @@ todo
 Raster Layer Styling
 ====================
 
-todo
+The Raster Layer Styling panel allows to quickly select a RGB, Gray or Pseudocolor visualizations.
+
+..  youtube:: ImO8BzHNjlk
+    :width: 100%
+    :privacy_mode:
+
+It also supports the linking of the style between multiple raster layer.
+
+..  youtube:: HJSNhG7vKKg
+    :width: 100%
+    :privacy_mode:
 
 Raster Source Band Properties Editor
 ====================================
