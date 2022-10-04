@@ -180,7 +180,11 @@ It also supports the linking of the style between multiple raster layer.
 Raster Source Band Properties Editor
 ====================================
 
-todo
+The Raster Source Band Properties Editor allows to view and edit band properties of GDAL raster sources,
+with special support for ENVI metadata.
+
+.. figure:: ./img/RasterSourceBandPropertiesEditor.png
+   :align: center
 
 Reclassify
 ==========
@@ -219,7 +223,11 @@ Click :guilabel:`OK` to run the tool.
 Scatter Plot
 ============
 
-todo
+The Scatter Plot allows to plot two raster bands or vector fields against each other.
+
+..  youtube:: bMfklHoEqJc
+    :width: 100%
+    :privacy_mode:
 
 Virtual Raster Builder
 ======================
