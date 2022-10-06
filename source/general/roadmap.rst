@@ -34,6 +34,8 @@ Mid Aug 2023        Feature Freeze EnMAP-Box 3.13
 End Sep 2023        **Release EnMAP-Box 3.13**
 ==================  ============================================
 
-Released versions: https://plugins.qgis.org/plugins/enmapboxplugin/
+Release versions: https://plugins.qgis.org/plugins/enmapboxplugin/
 
 Changelog: https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.rst
+
+Pre-Release versions: https://github.com/EnMAP-Box/enmap-box/releases
