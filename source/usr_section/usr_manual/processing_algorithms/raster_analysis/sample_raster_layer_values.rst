@@ -4,7 +4,7 @@
 Sample raster layer values
 **************************
 
-Creates a new `point layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-point-layer>`_ with the same `attributes <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-attribute>`_ of the input `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_ and the raster values corresponding to the pixels covered by polygons or point location.
+Creates a new `point layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-point-layer>`_ with the same `attributes <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-attribute>`_ of the input `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_ and the raster values corresponding to the pixels covered by polygons or point location. 
 The resulting point vector contains 1) all input attributes from the Locations vector,  2) attributes SAMPLE_{i}, one for each input raster `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_, 3) two attributes PIXEL_X, PIXEL_Y for storing the raster pixel locations (zero-based),and 4), in case of polygon locations, an `attribute <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-attribute>`_ COVER for storing the pixel coverage (%).
 Note that we assume non-overlapping `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ geometries! In case of overlapping geometries, split the Locations layer into non-overlapping subsets, perform the sampling for each subset individually, and finally concatenate the results.
 

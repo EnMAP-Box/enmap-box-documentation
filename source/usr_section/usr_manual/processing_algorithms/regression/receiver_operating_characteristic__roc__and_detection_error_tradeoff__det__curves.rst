@@ -28,7 +28,7 @@ Note that observed classes and predicted `class <https://enmap-box.readthedocs.i
 
 
 :guilabel:`Output report` [fileDestination]
-    Output report file destination.
+    Report file destination.
 
 **Command-line usage**
 

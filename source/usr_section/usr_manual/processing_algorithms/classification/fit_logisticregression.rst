@@ -28,7 +28,7 @@ In the multiclass case, the training algorithm uses the one-vs-rest (OvR) scheme
 
 
 :guilabel:`Output classifier` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+    `Pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ destination.
 
 **Command-line usage**
 

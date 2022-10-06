@@ -5,7 +5,8 @@ Create spectral indices
 ***********************
 
 Create a stack of `Awesome Spectral Indices <https://awesome-ee-spectral-indices.readthedocs.io/en/latest/list.html>`_ and/or custom indices.
-Credits: the Awesome Spectral Indices project provides a ready-to-use curated list of Spectral Indices for Remote Sensing applications, maintained by `David Montero Loaiza <https://github.com/davemlz>`_.
+Credits: the Awesome Spectral Indices project provides a ready-to-use curated list of Spectral Indices for Remote Sensing applications, maintained by `David Montero Loaiza <https://github.com/davemlz>`_. 
+Note that the list of available indices was last updated on 2021-11-15. Should you need other indices added after this date, please file an issue.
 
 **Parameters**
 

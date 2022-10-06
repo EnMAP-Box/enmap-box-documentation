@@ -14,7 +14,7 @@ Spatial convolution Trapezoid filter
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `TrapezoidDisk2DKernel <https://docs.astropy.org/en/stable/en/stable/api/astropy.convolution.TrapezoidDisk2DKernel.html>`_ for information on different parameters.
+    Python code. See `TrapezoidDisk2DKernel <http://docs.astropy.org/en/stable/api/astropy.convolution.TrapezoidDisk2DKernel.html>`_ for information on different parameters.
 
     Default::
 

@@ -4,7 +4,7 @@
 Create mask raster layer
 ************************
 
-Create a `mask raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-mask-raster-layer>`_ by applying a user-defined evaluation function `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_-wise to a source `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_.
+Create a `mask raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-mask-raster-layer>`_ by applying a user-defined evaluation function `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_-wise to a source `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_. 
 
 **Parameters**
 
@@ -21,7 +21,6 @@ Create a `mask raster layer <https://enmap-box.readthedocs.io/en/latest/general/
         import numpy as np
         
         def function(array: np.ndarray, noDataValue: float):
-        
             # if source no data value is not defined, use zero as no data value
             if noDataValue is None:
                 noDataValue = 0
@@ -36,6 +35,7 @@ Create a `mask raster layer <https://enmap-box.readthedocs.io/en/latest/general/
             pass
         
             return marray
+        
 **Outputs**
 
 
@@ -58,7 +58,6 @@ Create a `mask raster layer <https://enmap-box.readthedocs.io/en/latest/general/
     	Default value:	import numpy as np
     
     def function(array: np.ndarray, noDataValue: float):
-    
         # if source no data value is not defined, use zero as no data value
         if noDataValue is None:
             noDataValue = 0
@@ -73,6 +72,7 @@ Create a `mask raster layer <https://enmap-box.readthedocs.io/en/latest/general/
         pass
     
         return marray
+    
     	Argument type:	string
     	Acceptable values:
     		- String value

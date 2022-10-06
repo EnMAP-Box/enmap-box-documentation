@@ -29,7 +29,7 @@ For further analysis, all relevant results are also stored as a JSON sidecar fil
 
 
 :guilabel:`Output report` [fileDestination]
-    Output report file destination.
+    Report file destination.
 
 **Command-line usage**
 

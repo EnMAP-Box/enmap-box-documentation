@@ -36,7 +36,7 @@ The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary
 
 
 :guilabel:`Output classifier` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+    `Pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ destination.
 
 
 :guilabel:`Output classification layer` [rasterDestination]
@@ -48,7 +48,7 @@ The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary
 
 
 :guilabel:`Output classifier performance report` [fileDestination]
-    Output report file destination.
+    Report file destination.
 
 **Command-line usage**
 

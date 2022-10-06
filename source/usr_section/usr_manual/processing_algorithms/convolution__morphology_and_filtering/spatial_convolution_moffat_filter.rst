@@ -15,7 +15,7 @@ This kernel is a typical model for a seeing limited PSF.
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `Moffat2DKernel <https://docs.astropy.org/en/stable/en/stable/api/astropy.convolution.Moffat2DKernel.html>`_ for information on different parameters.
+    Python code. See `Moffat2DKernel <http://docs.astropy.org/en/stable/api/astropy.convolution.Moffat2DKernel.html>`_ for information on different parameters.
 
     Default::
 

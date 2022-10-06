@@ -37,7 +37,7 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
 
 
 :guilabel:`Output dataset` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+    `Dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ file destination .
 
 **Command-line usage**
 

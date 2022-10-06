@@ -46,7 +46,7 @@ Permutation `feature <https://enmap-box.readthedocs.io/en/latest/general/glossar
 
 
 :guilabel:`Output report` [fileDestination]
-    Output report file destination.
+    Report file destination.
 
 **Command-line usage**
 

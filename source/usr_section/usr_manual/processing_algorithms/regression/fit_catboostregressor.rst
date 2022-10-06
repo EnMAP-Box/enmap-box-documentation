@@ -24,7 +24,7 @@ Implementation of the scikit-learn API for `CatBoost <https://catboost.ai/en/doc
 
 
 :guilabel:`Output regressor` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+    `Pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ destination.
 
 **Command-line usage**
 

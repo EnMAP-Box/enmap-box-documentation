@@ -42,11 +42,11 @@ Split a `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.ht
 
 
 :guilabel:`Output dataset` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.Stores sampled data.
+    `Pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ destination.Stores sampled data.
 
 
 :guilabel:`Output dataset complement` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.Stores remaining data that was not sampled.
+    `Pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ destination.Stores remaining data that was not sampled.
 
 **Command-line usage**
 

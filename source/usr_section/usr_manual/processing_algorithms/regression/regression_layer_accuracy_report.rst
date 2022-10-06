@@ -26,7 +26,7 @@ Estimates map accuracy.We use the formulars as described in `Scikit-Learn Regres
 
 
 :guilabel:`Output report` [fileDestination]
-    Output report file destination.
+    Report file destination.
 
 **Command-line usage**
 

@@ -24,6 +24,14 @@ End Mar 2022        **Release EnMAP-Box 3.10**
 Jul/Aug 2022        Evaluation EnMAP-Box in Teaching
 Mid Aug 2022        Feature Freeze EnMAP-Box 3.11
 End Sep 2022        **Release EnMAP-Box 3.11**
+------------------  --------------------------------------------
+Jan/Feb 2023        Evaluation EnMAP-Box in Teaching
+Mid Feb 2023        Feature Freeze EnMAP-Box 3.12
+End Mar 2023        **Release EnMAP-Box 3.12**
+------------------  --------------------------------------------
+Jul/Aug 2023        Evaluation EnMAP-Box in Teaching
+Mid Aug 2023        Feature Freeze EnMAP-Box 3.13
+End Sep 2023        **Release EnMAP-Box 3.13**
 ==================  ============================================
 
 Released versions: https://plugins.qgis.org/plugins/enmapboxplugin/

@@ -11,7 +11,7 @@ A random forest is a meta `estimator <https://enmap-box.readthedocs.io/en/latest
 
 
 :guilabel:`Classifier` [string]
-    Scikit-learn python code. See `RandomForestClassifier <https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html>`_ for information on different parameters.
+    Scikit-learn python code. See `RandomForestClassifier <http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html>`_ for information on different parameters.
 
     Default::
 
@@ -25,7 +25,7 @@ A random forest is a meta `estimator <https://enmap-box.readthedocs.io/en/latest
 
 
 :guilabel:`Output classifier` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+    `Pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ destination.
 
 **Command-line usage**
 
