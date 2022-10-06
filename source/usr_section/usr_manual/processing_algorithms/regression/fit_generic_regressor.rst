@@ -16,7 +16,7 @@ A generic `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossar
 
         from sklearn.dummy import DummyRegressor
         
-        classifier = DummyRegressor()
+        regressor = DummyRegressor()
 
 :guilabel:`Training dataset` [file]
     `Training dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-training-dataset>`_ `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ used for fitting the `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_. If not specified, an unfitted classifier is created.
@@ -25,7 +25,7 @@ A generic `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossar
 
 
 :guilabel:`Output regressor` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+    `Pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ destination.
 
 **Command-line usage**
 
@@ -38,7 +38,7 @@ A generic `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossar
     regressor: Regressor
     	Default value:	from sklearn.dummy import DummyRegressor
     
-    classifier = DummyRegressor()
+    regressor = DummyRegressor()
     	Argument type:	string
     	Acceptable values:
     		- String value

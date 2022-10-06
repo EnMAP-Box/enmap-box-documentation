@@ -30,7 +30,7 @@ Evaluates `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossa
 
 
 :guilabel:`Output report` [fileDestination]
-    Output report file destination.
+    Report file destination.
 
 **Command-line usage**
 

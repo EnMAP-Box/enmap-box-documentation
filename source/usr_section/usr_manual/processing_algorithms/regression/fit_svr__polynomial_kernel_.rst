@@ -12,7 +12,7 @@ The implementation is based on libsvm. The fit time complexity is more than quad
 
 
 :guilabel:`Regressor` [string]
-    Scikit-learn python code. See `SVR <https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html>`_, `GridSearchCV <https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html>`_, `StandardScaler <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html>`_ for information on different parameters.
+    Scikit-learn python code. See `SVR <http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html>`_, `GridSearchCV <http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html>`_, `StandardScaler <http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html>`_ for information on different parameters.
 
     Default::
 
@@ -23,7 +23,7 @@ The implementation is based on libsvm. The fit time complexity is more than quad
         
         svr = SVR()
         param_grid = {'kernel': ['poly'],
-                      'epsilon': 0.,
+                      'epsilon': [0.],
                       'coef0': [0],
                       'degree': [3],
                       'gamma': [0.001, 0.01, 0.1, 1, 10, 100, 1000],
@@ -38,7 +38,7 @@ The implementation is based on libsvm. The fit time complexity is more than quad
 
 
 :guilabel:`Output regressor` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+    `Pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ destination.
 
 **Command-line usage**
 
@@ -56,7 +56,7 @@ The implementation is based on libsvm. The fit time complexity is more than quad
     
     svr = SVR()
     param_grid = {'kernel': ['poly'],
-                  'epsilon': 0.,
+                  'epsilon': [0.],
                   'coef0': [0],
                   'degree': [3],
                   'gamma': [0.001, 0.01, 0.1, 1, 10, 100, 1000],

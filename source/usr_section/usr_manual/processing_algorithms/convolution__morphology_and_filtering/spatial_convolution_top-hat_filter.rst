@@ -15,7 +15,7 @@ The Top-Hat filter is an isotropic smoothing filter. It can produce artifacts wh
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `Tophat2DKernel <https://docs.astropy.org/en/stable/en/stable/api/astropy.convolution.Tophat2DKernel.html>`_ for information on different parameters.
+    Python code. See `Tophat2DKernel <http://docs.astropy.org/en/stable/api/astropy.convolution.Tophat2DKernel.html>`_ for information on different parameters.
 
     Default::
 

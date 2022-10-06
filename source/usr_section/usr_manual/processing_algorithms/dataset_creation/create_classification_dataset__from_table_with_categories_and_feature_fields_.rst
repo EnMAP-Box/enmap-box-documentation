@@ -4,7 +4,7 @@
 Create classification dataset (from table with categories and feature fields)
 *****************************************************************************
 
-Create a `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ from `attribute table <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-attribute-table>`_ rows that match the given `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+Create a `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ from `attribute table <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-attribute-table>`_ rows that match the given `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_. 
 
 
 **Parameters**
@@ -33,7 +33,7 @@ Create a `classification <https://enmap-box.readthedocs.io/en/latest/general/glo
 
 
 :guilabel:`Output dataset` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+    `Pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ destination.
 
 **Command-line usage**
 

@@ -15,7 +15,7 @@ The Ring filter kernel is the difference between two Top-Hat kernels of differen
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `Ring2DKernel <https://docs.astropy.org/en/stable/en/stable/api/astropy.convolution.Ring2DKernel.html>`_ for information on different parameters.
+    Python code. See `Ring2DKernel <http://docs.astropy.org/en/stable/api/astropy.convolution.Ring2DKernel.html>`_ for information on different parameters.
 
     Default::
 

@@ -29,7 +29,7 @@ LinearRegression fits a linear model with coefficients w = (w1, ..., wp) to mini
 
 
 :guilabel:`Output regressor` [fileDestination]
-    Destination `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
+    `Pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ destination.
 
 **Command-line usage**
 

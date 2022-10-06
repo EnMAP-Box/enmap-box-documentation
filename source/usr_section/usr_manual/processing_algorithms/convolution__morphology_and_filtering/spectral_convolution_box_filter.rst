@@ -15,7 +15,7 @@ The Box filter or running mean is a smoothing filter. It is not isotropic and ca
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `Box1DKernel <https://docs.astropy.org/en/stable/en/stable/api/astropy.convolution.Box1DKernel.html>`_ for information on different parameters.
+    Python code. See `Box1DKernel <http://docs.astropy.org/en/stable/api/astropy.convolution.Box1DKernel.html>`_ for information on different parameters.
 
     Default::
 

@@ -14,7 +14,7 @@ Spectral convolution Trapezoid filter
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `Trapezoid1DKernel <https://docs.astropy.org/en/stable/en/stable/api/astropy.convolution.Trapezoid1DKernel.html>`_ for information on different parameters.
+    Python code. See `Trapezoid1DKernel <http://docs.astropy.org/en/stable/api/astropy.convolution.Trapezoid1DKernel.html>`_ for information on different parameters.
 
     Default::
 

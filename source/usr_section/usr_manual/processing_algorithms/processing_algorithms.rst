@@ -1,9 +1,9 @@
 Processing Algorithms
 *********************
-    
+
 .. toctree::
     :maxdepth: 1
-       
+
 
     auxilliary/index.rst
     classification/index.rst
@@ -22,5 +22,6 @@ Processing Algorithms
     regression/index.rst
     spectral_resampling/index.rst
     transformation/index.rst
+    unmixing/index.rst
     vector_conversion/index.rst
     vector_creation/index.rst
