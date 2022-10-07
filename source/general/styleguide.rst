@@ -80,7 +80,7 @@ Screenshots with explanations
 .. figure:: /img/screenshots_with_description.png
    :width: 100%
 
-*Example of adding a screenshot with explanation.*
+*Example of adding a screenshot with explanation*
 
 Positioning of info boxes and images
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
