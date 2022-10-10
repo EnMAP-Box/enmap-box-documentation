@@ -442,7 +442,7 @@ If you have more than one column that stores spectral information, you can have 
 If you have only one column where spectral information is stored, but you have another column storing e.g. class names,
 you can use the :guilabel:`Filter` field to define an expression and select only specific class names, e.g. *Impervious* and *Vegetation* and visualize these profiles in different colors.
 
-.. figure:: /img/SpecLib_visualization2.png
+.. figure:: /img/SpecLib_visualization2.PNG
    :width: 100%
 
 Colorize spectra by attribute
