@@ -18,9 +18,9 @@ It directly interacts with the Map View(s), which means spectra can be directly 
 
 Add a new spectral library view by using the *Add Spectral Library Window* |viewlist_spectrumdock| button in the toolbar or open a new window from the menu :menuselection:`View --> Add Spectral Library Window`.
 
-.. figure:: /img/SpecLib_overview.PNG
-   :align: center
-   :width: 100%
+    .. figure:: /img/SpecLib_overview.PNG
+       :align: center
+       :width: 100%
 
 *Overview of the Spectral Library view with several collected and labeled spectra and main tools*
 
@@ -61,10 +61,9 @@ and to control:
 * the sampling method, for example to aggregate multiple pixel into a single profile first,
 * the scaling of profile value.
 
-
-.. figure:: /img/SpectralProfileSources.png
-    :align: center
-    :width: 100%
+    .. figure:: /img/SpectralProfileSources.png
+       :align: center
+       :width: 100%
 
 *Overview of the Spectral Profile Sources Window with two labeled spectra and main functionalities*
 
@@ -85,9 +84,9 @@ and to control:
 *Style*
  * Change style of displayed spectra, i.e. symbol and color
 
-.. figure:: /img/SpecProfile_style.png
-   :align: center
-   :width: 50%
+    .. figure:: /img/SpecProfile_style.png
+       :align: center
+       :width: 50%
 
 *Source*
  * Specify a source raster dataset
@@ -130,7 +129,6 @@ Collect profiles
     .. figure:: /img/profile_types.png
        :align: center
        :width: 100%
-
 
 As an alternative to the mouse you can also identify and select pixel profiles using the shortcuts to change, select and add pixel profiles to the Spectral Library.
 
@@ -175,9 +173,9 @@ In a similar way you can compare profiles from the same raster image but using a
 2. Change the :guilabel:`Sampling` to e.g. a 3x3 Kernel mean profile.
 3. Collect new pixel profiles.
 
-.. figure:: /img/KernelProfile.png
-   :align: center
-   :width: 100%
+    .. figure:: /img/KernelProfile.png
+       :align: center
+       :width: 100%
 
 *Spectral Profile Sources Sampling Example*
 
@@ -230,9 +228,9 @@ In addition, the Layer Properties panel allows you to set a certain widget for a
 
 The field calculator allows you to modify or assess spectra and calculate new columns or modify existing ones using an expression.
 
-.. figure:: /img/fieldCalculator.png
-   :align: center
-   :width: 100%
+    .. figure:: /img/fieldCalculator.png
+      :align: center
+      :width: 100%
 
 *Overview of the Field Calculator*
 
@@ -243,8 +241,8 @@ Spectra can be selected in the attribute table and in the plot window itself. Se
 * Hold the :kbd:`Shift` key to select multiple spectra.
 * A selection can be removed by clicking the |mActionDeselectAll| button.
 
-.. figure:: /img/SpecLib_SelectSpectra.png
-    :width: 100%
+    .. figure:: /img/SpecLib_SelectSpectra.png
+      :width: 100%
 
 * Selected spectra can be removed by using the |mActionDeleteSelected| button.
 
@@ -253,9 +251,9 @@ Spectra can be selected in the attribute table and in the plot window itself. Se
 
 It is also possible to select and filter profiles with the common vector filter and selection tools, e.g. select spectra by expression:
 
-.. figure:: /img/SpecLib_SelectByExpr.png
-   :align: center
-   :width: 100%
+    .. figure:: /img/SpecLib_SelectByExpr.png
+       :align: center
+       :width: 100%
 
 *Select profiles using an expression*
 
@@ -290,9 +288,9 @@ In addition, the field calculator can be used to calculate spectral profiles.
 
 *Note*: The last argument defines the output format. It must correspond to the type you assigned when creating the new column.
 
-.. figure:: /img/SpecLib_FieldCalc.png
-   :align: center
-   :width: 100%
+    .. figure:: /img/SpecLib_FieldCalc.png
+       :align: center
+       :width: 100%
 
 *Example of calculating new spectral profiles*
 
@@ -393,8 +391,8 @@ You can adjust the extent of the visualized data range and units
 * using the mouse cursor while keeping the right mouse button pressed
 * in the visualization settings view
 
-.. figure:: /img/SpecLib_units.png
-    :width: 100%
+    .. figure:: /img/SpecLib_units.png
+       :width: 100%
 
 You can also export the entire plot scene or visible view box by clicking into the plot and select :menuselection:`Export`.
 
@@ -410,8 +408,8 @@ Visualizing profiles
 The visualization settings of the spectral library allow you to customize the view according to your needs.
 You can define multiple visualization groups that describe how profiles from a specific field and with specific attributes should be visualized.
 
-.. figure:: /img/SpecLib_VisualSettings.png
-   :width: 100%
+    .. figure:: /img/SpecLib_VisualSettings.png
+       :width: 100%
 
 *Overview of the visualization settings in the Spectral Library window*
 
@@ -436,14 +434,14 @@ The spectral library visualization settings also allow you to add several profil
 
 If you have more than one column that stores spectral information, you can have different visualization groups using different profiles.
 
-.. figure:: /img/SpecLib_visualization1.png
-   :width: 100%
+    .. figure:: /img/SpecLib_visualization1.png
+       :width: 100%
 
 If you have only one column where spectral information is stored, but you have another column storing e.g. class names,
 you can use the :guilabel:`Filter` field to define an expression and select only specific class names, e.g. *Impervious* and *Vegetation* and visualize these profiles in different colors.
 
-.. figure:: /img/SpecLib_visualization2.PNG
-   :width: 100%
+    .. figure:: /img/SpecLib_visualization2.PNG
+       :width: 100%
 
 Colorize spectra by attribute
 -----------------------------
@@ -455,8 +453,8 @@ Spectra can be colorized according to their attributes, e.g. their class name.
 3. In the **Column** droplist select the desired column and click *Classify*.
 4. Confirm with :guilabel:`Ok` and close the window.
 
-..  image:: /img/SpecLib_visualization.gif
-    :width: 100%
+    ..  image:: /img/SpecLib_visualization.gif
+        :width: 100%
 
 5. In the :guilabel:`Spectral Library` Window activate the visualization settings with the |mActionAddLegend| button.
 6. Right-click on **Color** and select *Use vector symbol colors* |speclib_usevectorrenderer|.
@@ -473,9 +471,9 @@ Loading or Saving a spectral library means to load or save vector files.
 * Load any vector source in the :guilabel:`Data Source Panel` into a :guilabel:`Spectral Library Viewer.
 * The vector layer does not need to contain any Spectral Profile fields. You can add or define them afterwards.
 
-.. figure:: /img/Load_SpecLib.png
-   :align: center
-   :width: 60%
+    .. figure:: /img/Load_SpecLib.png
+       :align: center
+       :width: 40%
 
 If your spectral library uses an in-memory vector layer backend, all data will be lost if the layer is closed.
 This is the case if the Spectral Library Viewer was opened from scratch with an empty spectral library.
@@ -486,17 +484,17 @@ are not saved in the data source file, but the QGIS project or a QGIS specific s
 
 * Open :menuselection:`Layer properties > Symbology > Style > Save Default` to create or update the .qml file and ensure that the *Spectral Profile* fields will be restored when re-opening the data set.
 
-.. figure:: /img/SpecLib_defaultStyle.png
-   :align: center
-   :width: 40%
+    .. figure:: /img/SpecLib_defaultStyle.png
+       :align: center
+       :width: 30%
 
 Exporting Profiles
 ------------------
 The Export dialog |speclib_save| allows you to export all or selected profiles as Geopackage (.gpkg), GeoJSON (.geoson) or ENVI Spectral Library (*.sli).
 
-.. figure:: /img/SpecLib_exportProfiles.png
-   :align: center
-   :width: 60%
+    .. figure:: /img/SpecLib_exportProfiles.png
+       :align: center
+       :width: 60%
 
 The ENVI Spectral Library does not allow saving profiles with different spectral settings (number of bands, wavelength units, FWHM, …)
 in the same file. Therefore, you need to select one (out of multiple) profile fields.

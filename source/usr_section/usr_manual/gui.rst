@@ -2,18 +2,20 @@
 
 .. _gui:
 
+=======
 The GUI
-*******
+=======
 
 .. figure:: ../../img/manual_gui.png
    :width: 100%
-
-
 
 Toolbar
 =======
 
 In the toolbar you can find the most common tasks. See table below for information on different buttons and their functionality.
+
+Data Sources
+------------
 
 .. list-table::
    :widths: auto
@@ -25,6 +27,17 @@ In the toolbar you can find the most common tasks. See table below for informati
    * - |mActionDataSourceManager|
      - Adds a data source
      - Here you can add data from different sources, e.g. raster and vector
+
+Maps and Views
+--------------
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - Button
+     - Button Name
+     - Description
    * - |viewlist_mapdock|
      - Open a map window
      - Opens a new Map Window
@@ -34,6 +47,17 @@ In the toolbar you can find the most common tasks. See table below for informati
    * - |viewlist_textview|
      - Open a text window
      - Opens a new text window, you can for example use it to store metadata, take notes etc.
+
+Map Tools
+---------
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - Button
+     - Button Name
+     - Description
    * - |mActionPan|
      - Pan Map
      - Moves the map. Can also be achieved by holding the mouse wheel
@@ -51,8 +75,8 @@ In the toolbar you can find the most common tasks. See table below for informati
      - Changes the zoom level of the map you click to show the full extent of all layers visualized in it
    * - |select_location|
      - Identify
-     - Identify locations on the map where you click with the cursor. Use the three options on the right to specify what to identify
-   * - |mActionIdentify|
+     - Identify locations on the map where you click with the cursor. Use the two options on the right to specify what to identify
+   * - |metadata|
      - *option:* Location value
      - Shows pixel values of all layers at the selected position
    * - |profile|
@@ -64,13 +88,65 @@ In the toolbar you can find the most common tasks. See table below for informati
    * - |link_basic|
      - Specify the linking between different maps
      - Opens the Map Linking Dialog
+   * - |processingAlgorithm|
+     - Toggle processing toolbox visibility
+     - Opens the Processing toolbox panel
 
-.. todo add vector editing symbols
+Vector Tools
+------------
+
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - Button
+     - Button Name
+     - Description
+   * - |mActionSelectRectangle|
+     - Select features
+     - Click in the image to select different features. Use the dropdown menu to choose what kind of feature to select, e.g., by polygon, freehand or radius.
+   * - |mActionDeselectAll|
+     - Deselect selected features
+     - Click to delete selection.
+   * - |mActionToggleEditing|
+     - Toggle editing
+     - Activate to be able to work with vector data, e.g. to edit or save features
+   * - |mActionSaveEdits|
+     - Save Edits
+     - Hit button to save changes.
+   * - |mActionCapturePoint|
+     - Draw a new feature (point)
+     - Add a point feature to existing data.
+   * - |mActionCapturePolygon|
+     - Draw a new feature (polygon)
+     - Add a polygon feature to existing data.
+
+
+Plugins Toolbar
+---------------
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - Button
+     - Button Name
+     - Description
+   * - ||
+     - GEE Time Series Explorer
+     - Opens the GEE Time Series Explorer in a new view.
+   * - ||
+     - Profile Analytics
+     - Opens the Profile Analytics in a new view.
+
+Panels
+=======
 
 Data Sources
-============
+------------
 
-The Data Sources panel lists the data in your current project, comparable to the Layers panel in QGIS. The following data types and their
+The **Data Sources** panel lists the data in your current project, comparable to the Layers panel in QGIS. The following data types and their
 corresponding metadata are available:
 
 * |mIconRasterLayer| Raster Data
@@ -106,37 +182,28 @@ corresponding metadata are available:
 
 * |processingAlgorithm| Models
 
-|
 
 **Buttons of the Data Sources panel:**
 
-.. list-table::
+.. csv-table::
+   :header: "Button", "Description"
    :widths: auto
-   :align: left
-   :header-rows: 1
 
-   * - Button
-     - Description
-   * - |mActionDataSourceManager|
-     - This button lets you add data from different sources, e.g. raster and vector. Same function as |add_datasource|.
-   * - |mActionRemove|
-     - Remove layers from the Data Sources panel. First select one or more and then click the remove button.
-   * - |mActionCollapseTree|
-     - Collapses the whole menu tree, so that only layer type groups are shown.
-   * - |mActionExpandTree|
-     - Expands menu tree to show all branches.
-   * - |qgis_icon|
-     - Synchronizes Data Sources with QGIS.
+   |mActionDataSourceManager|, "This button lets you add data from different sources, e.g. raster and vector. Same function as |add_datasource|."
+   |mActionRemove|, "Remove layers from the Data Sources panel. First select one or more and then click the remove button."
+   |mActionCollapseTree|, "Collapses the whole menu tree, so that only layer type groups are shown."
+   |mActionExpandTree|, "Expands menu tree to show all branches."
+   |qgis_icon|, "Synchronizes Data Sources with QGIS."
+
 
 .. tip::
-
    * If you want to remove all layers at once, right-click in the Data Sources panel and and select :guilabel:`Remove all DataSources`
    * The EnMAP-Box also supports Tile-/Web Map Services (e.g. Google Satellite or OpenStreetMap) as a raster layer. Just add them to
      your QGIS project as you normally would, and then click the |qgis_icon| :superscript:`Synchronize Data Sources with QGIS`
      button. Now they should appear in the data source panel and can be added to a Map View.
 
 Data Views
-==========
+----------
 
 The Data Views panel organizes the different windows and their content.
 You may change the name of a Window by double-clicking onto the name in the list.
@@ -157,14 +224,12 @@ You may change the name of a Window by double-clicking onto the name in the list
 
 **Organization of the Data Views panel:**
 
-
 .. figure:: ../../img/example_data_views.png
    :width: 100%
 
    Example of how different window types and their contents are organized in the Data Views panel. In this case there
    are two Map Windows and one Spectral Library Window in the project.
 
-|
 
 Map Window |viewlist_mapdock|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -195,7 +260,9 @@ available:
 
 In order to link Map Windows, go to :menuselection:`View --> Set Map Linking` in the menu bar, which will open the following dialog:
 
-.. image:: ../../img/map_linking.png
+    .. figure:: /img/map_linking.png
+       :align: center
+       :width: 30%
 
 Here you can specify the above mentioned link options between the Map Windows. You may either specify linkages between pairs
 or link all canvases at once (the :guilabel:`All Canvases` option is only specifiable when the number of Map Windows is > 2). Remove
@@ -203,13 +270,8 @@ created links by clicking |link_open|.
 
 .. raw:: html
 
-   <div><video width="90%" controls><source src="../../_static/videos/maplinking.webm" type="video/webm">Your browser does not support HTML5 video.</video>
+   <div><video width="100%" controls><source src="../../_static/videos/maplinking.webm" type="video/webm">Your browser does not support HTML5 video.</video>
    <p><i>Demonstration of linking two Map Windows</i></p></div>
-
-
-.. |mapwindowbar| image:: ../../img/mapwindowbar.png
-
-
 
 Crosshair
 ^^^^^^^^^
@@ -217,40 +279,33 @@ Crosshair
 * Activate the crosshair by right-clicking into a Map Window and select :menuselection:`Crosshair --> Show`
 * You can alter the style of the crosshair by right-clicking into a Map Window and select :menuselection:`Crosshair --> Style`
 
-  .. image:: ../../img/crosshair_style.png
+    .. figure:: /img/crosshair_style.png
+       :align: center
+       :width: 40%
 
-
-Spectral Library Window |viewlist_spectrumdock|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See section on :ref:`Spectral Libaries <spectral_libraries>`
-
-Text Window |viewlist_textview|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. _spectral_profile_sources:
 
 Spectral Profile Sources
-========================
+------------------------
 
-see Section on :ref:`spectral_profile_sources`
-
+see Section on :ref:`spectral_libraries_spectral_profile_sources`
 
 .. _processing_toolbox:
 
 Processing Toolbox
-==================
+------------------
 
 The processing toolbox is basically the same panel as in QGIS. Here you can find all EnMAP-Box processing algorithms
 listed under *EnMAP-Box*. In case it is closed/not visible you can open it by clicking the |processingAlgorithm|
 button in the menubar or :menuselection:`View --> Panels --> QGIS Processing Toolbox`.
 
-.. image:: ../../img/processing_toolbox.png
+    .. figure:: /img/processing_toolbox.png
+       :align: center
+       :width: 40%
 
-See `QGIS Documentation - The toolbox <https://docs.qgis.org/3.4/en/docs/user_manual/processing/toolbox.html>`_ for further information.
+See `QGIS Documentation - The toolbox <https://docs.qgis.org/3.22/en/docs/user_manual/processing/toolbox.html>`_ for further information.
 
 Cursor Location Values
-======================
+----------------------
 
 This tools lets you inspect the values of a layer or multiple layers at the location where you click in the map view. To select a location (e.g. pixel or feature)
 use the |select_location| :superscript:`Select Cursor Location` button together with the |cursorlocationinfo| :sup:`Identify cursor location value` option activated and click somewhere in the map view.
@@ -258,7 +313,10 @@ use the |select_location| :superscript:`Select Cursor Location` button together 
 * The Cursor Location Value panel should open automatically and list the information for a selected location. The layers will be listed in the order they appear in the Map View.
   In case you do not see the panel, you can open it via :menuselection:`View --> Panels --> Cursor Location Values`.
 
-.. figure:: ../../img/cursorlocationvalues.png
+    .. figure:: /img/cursorlocationvalues.png
+       :align: center
+       :width: 40%
+
 
 * By default, raster layer information will only be shown for the bands which are mapped to RGB. If you want to view all bands, change the :guilabel:`Visible` setting
   to :guilabel:`All` (right dropdown menu). Also, the first information is always the pixel coordinate (column, row).
@@ -267,4 +325,25 @@ use the |select_location| :superscript:`Select Cursor Location` button together 
 * Coordinates of the selected location are shown in the :guilabel:`x` and :guilabel:`y` fields. You may change the coordinate system of the displayed
   coordinates via the |mActionSetProjection| :superscript:`Select CRS` button (e.g. for switching to lat/long coordinates).
 
+Windows
+==========
 
+Map Window
+-----------
+
+    .. figure:: /img/mapWindow.png
+       :align: center
+       :width: 100%
+
+
+Spectral Library Window |viewlist_spectrumdock|
+-----------------------------------------------
+
+
+
+Text Window |viewlist_textview|
+-------------------------------
+
+    .. figure:: /img/textWindow.png
+       :align: center
+       :width: 100%
