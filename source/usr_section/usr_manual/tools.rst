@@ -11,59 +11,126 @@ Tools
 Add Product
 ===========
 
-Import a satellite product into the EnMAP-Box via the main menu or by drag&drop from your file explorer.
+Import a satellite product into the EnMAP-Box via the main menu or by drag&drop (shown in the live demonstration) from your file explorer.
+Note that the different import algorithms assign proper metadata like wavelength, band names and data offset and scale, resulting in analysis ready raster data.
 
-..  youtube:: G7UE-DIhXi8
-    :width: 100%
-    :privacy_mode:
+1. Choose the type of product to imported.
+
+    .. figure:: ./img/AddProduct.png
+       :align: center
+
+2. Select the associated (metadata) file.
+
+    .. figure:: ./img/AddProduct_2.png
+       :align: center
+
+Live demonstration:
+
+    ..  youtube:: G7UE-DIhXi8
+        :width: 100%
+        :privacy_mode:
 
 Add Web Map Services (WMS)
 ==========================
 
-Add a predefined WMS layer.
+Add a predefined WMS to the Data Sources panel:
 
-..  youtube:: SRJPh4bxcnw
-    :width: 100%
-    :privacy_mode:
+1. Choose a WMS source.
+
+    .. figure:: ./img/AddWebMapServices.png
+       :align: center
+
+2. Add the WMS to a Map View.
+
+Live demonstration:
+
+    ..  youtube:: SRJPh4bxcnw
+        :width: 100%
+        :privacy_mode:
 
 Band Statistics
 ===============
 
 The Band Statistics tool reports band histograms and basic statistics like min, max, mean and standard deviation.
 
-..  youtube:: tS2B9EsHutY
-    :width: 100%
-    :privacy_mode:
+1. Start the tool from the *Tools > Band Statistics* menu.
+
+2. Select a raster layer.
+
+3. Add some bands.
+
+3. Interactively explore the band statistics for the current map canvas extent.
+
+    .. figure:: ./img/BandStatistics.png
+       :align: center
+
+Live demonstration:
+
+    ..  youtube:: tS2B9EsHutY
+        :width: 100%
+        :privacy_mode:
 
 Bivariate Color Raster Renderer
-===============
+===============================
 
 The Bivariate Color Raster Renderer allows to visualize two bands using a 2d color ramp.
 Find a mapping example here: https://www.joshuastevens.net/cartography/make-a-bivariate-choropleth-map/
 
-..  youtube:: TW3hrWKLpbs
-    :width: 100%
-    :privacy_mode:
+1. Start the tool from the *Tools > Bivariate Color Raster Renderer* menu.
+
+2. Select a raster layer.
+
+3. Select two bands.
+
+4. Select or define a color plane.
+
+5. Interactively explore the raster.
+
+    .. figure:: ./img/BivariateColorRasterRenderer.png
+       :align: center
+
+Live demonstration:
+
+    ..  youtube:: TW3hrWKLpbs
+        :width: 100%
+        :privacy_mode:
 
 Class Fraction/Probability Renderer and Statistics
 ==================================================
 
-The Class Fraction/Probability Renderer allows  allows to visualize arbitrary many fraction/probability bands
-at the same time, using the original class colors.
+The Class Fraction/Probability Renderer allows to visualize arbitrary many fraction/probability bands
+at the same time, using a weighted average of the original class colors, where the weights are given by the
+class fractions/probabilities.
 
-..  youtube:: fflhmRl_Npw
-    :width: 100%
-    :privacy_mode:
+1. Start the tool from the *Tools > Class Fraction/Probability Renderer and Statistics* menu.
+
+2. Select a :term:`class fraction layer` or a :term:`class probability layer`.
+
+3. Select approriate class colors or paste a matching style from another layer.
+
+4. Interactively explore the raster.
+
+    .. figure:: ./img/ClassFractionRenderer.png
+       :align: center
+
+Not that the visibility of individual classes can be turned on and off.
+
+Live demonstration:
+
+    ..  youtube:: fflhmRl_Npw
+        :width: 100%
+        :privacy_mode:
 
 Classification Statistics
 =========================
 
 The Classification Statistics tool reports class histograms and area covered in percentage, pixel and map units.
 
-..  youtube:: Go7tRzwKPvs
-    :width: 100%
-    :privacy_mode:
+Live demonstration:
 
+    ..  youtube:: Go7tRzwKPvs
+        :width: 100%
+        :privacy_mode:
 
 CMYK Color Raster Renderer
 ==========================
@@ -71,9 +138,11 @@ CMYK Color Raster Renderer
 The CMYK Color Raster Renderer allows to visualize 4 bands using the CMYK (Cyan, Magenta, Yellow, and Key/Black)
 color model. Find a mapping example here: https://adventuresinmapping.com/2018/10/31/cmyk-vice/
 
-..  youtube:: aVy9WXM3Q84
-    :width: 100%
-    :privacy_mode:
+Live demonstration:
+
+    ..  youtube:: aVy9WXM3Q84
+        :width: 100%
+        :privacy_mode:
 
 Color Space Explorer
 ====================
@@ -82,9 +151,11 @@ The Color Space Explorer allows
 a) to select random and predefined RBG band combinations, and
 b) to animate RGB bands.
 
-..  youtube:: e5SLW1pB06A
-    :width: 100%
-    :privacy_mode:
+Live demonstration:
+
+    ..  youtube:: e5SLW1pB06A
+        :width: 100%
+        :privacy_mode:
 
 
 Decorrelation Stretch Renderer
@@ -93,8 +164,10 @@ Decorrelation Stretch Renderer
 The Decorrelation Stretch Renderer allows to visualize 3 band. It removes the high correlation commonly found in
 optical bands to produce a more colorful color composite image.
 
-.. figure:: ./img/DecorrelationStretchRenderer.png
-   :align: center
+Live demonstration:
+
+    .. figure:: ./img/DecorrelationStretchRenderer.png
+       :align: center
 
 Enhanced Multiband Color Renderer
 =================================
@@ -117,8 +190,10 @@ Find a mapping example here: https://landmonitoring.earth/portal/ ; select Maps 
     Find a good dataset, that is comparable to the *Global Landcover Dynamics 2016-2020* from GeoVille,
     and make a video.
 
-.. figure:: ./img/HSVColorRasterRenderer.png
-   :align: center
+Live demonstration:
+
+    .. figure:: ./img/HSVColorRasterRenderer.png
+       :align: center
 
 Image Cube
 ==========
@@ -167,15 +242,19 @@ Raster Layer Styling
 
 The Raster Layer Styling panel allows to quickly select a RGB, Gray or Pseudocolor visualizations.
 
-..  youtube:: ImO8BzHNjlk
-    :width: 100%
-    :privacy_mode:
+Live demonstration:
+
+    ..  youtube:: ImO8BzHNjlk
+        :width: 100%
+        :privacy_mode:
 
 It also supports the linking of the style between multiple raster layer.
 
-..  youtube:: HJSNhG7vKKg
-    :width: 100%
-    :privacy_mode:
+Live demonstration:
+
+    ..  youtube:: HJSNhG7vKKg
+        :width: 100%
+        :privacy_mode:
 
 Raster Source Band Properties Editor
 ====================================
@@ -183,8 +262,8 @@ Raster Source Band Properties Editor
 The Raster Source Band Properties Editor allows to view and edit band properties of GDAL raster sources,
 with special support for ENVI metadata.
 
-.. figure:: ./img/RasterSourceBandPropertiesEditor.png
-   :align: center
+    .. figure:: ./img/RasterSourceBandPropertiesEditor.png
+       :align: center
 
 Reclassify
 ==========
@@ -226,9 +305,11 @@ Scatter Plot
 The Scatter Plot allows to plot two raster bands or vector fields against each other.
 The visualization of both, denstity and scatter is supported.
 
-..  youtube:: bMfklHoEqJc
-    :width: 100%
-    :privacy_mode:
+Live demonstration:
+
+    ..  youtube:: bMfklHoEqJc
+        :width: 100%
+        :privacy_mode:
 
 Virtual Raster Builder
 ======================
