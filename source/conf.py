@@ -34,7 +34,7 @@ autodoc_warningiserror = False
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
+    # 'sphinx.ext.autodoc',
     # 'sphinxcontrib.mockautodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
