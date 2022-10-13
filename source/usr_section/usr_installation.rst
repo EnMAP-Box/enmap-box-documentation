@@ -230,8 +230,15 @@ Install from QGIS plugin repository
    .. figure:: ../img/pluginmanager_all.png
 
    Select it and click :guilabel:`Install plugin` (or :guilabel:`Upgrade` in case you update to a new version)
+#. The following dialog might pop up afterwards:
+
+   .. image:: /img/plugin_dep_manager.png
+
+   Depending on whether you want to use the GEE Time Series Explorer check |cb1| or uncheck |cb0| the checkbox
+   and confirm with :guilabel:`OK`
+
 #. Start the EnMAP-Box via the |icon| icon or from the menubar :menuselection:`Raster --> EnMAP-Box`
-#. (Optional): You can download a test/demo dataset via :menuselection:`Project --> Load Example Data`
+#. (Optional): You can download a demo dataset via :menuselection:`Project --> Load Example Data`
 
 .. admonition:: Experimental version
 
