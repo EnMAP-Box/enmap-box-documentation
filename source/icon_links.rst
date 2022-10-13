@@ -48,9 +48,11 @@
    :width: 28px
 .. |edit_ogr_metadata| image:: /img/icons/edit_ogr_metadata.svg
    :width: 28px
-.. |enmapbox| image:: /img/icons/enmapbox.svg
+.. |enmapbox| image:: /img/icons/enmapbox.png
    :width: 28px
 .. |enmapbox600dpi| image:: /img/icons/enmapbox600dpi.png
+   :width: 28px
+.. |enmapbox64px| image:: /img/icons/enmapbox64px.png
    :width: 28px
 .. |enmapSensor| image:: /img/icons/enmapSensor.png
    :width: 28px
@@ -71,6 +73,8 @@
 .. |fileSize| image:: /img/icons/fileSize.svg
    :width: 28px
 .. |gdalSensor| image:: /img/icons/gdalSensor.svg
+   :width: 28px
+.. |GEE| image:: /img/icons/GEE.svg
    :width: 28px
 .. |general| image:: /img/icons/general.svg
    :width: 28px
@@ -146,6 +150,10 @@
    :width: 28px
 .. |mActionCalculateField| image:: /img/icons/mActionCalculateField.svg
    :width: 28px
+.. |mActionCapturePoint| image:: /img/icons/mActionCapturePoint.svg
+   :width: 28px
+.. |mActionCapturePolygon| image:: /img/icons/mActionCapturePolygon.svg
+   :width: 28px
 .. |mActionCollapseTree| image:: /img/icons/mActionCollapseTree.svg
    :width: 28px
 .. |mActionConditionalFormatting| image:: /img/icons/mActionConditionalFormatting.svg
@@ -206,11 +214,15 @@
    :width: 28px
 .. |mActionSaveAllEdits| image:: /img/icons/mActionSaveAllEdits.svg
    :width: 28px
+.. |mActionSaveEdits| image:: /img/icons/mActionSaveEdits.svg
+   :width: 28px
 .. |mActionSaveTS| image:: /img/icons/mActionSaveTS.svg
    :width: 28px
 .. |mActionSelectAll| image:: /img/icons/mActionSelectAll.svg
    :width: 28px
 .. |mActionSelectedToTop| image:: /img/icons/mActionSelectedToTop.svg
+   :width: 28px
+.. |mActionSelectRectangle| image:: /img/icons/mActionSelectRectangle.svg
    :width: 28px
 .. |mActionSetProjection| image:: /img/icons/mActionSetProjection.svg
    :width: 28px
@@ -304,6 +316,8 @@
    :width: 28px
 .. |mSourceFields| image:: /img/icons/mSourceFields.svg
    :width: 28px
+.. |numpy| image:: /img/icons/numpy.png
+   :width: 28px
 .. |pan_center| image:: /img/icons/pan_center.svg
    :width: 28px
 .. |plot_style| image:: /img/icons/plot_style.svg
@@ -321,6 +335,8 @@
 .. |processing_collapse| image:: /img/icons/processing_collapse.svg
    :width: 28px
 .. |profile| image:: /img/icons/profile.svg
+   :width: 28px
+.. |profileanalytics| image:: /img/icons/profileanalytics.svg
    :width: 28px
 .. |profiletheme_bright| image:: /img/icons/profiletheme_bright.svg
    :width: 28px
@@ -424,5 +440,7 @@
    :width: 28px
 .. |zoomToFullExtent| image:: /img/icons/zoomToFullExtent.svg
    :width: 28px
-.. |enmapbox64px| image:: /img/icons/enmapbox64px.png
+.. |profile_wref| image:: /img/icons/profile_wref.svg
+   :width: 28px
+.. |spectrometer| image:: /img/icons/spectrometer.svg
    :width: 28px

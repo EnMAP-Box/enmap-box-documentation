@@ -9,10 +9,20 @@ The GUI
     .. figure:: /img/manual_gui.png
        :align: center
 
+*Overview of the EnMap-Box*
+
 Toolbar
 =======
 
 In the toolbar you can find the most common tasks. See table below for information on different buttons and their functionality.
+
+* It is possible to enable and disable the different tools.
+* Right-click on the toolbar and select the desired toolbar that should be displayed.
+
+    .. figure:: /img/toolbarView.png
+       :align: center
+
+*Enable and disable different toolbars*
 
 Data Sources
 ------------
@@ -39,8 +49,8 @@ Maps and Views
      - Button Name
      - Description
    * - |viewlist_mapdock|
-     - Open a map window
-     - Opens a new Map Window
+     - Open a map view
+     - Opens a new Map View
    * - |viewlist_spectrumdock|
      - Open a spectral library window
      - Opens a new spectral library window
@@ -133,10 +143,10 @@ Plugins Toolbar
    * - Button
      - Button Name
      - Description
-   * - ||
+   * - |GEE|
      - GEE Time Series Explorer
      - Opens the GEE Time Series Explorer in a new view.
-   * - ||
+   * - |profileanalytics|
      - Profile Analytics
      - Opens the Profile Analytics in a new view.
 
@@ -186,8 +196,8 @@ corresponding metadata are available:
 **Buttons of the Data Sources panel:**
 
 .. csv-table::
-   :header: "Button", "Description"
    :widths: auto
+   :header: "Button", "Description"
 
    |mActionDataSourceManager|, "This button lets you add data from different sources, e.g. raster and vector. Same function as |add_datasource|."
    |mActionRemove|, "Remove layers from the Data Sources panel. First select one or more and then click the remove button."
@@ -228,66 +238,11 @@ You may change the name of a Window by double-clicking onto the name in the list
    :width: 100%
 
    Example of how different window types and their contents are organized in the Data Views panel. In this case there
-   are two Map Windows and one Spectral Library Window in the project.
-
-
-Map Window |viewlist_mapdock|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The map window allows you to visualize raster and vector data. It is interactive, which means you can move the content or
-zoom in/out.
-
-* In order to add a new Map Window click the |viewlist_mapdock| :superscript:`Open a Map Window` button. Once you added a
-  Map Window, it will be listed in the ``Data Views`` panel.
-* Add layers by either drag-and-dropping them into the Map Window (from the Data Sources list) or right-click onto
-  the layer :menuselection:`--> Open in existing map...`
-* You can also directly create a new Map Window and open a layer by right-clicking the layer :menuselection:`--> Open in new map`
-
-
-.. can display raster and vector data (+ layer styling as is QGIS)
-.. a variety of alignment options (maybe show animated gif)
-
-
-Linking
-^^^^^^^
-
-You can link multiple Map Windows with each other, so that the contents are synchronized. The following options are
-available:
-
-* |link_mapscale_center| Link map scale and center
-* |link_mapscale| Link map scale
-* |link_center| Link map center
-
-In order to link Map Windows, go to :menuselection:`View --> Set Map Linking` in the menu bar, which will open the following dialog:
-
-    .. figure:: /img/map_linking.png
-       :align: center
-       :width: 30%
-
-Here you can specify the above mentioned link options between the Map Windows. You may either specify linkages between pairs
-or link all canvases at once (the :guilabel:`All Canvases` option is only specifiable when the number of Map Windows is > 2). Remove
-created links by clicking |link_open|.
-
-.. raw:: html
-
-   <div><video width="100%" controls><source src="../../_static/videos/maplinking.webm" type="video/webm">Your browser does not support HTML5 video.</video>
-   <p><i>Demonstration of linking two Map Windows</i></p></div>
-
-Crosshair
-^^^^^^^^^
-
-* Activate the crosshair by right-clicking into a Map Window and select :menuselection:`Crosshair --> Show`
-* You can alter the style of the crosshair by right-clicking into a Map Window and select :menuselection:`Crosshair --> Style`
-
-    .. figure:: /img/crosshair_style.png
-       :align: center
-       :width: 40%
+   are two Map Views and one Spectral Library View in the project.
 
 
 Spectral Profile Sources
 ------------------------
-
-see Section on :ref:`spectral_libraries_spectral_profile_sources`
 
 .. _processing_toolbox:
 
@@ -325,25 +280,67 @@ use the |select_location| :superscript:`Select Cursor Location` button together 
 * Coordinates of the selected location are shown in the :guilabel:`x` and :guilabel:`y` fields. You may change the coordinate system of the displayed
   coordinates via the |mActionSetProjection| :superscript:`Select CRS` button (e.g. for switching to lat/long coordinates).
 
-Windows
-==========
+Views
+======
 
-Map Window
+Map View
 -----------
+
+The map view allows you to visualize raster and vector data. It is interactive, which means you can move the content or
+zoom in/out.
+
+* In order to add a new Map View click the |viewlist_mapdock| :superscript:`Open a Map View` button. Once you added a
+  Map View, it will be listed in the ``Data Views`` panel.
+* Add layers by either drag-and-dropping them into the Map View (from the Data Sources list) or right-click onto
+  the layer :menuselection:`--> Open in existing map...`
+* You can also directly create a new Map View and open a layer by right-clicking the layer :menuselection:`--> Open in new map`
 
     .. figure:: /img/mapWindow.png
        :align: center
-       :width: 100%
+
+Linking
+^^^^^^^
+
+You can link multiple Map View with each other, so that the contents are synchronized. The following options are
+available:
+
+* |link_mapscale_center| Link map scale and center
+* |link_mapscale| Link map scale
+* |link_center| Link map center
+
+In order to link Map View, go to :menuselection:`View --> Set Map Linking` in the menu bar, which will open the following dialog:
+
+    .. figure:: /img/map_linking.png
+       :align: center
+       :width: 30%
+
+Here you can specify the above mentioned link options between the Map Views. You may either specify linkages between pairs
+or link all canvases at once (the :guilabel:`All Canvases` option is only specifiable when the number of Map Views is > 2). Remove
+created links by clicking |link_open|.
+
+.. raw:: html
+
+   <div><video width="100%" controls><source src="../../_static/videos/maplinking.webm" type="video/webm">Your browser does not support HTML5 video.</video>
+   <p><i>Demonstration of linking two Map Views</i></p></div>
+
+Crosshair
+^^^^^^^^^
+
+* Activate the crosshair by right-clicking into a Map View and select :menuselection:`Crosshair --> Show`
+* You can alter the style of the crosshair by right-clicking into a Map View and select :menuselection:`Crosshair --> Style`
+
+    .. figure:: /img/crosshair_style.png
+       :align: center
+       :width: 40%
 
 
-Spectral Library Window |viewlist_spectrumdock|
+Spectral Library View |viewlist_spectrumdock|
 -----------------------------------------------
 
 
 
-Text Window |viewlist_textview|
+Text View |viewlist_textview|
 -------------------------------
 
     .. figure:: /img/textWindow.png
        :align: center
-       :width: 100%
