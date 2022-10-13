@@ -6,8 +6,8 @@
 The GUI
 =======
 
-.. figure:: ../../img/manual_gui.png
-   :width: 100%
+    .. figure:: /img/manual_gui.png
+       :align: center
 
 Toolbar
 =======

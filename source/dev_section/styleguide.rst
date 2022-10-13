@@ -1,8 +1,8 @@
 .. _documentation_style_guide:
 
-=====
+========================
 Documentation Guidelines
-=====
+========================
 
 This documentation guideline provides an overview of the general style guidelines and on how to contribute to the documentation. It is based on the
 `QGIS documentation guidelines <https://docs.qgis.org/3.22/en/docs/documentation_guidelines/index.html>`_.
@@ -59,7 +59,7 @@ between information and actual steps and to follow them easily:
 
 
 .. figure:: /img/numbering_workflow.png
-   :width: 100%
+   :align: center
 
 *Workflow example with numbering*
 
@@ -79,7 +79,7 @@ Screenshots with explanations
 * Description text in box right-aligned
 
     .. figure:: /img/screenshots_with_description.png
-       :width: 100%
+       :align: center
 
 *Example of adding a screenshot with explanation*
 
@@ -88,15 +88,15 @@ Positioning of info boxes and images
 
 Info boxes, tooltips and notes should be aligned with the preceding text, i.e., if the info box follows a bulleted list, the box should also be indented.
 
-.. figure:: /img/infoboxes.png
-   :width: 100%
+    .. figure:: /img/infoboxes.png
+       :align: center
 
-*Example of placing info boxes within / after bullet points.*
+*Example of placing info boxes within / after bullet points*
 
 Images should always be centred, but can vary in size (adjust according to readability).
-Also add a caption to the image if it is not placed between two bullet points.
+Also add a caption to the image if it is **not** placed between two bullet points.
 
-.. figure:: /img/images_caption_example.png
-   :width: 100%
+    .. figure:: /img/images_caption_example.png
+      :align: center
 
 *Placement of images for (a) within bullet points, (b) after body text*
