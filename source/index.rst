@@ -116,7 +116,7 @@ Two Presentations by EnMAP-Box developers Andreas Rabe and Benjamin Jakimow at t
 
 
 .. toctree::
-    :maxdepth: 4
+    :maxdepth: 6
     :caption: General
 
 
@@ -140,7 +140,7 @@ Two Presentations by EnMAP-Box developers Andreas Rabe and Benjamin Jakimow at t
 
 
 ..  toctree::
-    :maxdepth: 4
+    :maxdepth: 6
     :caption: Developer Section
 
 
