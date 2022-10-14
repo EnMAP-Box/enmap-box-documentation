@@ -3,10 +3,9 @@ User Manual
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 6
 
    gui.rst
-   spectral_library.rst
    tools.rst
    applications.rst
    eo4q.rst

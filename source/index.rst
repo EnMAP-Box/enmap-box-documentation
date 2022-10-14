@@ -116,9 +116,9 @@ Two Presentations by EnMAP-Box developers Andreas Rabe and Benjamin Jakimow at t
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 4
     :caption: General
-    :hidden:
+
 
     general/about.rst
     general/faq_trouble.rst
@@ -127,9 +127,9 @@ Two Presentations by EnMAP-Box developers Andreas Rabe and Benjamin Jakimow at t
     general/glossary.rst
 
 ..  toctree::
-    :maxdepth: 2
+    :maxdepth: 6
     :caption: User Section
-    :hidden:
+
 
     usr_section/usr_installation.rst
     usr_section/usr_gettingstarted.rst
@@ -140,9 +140,9 @@ Two Presentations by EnMAP-Box developers Andreas Rabe and Benjamin Jakimow at t
 
 
 ..  toctree::
-    :maxdepth: 2
+    :maxdepth: 4
     :caption: Developer Section
-    :hidden:
+
 
     dev_section/dev_installation.rst
     dev_section/dev_enmapboxrepository
