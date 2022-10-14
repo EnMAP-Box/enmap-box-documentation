@@ -131,19 +131,20 @@ image using a point vector dataset with the classes *impervious, low vegetation,
 11. Now visualize the classification result side-by-side with the initial image. Therefore, right-click into :guilabel:`Map #2` and select :menuselection:`--> Clear`. Drag the classification image from the :guilabel:`Data Sources` panel into :guilabel:`Map #2`
 
 .. figure:: ../img/screenshot_class_result1.png
-   :width: 100%
+   :align: center
+
 Example output of the Random Forest Classification
 
 .. tip::
 
      The classification output is displayed in random colours. You can change the visualization settings in the **Layer Properties** of the raster. Right click on the
-     layer in the :guilabel:`Data Views` panel, select **Layer Properties* and edit the colors and names accordingly.
+     layer in the :guilabel:`Data Views` panel, select **Layer Properties** and edit the colors and names accordingly.
 
 12. In the :guilabel:`Data Views` panel, right-click on the classification layer and select :guilabel:`Classification Statistics`. This will show you an interactive plot with the different class counts
 
 .. figure:: /img/classification_statistics1.png
    :align: center
-   :width: 80%
+
 Example of the statistics of the classification result
 
 Use a Processing Algorithm
@@ -183,7 +184,7 @@ the Spectral Library. To get more detailed information about all the functionali
 4. Create spectra from the image by clicking with the left mouse button in the opened image. The collected spectral information is now stored as a temporary profile candidate, which is displayed as a dotted line. Each time you click into the image, the profile candidate is replaced by a new one.
 5. Click on *Add Profile(s)* |plus_green| to keep the candidate profile in the spectral library. Activate  *Add profiles automatically* |profile_add_auto| to collect multiple profiles and display them all in the same spectral library.
 
-.. figrue:: ../img/AddProfiles.png
+.. figure:: ../img/AddProfiles.png
    :width: 100%
 
 **Add information to the attribute table:**
