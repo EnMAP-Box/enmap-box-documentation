@@ -13,14 +13,137 @@ Please visit `LMU Vegetation Apps Documentation <https://enmap-box-lmu-vegetatio
 Classification Dataset Manager
 ==============================
 
-The Classification Dataset Manager allows a) to create a new dataset from various sources,
-b) presents class statistics,
-c) supports editing of class names and colors, and
+The :guilabel:`Classification Dataset Manager` allows to
+a) create a new dataset from various sources,
+b) presents basic information for each category like value, name, color and number of samples,
+c) supports editing of category names and colors, and
 d) let's you easily draw a random sample.
 
-..  youtube:: qRUrVb6jWbA
-    :width: 100%
-    :privacy_mode:
+Usage
+    1. Start the tool from the :guilabel:`Tools > Classification Dataset Manager` menu.
+
+    2. Use the tool for different usecases like:
+
+        - create a dataset
+
+        - edit a dataset
+
+        - draw a random subsample
+
+    3. Inspect created datasets inside the :guilabel:`Data Sources` panel.
+
+GUI
+    .. figure:: ./img/ClassificationDatasetManager_1a.png
+        :align: center
+
+    |
+
+    .. figure:: ./img/ClassificationDatasetManager_1b.png
+        :align: center
+
+
+Live demonstration
+    ..  youtube:: qRUrVb6jWbA
+        :width: 100%
+        :privacy_mode:
+
+
+Create a classification dataset
+-------------------------------
+
+Select one of the dataset creation options and follow the subsequent algorithm dialog.
+
+GUI
+    .. figure:: ./img/ClassificationDatasetManager.png
+       :align: center
+
+Example data
+    Datasets used below are available in of the following locations:
+
+        - `enmap-box/enmapbox/exampledata/ <https://github.com/EnMAP-Box/enmap-box/tree/main/enmapbox/exampledata>`_
+
+        - `enmap-box/tests/testdata/ <https://github.com/EnMAP-Box/enmap-box/tree/main/tests/testdata>`_
+
+From categorized vector layer and feature raster
+    .. list-table::
+        :align: center
+
+        * - .. figure:: /general/img/raster_layer.png
+               :height: 400
+
+               enmap_berlin.bsq
+
+          - .. figure:: /general/img/categorized_vector_layer_2.png
+               :height: 400
+
+               landcover_berlin_point.gpkg
+
+    .. figure:: ./img/ClassificationDatasetManager_2a.png
+       :align: center
+
+    For details see the :ref:`algorithm description <Create classification dataset (from categorized vector layer and feature raster)>`.
+
+From categorized raster layer and feature raster
+    .. list-table::
+        :align: center
+
+        * - .. figure:: /general/img/raster_layer.png
+               :height: 400
+
+               enmap_berlin.bsq
+
+          - .. figure:: /general/img/categorized_raster_layer_2.png
+               :height: 400
+
+               landcover_polygon_30m.tif
+
+    .. figure:: ./img/ClassificationDatasetManager_2b.png
+       :align: center
+
+    For details see the :ref:`algorithm description <Create classification dataset (from categorized raster layer and feature raster)>`.
+
+From categorized spectral library
+    .. list-table::
+        :align: center
+
+        * - .. figure:: /general/img/categorized_spectral_library.png
+
+               library_berlin.gpkg
+
+    .. figure:: ./img/ClassificationDatasetManager_2c.png
+       :align: center
+
+    For details see the :ref:`algorithm description <Create classification dataset (from categorized spectral library)>`.
+
+From categorized vector layer with attribute table
+    .. figure:: ./img/ClassificationDatasetManager_2d.png
+       :align: center
+
+    For details see the :ref:`algorithm description <Create classification dataset (from categorized vector layer with attribute table)>`.
+
+From table with categories and feature fields
+    .. figure:: ./img/ClassificationDatasetManager_2e.png
+       :align: center
+
+    For details see the :ref:`algorithm description <Create classification dataset (from table with categories and feature fields)>`.
+
+From Python code
+    .. figure:: ./img/ClassificationDatasetManager_2f.png
+       :align: center
+
+    For details see the :ref:`algorithm description <Create classification dataset (from Python code)>`.
+
+From text files
+    .. figure:: ./img/ClassificationDatasetManager_2g.png
+       :align: center
+
+    For details see the :ref:`algorithm description <Create classification dataset (from text files)>`.
+
+From JSON file
+    .. figure:: ./img/ClassificationDatasetManager_2h.png
+       :align: center
+
+    For details see the :ref:`algorithm description <Create classification dataset (from JSON file)>`.
 
 Classification Workflow (advanced)
 ==================================
