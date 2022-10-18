@@ -57,8 +57,83 @@ Profile Analytics
 =================
 
 The :guilabel:`Profile Analytics` panel allows to visualize various types of spectral, temporal and spatial profiles.
-Additionally, profile data can be analysed by user-defined function (e.g. fit the data using a regressor).
-The ufunc has access to the plot widget and can draw additional plot items.
+Additionally, profile data can be analysed by user-defined functions (ufuncs).
+A ufunc has access to the plot widget and can draw additional plot items.
+
+Usage
+    1. Start the tool from the :guilabel:`View > Panels > Profile Analytics` menu or from the
+       :guilabel:`Earth Observation for QGIS (EO4Q) Toolbar`.
+
+    2. Select the :guilabel:`Source type`, that is providing the profiles.
+       Note that we're currently only support raster layer as source,
+       but we plan to have other sources like profiles from the :guilabel:`GEE Time Series Explorer`.
+
+    3. Select the :guilabel:`Profile type` you want to extract from the raster layer:
+
+    4. Select a :guilabel:`Raster`.
+
+    5. In case of a spatial profile
+       (i.e. :guilabel:`X-Profile`, :guilabel:`Y-Profile` and :guilabel:`Profile along a line`),
+       also select a :guilabel:`Band`. In case of a :guilabel:`Z-Profile`),
+       the selected band is ignored.
+
+    6. :guilabel:`Style` the profile.
+
+    7. Apply data :guilabel:`Scaling`.
+
+    8. Choose an ufunc to perform :guilabel:`Analytics` on the profile data and add extra plot annotations.
+       The ufunc has full access to the plot widget and can add plot items like:
+
+       - plot line (e.g. fitted data, vegetation regrowth, trend lines, etc.)
+
+       - plot marker symbols (e.g. forest clear cut events, mowing events, fire events, red-edge inflection point, etc.)
+
+       - plot text
+
+       - insert images
+
+       Examples can be found under ``/enmapbox/eo4qapps/profileanalyticsapp/examples/``.
+
+    9. Depending on the :guilabel:`Profile type` and availability of raster metadata,
+       different :guilabel:`X Axis` units can be choosen:
+
+       :guilabel:`Z-Profile` values:
+
+       - can always be plotted against :guilabel:`Band Numbers`
+
+       - can be plotted against :guilabel:`Wavelength`, if band center wavelength is specified
+
+       - can be plotted against :guilabel:`Date Time`, if band (aquisition) date time is specified
+
+       :guilabel:`X-Profile` values are always plotted against the :guilabel:`Column Number`.
+
+       :guilabel:`Y-Profile` values are always plotted against the :guilabel:`Row Number`.
+
+       :guilabel:`Profile along a line` values are always plotted against the :guilabel:`Distance from line start`.
+
+    10. In case of :guilabel:`X-Profile`, :guilabel:`Y-Profile` and :guilabel:`Z-Profile`,
+        use the :guilabel:`Cursor Location` map tool to select a location that specifies the profile.
+
+        In case of :guilabel:`Profile along a line`,
+        use the :guilabel:`Select Feature` map tool to select a line-vector feature that specifies the profile.
+
+GUI
+    Spectral Z-Profile
+        .. figure:: ./img/ProfileAnalytics.png
+            :align: center
+
+    Temporal Z-Profiles
+        .. figure:: ./img/ProfileAnalytics_2.png
+            :align: center
+
+    Temporal Z-Profile annotated with a Support Vector Regression fit (``svr_fitting.py`` used as ufunc)
+        .. figure:: ./img/ProfileAnalytics_3.png
+            :align: center
+
+        |
+
+        .. figure:: ./img/ProfileAnalytics_4.png
+            :align: center
 
 Live demonstration
     ..  youtube:: 5Un7lxw-PN8
