@@ -29,6 +29,8 @@ ENMAPBOX_ICON_DIRS = \
      DIR_ENMAPBOX_REPO / 'enmapbox/qgispluginsupport/qps/ui/icons']
 
 PATH_RST = DIR_SOURCE / 'icon_links.rst'
+PATH_RST_VIEWER = DIR_SOURCE / 'icon_links_viewer.rst'
+
 rx_extensions = re.compile(r'\.(svg|png)$')
 
 ICONS = dict()
@@ -68,3 +70,14 @@ for linkName, path in ICONS.items():
 # write rst file
 with open(PATH_RST, 'w', encoding='utf-8', newline='') as f:
     f.write('\n'.join(lines))
+
+# write rst file showing all the icons
+with open(PATH_RST_VIEWER, 'w', encoding='utf-8', newline='') as f:
+    f.write('.. include:: /icon_links.rst\n\n')
+    for line in lines:
+        name = line.split('|')[1]
+        #text = f'{name}\n    |{name}|\n\n'
+        text = f'{name}    |{name}| '
+        f.write(text)
+
+print('Done')

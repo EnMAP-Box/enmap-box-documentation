@@ -12,6 +12,9 @@
 }
 */
 
+.wy-nav-content {
+	max-width: 1260px;
+}
 
 body {
   font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;

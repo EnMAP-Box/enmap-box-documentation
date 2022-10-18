@@ -98,3 +98,8 @@ Also add a caption to the image if it is not placed between two bullet points.
    :width: 100%
 
 *Placement of images for (a) within bullet points, (b) after body text*
+
+Icon Gallery
+============
+
+.. include:: /icon_links_viewer.rst

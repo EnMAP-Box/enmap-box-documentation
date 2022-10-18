@@ -52,6 +52,8 @@
    :width: 28px
 .. |enmapbox600dpi| image:: /img/icons/enmapbox600dpi.png
    :width: 28px
+.. |enmapbox64px| image:: /img/icons/enmapbox64px.png
+   :width: 28px
 .. |enmapSensor| image:: /img/icons/enmapSensor.png
    :width: 28px
 .. |export_symbology| image:: /img/icons/export_symbology.svg
@@ -304,6 +306,8 @@
    :width: 28px
 .. |mSourceFields| image:: /img/icons/mSourceFields.svg
    :width: 28px
+.. |numpy| image:: /img/icons/numpy.png
+   :width: 28px
 .. |pan_center| image:: /img/icons/pan_center.svg
    :width: 28px
 .. |plot_style| image:: /img/icons/plot_style.svg
@@ -341,6 +345,8 @@
 .. |profile_reload| image:: /img/icons/profile_reload.svg
    :width: 28px
 .. |profile_save| image:: /img/icons/profile_save.svg
+   :width: 28px
+.. |profile_wref| image:: /img/icons/profile_wref.svg
    :width: 28px
 .. |qgis_icon| image:: /img/icons/qgis_icon.svg
    :width: 28px
@@ -398,6 +404,8 @@
    :width: 28px
 .. |spectralprofile| image:: /img/icons/spectralprofile.svg
    :width: 28px
+.. |spectrometer| image:: /img/icons/spectrometer.svg
+   :width: 28px
 .. |spin| image:: /img/icons/spin.png
    :width: 28px
 .. |stylepreset| image:: /img/icons/stylepreset.svg
@@ -423,6 +431,4 @@
 .. |viewlist_textview| image:: /img/icons/viewlist_textview.svg
    :width: 28px
 .. |zoomToFullExtent| image:: /img/icons/zoomToFullExtent.svg
-   :width: 28px
-.. |enmapbox64px| image:: /img/icons/enmapbox64px.png
    :width: 28px

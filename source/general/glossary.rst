@@ -43,13 +43,13 @@ GIS and Remote Sensing
         A :term:`categorized vector layer` or :term:`categorized raster layer`.
 
         .. image:: img/categorized_raster_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/categorized_raster_layer_2.png
-            :width: 24%
+            :height: 400
         .. image:: img/categorized_vector_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/categorized_vector_layer_2.png
-            :width: 24%
+            :height: 400
 
     categorized raster layer
         A :term:`raster layer` styled with a *Paletted/Unique values* renderer.
@@ -58,10 +58,9 @@ GIS and Remote Sensing
         Category values don't have to be strictly consecutive.
 
         .. image:: img/categorized_raster_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/categorized_raster_layer_2.png
-            :width: 24%
-
+            :height: 400
         .. image:: img/categorized_raster_layer_styling.png
 
     categorized vector layer
@@ -72,16 +71,17 @@ GIS and Remote Sensing
         Note that in case of numerical category values, the values don’t have to be strictly consecutive.
 
         .. image:: img/categorized_vector_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/categorized_vector_layer_2.png
-            :width: 24%
-
+            :height: 400
         .. image:: img/categorized_vector_layer_styling.png
 
     categorized spectral library
         A :term:`spectral library` that is also a :term:`categorized vector layer`.
 
         .. image:: img/categorized_spectral_library.png
+
+        .. image:: img/categorized_vector_layer_styling.png
 
     category
 
@@ -95,7 +95,7 @@ GIS and Remote Sensing
         A :term:`categorized raster layer` that is assumed to represent a mapping of a contiguous area.
 
         .. image:: img/categorized_raster_layer.png
-            :width: 24%
+           :height: 400
 
         *Note that there is currently no equivalent term for a contiguous vector polygon layer. We may introduce it in the future as needed. For now we expect users to rasterize such a vector layer into a raster layer.*
 
@@ -116,9 +116,9 @@ GIS and Remote Sensing
         Variable colors are given by the PAMRasterBand/Metadata "color" item (optional).
 
         .. image:: img/continuous-valued_raster_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/continuous-valued_raster_layer_2.png
-            :width: 24%
+            :height: 400
 
     continuous-valued vector layer
         A :term:`vector layer` styled with a *Graduated* or a *Diagrams* renderer.
@@ -135,9 +135,9 @@ GIS and Remote Sensing
         TODO: screenshot for diagrams renderer (see issue #1038)
 
         .. image:: img/continuous-valued_vector_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/continuous-valued_vector_layer_2.png
-            :width: 24%
+            :height: 400
 
     continuous-valued layer
         A :term:`continuous-valued vector layer` or :term:`continuous-valued raster layer`.
@@ -145,14 +145,14 @@ GIS and Remote Sensing
         TODO: update screenshot (see issue #1038)
 
         .. image:: img/continuous-valued_raster_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/continuous-valued_raster_layer_2.png
-            :width: 24%
+            :height: 400
 
         .. image:: img/continuous-valued_vector_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/continuous-valued_vector_layer_2.png
-            :width: 24%
+            :height: 400
 
     continuous-valued spectral library
 
@@ -202,14 +202,14 @@ GIS and Remote Sensing
         A :term:`mask raster layer` or :term:`mask vector layer`.
 
         .. image:: img/mask_raster_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/mask_raster_layer_2.png
-            :width: 24%
+            :height: 400
 
         .. image:: img/mask_vector_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/mask_vector_layer_2.png
-            :width: 24%
+            :height: 400
 
     mask raster layer
         A :term:`raster layer` interpreted as a binary mask.
@@ -217,17 +217,17 @@ GIS and Remote Sensing
         Note that only the first :term:`band` used by the renderer is considered.
 
         .. image:: img/mask_raster_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/mask_raster_layer_2.png
-            :width: 24%
+            :height: 400
 
     mask vector layer
         A :term:`vector layer` interpreted as a binary mask. Areas covered by a geometry evaluate to true, all other to false.
 
         .. image:: img/mask_vector_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/mask_vector_layer_2.png
-            :width: 24%
+            :height: 400
 
     pickle file
         A binary file ending on `.pkl` that contains a pickled Python object, usually a dictionary or list container.
@@ -244,13 +244,13 @@ GIS and Remote Sensing
         A :term:`vector layer` with point geometries.
 
         .. image:: img/vector_layer_2.png
-            :width: 24%
+            :height: 400
 
     polygon layer
         A :term:`vector layer` with polygon geometries.
 
         .. image:: img/vector_layer.png
-            :width: 24%
+            :height: 400
 
     ployline layer
         A :term:`vector layer` with line geometries.
@@ -260,13 +260,13 @@ GIS and Remote Sensing
         Elsewhere known as an image.
 
         .. image:: img/raster_layer.png
-            :width: 24%
+            :height: 400
 
     regression layer
         A :term:`continuous-valued raster layer` that is assumed to represent a mapping of a contiguous area.
 
         .. image:: img/continuous-valued_raster_layer.png
-            :width: 24%
+            :height: 400
 
     rgb-color
         A :term:`color` specified by a triplet of byte values (values between 0 and 255) representing the red, green and blue color components, e.g. red (255, 0, 0), green (0, 255, 0), blue (0, 0, 255), black (0, 0, 0), white (255, 255, 255) and grey (128, 128, 128).
@@ -314,7 +314,7 @@ GIS and Remote Sensing
         The measurement vector of a single pixel is called a :term:`spectral profile`)
 
         .. image:: img/raster_layer.png
-            :width: 24%
+            :height: 400
 
         .. image:: img/spectral_profile.png
 
@@ -333,7 +333,7 @@ GIS and Remote Sensing
         A :term:`classification layer` that is used to stratify an area into distinct subareas.
 
         .. image:: img/categorized_raster_layer.png
-            :width: 24%
+            :height: 400
 
     stratum
     strata
@@ -354,9 +354,9 @@ GIS and Remote Sensing
         Any vector file that can be opened in QGIS as `QgsVectorLayer`.
 
         .. image:: img/vector_layer.png
-            :width: 24%
+            :height: 400
         .. image:: img/vector_layer_2.png
-            :width: 24%
+            :height: 400
 
 Raster Metadata
 ===============
@@ -369,8 +369,8 @@ Raster Metadata
     In the GUI, most of the metadata items can be inspected in the :guilabel:`Layer Properties` dialog,
     under :guilabel:`GDAL Metadata`.
 
-    .. image:: img/raster_layer_gdal_metadata.png
-        :width: 100%
+        .. image:: img/raster_layer_gdal_metadata.png
+            :align: center
 
     Alternatively, metadata can be managed inside a standard text editor, by opening the GDAL PAM `*.aux.xml` sidecar file.
     If the PAM file not already exists, you can create it manually, but usually, it is also created,
