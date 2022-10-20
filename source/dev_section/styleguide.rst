@@ -80,6 +80,7 @@ Screenshots with explanations
 
     .. figure:: /img/screenshots_with_description.png
        :align: center
+       :width: 800
 
 *Example of adding a screenshot with explanation*
 
@@ -90,6 +91,7 @@ Info boxes, tooltips and notes should be aligned with the preceding text, i.e., 
 
     .. figure:: /img/infoboxes.png
        :align: center
+       :width: 800
 
 *Example of placing info boxes within / after bullet points*
 
@@ -97,6 +99,6 @@ Images should always be centred, but can vary in size (adjust according to reada
 Also add a caption to the image if it is **not** placed between two bullet points.
 
     .. figure:: /img/images_caption_example.png
-      :align: center
+       :align: center
 
-*Placement of images for (a) within bullet points, (b) after body text*
+*Placement of images for (left) after body text, (right) within bullet points *

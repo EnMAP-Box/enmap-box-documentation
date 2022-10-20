@@ -21,6 +21,7 @@ In the toolbar you can find the most common tasks. See table below for informati
 
     .. figure:: /img/toolbarView.png
        :align: center
+       :width: 800
 
 *Enable and disable different toolbars*
 
@@ -234,12 +235,11 @@ You may change the name of a Window by double-clicking onto the name in the list
 
 **Organization of the Data Views panel:**
 
-.. figure:: ../../img/example_data_views.png
-   :width: 100%
+    .. figure:: ../../img/example_data_views.png
+       :align: center
 
-   Example of how different window types and their contents are organized in the Data Views panel. In this case there
-   are two Map Views and one Spectral Library View in the project.
-
+Example of how different window types and their contents are organized in the Data Views panel. In this case there
+are two Map Views and one Spectral Library View in the project.
 
 
 Spectral Profile Sources
@@ -256,6 +256,7 @@ and to control:
 
     .. figure:: /img/SpectralProfileSources.png
        :align: center
+       :width: 800
 
 *Overview of the Spectral Profile Sources Window with two labeled spectra and main functionalities*
 
@@ -277,7 +278,7 @@ and to control:
 
     .. figure:: /img/SpecProfile_style.png
        :align: center
-       :width: 40%
+       :width: 300
 
 *Source*
  * Specify a source raster dataset
@@ -301,9 +302,6 @@ and to control:
    Sample5x5Mean, Extracts the mean spectral signature of the pixel at the selected location and its adjacent pixels in a 5x5 neighborhood.
 
 
-
-
-
 .. _processing_toolbox:
 
 Processing Toolbox
@@ -315,7 +313,7 @@ button in the menubar or :menuselection:`View --> Panels --> QGIS Processing Too
 
     .. figure:: /img/processing_toolbox.png
        :align: center
-       :width: 40%
+       :width: 300
 
 See `QGIS Documentation - The toolbox <https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html>`_ for further information.
 
@@ -330,7 +328,7 @@ use the |select_location| :superscript:`Select Cursor Location` button together 
 
     .. figure:: /img/cursorlocationvalues.png
        :align: center
-       :width: 40%
+       :width: 300
 
 
 * By default, raster layer information will only be shown for the bands which are mapped to RGB. If you want to view all bands, change the :guilabel:`Visible` setting
@@ -372,7 +370,7 @@ In order to link Map View, go to :menuselection:`View --> Set Map Linking` in th
 
     .. figure:: /img/map_linking.png
        :align: center
-       :width: 30%
+       :width: 200
 
 Here you can specify the above mentioned link options between the Map Views. You may either specify linkages between pairs
 or link all canvases at once (the :guilabel:`All Canvases` option is only specifiable when the number of Map Views is > 2). Remove
@@ -391,8 +389,7 @@ Crosshair
 
     .. figure:: /img/crosshair_style.png
        :align: center
-       :width: 40%
-
+       :width: 300
 
 
 .. include:: /icon_links.rst
@@ -443,7 +440,7 @@ Collect profiles
 
     .. figure:: /img/collectProfiles.png
        :align: center
-       :width: 50%
+       :width: 400
 
 2. Click on a desired pixel position in the opened raster image and a new Spectral Library window opens with the spectral profile of the respective pixel.
 3. Profiles obtained from pixel positions are considered as current or temporary profile candidates. The last profile candidate will be replaced by a new one each time you click on a new pixel position.
@@ -451,6 +448,7 @@ Collect profiles
 
     .. figure:: /img/profile_types.png
        :align: center
+       :width: 800
 
 As an alternative to the mouse you can also identify and select pixel profiles using the shortcuts to change, select and add pixel profiles to the Spectral Library.
 
@@ -481,6 +479,7 @@ Sometimes, you want to compare spectral profiles from different raster sources. 
 
     .. figure:: /img/TwoProfileSources.png
        :align: center
+       :width: 800
 
 .. tip::
 
@@ -494,7 +493,7 @@ In a similar way you can compare profiles from the same raster image but using a
 
     .. figure:: /img/KernelProfile.png
        :align: center
-
+       :width: 800
 
 *Spectral Profile Sources Sampling Example*
 
@@ -578,7 +577,7 @@ Locations of spectra (if available) can be visualized as a point layer by right-
 
     .. figure:: /img/SpecLib_AddCoords.png
        :align: center
-       :width: 50%
+       :width: 400
 
 Advanced options
 ^^^^^^^^^^^^^^^^
@@ -712,7 +711,7 @@ You can also export the entire plot scene or visible view box by clicking into t
 
     .. figure:: /img/SpecLib_export.png
        :align: center
-       :width: 60%
+       :width: 500
 
 *Export options of the spectral library*
 
@@ -786,7 +785,7 @@ Loading or Saving a spectral library means to load or save vector files.
 
     .. figure:: /img/Load_SpecLib.png
        :align: center
-       :width: 60%
+       :width: 300
 
 If your spectral library uses an in-memory vector layer backend, all data will be lost if the layer is closed.
 This is the case if the Spectral Library Viewer was opened from scratch with an empty spectral library.
@@ -820,14 +819,13 @@ Importing Profiles
 
     .. figure:: /img/SpecLib_ImportFormts.png
        :align: center
-       :width: 80%
-
+       :width: 500
 
 * You can also import ASD Field Spectrometer measurements and map and modify the imported profiles and attributes accordingly.
 
     .. figure:: /img/SpecLib_addASDProfiles.png
        :align: center
-       :width: 80%
+       :width: 500
 
 
 Spectral Profile JSON format
