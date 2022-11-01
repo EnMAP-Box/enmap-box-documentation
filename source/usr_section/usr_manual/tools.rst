@@ -311,6 +311,11 @@ GUI
     .. figure:: ./img/MetadataViewer.png
        :align: center
 
+Multisource Multiband Color Raster Renderer
+===========================================
+
+.. todo:: WriteTheDocs (use FORCE TSI stacks with TCB/G/W)
+
 Raster Layer Styling
 ====================
 

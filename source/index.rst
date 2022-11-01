@@ -136,6 +136,7 @@ Two Presentations by EnMAP-Box developers Andreas Rabe and Benjamin Jakimow at t
     usr_section/usr_gettingstarted.rst
     usr_section/usr_cookbook/usr_cookbook.rst
     usr_section/usr_manual/usr_manual.rst
+    usr_section/testdataset.rst
     usr_section/application_tutorials/index.rst
     usr_section/workshop_tutorials/index.rst
 
