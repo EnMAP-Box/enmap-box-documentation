@@ -1,17 +1,17 @@
 .. _test_dataset:
 
-Test dataset
+Example Data
 ************
 
 .. note::
 
    For opening the test dataset go to the menubar :menuselection:`Project --> Load Example Data`
 
-   .. image:: ../../img/gui_loadexampledata.png
+   .. image:: /img/gui_loadexampledata.png
 
    If you try to open the test dataset for the first time, you will be asked to download the data from the repository:
 
-   .. figure:: ../../img/gui_downloadtestdata.png
+   .. figure:: /img/gui_downloadtestdata.png
 
    After you downloaded the dataset, you can also use the processing algorithm *Open Test Maps* (in *Auxillary*) to open the dataset.
 
@@ -55,7 +55,7 @@ File name: :file:`library_berlin.sli`
 
 Spectral library with 75 spectra (material level, level 2 and level 3 class information)
 
-.. figure:: ../../img/testdata_speclib.png
+.. figure:: /img/testdata_speclib.png
    :width: 100%
 
    library_berlin.sli opened in the EnMAP-Box Spectral Library Window
