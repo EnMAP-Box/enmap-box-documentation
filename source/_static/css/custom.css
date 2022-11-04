@@ -1,19 +1,14 @@
-/*
-.wy-nav-content {
-    padding: 1.618em 3.236em;
-    height: 100%;
-    max-width: 1500px;
-    margin: auto;
-    background-color: #ffffff;
-}
-
-.wy-nav-content-wrap {
-    background-color: white;
-}
-*/
-
+/* Increase main content div size */
 .wy-nav-content {
 	max-width: 1260px;
+}
+
+/* Avoid images being too big on bigger screen */
+/* https://github.com/qgis/QGIS-Documentation/blob/master/themes/rtd_qgis/static/css/qgis_docs.css */
+@media screen and (min-width: 767px) {
+  .rst-content img {
+    max-width: 760px
+  }
 }
 
 body {
