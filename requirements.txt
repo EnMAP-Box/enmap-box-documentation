@@ -6,4 +6,4 @@ sphinx
 sphinxnotes-strike
 sphinxcontrib-youtube
 docutils
-sphinx_rtd_theme
+sphinx_rtd_theme > 1
