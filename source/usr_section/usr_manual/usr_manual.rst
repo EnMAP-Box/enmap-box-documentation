@@ -3,7 +3,7 @@ User Manual
 
 
 .. toctree::
-   :maxdepth: 6
+   :maxdepth: 8
 
    gui.rst
    tools.rst
