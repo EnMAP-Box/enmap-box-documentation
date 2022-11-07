@@ -99,7 +99,7 @@ for details how you can create your own fork of the EnMAP-Box repository.
 2. Clone the forked EnMAP-Box repository
 ----------------------------------------
 
-Follow `these steps <https://github.com/EnMAP-Box/enmap-box#how-to-clone>` but replace the EnMAP-Box repository url
+Follow `these steps <https://github.com/EnMAP-Box/enmap-box#how-to-clone>`_ but replace the EnMAP-Box repository url
 with that of your fork. Clone *enmap-box-fork* to your local disk::
 
     git clone --recurse-submodules git@github.com/myusername/enmap-box-fork.git
