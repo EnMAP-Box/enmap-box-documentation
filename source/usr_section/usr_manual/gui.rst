@@ -395,8 +395,8 @@ Crosshair
 .. include:: /icon_links.rst
 
 
-Spectral Library View |viewlist_spectrumdock|
----------------------------------------------
+Spectral Library View
+---------------------
 
 The **Spectral Library Window** offers (almost) the same tools like the standard QGIS attribute table. In addition, it provides views and features specifically to visualize and manage spectral profiles.
 It directly interacts with the Map View(s), which means spectra can be directly collected from an image. Furthermore, external libraries (e.g. ENVI Spectral Library) can be imported.
@@ -870,8 +870,8 @@ As JSON object, a single hyperspectral EnMAP profile may therefore look like:
 
 Note that conceptually profile objects can differ in its wavelength etc.
 
-Text View |viewlist_textview|
------------------------------
+Text View
+---------
 
     .. figure:: /img/textWindow.png
        :align: center
