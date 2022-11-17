@@ -53,12 +53,9 @@ between information and actual steps and to follow them easily:
 
  1. Enable the *Editing mode* by activating |mActionToggleEditing|.
  2. Now you can use the |mActionNewAttribute| button to add a new field (mind the type!)
- ...
 
-
-.. figure:: /img/numbering_workflow.png
-   :width: 100%
-
+    .. figure:: /img/numbering_workflow.png
+       :align: center
 *Workflow example with numbering*
 
 
@@ -76,8 +73,9 @@ Screenshots with explanations
 * Description to the left of the screenshot at the level of the function to be explained
 * Description text in box right-aligned
 
-.. figure:: /img/screenshots_with_description.png
-   :width: 100%
+    .. figure:: /img/screenshots_with_description.png
+       :align: center
+       :width: 600
 
 *Example of adding a screenshot with explanation.*
 
@@ -86,16 +84,17 @@ Positioning of info boxes and images
 
 Info boxes, tooltips and notes should be aligned with the preceding text, i.e., if the info box follows a bulleted list, the box should also be indented.
 
-.. figure:: /img/infoboxes.png
-   :width: 100%
+    .. figure:: /img/infoboxes.png
+       :align: center
+       :width: 800
 
 *Example of placing info boxes within / after bullet points.*
 
 Images should always be centred, but can vary in size (adjust according to readability).
 Also add a caption to the image if it is not placed between two bullet points.
 
-.. figure:: /img/images_caption_example.png
-   :width: 100%
+    .. figure:: /img/images_caption_example.png
+       :align: center
 
 *Placement of images for (a) within bullet points, (b) after body text*
 
