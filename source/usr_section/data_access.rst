@@ -67,9 +67,17 @@ Step 2: EOWEB |reg| GeoPortal
 The EOWEB |reg| GeoPortal access link is created for Cat-1 users after the requested role has been approved by the reviewer.
 The login button appears on the User Portal page, which automatically directs to the EOWEB |reg| GeoPortal login page.
 
+    .. figure:: /img/enmap_eoweb_login.png
+       :align: center
+
+*Entry point to the EOWEB GeoPortal*
+
     1. Login with the respective User ID associated with the approved role request. The password remains the same as when logging into the Instrument Planning Portal.
     2. Once logged in, click :guilabel:`Show advanced map` to zoom, pan and draw a rectangle.
     3. Select :file:`EnMAP` in *Filter Collection* and confirm with :guilabel:`Search`.
+
+        .. note:: You may also want to check the :guilabel:`EnMAP-HSI (LO), Low Quality` box to see additional records that are marked as low quality, but are still good.
+
     4. Hide :guilabel:`Show advanced map` to see the results.
 
         .. figure:: /img/enmap_eowebPortal.png
