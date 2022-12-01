@@ -134,8 +134,8 @@ Vector Tools
      - Add a polygon feature to existing data.
 
 
-Plugins Toolbar
----------------
+Earth Observation for QGIS (EO4Q)
+---------------------------------
 
 .. list-table::
    :widths: auto
@@ -147,9 +147,18 @@ Plugins Toolbar
    * - |GEE|
      - GEE Time Series Explorer
      - Opens the GEE Time Series Explorer in a new view.
+   * - |locationbrowser|
+     - Location Browser
+     - Use point location or geometry formats to navigate to a specific location or send a request to the `Nominatim Geocoding service <https://wiki.openstreetmap.org/wiki/Nominatim>`_ of OpenStreetMap.
    * - |profileanalytics|
      - Profile Analytics
      - Opens the Profile Analytics in a new view.
+   * - |rasterbandstacking|
+     - Raster Band Stacking
+     - Stack different raster bands individually.
+   * - |sensorimport|
+     - Sensor Product Import
+     - Import different sensor products by drag & drop.
 
 Panels
 =======
@@ -293,6 +302,8 @@ and to control:
 
 .. csv-table::
    :header-rows: 1
+   :widths: auto
+   :align: center
 
    Option, Description
    SingleProfile, Extracts the spectral signature of the pixel at the selected location
@@ -412,6 +423,8 @@ Add a new spectral library view by using the *Add Spectral Library Window* |view
 
 .. csv-table::
    :header: "Button", "Description", "Button", "Description"
+   :widths: auto
+   :align: center
 
    |plus_green|, "Add currently overlaid profiles to the spectral library", |profile_add_auto|, "Activate to add profiles automatically into the spectral library"
    |speclib_add|, "Import Spectral Library", |speclib_save|, "Save Spectral Library"

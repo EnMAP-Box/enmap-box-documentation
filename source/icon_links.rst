@@ -108,6 +108,8 @@
    :width: 28px
 .. |link_open| image:: /img/icons/link_open.svg
    :width: 28px
+.. |locationbrowser| image:: /img/icons/locationbrowser.svg
+   :width: 28px
 .. |locked| image:: /img/icons/locked.svg
    :width: 28px
 .. |lockedGray| image:: /img/icons/lockedGray.svg
@@ -362,6 +364,8 @@
    :width: 28px
 .. |raster| image:: /img/icons/raster.svg
    :width: 28px
+.. |rasterbandstacking| image:: /img/icons/rasterbandstacking.svg
+   :width: 28px
 .. |rasterband_select| image:: /img/icons/rasterband_select.svg
    :width: 28px
 .. |raster_classification| image:: /img/icons/raster_classification.svg
@@ -393,6 +397,8 @@
 .. |select_location| image:: /img/icons/select_location.svg
    :width: 28px
 .. |sensor| image:: /img/icons/sensor.png
+   :width: 28px
+.. |sensorimport| image:: /img/icons/sensorimport.svg
    :width: 28px
 .. |settings| image:: /img/icons/settings.svg
    :width: 28px
