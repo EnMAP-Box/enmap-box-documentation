@@ -58,15 +58,9 @@ Open the PRISMA raster
     In the EnMAP-Box, open the `PRS_L2D_STD_20201107101404_20201107101408_0001_SPECTRAL.tif` raster and visualize it
     in a map view using drag&drop.
 
-    .. # earsel2022_part1_exerciseA_01.mp4
-
-    .. raw:: html
-
-       <figure class="video_container">
-          <video width="100%" controls="true" allowfullscreen="true">
-              <source src="https://box.hu-berlin.de/f/b90072db612f462e81e6/?dl=1" type="video/mp4">
-          </video>
-       </figure>
+    ..  youtube:: 8b-tXI1CjGE
+        :width: 100%
+        :privacy_mode:
 
 Style the PRISMA layer using an RGB visualization
     We can improve the visualization using the :guilabel:`Raster Layer Styling` panel.
@@ -82,15 +76,9 @@ Style the PRISMA layer using an RGB visualization
     Use the widgets in the :guilabel:`Min / Max Value Settings` to interactively alter and improve the contrast
     stretch.
 
-    .. # earsel2022_part1_exerciseA_02.mp4
-
-    .. raw:: html
-
-       <figure class="video_container">
-          <video width="100%" controls="true" allowfullscreen="true">
-              <source src="https://box.hu-berlin.de/f/4e27f197bd5440f0944a/?dl=1" type="video/mp4">
-          </video>
-       </figure>
+    ..  youtube:: EaNgKuZLW_A
+        :width: 100%
+        :privacy_mode:
 
 Use a singleband gray visualization to identify bad bands
     Due to atmospheric conditions, the PRISMA raster may contain bad bands,
@@ -103,15 +91,9 @@ Use a singleband gray visualization to identify bad bands
 
     As before, you can also use the :guilabel:`A`, :guilabel:`B`, ..., :guilabel:`S2` buttons.
 
-    .. # earsel2022_part1_exerciseA_03.mp4
-
-    .. raw:: html
-
-       <figure class="video_container">
-          <video width="100%" controls="true" allowfullscreen="true">
-              <source src="https://box.hu-berlin.de/f/88a2a9a7b21342ae9167/?dl=1" type="video/mp4">
-          </video>
-       </figure>
+    ..  youtube:: nW_mc_ocxDc
+        :width: 100%
+        :privacy_mode:
 
 Plot spectral profiles and show cursor location values
     Use the :guilabel:`Identify` map tool to plot PRISMA spectral profiles and query band values for the selected
@@ -119,15 +101,9 @@ Plot spectral profiles and show cursor location values
 
     In the :guilabel:`Spectral Profile Sources` panel you can easily alter the plot style.
 
-    .. # earsel2022_part1_exerciseA_04.mp4
-
-    .. raw:: html
-
-       <figure class="video_container">
-          <video width="100%" controls="true" allowfullscreen="true">
-              <source src="https://box.hu-berlin.de/f/2e5181e5cc8d4c109d8a/?dl=1" type="video/mp4">
-          </video>
-       </figure>
+    ..  youtube:: N_MCiejwrEs
+        :width: 100%
+        :privacy_mode:
 
 Exercise B: Perform a land cover classification
 ***********************************************
@@ -142,50 +118,26 @@ Derive a landcover map for the PRISMA raster
 
     Finally, visualize the probabilities for the classes `impervious`, `tree` and `water` as RGB multiband color.
 
-    .. # earsel2022_part1_exerciseB_01.mp4
-
-    .. raw:: html
-
-       <figure class="video_container">
-          <video width="100%" controls="true" allowfullscreen="true">
-              <source src="https://box.hu-berlin.de/f/a2d9d08ea4964d9cbb84/?dl=1" type="video/mp4">
-          </video>
-       </figure>
+    ..  youtube:: 9fk-Wzhmq8A
+        :width: 100%
+        :privacy_mode:
 
 Visualize the predicted maps
     Use the :guilabel:`Classification Statistics` app to visualize the derived classification map.
 
-    .. # earsel2022_part1_exerciseB_02.mp4
-
-    .. raw:: html
-
-       <figure class="video_container">
-          <video width="100%" controls="true" allowfullscreen="true">
-              <source src="https://box.hu-berlin.de/f/8f41d7999051406cab4f/?dl=1" type="video/mp4">
-          </video>
-       </figure>
+    ..  youtube:: Ps4sivJRepI
+        :width: 100%
+        :privacy_mode:
 
     Use the :guilabel:`Class Fraction/Probability Statistics` app to visualize the derived class probability map.
 
-    .. # earsel2022_part1_exerciseB_03.mp4
-
-    .. raw:: html
-
-       <figure class="video_container">
-          <video width="100%" controls="true" allowfullscreen="true">
-              <source src="https://box.hu-berlin.de/f/ecbe7a742ecb4ff4b0f6/?dl=1" type="video/mp4">
-          </video>
-       </figure>
+    ..  youtube:: B5awkQwdLek
+        :width: 100%
+        :privacy_mode:
 
 View the fitted Random Forest Classifier model
     The training data and the fitted model can be explored inside the :guilabel:`Data Sources` panel.
 
-    .. # earsel2022_part1_exerciseB_04.mp4
-
-    .. raw:: html
-
-       <figure class="video_container">
-          <video width="100%" controls="true" allowfullscreen="true">
-              <source src="https://box.hu-berlin.de/f/05cb85dff61c453ca587/?dl=1" type="video/mp4">
-          </video>
-       </figure>
+    ..  youtube:: nC82b_TS7uY
+        :width: 100%
+        :privacy_mode:
