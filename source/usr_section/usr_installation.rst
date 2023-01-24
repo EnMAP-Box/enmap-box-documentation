@@ -197,12 +197,13 @@ Mac
 
 To install single python packages like the astropy package, open the Terminal and call::
 
-   /Applications/QGIS.app/Contents/MacOS/bin/pip3 install astropy
+   /Applications/QGIS.app/Contents/MacOS/bin/pip3 install -U astropy
 
+Use ``-U`` or ``--update`` to update older package version.
 
 To install all packages required, call::
 
-   /Applications/QGIS.app/Contents/MacOS/bin/pip3 install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
+   /Applications/QGIS.app/Contents/MacOS/bin/pip3 install -U -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
 
 
 More details on the QGIS packaging mechanism for macOS can be found `here <https://www.lutraconsulting.co.uk/blog/2020/10/01/qgis-macos-package/>`_.
