@@ -11,8 +11,3 @@ User Manual
    eo4q.rst
    processing_algorithms/processing_algorithms.rst
    metadata_guide.rst
-   testdataset.rst
-
-
-
-

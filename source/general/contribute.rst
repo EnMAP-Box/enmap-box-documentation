@@ -99,18 +99,16 @@ for details how you can create your own fork of the EnMAP-Box repository.
 2. Clone the forked EnMAP-Box repository
 ----------------------------------------
 
-Clone *enmap-box-fork* to your local disk::
+Follow `these steps <https://github.com/EnMAP-Box/enmap-box#how-to-clone>`_ but replace the EnMAP-Box repository url
+with that of your fork. Clone *enmap-box-fork* to your local disk::
 
-    git clone git@github.com/myusername/enmap-box-fork.git -n
+    git clone --recurse-submodules git@github.com/myusername/enmap-box-fork.git
 
-You might see some git lfs errors. Ignore them.
 
 Go into the repository folder and force to checkout the *develop* branch.
 
     cd enmap-box-fork
-    git checkout develop -f
 
-You can ignore *smuge errors*.
 Add the EnMAP-Box repository as *upstream* repository::
 
     git remote add upstream https://github.com/EnMAP-Box/enmap-box
@@ -120,10 +118,10 @@ Add the EnMAP-Box repository as *upstream* repository::
 
     From now on, you can synchronize your fork with the EnMAP-Box repository by::
 
-        $git fetch upstream develop
-        $git merge upstream/develop
+        $git fetch upstream main
+        $git merge upstream/main
 
-    to get the latest updates from the *develop* branch. Call::
+    to get the latest updates from the *main* branch. Call::
 
         $git push
 
