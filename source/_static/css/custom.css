@@ -3,11 +3,19 @@
 	max-width: 1260px;
 }
 
-/* Avoid images being too big on bigger screen */
+/* Avoid images and videos being too big on bigger screen */
 /* https://github.com/qgis/QGIS-Documentation/blob/master/themes/rtd_qgis/static/css/qgis_docs.css */
 @media screen and (min-width: 767px) {
   .rst-content img {
-    max-width: 760px
+    max-width: 760px;
+  }
+
+  video {
+    max-width: 760px;
+  }
+
+  iframe {
+    max-width: 760px;
   }
 }
 

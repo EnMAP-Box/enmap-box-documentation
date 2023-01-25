@@ -25,7 +25,6 @@ Key features
 
 
 .. figure:: img/screenshot_main3.png
-   :width: 95%
    :align: center
 
 

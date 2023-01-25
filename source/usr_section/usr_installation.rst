@@ -36,7 +36,7 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
 ---------------
 
 
-Install QGIS version 3.24 or higher to run the EnMAP-Box.
+Install QGIS version 3.26 or higher to run the EnMAP-Box.
 You can `get QGIS here <https://www.qgis.org/en/site/forusers/download.html>`_.
 Additional information on the installation process is provided in the `QGIS Documentation <https://www.qgis.org/en/site/forusers/alldownloads.html>`_.
 
@@ -53,20 +53,16 @@ Before you can install QGIS from the downloaded disk image, you need to allow yo
 2. Extract the downloaded `qgis-macos-pr.dmg` and move it to your app folder
 
    .. image:: /img/macos/install_qgis_copy1.png
-      :width: 65%
 
    .. image:: /img/macos/install_qgis_copy2.png
-      :width: 65%
 
 3. Installing or opening QGIS may raise a verification warning
 
    .. figure:: /img/macos/install_qgis_check1.png
-      :width: 65%
 
       In that case, open your system preferences, go to "Security & Privacy" -> "General" and allow QGIS to be opened anyway
 
    .. image:: /img/macos/install_qgis_check2.png
-      :width: 65%
 
 4. Now you can start QGIS.app from your application folder.
 
