@@ -360,6 +360,8 @@
    :width: 28px
 .. |profile_save| image:: /img/icons/profile_save.svg
    :width: 28px
+.. |profile_wref| image:: /img/icons/profile_wref.svg
+   :width: 28px
 .. |qgis_icon| image:: /img/icons/qgis_icon.svg
    :width: 28px
 .. |raster| image:: /img/icons/raster.svg
@@ -420,6 +422,8 @@
    :width: 28px
 .. |spectralprofile| image:: /img/icons/spectralprofile.svg
    :width: 28px
+.. |spectrometer| image:: /img/icons/spectrometer.svg
+   :width: 28px
 .. |spin| image:: /img/icons/spin.png
    :width: 28px
 .. |stylepreset| image:: /img/icons/stylepreset.svg
@@ -445,8 +449,4 @@
 .. |viewlist_textview| image:: /img/icons/viewlist_textview.svg
    :width: 28px
 .. |zoomToFullExtent| image:: /img/icons/zoomToFullExtent.svg
-   :width: 28px
-.. |profile_wref| image:: /img/icons/profile_wref.svg
-   :width: 28px
-.. |spectrometer| image:: /img/icons/spectrometer.svg
    :width: 28px
