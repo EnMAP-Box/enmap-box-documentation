@@ -182,7 +182,7 @@ it is often much easier to install additional python packages while admin rights
 
 .. code-block:: batch
 
-   conda env create --name qgis_stable --file https://github.com/EnMAP-Box/enmap-box/raw/develop/conda_environment.yml
+   conda env create --name qgis_stable --file https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/conda_environment.yml
 
 .. tip::
 
