@@ -40,7 +40,7 @@ Agency, granted by the Federal Ministry of Economic Affairs and Energy (BMWi; gr
    :width: 100%
 
 .. |dlr| image:: ../img/logos/logo_dlr.svg
-   :target: https://www.dlr.de/content/de/artikel/missionen-projekte/enmap-der-deutsche-hyperspektralsatellit-zur-erdbeobachtung.html
+   :target: https://www.dlr.de/
    :width: 100%
 
 .. |bmwi| image:: /img/logos/bmwi.jpg

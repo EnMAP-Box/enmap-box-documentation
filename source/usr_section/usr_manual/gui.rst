@@ -478,8 +478,8 @@ As an alternative to the mouse you can also identify and select pixel profiles u
    :align: center
 
    :kbd:`←`/:kbd:`↑`/:kbd:`↓`/:kbd:`→`, "Move the map"
-   :kbd:`CTRL` + :kbd:`←`/:kbd:`↑`/:kbd:`↓`/:kbd:`→`, "Select next pixel in arrow direction"
-   :kbd:`CTRL` + :kbd:`S`, "Add the selected pixel profile candidate"
+   :kbd:`Ctrl` + :kbd:`←`/:kbd:`↑`/:kbd:`↓`/:kbd:`→`, "Select next pixel in arrow direction"
+   :kbd:`Ctrl` + :kbd:`S`, "Add the selected pixel profile candidate"
 
 **Add profiles from another raster image**
 
