@@ -316,6 +316,12 @@
    :width: 28px
 .. |mIconVirtualRaster2| image:: /img/icons/mIconVirtualRaster2.svg
    :width: 28px
+.. |mouse_leftclick| image:: /img/icons/mouse_leftclick.svg
+   :width: 28px
+.. |mouse_rightclick| image:: /img/icons/mouse_rightclick.svg
+   :width: 28px
+.. |mouse_wheel| image:: /img/icons/mouse_wheel.svg
+   :width: 28px
 .. |mSourceFields| image:: /img/icons/mSourceFields.svg
    :width: 28px
 .. |numpy| image:: /img/icons/numpy.png
@@ -449,4 +455,8 @@
 .. |viewlist_textview| image:: /img/icons/viewlist_textview.svg
    :width: 28px
 .. |zoomToFullExtent| image:: /img/icons/zoomToFullExtent.svg
+   :width: 28px
+.. |field_from_raster| image:: /img/icons/field_from_raster.svg
+   :width: 28px
+.. |raster_from_field| image:: /img/icons/raster_from_field.svg
    :width: 28px

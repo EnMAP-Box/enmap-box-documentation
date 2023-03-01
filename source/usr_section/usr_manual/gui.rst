@@ -2,28 +2,26 @@
 
 .. _gui:
 
-
 The GUI
 #######
 
     .. figure:: /img/manual_gui.png
        :align: center
 
-*Overview of the EnMap-Box*
+       Overview of the EnMAP-Box
 
 Toolbar
 =======
 
 In the toolbar you can find the most common tasks. See table below for information on different buttons and their functionality.
 
-* It is possible to enable and disable the different tools.
-* Right-click on the toolbar and select the desired toolbar that should be displayed.
+* It is possible to enable and disable the different tools: Right-click |mouse_rightclick| on the toolbar and check or uncheck the desired
+  toolbar.
 
     .. figure:: /img/toolbarView.png
        :align: center
-       :width: 800
 
-*Enable and disable different toolbars*
+       Enable and disable different toolbars
 
 Data Sources
 ------------
@@ -71,13 +69,13 @@ Map Tools
      - Description
    * - |mActionPan|
      - Pan Map
-     - Moves the map. Can also be achieved by holding the mouse wheel
+     - Moves the map. Can also be achieved by holding the mouse wheel |mouse_wheel|
    * - |mActionZoomIn|
      - Zoom In
-     - Increases the zoom level. You can also scroll the mouse wheel forward.
+     - Increases the zoom level. You can also scroll the mouse wheel |mouse_wheel| forward.
    * - |mActionZoomOut|
      - Zoom Out
-     - Decreases the zoom level. You can also scroll the mouse wheel backwards.
+     - Decreases the zoom level. You can also scroll the mouse wheel |mouse_wheel| backwards.
    * - |mActionZoomActual|
      - Zoom to native resolution
      - Zoom to the native resolution
@@ -217,7 +215,7 @@ corresponding metadata are available:
 
 
 .. tip::
-   * If you want to remove all layers at once, right-click in the Data Sources panel and and select :guilabel:`Remove all DataSources`
+   * If you want to remove all layers at once, right-click |mouse_rightclick| in the Data Sources panel and and select :guilabel:`Remove all DataSources`
    * The EnMAP-Box also supports Tile-/Web Map Services (e.g. Google Satellite or OpenStreetMap) as a raster layer. Just add them to
      your QGIS project as you normally would, and then click the |qgis_icon| :superscript:`Synchronize Data Sources with QGIS`
      button. Now they should appear in the data source panel and can be added to a Map View.
@@ -360,9 +358,9 @@ zoom in/out.
 
 * In order to add a new Map View click the |viewlist_mapdock| :superscript:`Open a Map View` button. Once you added a
   Map View, it will be listed in the ``Data Views`` panel.
-* Add layers by either drag-and-dropping them into the Map View (from the Data Sources list) or right-click onto
+* Add layers by either drag-and-dropping them into the Map View (from the Data Sources list) or right-click |mouse_rightclick| onto
   the layer :menuselection:`--> Open in existing map...`
-* You can also directly create a new Map View and open a layer by right-clicking the layer :menuselection:`--> Open in new map`
+* You can also directly create a new Map View and open a layer by right-clicking |mouse_rightclick| the layer :menuselection:`--> Open in new map`
 
     .. figure:: /img/mapWindow.png
        :align: center
@@ -395,7 +393,7 @@ created links by clicking |link_open|.
 Crosshair
 ^^^^^^^^^
 
-* Activate the crosshair by right-clicking into a Map View and select :menuselection:`Crosshair --> Show`
+* Activate the crosshair by right-clicking |mouse_rightclick| into a Map View and select :menuselection:`Crosshair --> Show`
 * You can alter the style of the crosshair by right-clicking into a Map View and select :menuselection:`Crosshair --> Style`
 
     .. figure:: /img/crosshair_style.png
@@ -586,7 +584,7 @@ It is also possible to select and filter profiles with the common vector filter 
 Show coordinates of profiles
 ............................
 
-Locations of spectra (if available) can be visualized as a point layer by right-clicking into the map window, and selecting :guilabel:`Add Spectral Library > SpectralLibrary #`
+Locations of spectra (if available) can be visualized as a point layer by right-clicking |mouse_rightclick| into the map window, and selecting :guilabel:`Add Spectral Library > SpectralLibrary #`
 
     .. figure:: /img/SpecLib_AddCoords.png
        :align: center
@@ -773,7 +771,7 @@ Colorize spectra by attribute
 
 Spectra can be colorized according to their attributes, e.g. their class name.
 
-1. In the :guilabel:`Data Views` panel on the left, right click on the spectral library that we are currently using and select the **Layer Properties**.
+1. In the :guilabel:`Data Views` panel on the left, right click |mouse_rightclick| on the spectral library that we are currently using and select the **Layer Properties**.
 2. Switch to the :guilabel:`Symbology` |symbology| tab and select the **Categorized** renderer at the top.
 3. In the **Column** droplist select the desired column and click *Classify*.
 4. Confirm with :guilabel:`Ok` and close the window.
