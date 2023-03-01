@@ -24,12 +24,9 @@ Installation
 
 The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python packages** that need to be installed independent from QGIS.
 
-
 ..       * :ref:`Windows <install-packages-windows>`
 ..       * :ref:`Linux <install-packages-linux>`
 ..       * :ref:`Mac <install-packages-mac>`
-
-.. image:: ../img/install.png
 
 
 1. Install QGIS
@@ -52,23 +49,26 @@ Before you can install QGIS from the downloaded disk image, you need to allow yo
 
 2. Extract the downloaded `qgis-macos-pr.dmg` and move it to your app folder
 
-   .. image:: /img/macos/install_qgis_copy1.png
+   |mac_copy1| |mac_copy2|
 
-   .. image:: /img/macos/install_qgis_copy2.png
+.. |mac_copy1| image:: /img/macos/install_qgis_copy1.png
+   :width: 500px
+.. |mac_copy2| image:: /img/macos/install_qgis_copy2.png
+   :width: 500px
 
-3. Installing or opening QGIS may raise a verification warning
+3. Installing or opening QGIS may raise a verification warning. In that case, open your system preferences, go to
+   :menuselection:`Security & Privacy --> General` and allow QGIS to be opened anyway.
 
-   .. figure:: /img/macos/install_qgis_check1.png
+   |mac_check1| |mac_check2|
 
-      In that case, open your system preferences, go to "Security & Privacy" -> "General" and allow QGIS to be opened anyway
-
-   .. image:: /img/macos/install_qgis_check2.png
+.. |mac_check1| image:: /img/macos/install_qgis_check1.png
+   :width: 500px
+.. |mac_check2| image:: /img/macos/install_qgis_check2.png
+   :width: 500px
 
 4. Now you can start QGIS.app from your application folder.
 
-
-....
-
+|
 
 .. _install-python-packages:
 
@@ -121,7 +121,7 @@ Windows
 
 1. Close QGIS, if it is open.
 
-2. Run the OSGeo4W Shell as administrator **(!!!)**. A convenient way to access the OSGeo4W Shell is from the start menu.
+2. Run the OSGeo4W Shell as administrator, if possible. A convenient way to access the OSGeo4W Shell is from the start menu.
    Depending on the installation method you used to install QGIS, the shortcut will be listed under *QGIS 3.xx* (standalone installer)
    or *OSGeo4W* (network installer)
 
@@ -170,15 +170,15 @@ Linux
 1. Close QGIS, if it is open.
 2. Open the terminal and install all missing packages using pip:
 
+   .. code-block:: bash
+
+      python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
+
    .. hint:: Make sure to execute the pip command in the python environment QGIS is using (usually you can find out where
              python is located by running ``import sys; sys.executable`` in the QGIS Python Console). You then might have
              to change the ``python3`` part in the snippet below with the explicit QGIS python path.
 
              This also applies if you installed QGIS using **flatpak**, in that case install python modules as described `here <https://qgis.org/de/site/forusers/alldownloads.html#flatpak>`_.
-
-   .. code-block:: bash
-
-      python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
 
    .. note::
 
@@ -204,12 +204,13 @@ To install all packages required, call::
 
 More details on the QGIS packaging mechanism for macOS can be found `here <https://www.lutraconsulting.co.uk/blog/2020/10/01/qgis-macos-package/>`_.
 
+|
 
 .. error::
 
    See :ref:`FAQ <faq_requirements>` if you run into problems installing the packages.
 
-
+|
 
 .. _usr_installation_enmapbox:
 

@@ -42,11 +42,12 @@ The data will be added automatically into a single map view and will be listed i
 3. First steps in the GUI
 #########################
 
-By default the example data is loaded into a single Map View. Let's rearrange those for better visualisation and in order
+By default the example data is loaded into a single map view. Let's rearrange those for better visualisation and in order
 to get to know the GUI functionalities:
 
-1. Click the |viewlist_mapdock| :sup:`Open a map view` button to add a second map view. The window appears below the first map window.
-2. We want to arrange the windows so that they are next to each other (horizontally): Click and hold on the blue area of
+1. Click the |viewlist_mapdock| :sup:`Open a map view` button to add a second map view. This view will appear below the
+   first map view (:guilabel:`Map #1`).
+2. We want to arrange the windows so that they are next to each other (horizontally): Click and hold on to the blue area of
    :guilabel:`Map #2` and drag it to the right of :guilabel:`Map #1` (see figure below). The translucent blue rectangle
    indicates where the map window will be docked once you stop holding the left mouse button.
 
@@ -67,7 +68,7 @@ Now we want to change the RGB representation of the :file:`enmap_berlin.bsq` ima
    a new panel. Here you can quickly change the renderer (e.g., singleband gray, RGB) and the band(s) visualized. You can
    do so manually using the slider or by selecting the buttons with predefined wavelength regions based on Sentinel-2 (e.g.
    :guilabel:`G` = *Green*, :guilabel:`N` = *Near infrared*).
-   The raster layer needs to have :term:`wavelength` information for the latter!
+   The raster layer needs to have :term:`wavelength` information for the latter to work!
 7. In the RGB tab, look for :guilabel:`Predefined` and click on the dropdown menu |combo|. You will find several band
    combination presets. Select `Colour infrared`.
 
