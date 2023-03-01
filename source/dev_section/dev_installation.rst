@@ -166,10 +166,7 @@ e) Setup Conda (all platforms)
 .. warning::
 
     Installing QGIS via conda is not officially supported by the QGIS core development team.
-    The QGIS versions available in conda can therefore differ from the official QGIS versions.
-
-    At this date (2022-01-18) conda is stucked at QGIS 3.18, which the official QGIS is at 3.22
-
+    The QGIS versions available in conda can therefore differ from the official QGIS versions!
 
 The installation of QGIS within a `conda <https://docs.conda.io/en/latest>`_ /
 `anaconda <https://www.anaconda.com/>`_ environment is (almost) the same on macOS, windows or linux. Using conda

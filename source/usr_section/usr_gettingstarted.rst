@@ -6,158 +6,95 @@
 Getting Started
 ###############
 
-.. admonition:: Info
+EnMAP-Box Introduction and basic features:
 
-    This section is aimed at users with no previous EnMAP-Box experience. You will get a brief introduction into the
-    main functionalities:
+.. raw:: html
 
-    * Getting to know the Graphical User Interface
-    * Use an EnMAP-Box Application (Classification Workflow)
-    * Use a Processing Algorithm
-    * Use the Spectral Library
+   <div style="text-align: center;">
+   <iframe width="100%" height="380" src="https://www.youtube-nocookie.com/embed/31FQ5zXl2Rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </div>
 
+|
 
-Primer
-######
-
-The EnMAP-Box can be divided into several major components. The :ref:`Graphical User Interface (GUI) <gui>`
-provides main access to all features and lets you manage and visualize raster and vector data as well as spectral libraries.
-From here you can access further :ref:`Tools <tools>` and :ref:`Applications <applications>`, which can be regarded as additional plugins
-that add specific functionalities such as plotting, metadata editing or raster algebra.
-
-Furthermore, the EnMAP-Box extents the QGIS Processing Toolbox with a comprehensive collection of various :ref:`Processing Algorithms` for data manipulation.
-
-'Underneath'
-all this is the :ref:`EnMAP-Box API, HUB-Workflow API and HUB-Datacube API <dev_cookbook>`, which are high-level application programming interfaces that
-allow more advanced users to operate EnMAP-Box functionalities directly from code or to build their own applications on top.
-
-    .. figure:: ../img/enmapbox_components.png
-       :align: center
-
-
-Launching the EnMAP-Box
-#######################
+1. Launching the EnMAP-Box
+##########################
 
 Once you successfully :ref:`installed the EnMAP-Box <usr_installation>`, you can access the plugin via the |enmapbox| icon
-in the QGIS toolbar. Furthermore, the EnMAP-Box :ref:`Processing Algorithms` should also appear in the QGIS Processing Toolbox.
+in the QGIS toolbar or via :menuselection:`Raster --> EnMAP-Box` from the menubar.
+Furthermore, the EnMAP-Box :ref:`Processing Algorithms` provider is available in the Processing Toolbox.
 
     .. figure:: ../img/manual_gui.png
        :align: center
 
-The Graphical User Interface (GUI) of the EnMAP-Box on first open
+       The Graphical User Interface (GUI) of the EnMAP-Box on first open
 
 .. tip:: Have a look at the :ref:`User Manual <gui>` for a detailed description of the GUI.
 
 
-Loading Testdata
-################
+2. Loading data
+###############
 
-* Go to :menuselection:`Project --> Load Example Data` to load example datasets into you project (on first open, you will be asked whether
-  to download the dataset, confirm with :guilabel:`OK`). The following datasets
-  will be added (now they are listed in the :guilabel:`Data Sources` window):
-
-  * :file:`enmap_berlin.bsq`
-  * :file:`hires_berlin.bsq`
-  * :file:`landcover_berlin_point.gpkg`
-  * :file:`landcover_berlin_polygon.gpkg`
-  * :file:`library_berlin.gpkg`
-  * :file:`library_berlin.sli`
-  * :file:`enmap_sf_library.gpkg`
-  * :file:`veg-cover-fraction_berlin_point.gpkg`
-
-.. tip::
-
-   Have a look at the section :ref:`Test dataset <test_dataset>` for further information on the datasets. In this section we will
-   mainly work with :file:`enmap_berlin.bsq` and :file:`landcover_berlin_point.gpkg`
+You can load an :ref:`example dataset <example_data>` into your project by selecting :menuselection:`Project --> Add Example Data` in the menu bar.
+On a fresh installation you will be asked to download the dataset, confirm with :guilabel:`OK`.
+The data will be added automatically into a single map view and will be listed in the :guilabel:`Data Sources` panel as well.
 
 
-First Steps in the GUI
-######################
+3. First steps in the GUI
+#########################
 
 By default the example data is loaded into a single Map View. Let's rearrange those for better visualisation and in order
 to get to know the GUI functionalities:
 
-1. Click the *Open a map window* |viewlist_mapdock|  button to add a second map view. The window appears below the first map window.
-2. We want to arrange the windows so that they are next to each other (horizontally). Click and hold on the blue area of :guilabel:`Map #2` and drag it to the right of :guilabel:`Map #1` (see figure below). The translucent blue rectangle indicates where the map window will be docked once you stop holding the left mouse button.
+1. Click the |viewlist_mapdock| :sup:`Open a map view` button to add a second map view. The window appears below the first map window.
+2. We want to arrange the windows so that they are next to each other (horizontally): Click and hold on the blue area of
+   :guilabel:`Map #2` and drag it to the right of :guilabel:`Map #1` (see figure below). The translucent blue rectangle
+   indicates where the map window will be docked once you stop holding the left mouse button.
 
     .. figure:: ../img/mapviewshift.png
        :align: center
        :width: 800
 
-3. Now, in the :guilabel:`Data Views` window, expand the :guilabel:`Map #1` list, so that you can see the individual layers. Select :file:`hires_berlin.bsq` and drag the layer into :guilabel:`Map #2` (you can drag them directly into the map views or the respective menu item under :guilabel:`Data Views`). You can remove :file:`library_berlin.sli` and :file:`landcover_berlin_polygon.gpkg`, since they are not needed here. Right-click on the layer in the Data Views panel and select :guilabel:`Remove Layer`.
-4. In the next step we link both map views, so that zoom and center are synchronized between both. Go to :menuselection:`View --> Set Map Linking` and select *Link map scale and center* |link_all_mapscale_center| .
-5. Move the map (using |mActionPan| or holding mouse wheel) and see how both map views are synchronized.
+3. In the :guilabel:`Map #1` list in the :guilabel:`Data Views` panel, select :file:`hires_berlin.bsq` and drag the
+   layer into :guilabel:`Map #2` (you can drag them directly into the map view or the respective menu item under :guilabel:`Data Views`).
+4. In the next step we link both map views, so that zoom and center are synchronized between both:
+   Click the |link_basic| button or go to :menuselection:`View --> Set Map Linking` and select
+   |link_all_mapscale_center| :sup:`Link map scale and center`.
+5. Move the map (using |mActionPan| or holding the mouse wheel |mouse_wheel|) and notice how both map views are synchronized now.
 
-Use an Application
-##################
+Now we want to change the RGB representation of the :file:`enmap_berlin.bsq` image:
 
-In this section we will use the EnMAP-Box application **Classification Workflow** to classify the :file:`enmap_berlin.bsq`
-image using a point vector dataset with the classes *impervious, low vegetation, tree, soil, water* and a random forest classifier.
+6. In the :guilabel:`Data Views` panel click the |symbology| :sup:`Open Raster Layer Styling` button, which will open
+   a new panel. Here you can quickly change the renderer (e.g., singleband gray, RGB) and the band(s) visualized. You can
+   do so manually using the slider or by selecting the buttons with predefined wavelength regions based on Sentinel-2 (e.g.
+   :guilabel:`G` = *Green*, :guilabel:`N` = *Near infrared*).
+   The raster layer needs to have :term:`wavelength` information for the latter!
+7. In the RGB tab, look for :guilabel:`Predefined` and click on the dropdown menu |combo|. You will find several band
+   combination presets. Select `Colour infrared`.
 
-1. Open the Classification workflow :menuselection:`Applications --> Classification Workflow (advanced)`.
-2. In the :guilabel:`Source` dropdown menu select *categorized vector layer and feature raster*.
+  .. figure:: /img/rasterlayerstyling.png
+     :align: center
 
-    .. figure:: ../img/classwf1.png
-       :align: center
+     Raster Layer Styling panel with selected Color infrared preset
 
-
-3. Click on :guilabel:`create dataset`. A new window is opened, where you have to choose the *Categorized vector layer* and the *Raster layer with features*.
-4. Choose :file:`landcover_berlin_point.gpkg` as :guilabel:`Vector layer` and :file:`enmap_berlin.bsq` as :guilabel:`Raster layer`.
-5. You also need to define the :guilabel:`Field with class values`. Select :file:`level_2_id` here. Specify an output path and filename by pressing :guilabel:`...` or use the default, which will save the output to a temporary location. Leave all other default settings and run the algorithm.
-
-    .. figure:: ../img/classwf1_classDataSet.png
-       :align: center
-
-6. The newly created dataset is now used to fit the classifier. The advanced classification workflow also allows you to split the dataset, select different classifiers, calculate feature clusters and rankings. For now, however, let's leave everything at the default settings and continue with the model fitting.
+8. Try out other renderers and band combinations!
 
 .. tip::
 
-     Find more information on the Classification Workflow application in the :ref:`User Manual > Applications > Classification Worklow <applications>`.
+   Once you selected/activated the slider (i.e., clicked |mouse_leftclick| on it) you can use the arrow keys :kbd:`←`/:kbd:`→` to
+   switch back and forth between bands!
 
-7. Move on to the tab :guilabel:`Model` and select *dataset* as :guilabel:`Dataset`. Again specify an output path and filename by pressing :guilabel:`...` or use the default, and run :guilabel:`fit classifier`.
+4. Use a Processing Algorithm
+#############################
 
-    .. figure:: ../img/classwf1_fitClassifier.png
-       :align: center
+In this section we will use a processing algorithm from the EnMAP-Box algorithm provider. The EnMAP-Box adds more than
+150 Processing Algorithms to the QGIS processing framework. Their scope ranges from general tasks, e.g. file type
+conversions or data import to specific applications like machine learning.
+In this example we are converting a polygon dataset with information on different landcover types into a
+classification raster, i.e., we are going to rasterize the vector dataset.
 
-8. We can also already test our model by using a cross-validation performance. Choose *cross-validation performace* as :guilabel:`Algorithm`, specify an output path and file name or leave the default and click on :guilabel:`assess performance`. The HTML report will open automatically in the default web browser.
-
-    .. figure:: ../img/screenshot_aareport.png
-       :align: center
-
-9. Now that we finished fitting the classifier, we can move on to the actual image classification. The :guilabel:`Classifier` will be set automatically. Choose the :file:`enmap_berlin.bsq` as :guilabel:`Raster layer with features` which is the image that we want to classify. Specify an output path and filename for the prediction output or use the default, and run :guilabel:`predict output products`.
-
-    .. figure:: ../img/claasWF_predict.png
-       :align: center
-
-10. Once the process has finished, the classification image will be listed in the :guilabel:`Data Sources` panel (if not, open it again via |add_datasource|).
-11. Now visualize the classification result side-by-side with the initial image. Therefore, right-click into :guilabel:`Map #2` and select :menuselection:`--> Clear`. Drag the classification image from the :guilabel:`Data Sources` panel into :guilabel:`Map #2`
-
-    .. figure:: ../img/screenshot_class_result1.png
-       :align: center
-
-Example output of the Random Forest Classification
-
-.. tip::
-
-     The classification output is displayed in random colours. You can change the visualization settings in the **Layer Properties** of the raster. Right click on the
-     layer in the :guilabel:`Data Views` panel, select **Layer Properties** and edit the colors and names accordingly.
-
-12. In the :guilabel:`Data Views` panel, right-click on the classification layer and select :guilabel:`Classification Statistics`. This will show you an interactive plot with the different class counts
-
-    .. figure:: /img/classification_statistics1.png
-       :align: center
-
-Example of the statistics of the classification result
-
-Use a Processing Algorithm
-##########################
-
-In this section we will use a processing algorithm from the EnMAP-Box algorithm provider. More precise, we are converting a
-polygon dataset holding information on different landcover types into a classification raster, i.e., we are going to
-rasterize the vector dataset.
-
-1. First of all, make sure the :ref:`Processing Toolbox <processing_toolbox>` window is opened. If not, activate it via :menuselection:`View --> Panels --> Processing Toolbox`
-2. Open the :menuselection:`Rasterize categorized vector layer` algorithm under :menuselection:`EnMAP-Box --> Raster Creation`
+1. First of all, make sure the :ref:`Processing Toolbox <processing_toolbox>` window is opened. If not, activate it via
+   :menuselection:`View --> Panels --> Processing Toolbox`
+2. Open the :guilabel:`Rasterize categorized vector layer` algorithm under :menuselection:`EnMAP-Box --> Vector conversion`
 3. Use the following settings:
 
   * :guilabel:`Categorized vector layer`: :file:`landcover_berlin_polygon.gpkg`
@@ -168,38 +105,23 @@ rasterize the vector dataset.
     .. figure:: /img/example_rasterize_classification.png
        :align: center
 
-   Result of the Classification from Vector algorithm (right) and the input grid (left) and polygon dataset (middle)
+       Result of the Classification from Vector algorithm (right) and the input grid (left) and polygon dataset (middle)
 
-Use the Spectral Library
-########################
 
-A Spectral Library is a library is a vector layer with a layer field designated to store spectral profiles. This section gives a very brief overview of
-the Spectral Library. To get more detailed information about all the functionalities, please follow the instructions in the :ref:`User Manual > Spectral Libraries <spectral_libraries>`.
+5. What's next?
+###############
 
-1. Open the spectral library window via :menuselection:`View --> Add Spectral Library Window`.
-2. You should now see an empty window where you can collect spectra.
+* `Introduction to spectral libraries (video) <https://www.youtube.com/watch?v=qVoi0CoJheI>`_
+* :ref:`Download EnMAP data <data_access>`
 
-    .. figure:: ../img/SpectralLibrary.png
-       :align: center
+* .. todo::
 
-3. If not already activated, enable the |profile| button in the menu bar and open a raster in a new map view from which you want to collect spectra.
-4. Create spectra from the image by clicking with the left mouse button in the opened image. The collected spectral information is now stored as a temporary profile candidate, which is displayed as a dotted line. Each time you click into the image, the profile candidate is replaced by a new one.
-5. Click on *Add Profile(s)* |plus_green| to keep the candidate profile in the spectral library. Activate  *Add profiles automatically* |profile_add_auto| to collect multiple profiles and display them all in the same spectral library.
+     * Classification
+     * Tutorials
+     * Advanced raster algebra using :ref:`Raster math <>`
 
-    .. figure:: ../img/AddProfiles.png
-       :align: center
 
-**Add information to the attribute table:**
+.. seealso::
 
-Each spectral library has its own attribute table where you can manage your collected spectral profiles and add or delete information.
-The Spectral Library Window has a number of functions similar to the vector editing functions you may be familiar with from QGIS.
-
-1. To add information, open the *Attribute table* by clicking the |attributes| icon, then enable the **Editing mode** by clicking the |mActionToggleEditing| symbol.
-2. Add a new field via |mActionNewAttribute|
-
-    .. figure:: ../img/Speclib_addNewField.png
-       :align: center
-       :width: 800
-
-3. A new column is added to the attribute table, which you can edit with a double click.
-4. To delete a column, use the *Delete field button* |mActionDeleteAttribute|.
+   If you face issues or have questions, head over to the `GitHub Discussions page <https://github.com/EnMAP-Box/enmap-box/discussions>`_
+   and start a new discussion.

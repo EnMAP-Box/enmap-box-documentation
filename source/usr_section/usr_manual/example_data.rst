@@ -1,15 +1,15 @@
-.. _test_dataset:
+.. _example_data:
 
 Example Data
 ************
 
 .. note::
 
-   For opening the test dataset go to the menubar :menuselection:`Project --> Load Example Data`
+   For opening the dataset go to the menubar :menuselection:`Project --> Load Example Data`
 
    .. image:: /img/gui_loadexampledata.png
 
-   If you try to open the test dataset for the first time, you will be asked to download the data from the repository:
+   If you try to open the dataset for the first time, you will be asked to download the data from the repository:
 
    .. figure:: /img/gui_downloadtestdata.png
 
