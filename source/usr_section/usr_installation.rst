@@ -71,16 +71,9 @@ Before you can install QGIS from the downloaded disk image, you need to allow yo
 2. Install required python packages
 -----------------------------------
 
-The EnMAP-Box core plugin requires several python packages:
-
-* `numpy <https://numpy.org/>`_
-* `scipy <https://scipy.org>`_
-* `scikit-learn <https://scikit-learn.org/stable/index.html>`_
-* `matplotlib <https://matplotlib.org/>`_
-* `astropy <https://docs.astropy.org/en/stable>`_ (**optional**, relevant for certain processing algorithms)
-
-
-In the following we demonstrate two variants for installing the required Python packages:
+The EnMAP-Box plugin requires several python packages (click
+`here <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt>`_ here for full list).
+In the following we demonstrate two variants for installing the required packages (you **don't** have to do both!):
 
 .. _package_installer:
 
@@ -102,6 +95,8 @@ the context menu inside the package list.
 .. image:: /img/package_installer.png
 
 It might be necessary to restart QGIS and the EnMAP-Box.
+
+|
 
 2.2 Command-line
 ~~~~~~~~~~~~~~~~

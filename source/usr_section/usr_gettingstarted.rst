@@ -114,10 +114,9 @@ classification raster, i.e., we are going to rasterize the vector dataset.
 
 * `Introduction to spectral libraries (video) <https://www.youtube.com/watch?v=qVoi0CoJheI>`_
 * :ref:`Download EnMAP data <data_access>`
-
+* :ref:`Classification <classification_workflow_app>`
 * .. todo::
 
-     * Classification
      * Tutorials
      * Advanced raster algebra using :ref:`Raster math <>`
 

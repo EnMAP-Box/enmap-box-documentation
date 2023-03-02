@@ -31,7 +31,7 @@ To access the EnMAP image archive, a primary registration to the IPP is necessar
     .. figure:: /img/enmap_dataAccess.png
        :align: center
 
-Overview of the EnMAP Data Access Portals
+       Overview of the EnMAP Data Access Portals
 
 Step 1: Instrument Planning Portal (IPP)
 ----------------------------------------
@@ -70,7 +70,7 @@ The login button appears on the User Portal page, which automatically directs to
     .. figure:: /img/enmap_eoweb_login.png
        :align: center
 
-*Entry point to the EOWEB GeoPortal*
+       Entry point to the EOWEB GeoPortal
 
     1. Login with the respective User ID associated with the approved role request. The password remains the same as when logging into the Instrument Planning Portal.
     2. Once logged in, click :guilabel:`Show advanced map` to zoom, pan and draw a rectangle.
@@ -92,11 +92,10 @@ After the order is placed, an e-mail is sent including a link to the FTP server 
 
 .. note:: The User ID and password to access the FTP server are identical to the EOWEB |reg| GeoPortal credentials.
 
-To download the data, use e.g., FileZilla.
-
-    * For further help on how to download the data from the FTP server take a look at `Downloading Ordered Data <https://eoweb.dlr.de/egp/docs/user/downloading_ordered_data.html>`_.
+To download the data use a FTP client, for example FileZilla. For further help on how to download the data from the FTP server take
+a look at `Downloading Ordered Data <https://eoweb.dlr.de/egp/docs/user/downloading_ordered_data.html>`_.
 
     .. figure:: /img/enmap_downloadData.png
        :align: center
 
-Example of FTPS settings in FileZilla
+       Example of FTPS settings in FileZilla
