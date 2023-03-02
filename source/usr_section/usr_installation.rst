@@ -1,32 +1,28 @@
 .. include:: /icon_links.rst
 
-.. _usr_installation:
-
-Installation
-============
-
-.. |download_link| raw:: html
-
-   <a href="https://plugins.qgis.org/plugins/enmapboxplugin/" target="_blank">https://plugins.qgis.org/plugins/enmapboxplugin/</a>
-
-.. |developer_qgis_plugin_repo| raw:: html
-
-    <a href="https://bytebucket.org/hu-geomatics/enmap-box/wiki/qgis_plugin_develop.xml" target="_blank">https://bytebucket.org/hu-geomatics/enmap-box/wiki/qgis_plugin_develop.xml</a>
-
-
 .. |icon| image:: ../img/icon.png
    :width: 30px
    :height: 30px
 
 .. |osgeoinstaller| image:: ../img/osgeoinstaller.png
 
+.. |download_link| raw:: html
 
+   <a href="https://plugins.qgis.org/plugins/enmapboxplugin/" target="_blank">https://plugins.qgis.org/plugins/enmapboxplugin/</a>
+
+.. _usr_installation:
+
+Installation
+============
 
 The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python packages** that need to be installed independent from QGIS.
 
-..       * :ref:`Windows <install-packages-windows>`
-..       * :ref:`Linux <install-packages-linux>`
-..       * :ref:`Mac <install-packages-mac>`
+.. raw:: html
+
+   <div style="text-align: center;">
+   <iframe width="100%" height="380" src="https://www.youtube-nocookie.com/embed/_SNbLmB8aCQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <p><i>Video with step by step installation instructions</i></p>
+   </div>
 
 
 1. Install QGIS
