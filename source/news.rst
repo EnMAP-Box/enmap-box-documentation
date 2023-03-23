@@ -10,6 +10,16 @@ The EnMAP-Box will be present at the FOSSGIS with a demosession:
 
 Looking forward meeting you there!
 
+UPDATE - `Here <https://media.ccc.de/v/fossgis2023-24078-visualisierung-und-analyse-von-satellitenbildern-mit-der-enmap-box>`_
+is the recording of the presentation:
+
+.. raw:: html
+
+   <div style="text-align: center;">
+   <video width="100%" height="430" controls> <source src="https://cdn.media.ccc.de/events/fossgis/2023/webm-hd/fossgis2023-24078-deu-Visualisierung_und_Analyse_von_Satellitenbildern_mit_der_EnMAP-Box_webm-hd.webm" type="video/webm"></video>
+   </div>
+
+|
 
 EnMAP-Box Version 3.11 released
 ==============================
@@ -60,8 +70,10 @@ Benjamin Jakimow presented how to use Spectral Libraries in QGIS using the EnMAP
 .. raw:: html
 
    <div style="text-align: center;">
-   <video width="100%" height="380" controls> <source src="https://mirror.selfnet.de/CCC//events/fossgis/2021/h264-hd/fossgis2021-8945-deu-Von_Pixeln_und_Profilen_Die_Nutzung_von_Spektralbibliotheken_in_QGIS_mit_der_EnMAP-Box_hd.mp4" type="video/mp4"></video>
+   <video width="100%" height="430" controls> <source src="https://mirror.selfnet.de/CCC//events/fossgis/2021/h264-hd/fossgis2021-8945-deu-Von_Pixeln_und_Profilen_Die_Nutzung_von_Spektralbibliotheken_in_QGIS_mit_der_EnMAP-Box_hd.mp4" type="video/mp4"></video>
    </div>
+
+|
 
 EnMAP-Box Version 3.7 released
 ==============================
@@ -81,7 +93,7 @@ Andreas Rabe presented the EnMAP-Box at the FOSSGIS 2020 in Freiburg. See the fu
 .. raw:: html
 
    <div style="text-align: center;">
-   <iframe width="100%" height="380" src="https://www.youtube.com/embed/egaJLUe_eXY" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <iframe width="100%" height="430" src="https://www.youtube.com/embed/egaJLUe_eXY" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </div>
 
 |
