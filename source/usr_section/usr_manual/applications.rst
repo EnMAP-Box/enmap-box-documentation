@@ -184,6 +184,9 @@ Usage
 
     3. Click :guilabel:`Random Sample` and follow the subsequent algorithm dialog.
 
+
+.. _classification_workflow_app:
+
 Classification workflow
 =======================
 

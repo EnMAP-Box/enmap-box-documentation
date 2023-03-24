@@ -38,15 +38,14 @@ extensions = [
     # 'sphinxcontrib.mockautodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
-    # 'sphinx.ext.autosectionlabel',
+    'sphinx.ext.autosectionlabel',
     'sphinxnotes.strike',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'sphinxcontrib.youtube',
-    'sphinx.ext.autosectionlabel'
+    'sphinxcontrib.youtube'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -76,7 +75,7 @@ version = u'{}'.format(re.search(r'(\.?[^.]*){2}', release).group())
 
 # General information about the project.
 project = u'EnMAP-Box 3'
-copyright = u'2018-2022, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Sebastian van der Linden, Patrick Hostert'
+copyright = u'2018-2023, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Sebastian van der Linden, Patrick Hostert'
 author = u'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, \nSebastian van der Linden,\nPatrick Hostert'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -132,7 +131,7 @@ html_theme_options = {
     # Toc options
     'collapse_navigation': True,
     'sticky_navigation': True,
-    'navigation_depth': 4,
+    'navigation_depth': -1,
     'includehidden': True,
     'titles_only': False
 }

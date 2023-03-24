@@ -15,7 +15,13 @@ This section is a collection of 'recipes' for common tasks you can perform in th
 .. toctree::
    :maxdepth: 1
    :name: Cookbook
-   :glob:
 
-   *
+   clipraster.rst
+   clustering.rst
+   filtering.rst
+   generic_filter.rst
+   imagemath.rst
+   wavelength_information.rst
+   transformation.rst
+
 

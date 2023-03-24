@@ -48,7 +48,7 @@
    :width: 28px
 .. |edit_ogr_metadata| image:: /img/icons/edit_ogr_metadata.svg
    :width: 28px
-.. |enmapbox| image:: /img/icons/enmapbox.svg
+.. |enmapbox| image:: /img/icons/enmapbox.png
    :width: 28px
 .. |enmapbox600dpi| image:: /img/icons/enmapbox600dpi.png
    :width: 28px
@@ -73,6 +73,8 @@
 .. |fileSize| image:: /img/icons/fileSize.svg
    :width: 28px
 .. |gdalSensor| image:: /img/icons/gdalSensor.svg
+   :width: 28px
+.. |GEE| image:: /img/icons/GEE.svg
    :width: 28px
 .. |general| image:: /img/icons/general.svg
    :width: 28px
@@ -105,6 +107,8 @@
 .. |link_mapscale_center| image:: /img/icons/link_mapscale_center.svg
    :width: 28px
 .. |link_open| image:: /img/icons/link_open.svg
+   :width: 28px
+.. |locationbrowser| image:: /img/icons/locationbrowser.svg
    :width: 28px
 .. |locked| image:: /img/icons/locked.svg
    :width: 28px
@@ -147,6 +151,10 @@
 .. |mActionAtlasPrev| image:: /img/icons/mActionAtlasPrev.svg
    :width: 28px
 .. |mActionCalculateField| image:: /img/icons/mActionCalculateField.svg
+   :width: 28px
+.. |mActionCapturePoint| image:: /img/icons/mActionCapturePoint.svg
+   :width: 28px
+.. |mActionCapturePolygon| image:: /img/icons/mActionCapturePolygon.svg
    :width: 28px
 .. |mActionCollapseTree| image:: /img/icons/mActionCollapseTree.svg
    :width: 28px
@@ -208,11 +216,15 @@
    :width: 28px
 .. |mActionSaveAllEdits| image:: /img/icons/mActionSaveAllEdits.svg
    :width: 28px
+.. |mActionSaveEdits| image:: /img/icons/mActionSaveEdits.svg
+   :width: 28px
 .. |mActionSaveTS| image:: /img/icons/mActionSaveTS.svg
    :width: 28px
 .. |mActionSelectAll| image:: /img/icons/mActionSelectAll.svg
    :width: 28px
 .. |mActionSelectedToTop| image:: /img/icons/mActionSelectedToTop.svg
+   :width: 28px
+.. |mActionSelectRectangle| image:: /img/icons/mActionSelectRectangle.svg
    :width: 28px
 .. |mActionSetProjection| image:: /img/icons/mActionSetProjection.svg
    :width: 28px
@@ -304,6 +316,12 @@
    :width: 28px
 .. |mIconVirtualRaster2| image:: /img/icons/mIconVirtualRaster2.svg
    :width: 28px
+.. |mouse_leftclick| image:: /img/icons/mouse_leftclick.svg
+   :width: 28px
+.. |mouse_rightclick| image:: /img/icons/mouse_rightclick.svg
+   :width: 28px
+.. |mouse_wheel| image:: /img/icons/mouse_wheel.svg
+   :width: 28px
 .. |mSourceFields| image:: /img/icons/mSourceFields.svg
    :width: 28px
 .. |numpy| image:: /img/icons/numpy.png
@@ -325,6 +343,8 @@
 .. |processing_collapse| image:: /img/icons/processing_collapse.svg
    :width: 28px
 .. |profile| image:: /img/icons/profile.svg
+   :width: 28px
+.. |profileanalytics| image:: /img/icons/profileanalytics.svg
    :width: 28px
 .. |profiletheme_bright| image:: /img/icons/profiletheme_bright.svg
    :width: 28px
@@ -351,6 +371,8 @@
 .. |qgis_icon| image:: /img/icons/qgis_icon.svg
    :width: 28px
 .. |raster| image:: /img/icons/raster.svg
+   :width: 28px
+.. |rasterbandstacking| image:: /img/icons/rasterbandstacking.svg
    :width: 28px
 .. |rasterband_select| image:: /img/icons/rasterband_select.svg
    :width: 28px
@@ -383,6 +405,8 @@
 .. |select_location| image:: /img/icons/select_location.svg
    :width: 28px
 .. |sensor| image:: /img/icons/sensor.png
+   :width: 28px
+.. |sensorimport| image:: /img/icons/sensorimport.svg
    :width: 28px
 .. |settings| image:: /img/icons/settings.svg
    :width: 28px
@@ -431,4 +455,8 @@
 .. |viewlist_textview| image:: /img/icons/viewlist_textview.svg
    :width: 28px
 .. |zoomToFullExtent| image:: /img/icons/zoomToFullExtent.svg
+   :width: 28px
+.. |field_from_raster| image:: /img/icons/field_from_raster.svg
+   :width: 28px
+.. |raster_from_field| image:: /img/icons/raster_from_field.svg
    :width: 28px
