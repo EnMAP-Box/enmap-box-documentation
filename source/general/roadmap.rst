@@ -4,35 +4,29 @@
 Roadmap
 #######
 
-The development of the EnMAP-Box is based on the following schedule:
+The development of the EnMAP-Box is based on the following schedule.
+Note that from EnMAP-Box v3.12+, we optimize releases for the current QGIS Long Term Release (LTR),
+while still test and support the current QGIS version.
 
-==================  ============================================
-Date                Event / Phase
-==================  ============================================
-Jan/Feb 2021        Evaluation EnMAP-Box in Teaching
-Mid Feb 2021        Feature Freeze EnMAP-Box 3.8
-End Mar 2021        **Release EnMAP-Box 3.8**
-------------------  --------------------------------------------
-Jul/Aug 2021        Evaluation EnMAP-Box in Teaching
-Mid Aug 2021        Feature Freeze EnMAP-Box 3.9
-End Sep 2021        **Release EnMAP-Box 3.9**
-------------------  --------------------------------------------
-Jan/Feb 2022        Evaluation EnMAP-Box in Teaching
-Mid Feb 2022        Feature Freeze EnMAP-Box 3.10
-End Mar 2022        **Release EnMAP-Box 3.10**
-------------------  --------------------------------------------
-Jul/Aug 2022        Evaluation EnMAP-Box in Teaching
-Mid Aug 2022        Feature Freeze EnMAP-Box 3.11
-End Sep 2022        **Release EnMAP-Box 3.11**
-------------------  --------------------------------------------
-Jan/Feb 2023        Evaluation EnMAP-Box in Teaching
-Mid Feb 2023        Feature Freeze EnMAP-Box 3.12
-End Mar 2023        **Release EnMAP-Box 3.12**
-------------------  --------------------------------------------
-Jul/Aug 2023        Evaluation EnMAP-Box in Teaching
-Mid Aug 2023        Feature Freeze EnMAP-Box 3.13
-End Sep 2023        **Release EnMAP-Box 3.13**
-==================  ============================================
+================ ====================== =======================
+Version          Minimum QGIS version   Date
+================ ====================== =======================
+EnMAP-Box 3.8    QGIS 3.16              End March 2021
+---------------- ---------------------- -----------------------
+EnMAP-Box 3.9    QGIS 3.18              End November 2021
+---------------- ---------------------- -----------------------
+EnMAP-Box 3.10   QGIS 3.24              End Mar 2022
+---------------- ---------------------- -----------------------
+EnMAP-Box 3.11    QGIS 3.24             End November 2022
+---------------- ---------------------- -----------------------
+EnMAP-Box 3.12   QGIS 3.28 LTR          End Mar 2023
+---------------- ---------------------- -----------------------
+EnMAP-Box 3.13   QGIS 3.28 LTR          End November 2023
+---------------- ---------------------- -----------------------
+EnMAP-Box 3.14   QGIS 3.34 LTR          End Mar 2024
+---------------- ---------------------- -----------------------
+EnMAP-Box 3.15   QGIS 3.34 LTR          End November 2024
+================ ====================== =======================
 
 Release versions: https://plugins.qgis.org/plugins/enmapboxplugin/
 
