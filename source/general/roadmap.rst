@@ -5,8 +5,8 @@ Roadmap
 #######
 
 The development of the EnMAP-Box is based on the following schedule.
-Note that from EnMAP-Box v3.12+, we optimize releases for the current QGIS Long Term Release (LTR),
-while still test and support the current QGIS version.
+Note that from EnMAP-Box v3.12+, we optimize releases for the currently supported QGIS Long Term Release (LTR),
+while also ensuring compatibility to the currently supported QGIS Latest Release (LR).
 
 ================ ====================== =======================
 Version          Minimum QGIS version   Date
