@@ -13,19 +13,19 @@ Version          Minimum QGIS version   Date
 ================ ====================== =======================
 EnMAP-Box 3.8    QGIS 3.16              End March 2021
 ---------------- ---------------------- -----------------------
-EnMAP-Box 3.9    QGIS 3.18              End November 2021
+EnMAP-Box 3.9    QGIS 3.18              End September 2021
 ---------------- ---------------------- -----------------------
 EnMAP-Box 3.10   QGIS 3.24              End Mar 2022
 ---------------- ---------------------- -----------------------
-EnMAP-Box 3.11    QGIS 3.24             End November 2022
+EnMAP-Box 3.11    QGIS 3.24             End September 2022
 ---------------- ---------------------- -----------------------
 EnMAP-Box 3.12   QGIS 3.28 LTR          End Mar 2023
 ---------------- ---------------------- -----------------------
-EnMAP-Box 3.13   QGIS 3.28 LTR          End November 2023
+EnMAP-Box 3.13   QGIS 3.28 LTR          End September 2023
 ---------------- ---------------------- -----------------------
 EnMAP-Box 3.14   QGIS 3.34 LTR          End Mar 2024
 ---------------- ---------------------- -----------------------
-EnMAP-Box 3.15   QGIS 3.34 LTR          End November 2024
+EnMAP-Box 3.15   QGIS 3.34 LTR          End September 2024
 ================ ====================== =======================
 
 Release versions: https://plugins.qgis.org/plugins/enmapboxplugin/
