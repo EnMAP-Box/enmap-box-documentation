@@ -28,4 +28,4 @@ End Sep 2022        **Release EnMAP-Box 3.11**
 
 Released versions: https://plugins.qgis.org/plugins/enmapboxplugin/
 
-Changelog: https://bitbucket.org/hu-geomatics/enmap-box/src/develop/CHANGELOG.rst
+Changelog: https://bitbucket.org/hu-geomatics/enmap-box/src/develop/CHANGELOG.md
