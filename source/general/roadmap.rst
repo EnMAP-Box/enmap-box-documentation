@@ -30,6 +30,6 @@ EnMAP-Box 3.15   QGIS 3.34 LTR          End September 2024
 
 Release versions: https://plugins.qgis.org/plugins/enmapboxplugin/
 
-Changelog: https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.rst
+Changelog: https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md
 
 Pre-Release versions: https://github.com/EnMAP-Box/enmap-box/releases
