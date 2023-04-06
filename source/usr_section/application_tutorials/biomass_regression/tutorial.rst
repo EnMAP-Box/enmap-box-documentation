@@ -5,7 +5,9 @@
 Regression-based mapping of forest aboveground biomass
 ######################################################
 
-**Authors:**  Sam Cooper, Akpona Okujeni, Patrick Hostert, Clemens Jaenicke, Benjamin Jakimow, Andreas Rabe, Fabian Thiel & Sebastian van der Linden
+**Authors:**  Klara Busse, Sam Cooper, Akpona Okujeni, Patrick Hostert,
+Clemens Jaenicke, Benjamin Jakimow, Andreas Rabe,
+Fabian Thiel & Sebastian van der Linden
 
 **Publication date:** 03/07/2020
 
