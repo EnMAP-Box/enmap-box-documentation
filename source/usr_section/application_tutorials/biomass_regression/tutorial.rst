@@ -1,17 +1,17 @@
-.. include:: /icon_links.rst
+## .. include:: /icon_links.rst
 
 .. _tutorial_biomass:
 
 Regression-based mapping of forest aboveground biomass
 ######################################################
 
-**Authors:**  Klara Busse, Sam Cooper, Akpona Okujeni, Patrick Hostert,
+**Authors:**  Sam Cooper, Akpona Okujeni, Patrick Hostert,
 Clemens Jaenicke, Benjamin Jakimow, Andreas Rabe,
-Fabian Thiel & Sebastian van der Linden
+Fabian Thiel, Sebastian van der Linden & Klara Busse
 
 **Publication date:** 03/07/2020
 
-**Last update:** 17/04/2023
+**Last update:** 15/05/2023
 
 
 Introduction

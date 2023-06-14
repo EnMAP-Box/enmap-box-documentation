@@ -168,15 +168,17 @@ Exercise A: Urban land cover
    :delim: ;
    :widths: auto
 
-   Red; Band 015 (0.660900 Micrometers)
-   Green; Band 009 (0.573100 Micrometers)
-   Blue; Band 03 (0.484300 Micrometers)
+   Red; Band 15 (0.660900 Micrometers)
+   Green; Band 9 (0.573100 Micrometers)
+   Blue; Band 3 (0.484300 Micrometers)
 
-  * You can also specify things like contrast enhancement and data stretch under :menuselection:`Symbology --> Layer Rendering`.
-  * The symbology of :file:`landcover_berlin.shp` is predefined by a QGIS layer style file (:file:`.qml`). To change this symbology,
-    right click on the vector layer, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology` in the :guilabel:`LayerProperties` window.
-    You can now change the symbology in accordance to the QGIS functionality. Use the :guilabel:`Column` and :guilabel:`Classify` options to explore the
-    information content of the attribute table :file:`landcover_berlin.shp`.
+..
+
+ * You can also specify things like contrast enhancement and data stretch under :menuselection:`Symbology --> Layer Rendering`.
+ * The symbology of :file:`landcover_berlin.shp` is predefined by a QGIS layer style file (:file:`.qml`). To change this symbology,
+   right click on the vector layer, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology` in the :guilabel:`LayerProperties` window.
+   You can now change the symbology in accordance to the QGIS functionality. Use the :guilabel:`Column` and :guilabel:`Classify` options to explore the
+   information content of the attribute table :file:`landcover_berlin.shp`.
 
 .. image:: tut_img/03_visualizerasterandvector.png
    :width: 100%
