@@ -7,11 +7,12 @@ Regression-based unmixing of urban land cover
 =============================================
 
 
-**Authors:**  Akpona Okujeni, Sam Cooper, Patrick Hostert, Clemens Jaenicke, Benjamin Jakimow, Andreas Rabe, Fabian Thiel & Sebastian van der Linden
+**Authors:**  Akpona Okujeni, Sam Cooper, Patrick Hostert, Clemens Jaenicke, Benjamin Jakimow, Andreas Rabe, Fabian Thiel,
+Sebastian van der Linden & Klara Busse
 
 **Publication date:** 05/02/2019
 
-**Latest update:** 19/03/2020
+**Latest update:** XX/XX/2023
 
 Introduction
 ============
@@ -160,12 +161,18 @@ Exercise A: Urban land cover
   * To change the order of stacked layers, drag one layer on top or below another one. Arrange the layer stack so that
     :file:`landcover_berlin.shp` is displayed on top of :file:`hymap_berlin.bsq`.
   * To assign a multibandcolor RGB combination to a raster image, right click on the dataset, select :guilabel:`Layer Properties` and
-    navigate to :guilabel:`Band selection`. You can now select predefined composites (RGB, nIR, swIR), or
-    manually select your bands using the slider or dropdown lists. Display :file:`hymap_berlin.bsq` as true color composite,
-    by selecting R-G-B.
-  * You can specify things like contrast enhancement and data stretch under :menuselection:`Layer properties --> Symbology`.
+    navigate to :guilabel:`Symbology`. Now select your bands using the dropdown lists.
+    Display :file:`hymap_berlin.bsq` as true color composite, by selecting R-G-B.
 
+.. csv-table::
+   :delim: ;
+   :widths: auto
 
+   Red; Band 015 (0.660900 Micrometers)
+   Green; Band 009 (0.573100 Micrometers)
+   Blue; Band 03 (0.484300 Micrometers)
+
+  * You can also specify things like contrast enhancement and data stretch under :menuselection:`Symbology --> Layer Rendering`.
   * The symbology of :file:`landcover_berlin.shp` is predefined by a QGIS layer style file (:file:`.qml`). To change this symbology,
     right click on the vector layer, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology` in the :guilabel:`LayerProperties` window.
     You can now change the symbology in accordance to the QGIS functionality. Use the :guilabel:`Column` and :guilabel:`Classify` options to explore the
@@ -177,36 +184,19 @@ Exercise A: Urban land cover
 
 
 4. Basic navigation tools
--------------------------
+=========================
 
-* The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the following navigation tools: |navtools|
-  Note that the mouse wheel can be used alternatively for zooming (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
-* Make yourself familiar with the crosshair functionality. To show/hide the crosshair, to change the style, or to display the pixel cell
-  of a selected layer, right click within MAP #1 and select :guilabel:`Crosshair`.
+* The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the
+  following navigation tools: |navtools|
+* Note that the mouse wheel can be used alternatively for zooming
+  (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
+* For a better orientation when exploring visualized raster images, you may switch on the crosshairs (right click into
+  Map View and activate :menuselection:`Crosshair --> Show`.
+* Make yourself familiar with the |cursorlocationinfo| icon on the toolbar to view pixel values of the displayed raster.
+  Note: |select_location| :sup:`Identify Cursor Info` must be activated to access this tool. When activated and used, a new
+  Cursor Location Values window will open displaying data from the selected pixel. This tool similarly works for
+  viewing attribute information of displayed vector data.
 
-.. admonition:: Learning activities:
-
-   * **A1**: Visually explore the airborne hyperspectral image (:file:`hymap_berlin.bsq`). What major land cover types do you observe along Berlin’s urban-gradient?
-
-     .. raw:: html
-
-        <div><details> <summary>click to expand...</summary>
-        <p style="color:#2980B9;">Major land cover types: buildings/roofs, paved areas (e.g., streets, backyards),
-        trees (e.g., park trees, street trees), grass (e.g., lawns, soccer field), crops (on agricultural sites),
-        bare soil (e.g., agricultural sites, construction sites), and water (e.g., lakes, swimming pools).</p>
-        </details></div>
-        </br>
-
-   * **A2**: Explore the land cover reference data (:file:`landcover_berlin.shp`) and draw a flowchart of the hierarchical classification scheme stored in the attribute table.
-
-     .. raw:: html
-
-        <div><details> <summary>click to expand...</summary>
-        <img src="../../../_static/img/tut_a2.png" alt="---Image can not be displayed---">
-        </details></div>
-        </br>
-
-|
 
 Exercise B: Spectral mixing
 ===========================
