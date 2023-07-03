@@ -5,7 +5,30 @@ Spatial convolution Airy Disk filter
 ************************************
 
 2D Airy Disk filter.
-This kernel models the diffraction pattern of a circular aperture. This kernel is normalized to a peak value of 1
+ The Airy Disk filter convolves an image with a kernel that approximates the intensity distribution of an Airy disk. The filter enhances the edges and fine details in an image, mimicking the diffraction pattern produced by a circular aperture. This kernel models the diffraction pattern of a circular aperture. The kernel is normalized to a peak value of 1
+
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution Airy Disk filter`.
+
+    .. figure:: ./img/select_airy_filter.png
+       :align: center
+
+3. Select the raster to process, then click :guilabel:`run`.
+
+    .. figure:: ./img/interface_airy_filter.png
+       :align: center
+
+4. Processed image in comparison to the original.
+
+    .. figure:: ./img/result_airy_filter.png
+       :align: center
 
 **Parameters**
 
