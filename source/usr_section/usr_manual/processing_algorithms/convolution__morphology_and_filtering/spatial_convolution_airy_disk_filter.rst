@@ -30,6 +30,11 @@ Usage:
     .. figure:: ./img/result_airy_filter.png
        :align: center
 
+Live demonstration
+    ..  youtube:: b_0k3MRt0DQ
+        :width: 100%
+        :privacy_mode:
+
 **Parameters**
 
 

@@ -4,8 +4,34 @@
 Spatial convolution Ricker Wavelet filter
 *****************************************
 
-2D Ricker Wavelet filter kernel (sometimes known as a Mexican Hat kernel).
-The Ricker Wavelet, or inverted Gaussian-Laplace filter, is a bandpass filter. It smooths the data and removes slowly varying or constant structures (e.g. background). It is useful for peak or multi-scale detection.
+The Ricker wavelet filter convolves an image with a kernel that approximates the Ricker wavelet, which  is a bell-shaped waveform that resembles a symmetrically shaped hat or a Mexican hat.The Ricker wavelet filter is typically used for detecting and enhancing specific features or structures in an image. It is particularly effective in detecting edges, lines, or other localized patterns with a characteristic scale. The central peak of the Ricker wavelet helps to emphasize these features, while the positive and negative lobes contribute to enhancing the contrast and edges, which smooths the data and removes slowly varying or constant structures (e.g. background). It is useful for peak or multi-scale detection.
+
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution Ricker Wavelet filter`.
+
+    .. figure:: ./img/ricker_filter_location.png
+       :align: center
+
+3. Select the raster to process, then click :guilabel:`run`.
+
+    .. figure:: ./img/ricker_filter_interface.png
+       :align: center
+
+4. View the processed image in comparison to the original.
+
+    .. figure:: ./img/ricker_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: 9z_IP5DHKvE
+        :width: 100%
+        :privacy_mode:
 
 **Parameters**
 
