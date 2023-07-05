@@ -5,7 +5,34 @@ Spatial convolution Top-Hat filter
 **********************************
 
 2D Top-Hat filter.
-The Top-Hat filter is an isotropic smoothing filter. It can produce artifacts when applied repeatedly on the same data.
+The top hat filter is designed to enhance or extract small, bright regions or structures in an image that are significantly smaller than the size of the filter's structuring element. It is particularly useful for detecting localized objects or features against a relatively uniform background. It is an isotropic smoothing filter. It can produce artifacts when applied repeatedly on the same data.
+
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution Top-Hat filter`.
+
+    .. figure:: ./img/tophat_filter_location.png
+       :align: center
+
+3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+
+    .. figure:: ./img/tophat_filter_interface.png
+       :align: center
+
+4. Processed image in comparison to the original.
+
+    .. figure:: ./img/tophat_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: DZeo3Ble-Is
+        :width: 100%
+        :privacy_mode:
 
 **Parameters**
 

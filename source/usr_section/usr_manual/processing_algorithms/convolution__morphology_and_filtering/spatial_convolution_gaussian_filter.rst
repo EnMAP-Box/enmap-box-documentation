@@ -18,7 +18,7 @@ Usage:
     .. figure:: ./img/gaussian_filter_location.png
        :align: center
 
-3. Select the raster to process and adjust the kernel weights in the command window, then click :guilabel:`run`.
+3. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/gaussian_filter_interface.png
        :align: center

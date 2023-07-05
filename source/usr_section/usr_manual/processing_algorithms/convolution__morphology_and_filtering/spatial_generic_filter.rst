@@ -6,6 +6,33 @@ Spatial generic filter
 
 Spatial generic (user-defined) filter.
 
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution Trapezoid filter`.
+
+    .. figure:: ./img/generic_filter_location.png
+       :align: center
+
+3. Select the raster to process and replace the example code with your operation, then click :guilabel:`run`.
+
+    .. figure:: ./img/generic_filter_interface.png
+       :align: center
+
+4. Processed image in comparison to the original.
+
+    .. figure:: ./img/generic_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: ZHWhYhtMMV8
+        :width: 100%
+        :privacy_mode:
+
 **Parameters**
 
 
