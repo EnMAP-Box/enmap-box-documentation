@@ -10,6 +10,8 @@ For each pixel in the image, the erosion filter checks if all the 1 pixels withi
 
 When applying this algorithm to continous image data, the input will be binarised.
 
+Usage:
+
 1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
 
     .. figure:: ./img/open_toolbox.png

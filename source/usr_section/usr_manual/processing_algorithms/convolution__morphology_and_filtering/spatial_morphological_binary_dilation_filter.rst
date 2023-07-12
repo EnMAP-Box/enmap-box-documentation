@@ -12,6 +12,8 @@ For each pixel in the image, the dilation filter checks if any 1 pixels within t
 
 When applying this algorithm to continous image data, the input will be binarised.
 
+Usage:
+
 1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
 
     .. figure:: ./img/open_toolbox.png

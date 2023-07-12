@@ -15,17 +15,17 @@ Usage:
 
 2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial Percentile filter`.
 
-    .. figure:: ./img/percentile_location.png
+    .. figure:: ./img/percentile_filter_location.png
        :align: center
 
 3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
 
-    .. figure:: ./img/percentile_interface.png
+    .. figure:: ./img/percentile_filter_interface.png
        :align: center
 
 4. View the processed image in comparison to the original.
 
-    .. figure:: ./img/percentile_result.png
+    .. figure:: ./img/percentile_filter_result.png
        :align: center
 
 Live demonstration

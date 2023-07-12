@@ -17,17 +17,17 @@ Usage:
 
 2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial Sobel filter`.
 
-    .. figure:: ./img/sobel_location.png
+    .. figure:: ./img/sobel_filter_location.png
        :align: center
 
 3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
 
-    .. figure:: ./img/sobel_interface.png
+    .. figure:: ./img/sobel_filter_interface.png
        :align: center
 
 4. View the processed image in comparison to the original.
 
-    .. figure:: ./img/sobel_result.png
+    .. figure:: ./img/sobel_filter_result.png
        :align: center
 
 Live demonstration

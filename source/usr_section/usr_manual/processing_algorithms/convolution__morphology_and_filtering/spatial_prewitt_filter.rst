@@ -15,17 +15,17 @@ Usage:
 
 2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial Prewitt filter`.
 
-    .. figure:: ./img/perwitt_location.png
+    .. figure:: ./img/perwitt_filter_location.png
        :align: center
 
 3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
 
-    .. figure:: ./img/perwitt_interface.png
+    .. figure:: ./img/perwitt_filter_interface.png
        :align: center
 
 4. View the processed image in comparison to the original.
 
-    .. figure:: ./img/perwitt_result.png
+    .. figure:: ./img/perwitt_filter_result.png
        :align: center
 
 Live demonstration

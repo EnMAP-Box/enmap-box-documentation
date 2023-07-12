@@ -8,6 +8,8 @@ The filter operates by iteratively applying a combination of binary dilation and
 
 When applying this algorithm to continous image data, the input will be binarised.
 
+Usage:
+
 1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
 
     .. figure:: ./img/open_toolbox.png
