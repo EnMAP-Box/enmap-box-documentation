@@ -4,7 +4,36 @@
 Spatial morphological Black Top-Hat filter
 ******************************************
 
-Spatial morphological Black Top-Hat filter. See `Wikipedia <https://en.wikipedia.org/wiki/Top-hat_transform>`_ for general information.
+The filter is designed to isolate specific components in an image. The Black Top-Hat filter is specifically used to extract small, dark structures that are narrower or smaller than the structuring element used.
+
+The filter operates by performing a series of morphological operations on the input image.
+
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial morphological Black Top-Hat filter`.
+
+    .. figure:: ./img/black_tophat_filter_location.png
+       :align: center
+
+3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+
+    .. figure:: ./img/black_tophat_filter_interface.png
+       :align: center
+
+4. View the processed image in comparison to the original.
+
+    .. figure:: ./img/black_tophat_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: 4ahrMuKk4xc
+        :width: 100%
+        :privacy_mode:
 
 **Parameters**
 

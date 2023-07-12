@@ -4,7 +4,34 @@
 Spatial morphological Gradient filter
 *************************************
 
-Spatial morphological Gradient filter. See `Wikipedia <https://en.wikipedia.org/wiki/Morphological_gradient>`_ for general information.
+The Spatial Morphological Gradient filter calculates the difference between the dilation and erosion of an image using a structuring element. Dilation expands the regions of an image, while erosion shrinks them. By taking the difference between these two operations, the filter effectively enhances the boundaries or edges of objects in the image.
+
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial morphological Gradient filter`.
+
+    .. figure:: ./img/gradient_filter_location.png
+       :align: center
+
+3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+
+    .. figure:: ./img/gradient_filter_interface.png
+       :align: center
+
+4. View the processed image in comparison to the original.
+
+    .. figure:: ./img/gradient_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: iae_3UMqw-A
+        :width: 100%
+        :privacy_mode:
 
 **Parameters**
 

@@ -4,7 +4,36 @@
 Spatial morphological Grey Erosion filter
 *****************************************
 
-Spatial morphological Grey Erosion filter. See `Wikipedia <https://en.wikipedia.org/wiki/Erosion_(morphology)>`_ for general information.
+The filter operates by moving a structuring element across the image. The structuring element defines the neighborhood around each pixel that will be considered during the erosion operation.
+
+For each pixel in the image, the grey erosion filter finds the minimum pixel value within the structuring element's neighborhood and assigns this minimum value to the corresponding pixel in the output image.
+
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial morphological Grey Erosion filter`.
+
+    .. figure:: ./img/erosion_filter_location.png
+       :align: center
+
+3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+
+    .. figure:: ./img/erosion_filter_interface.png
+       :align: center
+
+4. View the processed image in comparison to the original.
+
+    .. figure:: ./img/erosion_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: 2OSnWqwVfYg
+        :width: 100%
+        :privacy_mode:
 
 **Parameters**
 

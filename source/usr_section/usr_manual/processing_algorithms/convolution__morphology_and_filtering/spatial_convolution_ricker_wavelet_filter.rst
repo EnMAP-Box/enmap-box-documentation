@@ -4,7 +4,7 @@
 Spatial convolution Ricker Wavelet filter
 *****************************************
 
-The Ricker wavelet filter convolves an image with a kernel that approximates the Ricker wavelet, which  is a bell-shaped waveform that resembles a symmetrically shaped hat or a Mexican hat.The Ricker wavelet filter is typically used for detecting and enhancing specific features or structures in an image. It is particularly effective in detecting edges, lines, or other localized patterns with a characteristic scale. The central peak of the Ricker wavelet helps to emphasize these features, while the positive and negative lobes contribute to enhancing the contrast and edges, which smooths the data and removes slowly varying or constant structures (e.g. background). It is useful for peak or multi-scale detection.
+The Ricker wavelet filter convolves an image with a kernel that approximates the Ricker wavelet, which  is a bell-shaped waveform that resembles a symmetrically shaped hat or a Mexican hat. The Ricker wavelet filter is typically used for detecting and enhancing specific features or structures in an image. It is particularly effective in detecting edges, lines, or other localized patterns with a characteristic scale. The central peak of the Ricker wavelet helps to emphasize these features, while the positive and negative lobes contribute to enhancing the contrast and edges, which smooths the data and removes slowly varying or constant structures (e.g. background). It is useful for peak or multi-scale detection.
 
 Usage:
 

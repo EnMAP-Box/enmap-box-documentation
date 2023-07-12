@@ -4,7 +4,34 @@
 Spatial morphological Grey Opening filter
 *****************************************
 
-Spatial morphological Grey Opening filter. See `Wikipedia <https://en.wikipedia.org/wiki/Opening_(morphology)>`_ for general information.
+The spatial morphological Grey Opening filter combines grey-scale erosion followed by grey-scale dilation operations to reduce noise, smooth the image, and preserve fine structures.
+
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial morphological Grey Opening filter`.
+
+    .. figure:: ./img/opening_filter_location.png
+       :align: center
+
+3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+
+    .. figure:: ./img/opening_filter_interface.png
+       :align: center
+
+4. View the processed image in comparison to the original.
+
+    .. figure:: ./img/opening_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: LjIIMvdGdY4
+        :width: 100%
+        :privacy_mode:
 
 **Parameters**
 

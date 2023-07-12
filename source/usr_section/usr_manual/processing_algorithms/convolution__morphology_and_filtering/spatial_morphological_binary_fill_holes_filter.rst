@@ -4,7 +4,34 @@
 Spatial morphological Binary Fill Holes filter
 **********************************************
 
-Spatial morphological Binary Fill Holes filter.
+The filter operates by iteratively applying a combination of binary dilation and binary erosion operations until all the holes in the image are filled. It performs binary dilation on the complement of the input image (flipping 1 and 0 pixels), followed by a binary intersection with the original input image. This process is repeated until no changes are observed in the resulting image, indicating that all holes have been filled.
+
+When applying this algorithm to continous image data, the input will be binarised.
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial morphological Binary Fill Holes filter`.
+
+    .. figure:: ./img/binary_fill_filter_location.png
+       :align: center
+
+3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+
+    .. figure:: ./img/binary_fill_filter_interface.png
+       :align: center
+
+4. View the processed image in comparison to the original.
+
+    .. figure:: ./img/binary_fill_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: PXm0NMGhfFQ
+        :width: 100%
+        :privacy_mode:
 
 **Parameters**
 

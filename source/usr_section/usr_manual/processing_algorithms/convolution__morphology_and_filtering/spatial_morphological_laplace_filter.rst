@@ -4,7 +4,34 @@
 Spatial morphological Laplace filter
 ************************************
 
-Spatial morphological Laplace filter. See `Wikipedia <https://en.wikipedia.org/wiki/Discrete_Laplace_operator#Image_Processing>`_ for general information.
+The Spatial morphological Laplace filter is used to enhance and detect edges or transitions in an image. It combines morphological dilation and erosion operations to isolate high-frequency components associated with image edges.
+
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial morphological Laplace filter`.
+
+    .. figure:: ./img/morph_laplace_filter_location.png
+       :align: center
+
+3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+
+    .. figure:: ./img/morph_laplace_filter_interface.png
+       :align: center
+
+4. View the processed image in comparison to the original.
+
+    .. figure:: ./img/morph_laplace_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: caGYR2_RzcU
+        :width: 100%
+        :privacy_mode:
 
 **Parameters**
 

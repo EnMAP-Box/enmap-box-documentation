@@ -4,7 +4,36 @@
 Spatial morphological Grey Dilation filter
 ******************************************
 
-Spatial morphological Grey Dilation filter. See `Wikipedia <https://en.wikipedia.org/wiki/Dilation_(morphology)>`_ for general information.
+The filter operates by moving a structuring element, which is a predefined shape such as a square or a circle, across the image. The structuring element defines the neighborhood around each pixel that will be considered during the dilation operation.
+
+For each pixel in the image, the grey dilation filter finds the maximum pixel value within the structuring element's neighborhood and assigns this maximum value to the corresponding pixel in the output image.
+
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial morphological Grey Dilation filter`.
+
+    .. figure:: ./img/dilation_filter_location.png
+       :align: center
+
+3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+
+    .. figure:: ./img/dilation_filter_interface.png
+       :align: center
+
+4. View the processed image in comparison to the original.
+
+    .. figure:: ./img/dilation_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: Jmk9JLDW724
+        :width: 100%
+        :privacy_mode:
 
 **Parameters**
 

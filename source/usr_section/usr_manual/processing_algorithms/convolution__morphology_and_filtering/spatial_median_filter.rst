@@ -4,7 +4,34 @@
 Spatial Median filter
 *********************
 
-Spatial Median filter.
+The filter operates by moving a window or kernel across the image and replacing the pixel within the window with the median pixel value found within that window. The size of the window determines the extent of the filter's effect on the image.
+
+Usage:
+
+1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+
+    .. figure:: ./img/open_toolbox.png
+       :align: center
+
+2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial Median filter`.
+
+    .. figure:: ./img/median_filter_location.png
+       :align: center
+
+3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+
+    .. figure:: ./img/median_filter_interface.png
+       :align: center
+
+4. View the processed image in comparison to the original.
+
+    .. figure:: ./img/median_filter_result.png
+       :align: center
+
+Live demonstration
+    ..  youtube:: 5LkkcPFIKWE
+        :width: 100%
+        :privacy_mode:
 
 **Parameters**
 
