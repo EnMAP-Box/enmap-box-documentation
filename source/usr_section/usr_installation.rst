@@ -39,11 +39,9 @@ In case you already have QGIS installed, you can skip this step.
 MacOS
 ~~~~~
 
-Before you can install QGIS from the downloaded disk image, you need to allow your macOS to install it:
+1. Download the official `qgis-macos-pr.dmg` from `<https://www.qgis.org/en/site/forusers/download.html>`_.
 
-1. Download the official all-in-one, signed installer `here <https://www.qgis.org/en/site/forusers/download.html>`_.
-
-2. Extract the downloaded `qgis-macos-pr.dmg` and move it to your app folder
+2. Extract the `qgis-macos-pr.dmg` and move it to your app folder
 
    |mac_copy1| |mac_copy2|
 
@@ -53,13 +51,15 @@ Before you can install QGIS from the downloaded disk image, you need to allow yo
    :width: 500px
 
 3. Installing or opening QGIS may raise a verification warning. In that case, open your system preferences, go to
-   :menuselection:`Security & Privacy --> General` and allow QGIS to be opened anyway.
+   :menuselection:`Security & Privacy --> General` and allow QGIS to be *open anyway*.
 
-   |mac_check1| |mac_check2|
+   |mac_check1| |mac_check2| |mac_check3|
 
 .. |mac_check1| image:: /img/macos/install_qgis_check1.png
    :width: 500px
 .. |mac_check2| image:: /img/macos/install_qgis_check2.png
+   :width: 500px
+.. |mac_check3| image:: /img/macos/install_qgis_check3.png
    :width: 500px
 
 4. Now you can start QGIS.app from your application folder.
