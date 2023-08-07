@@ -4,8 +4,22 @@
 Spectral convolution Box filter
 *******************************
 
-1D Box filter.
-The Box filter or running mean is a smoothing filter. It is not isotropic and can produce artifacts, when applied repeatedly to the same data.
+The Spectral convolution Box filter is used to reduce noise by averaging values within a defined neighborhood, defined by a window with equal weights. The size of the window determines the extent of the blurring effect. The filter is not isotropic and can produce artifact, when applied repeatedly to the same data.
+
+
+Usage:
+
+1. Start the algorithm from the Processing Toolbox panel.
+
+2. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+    .. figure::
+       :align: center
+
+3. View the processed image in comparison to the original.
+
+    .. figure::
+       :align: center
+
 
 **Parameters**
 

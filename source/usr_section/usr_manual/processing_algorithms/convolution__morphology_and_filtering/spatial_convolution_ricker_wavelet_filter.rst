@@ -4,34 +4,26 @@
 Spatial convolution Ricker Wavelet filter
 *****************************************
 
-The Ricker wavelet filter convolves an image with a kernel that approximates the Ricker wavelet, which  is a bell-shaped waveform that resembles a symmetrically shaped hat or a Mexican hat. The Ricker wavelet filter is typically used for detecting and enhancing specific features or structures in an image. It is particularly effective in detecting edges, lines, or other localized patterns with a characteristic scale. The central peak of the Ricker wavelet helps to emphasize these features, while the positive and negative lobes contribute to enhancing the contrast and edges, which smooths the data and removes slowly varying or constant structures (e.g. background). It is useful for peak or multi-scale detection.
+The Ricker wavelet filter convolves an image with a kernel that approximates the Ricker wavelet, which  is a bell-shaped waveform that resembles a symmetrically shaped hat or a Mexican hat. The Ricker wavelet filter is typically used for detecting and enhancing specific features or structures in an image. It is particularly effective in detecting edges, lines, or other localized patterns with a characteristic scale. The central peak of the Ricker wavelet helps to emphasize these features, while the positive and negative lobes contribute to enhancing the contrast and edges, which smooths the data and removes slowly varying or constant structures (e.g. background). It is useful for peak or multi-scale detection. An exemplary kernel can be found below.
+
+    .. figure:: ./img/ricker_kernel.png
+       :align: center
+
 
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution Ricker Wavelet filter`.
-
-    .. figure:: ./img/ricker_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/ricker_filter_interface.png
        :align: center
 
-4. View the processed image in comparison to the original.
+3. View the processed image in comparison to the original.
 
     .. figure:: ./img/ricker_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: 9z_IP5DHKvE
-        :width: 100%
-        :privacy_mode:
 
 **Parameters**
 

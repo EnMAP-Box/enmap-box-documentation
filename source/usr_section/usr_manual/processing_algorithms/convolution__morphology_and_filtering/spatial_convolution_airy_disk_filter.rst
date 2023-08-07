@@ -1,39 +1,30 @@
-.. _Spatial convolution Airy Disk filter:
+w.. _Spatial convolution Airy Disk filter:
 
 ************************************
 Spatial convolution Airy Disk filter
 ************************************
 
-2D Airy Disk filter.
- The Airy Disk filter convolves an image with a kernel that approximates the intensity distribution of an Airy disk. The filter enhances the edges and fine details in an image, mimicking the diffraction pattern produced by a circular aperture. This kernel models the diffraction pattern of a circular aperture. The kernel is normalized to a peak value of 1
+The Airy Disk filter convolves an image with a kernel that approximates the intensity distribution of an Airy disk. The filter enhances the edges and fine details in an image, mimicking the diffraction pattern produced by a circular aperture. The kernel models the diffraction pattern of a circular aperture. The kernel is normalized to a peak value of 1. An exemplary kernel can be found below.
+
+    .. figure:: ./img/airy_disk_kernel.png
+       :align: center
+
 
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution Airy Disk filter`.
-
-    .. figure:: ./img/select_airy_filter.png
-       :align: center
-
-3. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/interface_airy_filter.png
        :align: center
 
-4. Processed image in comparison to the original.
+3. Processed image in comparison to the original.
 
     .. figure:: ./img/result_airy_filter.png
        :align: center
 
-Live demonstration
-    ..  youtube:: OY4K0RxXg_A
-        :width: 100%
-        :privacy_mode:
+
 
 **Parameters**
 

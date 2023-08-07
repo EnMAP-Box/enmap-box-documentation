@@ -4,35 +4,27 @@
 Spatial convolution ring filter
 *******************************
 
-2D Ring filter.
-The Ring filter kernel is the difference between two Top-Hat kernels of different width. This kernel is useful for, e.g., background estimation. It can further be used to extract circular or ring-shaped patterns in the image. It achieves this by assigning higher weights to the pixels located closer to the center of the kernel and lower weights to those farther away. This weighting scheme helps to enhance the circular or ring-like structures and suppress other image components.
+
+The Ring filter kernel is the difference between two Top-Hat kernels of different width. This kernel is useful for, e.g., background estimation. It can further be used to extract circular or ring-shaped patterns in the image. It achieves this by assigning higher weights to the pixels located closer to the center of the kernel and lower weights to those farther away. This weighting scheme helps to enhance the circular or ring-like structures and suppress other image components. An exemplary kernel can be found below.
+
+    .. figure:: ./img/ring_kernel.png
+       :align: center
+
 
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution ring filter`.
-
-    .. figure:: ./img/ring_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/ring_filter_interface.png
        :align: center
 
-4. Processed image in comparison to the original.
+3. Processed image in comparison to the original.
 
     .. figure:: ./img/ring_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: BxZ4zu3a9Jw
-        :width: 100%
-        :privacy_mode:
 
 **Parameters**
 

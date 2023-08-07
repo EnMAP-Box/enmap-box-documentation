@@ -4,34 +4,26 @@
 Spatial convolution Gaussian filter
 ***********************************
 
-This 2D Gaussian filter applies a weighted average to the pixel values in the image. The weights are determined by a Gaussian distribution, which assigns higher weights to pixels closer to the center of the kernel and lower weights to pixels farther away. It is isotropic and does not produce artifacts.
+This 2D Gaussian filter applies a weighted average to the pixel values in the image. The weights are determined by a Gaussian distribution, which assigns higher weights to pixels closer to the center of the kernel and lower weights to pixels farther away. It is isotropic and does not produce artifacts. An exemplary kernel can be found below.
+
+    .. figure:: ./img/gaussian_kernel.png
+       :align: center
+
 
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution Gaussian filter`.
-
-    .. figure:: ./img/gaussian_filter_location.png
-       :align: center
-
-3. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/gaussian_filter_interface.png
        :align: center
 
-4. View the processed image in comparison to the original.
+3. View the processed image in comparison to the original.
 
     .. figure:: ./img/gaussian_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: dEd70dsCFYA
-        :width: 100%
-        :privacy_mode:
 
 **Parameters**
 

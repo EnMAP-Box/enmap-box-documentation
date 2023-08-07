@@ -4,34 +4,24 @@
 Spatial Gaussian Gradient Magnitude filter
 ******************************************
 
-The Spatial Gaussian Gradient Magnitude filter computes the magnitude of the gradient of an image using Gaussian derivatives, providing a measure of the strength of the gradient at each pixel and helping to highlight edges and transitions in the image.. The filter operates by convolving the image with a pair of Gaussian derivative kernels—one for the x-direction and another for the y-direction. These kernels are derived from the Gaussian function and are used to estimate the image gradient in both the horizontal and vertical directions.
+The Spatial Gaussian Gradient Magnitude filter computes the magnitude of the gradient of an image using Gaussian derivatives, providing a measure of the strength of the gradient at each pixel and helping to highlight edges and transitions in the image. The filter operates by convolving the image with a pair of Gaussian derivative kernels—one for the x-direction and another for the y-direction. These kernels are derived from the Gaussian function and are used to estimate the image gradient in both the horizontal and vertical directions.
+
 
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial Gaussian Gradient Magnitude filter`.
-
-    .. figure:: ./img/ggrad_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/ggrad_filter_interface.png
        :align: center
 
-4. Processed image in comparison to the original.
+3. Processed image in comparison to the original.
 
     .. figure:: ./img/ggrad_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: bD6X4Xc4114
-        :width: 100%
-        :privacy_mode:
+
 
 **Parameters**
 

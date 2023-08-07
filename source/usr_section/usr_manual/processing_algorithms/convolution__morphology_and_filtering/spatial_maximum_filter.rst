@@ -8,19 +8,12 @@ Spatial Maximum filter.
 
 The filter operates by moving a window or kernel across the image and replacing the pixel within the window with the maximum pixel value found within that window. The size of the window determines the extent of the filter's effect on the image.
 
+
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial Maximum filter`.
-
-    .. figure:: ./img/max_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/max_filter_interface.png
        :align: center
@@ -30,10 +23,7 @@ Usage:
     .. figure:: ./img/max_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: FZJBUqzvsAE
-        :width: 100%
-        :privacy_mode:
+
 
 **Parameters**
 

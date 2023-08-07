@@ -4,34 +4,26 @@
 Spatial convolution custom filter
 *********************************
 
-This filter allows to create a custom spatial 2D filter kernel from a list or an array.
+This filter allows to create a custom spatial 2D filter kernel from a list or an array. In this example, the kernel shown below was used.
+
+    .. figure:: ./img/custom_kernel.png
+       :align: center
 
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution custom filter`.
-
-    .. figure:: ./img/custom_filter_location.png
-       :align: center
-
-3. Select the raster to process and adjust the kernel weights in the command window, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/custom_filter_interface.png
        :align: center
 
-4. View the processed image in comparison to the original.
+3. View the processed image in comparison to the original.
 
     .. figure:: ./img/custom_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: uJZTiigWfsc
-        :width: 100%
-        :privacy_mode:
+
 
 **Parameters**
 

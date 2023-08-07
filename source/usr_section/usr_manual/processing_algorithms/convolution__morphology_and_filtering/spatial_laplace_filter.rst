@@ -6,33 +6,22 @@ Spatial Laplace filter
 
 The Spatial Laplace filter enhances and detects edges or areas of rapid intensity changes in an image by convolving it with a Laplacian kernel. The Laplacian kernel is a matrix that represents the discrete approximation of the Laplace operator, which calculates the sum of the second partial derivatives of the image with respect to the x and y directions. By convolving the image with the Laplacian kernel, the filter highlights areas of significant intensity changes, such as edges or transitions between regions with different intensities. It amplifies these intensity variations by emphasizing high-frequency components in the image.
 
+
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial Laplace filter`.
-
-    .. figure:: ./img/laplace_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/laplace_filter_interface.png
        :align: center
 
-4. View the processed image in comparison to the original.
+3. View the processed image in comparison to the original.
 
     .. figure:: ./img/laplace_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: uFn8uwr6nho
-        :width: 100%
-        :privacy_mode:
-        :align: center
+
 
 **Parameters**
 

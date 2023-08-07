@@ -4,36 +4,27 @@
 Spatial convolution Moffat filter
 *********************************
 
-2D Moffat filter.
 
-When using a Moffat filter, the image is convolved with a kernel that approximates the Moffat distribution. The convolution operation involves multiplying each pixel in the image with the corresponding weight in the kernel and summing the results to determine the value of the convolved pixel. This kernel is a typical model for a seeing limited PSF.
+When using a Moffat filter, the image is convolved with a kernel that approximates the Moffat distribution. The convolution operation involves multiplying each pixel in the image with the corresponding weight in the kernel and summing the results to determine the value of the convolved pixel. This kernel is a typical model for a seeing limited PSF. An exemplary kernel can be found below.
+
+    .. figure:: ./img/moffat_kernel.png
+       :align: center
+
 
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution Moffat filter`.
-
-    .. figure:: ./img/moffat_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/moffat_filter_interface.png
        :align: center
 
-4. View the processed image in comparison to the original.
+3. View the processed image in comparison to the original.
 
     .. figure:: ./img/moffat_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: 7ZKyctpCv8o
-        :width: 100%
-        :privacy_mode:
 
 
 **Parameters**

@@ -6,32 +6,22 @@ Spatial morphological White Top-Hat filter
 
 The Spatial morphological White Top-Hat filter is used to extract and enhance small bright structures or features from an image. It is achieved through a combination of morphological closing and subtraction operations, isolating the desired components while suppressing lower intensity regions.
 
+
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial morphological White Top-Hat filter`.
-
-    .. figure:: ./img/white_tophat_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/white_tophat_filter_interface.png
        :align: center
 
-4. View the processed image in comparison to the original.
+3. View the processed image in comparison to the original.
 
     .. figure:: ./img/white_tophat_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: kohPCSUq8Kk
-        :width: 100%
-        :privacy_mode:
+
 
 
 **Parameters**

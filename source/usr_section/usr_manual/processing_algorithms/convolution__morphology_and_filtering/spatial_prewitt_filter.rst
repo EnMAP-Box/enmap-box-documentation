@@ -6,32 +6,21 @@ Spatial Prewitt filter
 
 The Prewitt filter calculates the gradient of an image by approximating the derivative of the image intensity with respect to the spatial coordinates. It specifically focuses on detecting vertical and horizontal edges in an image.
 
+
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial Prewitt filter`.
-
-    .. figure:: ./img/perwitt_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/perwitt_filter_interface.png
        :align: center
 
-4. View the processed image in comparison to the original.
+3. View the processed image in comparison to the original.
 
     .. figure:: ./img/perwitt_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: Q_wmtp2Ch8g
-        :width: 100%
-        :privacy_mode:
 
 **Parameters**
 

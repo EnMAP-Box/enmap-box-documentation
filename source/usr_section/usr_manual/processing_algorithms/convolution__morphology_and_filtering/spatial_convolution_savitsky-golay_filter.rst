@@ -10,32 +10,22 @@ In the case of a Spatial convolution 2D Savitzky-Golay filter, the filter operat
 
 The main purpose of the 2D Savitzky-Golay filter is to reduce noise and smooth the image while preserving the sharpness and fine details. By fitting a polynomial function to the local neighborhood of each pixel, it provides a weighted average that is influenced by the neighboring pixels, effectively reducing the noise contribution.
 
+
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution Savitsky-Golay filter`.
-
-    .. figure:: ./img/golay_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/golay_filter_interface.png
        :align: center
 
-4. Processed image in comparison to the original.
+3. Processed image in comparison to the original.
 
     .. figure:: ./img/golay_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: d3CISpgMPUg
-        :width: 100%
-        :privacy_mode:
+
 
 **Parameters**
 

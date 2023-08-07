@@ -4,34 +4,27 @@
 Spatial convolution Trapezoid filter
 ************************************
 
-The 2D Trapezoid filter uses a trapezoidal weighting function. Thus, the filter assigns higher weights to pixels within a certain range and lower weights to pixels outside that range. It can be used to emphasize or suppress certain features in an image within a specific range of values. The trapezoidal shape of the weighting function allows for a controlled transition of the filter's effect, enabling customization of the filtering operation based on the desired outcome.
+The 2D Trapezoid filter uses a trapezoidal weighting function. Thus, the filter assigns higher weights to pixels within a certain range and lower weights to pixels outside that range. It can be used to emphasize or suppress certain features in an image within a specific range of values. The trapezoidal shape of the weighting function allows for a controlled transition of the filter's effect, enabling customization of the filtering operation based on the desired outcome. An exemplary kernel can be found below.
+
+    .. figure:: ./img/trapez_kernel.png
+       :align: center
+
 
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial convolution Trapezoid filter`.
-
-    .. figure:: ./img/trapez_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/trapez_filter_interface.png
        :align: center
 
-4. Processed image in comparison to the original.
+3. Processed image in comparison to the original.
 
     .. figure:: ./img/trapez_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: awh347LBYI8
-        :width: 100%
-        :privacy_mode:
+
 
 **Parameters**
 

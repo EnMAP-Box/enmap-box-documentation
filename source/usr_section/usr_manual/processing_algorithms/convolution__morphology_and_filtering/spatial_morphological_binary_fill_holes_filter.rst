@@ -10,30 +10,19 @@ When applying this algorithm to continous image data, the input will be binarise
 
 Usage:
 
-1. Open the Processing Toolbox with :guilabel:`View > Panels > Processing Toolbox`.
+1. Start the algorithm from the Processing Toolbox panel.
 
-    .. figure:: ./img/open_toolbox.png
-       :align: center
-
-2. Select the corresponding filter under :guilabel:`EnMAP-Box > convolution, morphology and filtering > Spatial morphological Binary Fill Holes filter`.
-
-    .. figure:: ./img/binary_fill_filter_location.png
-       :align: center
-
-3. Select the raster to process and modify the parameterization if necessary, then click :guilabel:`run`.
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
     .. figure:: ./img/binary_fill_filter_interface.png
        :align: center
 
-4. View the processed image in comparison to the original.
+3. View the processed image in comparison to the original.
 
     .. figure:: ./img/binary_fill_filter_result.png
        :align: center
 
-Live demonstration
-    ..  youtube:: PXm0NMGhfFQ
-        :width: 100%
-        :privacy_mode:
+
 
 **Parameters**
 
