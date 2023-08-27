@@ -4,26 +4,9 @@
 Spatial morphological Binary Propagation filter
 ***********************************************
 
-Spatial morphological Binary Propagation filter performs multi-dimensional binary propagation with a given structuring element, spreading the influence of 1 pixels in a binary image to neighboring pixels based on a predefined connectivity criterion.
+Spatial morphological Binary Propagation filter.
 
-When applying this algorithm to continous image data, the input will be binarised.
-
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/binary_propagation_filter_interface.png
-       :align: center
-
-3. View the processed image in comparison to the original.
-
-    .. figure:: ./img/binary_propagation_filter_result.png
-       :align: center
-
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_morphological_binary_propagation_filter.rst
 
 **Parameters**
 
@@ -71,6 +54,8 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

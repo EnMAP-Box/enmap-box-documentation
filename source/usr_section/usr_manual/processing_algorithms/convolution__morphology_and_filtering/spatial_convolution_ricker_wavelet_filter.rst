@@ -4,26 +4,10 @@
 Spatial convolution Ricker Wavelet filter
 *****************************************
 
-The Ricker wavelet filter convolves an image with a kernel that approximates the Ricker wavelet, which  is a bell-shaped waveform that resembles a symmetrically shaped hat or a Mexican hat. The Ricker wavelet filter is typically used for detecting and enhancing specific features or structures in an image. It is particularly effective in detecting edges, lines, or other localized patterns with a characteristic scale. The central peak of the Ricker wavelet helps to emphasize these features, while the positive and negative lobes contribute to enhancing the contrast and edges, which smooths the data and removes slowly varying or constant structures (e.g. background). It is useful for peak or multi-scale detection. An exemplary kernel can be found below.
+2D Ricker Wavelet filter kernel (sometimes known as a Mexican Hat kernel).
+The Ricker Wavelet, or inverted Gaussian-Laplace filter, is a bandpass filter. It smooths the data and removes slowly varying or constant structures (e.g. background). It is useful for peak or multi-scale detection.
 
-    .. figure:: ./img/ricker_kernel.png
-       :align: center
-
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/ricker_filter_interface.png
-       :align: center
-
-3. View the processed image in comparison to the original.
-
-    .. figure:: ./img/ricker_filter_result.png
-       :align: center
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_convolution_ricker_wavelet_filter.rst
 
 **Parameters**
 
@@ -75,18 +59,24 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     normalize: Normalize kernel
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     interpolate: Interpolate no data pixel
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

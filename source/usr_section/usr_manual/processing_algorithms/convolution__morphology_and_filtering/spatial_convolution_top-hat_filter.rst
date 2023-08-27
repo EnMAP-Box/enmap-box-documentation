@@ -4,28 +4,10 @@
 Spatial convolution Top-Hat filter
 **********************************
 
+2D Top-Hat filter.
+The Top-Hat filter is an isotropic smoothing filter. It can produce artifacts when applied repeatedly on the same data.
 
-The top hat filter is designed to enhance or extract small, bright regions or structures in an image that are significantly smaller than the size of the filter's structuring element. It is particularly useful for detecting localized objects or features against a relatively uniform background. It is an isotropic smoothing filter. It can produce artifacts when applied repeatedly on the same data. An exemplary kernel can be found below.
-
-    .. figure:: ./img/tophat_kernel.png
-       :align: center
-
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/tophat_filter_interface.png
-       :align: center
-
-4. Processed image in comparison to the original.
-
-    .. figure:: ./img/tophat_filter_result.png
-       :align: center
-
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_convolution_top-hat_filter.rst
 
 **Parameters**
 
@@ -77,18 +59,24 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     normalize: Normalize kernel
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     interpolate: Interpolate no data pixel
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

@@ -4,23 +4,9 @@
 Spatial Prewitt filter
 **********************
 
-The Prewitt filter calculates the gradient of an image by approximating the derivative of the image intensity with respect to the spatial coordinates. It specifically focuses on detecting vertical and horizontal edges in an image.
+Spatial Prewitt filter. See `Wikipedia <https://en.wikipedia.org/wiki/Prewitt_operator>`_ for general information.
 
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/perwitt_filter_interface.png
-       :align: center
-
-3. View the processed image in comparison to the original.
-
-    .. figure:: ./img/perwitt_filter_result.png
-       :align: center
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_prewitt_filter.rst
 
 **Parameters**
 
@@ -62,6 +48,8 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

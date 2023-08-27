@@ -22,9 +22,13 @@ See the `RasterMath cookbook recipe <https://enmap-box.readthedocs.io/en/latest/
 
 
 :guilabel:`32-bit floating-point inputs` [boolean]
-    Whether to  cast inputs to 32-bit floating point.
+    Whether to cast inputs to 32-bit floating point.
 
     Default: *True*
+
+
+:guilabel:`No data value` [number]
+    Specified value is used as `no data value <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_ for all inputs. If not specified, the original input `no data values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_ are used.
 
 
 :guilabel:`Block overlap` [number]
@@ -58,6 +62,8 @@ See the `RasterMath cookbook recipe <https://enmap-box.readthedocs.io/en/latest/
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     grid: Grid (optional)
     	Argument type:	raster
     	Acceptable values:
@@ -68,16 +74,28 @@ See the `RasterMath cookbook recipe <https://enmap-box.readthedocs.io/en/latest/
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    noDataValue: No data value (optional)
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     overlap: Block overlap (optional)
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     monolithic: Monolithic processing (optional)
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     R1: Raster layer mapped to R1 (optional)
     	Argument type:	raster
     	Acceptable values:

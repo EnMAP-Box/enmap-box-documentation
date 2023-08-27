@@ -4,26 +4,9 @@
 Spatial morphological Black Top-Hat filter
 ******************************************
 
-The filter is designed to isolate specific components in an image. The Black Top-Hat filter is specifically used to extract small, dark structures that are narrower or smaller than the structuring element used.
+Spatial morphological Black Top-Hat filter. See `Wikipedia <https://en.wikipedia.org/wiki/Top-hat_transform>`_ for general information.
 
-The filter operates by performing a series of morphological operations on the input image.
-
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/black_tophat_filter_interface.png
-       :align: center
-
-3. View the processed image in comparison to the original.
-
-    .. figure:: ./img/black_tophat_filter_result.png
-       :align: center
-
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_morphological_black_top-hat_filter.rst
 
 **Parameters**
 
@@ -69,6 +52,8 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

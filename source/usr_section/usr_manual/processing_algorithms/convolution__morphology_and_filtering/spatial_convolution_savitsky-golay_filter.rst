@@ -4,28 +4,10 @@
 Spatial convolution Savitsky-Golay filter
 *****************************************
 
-The Savitzky-Golay filter is a linear filter that performs convolution using a sliding window over the input data. It aims to smooth the data while preserving important features, such as edges or peaks, by fitting a polynomial function within the window and using it to estimate the filtered value at the center point.
+2D Savitsky-Golay filter.
+See `wikipedia <https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter#Two-dimensional_convolution_coefficients>`_ for details.
 
-In the case of a Spatial convolution 2D Savitzky-Golay filter, the filter operates on a two-dimensional image. It applies the Savitzky-Golay technique separately along each dimension (rows and columns) of the image.
-
-The main purpose of the 2D Savitzky-Golay filter is to reduce noise and smooth the image while preserving the sharpness and fine details. By fitting a polynomial function to the local neighborhood of each pixel, it provides a weighted average that is influenced by the neighboring pixels, effectively reducing the noise contribution.
-
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/golay_filter_interface.png
-       :align: center
-
-3. Processed image in comparison to the original.
-
-    .. figure:: ./img/golay_filter_result.png
-       :align: center
-
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_convolution_savitsky-golay_filter.rst
 
 **Parameters**
 
@@ -79,18 +61,24 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     normalize: Normalize kernel
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     interpolate: Interpolate no data pixel
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

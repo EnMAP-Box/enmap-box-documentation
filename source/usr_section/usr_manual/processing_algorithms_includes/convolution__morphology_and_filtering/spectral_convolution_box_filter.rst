@@ -1,0 +1,16 @@
+The Spectral convolution Box filter is used to reduce noise by averaging reflectance values within a defined neighborhood, defined by a kernel with equal weights. The size of the kernel determines the extent of the averaging effect. The filter is not isotropic and can produce artifact, when applied repeatedly to the same data.
+
+
+Usage:
+
+1. Start the algorithm from the Processing Toolbox panel.
+
+2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
+
+    .. figure:: ./img/interface_airy_filter.png
+       :align: center
+
+3. Processed image in comparison to the original.
+
+    .. figure:: ./img/result_airy_filter.png
+       :align: center

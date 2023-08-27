@@ -6,24 +6,7 @@ Spatial Maximum filter
 
 Spatial Maximum filter.
 
-The filter operates by moving a window or kernel across the image and replacing the pixel within the window with the maximum pixel value found within that window. The size of the window determines the extent of the filter's effect on the image.
-
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/max_filter_interface.png
-       :align: center
-
-4. View the processed image in comparison to the original.
-
-    .. figure:: ./img/max_filter_result.png
-       :align: center
-
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_maximum_filter.rst
 
 **Parameters**
 
@@ -65,6 +48,8 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

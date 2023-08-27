@@ -32,7 +32,7 @@ Create synthetically mixed `regression <https://enmap-box.readthedocs.io/en/late
 
 
 :guilabel:`Mixing complexity probabilities` [string]
-    A list of probabilities for using 2, 3, 4, ... endmember mixing models. Trailing 0 probabilities can be skipped. The default values of 0.5, 0.5,results in 50% 2-endmember and 50% 3-endmember models.
+    A list of probabilities for using 2, 3, 4, ... endmember mixing models. Trailing 0 probabilities can be skipped. The default values of 0.5, 0.5,result in 50% 2-endmember and 50% 3-endmember models.
 
     Default: *0.5, 0.5*
 
@@ -69,32 +69,44 @@ Create synthetically mixed `regression <https://enmap-box.readthedocs.io/en/late
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     background: Proportion of background mixtures (%)
     	Default value:	0
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     includeEndmember: Include original endmembers
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     mixingProbabilities: Mixing complexity probabilities (optional)
     	Default value:	0.5, 0.5
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     allowWithinClassMixtures: Allow within-class mixtures
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     classProbabilities: Class probabilities (optional)
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputFolder: Output folder
     	Argument type:	folderDestination
     	Acceptable values:

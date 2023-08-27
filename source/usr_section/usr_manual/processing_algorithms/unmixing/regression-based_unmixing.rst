@@ -40,7 +40,7 @@ Implementation of the `regression <https://enmap-box.readthedocs.io/en/latest/ge
 
 
 :guilabel:`Mixing complexity probabilities` [string]
-    A list of probabilities for using 2, 3, 4, ... endmember mixing models. Trailing 0 probabilities can be skipped. The default values of 0.5, 0.5,results in 50% 2-endmember and 50% 3-endmember models.
+    A list of probabilities for using 2, 3, 4, ... endmember mixing models. Trailing 0 probabilities can be skipped. The default values of 0.5, 0.5,result in 50% 2-endmember and 50% 3-endmember models.
 
     Default: *0.5, 0.5*
 
@@ -62,7 +62,13 @@ Implementation of the `regression <https://enmap-box.readthedocs.io/en/latest/ge
 
 
 :guilabel:`Robust decision fusion` [boolean]
-    Whether to use median and IQR (interquartile range) aggregation for ensemble decicion fusion. The default is to use mean and standard deviation.
+    Whether to use median and IQR (interquartile range) aggregation for ensemble decision fusion. The default is to use mean and standard deviation.
+
+    Default: *False*
+
+
+:guilabel:`Sum-to-one constraint` [boolean]
+    Whether to ensure sum-to-one constraint for predicted fractions.
 
     Default: *False*
 
@@ -100,48 +106,74 @@ Implementation of the `regression <https://enmap-box.readthedocs.io/en/latest/ge
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     n: Number of mixtures per class
     	Default value:	1000
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     background: Proportion of background mixtures (%)
     	Default value:	0
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     includeEndmember: Include original endmembers
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     mixingProbabilities: Mixing complexity probabilities (optional)
     	Default value:	0.5, 0.5
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     allowWithinClassMixtures: Allow within-class mixtures
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     classProbabilities: Class probabilities (optional)
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     ensembleSize: Ensemble size
     	Default value:	1
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     robustFusion: Robust decision fusion (optional)
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    sumToOne: Sum-to-one constraint (optional)
+    	Default value:	false
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputFraction: Output class fraction layer
     	Argument type:	rasterDestination
     	Acceptable values:

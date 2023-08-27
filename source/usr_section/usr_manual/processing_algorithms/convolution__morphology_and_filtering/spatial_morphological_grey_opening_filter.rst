@@ -4,24 +4,9 @@
 Spatial morphological Grey Opening filter
 *****************************************
 
-The spatial morphological Grey Opening filter combines grey-scale erosion followed by grey-scale dilation operations to reduce noise, smooth the image, and preserve fine structures.
+Spatial morphological Grey Opening filter. See `Wikipedia <https://en.wikipedia.org/wiki/Opening_(morphology)>`_ for general information.
 
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/opening_filter_interface.png
-       :align: center
-
-3. View the processed image in comparison to the original.
-
-    .. figure:: ./img/opening_filter_result.png
-       :align: center
-
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_morphological_grey_opening_filter.rst
 
 **Parameters**
 
@@ -67,6 +52,8 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

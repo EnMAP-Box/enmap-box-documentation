@@ -4,26 +4,10 @@
 Spatial convolution Gaussian filter
 ***********************************
 
-This 2D Gaussian filter applies a weighted average to the pixel values in the image. The weights are determined by a Gaussian distribution, which assigns higher weights to pixels closer to the center of the kernel and lower weights to pixels farther away. It is isotropic and does not produce artifacts. An exemplary kernel can be found below.
+2D Gaussian filter.
+The Gaussian filter is a filter with great smoothing properties. It is isotropic and does not produce artifacts.
 
-    .. figure:: ./img/gaussian_kernel.png
-       :align: center
-
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/gaussian_filter_interface.png
-       :align: center
-
-3. View the processed image in comparison to the original.
-
-    .. figure:: ./img/gaussian_filter_result.png
-       :align: center
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_convolution_gaussian_filter.rst
 
 **Parameters**
 
@@ -75,18 +59,24 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     normalize: Normalize kernel
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     interpolate: Interpolate no data pixel
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

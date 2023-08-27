@@ -16,6 +16,12 @@ Uses a fitted `regressor <https://enmap-box.readthedocs.io/en/latest/general/glo
 :guilabel:`Regressor` [file]
     A fitted `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_.
 
+
+:guilabel:`Match features and bands by name` [boolean]
+    Whether to match raster `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ and `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_ `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ by name.
+
+    Default: *False*
+
 **Outputs**
 
 
@@ -38,6 +44,14 @@ Uses a fitted `regressor <https://enmap-box.readthedocs.io/en/latest/general/glo
     	Argument type:	file
     	Acceptable values:
     		- Path to a file
+    matchByName: Match features and bands by name (optional)
+    	Default value:	false
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRegression: Output regression layer
     	Argument type:	rasterDestination
     	Acceptable values:

@@ -4,27 +4,10 @@
 Spatial convolution ring filter
 *******************************
 
+2D Ring filter.
+The Ring filter kernel is the difference between two Top-Hat kernels of different width. This kernel is useful for, e.g., background estimation.
 
-The Ring filter kernel is the difference between two Top-Hat kernels of different width. This kernel is useful for, e.g., background estimation. It can further be used to extract circular or ring-shaped patterns in the image. It achieves this by assigning higher weights to the pixels located closer to the center of the kernel and lower weights to those farther away. This weighting scheme helps to enhance the circular or ring-like structures and suppress other image components. An exemplary kernel can be found below.
-
-    .. figure:: ./img/ring_kernel.png
-       :align: center
-
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/ring_filter_interface.png
-       :align: center
-
-3. Processed image in comparison to the original.
-
-    .. figure:: ./img/ring_filter_result.png
-       :align: center
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_convolution_ring_filter.rst
 
 **Parameters**
 
@@ -76,18 +59,24 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     normalize: Normalize kernel
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     interpolate: Interpolate no data pixel
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

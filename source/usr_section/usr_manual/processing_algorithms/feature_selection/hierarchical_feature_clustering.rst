@@ -49,12 +49,16 @@ For further analysis, all relevant results are also stored as a JSON sidecar fil
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     openReport: Open output report in webbrowser after running algorithm
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputHierarchicalFeatureClustering: Output report
     	Argument type:	fileDestination
     	Acceptable values:

@@ -4,26 +4,10 @@
 Spatial convolution Box filter
 ******************************
 
+2D Box filter.
+The Box filter or running mean is a smoothing filter. It is not isotropic and can produce artifact, when applied repeatedly to the same data.
 
-The Spatial convolution Box filter is used to reduce noise and blur an image by averaging pixel values within a defined neighborhood, defined by a square kernel with equal weights. The size of the kernel determines the extent of the blurring effect. The filter is not isotropic and can produce artifact, when applied repeatedly to the same data. An exemplary kernel can be found below.
-
-    .. figure:: ./img/box_kernel.png
-       :align: center
-
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-    .. figure:: ./img/box_filter_interface.png
-       :align: center
-
-3. View the processed image in comparison to the original.
-
-    .. figure:: ./img/box_filter_result.png
-       :align: center
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_convolution_box_filter.rst
 
 **Parameters**
 
@@ -75,18 +59,24 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     normalize: Normalize kernel
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     interpolate: Interpolate no data pixel
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

@@ -24,7 +24,7 @@ Convert raster data between different formats, potentially performing some opera
 :guilabel:`Copy metadata` [boolean]
     Whether to copy GDAL metadata from source to destination.
 
-    Default: *False*
+    Default: *True*
 
 
 :guilabel:`Copy style` [boolean]
@@ -139,29 +139,37 @@ Convert raster data between different formats, potentially performing some opera
     	Acceptable values:
     		- Path to a raster layer
     copyMetadata: Copy metadata
-    	Default value:	false
+    	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     copyStyle: Copy style
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     excludeBadBands: Exclude bad bands
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     writeEnviHeader: Write ENVI header
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     spectralSubset: Spectral raster layer for band subsetting (optional)
     	Argument type:	raster
     	Acceptable values:
@@ -174,10 +182,14 @@ Convert raster data between different formats, potentially performing some opera
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     scale: Data gain/scale value (optional)
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     extent: Spatial extent (optional)
     	Argument type:	extent
     	Acceptable values:
@@ -214,22 +226,30 @@ Convert raster data between different formats, potentially performing some opera
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     noData: No data value (optional)
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     unsetSourceNoData: Unset source no data value
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     unsetNoData: Unset no data value
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     workingType: Working Data type (optional)
     	Argument type:	enum
     	Available values:
@@ -261,6 +281,8 @@ Convert raster data between different formats, potentially performing some opera
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputTranslatedRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

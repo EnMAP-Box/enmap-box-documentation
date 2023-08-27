@@ -1,0 +1,1 @@
+This 1D Gaussian filter applies a weighted average to the values in the image. The weights are determined by a Gaussian distribution, which assigns higher weights to pixels closer to the center of the kernel and lower weights to pixels farther away. It is isotropic and does not produce artifacts.

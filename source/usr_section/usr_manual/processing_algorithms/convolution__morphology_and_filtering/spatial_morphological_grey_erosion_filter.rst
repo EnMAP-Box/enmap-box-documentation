@@ -4,26 +4,9 @@
 Spatial morphological Grey Erosion filter
 *****************************************
 
-The filter operates by moving a structuring element across the image. The structuring element defines the neighborhood around each pixel that will be considered during the erosion operation.
+Spatial morphological Grey Erosion filter. See `Wikipedia <https://en.wikipedia.org/wiki/Erosion_(morphology)>`_ for general information.
 
-For each pixel in the image, the grey erosion filter finds the minimum pixel value within the structuring element's neighborhood and assigns this minimum value to the corresponding pixel in the output image.
-
-
-Usage:
-
-1. Start the algorithm from the Processing Toolbox panel.
-
-2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
-
-    .. figure:: ./img/erosion_filter_interface.png
-       :align: center
-
-3. View the processed image in comparison to the original.
-
-    .. figure:: ./img/erosion_filter_result.png
-       :align: center
-
-
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_morphological_grey_erosion_filter.rst
 
 **Parameters**
 
@@ -69,6 +52,8 @@ Usage:
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

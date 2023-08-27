@@ -38,6 +38,8 @@ Subset and/or reorder `features <https://enmap-box.readthedocs.io/en/latest/gene
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputDatasetFeatureSubset: Output dataset
     	Argument type:	fileDestination
     	Acceptable values:

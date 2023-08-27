@@ -23,6 +23,12 @@ A pixel is concidered valid, if the `pixel profile <https://enmap-box.readthedoc
 
     Default: *0*
 
+
+:guilabel:`Exclude bad bands` [boolean]
+    Whether to exclude `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_, that are marked as `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_, or contain no data, inf or nan values in all `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
+
+    Default: *True*
+
 **Outputs**
 
 
@@ -50,6 +56,16 @@ A pixel is concidered valid, if the `pixel profile <https://enmap-box.readthedoc
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    excludeBadBands: Exclude bad bands (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputUnsupervisedDataset: Output dataset
     	Argument type:	fileDestination
     	Acceptable values:
