@@ -11,7 +11,7 @@ Fabian Thiel, Sebastian van der Linden & Klara Busse
 
 **Publication date:** 03/07/2020
 
-**Last update:** 15/05/2023
+**Last update:** 15/08/2023
 
 
 Introduction
@@ -55,7 +55,7 @@ EnMAP-Box, as well as hands-on training for implementing regression-based mappin
 3. Requirements
 ===============
 
-This tutorial requires at least version 3.10 of the EnMAP-Box 3. There might be some minor
+This tutorial requires at least version 3.11 of the EnMAP-Box 3. There might be some minor
 changes for higher versions (e.g., changed menu labels, added parameter options, etc.).
 
 
@@ -97,7 +97,22 @@ taken from the 2011 National Landcover Database (NLCD) [7]_.
 .. [6] Cooper, S.; Okujeni, A.; Jänicke, C.; Segl, K.; van der Linden, S.; Hostert, P. (2020): 2013 Simulated EnMAP Mosaics for the San Francisco Bay Area, USA. GFZ Data Services. https://doi.org/10.5880/enmap.2020.002
 .. [7] Multi-Resolution Land Characteristics Consortium (MRLC) (2018). National Land Cover Database 2011 (NLCD 2011). Multi-Resolution Land Characteristics Consortium (MRLC). https://data.nal.usda.gov/dataset/national-land-cover-database-2011-nlcd-2011. Accessed 2022-08-08.
 
-|
+6. Basic navigation tools
+=========================
+
+* The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the
+  following navigation tools: |navtools|
+* Note that the mouse wheel can be used alternatively for zooming
+  (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
+* For a better orientation when exploring visualized raster images, you may switch on the crosshairs (right click into
+  Map View and activate :menuselection:`Crosshair --> Show`.
+* Make yourself familiar with the |cursorlocationinfo| icon on the toolbar to view pixel values of the displayed raster.
+  Note: |select_location| :sup:`Identify Cursor Info` must be activated to access this tool. When activated and used, a new
+  Cursor Location Values window will open displaying data from the selected pixel. This tool similarly works for
+  viewing attribute information of displayed vector data.
+
+.. |navtools| image:: ../urban_unmixing/tut_img/navtools.png
+   :height: 30px
 
 Exercise A: Getting started with the EnMAP-Box
 **********************************************
@@ -177,26 +192,8 @@ Exercise A: Getting started with the EnMAP-Box
    in the :guilabel:`Data Views` panel, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`.
    Don't forget to choose appropriate Min/Max Value Settings.
 
-4. Basic navigation tools
-=========================
 
-* The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the
-  following navigation tools: |navtools|
-* Note that the mouse wheel can be used alternatively for zooming
-  (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
-* For a better orientation when exploring visualized raster images, you may switch on the crosshairs (right click into
-  Map View and activate :menuselection:`Crosshair --> Show`.
-* Make yourself familiar with the |cursorlocationinfo| icon on the toolbar to view pixel values of the displayed raster.
-  Note: |select_location| :sup:`Identify Cursor Info` must be activated to access this tool. When activated and used, a new
-  Cursor Location Values window will open displaying data from the selected pixel. This tool similarly works for
-  viewing attribute information of displayed vector data.
-
-
-.. |navtools| image:: ../urban_unmixing/tut_img/navtools.png
-   :height: 30px
-
-
-5. Multiple map views
+4. Multiple map views
 =====================
 
 * The EnMAP-Box enables users to work with multiple Map Views, which can be flexibly organized and geospatially linked.
@@ -234,7 +231,7 @@ Exercise A: Getting started with the EnMAP-Box
 .. |float_window| image:: img/float_window.png
 
 
-6. Visualize vector data
+5. Visualize vector data
 ========================
 
 * Close Map #2 from the previous step.
@@ -252,7 +249,7 @@ Exercise A: Getting started with the EnMAP-Box
 .. image:: img/ex_a_agb_tutorial_figure_6.png
    :width: 100%
 
-7. Extract & visualize image spectra
+6. Extract & visualize image spectra
 ====================================
 
 * The EnMAP-Box offers **Spectral Library Windows** (SpectralLibrary #) for visualizing spectra and handling
