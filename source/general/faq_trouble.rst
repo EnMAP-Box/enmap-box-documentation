@@ -32,6 +32,43 @@ Contact
 **Newsletter**: Subscribe to the EnMAP mailing list to be informed about new EnMAP-Box releases and other EnMAP related news.
 Click `here <https://www.enmap.org/contact/>`_ for more information.
 
+.. _citation_enmapbox:
+
+Citation
+========
+
+Please cite the EnMAP-Box as:
+
+.. code-block:: none
+
+   Jakimow, B., Janz, A., Thiel, F., Okujeni, A., Hostert, P., van der Linden, S., 2023. EnMAP-Box:
+   Imaging spectroscopy in QGIS. SoftwareX 23, 101507. https://doi.org/10.1016/j.softx.2023.101507
+
+BibTeX:
+
+.. code-block:: latex
+
+   @article{JAKIMOW2023101507,
+   title = {EnMAP-Box: Imaging spectroscopy in QGIS},
+   journal = {SoftwareX},
+   volume = {23},
+   pages = {101507},
+   year = {2023},
+   issn = {2352-7110},
+   doi = {https://doi.org/10.1016/j.softx.2023.101507},
+   url = {https://www.sciencedirect.com/science/article/pii/S2352711023002030},
+   author = {Benjamin Jakimow and Andreas Janz and Fabian Thiel and Akpona Okujeni and Patrick Hostert and van der Linden, Sebastian}
+   }
+
+
+.. For the general idea behind the EnMAP-Box please refer to:
+..
+.. .. code-block:: none
+..
+..    van der Linden, S., Rabe, A., Held, M., Jakimow, B., Leitão, P., Okujeni, A., Schwieder, M., Suess, S., Hostert, P., 2015.
+..    The EnMAP-Box—A Toolbox and Application Programming Interface for EnMAP Data Processing.
+..    Remote Sensing 7, 11249–11266. https://doi.org/10.3390/rs70911249
+
 |
 
 FAQ
@@ -43,34 +80,6 @@ suggest new entries!
 .. How do I...
 .. -----------
 
-.. _faq_how_to_cite_enmapbox:
-
-* **How to cite the EnMAP-Box?**
-
-  Please cite the EnMAP-Box as::
-
-      EnMAP-Box Developers (2019): EnMAP-Box 3 - A QGIS Plugin to process and visualize
-      hyperspectral remote sensing data. https://enmap-box.readthedocs.io/en/latest
-
-  BibTeX:
-
-  .. code-block:: bibtex
-
-     @misc{enmapbox2019,
-     author = {EnMAP-Box Developers},
-     title = {EnMAP-Box 3 - A QGIS Plugin to process and visualize hyperspectral remote sensing data},
-     year = 2019,
-     url = {https://enmap-box.readthedocs.io/en/latest}
-     }
-
-  For the general idea behind the EnMAP-Box please refer to:
-
-  .. code-block:: none
-
-     van der Linden, S., Rabe, A., Held, M., Jakimow, B., Leitão, P., Okujeni, A., Schwieder, M.,
-     Suess, S., Hostert, P., 2015. The EnMAP-Box—A Toolbox and Application Programming Interface
-     for EnMAP Data Processing. Remote Sensing 7,
-     11249–11266. 10.3390/rs70911249.
 
 * **How to install QGIS without administrative rights?**
 
