@@ -1,0 +1,11 @@
+The XGBRF classifier works by incorporating random forests into the XG Boost algorithm.
+
+Usage:
+
+1. Start the algorithm from the Processing Toolbox panel.
+
+2. Select a test dataset or create one by clicking |processingAlgorithm|, then click :guilabel:`run`.
+
+    .. figure:: ./img/fitxgbrf_interface.png
+       :align: center
+

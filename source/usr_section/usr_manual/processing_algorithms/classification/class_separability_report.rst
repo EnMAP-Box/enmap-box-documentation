@@ -6,6 +6,8 @@ Class separability report
 
 Evaluates the pair-wise `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ separability in terms of the Jeffries Matusita distance.
 
+.. include:: ../../processing_algorithms_includes/classification/class_separability_report.rst
+
 **Parameters**
 
 
