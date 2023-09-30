@@ -11,11 +11,11 @@ Prepare a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/gen
 
 :guilabel:`Metadata file` [file]
     The metadata XML file associated with the product.
-    Instead of executing this algorithm, you may drag&drop the metadata XML file directly from your system file browser a) onto the EnMAP-Box map view area, or b) onto the Sensor Product Import panel.
+    Instead of executing this algorithm, you may drag&drop the metadata XML file directly from your system file browser onto the EnMAP-Box map view area.
 
 
 :guilabel:`Set bad bands` [boolean]
-    Whether to mark no data `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ as `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_.
+    Whether to find and set the `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_ list by evaluating the image data.
 
     Default: *True*
 

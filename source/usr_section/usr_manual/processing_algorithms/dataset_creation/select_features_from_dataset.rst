@@ -6,8 +6,6 @@ Select features from dataset
 
 Subset and/or reorder `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ in `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ data `X <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-x>`_.
 
-.. include:: ../../processing_algorithms_includes/dataset_creation/select_features_from_dataset.rst
-
 **Parameters**
 
 

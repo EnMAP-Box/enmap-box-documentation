@@ -28,7 +28,7 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
     Field with `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ values used as `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ data `y <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-y>`_. If not selected, the `field <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ defined by the renderer is used. If that is also not specified, an error is raised.
 
 
-:guilabel:`Minimum pixel coverage [%]` [number]
+:guilabel:`Minimum pixel coverage` [number]
     Exclude all pixel where (polygon) coverage is smaller than given threshold.
 
     Default: *50*
@@ -43,7 +43,7 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
 
 
 :guilabel:`Output dataset` [fileDestination]
-    `Dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ file destination.
+    `Dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ file destination .
 
 **Command-line usage**
 
@@ -74,7 +74,7 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
     	Acceptable values:
     		- The name of an existing field
     		- ; delimited list of existing field names
-    coverage: Minimum pixel coverage [%]
+    coverage: Minimum pixel coverage
     	Default value:	50
     	Argument type:	number
     	Acceptable values:

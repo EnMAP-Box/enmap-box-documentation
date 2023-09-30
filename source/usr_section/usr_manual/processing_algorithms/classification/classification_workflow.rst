@@ -6,8 +6,6 @@ Classification workflow
 
 The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_ workflow combines `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_ fitting, map prediction and accuracy assessment.
 
-.. include:: ../../processing_algorithms_includes/classification/classification_workflow.rst
-
 **Parameters**
 
 

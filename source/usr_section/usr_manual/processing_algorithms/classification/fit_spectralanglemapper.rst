@@ -8,8 +8,6 @@ Spectral Angle Mapper (SAM).
 `Samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ are first normalizes to the unit sphere and then classified using nearest neighbour.
 See `Docs Center > Using ENVI > Spectral Angle Mapper <https://www.l3harrisgeospatial.com/docs/spectralanglemapper.html>`_ for a more details description.
 
-.. include:: ../../processing_algorithms_includes/classification/fit_spectralanglemapper.rst
-
 **Parameters**
 
 

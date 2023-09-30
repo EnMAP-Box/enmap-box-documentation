@@ -6,8 +6,6 @@ Classifier performance report
 
 Evaluates `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_ performance.
 
-.. include:: ../../processing_algorithms_includes/classification/classifier_performance_report.rst
-
 **Parameters**
 
 

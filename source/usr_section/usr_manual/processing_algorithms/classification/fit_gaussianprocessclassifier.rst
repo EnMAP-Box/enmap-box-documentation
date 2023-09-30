@@ -9,8 +9,6 @@ The implementation is based on Algorithm 3.1, 3.2, and 5.1 of Gaussian Processes
 Internally, the Laplace approximation is used for approximating the non-Gaussian posterior by a Gaussian. Currently, the implementation is restricted to using the logistic link function. For multi-`class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ classification, several binary one-versus rest `classifiers <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_ are fitted. Note that this class thus does not implement a true multi-class Laplace approximation.
 See `Gaussian Processes <http://scikit-learn.org/stable/modules/gaussian_process.html>`_ for further information.
 
-.. include:: ../../processing_algorithms_includes/classification/fit_gaussianprocessclassifier.rst
-
 **Parameters**
 
 

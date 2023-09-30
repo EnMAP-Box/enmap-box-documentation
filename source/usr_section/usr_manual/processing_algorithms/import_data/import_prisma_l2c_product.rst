@@ -14,7 +14,7 @@ For further details visit the `PRISMA Documentation Area <http://prisma.asi.it/m
     The HE5 product file.
     The main data contained in the PRS_L2C_HRO Swath is the surface spectral reflectance Coregistersed Hyperspectral Cube (in instrument geometric reference).
     The main data contained in the PRS_L2C_PCO Swath is the surface panchromatic reflectance image (in instrument geometric reference).
-    Instead of executing this algorithm, you may drag&drop the HE5 file directly from your system file browser a) onto the EnMAP-Box map view area, or b) onto the Sensor Product Import panel.
+    Instead of executing this algorithm, you may drag&drop the HE5 file directly from your system file browser on the EnMAP-Box map view area.
 
 
 :guilabel:`Spectral region` [enum]

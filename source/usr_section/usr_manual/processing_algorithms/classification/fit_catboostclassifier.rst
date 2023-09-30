@@ -6,8 +6,6 @@ Fit CatBoostClassifier
 
 Implementation of the scikit-learn API for `CatBoost <https://catboost.ai/en/docs/>`_ `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_.
 
-.. include:: ../../processing_algorithms_includes/classification/fit_catboostclassifier.rst
-
 **Parameters**
 
 

@@ -34,13 +34,7 @@ Convert raster data between different formats, potentially performing some opera
 
 
 :guilabel:`Exclude bad bands` [boolean]
-    Whether to exclude `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_ (given by BBL metadata item inside ENVI domain). Also see The ENVI Header Format for more details: https://www.l3harrisgeospatial.com/docs/ENVIHeaderFiles.html
-
-    Default: *False*
-
-
-:guilabel:`Derive and exclude additional bad bands` [boolean]
-    Whether to derive and exclude additional `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_ fully filled with inf, nan or `no data values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_.
+    Whether to exclude `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_ (given by BBL metadata item inside ENVI domain). Also see The ENVI Header Format for more details: https://www.l3harrisgeospatial.com/docs/ENVIHeaderFiles.html 
 
     Default: *False*
 
@@ -161,14 +155,6 @@ Convert raster data between different formats, potentially performing some opera
     		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
     		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     excludeBadBands: Exclude bad bands
-    	Default value:	false
-    	Argument type:	boolean
-    	Acceptable values:
-    		- 1 for true/yes
-    		- 0 for false/no
-    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
-    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
-    excludeDerivedBadBands: Derive and exclude additional bad bands
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:

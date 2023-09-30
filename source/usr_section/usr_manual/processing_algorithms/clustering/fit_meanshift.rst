@@ -8,8 +8,6 @@ Mean shift `clustering <https://enmap-box.readthedocs.io/en/latest/general/gloss
 Mean shift clustering aims to discover “blobs” in a smooth density of `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_. It is a centroid-based algorithm, which works by updating candidates for centroids to be the mean of the points within a given region. These candidates are then filtered in a post-processing stage to eliminate near-duplicates to form the final set of centroids.
 Seeding is performed using a binning technique for scalability.
 
-.. include:: ../../processing_algorithms_includes/clustering/fit_meanshift.rst
-
 **Parameters**
 
 

@@ -5,7 +5,7 @@ Raster math
 ***********
 
 Perform mathematical calculations on `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ and `vector layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-vector-layer>`_ data. Use any `NumPy <https://numpy.org/doc/stable/reference/>`_-based arithmetic, or even arbitrary Python code.
-See the `User Manual <https://enmap-box.readthedocs.io/en/latest/usr_section/usr_manual/applications.html#raster-math>`_ for detailed usage instructions.
+See the `RasterMath cookbook recipe <https://enmap-box.readthedocs.io/en/latest/usr_section/usr_cookbook/raster_math.html>`_ for detailed usage instructions.
 
 **Parameters**
 
@@ -14,7 +14,7 @@ See the `User Manual <https://enmap-box.readthedocs.io/en/latest/usr_section/usr
     The mathematical calculation to be performed on the selected input arrays.
     Select inputs in the available data sources section or use the `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ R1, ..., R10 and `vector layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-vector-layer>`_ V1, ..., V10.
     In the code snippets section you can find some prepdefined code snippets ready to use.
-    See the `User Manual <https://enmap-box.readthedocs.io/en/latest/usr_section/usr_manual/applications.html#raster-math>`_ for detailed usage instructions.
+    See the `RasterMath cookbook recipe <https://enmap-box.readthedocs.io/en/latest/usr_section/usr_cookbook/raster_math.html>`_ for detailed usage instructions.
 
 
 :guilabel:`Grid` [raster]
@@ -48,7 +48,7 @@ See the `User Manual <https://enmap-box.readthedocs.io/en/latest/usr_section/usr
 
 
 :guilabel:`Output raster layer` [rasterDestination]
-    Raster file destination for writing the default `output <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ variable. Additional `outputs <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ are written into the same directory. See the `User Manual <https://enmap-box.readthedocs.io/en/latest/usr_section/usr_manual/applications.html#raster-math>`_ for detailed usage instructions.
+    Raster file destination for writing the default `output <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ variable. Additional `outputs <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ are written into the same directory. See the `RasterMath cookbook recipe <https://enmap-box.readthedocs.io/en/latest/usr_section/usr_cookbook/raster_math.html>`_ for detailed usage instructions.
 
 **Command-line usage**
 

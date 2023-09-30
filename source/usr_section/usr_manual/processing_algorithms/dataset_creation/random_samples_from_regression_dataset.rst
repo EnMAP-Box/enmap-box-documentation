@@ -6,8 +6,6 @@ Random samples from regression dataset
 
 Split a `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ by randomly drawing `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
 
-.. include:: ../../processing_algorithms_includes/dataset_creation/random_samples_from_regression_dataset.rst
-
 **Parameters**
 
 

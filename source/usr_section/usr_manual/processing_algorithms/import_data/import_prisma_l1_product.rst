@@ -14,7 +14,7 @@ For further details visit the `PRISMA Documentation Area <http://prisma.asi.it/m
     The HE5 product file.
     The main data contained in the PRS_L1_HRC Swath is the Radiometric Calibrated Coregistersed Hyperspectral Cube. All `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ of VNIR Cube and all bands of SWIR Cube are keystone corrected with respect to VNIR Cube `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ 128 only considering shift Across track.
     The PRS_L1_PCO Swath basically contains the Radiometric Calibrated Coregistered Panchromatic Image. The PAN Cube is coregistered with respect to VNIR Cube taking into account of the Along Track coregistration. PAN Cube also takes into account the Across track offset PAN – VNIR. All pixel of PAN Cube are keystone corrected with respect to VNIR Cube band 128 only considering shift Across track.
-    Instead of executing this algorithm, you may drag&drop the HE5 file directly from your system file browser a) onto the EnMAP-Box map view area, or b) onto the Sensor Product Import panel.
+    Instead of executing this algorithm, you may drag&drop the HE5 file directly from your system file browser on the EnMAP-Box map view area.
 
 
 :guilabel:`Spectral region` [enum]

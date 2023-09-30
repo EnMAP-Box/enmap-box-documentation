@@ -18,7 +18,7 @@ Resampling is done via a two-step majority voting approach. First, the categoriz
     The target `grid <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-grid>`_.
 
 
-:guilabel:`Minimum pixel coverage [%]` [number]
+:guilabel:`Minimum pixel coverage` [number]
     Exclude all pixel where (polygon) coverage is smaller than given threshold.
 
     Default: *50*
@@ -51,7 +51,7 @@ Resampling is done via a two-step majority voting approach. First, the categoriz
     	Argument type:	raster
     	Acceptable values:
     		- Path to a raster layer
-    coverage: Minimum pixel coverage [%]
+    coverage: Minimum pixel coverage
     	Default value:	50
     	Argument type:	number
     	Acceptable values:

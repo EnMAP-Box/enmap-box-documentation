@@ -33,7 +33,7 @@ The Ricker Wavelet, or inverted Gaussian-Laplace filter, is a bandpass filter. I
 :guilabel:`Interpolate no data pixel` [boolean]
     Whether to interpolate no data pixel. Will result in renormalization of the kernel at each position ignoring pixels with `no data values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_.
 
-    Default: *False*
+    Default: *True*
 
 **Outputs**
 
@@ -70,7 +70,7 @@ The Ricker Wavelet, or inverted Gaussian-Laplace filter, is a bandpass filter. I
     		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
     		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     interpolate: Interpolate no data pixel
-    	Default value:	false
+    	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes

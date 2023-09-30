@@ -6,8 +6,6 @@ Fit AffinityPropagation
 
 Perform Affinity Propagation `Clustering <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-clustering>`_.
 
-.. include:: ../../processing_algorithms_includes/clustering/fit_affinitypropagation.rst
-
 **Parameters**
 
 

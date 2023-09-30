@@ -37,11 +37,13 @@ Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/e
         ...
         responses[2409] = 9.1
         
+
+:guilabel:`Save spectral response function` [boolean]
+    Whether to save the `spectral response function library <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-response-function-library>`_ as *.srf.geojson sidecar file.
+
+    Default: *False*
+
 **Outputs**
-
-
-:guilabel:`Output spectral response function library` [fileDestination]
-    GEOJSON file destination.
 
 
 :guilabel:`Output raster layer` [rasterDestination]
@@ -84,10 +86,14 @@ Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/e
     		- String value
     		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
     		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
-    outputResponseFunctionLibrary: Output spectral response function library (optional)
-    	Argument type:	fileDestination
+    saveResponseFunction: Save spectral response function (optional)
+    	Default value:	false
+    	Argument type:	boolean
     	Acceptable values:
-    		- Path for new file
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputResampledRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:
@@ -97,8 +103,6 @@ Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/e
     Outputs
     ----------------
     
-    outputResponseFunctionLibrary: <outputFile>
-    	Output spectral response function library
     outputResampledRaster: <outputRaster>
     	Output raster layer
     
