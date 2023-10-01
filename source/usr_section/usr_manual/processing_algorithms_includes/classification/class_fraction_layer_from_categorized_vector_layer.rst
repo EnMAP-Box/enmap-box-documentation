@@ -4,7 +4,7 @@ Usage:
 
 2. Select the vector layer containing your categorised polygons and the raster layer serving as your target grid, then click :guilabel:`run`.
 
-    .. figure:: ./img/class_fraction_interface.png
+    .. figure:: ./img/classfraction_interface.png
        :align: center
 
 3. View the result in the map viewer. Each class is represented as a separate band.

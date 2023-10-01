@@ -4,7 +4,7 @@ Usage:
 
 2. Select a spectral library, then click :guilabel:`run`.
 
-    .. figure:: ./img/clusspeclib.png
+    .. figure:: ./img/clus_speclib.png
        :align: center
 
 3. The output classification dataset will be listed under Models in your Data Sources panel.

@@ -13,3 +13,6 @@ Usage:
        :align: center
 
 4. Select the raster to process and click :guilabel:`run`.
+
+    .. figure:: ./img/class_workflow_interface_3.png
+       :align: center
