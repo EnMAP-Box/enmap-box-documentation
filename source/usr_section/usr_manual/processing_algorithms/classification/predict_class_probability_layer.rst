@@ -6,6 +6,8 @@ Predict class probability layer
 
 Uses a fitted `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_ to predict `class probability layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class-probability-layer>`_ from a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_.
 
+.. include:: ../../processing_algorithms_includes/classification/predict_class_probability_layer.rst
+
 **Parameters**
 
 

@@ -7,6 +7,8 @@ Create classification dataset (from JSON file)
 Create a `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ from a JSON file and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_. 
 Example file (`classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_.pkl.json) can be found in the EnMAP-Box testdata folder).
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/create_classification_dataset__from_json_file_.rst
+
 **Parameters**
 
 

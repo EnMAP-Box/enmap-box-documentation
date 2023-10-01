@@ -6,6 +6,7 @@ Create classification dataset (from table with categories and feature fields)
 
 Create a `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ from `attribute table <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-attribute-table>`_ rows that match the given `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_. 
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/create_classification_dataset__from_table_with_categories_and_feature_fields_.rst
 
 **Parameters**
 

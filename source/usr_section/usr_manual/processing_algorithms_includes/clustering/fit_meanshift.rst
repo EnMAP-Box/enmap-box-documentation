@@ -1,0 +1,8 @@
+Usage:
+
+1. Open the algorithm from the processing toolbox.
+
+2. Load an existing training dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
+
+    .. figure:: ./img/meanshift.png
+       :align: center

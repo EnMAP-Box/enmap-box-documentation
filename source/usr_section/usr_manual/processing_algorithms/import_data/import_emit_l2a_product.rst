@@ -12,7 +12,7 @@ EMIT website: `https://earth.jpl.nasa.gov/emit/ <https://earth.jpl.nasa.gov/emit
 
 :guilabel:`NetCDF file` [file]
     The EMIT L2A RFL NetCDF product file.
-    Instead of executing this algorithm, you may drag&drop the NetCDF file directly from your system file browser onto the EnMAP-Box map view area.
+    Instead of executing this algorithm, you may drag&drop the NetCDF file directly from your system file browser a) onto the EnMAP-Box map view area, or b) onto the Sensor Product Import panel.
 
 
 :guilabel:`Skip bad bands` [boolean]

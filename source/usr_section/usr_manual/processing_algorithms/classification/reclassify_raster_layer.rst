@@ -6,6 +6,8 @@ Reclassify raster layer
 
 This algorithm reclassifies a raster by assigning new `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ values based on a class mapping.
 
+.. include:: ../../processing_algorithms_includes/classification/reclassify_raster_layer.rst
+
 **Parameters**
 
 

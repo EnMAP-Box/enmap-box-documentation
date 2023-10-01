@@ -6,6 +6,8 @@ Fit XGBRFClassifier
 
 Implementation of the scikit-learn API for `XGBoost <https://xgboost.readthedocs.io/en/stable/>`_ random forest `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_.
 
+.. include:: ../../processing_algorithms_includes/classification/fit_xgbrfclassifier.rst
+
 **Parameters**
 
 
