@@ -278,7 +278,7 @@ QGIS Long Term Release (LTR) environment:
 
 .. code-block:: batch
 
-   mamba env create -n enmapbox_long_term -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.conda/enmapbox_long_term.yml
+   mamba env create -n enmapbox_long_term -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.conda/enmapbox_full_longterm.yml
 
 QGIS Latest Release (LR) environment:
 
