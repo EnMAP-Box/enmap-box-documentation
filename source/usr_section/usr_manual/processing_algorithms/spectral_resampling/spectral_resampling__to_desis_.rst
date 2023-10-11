@@ -1,11 +1,11 @@
-.. _Spectral resampling (to Landsat 7 ETM+):
+.. _Spectral resampling (to DESIS):
 
-***************************************
-Spectral resampling (to Landsat 7 ETM+)
-***************************************
+******************************
+Spectral resampling (to DESIS)
+******************************
 
-Spectral resampling to Landsat 7 ETM+ sensor.
-For more information see the `mission website <https://www.usgs.gov/core-science-systems/nli/landsat/landsat-satellite-missions>`_.
+Spectral resampling to DESIS sensor.
+For more information see the `mission website <https://www.dlr.de/eoc/desktopdefault.aspx/tabid-13614/>`_.
 
 **Parameters**
 
@@ -21,7 +21,7 @@ For more information see the `mission website <https://www.usgs.gov/core-science
 
 **Command-line usage**
 
-``>qgis_process help enmapbox:SpectralResamplingToLandsat7Etm``::
+``>qgis_process help enmapbox:SpectralResamplingToDesis``::
 
     ----------------
     Arguments

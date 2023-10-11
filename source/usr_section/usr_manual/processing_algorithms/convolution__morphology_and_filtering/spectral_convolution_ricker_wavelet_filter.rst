@@ -31,7 +31,7 @@ The Ricker Wavelet, or inverted Gaussian-Laplace filter, is a bandpass filter. I
 :guilabel:`Interpolate no data pixel` [boolean]
     Whether to interpolate no data pixel. Will result in renormalization of the kernel at each position ignoring pixels with `no data values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_.
 
-    Default: *True*
+    Default: *False*
 
 **Outputs**
 
@@ -64,7 +64,7 @@ The Ricker Wavelet, or inverted Gaussian-Laplace filter, is a bandpass filter. I
     		- 1 for true/yes
     		- 0 for false/no
     interpolate: Interpolate no data pixel
-    	Default value:	true
+    	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes

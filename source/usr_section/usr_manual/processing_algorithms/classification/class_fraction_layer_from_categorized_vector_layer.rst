@@ -16,6 +16,12 @@ Rasterize a `categorized vector layer <https://enmap-box.readthedocs.io/en/lates
 :guilabel:`Grid` [raster]
     The target `grid <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-grid>`_.
 
+
+:guilabel:`Minimum pixel coverage [%]` [number]
+    Exclude all pixel where (polygon) coverage is smaller than given threshold.
+
+    Default: *0*
+
 **Outputs**
 
 
@@ -38,6 +44,11 @@ Rasterize a `categorized vector layer <https://enmap-box.readthedocs.io/en/lates
     	Argument type:	raster
     	Acceptable values:
     		- Path to a raster layer
+    coverage: Minimum pixel coverage [%]
+    	Default value:	0
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
     outputFraction: Output class fraction layer
     	Argument type:	rasterDestination
     	Acceptable values:

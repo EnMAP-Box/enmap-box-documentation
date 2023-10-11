@@ -21,6 +21,12 @@ Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossar
 :guilabel:`Targets` [band]
     Bands with `continuous-valued variables <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-continuous-valued-variable>`_ used as `targets <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_. An empty selection defaults to all `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ in native order.
 
+
+:guilabel:`Exclude bad bands` [boolean]
+    Whether to exclude `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_, that are marked as `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_, or contain no data, inf or nan values in all `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
+
+    Default: *True*
+
 **Outputs**
 
 
@@ -47,6 +53,12 @@ Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossar
     	Argument type:	band
     	Acceptable values:
     		- Integer value representing an existing raster band number
+    excludeBadBands: Exclude bad bands (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
     outputRegressionDataset: Output dataset
     	Argument type:	fileDestination
     	Acceptable values:

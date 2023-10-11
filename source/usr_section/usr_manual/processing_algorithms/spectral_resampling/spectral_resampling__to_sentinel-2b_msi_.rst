@@ -1,11 +1,11 @@
-.. _Spectral resampling (to Landsat 7 ETM+):
+.. _Spectral resampling (to Sentinel-2B MSI):
 
-***************************************
-Spectral resampling (to Landsat 7 ETM+)
-***************************************
+****************************************
+Spectral resampling (to Sentinel-2B MSI)
+****************************************
 
-Spectral resampling to Landsat 7 ETM+ sensor.
-For more information see the `mission website <https://www.usgs.gov/core-science-systems/nli/landsat/landsat-satellite-missions>`_.
+Spectral resampling to Sentinel-2B MSI sensor.
+For more information see the `mission website <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_.
 
 **Parameters**
 
@@ -21,7 +21,7 @@ For more information see the `mission website <https://www.usgs.gov/core-science
 
 **Command-line usage**
 
-``>qgis_process help enmapbox:SpectralResamplingToLandsat7Etm``::
+``>qgis_process help enmapbox:SpectralResamplingToSentinel2BMsi``::
 
     ----------------
     Arguments

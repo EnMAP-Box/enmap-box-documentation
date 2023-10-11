@@ -26,7 +26,7 @@ Saves a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossa
 
 
 :guilabel:`Output options` [string]
-    Output format and creation options.
+    Output format and creation options. The default format is GeoTiff with creation options: INTERLEAVE=BAND, COMPRESS=LZW, TILED=YES, BIGTIFF=YES
 
     Default: **
 

@@ -11,7 +11,7 @@ Prepare a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/gen
 
 :guilabel:`Metadata file` [file]
     The MTD_MSIL2A.xml metadata file associated with the product.
-    Instead of executing this algorithm, you may drag&drop the metadata file directly from your system file browser onto the EnMAP-Box map view area.
+    Instead of executing this algorithm, you may drag&drop the metadata file directly from your system file browser a) onto the EnMAP-Box map view area, or b) onto the Sensor Product Import panel.
 
 
 :guilabel:`Band list` [enum]
