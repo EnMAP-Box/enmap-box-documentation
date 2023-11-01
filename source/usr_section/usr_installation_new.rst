@@ -73,7 +73,7 @@ You can `get the Miniforge Windows Installer here <https://conda-forge.org/minif
 
    .. code-block:: batch
 
-      mamba env create -n enmapbox -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.conda/enmapbox_full_longterm.yml
+      mamba env create -n enmapbox -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
 
 #. Activate the "enmapbox" environment and open QGIS by executing:
 
