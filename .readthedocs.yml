@@ -19,7 +19,6 @@ formats:
   - htmlzip
 
 python:
-  version: 3
   install:
     - requirements:  requirements.txt
 
