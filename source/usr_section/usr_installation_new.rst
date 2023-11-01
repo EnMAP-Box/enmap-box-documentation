@@ -82,6 +82,16 @@ You can `get the Miniforge Windows Installer here <https://conda-forge.org/minif
       activate enmapbox
       qgis
 
+QGIS Installation on Linux
+--------------------------
+
+todo @jakimow
+
+QGIS Installation on MacOS
+--------------------------
+
+todo @jakimow
+
 EnMAP-Box Plugin Installation
 -----------------------------
 
@@ -113,13 +123,3 @@ EnMAP-Box Plugin Installation
    .. warning::
 
       As the *experimental* tag suggests, this version comes with the newest features and developments, but might also be prone to bugs and crashes.
-
-QGIS Installation on Linux
---------------------------
-
-todo @jakimow
-
-QGIS Installation on MacOS
---------------------------
-
-todo @jakimow
