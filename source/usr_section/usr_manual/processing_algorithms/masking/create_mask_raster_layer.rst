@@ -6,6 +6,8 @@ Create mask raster layer
 
 Create a `mask raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-mask-raster-layer>`_ by applying a user-defined evaluation function `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_-wise to a source `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_. 
 
+.. include:: ../../processing_algorithms_includes/masking/create_mask_raster_layer.rst
+
 **Parameters**
 
 

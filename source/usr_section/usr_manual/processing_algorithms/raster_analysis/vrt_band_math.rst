@@ -6,6 +6,8 @@ VRT band math
 
 Create a single-`band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ VRT `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ specifying a `VRT Python Pixel Function <https://gdal.org/drivers/raster/vrt.html#using-derived-bands-with-pixel-functions-in-python>`_. Use any `NumPy <https://numpy.org/doc/stable/reference/>`_-based arithmetic, or even arbitrary Python code.
 
+.. include:: ../../processing_algorithms_includes/raster_analysis/vrt_band_math.rst
+
 **Parameters**
 
 

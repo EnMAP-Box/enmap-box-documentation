@@ -7,6 +7,9 @@ Fit KernelPCA
 Kernel Principal component analysis (KPCA).
 Non-linear dimensionality reduction through the use of kernels
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_kernelpca.rst
+
+
 **Parameters**
 
 

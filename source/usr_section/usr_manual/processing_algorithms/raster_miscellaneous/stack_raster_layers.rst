@@ -7,6 +7,9 @@ Stack raster layers
 Stack `raster layers <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ and store the result as a VRT file.This is a slimmed down version of the more powerful/complicated GDAL "Build virtual raster" algorithm.
 If you also want to delete or rearrange individual `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_, just use the "Subset `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ bands" algorithm afterwards.
 
+.. include:: ../../processing_algorithms_includes/raster_miscellaneous/stack_raster_layers.rst
+
+
 **Parameters**
 
 

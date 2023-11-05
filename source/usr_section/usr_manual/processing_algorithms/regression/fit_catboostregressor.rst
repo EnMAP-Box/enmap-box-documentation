@@ -6,6 +6,8 @@ Fit CatBoostRegressor
 
 Implementation of the scikit-learn API for `CatBoost <https://catboost.ai/en/docs/>`_ `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_.
 
+.. include:: ../../processing_algorithms_includes/regression/fit_catboostregressor.rst
+
 **Parameters**
 
 

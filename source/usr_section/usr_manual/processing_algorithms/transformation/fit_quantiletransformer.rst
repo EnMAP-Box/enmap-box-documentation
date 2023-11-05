@@ -8,6 +8,8 @@ Transform `features <https://enmap-box.readthedocs.io/en/latest/general/glossary
 This method transforms the features to follow a uniform or a normal distribution. Therefore, for a given `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_, this transformation tends to spread out the most frequent values. It also reduces the impact of (marginal) outliers: this is therefore a robust preprocessing scheme.
 The transformation is applied on each feature independently. First an estimate of the cumulative distribution function of a feature is used to map the original values to a uniform distribution. The obtained values are then mapped to the desired `output <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ distribution using the associated quantile function. Features values of new/unseen data that fall below or above the fitted range will be mapped to the bounds of the output distribution. Note that this transform is non-linear. It may distort linear correlations between variables measured at the same scale but renders variables measured at different scales more directly comparable.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_quantiletransformer.rst
+
 **Parameters**
 
 

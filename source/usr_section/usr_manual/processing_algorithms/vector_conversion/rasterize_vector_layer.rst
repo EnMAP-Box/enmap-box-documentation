@@ -6,6 +6,9 @@ Rasterize vector layer
 
 Converts vector geometries (points, lines and polygons) into a raster `grid <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-grid>`_.
 
+.. include:: ../../processing_algorithms_includes/vector_conversion/rasterize_vector_layer.rst
+
+
 **Parameters**
 
 

@@ -6,6 +6,8 @@ Regression-based unmixing
 
 Implementation of the `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_-based unmixing approach `"Ensemble Learning From Synthetically Mixed Training Data for Quantifying Urban Land Cover With Support Vector Regression" <https://doi.org/10.1109/JSTARS.2016.2634859>`_ in IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 10, no. 4, pp. 1640-1650, April 2017.
 
+.. include:: ../../processing_algorithms_includes/unmixing/regression-based_unmixing.rst
+
 **Parameters**
 
 

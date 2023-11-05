@@ -10,6 +10,9 @@ The observations are assumed to be caused by a linear transformation of lower di
 If we would restrict the model further, by assuming that the Gaussian noise is even isotropic (all diagonal entries are the same) we would obtain ProbabilisticPCA.
 FactorAnalysis performs a maximum likelihood estimate of the so-called loading matrix, the transformation of the latent variables to the observed ones, using SVD based approach.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_factoranalysis.rst
+
+
 **Parameters**
 
 

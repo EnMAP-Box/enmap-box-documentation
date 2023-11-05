@@ -6,6 +6,9 @@ Fit XGBRFRegressor
 
 Implementation of the scikit-learn API for `XGBoost <https://xgboost.readthedocs.io/en/stable/>`_ random forest `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_.
 
+.. include:: ../../processing_algorithms_includes/regression/fit_xgbrfregressor.rst
+
+
 **Parameters**
 
 

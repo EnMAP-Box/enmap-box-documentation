@@ -7,6 +7,9 @@ Fit PCA
 Principal component analysis (PCA).
 Linear dimensionality reduction using Singular Value Decomposition of the data to project it to a lower dimensional space. The input data is centered but not scaled for each `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ before applying the SVD.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_pca.rst
+
+
 **Parameters**
 
 

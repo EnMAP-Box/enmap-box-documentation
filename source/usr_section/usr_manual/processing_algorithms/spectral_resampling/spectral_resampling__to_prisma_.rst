@@ -7,6 +7,9 @@ Spectral resampling (to PRISMA)
 Spectral resampling to PRISMA sensor.
 For more information see the `mission website <https://www.asi.it/en/earth-science/prisma/>`_.
 
+.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_prisma_.rst
+
+
 **Parameters**
 
 

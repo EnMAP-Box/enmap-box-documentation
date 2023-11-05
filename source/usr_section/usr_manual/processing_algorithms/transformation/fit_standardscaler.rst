@@ -12,6 +12,9 @@ Centering and scaling happen independently on each `feature <https://enmap-box.r
 Standardization of a `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ is a common requirement for many machine learning `estimators <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-estimator>`_: they might behave badly if the individual features do not more or less look like standard normally distributed data (e.g. Gaussian with 0 mean and unit variance).
 For instance many elements used in the objective function of a learning algorithm (such as the RBF kernel of Support Vector Machines or the L1 and L2 regularizers of linear models) assume that all features are centered around 0 and have variance in the same order. If a feature has a variance that is orders of magnitude larger that others, it might dominate the objective function and make the `estimator <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-estimator>`_ unable to learn from other features correctly as expected.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_standardscaler.rst
+
+
 **Parameters**
 
 

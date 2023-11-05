@@ -6,6 +6,9 @@ Transform raster layer
 
 Uses a fitted `transformer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-transformer>`_ to transform a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_.
 
+.. include:: ../../processing_algorithms_includes/transformation/transform_raster_layer.rst
+
+
 **Parameters**
 
 

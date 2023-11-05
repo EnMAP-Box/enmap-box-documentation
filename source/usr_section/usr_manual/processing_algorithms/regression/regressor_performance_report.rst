@@ -6,6 +6,9 @@ Regressor performance report
 
 Evaluates `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_ performance.
 
+.. include:: ../../processing_algorithms_includes/regression/regressor_performance_report.rst
+
+
 **Parameters**
 
 

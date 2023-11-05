@@ -7,6 +7,9 @@ Spectral resampling (to Landsat 7 ETM+)
 Spectral resampling to Landsat 7 ETM+ sensor.
 For more information see the `mission website <https://www.usgs.gov/core-science-systems/nli/landsat/landsat-satellite-missions>`_.
 
+.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_landsat_7_etm+_.rst
+
+
 **Parameters**
 
 

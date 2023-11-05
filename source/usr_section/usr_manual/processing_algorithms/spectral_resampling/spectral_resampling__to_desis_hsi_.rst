@@ -7,6 +7,8 @@ Spectral resampling (to DESIS HSI)
 Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ by applying `spectral response function <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-response-function>`_ convolution.
 For more information see the `DESIS <https://www.dlr.de/eoc/desktopdefault.aspx/tabid-13618/23664_read-54267/>`_ mission website.
 
+
+
 **Parameters**
 
 

@@ -7,6 +7,8 @@ Raster math
 Perform mathematical calculations on `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ and `vector layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-vector-layer>`_ data. Use any `NumPy <https://numpy.org/doc/stable/reference/>`_-based arithmetic, or even arbitrary Python code.
 See the `User Manual <https://enmap-box.readthedocs.io/en/latest/usr_section/usr_manual/applications.html#raster-math>`_ for detailed usage instructions.
 
+.. include:: ../../processing_algorithms_includes/raster_analysis/raster_math.rst
+
 **Parameters**
 
 

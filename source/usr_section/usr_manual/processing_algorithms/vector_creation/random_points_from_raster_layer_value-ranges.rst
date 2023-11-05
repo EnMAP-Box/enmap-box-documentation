@@ -6,6 +6,9 @@ Random points from raster layer value-ranges
 
 This algorithm creates a new `point layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-point-layer>`_ with a given number of random points, all of them within specified value-ranges of the given raster `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
 
+.. include:: ../../processing_algorithms_includes/vector_creation/random_points_from_raster_layer_value-ranges.rst
+
+
 **Parameters**
 
 

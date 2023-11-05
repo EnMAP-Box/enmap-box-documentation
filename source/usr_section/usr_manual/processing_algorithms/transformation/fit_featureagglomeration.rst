@@ -7,6 +7,9 @@ Fit FeatureAgglomeration
 Agglomerate `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_.
 Recursively merges pair of clusters of features.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_featureagglomeration.rst
+
+
 **Parameters**
 
 

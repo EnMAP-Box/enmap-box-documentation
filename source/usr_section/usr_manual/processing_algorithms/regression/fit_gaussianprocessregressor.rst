@@ -6,6 +6,8 @@ Fit GaussianProcessRegressor
 
 Gaussian process `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_ (GPR).
 
+.. include:: ../../processing_algorithms_includes/regression/fit_gaussianprocessregressor.rst
+
 **Parameters**
 
 

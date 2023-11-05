@@ -7,6 +7,9 @@ Spectral resampling (to Sentinel-2 MSI)
 Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ by applying `spectral response function <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-response-function>`_ convolution.
 For more information see the `Sentinel-2 <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_ missions website.
 
+.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_sentinel-2_msi_.rst
+
+
 **Parameters**
 
 

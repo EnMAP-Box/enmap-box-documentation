@@ -6,6 +6,8 @@ Fit generic regressor
 
 A generic `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_.
 
+.. include:: ../../processing_algorithms_includes/regression/fit_generic_regressor.rst
+
 **Parameters**
 
 

@@ -6,6 +6,9 @@ Random points from categorized raster layer
 
 This algorithm creates a new `point layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-point-layer>`_ with a given number of random points, all of them within the `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ of the given `categorized raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categorized-raster-layer>`_.
 
+.. include:: ../../processing_algorithms_includes/vector_creation/random_points_from_categorized_raster_layer.rst
+
+
 **Parameters**
 
 

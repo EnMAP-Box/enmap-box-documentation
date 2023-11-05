@@ -7,6 +7,9 @@ Spectral resampling (to wavelength)
 Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ by applying linear interpolation at given `wavelengths <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-wavelength>`_.
 See `Linear Interpolation Wikipedia Article <https://en.wikipedia.org/wiki/Linear_interpolation>`_ for more details.
 
+.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_wavelength_.rst
+
+
 **Parameters**
 
 

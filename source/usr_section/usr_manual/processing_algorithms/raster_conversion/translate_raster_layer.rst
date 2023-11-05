@@ -6,6 +6,8 @@ Translate raster layer
 
 Convert raster data between different formats, potentially performing some operations like spatial subsetting, spatial resampling, reprojection, `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ subsetting, band reordering, data scaling, `no data value <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_ specification, and data type conversion.
 
+.. include:: ../../processing_algorithms_includes/raster_conversion/translate_raster_layer.rst
+
 **Parameters**
 
 

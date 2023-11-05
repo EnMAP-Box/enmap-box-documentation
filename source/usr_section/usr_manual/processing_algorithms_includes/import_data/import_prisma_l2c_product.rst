@@ -1,0 +1,125 @@
+.. _Import PRISMA L2C product:
+
+*************************
+Import PRISMA L2C product
+*************************
+
+Import PRISMA L2C product from HE5 file to QGIS/GDAL conform GTiff/VRT file format.Note that for the spectral cube and error matrix, the interleave is transposed and stored as GTiff to enable proper visualization in QGIS.All other sub-`datasets <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ are stored as light-weight VRT files.
+For further details visit the `PRISMA Documentation Area <http://prisma.asi.it/missionselect/docs.php>`_.
+
+**Parameters**
+
+
+:guilabel:`File` [file]
+    The HE5 product file.
+    The main data contained in the PRS_L2C_HRO Swath is the surface spectral reflectance Coregistersed Hyperspectral Cube (in instrument geometric reference).
+    The main data contained in the PRS_L2C_PCO Swath is the surface panchromatic reflectance image (in instrument geometric reference).
+    Instead of executing this algorithm, you may drag&drop the HE5 file directly from your system file browser a) onto the EnMAP-Box map view area, or b) onto the Sensor Product Import panel.
+
+
+:guilabel:`Spectral region` [enum]
+    Spectral region to be imported.
+
+    Default: *0*
+
+**Outputs**
+
+
+:guilabel:`Output VNIR/SWIR Cube raster layer` [rasterDestination]
+    VNIR/SWIR Cube GTiff raster file destination.
+
+
+:guilabel:`Output PAN raster layer` [rasterDestination]
+    PAN VRT raster file destination.
+
+
+:guilabel:`Output VNIR/SWIR Error Matrix raster layer` [rasterDestination]
+    VNIR/SWIR Pixel Error Matrix GTiff raster file destination.
+
+
+:guilabel:`Output VNIR/SWIR Geolocation Fields raster layer` [rasterDestination]
+    VNIR/SWIR Geolocation `Fields <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ VRT raster file destination. Includes Latitude and Longitude `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
+
+
+:guilabel:`Output VNIR/SWIR Geometric Fields raster layer` [rasterDestination]
+    VNIR/SWIR Geometric `Fields <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ VRT raster file destination. Includes Observing Angle, Relative Azimuth Angle and Solar Zenith Angle `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
+
+
+:guilabel:`Output PAN Geolocation Fields raster layer` [rasterDestination]
+    PAN Geolocation `Fields <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ VRT raster file destination. Includes Latitude and Longitude `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
+
+
+:guilabel:`Output PAN Error Matrix raster layer` [rasterDestination]
+    PAN Pixel Error Matrix VRT raster file destination.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:ImportPrismaL2CProduct``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    file: File
+    	Argument type:	file
+    	Acceptable values:
+    		- Path to a file
+    spectralRegion: Spectral region
+    	Default value:	0
+    	Argument type:	enum
+    	Available values:
+    		- 0: VNIR/SWIR combined
+    		- 1: VNIR only
+    		- 2: SWIR only
+    	Acceptable values:
+    		- Number of selected option, e.g. '1'
+    		- Comma separated list of options, e.g. '1,3'
+    outputPrismaL2C_spectralCube: Output VNIR/SWIR Cube raster layer
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    outputPrismaL2C_panCube: Output PAN raster layer (optional)
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    outputPrisma2C_spectralErrorMatrix: Output VNIR/SWIR Error Matrix raster layer (optional)
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    outputPrismaL2C_spectralGeolocationFields: Output VNIR/SWIR Geolocation Fields raster layer (optional)
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    outputPrismaL2C_spectralGeometricFields: Output VNIR/SWIR Geometric Fields raster layer (optional)
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    outputPrismaL2C_panGeolocationFields: Output PAN Geolocation Fields raster layer (optional)
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    outputPrismaL2C_panErrorMatrix: Output PAN Error Matrix raster layer (optional)
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputPrismaL2C_spectralCube: <outputRaster>
+    	Output VNIR/SWIR Cube raster layer
+    outputPrismaL2C_panCube: <outputRaster>
+    	Output PAN raster layer
+    outputPrisma2C_spectralErrorMatrix: <outputRaster>
+    	Output VNIR/SWIR Error Matrix raster layer
+    outputPrismaL2C_spectralGeolocationFields: <outputRaster>
+    	Output VNIR/SWIR Geolocation Fields raster layer
+    outputPrismaL2C_spectralGeometricFields: <outputRaster>
+    	Output VNIR/SWIR Geometric Fields raster layer
+    outputPrismaL2C_panGeolocationFields: <outputRaster>
+    	Output PAN Geolocation Fields raster layer
+    outputPrismaL2C_panErrorMatrix: <outputRaster>
+    	Output PAN Error Matrix raster layer
+    
+    

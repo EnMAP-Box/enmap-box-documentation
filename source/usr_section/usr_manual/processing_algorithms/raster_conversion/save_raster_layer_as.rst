@@ -6,6 +6,8 @@ Save raster layer as
 
 Saves a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ as a GeoTiff, ENVI or VRT file. This is a slimmed down version of the more powerful "Translate raster `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_" algorithm.
 
+.. include:: ../../processing_algorithms_includes/raster_conversion/save_raster_layer_as.rst
+
 **Parameters**
 
 

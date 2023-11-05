@@ -6,6 +6,8 @@ Fit FastICA
 
 FastICA: a fast algorithm for Independent Component Analysis.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_fastica.rst
+
 **Parameters**
 
 

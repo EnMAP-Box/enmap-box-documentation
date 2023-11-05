@@ -7,6 +7,9 @@ Fit MaxAbsScaler
 Scale each `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ by its maximum absolute value.
 This `estimator <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-estimator>`_ scales and translates each feature individually such that the maximal absolute value of each feature in the training set will be 1.0.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_maxabsscaler.rst
+
+
 **Parameters**
 
 

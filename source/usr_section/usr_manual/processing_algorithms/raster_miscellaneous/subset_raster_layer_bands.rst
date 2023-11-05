@@ -6,6 +6,8 @@ Subset raster layer bands
 
 Subsets `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ and stores the result as a VRT file.This is a slimmed down version of the more powerful "Translate raster `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_" algorithm.
 
+.. include:: ../../processing_algorithms_includes/raster_miscellaneous/subset_raster_layer_bands.rst
+
 **Parameters**
 
 
