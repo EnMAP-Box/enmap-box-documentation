@@ -113,7 +113,7 @@ suggest new entries!
   * default OSGeo4W root directory :guilabel:`Next`
   * local temp directory :guilabel:`Next`
   * direct connection :guilabel:`Next`
-  * Select downloadsite ``https://download.osgeo.ogr`` :guilabel:`Next`
+  * Select downloadsite ``https://download.osgeo.org`` :guilabel:`Next`
 
   Then use the textbox to filter, select and install the following packages (see video below for help):
 

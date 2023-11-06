@@ -15,7 +15,7 @@ See `wikipedia <https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter>`_ f
 
 
 :guilabel:`Kernel` [string]
-    Python code. See `scipy.signal.savgol_coeffs <http://scipy.github.io/devdocs/generated/scipy.signal.savgol_coeffs.html#scipy.signal.savgol_coeffs>`_ for information on different parameters.
+    Python code. See `scipy.signal.savgol_coeffs <https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.savgol_coeffs.html#scipy-signal-savgol-coeffs>`_ for information on different parameters.
 
     Default::
 
