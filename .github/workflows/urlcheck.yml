@@ -1,0 +1,34 @@
+name: Check URLs
+
+on:
+  push:
+    branches:
+      - main
+      - 'releases/**'
+      - urlcheck
+  pull_request:
+    branches:
+      - main
+      - 'releases/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: urls-checker
+      uses: urlstechie/urlchecker-action@master
+      with:
+        file_types: .md,.py,.rst
+
+        # Choose whether to include file with no URLs in the prints.
+        print_all: false
+
+        timeout: 5
+
+        retry_count: 3
+
+        verbose: true
+
+        force_pass : false
