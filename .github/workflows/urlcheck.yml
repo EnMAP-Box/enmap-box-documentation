@@ -26,4 +26,4 @@ jobs:
 
         exclude_files: /scripts/create_external_link_file.py,/source/dev_section/external_links.rst
 
-        exclude_patterns: https://enmap-box.readthedocs.io/en/latest/general/glossary.html
+        exclude_patterns: https://enmap-box.readthedocs.io/en/latest/general/glossary.html,https://tiles.wmflabs.org,https://fbinter.stadt-berlin.de/fb/wfs
