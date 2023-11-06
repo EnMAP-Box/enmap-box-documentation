@@ -24,4 +24,4 @@ jobs:
 
         force_pass : false
 
-        exclude_files: create_external_link_file.py, external_links.rst
+        exclude_files: /scripts/create_external_link_file.py,/source/dev_section/external_links.rst
