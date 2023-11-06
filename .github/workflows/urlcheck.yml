@@ -1,15 +1,6 @@
 name: Check URLs
 
-on:
-  push:
-    branches:
-      - main
-      - 'releases/**'
-      - urlcheck
-  pull_request:
-    branches:
-      - main
-      - 'releases/**'
+on: [push, pull_request]
 
 jobs:
   build:
@@ -32,3 +23,5 @@ jobs:
         verbose: true
 
         force_pass : false
+
+        exclude_files: create_external_link_file.py, external_links.rst
