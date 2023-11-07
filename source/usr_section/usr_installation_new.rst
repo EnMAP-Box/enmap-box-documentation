@@ -50,7 +50,7 @@ In case you have an outdated QGIS version, make sure to install a current versio
 
    .. code-block:: batch
 
-      pip install --upgrade --user -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/osgeo4w/requirements_osgeo4w.txt/requirements_osgeo4w.txt
+      pip install --upgrade --user -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/osgeo4w/requirements_osgeo4w.txt
 
 #. Open QGIS from the start menu.
 
