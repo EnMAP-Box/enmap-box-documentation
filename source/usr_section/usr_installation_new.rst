@@ -22,19 +22,20 @@ QGIS Installation on Windows
 
 On a Windows system you have multiple options to install QGIS.
 
-Option A: Install QGIS via OSGeo4W
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Option A: Install QGIS via the official Standalone/OSGeo4W Installer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Install QGIS
 ...............
 
 Install either the current QGIS Long Term Release (LTR) or the current QGIS Latest Release (LR) to run the latest EnMAP-Box.
-You can `get the QGIS MSI Installer here <https://www.qgis.org/en/site/forusers/download.html>`_.
-It is recommended to use the MSI installer, instead of the Network Installer.
+You can `get the QGIS Standalone Installer here <https://www.qgis.org/en/site/forusers/alldownloads.html#windows>`_.
+For beginners, we recommend using the standalone installers.
+More advanced QGIS users can use OSGeo4W installer.
 
 In case you already have the current QGIS LTR or LR version installed, you can skip this step.
 
-In case you have an outdated QGIS version, make sure to reinstall.
+In case you have an outdated QGIS version, make sure to install a current version.
 
 2. Install Python Dependencies
 ..............................
@@ -53,8 +54,8 @@ In case you have an outdated QGIS version, make sure to reinstall.
 
 #. Open QGIS from the start menu.
 
-Option B: Install QGIS via Mambaforge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Option B: Install QGIS via the Mambaforge Package Manager
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Install Miniforge
 ....................
