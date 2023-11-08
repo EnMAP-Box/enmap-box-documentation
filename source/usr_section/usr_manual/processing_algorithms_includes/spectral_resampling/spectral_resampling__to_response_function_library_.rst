@@ -4,6 +4,6 @@ Usage:
 
 2. Select a raster layer to process and a response function library, then click :guilabel:`run`.
 
-    .. figure:: ./img/prisma.png
+    .. figure:: ./img/resonse_function.png
        :align: center
 

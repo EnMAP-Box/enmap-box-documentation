@@ -4,6 +4,6 @@ Usage:
 
 2. Select a training dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: ./img/random forest.png
+    .. figure:: ./img/random_forest.png
        :align: center
 

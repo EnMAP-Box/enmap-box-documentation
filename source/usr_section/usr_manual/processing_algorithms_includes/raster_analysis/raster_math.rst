@@ -4,5 +4,5 @@ Usage:
 
 2. Create a code or chose a preset under :guilabel:`Code Snippets`, then click :guilabel:`run`.
 
-    .. figure:: ./img/raster math.png
+    .. figure:: ./img/raster_math.png
        :align: center
