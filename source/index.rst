@@ -61,6 +61,7 @@ Related websites
 
 
     usr_section/usr_installation.rst
+    usr_section/usr_installation_new.rst
     usr_section/usr_gettingstarted.rst
     usr_section/usr_cookbook/usr_cookbook.rst
     usr_section/usr_manual/usr_manual.rst
