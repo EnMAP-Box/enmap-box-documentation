@@ -1,46 +1,10 @@
-.. _Import Landsat L2 product:
+Usage:
 
-*************************
-Import Landsat L2 product
-*************************
+1. Open the algorithm from the processing toolbox.
 
-Prepare a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ from the given product. `Wavelength <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-wavelength>`_ information is set and data is scaled into the 0 to 1 range.Supports Landsat 4 to 9, collection 2. 
+2. Select the metadata file, then click :guilabel:`run`.
 
-**Parameters**
+    .. figure:: ./img/landsat_l2.png
+       :align: center
 
-
-:guilabel:`Metadata file` [file]
-    The *.MTL.txt metadata file associated with the product.
-    Instead of executing this algorithm, you may drag&drop the metadata MTL.txt file directly from your system file browser a) onto the EnMAP-Box map view area, or b) onto the Sensor Product Import panel.
-
-**Outputs**
-
-
-:guilabel:`Output raster layer` [rasterDestination]
-    Raster file destination.
-
-**Command-line usage**
-
-``>qgis_process help enmapbox:ImportLandsatL2Product``::
-
-    ----------------
-    Arguments
-    ----------------
-    
-    file: Metadata file
-    	Argument type:	file
-    	Acceptable values:
-    		- Path to a file
-    outputLandsatL2Raster: Output raster layer
-    	Argument type:	rasterDestination
-    	Acceptable values:
-    		- Path for new raster layer
-    
-    ----------------
-    Outputs
-    ----------------
-    
-    outputLandsatL2Raster: <outputRaster>
-    	Output raster layer
-    
-    
+3. The output raster can be found under :guilabel:`Rasters` in the :guilabel:`Data Source Panel`

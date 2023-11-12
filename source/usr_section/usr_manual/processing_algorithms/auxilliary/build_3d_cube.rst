@@ -6,6 +6,9 @@ Build 3D Cube
 
 Build an 3D Cube visualization of a (spectral) `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_, consisting of two individually stylable cube face and cube side `layers <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_. 
 
+.. include:: ../../processing_algorithms_includes/auxilliary/build_3d_cube.rst
+
+
 **Parameters**
 
 

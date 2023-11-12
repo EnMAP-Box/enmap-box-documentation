@@ -7,6 +7,9 @@ Import EMIT L2A product
 Prepare a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ from the given product. `Wavelength <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-wavelength>`_ and FWHM information is set and data is scaled into the 0 to 1 range.
 EMIT website: `https://earth.jpl.nasa.gov/emit/ <https://earth.jpl.nasa.gov/emit/>`_
 
+.. include:: ../../processing_algorithms_includes/import_data/import_emit_l2a_product.rst
+
+
 **Parameters**
 
 
