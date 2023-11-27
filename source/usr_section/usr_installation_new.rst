@@ -104,13 +104,13 @@ Install QGIS as described here https://www.qgis.org/de/site/forusers/alldownload
 
 #. Make sure the following packages are installed using the system package manager:
 
-   .. code-block:: bash
+   .. code-block:: console
 
       sudo apt install python3-pip python3-venv pyqt5-dev-tools
 
 #. **(optional)** for some EnMAP-Box tools you may also need the following packages:
 
-   .. code-block:: bash
+   .. code-block:: console
 
       sudo apt install python3-h5py python3-pyqt5.qtopengl python3-netcdf4
 
@@ -125,25 +125,25 @@ Install QGIS as described here https://www.qgis.org/de/site/forusers/alldownload
 
 #. Create a `virtual python environment <https://docs.python.org/3/library/venv.html>`_ in a directory of your choice (e.g. ``~/.virtualenvs/enmapbox``):
 
-   .. code-block:: bash
+   .. code-block:: console
 
       python3 -m venv --system-site-packages ~/.virtualenvs/enmapbox
 
 #. Activate the environment:
 
-   .. code-block:: bash
+   .. code-block:: console
 
       source ~/.virtualenvs/enmapbox/bin/activate
 
 #. Install missing python dependencies inside the virtual environment:
 
-   .. code-block:: bash
+   .. code-block:: console
 
-      python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements.txt
+      python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements_ubuntu.txt
 
 #. Start QGIS (from the activated environment, see 6.):
 
-   .. code-block:: bash
+   .. code-block:: console
 
       qgis
 
@@ -163,7 +163,7 @@ Install QGIS as described here https://www.qgis.org/de/site/forusers/alldownload
       Terminal=false
       Icon=qgis
       Type=Application
-      Categories=Education;Science;Geography
+      Categories=Education;Science;Geography;
 
 Option B: Install QGIS via conda/mamba
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
