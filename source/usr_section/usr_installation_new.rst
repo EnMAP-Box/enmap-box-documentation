@@ -83,10 +83,12 @@ You can `get the Miniforge Windows Installer here <https://conda-forge.org/minif
       activate enmapbox
       qgis
 
+|
+
 QGIS Installation on Linux (Ubuntu)
 -----------------------------------
 
-The following instructions were written for and tested on Ubuntu (23.10). They should also work "as-is" for other Debian-based
+The following instructions were written for and tested on Ubuntu (22.04 & 23.10). They should also work for other Debian-based
 distributions.
 
 Option A: Install QGIS via the official repository
@@ -127,7 +129,7 @@ Install QGIS as described here https://www.qgis.org/de/site/forusers/alldownload
 
    .. code-block:: console
 
-      python3 -m venv --system-site-packages ~/.virtualenvs/enmapbox
+      python3 -m venv --upgrade-deps --system-site-packages ~/.virtualenvs/enmapbox
 
 #. Activate the environment:
 
@@ -135,7 +137,9 @@ Install QGIS as described here https://www.qgis.org/de/site/forusers/alldownload
 
       source ~/.virtualenvs/enmapbox/bin/activate
 
-#. Install missing python dependencies inside the virtual environment:
+   Now you should see the environment name in brackets at the beginning of your prompt, e.g. ``(enmapbox)``.
+
+#. Install missing python dependencies with pip inside the virtual environment:
 
    .. code-block:: console
 
@@ -150,7 +154,7 @@ Install QGIS as described here https://www.qgis.org/de/site/forusers/alldownload
 .. hint::
 
    You can add a shortcut to your applications menu, so you do not have to open a Terminal and type
-   the above mentioned commands everytime you want to start QGIS with the EnMAP-Box environment:
+   the above mentioned commands (6. & 8.) everytime you want to start QGIS with the EnMAP-Box environment:
 
    Create the file :file:`~/.local/share/applications/enmapbox.desktop` with the following content (if you used another installation path
    in the instructions above change accordingly):
@@ -164,6 +168,8 @@ Install QGIS as described here https://www.qgis.org/de/site/forusers/alldownload
       Icon=qgis
       Type=Application
       Categories=Education;Science;Geography;
+
+|
 
 Option B: Install QGIS via conda/mamba
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,6 +191,11 @@ of course also use conda, just swap ``micromamba`` with ``conda`` in the instruc
       wget https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
       micromamba env create -n enmapbox -f ./enmapbox_full_longterm.yml
       rm -v ./enmapbox_full_longterm.yml
+
+   .. note::
+
+      There are `multiple environment files available <https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`_,
+      depending on whether you want to install the latest qgis version or the long-term release.
 
 #. Activate the created "enmapbox" environment and open QGIS by executing:
 
