@@ -77,18 +77,6 @@ FAQ
 This is a list of Frequently Asked Questions about the EnMAP-Box. Feel free to
 suggest new entries!
 
-.. How do I...
-.. -----------
-
-
-* **How to install QGIS without administrative rights?**
-
-    Yes, it is possible to install and run QGIS (and the EnMAP-Box) without admin rights.
-    You just need to download and install `Conda`_, where you can install QGIS as described
-    :ref:`here <dev_installation_create_conda_qgis>`.
-
-
-
 .. _faq_no_pip:
 
 * **Installation: no module named pip**
@@ -122,7 +110,9 @@ suggest new entries!
 
 
   Click on the |osgeoinstaller| symbol once, which should usually change the *Skip* setting to installing the most recent
-  version. Only **AFTER** having selected both packages, click :guilabel:`Next`.
+  version.
+
+  Only **AFTER** having selected both packages, click :guilabel:`Next`.
 
   .. raw:: html
 
@@ -130,22 +120,6 @@ suggest new entries!
      <p><i>Demonstration of package selection in the Setup</i></p></div>
 
   Click :guilabel:`Finish` when the installation is done.
-
-....
-
-
-.. _faq_requirements:
-
-* **Python package installation with requirements.txt does not work**
-
-  Usually, all dependencies can be installed with one line:
-
-  .. code-block:: batch
-
-     python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
-
-  If the method above did not work for some reason, try installing the packages listed in the :file:`requirements.txt` line by line, e.g.
-  ``python3 -m pip install numpy`` and so on.
 
 ....
 
@@ -175,46 +149,30 @@ suggest new entries!
 
 ....
 
-
 * **Image Cube tool missing qtopengl / Missing OpenGL / QtOpenGL packages**
 
   On some systems we experiences problems related to a missing OpenGL support (e.g `Issue #299 <https://bitbucket.org/hu-geomatics/enmap-box/issues/299/image-cube-qt-issues-on-linux>`_)
 
   1. Ensure that you have installed OpenGL drivers that support your graphic card
-  2. Ensure that `PyOpenGL <https://pyopengl.sourceforge.net>`_  is installed::
-     $ python3 -m pip install PyOpenGL
+  2. Ensure that `PyOpenGL <https://pyopengl.sourceforge.net>`_  is installed (``python3 -m pip install PyOpenGL``).
+
   On Linux, it might be necessary to install the Python bindings for QtOpenGL in order to start the Image Cube tool.
 
   .. code-block:: bash
 
-     sudo apt-get install python3-pyqt5.qtopengl
-
-
-....
-
-* **Error loading the plugin**
-
-  In case of missing requirements you should see an error message like this
-
-  .. image:: ../img/missing_package_warning.png
-
-  In that case please make sure you :ref:`installed all missing packages <install-python-packages>`,
-  in this example ``pyqtgraph`` and ``sklearn`` are missing.
-
+     sudo apt install python3-pyqt5.qtopengl
 
 ....
-
 
 * **Exception: Unable to find full path for "dockpanel.ui". Make its directory known to UI_DIRECTORIES**
 
   It's likely that an update of the EnMAP-Box plugin failed to remove a previous version properly.
   The following workaround might help:
 
-  1. Navigate into the active QGIS profile folder. It can be opened via Settings >  User Profiles > Open Active Profile Folder
+  1. Navigate into the active QGIS profile folder. It can be opened via :menuselection:`Settings -->  User Profiles --> Open Active Profile Folder`
   2. Close QGIS. This is necessary to avoid any file handles on files or folders of the EnMAP-Box plugin.
-  3. Delete the EnMAP-Box plugin folder manually, e.g. `default/python/plugins/enmapboxplugin` if the active QGIS profile is 'default'.
+  3. Delete the EnMAP-Box plugin folder manually, e.g. :file:`default/python/plugins/enmapboxplugin` if the active QGIS profile is *default*.
   4. Restart QGIS and install the most-recent EnMAP-Box version
-  This description was taken from https://bitbucket.org/hu-geomatics/enmap-box/issues/304/exception-unable-to-find-full-path-for
 
 |
 
