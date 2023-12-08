@@ -16,7 +16,7 @@ About
 
 Satellites observe the oceans, coasts and inland waters. Water quality parameters can be estimated from ocean colour
 using the in-water algorithm ONNS, which has been developed at the `Institute of Coastal Research at the Helmholtz-Zentrum
-Geesthacht <https://hzg.de/institutes_platforms/coastal_research/operational_systems/remote_sensing/index.php.en>`_.
+Geesthacht <https://hereon.de/institutes/carbon_cycles/optical_oceanography/index.php.de>`_.
 The EnMAP-Box is a free and open source plug-in for QGIS to visualize
 and process satellite remote sensing data with special emphasis to the hyperspectral `EnMAP <https://www.enmap.org/>`_ sensor.
 The following tutorial describes the usability and functionality of the Python-based ONNS processing tool in the EnMAP-Box.
@@ -165,7 +165,7 @@ Development Lead
 
 Martin Hieronymi (martin.hieronymi@hzg.de)
 
-`Institute of Coastal Research, Helmholtz-Zentrum Geesthacht <https://hzg.de/institutes_platforms/coastal_research/operational_systems/remote_sensing/index.php.en>`_
+`Institute of Coastal Research, Helmholtz-Zentrum Geesthacht <https://hereon.de/institutes/carbon_cycles/optical_oceanography/index.php.de>`_
 
 
 Contributors
@@ -180,7 +180,7 @@ Funding
 -------
 
 .. |hzg| image:: img/hzg_rgb_mitzusatz_in_e_300dpi.jpg
-   :target: https://hzg.de/institutes_platforms/coastal_research/operational_systems/remote_sensing/index.php.en
+   :target: https://hereon.de/institutes/carbon_cycles/optical_oceanography/index.php.de
 
 .. |esa| image:: img/03_logo_dark_blue.bmp
 
