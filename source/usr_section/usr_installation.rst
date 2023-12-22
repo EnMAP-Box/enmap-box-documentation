@@ -46,11 +46,23 @@ In case you have an outdated QGIS version, make sure to install a current versio
 
    .. image:: /img/windows_start_osgeo.png
 
-#. Install Python dependencies by executing:
+#. Install Python dependencies via PIP by executing:
 
    .. code-block:: batch
 
       pip install --upgrade --user -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/osgeo4w/requirements_osgeo4w.txt
+
+#. (Optional) Install **HDF5** dependency via the OSGeo4W installer:
+
+    The **HDF5** dependency is only required for importing PRISMA products. Feel free to skip this step.
+
+    Start the OSGeo4W installer by executing:
+
+    .. code-block:: batch
+
+       setup
+
+    Search for **h5py**, select the latest version and finish the installation.
 
 #. Open QGIS from the start menu.
 
