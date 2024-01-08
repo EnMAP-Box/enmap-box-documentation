@@ -1,35 +1,23 @@
 ******************************************************************
-EnGeoMAP 3.1 Tutorial
+EnGeoMAP 3.2 Manual
 ******************************************************************
 
+**EnGeoMAP 3.2 the EnMAP Geological Mapper for Mineral Classification (EnGeoMAP)**
 
-**EnGeoMAP 3.1 the EnMAP Geological Mapper for Mineral Classification (EnGeoMAP)**
+Authors: Helge L. C. Daempfling & Nicole Köllner
 
-Authors: Helge L. C. Daempfling, Nicole Köllner, Saeid Asadzadeh
-
-Contributions: Christian Mielke, Friederike Koerting, Friederike Klos,
+Contributions: Christian Mielke, Saeid Asadzadeh, Friederike Koerting, Friederike Klos,
 Christian Rogass, Nina K. Boesche, Agnieszka Kuras, Christopher Loy
 
-**Introduction to EnGeoMAP 3.1**
+**Introduction to EnGeoMAP 3.2**
 ---------------------------------
 
-The EnMAP geological mapper (EnGeoMAP), as part of the EnMAP Box, is
-an expert-system-based tool for the processing and characterization
-of geologic surface cover types from hyperspectral data in general
-and EnMAP satellite data in particular. EnGeoMAP 3.1 is
-based on the EnGeoMAP 2.0 algorithm developed by Christian Mielke (Mielke et al., 2016).
+The EnMAP geological mapper (EnGeoMAP), as part of the EnMAP Box is an expert-system-based tool for the processing and characterization of geologic surface cover types from hyperspectral data in general and EnMAP satellite data in particular. The EnGeoMAP 3.2 algorithm is based on EnGeoMAP 2.0 developed by Christian Mielke (Mielke et al., 2016). 
 
-EnGeoMAP 3.1 is optimized for Windows 10 and 11 and the Windows version of QGIS (LTS).
+EnGeoMAP 3.2 is optimized for Windows 10 and 11 and the Windows version of QGIS (LTS) but also runs under Linux and Mac OS.
 
-The software requires a hyperspectral reflectance data cube, a
-spectral library with user-defined endmembers, and a user-supplied
-color scheme as inputs to run. The software then classifies the
-hyperspectral data based on the provided endmembers and represents it
-according to the supplied color scheme.
-
-EnGeoMAPhas been primarily designed for EnMAP data, yet it works for
-most full-range hyperspectral sensor suites, provided that VNIR and
-SWIR data are all available.
+The software requires a hyperspectral reflectance data cube, a spectral library with user-defined endmembers, and a user-supplied color scheme as inputs to run. The software classifies the hyperspectral data based on the provided endmembers and outputs classification maps according to the supplied color scheme. 
+EnGeoMAP has been primarily designed for EnMAP data, yet it works for most full-range hyperspectral sensor suites, given that the data covers the VNIR and SWIR range.
 
 
 1.   Data Preparation and Requirements
@@ -39,238 +27,223 @@ SWIR data are all available.
 *Hyperspectral Data:*
 =====================================
 
-The hyperspectral data cubes must be in the Band Sequential (BSQ)
-format conforming to L3Harris ENVI header file information (.hdr)
+EnGeoMAP requires a hyperspectral data cube in Band Sequential (BSQ) format conforming to L3Harris ENVI header file information (.hdr)
+-	Overlapping bands need to be removed from the dataset i.e., the wavelength succession vector in the header file needs to be strictly ascending. 
 
-- Overlapping bands need to be removed from the dataset i.e., the wavelength succession vector in the header files need to be strictly ascending.
+-	Clipping and interpolation is required in both of the strong water vapor residuals at 940 nm and at 1130 nm to assure an artifact-reduced analysis result.
 
-- Clipping and interpolation are required in both strong water vapor residuals at 940 nm and 1130 nm to assure an artifact-reduced analysis result.
+-	Nanometer (nm) is the recommended wavelength unit and the floating point or unsigned integer (ranging from 0-10000 as is common for many imaging spectrometers) is recommended for the reflectance values.
 
-- Nanometer (nm) is the recommended wavelength unit, and the floating-point or unsigned integer (ranging from 0-10000, as is common for many imaging spectrometers) is recommended for the reflectance values.
+-	Adaptive filtering is strongly recommended to further reduce noise and artifacts from reflectance data.
 
-- Adaptive filtering is suggested to further reduce noise and artifacts from reflectance data.
 
 =====================================
-*Spectral Library Files:*
+*Spectral Library File:*
 =====================================
 
-The spectral library files also must be in Band Sequential (BSQ)
-format according to the L3Harris ENVI header file information (.hdr).
-The necessary spectral library files can be prepared with the EnMAP
-Box spectral library wizard or with any other software that is able
-to write spectral library files in band sequential (BSQ) format. The
-entries of the spectral library are plotted according to the RGB
-color code from the CSV file (see the RGB Color Scheme CSV file
-section).
+The spectral library file has to be in Band Sequential (BSQ) (.sli) format with the according L3Harris ENVI header file information (.hdr). The necessary spectral library file can be prepared with the EnMAP Box spectral library wizard or with any other software that is able to write spectral library files in band sequential (BSQ) format. The entries of the spectral library are plotted according to the RGB color code from the CSV file (see the RGB Color Scheme CSV file section).
 
-- Overlapping bands need to be removed from the dataset i.e., the wavelength succession vector in the header files need to be strictly ascending.
+-	Overlapping bands need to be removed from the dataset i.e. the wavelength succession vector in the header file needs to be strictly ascending.
 
-- For field-measured spectral libraries: Clipping and interpolation are required both strong water vapor residuals at 940 nm and at 1130 nm to assure an artifact-reduced analysis result.
+-	For field-measured spectral libraries: Clipping and interpolation is required in both of the strong water vapor residuals at 940 nm and at 1130 nm to assure an artifact-reduced analysis result.
+ 
+-	Nanometer (nm) is recommended as wavelength unit, as well as float or unsigned integer from 0-10000 (standard for many imaging spectrometers) for the reflectance values.
 
-- Nanometer (nm) is recommended as wavelength unit, as well as float or an unsigned integer from 0-10000 (standard for many imaging spectrometers) for the reflectance values.
+-	Adaptive filtering is suggested to further reduce noise and artifacts.
 
-- Adaptive filtering is suggested to further reduce noise and artifacts.
+-	The spectral library should be resampled to the spectral resolution of the reflectance data cube for the two datasets to match spectrally.
 
-- The spectral library should be resampled to the spectral resolution of the reflectance data cube for the two datasets to match spectrally.
 
 =====================================
 *RGB Color Scheme CSV file:*
 =====================================
 
-The RGB (R\ ed, G\ reen, B\ lue) color scheme needs to be provided by
-the user in a CSV file format (UTF-8). The entries have to be in the
-right order and matching to the entries of the spectral library.
-Through the CSV color file, the user can choose the colors with which
-EnGeoMAP classifies the according library entries in the
-hyperspectral image. There are several online tools available to
-visualize RGB color code for a preview of the chosen colors. CSV
-files can either be edited with a standard text editor (Figure 1) or
-spreadsheet editor (Figure 2).
+The RGB (Red, Green, Blue) color scheme needs to be provided by the user in a .csv file format (UTF-8). The entries have to be in the right order and matching to the entries of the spectral library. Through the CSV color file, the user can choose the colors with which EnGeoMAP classifies the according library entries in the hyperspectral image. There are several online tools available to visualize RGB color code for a preview of the chosen colors. CSV files can either be edited with a standard text editor (Figure 1) or spreadsheet editor (Figure 2).
 
-.. figure::  img/fig1.png
+.. figure::  img/fig1A.png
 
-Figure 1: Color scheme CSV file example opened in a text editor. Here the legend includes four different endmembers.
+Figure 1: Color scheme CSV file example opened in a text editor. Here the legend includes nine different endmembers.
 
-.. figure::  img/fig2.png
+.. figure::  img/fig2A.png
 
-Figure 2: Color scheme CSV file example opened in a spreadsheet
-editor. Here the legend includes four different endmembers.
+Figure 2: Color scheme CSV file example opened in a spreadsheet editor. Here the legend includes nine different endmembers.
 
 =====================================
 *Example / Test Data:*
 =====================================
 
-Test data for EnGeoMAP can be downloaded here:
+Test data for EnGeoMAP 3.2 can be found here:
 
-' https://nextcloud.gfz-potsdam.de/s/oWF6GHdRGBk4e6y ' 
+' https://nextcloud.gfz-potsdam.de/s/nFAq8jXGf8r9NwL ' 
 
-The dataset contains a hyperspectral EO-1 Hyperion image data cube
-which was acquired over the Gamsberg Mine (South Africa) prior to its
-opening, a field-based spectral library, and a CSV color file defining the color codes
-of each endmember for visual representation.
+The dataset contains a subset of a hyperspectral EnMAP image data cube (Figure 3) which was acquired in December 2022 covering the Gamsberg deposit and the Big Syncline of the Aggeneys deposit in Namaqualand (South Africa), an associated spectral library of ground truth data (Figure 4), and a CSV color file (Figure 1 and 2) defining the color codes of each endmember (library entries) for visual representation. 
+
+.. figure::  img/fig3A.png
+
+Figure 3:  EnMAP image cube covering parts of the Gamsberg Zinc mine (east) and the Big Syncline (north) of the Aggeneys deposit (Namaqualand, South Africa). R: 641 nm, G: 550 nm, B:458 nm.P.
+
+
+.. figure::  img/fig4A.png
+
+Figure 4: Locations of spectral field sampling.
+
 
 2. How to use/run the EnGeoMAP toolbox
 --------------------------------------
 
 
-Figure 3 shows how you get access to the EnGeoMAP toolbox.
+Figure 5 shows how you get access to the EnGeoMAP toolbox.
 
-.. figure::  img/fig3.png
+.. figure::  img/fig5A.png
 
-Figure 3: Access to EnGeoMAP.
+Figure 5: Access to EnGeoMAP.
 
 
-The EnMAP-Box provides a graphical user interface (GUI) for EnGeoMAP
-3.1 (Figure 4). The three main input fields for the location of the
-user input files comprises:
+The EnMAP-Box provides a graphical user interface (GUI) for EnGeoMAP 3.2 (Figure 6). The three main input fields for the location of the user input files comprise:
 
-- The hyperspectral image data
+-	The hyperspectral image data 
 
-- The spectral library file
+-	The spectral library file
 
-- The CSV color file
+-	The CSV color file
 
-Note: For the hyperspectral data and the library file only the path
-to the main files are required. The header (.hdr) files need to be in
-the same folder as the reflectance data files and are loaded
-automatically by the software. Choosing the header files in the data
-selection will lead to an error.
 
-The user can choose the minimum reflectance threshold in the VNIR and
-SWIR regions. The values should be chosen depending on the noisiness
-of the data. They should be as low as possible for data with a good
-SNR. - Standard settings are recommended according to Figure 5.
+**Please Notice: For the image data and the library file the path to the main files are required. The header (.hdr) files need to be in the same folder and are loaded automatically by the software. Choosing the (.hdr) header files in the data selection will lead to an error!**
 
-The minimum fit threshold sets the lower cutoff value for the minimum
-acceptable valid spectral correlation value between the image
-spectrum and the library spectra. Values below this threshold are set
-to zero.
+The user can choose the minimum reflectance threshold in the VNIR and SWIR regions. The values should be chosen depending on the noisiness of the data. They should be as low as possible for data with a good SNR.
 
-For the unmixing data products, the maximum number of endmembers
-needs to be set by the user. The default is set to 10 (see Results
-section). This number should not exceed the total number of
-endmembers embedded in the spectral library file.
+The minimum fit threshold sets the lower cutoff value for the minimum acceptable valid spectral correlation value between the image spectrum and the library spectra. Values below this threshold are set to zero.
 
-Processing is started by pressing the OK button and then pressing OK
-in the subsequent notification window.
+For the unmixing data products, the maximum number of endmembers needs to be set by the user. The default is set to 10 (see Results section). This number should not exceed the total number of endmembers embedded in the spectral library file.
 
-A status indicator in the lower right corner shows if the software is
-still processing the data or is ready to process new data.
+**Note: For the test data, the following values produce the best results:**
+**VNIR Reflectance Threshold: 				0.02**
+**SWIR Reflectance Threshold: 				0.03**
+**Minimum Fit Threshold Weighted Fitting: 		0.3**
+**Maximum Number of Endmembers in Unmixing: 	9**
 
-.. figure::  img/fig4_0.png
+Processing is started by pressing the OK button and then pressing OK in the subsequent notification window.
 
-Figure 4: The graphical user interface (GUI) of EnGeoMAP 3.1.
+A status indicator in the lower right corner shows if the software is still processing the data or is ready to process new data.
+
+
+.. figure::  img/fig6A.png
+
+Figure 6: The graphical user interface (GUI) of EnGeoMAP 3.2.
 
 
 4. The Results
 --------------
 
-The preprocessing module within EnGeoMAP extracts the characteristic
-absorption features of the input spectra (Figure 5). These features
-are then used in a weighted fitting operation in the spectral module
-to calculate the material similarity scores of the unknown pixel
-spectrum compared to the reference library. According to those fit
-values, a user defined minimum fit threshold may now be applied to
-only use those library spectra in a B\ ounded V\ alue L\ east
-S\ quares (BVLS) unmixing meeting the user-defined threshold (see
-Figure 4 option: Minimum Fit Threshold Weighted Fitting). The
-resulting unmixing as well as the correlation data cube are then
-sorted in descending order.
+The preprocessing module within EnGeoMAP extracts the characteristic absorption features of the input spectra (Figure 7). These features are then used in a weighted fitting operation in the spectral module to calculate the material similarity scores of the unknown pixel spectrum compared to the reference library. According to those fit values, a user defined minimum fit threshold may now be applied to only use those library spectra in a B\ ounded V\ alue L\ east S\ quares (BVLS) unmixing meeting the user-defined threshold (see Figure 6 option: Minimum Fit Threshold Weighted Fitting). The resulting unmixing as well as the correlation data cube are then sorted in descending order.
 
-The first band of each of the sorted results is then used in the
-spatial module together with the CSV file to provide a color-coded
-best fit (highest correlation score) material map and highest
-abundance (highest BVLS fraction) map.
+The first band of each of the sorted results is then used in the spatial module together with the CSV file to provide a color-coded best fit (highest correlation score) material map and highest abundance (highest BVLS fraction) map. 
 
-.. figure::  img/fig5.png
+.. figure::  img/fig7A.png
 
-Figure 5: Basic processing workflow for EnGeoMAP 3.1 with modules,
-input and output highlighted.
+Figure 7: Basic processing workflow for EnGeoMAP 3.2 with modules, input and output highlighted.
 
-EnGeoMAP3.1 provides  6 data products which are identifiable by their
-suffixes to the original filename (basename). See Table 1 for an
-overview of the data products and suffixes.
+EnGeoMAP 3.2 provides 6 data products which are identifiable by their suffixes to the original filename (basename). See Table 1 for an overview of the data products and suffixes.
 
-+-----------------------------------+-----------------------------------+
-| *\_correlation_result*            | Raw correlation scores from the   |
-|                                   | spectral module for               |
-|                                   | characteristic absorption         |
-|                                   | features.                         |
-|                                   |                                   |
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
-| *\_best_matches_best_fit_coleur*  | Results relating to the highest   |
-|                                   | correlation score. The data       |
-|                                   | product is based on sorted        |
-|                                   | correlation scores (the first     |
-|                                   | band contains the highest score   |
-|                                   | values, the second the second     |
-|                                   | highest scores and so on)         |
-|                                   |                                   |
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
-|                                   | The material / geological         |
-| *\_best_fit_coleur_class_geotiff* | classification thematic map       |
-|                                   |                                   |
-|                                   | Standard RGB color maps assigned  |
-|                                   | from the sorted Band 1 of the     |
-|                                   | best_matches results using the    |
-|                                   | .csv colorfile. It can be         |
-|                                   | directly viewed with the image    |
-|                                   | viewer of your choice.            |
-|                                   |                                   |
-|                                   | Class images,can be used for a    |
-|                                   | quick legend generation within    |
-|                                   | the QGIS map composer.            |
-|                                   |                                   |
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
-| *\_abundance_result*              | Raw B\ ounded V\ alue L\ east     |
-|                                   | S\ quares (BVLS) unmixing scores  |
-|                                   | from the spectral module for      |
-|                                   | characteristic absorption         |
-|                                   | features.                         |
-|                                   |                                   |
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
-| *\_abundance_unmix_best_unmix*    | Highest abundance (highest BVLS   |
-| *_coleur*                         | fraction) sorted color map.       |
-|                                   |                                   |
-|                                   |                                   |
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
-| **\_abundance_unmix_\_            | The (BVLS unmixing) abundance map |
-| best_unmix_coleur_class_geotiff** | result.                           |
-|                                   |                                   |
-|                                   | Standard RGB color maps assigned  |
-|                                   | from the sorted Band 1 of the     |
-|                                   | best_unmix (highest BVLS          |
-|                                   | fraction) results using the .csv  |
-|                                   | color file. It can be directly    |
-|                                   | viewed with the image viewer of   |
-|                                   | your choice.                      |
-|                                   |                                   |
-|                                   | Class images,can be used for a    |
-|                                   | quick legend generation within    |
-|                                   | the QGIS map composer.            |
-|                                   |                                   |
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
+
+Table 1: EnGeoMAP 3.2 products and their meaning.
+
+   +-----------------------------------------+----------------------------+
+   | **EnGeOMAP 3.2 data product**           | **Product description**    |
+   |                                         |                            |
+   | **basename**                            |                            |
+   +=========================================+============================+
+   | *\_feature_fitting_correlation_scores*  | Raw correlation scores     |
+   |                                         | from the spectral module   |
+   |                                         | for characteristic         |
+   |                                         | absorption features.       |
+   |                                         |                            |
+   |                                         | ENVI standard format with  |
+   |                                         | bsq interleave.            |
+   +-----------------------------------------+----------------------------+
+   | *\_feature_fitting_highest_correlation  | The material / geological  |
+   | _result*                                | classification thematic    |
+   |                                         | map                        |
+   |                                         |                            |
+   |                                         | Results relating to the    |
+   |                                         | highest correlation score. |
+   |                                         | The data product is based  |
+   |                                         | on sorted correlation      |
+   |                                         | scores (the first band     |
+   |                                         | contains the highest score |
+   |                                         | values, the second the     |
+   |                                         | second highest scores and  |
+   |                                         | so on).                    |
+   |                                         |                            |
+   |                                         | Standard RGB color maps    |
+   |                                         | assigned from the sorted   |
+   |                                         | Band 1 of the              |
+   |                                         | *\_feature_f               |
+   |                                         | itting_correlation_scores* |
+   |                                         | results using the .csv     |
+   |                                         | colorfile.                 |
+   |                                         |                            |
+   |                                         | ENVI standard format with  |
+   |                                         | bsq interleave.            |
+   +-----------------------------------------+----------------------------+
+   | **\_feature_fitting_highest_correlation | Geotiff format (.tif) of   |
+   | _result_geotiff**                       | *\_feature_fitting_h       |
+   |                                         | ighest_correlation_result* |
+   |                                         |                            |
+   |                                         | Can be directly viewed     |
+   |                                         | with the image viewer of   |
+   |                                         | your choice.               |
+   +-----------------------------------------+----------------------------+
+   | *\_bvls_unmixing_scores*                | Raw **B**\ ounded          |
+   |                                         | **V**\ alue **L**\ east    |
+   |                                         | **S**\ quares (BVLS)       |
+   |                                         | unmixing scores from the   |
+   |                                         | spectral module for        |
+   |                                         | characteristic absorption  |
+   |                                         | features.                  |
+   +-----------------------------------------+----------------------------+
+   | *\_bvls_unmixing_highest_abundance      | The (BVLS unmixing)        |
+   | _result*                                | abundance map result.      |
+   |                                         |                            |
+   |                                         | Standard RGB color maps    |
+   |                                         | assigned from the sorted   |
+   |                                         | Band 1 of the              |
+   |                                         | *\_bvls_unmixing_scores*   |
+   |                                         | (highest BVLS fraction)    |
+   |                                         | results using the .csv     |
+   |                                         | color file. Highest        |
+   |                                         | abundance (highest BVLS    |
+   |                                         | fraction) sorted color     |
+   |                                         | map.                       |
+   |                                         |                            |
+   |                                         | ENVI standard format with  |
+   |                                         | bsq interleave.            |
+   +-----------------------------------------+----------------------------+
+   | **\_bvls_unmixing_highest_abundance     | Geotiff format (.tif) of   |
+   | _result_geotiff**                       | *\_bvls_unmixing           |
+   |                                         | _highest_abundance_result* |
+   |                                         |                            |
+   |                                         | Can be directly viewed     |
+   |                                         | with the image viewer of   |
+   |                                         | your choice.               |
+   +-----------------------------------------+----------------------------+
+
 
 
 5. Acknowledgements
 --------------------
 
 Algorithm, Python code, and GUI was developed by Christian Mielke.
-Current version GUI and algorithm product adjustments (EnGeoMAP version 3.1) by Helge L. C. Daempfling.
+Current version GUI and algorithm product adjustments (EnGeoMAP version
+3.2) by Helge L. C. Daempfling. Data preparation and performance check
+by Nicole Koellner.
 
 6. Further Reading
 --------------------
 
 For theoretical background information on EnGeoMAP algorithm please
-consider reading Mielke et al. (2016) EnGeoMAP 2.0 Automated
-Hyperspectral Mineral Identification for the German EnMAP Space
-Mission.
+consider reading Mielke et al. (2016) EnGeoMAP 2.0—Automated
+Hyperspectral Mineral Identification for the German EnMAP Space Mission.
 
 Literature
 ------------
