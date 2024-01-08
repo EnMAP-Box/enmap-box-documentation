@@ -60,11 +60,11 @@ The spectral library file has to be in Band Sequential (BSQ) (.sli) format with 
 
 The RGB (Red, Green, Blue) color scheme needs to be provided by the user in a .csv file format (UTF-8). The entries have to be in the right order and matching to the entries of the spectral library. Through the CSV color file, the user can choose the colors with which EnGeoMAP classifies the according library entries in the hyperspectral image. There are several online tools available to visualize RGB color code for a preview of the chosen colors. CSV files can either be edited with a standard text editor (Figure 1) or spreadsheet editor (Figure 2).
 
-.. figure::  img/fig1.png
+.. figure::  img/fig1A.png
 
 Figure 1: Color scheme CSV file example opened in a text editor. Here the legend includes nine different endmembers.
 
-.. figure::  img/fig2.png
+.. figure::  img/fig2A.png
 
 Figure 2: Color scheme CSV file example opened in a spreadsheet editor. Here the legend includes nine different endmembers.
 
@@ -78,12 +78,12 @@ Test data for EnGeoMAP 3.2 can be found here:
 
 The dataset contains a subset of a hyperspectral EnMAP image data cube (Figure 3) which was acquired in December 2022 covering the Gamsberg deposit and the Big Syncline of the Aggeneys deposit in Namaqualand (South Africa), an associated spectral library of ground truth data (Figure 4), and a CSV color file (Figure 1 and 2) defining the color codes of each endmember (library entries) for visual representation. 
 
-.. figure::  img/fig3.png
+.. figure::  img/fig3A.png
 
 Figure 3:  EnMAP image cube covering parts of the Gamsberg Zinc mine (east) and the Big Syncline (north) of the Aggeneys deposit (Namaqualand, South Africa). R: 641 nm, G: 550 nm, B:458 nm.P.
 
 
-.. figure::  img/fig4.png
+.. figure::  img/fig4A.png
 
 Figure 4: Locations of spectral field sampling.
 
@@ -94,7 +94,7 @@ Figure 4: Locations of spectral field sampling.
 
 Figure 5 shows how you get access to the EnGeoMAP toolbox.
 
-.. figure::  img/fig5.png
+.. figure::  img/fig5A.png
 
 Figure 5: Access to EnGeoMAP.
 
@@ -127,7 +127,7 @@ Processing is started by pressing the OK button and then pressing OK in the subs
 A status indicator in the lower right corner shows if the software is still processing the data or is ready to process new data.
 
 
-.. figure::  img/fig6.png
+.. figure::  img/fig6A.png
 
 Figure 6: The graphical user interface (GUI) of EnGeoMAP 3.2.
 
@@ -139,7 +139,7 @@ The preprocessing module within EnGeoMAP extracts the characteristic absorption 
 
 The first band of each of the sorted results is then used in the spatial module together with the CSV file to provide a color-coded best fit (highest correlation score) material map and highest abundance (highest BVLS fraction) map. 
 
-.. figure::  img/fig7.png
+.. figure::  img/fig7A.png
 
 Figure 7: Basic processing workflow for EnGeoMAP 3.2 with modules, input and output highlighted.
 
