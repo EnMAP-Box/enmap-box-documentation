@@ -6,7 +6,9 @@
 Regression-based unmixing of urban land cover
 =============================================
 
-**Authors:**  Akpona Okujeni, Sam Cooper, Patrick Hostert, Clemens Jaenicke, Benjamin Jakimow, Andreas Janz, Fabian Thiel & Sebastian van der Linden
+**Authors:**  Akpona Okujeni, Patrick Hostert, Benjamin Jakimow, Andreas Janz, & Sebastian van der Linden
+
+**Contributors:** Klara Busse, Sam Cooper, Clemens Jaenicke, Fabian Thiel
 
 **Publication date:** 05/02/2019
 
@@ -48,8 +50,8 @@ for example, applies to the use of 30 m resolution imagery from the spaceborne i
 spectrometer mission EnMAP for urban mapping.
 
 This tutorial focuses on regression-based unmixing of urban land cover using synthetically mixed
-training data from spectral libraries. Hyperspectral images from the airborne HyMap and the
-spaceborne EnMAP sensors (here simulated from HyMap), a corresponding spectral library, and
+training data from spectral libraries. Hyperspectral images from the airborne HyMap sensor and the
+spaceborne EnMAP mission (here simulated from HyMap), a corresponding spectral library, and
 reference land cover information are used for different exercises within this tutorial. These aim at
 providing both a theoretical background related to challenges in urban mapping and a hands-on
 training for working with the EnMAP-Box.
@@ -65,14 +67,12 @@ There might be some minor changes for higher versions (e.g., changed menu labels
 4. Further Reading
 ------------------
 
-We recommend [1]_ for a comprehensive overview on imaging spectroscopy of urban environments
- [2]_ and [3]_ for conceptual introductions into the regression-based unmixing workflow using synthetically
-mixed training data from spectral libraries, and [4]_ for a description of the latest implementation.
+We recommend [1]_ for a comprehensive overview on imaging spectroscopy of urban environments. We refer to [2]_ and [3]_ for conceptual introductions into the regression-based unmixing workflow using synthetically mixed training data from spectral libraries, and [4]_ for a description of the latest implementation.
 
-.. [1] van der Linden, et al. (2018). Imaging Spectroscopy of Urban Environments. Surveys in Geophysics, 1–18.
-.. [2] Okujeni, A., et al. (2013). Support vector regression and synthetically mixed training data for quantifying urban land cover. Remote Sensing of Environment, 137, 184-197
-.. [3] Okujeni, A., et al. (2017). Ensemble learning from synthetically mixed training data for quantifying urban land cover with support vector regression. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 10, 1640-1650
-.. [4] Okujeni, S., et al., 2021. Multi-season unmixing of vegetation class fractions across diverse Californian ecoregions using simulated spaceborne imaging spectroscopy data. Remote Sens. Environ. 264, 112558. `https://doi.org/10.1016/j.rse.2021.112558 <https://doi.org/10.1016/j.rse.2021.112558>`_
+.. [1] van der Linden, et al. (2018). Imaging Spectroscopy of Urban Environments. Surveys in Geophysics. `https://doi.org/10.1007/s10712-018-9486-y <https://doi.org/10.1007/s10712-018-9486-y>`_
+.. [2] Okujeni, A., et al. (2013). Support vector regression and synthetically mixed training data for quantifying urban land cover. Remote Sensing of Environment. `https://doi.org/10.1016/j.rse.2013.06.007 <https://doi.org/10.1016/j.rse.2013.06.007>`_
+.. [3] Okujeni, A., et al. (2017). Ensemble learning from synthetically mixed training data for quantifying urban land cover with support vector regression. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing. `https://doi.org/10.1109/JSTARS.2016.2634859 <https://doi.org/10.1109/JSTARS.2016.2634859>`_
+.. [4] Okujeni, A., et al., 2021. Multi-season unmixing of vegetation class fractions across diverse Californian ecoregions using simulated spaceborne imaging spectroscopy data. Remote Sensing of Environment. `https://doi.org/10.1016/j.rse.2021.112558 <https://doi.org/10.1016/j.rse.2021.112558>`_
 
 
 
