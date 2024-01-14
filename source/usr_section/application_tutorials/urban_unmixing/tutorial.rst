@@ -6,13 +6,13 @@
 Regression-based unmixing of urban land cover
 =============================================
 
-**Authors:**  Akpona Okujeni, Patrick Hostert, Benjamin Jakimow, Andreas Janz, & Sebastian van der Linden
+**Authors:**  Akpona Okujeni, Patrick Hostert, Benjamin Jakimow, Andreas Janz, Fabian Thiel, & Sebastian van der Linden
 
-**Contributors:** Klara Busse, Sam Cooper, Clemens Jaenicke, Fabian Thiel
+**Contributors:** Klara Busse, Sam Cooper, Clemens Jaenicke
 
 **Publication date:** 05/02/2019
 
-**Latest update:** 09/01/2023
+**Latest update:** 12/01/2023
 
 Introduction
 ============
@@ -29,39 +29,29 @@ Introduction
 
 This tutorial is part of the `HYPERedu online learning platform <https://eo-college.org/resource-spectrum/hyperspectral/>`_,
 an education initiative within the `EnMAP mission <https://www.enmap.org/>`_ hosted
-on EO College. HYPERedu provides annotated slide collections and hands-on tutorials using the open-source EnMAP-Box software,
-targeting basic principles, methods as well as applications of imaging spectroscopy.
+on EO College. HYPERedu provides annotated slide collections and hands-on tutorials using the open-source EnMAP-Box software, targeting basic principles, methods as well as applications of imaging spectroscopy.
 
 Annotated slide collections for the tutorial *Regression-based unmixing of urban land cover* and a software description unit for the EnMAP-Box are provided here:
 
-* `Slide collection <https://eo-college.org/resource/regression-based-unmixing-of-urban-land-cover/>`_
-* `Software description <https://eo-college.org/resource/enmap-box/>`_
+* `Tutorial slides <https://eo-college.org/resource/regression-based-unmixing-of-urban-land-cover/>`_
+* `EnMAP software description <https://eo-college.org/resource/enmap-box/>`_
 
+Complementary to this tutorial, the unit *Imaging spectroscopy for urban mapping* provides an introduction to the capabilities of imaging spectroscopy for urban mapping.
 
-
+* `Urban mapping unit <https://eo-college.org/resource/imaging-spectroscopy-for-urban-mapping/>`_
 
 2. Content
 ----------
 
-Land cover fraction mapping based on unmixing is well suited to describe the composition of surface
-types in heterogeneous environments. Especially when using coarser spatial resolution satellite data
-with a high share of mixed pixels, fraction mapping is more useful than a discrete classification. This,
-for example, applies to the use of 30 m resolution imagery from the spaceborne imaging
-spectrometer mission EnMAP for urban mapping.
+Land cover fraction mapping based on unmixing is well suited to describe the composition of surface types in heterogeneous environments. Especially when using coarser spatial resolution satellite data with a high share of mixed pixels, fraction mapping is more useful than a discrete classification. This, for example, applies to the use of 30 m resolution imagery from the spaceborne imaging spectrometer mission EnMAP for urban mapping.
 
-This tutorial focuses on regression-based unmixing of urban land cover using synthetically mixed
-training data from spectral libraries. Hyperspectral images from the airborne HyMap sensor and the
-spaceborne EnMAP mission (here simulated from HyMap), a corresponding spectral library, and
-reference land cover information are used for different exercises within this tutorial. These aim at
-providing both a theoretical background related to challenges in urban mapping and a hands-on
-training for working with the EnMAP-Box.
+This tutorial focuses on regression-based unmixing of urban land cover using synthetically mixed training data from spectral libraries. Hyperspectral images from the airborne HyMap sensor and the spaceborne EnMAP mission (here simulated from HyMap), a corresponding spectral library, and reference land cover information are used for different exercises within this tutorial. These aim at providing both a theoretical background related to challenges in urban mapping and a hands-on training for working with the EnMAP-Box.
 
 
 3. Requirements
 ---------------
 
-This tutorial requires at least version 3.13.2 of the EnMAP-Box 3.
-There might be some minor changes for higher versions (e.g., changed menu labels, added parameter options, etc.).
+This tutorial requires at least version 3.13.0 of the EnMAP-Box 3. There might be some minor changes for higher versions (e.g., changed menu labels, added parameter options, etc.).
 
 
 4. Further Reading
@@ -75,16 +65,13 @@ We recommend [1]_ for a comprehensive overview on imaging spectroscopy of urban 
 .. [4] Okujeni, A., et al., 2021. Multi-season unmixing of vegetation class fractions across diverse Californian ecoregions using simulated spaceborne imaging spectroscopy data. Remote Sensing of Environment. `https://doi.org/10.1016/j.rse.2021.112558 <https://doi.org/10.1016/j.rse.2021.112558>`_
 
 
-
 4. Data
 -------
 
-:download:`You can download the data here:`
+:download:`The tutorial data can be downloaded here:`
 https://box.hu-berlin.de/f/3c3f7b76d91b4bd2a688/?dl=1
 
-The tutorial dataset contains an EnMAP-image (simulation) covering an area along the urban gradient of Berlin, Germany,
-a second hyperspectral image at higher spatial resolution (HyMap, 3.6 m), a spectral library and detailed land cover
-reference information.
+The tutorial data encompasses a region along the urban gradient of Berlin, Germany. It includes a simulated hyperspectral EnMAP image at 30 m resolution, a corresponding hyperspectral HyMap image at 3.6 m resolution, a spectral library, and detailed land cover reference information.
 
 .. csv-table::
    :header-rows: 1
@@ -92,42 +79,35 @@ reference information.
    :widths: auto
 
    Data type; Filename; Description
-   Raster; :file:`hymap_berlin.bsq`; Airborne hyperspectral data from the HyMap sensor with a spatial resolution of 3.6m, 111 bands and 346x3200 pixels (ENVI Standard Band Sequential ``bsq``)
-   Raster; :file:`enmap_berlin.bsq`; Spaceborne hyperspectral data from the EnMAP sensor (here simulated from HyMAP) with a spatial resolution of 30m, 177 bands and 220x400 pixels (ENVI Standard Band Sequential ``bsq``)
-   Spectral library; :file:`library_berlin.sli`; Urban spectral library with 75 pure surface materials categorized in a hierarchical class scheme. The Library was developed from the HyMap image and spectrally resampled to the EnMAP sensor (ENVI spectral library ``sli`` with metadata extensions ``csv`` & ``json``)
-   Vector; :file:`landcover_berlin.shp`; Detailed land cover reference information categorized in a hierarchical class scheme (ESRI Shapefile ``shp`` with QGIS layer style file ``qml`` and metadata extension ``json``)
+   Raster; :file:`hymap_berlin.tif`; Airborne hyperspectral data from the HyMap sensor with a spatial resolution of 3.6 m, 111 bands and 346x3200 pixels (GeoTIFF ``tif``)
+   Raster; :file:`enmap_berlin.tif`; Spaceborne hyperspectral data from the EnMAP sensor (here simulated from HyMAP) with a spatial resolution of 30 m, 177 bands and 220x400 pixels (GeoTIFF ``tif``)
+   Spectral library; :file:`library_berlin.gpkg`; Urban spectral library with 75 pure surface materials categorized in a hierarchical class scheme. The Library was developed from the HyMap image and spectrally resampled to the EnMAP sensor (Geopackage ``gpkg`` with QGIS layer style file ``qml``)
+   Vector; :file:`landcover_berlin.gpkg`; Detailed land cover reference information categorized in a hierarchical class scheme (GeoPackage ``gpkg`` with QGIS layer style file ``qml``)
 
 .. .. image:: tut_img/data_table.png
 
-The tutorial dataset is a subset extracted from the Berlin-Urban-Gradient dataset [4]_.
+The tutorial data is a subset extracted from the Berlin-Urban-Gradient dataset [5]_.
 Please cite the dataset as follows:
 
-.. [4] Okujeni, Akpona; van der Linden, Sebastian; Hostert, Patrick (2016): Berlin-Urban-Gradient dataset 2009 -
-       An EnMAP Preparatory Flight Campaign (Datasets). V. 1.2. GFZ Data Services. https://doi.org/10.5880/enmap.2016.008
+.. [5] Okujeni, A., van der Linden, S., Hostert, P. (2016): Berlin-Urban-Gradient dataset 2009 - An EnMAP Preparatory Flight Campaign (Datasets). V.1.2. GFZ Data Services. https://doi.org/10.5880/enmap.2016.008
 
-|
 
 Exercise A: Urban land cover
 ============================
 
 .. admonition:: Description
 
-   Airborne imaging spectroscopy data is well suited for urban mapping. The high spectral and spatial resolution
-   enhances the separability of surface types and preserves the spatial detail of many urban features. This exercise…
+   Airborne imaging spectroscopy data is well suited for urban mapping. The high spectral and spatial resolution enhances the separability of surface types and preserves the spatial detail of many urban features. This exercise…
 
-   * provides an insight into how urban areas are depicted by airborne hyperspectral images and introduces a hierarchical
-     classification scheme commonly adopted for urban mapping
-   * introduces basic functionalities of the EnMAP-Box. You will get to know the graphical user interface, and
-     you will learn how to load data, visualize raster and vector data, and use the basic navigation tools
+   * Provides an insight into how urban areas are depicted by airborne hyperspectral images and introduces a hierarchical classification scheme commonly adopted for urban mapping.
+   * Introduces basic functionalities of the EnMAP-Box. You will get to know the graphical user interface, and you will learn how to load data, visualize raster and vector data, and use the basic navigation tools.
 
-   Duration: 15 min
 
 
 1. Start the EnMAP-Box
 ----------------------
 
-* Start QGIS and click the |enmapbox| icon in the toolbar to open the EnMAP-Box. The GUI of the EnMAP-Box consists of a **Menu**
-  and a **Toolbar**, panels for **Data Sources** and **Data Views**, and the **QGIS Processing Toolbox** including the **EnMAP-Box geoalgorithms**.
+* Start QGIS and click the |enmapbox| icon in the toolbar to open the EnMAP-Box. The GUI of the EnMAP-Box consists of a **Menu** and a **Toolbar**, panels for **Data Sources** and **Data Views**, and the **QGIS Processing Toolbox** including the **EnMAP-Box geoalgorithms**.
 
 .. image:: tut_img/01_gui.png
    :width: 100%
@@ -139,9 +119,9 @@ Exercise A: Urban land cover
 * The EnMAP-Box offers simple drag & drop capabilities to load data from an external explorer.
   Drag the following datasets from your explorer into the :guilabel:`Data Sources` panel:
 
-  * Raster: :file:`hymap_berlin.bsq`, :file:`enmap_berlin.bsq`
-  * Vector: :file:`landcover_berlin.shp`
-  * Spectral library: :file:`library_berlin.sli`
+  * Raster: :file:`hymap_berlin.tif`, :file:`enmap_berlin.tif`
+  * Vector: :file:`landcover_berlin.gpkg`
+  * Spectral library: :file:`library_berlin.gpkg`
 
 .. image:: tut_img/02_loaddata.png
    :width: 100%
@@ -150,27 +130,16 @@ Exercise A: Urban land cover
 3. Visualize raster and vector data
 -----------------------------------
 
-* The EnMAP-Box offers **Map Windows (Map #)** for visualizing raster and vector data. Click the |viewlist_mapdock| icon
-  and drag the following datasets from the :guilabel:`Data Sources` panel into Map #1:
+* The EnMAP-Box offers **Map Windows (Map #)** for visualizing raster and vector data. Click the |viewlist_mapdock| icon and drag the following datasets from the :guilabel:`Data Sources` panel into Map #1:
 
-   * :file:`hymap_berlin.bsq`
-   * :file:`landcover_berlin.shp`
+   * :file:`hymap_berlin.tif`
+   * :file:`landcover_berlin.gpkg`
 
 * Map #1 now appears in the :guilabel:`Data Views` panel, where the visibility, order and properties of datasets can be modified. Unfold Map #1:
 
-  * To change the order of stacked layers, drag one layer on top or below another one. Arrange the layer stack so that
-    :file:`landcover_berlin.shp` is displayed on top of :file:`hymap_berlin.bsq`.
-  * To assign a multibandcolor RGB combination to a raster image, right click on the dataset, select :guilabel:`Layer Properties` and
-    navigate to :guilabel:`Band selection`. You can now select predefined composites (RGB, nIR, swIR), or
-    manually select your bands using the slider or dropdown lists. Display :file:`hymap_berlin.bsq` as true color composite,
-    by selecting R-G-B.
-  * You can specify things like contrast enhancement and data stretch under :menuselection:`Layer properties --> Symbology`.
-
-
-  * The symbology of :file:`landcover_berlin.shp` is predefined by a QGIS layer style file (:file:`.qml`). To change this symbology,
-    right click on the vector layer, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology` in the :guilabel:`LayerProperties` window.
-    You can now change the symbology in accordance to the QGIS functionality. Use the :guilabel:`Column` and :guilabel:`Classify` options to explore the
-    information content of the attribute table :file:`landcover_berlin.shp`.
+  * To change the order of stacked layers, drag one layer on top or below another one. Arrange the layer stack so that :file:`landcover_berlin.gpkg` is displayed on top of :file:`hymap_berlin.tif`.
+  * To assign a multibandcolor RGB combination to a raster image, right click on the dataset, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology` in the :guilabel:`LayerProperties` window. Select :guilabel:`Multiband color` as :guilabel:`Render type` and manually select your bands using the dropdown lists. Display :file:`hymap_berlin.tif` as true color composite by setting the following RGB combination: **R=0.66μm, G=0.57μm , B=0.48μm**. Furthermore, use the functionalities offered for contrast enhancement and data stretch.
+  * The symbology of :file:`landcover_berlin.gpkg` is predefined by a QGIS layer style file (:file:`.qml`). To change this symbology, right click on the vector layer, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology` in the :guilabel:`LayerProperties` window. You can now change the symbology in accordance to the QGIS functionality. Select :guilabel:`Categorized` and use the :guilabel:`Value` and :guilabel:`Classify` options to explore the information content of the attribute table :file:`landcover_berlin.gpkg`.
 
 .. image:: tut_img/03_visualizerasterandvector.png
    :width: 100%
@@ -180,10 +149,10 @@ Exercise A: Urban land cover
 4. Basic navigation tools
 -------------------------
 
-* The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the following navigation tools: |navtools|
-  Note that the mouse wheel can be used alternatively for zooming (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
-* Make yourself familiar with the crosshair functionality. To show/hide the crosshair, to change the style, or to display the pixel cell
-  of a selected layer, right click within MAP #1 and select :guilabel:`Crosshair`.
+* The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the following navigation tools: |navtools|. Note that the mouse wheel can be used alternatively for zooming (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
+* Make yourself familiar with the crosshair functionality. To show/hide the crosshair, to change the style, or to display the pixel cell of a selected layer, right click within MAP #1 and select :guilabel:`Crosshair`.
+
+.. hidden::
 
 .. admonition:: Learning activities:
 
@@ -208,6 +177,7 @@ Exercise A: Urban land cover
         </br>
 
 |
+.. visible::
 
 Exercise B: Spectral mixing
 ===========================
