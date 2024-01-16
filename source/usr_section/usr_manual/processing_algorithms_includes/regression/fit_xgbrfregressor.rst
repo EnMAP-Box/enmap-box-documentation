@@ -6,6 +6,6 @@ Usage:
 
 2. Select a training dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: ./img/xgbrf.png
+    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/regression/img/xgbrf.png
        :align: center
 

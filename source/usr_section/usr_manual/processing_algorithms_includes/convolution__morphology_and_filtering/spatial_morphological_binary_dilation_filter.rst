@@ -13,10 +13,10 @@ Usage:
 
 2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
-    .. figure:: ./img/binary_dilation_filter_interface.png
+    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/convolution__morphology_and_filtering/img/binary_dilation_filter_interface.png
        :align: center
 
 3. Processed image in comparison to the original.
 
-    .. figure:: ./img/binary_dilation_filter_result.png
+    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/convolution__morphology_and_filtering/img/binary_dilation_filter_result.png
        :align: center

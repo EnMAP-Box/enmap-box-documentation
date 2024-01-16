@@ -4,6 +4,6 @@ Usage:
 
 2. Select a raster layer to process and modify the Python script to your needs, then click :guilabel:`run`.
 
-    .. figure:: ./img/custom.png
+    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/spectral_resampling/img/custom.png
        :align: center
 

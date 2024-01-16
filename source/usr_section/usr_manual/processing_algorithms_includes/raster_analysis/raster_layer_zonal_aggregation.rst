@@ -4,6 +4,6 @@ Usage:
 
 2. Select a raster layer and a categorized raster layer defining your zones, then click :guilabel:`run`.
 
-    .. figure:: ./img/zonal_agg.png
+    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/raster_analysis/img/zonal_agg.png
        :align: center
 

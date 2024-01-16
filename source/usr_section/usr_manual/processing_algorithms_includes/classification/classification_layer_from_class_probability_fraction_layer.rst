@@ -4,6 +4,6 @@ Usage:
 
 2. Select the class probability/fraction layer, then click :guilabel:`run`.
 
-    .. figure:: ./img/class_layer_from_class.png
+    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/classification/img/class_layer_from_class.png
        :align: center
 

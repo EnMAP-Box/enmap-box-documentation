@@ -4,6 +4,6 @@ Usage:
 
 2. Select a raster layer, define your style, then click :guilabel:`run`.
 
-    .. figure:: ./img/pallete.png
+    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/auxilliary/img/pallete.png
        :align: center
 

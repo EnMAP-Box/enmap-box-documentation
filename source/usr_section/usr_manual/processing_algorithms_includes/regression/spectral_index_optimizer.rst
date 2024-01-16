@@ -5,6 +5,6 @@ Usage:
 
 2. Select a training dataset or create one by clicking on the processing algorithm icon. If necessary, adjust the index formula. Then click :guilabel:`run`.
 
-    .. figure:: ./img/spectral_index_optimizer.png
+    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/regression/img/spectral_index_optimizer.png
        :align: center
 

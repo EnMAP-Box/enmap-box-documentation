@@ -4,6 +4,6 @@ Usage:
 
 2. Select a raster layer to process and click :guilabel:`run`.
 
-    .. figure:: ./img/enmap.png
+    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/spectral_resampling/img/enmap.png
        :align: center
 

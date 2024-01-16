@@ -6,6 +6,6 @@ Usage:
 
 2. Select a training dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: ./img/fitrandomforest_interface.png
+    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/classification/img/fitrandomforest_interface.png
        :align: center
 
