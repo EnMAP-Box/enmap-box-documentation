@@ -54,7 +54,7 @@ In case you have an outdated QGIS version, make sure to install a current versio
 
 #. (Optional) Install **HDF5** dependency via the OSGeo4W installer:
 
-    The **HDF5** dependency is only required for importing PRISMA products. Feel free to skip this step.
+    The **HDF5** dependency is only required for importing PRISMA products.
 
     Start the OSGeo4W installer by executing:
 
