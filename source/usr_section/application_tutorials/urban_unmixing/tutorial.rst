@@ -27,37 +27,35 @@ Introduction
    :align: right
    :width: 30%
 
-This tutorial is part of the `HYPERedu online learning platform <https://eo-college.org/resource-spectrum/hyperspectral/>`_,
-an education initiative within the `EnMAP mission <https://www.enmap.org/>`_ hosted
-on EO College. HYPERedu provides annotated slide collections and hands-on tutorials using the open-source EnMAP-Box software, targeting basic principles, methods as well as applications of imaging spectroscopy.
+This tutorial is featured on the `HYPERedu online learning platform <https://eo-college.org/resource-spectrum/hyperspectral/>`_, an educational initiative under the `EnMAP mission <https://www.enmap.org/>`_ hosted on EO College. HYPERedu offers annotated slide collections and hands-on tutorials utilizing the open-source EnMAP-Box software, covering fundamental principles, methods, and applications of imaging spectroscopy.
 
-Annotated slide collections for the tutorial *Regression-based unmixing of urban land cover* and a software description unit for the EnMAP-Box are provided here:
+Slide collections with annotations for the tutorial on *Regression-based unmixing of urban land cover* and a software description unit for the EnMAP-Box can be found here:
 
 * `Tutorial slides <https://eo-college.org/resource/regression-based-unmixing-of-urban-land-cover/>`_
 * `EnMAP software description <https://eo-college.org/resource/enmap-box/>`_
 
-Complementary to this tutorial, the unit *Imaging spectroscopy for urban mapping* provides an introduction to the capabilities of imaging spectroscopy for urban mapping.
+In addition to this tutorial, the unit *Imaging spectroscopy for urban mapping* offers an introduction to the capabilities of imaging spectroscopy for urban mapping.
 
 * `Urban mapping unit <https://eo-college.org/resource/imaging-spectroscopy-for-urban-mapping/>`_
 
 2. Content
 ----------
 
-Land cover fraction mapping based on unmixing is well suited to describe the composition of surface types in heterogeneous environments. Especially when using coarser spatial resolution satellite data with a high share of mixed pixels, fraction mapping is more useful than a discrete classification. This, for example, applies to the use of 30 m resolution imagery from the spaceborne imaging spectrometer mission EnMAP for urban mapping.
+Land cover fraction mapping based on unmixing is well suited to describe the composition of surface types in heterogeneous environments, particularly when using coarser spatial resolution satellite data with a high share of mixed pixels. Fraction mapping proves more useful than discrete classification, as exemplified by the utilization of 30 m resolution imagery from the spaceborne imaging spectrometer mission EnMAP for urban mapping.
 
-This tutorial focuses on regression-based unmixing of urban land cover using synthetically mixed training data from spectral libraries. Hyperspectral images from the airborne HyMap sensor and the spaceborne EnMAP mission (here simulated from HyMap), a corresponding spectral library, and reference land cover information are used for different exercises within this tutorial. These aim at providing both a theoretical background related to challenges in urban mapping and a hands-on training for working with the EnMAP-Box.
+This tutorial focuses on regression-based unmixing of urban land cover, utilizing synthetically mixed training data from spectral libraries. The exercises incorporate hyperspectral images from both the airborne HyMap sensor and the spaceborne EnMAP mission (simulated here from HyMap), along with a corresponding spectral library and reference land cover information. The tutorial is designed to offer both a theoretical foundation addressing challenges in urban mapping and a hands-on training for effectively working the EnMAP-Box.
 
 
 3. Requirements
 ---------------
 
-This tutorial requires at least version 3.13.0 of the EnMAP-Box 3. There might be some minor changes for higher versions (e.g., changed menu labels, added parameter options, etc.).
+This tutorial is designed for EnMAP-Box 3, version 3.13.0 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
 
 4. Further Reading
 ------------------
 
-We recommend [1]_ for a comprehensive overview on imaging spectroscopy of urban environments. We refer to [2]_ and [3]_ for conceptual introductions into the regression-based unmixing workflow using synthetically mixed training data from spectral libraries, and [4]_ for a description of the latest implementation.
+We recommend [1]_ for a comprehensive overview on imaging spectroscopy of urban environments. We refer to [2]_ and [3]_ for conceptual introductions into the regression-based unmixing workflow using synthetically mixed training data, and [4]_ for a description of the latest implementation.
 
 .. [1] van der Linden, et al. (2018). Imaging Spectroscopy of Urban Environments. Surveys in Geophysics. `https://doi.org/10.1007/s10712-018-9486-y <https://doi.org/10.1007/s10712-018-9486-y>`_
 .. [2] Okujeni, A., et al. (2013). Support vector regression and synthetically mixed training data for quantifying urban land cover. Remote Sensing of Environment. `https://doi.org/10.1016/j.rse.2013.06.007 <https://doi.org/10.1016/j.rse.2013.06.007>`_
@@ -71,7 +69,7 @@ We recommend [1]_ for a comprehensive overview on imaging spectroscopy of urban 
 :download:`The tutorial data can be downloaded here:`
 https://box.hu-berlin.de/f/3c3f7b76d91b4bd2a688/?dl=1
 
-The tutorial data encompasses a region along the urban gradient of Berlin, Germany. It includes a simulated hyperspectral EnMAP image at 30 m resolution, a corresponding hyperspectral HyMap image at 3.6 m resolution, a spectral library, and detailed land cover reference information.
+The tutorial data covers a region along the urban gradient of Berlin, Germany. It consists of a simulated hyperspectral EnMAP image at 30 m resolution, a corresponding hyperspectral HyMap image at 3.6 m resolution, a spectral library, and detailed land cover reference information.
 
 .. csv-table::
    :header-rows: 1
@@ -86,8 +84,7 @@ The tutorial data encompasses a region along the urban gradient of Berlin, Germa
 
 .. .. image:: tut_img/data_table.png
 
-The tutorial data is a subset extracted from the Berlin-Urban-Gradient dataset [5]_.
-Please cite the dataset as follows:
+The tutorial data is a subset extracted from the Berlin-Urban-Gradient dataset [5]_. Please cite the dataset as follows:
 
 .. [5] Okujeni, A., van der Linden, S., Hostert, P. (2016): Berlin-Urban-Gradient dataset 2009 - An EnMAP Preparatory Flight Campaign (Datasets). V.1.2. GFZ Data Services. https://doi.org/10.5880/enmap.2016.008
 
@@ -97,17 +94,17 @@ Exercise A: Urban land cover
 
 .. admonition:: Description
 
-   Airborne imaging spectroscopy data is well suited for urban mapping. The high spectral and spatial resolution enhances the separability of surface types and preserves the spatial detail of many urban features. This exercise…
+   Airborne imaging spectroscopy data proves highly effective for urban mapping. The combination of high spectral and spatial resolution enhances the separability  of surface types and preserves intricate spatial details of various urban features. This exercise...
 
    * Provides an insight into how urban areas are depicted by airborne hyperspectral images and introduces a hierarchical classification scheme commonly adopted for urban mapping.
-   * Introduces basic functionalities of the EnMAP-Box. You will get to know the graphical user interface, and you will learn how to load data, visualize raster and vector data, and use the basic navigation tools.
+   * Introduces basic functionalities of the EnMAP-Box. You will familiarizing yourself with the graphical user interface, and learn how to load data, visualize raster and vector data, and use the basic navigation tools.
 
-
+    Duration: 15 min
 
 1. Start the EnMAP-Box
 ----------------------
 
-* Start QGIS and click the |enmapbox| icon in the toolbar to open the EnMAP-Box. The GUI of the EnMAP-Box consists of a **Menu** and a **Toolbar**, panels for **Data Sources** and **Data Views**, and the **QGIS Processing Toolbox** including the **EnMAP-Box geoalgorithms**.
+* Launch QGIS and click the |enmapbox| icon in the toolbar to open the EnMAP-Box. The EnMAP-Box GUI comprises a **Menu** and a **Toolbar**, panels for **Data Sources** and **Data Views**, and the **QGIS Processing Toolbox**, which includes the **EnMAP-Box geoalgorithms**.
 
 .. image:: tut_img/01_gui.png
    :width: 100%
@@ -116,8 +113,8 @@ Exercise A: Urban land cover
 2. Load data
 ------------
 
-* The EnMAP-Box offers simple drag & drop capabilities to load data from an external explorer.
-  Drag the following datasets from your explorer into the :guilabel:`Data Sources` panel:
+* The EnMAP-Box provides easy drag-and-drop functionality for loading data from an external explorer.
+  Simply drag the datasets listed below from your explorer into the :guilabel:`Data Sources` panel:
 
   * Raster: :file:`hymap_berlin.tif`, :file:`enmap_berlin.tif`
   * Vector: :file:`landcover_berlin.gpkg`
@@ -130,33 +127,39 @@ Exercise A: Urban land cover
 3. Visualize raster and vector data
 -----------------------------------
 
-* The EnMAP-Box offers **Map Windows (Map #)** for visualizing raster and vector data. Click the |viewlist_mapdock| icon and drag the following datasets from the :guilabel:`Data Sources` panel into Map #1:
+* The EnMAP-Box provides **Map Windows (Map #)** for visualizing raster and vector data. Click the |viewlist_mapdock| icon, and drag the datasets listed below from the :guilabel:`Data Sources` panel into Map #1:
 
    * :file:`hymap_berlin.tif`
    * :file:`landcover_berlin.gpkg`
 
-* Map #1 now appears in the :guilabel:`Data Views` panel, where the visibility, order and properties of datasets can be modified. Unfold Map #1:
+* Map #1 is now visible in the :guilabel:`Data Views` panel, where the visibility, order and properties of datasets can be modified. Expand Map #1. To adjust the order of stacked layers, drag one layer above or below another. Organize the layers so that :file:`landcover_berlin.gpkg` is displayed above :file:`hymap_berlin.tif`.
+* **Raster Layer Styling** is a versatile tool for defining or modifying the RGB representation of raster images, either manually or through pre-defined settings.
 
-  * To change the order of stacked layers, drag one layer on top or below another one. Arrange the layer stack so that :file:`landcover_berlin.gpkg` is displayed on top of :file:`hymap_berlin.tif`.
-  * To assign a multibandcolor RGB combination to a raster image, right click on the dataset, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology` in the :guilabel:`LayerProperties` window. Select :guilabel:`Multiband color` as :guilabel:`Render type` and manually select your bands using the dropdown lists. Display :file:`hymap_berlin.tif` as true color composite by setting the following RGB combination: **R=0.66μm, G=0.57μm , B=0.48μm**. Furthermore, use the functionalities offered for contrast enhancement and data stretch.
-  * The symbology of :file:`landcover_berlin.gpkg` is predefined by a QGIS layer style file (:file:`.qml`). To change this symbology, right click on the vector layer, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology` in the :guilabel:`LayerProperties` window. You can now change the symbology in accordance to the QGIS functionality. Select :guilabel:`Categorized` and use the :guilabel:`Value` and :guilabel:`Classify` options to explore the information content of the attribute table :file:`landcover_berlin.gpkg`.
+    * Open the Raster Layer Styling panel by clicking the |symbology| icon in the :guilabel:`Data Views` panel.
+    * Choose :file:`hymap_berlin.tif` from the dropdown menu and the :guilabel:`RGB tab` as render type.
+    * You can now choose between various pre-defined RGB representations from the dropdown menu (note: rasters needs to have wavelength information) or manually specify your RGB band combination. Choose `True/Natural color R-G-B`.
+    * You may further use the functionalities offered for contrast enhancement (e.g. Cumulative count cut: 2-98%).
 
 .. image:: tut_img/03_visualizerasterandvector.png
    :width: 100%
 
+* The symbology for :file:`landcover_berlin.gpkg` is predefined by a QGIS layer style file (:file:`.qml`). You can modify the symbology using standard QGIS functionality.
+
+    * Right-click on the vector layer, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`.
+    * Coose :guilabel:`Categorized` and use the :guilabel:`Value` and :guilabel:`Classify` options to explore the information content of the attribute table and modify the representation of the land cover information.
 
 
 4. Basic navigation tools
 -------------------------
 
-* The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the following navigation tools: |navtools|. Note that the mouse wheel can be used alternatively for zooming (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
-* Make yourself familiar with the crosshair functionality. To show/hide the crosshair, to change the style, or to display the pixel cell of a selected layer, right click within MAP #1 and select :guilabel:`Crosshair`.
+* The toolbar provides standard navigation tools for exploring visualized datasets. Familiarize yourself with the following navigation tools: |navtools|. Additionally, note that you can use the mouse wheel alternatively for zooming (roll the mouse wheel forward/backward) and panning (press and hold the mouse wheel)
+* amiliarize yourself with the crosshair functionality. To show/hide the crosshair, change its style, or display the pixel cell of a selected layer, right-click within MAP #1 and select :guilabel:`Crosshair`.
 
-.. hidden::
+
 
 .. admonition:: Learning activities:
 
-   * **A1**: Visually explore the airborne hyperspectral image (:file:`hymap_berlin.bsq`). What major land cover types do you observe along Berlin’s urban-gradient?
+   * **A1**: Visually explore the airborne hyperspectral image (:file:`hymap_berlin.tif`). What major land cover types do you observe along Berlin’s urban-gradient?
 
      .. raw:: html
 
@@ -167,7 +170,7 @@ Exercise A: Urban land cover
         </details></div>
         </br>
 
-   * **A2**: Explore the land cover reference data (:file:`landcover_berlin.shp`) and draw a flowchart of the hierarchical classification scheme stored in the attribute table.
+   * **A2**: Explore the land cover reference data (:file:`landcover_berlin.gpkg`) and draw a flowchart of the hierarchical classification scheme stored in the attribute table.
 
      .. raw:: html
 
@@ -177,21 +180,16 @@ Exercise A: Urban land cover
         </br>
 
 |
-.. visible::
 
 Exercise B: Spectral mixing
 ===========================
 
 .. admonition:: Description
 
-   Forthcoming spaceborne imaging spectroscopy missions create new opportunities for global urban mapping. However,
-   the step to satellite observations brings with it coarser spatial resolution, resulting in a loss in spatial detail and
-   an increase in the number of mixed pixels. This exercise…
+   Spaceborne imaging spectroscopy missions create new opportunities for global urban mapping. However, the transition to satellite observations comes with coarser spatial resolution, leading to a loss in spatial detail and an increase in the number of mixed pixels.
 
-   * provides an insight into how urban areas will be depicted by spaceborne hyperspectral images and illustrates
-     challenges related to spectral mixing when using such data for urban mapping
-   * introduces additional basic functionalities of the EnMAP-Box. You will learn how to work with multiple map views,
-     and how to visualize image spectra using Spectral Library Windows
+   * Provides an insight into how urban areas are depicted by spaceborne hyperspectral images and illustrates challenges associated with spectral mixing when using such data for urban mapping.
+   * Introduces additional basic functionalities of the EnMAP-Box. You will learn how to work with multiple map views, and how to visualize image spectra using Spectral Library Windows.
 
    Duration: 15 min
 
@@ -200,17 +198,14 @@ Exercise B: Spectral mixing
 ---------------------
 
 * Close Map #1 from the previous exercise by using the |closemapview| icon on the blue Map #1 title bar.
-* The EnMAP-Box enables users to work with multiple Map Windows, which can be flexibly organized and geospatially linked.
-  Open two new Map Windows. For horizontal arrangement, click and hold on the blue Map #2 title bar and drag it to the
-  right edge of Map #1. A transparent blue rectangle appears indicating the docking position once you stop holding the mouse button.
+* The EnMAP-Box allows users to work with multiple Map Windows, which can be organized and geospatially linked. Open two new Map Windows. For horizontal arrangement, click and hold on the blue Map #2 title bar, then drag it to the right edge of of Map #1. A transparent blue rectangle will appear, indicating the docking position once you release the mouse button.
 
 
 .. image:: tut_img/04_multiplemapviews1.png
    :width: 100%
 
-* Display :file:`hymap_berlin.bsq` and :file:`enmap_berlin.bsq` as RGB composite of your choice in Map #1 and Map #2, respectively.
-* For geospatial linking, click on :guilabel:`View` in the Menu and select :guilabel:`Set Map Linking`. In the :guilabel:`Map Linking`
-  window, select the |link_all_mapscale_center| :sup:`Link Map Scale and Center` option and close the dialog.
+* Display :file:`hymap_berlin.tif` and :file:`enmap_berlin.tif` as RGB composite of your preference in Map #1 and Map #2, respectively.
+* To establish geospatial linking, click the |link_basic| icon to open the :guilabel:`Map Linking` window. Choose the |link_all_mapscale_center| :sup:`Link Map Scale and Center` option, and close the dialog.
 
 .. image:: tut_img/05_multiplemapviews2.png
    :width: 100%
@@ -220,27 +215,25 @@ Exercise B: Spectral mixing
 2. Visualize image spectra
 --------------------------
 
-* The EnMAP-Box offers **Spectral Library Windows (SpectralLibrary #)** for visualizing spectra and handling their
-  metadata. To visualize image spectra, activate the **Identify** tool together with the **Identify raster profiles**
-  |identifytools| option. Click on an image pixel. SpectralLibrary #1 opens automatically displaying the respective
-  pixel spectrum (green line). The plotted spectrum always refers to the top-most raster layer of the respective Map
-  Window you click on (unless you change this in the :ref:`Spectral Profile Sources <spectral_profile_sources>` panel).
+* The EnMAP-Box provides **Spectral Library Windows (SpectralLibrary #)** for visualizing spectra and managing their
+  metadata. To visualize image spectra, activate the **Identify** tool along with the **Identify raster profiles**
+  |identifytools| option.
+* Click on an image pixel, and SpectralLibrary #1 will automatically open, displaying the corresponding pixel spectrum (dotted line). The :guilabel:`Spectral Profile Sources` panel will also open automatically. Note that the plotted spectrum always corresponds to the top-most raster layer of the respective Map Window you click on, unless you change this in the :ref:`Spectral Profile Sources` panel.
 
-* Make yourself familiar with the following tools in the Spectral Library #1 toolbar:
+* Familiarize yourself with the following tools in the Spectral Library #1 toolbar:
 
-  * The |plus_green| icon adds a plotted spectrum to a collection. Each collected spectrum (white line) gets an entry in the attribute table with a predefined name (filename and id).
-  * By clicking |mIconCollapse| next to the |plus_green| icon you can activate the |profile_add_auto| :sup:`Add Profiles automatically` mode, which will automatically add spectra to the collection when clicking on image pixels.
-  * The |mActionToggleEditing| icon switches on the editing mode. You can now edit the attribute table (e.g. edit the name of a spectrum), add or delete colums using the |mActionNewAttribute| |mActionDeleteAttribute| icons, etc.
+  * The |plus_green| icon adds a plotted spectrum to a collection.
+  * The |attributes| icon shows the attribute table, which lists every collected spectrum in a separate row.
+  * The |mActionToggleEditing| icon can be used to switch on/off the editing mode. If switched on, you can edit the attribute table, add or delete columns using the |mActionNewAttribute| |mActionDeleteAttribute| icons, etc.
   * You can delete selected spectra in editing mode using the |mActionDeleteSelected| icon (hold :kbd:`Ctrl` or :kbd:`Shift` to select multiple rows).
-  * The |speclib_save| icon saves a spectrum or a collection of spectra as a spectral library. Further information on spectral libraries and library formats will follow in Exercise C.
+  * The |speclib_save| icon saves a spectrum or a collection of spectra as a spectral library.
 
-
-.. image:: tut_img/06_spectrallibrary_new.png
+.. image:: tut_img/06_spectrallibrary.png
    :width: 100%
 
 .. admonition:: Learning activities
 
-   * **B1**: Visually compare the airborne and spaceborne hyperspectral images (:file:`hymap_berlin.bsq`, :file:`enmap_berlin.bsq`). How much of the spatial detail is lost when stepping from airborne to spaceborne scale?
+   * **B1**: Visually compare the airborne and spaceborne hyperspectral images (:file:`hymap_berlin.tif`, :file:`enmap_berlin.tif`). How much of the spatial detail is lost when stepping from airborne to spaceborne scale?
 
      .. raw:: html
 
@@ -250,7 +243,7 @@ Exercise B: Spectral mixing
         </details></div>
         </br>
 
-   * **B2**: Provide an average estimate on the percentage of pixels covered by 1, 2, 3, and 4 or more land cover classes for both images. Use level 3 of the classification scheme for your estimate. You may use the reference land cover information (:file:`landcover_berlin.shp`) for orientation.
+   * **B2**: Provide an average estimate on the percentage of pixels covered by 1, 2, 3, and 4 or more land cover classes for both images. Use level 3 of the classification scheme for your estimate. You may use the reference land cover information (:file:`landcover_berlin.gpkg`) for orientation.
 
      .. raw:: html
 
@@ -259,7 +252,7 @@ Exercise B: Spectral mixing
         </details></div>
         </br>
 
-   * **B3**: Compare pairs of spectra from the airborne and spaceborne hyperspectral images (:file:`hymap_berlin.bsq`, :file:`enmap_berlin.bsq`). For which urban surface materials is it still possible to collect pure spectra at spaceborne scale, and for which not?
+   * **B3**: Compare pairs of spectra from the airborne and spaceborne hyperspectral images (:file:`hymap_berlin.tif`, :file:`enmap_berlin.tif`). For which urban surface materials is it still possible to collect pure spectra at spaceborne scale, and for which not?
 
      .. raw:: html
 
@@ -278,46 +271,50 @@ Exercise C: Urban spectral libraries
 
 .. admonition:: Description
 
-   Urban spectral libraries are collections of pure surface spectra (endmembers) representing the spectral diversity
-   and variability of urban land cover types at high spectral resolution. Library spectra are commonly based on laboratory, field, or image data,
-   and are well suited for library-based mapping approaches such as unmixing. This exercise…
+   Urban spectral libraries comprise collections of pure surface spectra (endmembers) that depict the spectral diversity and variability of urban land cover types at high spectral resolution. These library spectra are commonly derived from laboratory, field, or image data and are well-suited for library-based mapping approaches, such as unmixing. This exercise...
 
-   * provides an insight into the design of urban spectral libraries and illustrates challenges related to within-class
-     variability and between-class similarity during urban mapping
-   * targets the handling of spectral libraries in the EnMAP-Box. You will get to know the spectral library format used in the EnMAP-Box,
-     and learn how to load and visualize external urban spectral libraries and associated metadata
+   * Provides insight into the design of urban spectral libraries and illustrates challenges related to within-class variability and between-class similarity during urban mapping
+   * Focuses on the management of spectral libraries in the EnMAP-Box. You will become familiar with the spectral library format used in the EnMAP-Box and learn how to load and visualize external urban spectral libraries along with their associated.
 
    Duration: 15 min
 
 
-1. Labeled spectral libraries
+1. Load spectral libraries
 -----------------------------
+* Close all Map and Spectral Library Windows from the previous exercise.
+* The Geopackage format ``gpkg`` allows for the effective storage of spectral profiles along with their attributes (e.g., labels, location, descriptions, etc.), thus extending standard spectral library formats like the ENVI Spectral Library.
+* To load the urban spectral library, right-click on :file:`library_berlin.gpkg` in the :guilabel:`Data Views` panel and select :guilabel:`Open Spectral Library Viewer`.
+* Familiarize yourself with the representation of the spectral library and the attribute table. (CHECK WITH BJ : By default, only 64 spectra will be displayed at once in the plot window. To change this number, right-click in the plot area, go to :menuselection:`Others --> Max. Profiles` and enter a higher number, e.g. ``75`` (total number of spectra in :file:`library_berlin.sli`)
 
-* The EnMAP-Box makes use of labeled spectral libraries, which extend the standard ENVI Spectral Library (SLI) and associated header (HDR) by additional attribute information, e.g., class labels, class colors, description, etc. This information is stored in an ASCII Comma Separated Value (CSV) file and in a JavaScript Object Notation (JSON) file. The CSV file includes an attribute table for each library spectrum (the column ‘spectra names’ links the CSV with the HDR). The JSON file contains the unique attributes of given attribute columns.
-* Open the :file:`library_berlin.hdr`, :file:`library_berlin.csv`, and :file:`library_berlin.json` files with a text editor and get familiar with the spectral library format used in the EnMAP-Box and the hierarchical classification scheme stored in the attribute information.
+.. image:: tut_img/06_spectrallibraryload.png
+   :width: 100%
 
 
 2. Spectral library handling
 ----------------------------
 
-* Close all Map and Spectral Library Windows from the previous exercise.
-* To load the urban spectral library, click on the |viewlist_spectrumdock| icon to open a new Spectral Library Window and drag :file:`library_berlin.sli` from the :guilabel:`Data Sources` panel into SpectralLibrary #1. Get familiar with the representation of the spectral library and the attribute table.
-* By default, only 64 spectra will be displayed at once in the plot window. To change this number, right-click in the plot
-  area, go to :menuselection:`Others --> Max. Profiles` and enter a higher number, e.g. ``75`` (total number of spectra in :file:`library_berlin.sli`)
-* To display a subset of spectra in a separate Library Window…
+* You can change the symbology of the displayed spectra using standard QGIS functionality.
 
-  * Select the spectra of interest by clicking on their corresponding row numbers (use :kbd:`Ctrl` or :kbd:`Shift` to select multiple rows). To select spectra with the same attributes, prior sorting of the attribute table by clicking on the corresponding column header is recommended. You can also select the spectra directly in the plot window.
+    * Right-click on the spectral library in the :guilabel:`Data Views` panel, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`.
+    * Select :guilabel:`Categorized` and use the :guilabel:`Value` and :guilabel:`Classify` options to change the color representation of the spectral profiles.
+
+.. image:: tut_img/06_spectrallibrarycolorize.png
+   :width: 100%
+
+* To display a subset of spectra in a separate Spectral Library Window…
+
+  * Select the spectra of interest by clicking on their corresponding row numbers (use :kbd:`Ctrl` or :kbd:`Shift` to select multiple rows). To select spectra with the same attributes, prior sorting of the attribute table by clicking on the corresponding column header is recommended.
   * Click on the |mActionEditCopy| icon in the toolbar (or :kbd:`Ctrl+C`) to copy the selected spectra to clipboard.
   * Open a second Spectra Library Window. Similar to the work with multiple Map Windows, Spectral Library Windows can be arranged according to the user needs.
   * Switch on the editing mode |mActionToggleEditing| in the SpectralLibrary #2 toolbar and use the |mActionEditPaste| icon (or :kbd:`Ctrl+V`) to paste the copied spectra into SpectralLibrary #2. Switch off the editing mode.
 
-.. image:: tut_img/07_spectrallibraryhandling_new.png
+.. image:: tut_img/07_spectrallibraryhandling.png
    :width: 100%
 
 
 .. admonition:: Learning activities
 
-   * **C1**: Load the urban spectral library (:file:`library_berlin.sli`) and display each level 3 class in a separate Spectral Library Window. How diverse is each class with regard to within-class variability?
+   * **C1**: Load the urban spectral library (:file:`library_berlin.gpkg`) and display each level 3 class in a separate Spectral Library Window. How diverse is each class with regard to within-class variability?
 
      .. raw:: html
 
@@ -348,38 +345,36 @@ Exercise D: Regression-based unmixing
 
 .. admonition:: Description
 
-   To utilize data from forthcoming spaceborne imaging spectrometer missions for mapping the land cover composition of urban areas,
-   unmixing is more useful than a discrete classification. This exercise…
+   To map the land cover composition of urban areas using data from spaceborne imaging spectrometer missions, unmixing proves more useful than discrete classification. This exercise...
 
-   * introduces a regression-based unmixing approach for land cover fraction mapping. The approach successfully copes with
-     spectral diversity, variably and mixing, and makes use of synthetic mixtures from spectral libraries for regression model training
-   * demonstrates the work with the ‘Regression-based unmixing (synthMix)’ application of the EnMAP-Box
+   * Introduces a regression-based unmixing approach for land cover fraction mapping. The approach effectively addresses spectral diversity, variability, and mixing, utilizing synthetic mixtures from spectral libraries to train regression models.
+   * Guides you through using the 'Regression-based unmixing' application in the EnMAP-Box.
 
    Duration: 30 min
 
 1. Introduction
 ---------------
 
-The training of regression models with synthetically mixed data from spectral libraries for land cover fraction mapping is
-implemented as the **Regression-based unmixing (synthMix)** application in the EnMAP-Box 3. The workflow of the unmixing approach comprises the following steps:
+Regression-based unmixing using synthetically mixed data from spectral libraries for land cover fraction mapping is implemented as the **Regression-based unmixing** application in the EnMAP-Box 3. Since the implemented regression algorithms are designed for single-output tasks, the procedure is (internally) successively conducted separately for every class, wherein the current class is referred to as the **target class**, and all others are referred to as **background classes**. The workflow of the unmixing approach is illustrated below:
 
 .. image:: tut_img/08_workflow.png
    :width: 100%
 
-**Step 1**: An endmember library with associated class labels is used to randomly create a synthetically mixed dataset, i.e., pairs of mixed spectra and mixing fractions, for each class.
 
-**Step 2**: The synthetically mixed dataset is used to train a regression model for each class.
+**Step 1**: An spectral library with associated class information is used to randomly create a synthetically mixed dataset. This involves creating pairs of mixed spectra and associated mixing fractions for each target class.
 
-**Step 3**: The regression model is applied to an image to derive a fraction map for each class.
+**Step 2**: The synthetically mixed dataset is used to train a regression model for each target class.
 
-The approach can be embedded into an ensemble framework, i.e., steps 1-3 are iterated n-times and the final fraction map for each class is created by combining the intermediate maps. The ensemble modeling allows the inclusion of a multitude of different types of synthetic mixtures into the unmixing process while keeping the training sample size low.
+**Step 3**: The regression model is applied to an image to derive a fraction map for each target class.
+
+The approach can be integrated into an ensemble framework, where steps 1-3 are iterated n-times and the final fraction map for each target class is created by combining the intermediate maps. The ensemble modeling facilitates the incorporation of diverse synthetic mixtures into the unmixing process, all while maintaining a low training sample size.
 
 2. Start the application
 ------------------------
-
-* Click on :guilabel:`Applications` in the Menu and select :guilabel:`Regression-based unmixing (synthMix)`. The graphical widget of the **Regression-based unmixing (synthMix)**
-  consists of sections for specifying :guilabel:`Inputs`, for target :guilabel:`Class Selection`, for setting :guilabel:`Mixing Parameters`,
-  for selecting the :guilabel:`Regression Algorithm`, and for specifying the :guilabel:`Outputs`.
+* Close all Map and Spectral Library Windows from the previous exercise.
+* Load :file:`enmap_berlin.tif` as RGB composite of your choice and :file:`library_berlin.gpkg` into new Map and Spectral Library Windows.
+* Navigate to :guilabel:`Applications` in the Menu, choose |raster_multispectral| :sup:`Unmixing` and then |processingAlgorithm| :sup:`Regression-based unmixing`.
+* The **Regression-based unmixing** GUI will open, consisting of sections for defining :guilabel:`Inputs`, selecting the :guilabel:`Regression algorithm`, configuring the :guilabel:`Mixing parameters`, and specifying the :guilabel:`Outputs`.
 
 .. image:: tut_img/09_synthmixapp.png
    :width: 100%
@@ -387,78 +382,74 @@ The approach can be embedded into an ensemble framework, i.e., steps 1-3 are ite
 3. Inputs and class selection
 -----------------------------
 
-* The specification of input data is the start of the unmixing process. This includes an :guilabel:`Endmember Library` with associated class labels
-  (see Exercise 3), where the :guilabel:`Class Attribute` drop menu specifies the attribute column associated with the class labels, and the :guilabel:`Spectral Image` to unmix.
-* Select / specify the following inputs:
+* The regression-based unmixing workflow requires two input datasets.
 
-  * :guilabel:`Endmember Library`: :file:`library_berlin.sli`
-  * :guilabel:`Class Attribute`: level_1
-  * :guilabel:`Spectral Image`: :file:`enmap_berlin.bsq`
-
-* The selection of the classes of interest, i.e., :guilabel:`Target Classes`, is the next step of the unmixing process. Synthetically
-  mixed data, regression models, and fraction maps are only created for target classes. Spectra of excluded classes are still
-  used as background signatures in the synthetic mixing process.
-* Select the following :guilabel:`Target Classes`: impervious, vegetation, soil, water (all level 1 classes)
+  * :guilabel:`Endmember dataset`: Spectral library containing the endmembers with associated class labels (i.e. single or multiple class levels) used for generating synthetic training information for subsequent regression model training. The spectral library has to be converted into a classification dataset wherein each spectral profile is associated with a single class label.
+  * :guilabel:`Raster image`: An image to which the regression model training will be applied to derive a fraction map.
 
 .. image:: tut_img/10_synthmixing1.png
    :width: 100%
 
-4. Mixing parameters
+* To set up the :guilabel:`Endmember dataset`, click on the |processingAlgorithm| icon and select |speclib| :sup:`Create classification dataset (from categorized spectral library)`. The :guilabel:`Create Classification Dataset` algorithm will open, where you can specify the following settings:
+
+  * :guilabel:`Categorized spectral library`: :file:`library_berlin.gpkg`
+  * :guilabel:`Field with class values`: level_1
+  * :guilabel:`Field with spectral profiles`: profiles
+  * :guilabel:`Output dataset`: Path/filename to store the classification dataset
+
+* Execute the process. The classification dataset will be visible in the :guilabel:`Data Source` panel and automatically assigned as the :guilabel:`Endmember dataset`.
+
+.. image:: tut_img/10_synthmixing2.png
+   :width: 100%
+
+4. Regression Algorithm
+-----------------------
+
+* Next, you need to select the regression algorithm. The EnMAP-Box provides a range of state-of-the-art algorithms from the scikit-learn library (see https://scikit-learn.org/stable/index.html). It's important to note that different algorithms may result in varying accuracies and processing times, especially when incorporating the unmixing process into an ensemble.
+* Choose RandomForestRegression from the dropdown menu as the :guilabel:`Regressor` due to its lower processing time. Keep the default parameter settings (see https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html for more details on parameter settings).
+* Iterate the unmixing 3 times by setting :guilabel:`Ensemble size` to 3 (scroll down).
+
+.. image:: tut_img/14_regressionalgo.png
+   :width: 100%
+
+5. Mixing parameters
 --------------------
 
-* The mixing parameters steer the process of generating the synthetically mixed data from the endmember library. The :guilabel:`Number of Synthetic Mixtures per Class`
-  specifies the total number of mixtures per class to be created. The check option to |cb1| :guilabel:`Include Original Library Endmembers`
-  allows to append the endmember library to the synthetically mixed data, with fractions of either 0% or 100% of a respective target class.
+* The mixing parameters steer the process of generating the synthetically mixed training data from the spectral library.
+
+  * The :guilabel:`Number of mixtures per class` specifies the total number of synthetic mixtures per target class to be created.
+  * The :guilabel:`Proportion of background mixtures` enables the user to increase the number  mixtures, i.e. mixtures between endmembers that do not belong to the current target class.
+  * The check option to |cb1| :guilabel:`Include original endmembers` allows to append the spectral library to the synthetically mixed training data, with fractions of either 0% or 100% of a respective target class.
 
 .. image:: tut_img/11_synthmixing2.png
    :width: 100%
 
-* The synthetic mixing process itself is randomized. That is, to generate a synthetic mixture…
+* The synthetic mixing process itself is randomized. That is, to generate a synthetic mixture ...
 
-  * … a mixing complexity is randomly assigned. The mixing complexity defines the number of endmembers contributing to a mixture (e.g., 2EM, 3EM).
-    The random selection is steered by user-defined :guilabel:`Mixing Complexity Probabilities` (e.g., 2EM=0.6, 3EM=0.4 means that there is a 60%
-    likelihood that the mixture is made up of two endmembers and a 40% likelihood that the mixture is made up of three endmembers).
-    The implementation allows the definition of probabilities for 2EM, 3EM and 4EM. Note that probabilities must sum up to 1.
-  * … endmembers are randomly drawn from the library. The number of endmembers is based on the previously assigned mixing complexity.
-    The first endmember is always drawn from the target class. The following endmembers are drawn based on :guilabel:`Class Probabilities`,
-    which are either proportional (class proportions within the library) or equalized (all classes with the same likelihood).
-    The |cb1| :guilabel:`Allow Within-Class Mixtures` check option allows the user to decide whether multiple endmembers of the same class can be drawn to create a mixture.
-  * … random mixing fractions between 0 and 1 (0-100%) are randomly assigned to the previously drawn endmembers. The total sum of fractions is always 1 (100%).
-  * … endmembers are linearly mixed based on the mixing fractions to create the mixture.
+  * ... a mixing complexity is randomly assigned, determining the number of endmembers contributing to a mixture (e.g., 2EM, 3EM). User-defined  :guilabel: 'Mixing complexity probabilities' guide this random selection; for instance, 0.6 and 0.4 imply a 60% chance of a two-endmember mixture and a 40% chance of a three-endmember mixture. Ensure that the probabilities sum up to 1.
+  * ... endmembers are randomly sampled from the library. The number of endmembers is determined by the previously assigned mixing complexity.
+    The first endmember is always drawn from the target class. Subsequent endmembers are sampled based on :guilabel:`Class probabilities`,
+    which are either proportional to the class size (default; if not specified) or can be defined by the user. The |cb1| :guilabel:`Allow within-class mixtures` check option enables the user to decide whether multiple endmembers of the same class can be sampled to create a mixture.
+  * ... mixing fractions between 0 and 1 (0-100%) are randomly assigned to the previously drawn endmembers. The total sum of fractions is always 1 (100%).
+  * ... endmembers are linearly combined based on the mixing fractions to create the mixture.
 
-.. todo delete old images from repo
 
-.. image:: tut_img/12_synthmixing3_v2.png
+.. image:: tut_img/12_synthmixing3.png
    :width: 100%
 
-.. image:: tut_img/13_synthmixing4_v2.png
+.. image:: tut_img/13_synthmixing4.png
    :width: 100%
 
 
 * Select the following mixing parameters:
 
-  * :guilabel:`Number of Synthetic Mixtures per Class`: ``1000`` (default)
-  * :guilabel:`Include Original Library Endmembers`: Yes (default)
-  * :guilabel:`Mixing Complexity Probabilities`: 2EM= ``0.4``, 3EM= ``0.4``, 4EM= ``0.2``
-  * :guilabel:`Allow Within-Class Mixtures`: Yes (default)
-  * :guilabel:`Class Probabilities`: Proportional (default)
+  * :guilabel:`Number of synthetic mixtures per class`: ``1000`` (default)
+  * :guilabel:`Include original endmembers`: Yes (default)
+  * :guilabel:`Mixing complexity probabilities`: 2EM= ``0.4``, 3EM= ``0.4``, 4EM= ``0.2``
+  * :guilabel:`Allow within-class mixtures`: Yes (default)
+  * :guilabel:`Class probabilities`: Proportional (leave unspecified = default)
 
 
-5. Regression Algorithm
------------------------
-
-* The selection of the regression algorithm and the setting up of the ensemble are the next steps in the unmixing process. The EnMAP-Box makes
-  use of the scikit-learn library (see https://scikit-learn.org/stable/index.html) to implement several state-of-the-art algorithms offered in the :guilabel:`Regressor`
-  drop menu. Note that the different algorithms lead to varying accuracies and processing times,
-  particularly when embedding the unmixing process into an ensemble. To do so, activate |cb1| :guilabel:`Use Ensemble` and set the :guilabel:`Ensemble Size`.
-
-.. image:: tut_img/14_regressionalgo.png
-   :width: 100%
-
-* Select the following regression settings:
-
-  * :guilabel:`Regressor`: RandomForestRegression (default, due to the low processing time)
-  * :guilabel:`Use Ensemble`: Yes (default), :guilabel:`Ensemble Size`: ``3`` (default)
 
 6. Outputs
 ----------
