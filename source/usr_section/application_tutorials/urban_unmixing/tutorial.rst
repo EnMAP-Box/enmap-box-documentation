@@ -12,7 +12,7 @@ Regression-based unmixing of urban land cover
 
 **Publication date:** 05/02/2019
 
-**Latest update:** 12/01/2023
+**Latest update:** 18/01/2023
 
 Introduction
 ============
@@ -284,7 +284,7 @@ Exercise C: Urban spectral libraries
 * Close all Map and Spectral Library Windows from the previous exercise.
 * The Geopackage format ``gpkg`` allows for the effective storage of spectral profiles along with their attributes (e.g., labels, location, descriptions, etc.), thus extending standard spectral library formats like the ENVI Spectral Library.
 * To load the urban spectral library, right-click on :file:`library_berlin.gpkg` in the :guilabel:`Data Views` panel and select :guilabel:`Open Spectral Library Viewer`.
-* Familiarize yourself with the representation of the spectral library and the attribute table. (CHECK WITH BJ : By default, only 64 spectra will be displayed at once in the plot window. To change this number, right-click in the plot area, go to :menuselection:`Others --> Max. Profiles` and enter a higher number, e.g. ``75`` (total number of spectra in :file:`library_berlin.sli`)
+* Familiarize yourself with the representation of the spectral library and the attribute table.
 
 .. image:: tut_img/06_spectrallibraryload.png
    :width: 100%
@@ -355,7 +355,7 @@ Exercise D: Regression-based unmixing
 1. Introduction
 ---------------
 
-Regression-based unmixing using synthetically mixed data from spectral libraries for land cover fraction mapping is implemented as the **Regression-based unmixing** application in the EnMAP-Box 3. Since the implemented regression algorithms are designed for single-output tasks, the procedure is (internally) successively conducted separately for every class, wherein the current class is referred to as the **target class**, and all others are referred to as **background classes**. The workflow of the unmixing approach is illustrated below:
+Regression-based unmixing using synthetically mixed data from spectral libraries for land cover fraction mapping is implemented as the **Regression-based unmixing** application in the EnMAP-Box 3. Given that the implemented regression algorithms are designed for single-output tasks, the procedure is successively conducted internally for each class. In this process, the current class is designated as the **target class**, while all others are considered as **background classes**. The workflow of the unmixing approach is illustrated below:
 
 .. image:: tut_img/08_workflow.png
    :width: 100%
@@ -405,12 +405,12 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 4. Regression Algorithm
 -----------------------
 
-* Next, you need to select the regression algorithm. The EnMAP-Box provides a range of state-of-the-art algorithms from the scikit-learn library (see https://scikit-learn.org/stable/index.html). It's important to note that different algorithms may result in varying accuracies and processing times, especially when incorporating the unmixing process into an ensemble.
+* The subsequent step involves selecting a regression algorithm. The EnMAP-Box provides a range of state-of-the-art algorithms from the scikit-learn library (see https://scikit-learn.org/stable/index.html). It's important to note that different algorithms may result in varying accuracies and processing times, especially when incorporating the unmixing process into an ensemble.
 * Choose RandomForestRegression from the dropdown menu as the :guilabel:`Regressor` due to its lower processing time. Keep the default parameter settings (see https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html for more details on parameter settings).
 * Iterate the unmixing 3 times by setting :guilabel:`Ensemble size` to 3 (scroll down).
 
 .. image:: tut_img/14_regressionalgo.png
-   :width: 100%
+   :width: 70%
 
 5. Mixing parameters
 --------------------
@@ -454,44 +454,44 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 6. Outputs
 ----------
 
-* The specification of the outputs is the final step in the unmixing process. By default, the final fraction map is the only output:
+* The final component of the regression-based unmixing application involves specifying the outputs.
 
-  * :guilabel:`Folder`: Specifies the output folder where results are saved.
-  * :guilabel:`Name`: Specifies the base name of the final fraction map. We add the suffix ‘_mean’ to this file as the default ensemble decision fusion is based on averaging.
+  * :guilabel:`Output class fraction layer`: Path/filename to store the final fraction maps of the target classes.
+  * :guilabel:`Output classification layer`: Optional output to store a discrete classification map derived from the final fraction map, where each pixel is assigned the class with the maximum class fraction.
+  * :guilabel:`Output class fraction variation layer`: Optional output to store the variation of the intermediate fraction maps from ensemble modeling.
 
-* The advanced options allow user to save additional files created during the unmixing process, and to derive additional maps from the final fraction map.
+* Two additional options enable the user to modify the output fraction map.
 
-  * :guilabel:`Decision Fusion (Ensemble)`: Selection of different statistics to evaluate the ensemble output. The following statistics are implemented: mean (default, suffix ‘_mean’), median (suffix ‘_median’), inter quartile range (suffix ‘_iqr’), and standard deviation (suffix ‘_std’).
-  * :guilabel:`Save`: Check to save Training Samples, Predictions, and Models. These outputs will be stored for each class and with a suffix ‘_run’ for each ensemble iteration in separate subfolders.
-  * :guilabel:`Create Class Fraction RGB`: Check to create a RGB class representation of the final fraction map. The RGB color of a specific pixel is the weighted mean value of the original class colors, where the weights are given by the corresponding class fractions.
-  * :guilabel:`Derive Classification from Fraction Map`: Check to derive a discrete classification map from the final fraction map. The winner class per pixel corresponds to the maximum class fraction.
+  * :guilabel:`Robust decision fusion`: Option to determine the method of combining intermediate fraction maps from ensemble modeling. The default setting involves utilizing the mean and standard deviation. By selecting this option, the combination is based on the median and interquartile range.
+  * :guilabel:`Sum-to-one constraint`: Option for post-hoc normalization of fractions to ensure they sum to one. This involves dividing the fractions of each class by the total sum of fractions across all classes.
 
-* Specify the following outputs (and skip the advanced options):
+* Specify the following outputs:
 
-  * :guilabel:`Folder`: *path to your working folder*
-  * :guilabel:`Name`: :file:`fraction_level1_estimation.bsq`
+  * :guilabel:`Output class fraction layer`: Path/filename to store the final :file:`class fraction layer`
+
 
 7. Run the application
 ----------------------
 
-* Click on the |action| button to run the application. The outputs appear in the Data Sources panel.
+* Execute the process. The outputs will be visible in the :guilabel:`Data Source` panel.
+
 
 8. Visualize the urban land cover fraction map
 ----------------------------------------------
 
-* Display the newly created :file:`fraction_level1_estimation.bsq`. The file consists of 4 bands, where each band represents a fraction map of the defined target classes. Display the fraction map in a useful render style and appropriate contrast stretch:
+* The :file:`class fraction layer` consists of 4 bands, where each band represents a fraction map of a respective target class. Display map in a useful render style and appropriate contrast stretch:
 
-  * e.g., as **multibandcolor** RGB composite of three target classes in a single Map Window. For stretching fraction maps to the full range of possible fraction, set :guilabel:`Min` = 0 and :guilabel:`Max` = 1.
-  * e.g., as **singlegray** image per target class in multiple Map Windows. For stretching fraction maps to the full range of possible fraction, set :guilabel:`Min` = 0 and :guilabel:`Max` = 1.
+  * e.g., as multiband RGB composite of three target classes in a single Map Window. For stretching fraction maps to the full range of possible fraction, set :guilabel:`Min` = 0 and :guilabel:`Max` = 1.
+  * e.g., as singleband greyscale image per target class in multiple Map Windows. For stretching fraction maps to the full range of possible fraction, set :guilabel:`Min` = 0 and :guilabel:`Max` = 1.
 
-* Visually explore your fraction map. You may open :file:`enmap_berlin.bsq` in a separate Map Window for comparison. You may use the **Identify** tool together with the **Identify cursor location values option to display fraction values** |identifytools2| of pixels.
+* Visually explore your fraction map. Display :file:`enmap_berlin.tif` in a separate Map Window for comparison. You may use the **Identify** tool together with the **Identify cursor location values** |identifytools2| option to display fraction values of pixels.
 
 .. image:: tut_img/15_vismaps.png
    :width: 100%
 
 .. admonition:: Learning activities
 
-   * **D1**: Visually explore the fraction map (:file:`fraction_level1_estimation.bsq`). How are level 1 land cover distributed across the urban gradient. Are the fraction values physically plausible?
+   * **D1**: Visually explore the fraction map (:file:`class fraction layer`). How are level 1 land cover distributed across the urban gradient. Are the fraction values physically plausible?
 
      .. raw:: html
 
@@ -521,10 +521,10 @@ Exercise E: Validation of fraction maps
 
 .. admonition:: Description
 
-   Validation of fraction maps is commonly conducted by comparison of estimated and reference fractions using scatterplots and statistical measures (e.g., mean absolute error, root mean squared error, R², slope and intercept of a linear fitted regression model). This exercise……
+   Validation of fraction maps is typically performed by comparing estimated and reference fractions through scatterplots and various statistical measures. These measures include mean absolute error, root mean squared error, R², as well as the slope and intercept of a linear fitted regression model. This exercise……
 
-   * illustrates the validation procedure for fraction maps
-   * introduces EnMAP-Box geoalgorithms for producing reference fractions from high resolution land cover information and for statistical accuracy assessment of fraction maps.
+   * Illustrates the validation procedure for fraction maps.
+   * Introduces EnMAP-Box geoalgorithms for producing reference fractions from high resolution land cover information and statistical accuracy assessment of fraction maps.
 
    Duration: 15 min
 
@@ -532,7 +532,12 @@ Exercise E: Validation of fraction maps
 1. Create reference fraction map
 --------------------------------
 
-* A reference fraction map is created by rasterizing available reference land cover information to the pixel grid of the estimated fraction map. To obtain reasonable fractions, the reference land cover information needs to be at a significantly higher spatial resolution than the pixel grid. To create reference fractions, use the following processing algorithm :menuselection:`Create Raster --> Fraction from Vector`.
+* A reference fraction map is created by rasterizing available reference land cover information to the pixel grid of the estimated fraction map. To obtain reasonable fractions, the reference land cover information needs to be at a significantly higher spatial resolution than the pixel grid. To create reference fractions
+
+  * Click on the |processingAlgorithm| icon in the menu to open the **QGIS Processing Toolbox**, where you can find the **EnMAP-Box geoalgorithms**.
+
+
+Open the use the following processing algorithm :menuselection:`Create Raster --> Fraction from Vector`.
 * Enter the following data / parameters (use the tool tips for their description):
 
   * :guilabel:`Pixel Grid`: :file:`fraction_level1_estimation.bsq`
