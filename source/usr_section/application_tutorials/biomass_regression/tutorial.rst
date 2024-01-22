@@ -1,15 +1,17 @@
-.. include:: /icon_links.rst
+## .. include:: /icon_links.rst
 
 .. _tutorial_biomass:
 
 Regression-based mapping of forest aboveground biomass
 ######################################################
 
-**Authors:**  Sam Cooper, Akpona Okujeni, Patrick Hostert, Clemens Jaenicke, Benjamin Jakimow, Andreas Rabe, Fabian Thiel & Sebastian van der Linden
+**Authors:**  Sam Cooper, Akpona Okujeni, Patrick Hostert,
+Clemens Jaenicke, Benjamin Jakimow, Andreas Rabe,
+Fabian Thiel, Sebastian van der Linden & Klara Busse
 
 **Publication date:** 03/07/2020
 
-**Last update:** 02/08/2022
+**Last update:** 15/08/2023
 
 
 Introduction
@@ -53,7 +55,7 @@ EnMAP-Box, as well as hands-on training for implementing regression-based mappin
 3. Requirements
 ===============
 
-This tutorial requires at least version 3.10 of the EnMAP-Box 3. There might be some minor
+This tutorial requires at least version 3.11 of the EnMAP-Box 3. There might be some minor
 changes for higher versions (e.g., changed menu labels, added parameter options, etc.).
 
 
@@ -95,7 +97,22 @@ taken from the 2011 National Landcover Database (NLCD) [7]_.
 .. [6] Cooper, S.; Okujeni, A.; Jänicke, C.; Segl, K.; van der Linden, S.; Hostert, P. (2020): 2013 Simulated EnMAP Mosaics for the San Francisco Bay Area, USA. GFZ Data Services. https://doi.org/10.5880/enmap.2020.002
 .. [7] Multi-Resolution Land Characteristics Consortium (MRLC) (2018). National Land Cover Database 2011 (NLCD 2011). Multi-Resolution Land Characteristics Consortium (MRLC). https://data.nal.usda.gov/dataset/national-land-cover-database-2011-nlcd-2011. Accessed 2022-08-08.
 
-|
+6. Basic navigation tools
+=========================
+
+* The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the
+  following navigation tools: |navtools|
+* Note that the mouse wheel can be used alternatively for zooming
+  (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
+* For a better orientation when exploring visualized raster images, you may switch on the crosshairs (right click into
+  Map View and activate :menuselection:`Crosshair --> Show`.
+* Make yourself familiar with the |cursorlocationinfo| icon on the toolbar to view pixel values of the displayed raster.
+  Note: |select_location| :sup:`Identify Cursor Info` must be activated to access this tool. When activated and used, a new
+  Cursor Location Values window will open displaying data from the selected pixel. This tool similarly works for
+  viewing attribute information of displayed vector data.
+
+.. |navtools| image:: ../urban_unmixing/tut_img/navtools.png
+   :height: 30px
 
 Exercise A: Getting started with the EnMAP-Box
 **********************************************
@@ -172,29 +189,11 @@ Exercise A: Getting started with the EnMAP-Box
 
    If the raster image has wavelength information associated with it, you may also select an RGB combination from
    different custom RGB band combinations (True Color, Colored IR, SWIR-NIR-R or NIR-SWIR-R). Right click on the dataset
-   in the :guilabel:`Data Views` panel, select :guilabel:`Layer Properties` and navigate to :guilabel:`Raster Band`.
+   in the :guilabel:`Data Views` panel, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`.
    Don't forget to choose appropriate Min/Max Value Settings.
 
-4. Basic navigation tools
-=========================
 
-* The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the
-  following navigation tools: |navtools|
-* Note that the mouse wheel can be used alternatively for zooming
-  (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
-* For a better orientation when exploring visualized raster images, you may switch on the crosshairs (right click into
-  Map View and activate :menuselection:`Crosshair --> Show`.
-* Make yourself familiar with the |cursorlocationinfo| icon on the toolbar to view pixel values of the displayed raster.
-  Note: |select_location| :sup:`Identify Cursor Info` must be activated to access this tool. When activated and used, a new
-  Cursor Location Values window will open displaying data from the selected pixel. This tool similarly works for
-  viewing attribute information of displayed vector data.
-
-
-.. |navtools| image:: ../urban_unmixing/tut_img/navtools.png
-   :height: 30px
-
-
-5. Multiple map views
+4. Multiple map views
 =====================
 
 * The EnMAP-Box enables users to work with multiple Map Views, which can be flexibly organized and geospatially linked.
@@ -232,7 +231,7 @@ Exercise A: Getting started with the EnMAP-Box
 .. |float_window| image:: img/float_window.png
 
 
-6. Visualize vector data
+5. Visualize vector data
 ========================
 
 * Close Map #2 from the previous step.
@@ -250,7 +249,7 @@ Exercise A: Getting started with the EnMAP-Box
 .. image:: img/ex_a_agb_tutorial_figure_6.png
    :width: 100%
 
-7. Extract & visualize image spectra
+6. Extract & visualize image spectra
 ====================================
 
 * The EnMAP-Box offers **Spectral Library Windows** (SpectralLibrary #) for visualizing spectra and handling
@@ -342,11 +341,11 @@ Exercise B: Regression based mapping of AGB
      and processing times. Refer to the scikit-learn documentation for more information.
    * :guilabel:`Raster layer with features` specifies the raster image to which the regression model will be applied.
      Select :file:`enmap_sonoma.bsq`. Specify output path and file name (e.g. :file:`agb_estimation.bsq`)
-     under :guilabel:`Output regressor layer` to save the result in your working directory.
+     under :guilabel:`Output regression layer` to save the result in your working directory.
    * To make use of a cross-validation, set the :guilabel:`Number of cross-validation` folds to ``10`` (default)
-     and leave the :guilabel:`Open output performance report` option |cb1| checked. Specify output path and file name
-     (e.g. :file:`agb_estimation_cv.html`) under :guilabel:`Output regressor performance report` to save the report in
-     your working directory.
+     and leave the :guilabel:`Open output cross-validation regressor performance report in web browser after running algorithm`
+     option |cb1| checked. Specify output path and file name
+     (e.g. :file:`agb_estimation_cv.html`) under :guilabel:`Output cross-validation regressor performance report` to save the report in your working directory.
    * The regression model can be optionally saved, e.g. for applying the model again to a dataset.
      Specify output path and file name (e.g. :file:`agb_rfmodel.pkl`) under :guilabel:`Output regressor` to save the
      result in your working directory.
@@ -412,7 +411,7 @@ Exercise C: Compare AGB estimates with the NDVI
     * to generate a forest mask from the NLCD land cover map,
     * and to apply a forest mask to both the NDVI and AGB maps.
 
-* Close all opened Map/Spectral Library Windows. Display :file:`enmap_sonoma.bsq`, :file:`nlcd_sonoma.bsq`
+* Close all opened Map/Spectral Library Windows. Display :file:`enmap_sonoma.bsq`, :file:`nlcd_sonoma.bsq` (in the exercise data)
   and :file:`agb_estimation.bsq` in a single or in multiple Map Views.
 * Open the **ImageMath** application by going to :guilabel:`Applications` then selecting |numpy| :guilabel:`ImageMath`
 * ImageMath consists of several panels:
