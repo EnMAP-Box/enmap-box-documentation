@@ -72,7 +72,7 @@ MacOS
 -----------------------------------
 
 The EnMAP-Box plugin requires several python packages (click
-`here <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt>`_ here for full list).
+`here <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/requirements.txt>`_ here for full list).
 In the following we demonstrate two variants for installing the required packages (you **don't** have to do both!):
 
 .. _package_installer:
@@ -136,7 +136,7 @@ Windows
 
    .. code-block:: batch
 
-      python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
+      python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/requirements.txt
 
 
    Now all packages will be installed automatically. After completion, the shell should show something like this:
@@ -163,7 +163,7 @@ Linux
 
    .. code-block:: bash
 
-      python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
+      python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements_ubuntu.txt
 
    .. hint:: Make sure to execute the pip command in the python environment QGIS is using (usually you can find out where
              python is located by running ``import sys; sys.executable`` in the QGIS Python Console). You then might have
@@ -190,7 +190,7 @@ Use ``-U`` or ``--update`` to update older package version.
 
 To install all packages required, call::
 
-   /Applications/QGIS.app/Contents/MacOS/bin/pip3 install -U -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/requirements.txt
+   /Applications/QGIS.app/Contents/MacOS/bin/pip3 install -U -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/macos/requirements_macos.txt
 
 
 More details on the QGIS packaging mechanism for macOS can be found `here <https://www.lutraconsulting.co.uk/blog/2020/10/01/qgis-macos-package/>`_.
