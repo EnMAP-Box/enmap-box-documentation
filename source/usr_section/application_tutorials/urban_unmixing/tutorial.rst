@@ -67,7 +67,7 @@ We recommend [1]_ for a comprehensive overview on imaging spectroscopy of urban 
 -------
 
 :download:`The tutorial data can be downloaded here:`
-https://box.hu-berlin.de/f/3c3f7b76d91b4bd2a688/?dl=1
+https://box.hu-berlin.de/f/e4fa78c198bc4d868d30/?dl=1
 
 The tutorial data covers a region along the urban gradient of Berlin, Germany. It consists of a simulated hyperspectral EnMAP image at 30 m resolution, a corresponding hyperspectral HyMap image at 3.6 m resolution, a spectral library, and detailed land cover reference information.
 
@@ -81,8 +81,6 @@ The tutorial data covers a region along the urban gradient of Berlin, Germany. I
    Raster; :file:`enmap_berlin.tif`; Spaceborne hyperspectral data from the EnMAP sensor (here simulated from HyMAP) with a spatial resolution of 30 m, 177 bands and 220x400 pixels (GeoTIFF ``tif``)
    Spectral library; :file:`library_berlin.gpkg`; Urban spectral library with 75 pure surface materials categorized in a hierarchical class scheme. The Library was developed from the HyMap image and spectrally resampled to the EnMAP sensor (Geopackage ``gpkg`` with QGIS layer style file ``qml``)
    Vector; :file:`landcover_berlin.gpkg`; Detailed land cover reference information categorized in a hierarchical class scheme (GeoPackage ``gpkg`` with QGIS layer style file ``qml``)
-
-.. .. image:: tut_img/data_table.png
 
 The tutorial data is a subset extracted from the Berlin-Urban-Gradient dataset [5]_. Please cite the dataset as follows:
 
@@ -286,7 +284,7 @@ Exercise C: Urban spectral libraries
 * To load the urban spectral library, right-click on :file:`library_berlin.gpkg` in the :guilabel:`Data Views` panel and select :guilabel:`Open Spectral Library Viewer`.
 * Familiarize yourself with the representation of the spectral library and the attribute table.
 
-.. image:: tut_img/06_spectrallibraryload.png
+.. image:: tut_img/07_spectrallibraryload.png
    :width: 100%
 
 
@@ -298,7 +296,7 @@ Exercise C: Urban spectral libraries
     * Right-click on the spectral library in the :guilabel:`Data Views` panel, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`.
     * Select :guilabel:`Categorized` and use the :guilabel:`Value` and :guilabel:`Classify` options to change the color representation of the spectral profiles.
 
-.. image:: tut_img/06_spectrallibrarycolorize.png
+.. image:: tut_img/08_spectrallibrarycolorize.png
    :width: 100%
 
 * To display a subset of spectra in a separate Spectral Library Window…
@@ -308,7 +306,7 @@ Exercise C: Urban spectral libraries
   * Open a second Spectra Library Window. Similar to the work with multiple Map Windows, Spectral Library Windows can be arranged according to the user needs.
   * Switch on the editing mode |mActionToggleEditing| in the SpectralLibrary #2 toolbar and use the |mActionEditPaste| icon (or :kbd:`Ctrl+V`) to paste the copied spectra into SpectralLibrary #2. Switch off the editing mode.
 
-.. image:: tut_img/07_spectrallibraryhandling.png
+.. image:: tut_img/09_spectrallibraryhandling.png
    :width: 100%
 
 
@@ -357,7 +355,7 @@ Exercise D: Regression-based unmixing
 
 Regression-based unmixing using synthetically mixed data from spectral libraries for land cover fraction mapping is implemented as the **Regression-based unmixing** application in the EnMAP-Box 3. Given that the implemented regression algorithms are designed for single-output tasks, the procedure is successively conducted internally for each class. In this process, the current class is designated as the **target class**, while all others are considered as **background classes**. The workflow of the unmixing approach is illustrated below:
 
-.. image:: tut_img/08_workflow.png
+.. image:: tut_img/10_workflow.png
    :width: 100%
 
 
@@ -376,7 +374,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 * Navigate to :guilabel:`Applications` in the Menu, choose |raster_multispectral| :sup:`Unmixing` and then |processingAlgorithm| :sup:`Regression-based unmixing`.
 * The **Regression-based unmixing** GUI will open, consisting of sections for defining :guilabel:`Inputs`, selecting the :guilabel:`Regression algorithm`, configuring the :guilabel:`Mixing parameters`, and specifying the :guilabel:`Outputs`.
 
-.. image:: tut_img/09_synthmixapp.png
+.. image:: tut_img/11_synthmixapp1.png
    :width: 100%
 
 3. Inputs and class selection
@@ -387,7 +385,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
   * :guilabel:`Endmember dataset`: Spectral library containing the endmembers with associated class labels (i.e. single or multiple class levels) used for generating synthetic training information for subsequent regression model training. The spectral library has to be converted into a classification dataset wherein each spectral profile is associated with a single class label.
   * :guilabel:`Raster image`: An image to which the regression model training will be applied to derive a fraction map.
 
-.. image:: tut_img/10_synthmixing1.png
+.. image:: tut_img/12_synthmixing1.png
    :width: 100%
 
 * To set up the :guilabel:`Endmember dataset`, click on the |processingAlgorithm| icon and select |speclib| :sup:`Create classification dataset (from categorized spectral library)`. The :guilabel:`Create Classification Dataset` algorithm will open, where you can specify the following settings:
@@ -399,7 +397,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 
 * Execute the process. The classification dataset will be visible in the :guilabel:`Data Source` panel and automatically assigned as the :guilabel:`Endmember dataset`.
 
-.. image:: tut_img/10_synthmixing2.png
+.. image:: tut_img/13_synthmixapp2.png
    :width: 100%
 
 4. Regression Algorithm
@@ -421,7 +419,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
   * The :guilabel:`Proportion of background mixtures` enables the user to increase the number  mixtures, i.e. mixtures between endmembers that do not belong to the current target class.
   * The check option to |cb1| :guilabel:`Include original endmembers` allows to append the spectral library to the synthetically mixed training data, with fractions of either 0% or 100% of a respective target class.
 
-.. image:: tut_img/11_synthmixing2.png
+.. image:: tut_img/15_synthmixing2.png
    :width: 100%
 
 * The synthetic mixing process itself is randomized. That is, to generate a synthetic mixture ...
@@ -434,10 +432,10 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
   * ... endmembers are linearly combined based on the mixing fractions to create the mixture.
 
 
-.. image:: tut_img/12_synthmixing3.png
+.. image:: tut_img/16_synthmixing3.png
    :width: 100%
 
-.. image:: tut_img/13_synthmixing4.png
+.. image:: tut_img/17_synthmixing4.png
    :width: 100%
 
 
@@ -467,7 +465,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 
 * Specify the following outputs:
 
-  * :guilabel:`Output class fraction layer`: Path/filename to store the final :file:`class fraction layer`
+  * :guilabel:`Output class fraction layer`: Path/filename to store the :file:`class fraction layer_prediction.tif`
 
 
 7. Run the application
@@ -479,19 +477,19 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 8. Visualize the urban land cover fraction map
 ----------------------------------------------
 
-* The :file:`class fraction layer` consists of 4 bands, where each band represents a fraction map of a respective target class. Display map in a useful render style and appropriate contrast stretch:
+* The :file:`class fraction layer_prediction.tif` consists of 4 bands, where each band represents a fraction map of a respective target class. Display map in a useful render style and appropriate contrast stretch:
 
   * e.g., as multiband RGB composite of three target classes in a single Map Window. For stretching fraction maps to the full range of possible fraction, set :guilabel:`Min` = 0 and :guilabel:`Max` = 1.
   * e.g., as singleband greyscale image per target class in multiple Map Windows. For stretching fraction maps to the full range of possible fraction, set :guilabel:`Min` = 0 and :guilabel:`Max` = 1.
 
 * Visually explore your fraction map. Display :file:`enmap_berlin.tif` in a separate Map Window for comparison. You may use the **Identify** tool together with the **Identify cursor location values** |identifytools2| option to display fraction values of pixels.
 
-.. image:: tut_img/15_vismaps.png
+.. image:: tut_img/18_vismaps.png
    :width: 100%
 
 .. admonition:: Learning activities
 
-   * **D1**: Visually explore the fraction map (:file:`class fraction layer`). How are level 1 land cover distributed across the urban gradient. Are the fraction values physically plausible?
+   * **D1**: Visually explore the fraction map (:file:`class fraction layer_prediction.tif`). How are level 1 land cover distributed across the urban gradient. Are the fraction values physically plausible?
 
      .. raw:: html
 
@@ -532,42 +530,41 @@ Exercise E: Validation of fraction maps
 1. Create reference fraction map
 --------------------------------
 
-* A reference fraction map is created by rasterizing available reference land cover information to the pixel grid of the estimated fraction map. To obtain reasonable fractions, the reference land cover information needs to be at a significantly higher spatial resolution than the pixel grid. To create reference fractions
+* The generation of a reference fraction map involves converting the existing reference land cover information into the pixel grid of the estimated fraction map through rasterization. Achieving accurate fractions requires the reference land cover information to be at a notably higher spatial resolution than the pixel grid.
+* Close all Map and Spectral Library Windows from the previous exercise.
+* Load :file:`enmap_berlin.tif` as an RGB composite of your choice into new Map Window.
+* Load :file:`landcover_berlin.gpkg` into the same Map Window visualize the land cover based on the level 1 scheme.
+* Click on the |processingAlgorithm| icon in the menu to open the QGIS Processing Toolbox, where you can find the |enmapbox| :sup:`EnMAP-Box` geoalgorithms.
+* Run the :menuselection:`Classification --> Class fraction layer from categorized vector layer` algorithm with the following settings:
 
-  * Click on the |processingAlgorithm| icon in the menu to open the **QGIS Processing Toolbox**, where you can find the **EnMAP-Box geoalgorithms**.
+  * :guilabel:`Categorized vector layer`: :file:`berlin_landcover.gpkg`
+  * :guilabel:`Grid`: :file:`enmap_berlin.tif`
+  * :guilabel:`Minimal pixel coverage [%]`: 0.95
+  * :guilabel:`Output class fraction layer`: Path/filename to store the :file:`class fraction layer_reference.tif`
 
+  * Execute the process. The result will be visible in the :guilabel:`Data Source` panel.
+  * Display :file:`class fraction layer_prediction.tif` and :file:`class fraction layer_reference.tif` as multiband RGB composites (e.g. R=impervious, G=vegetation, B=soil, min=0, max=1) in two additional Map Windows.
 
-Open the use the following processing algorithm :menuselection:`Create Raster --> Fraction from Vector`.
-* Enter the following data / parameters (use the tool tips for their description):
-
-  * :guilabel:`Pixel Grid`: :file:`fraction_level1_estimation.bsq`
-  * :guilabel:`Vector`: :file:`berlin_landcover.shp`
-  * :guilabel:`Class id attribute`: level_1_id
-  * :guilabel:`Minimal overall coverage`: 0.95
-  * :guilabel:`Oversampling factor`: 5
-  * :guilabel:`Output fraction`: :file:`{...path to your working folder...}/fraction_level1_reference.bsq`
-
-* Run the process.
-
-.. image:: tut_img/16_referencedata.png
+.. image:: tut_img/19_referencedata.png
    :width: 100%
 
 2. Statistical validation of fraction maps
 ------------------------------------------
+*  Validation is conducted by comparing prediction and reference fractions.
+*  Run the :menuselection:`Regression --> Regression layer accuracy report` algorithm to conduct the validation with the following settings:
 
-* The **Regression Performance** algorithm in the **Accuracy Assessment** tools of the EnMAP-Box geoalgorithms implements the accuracy assessment for quantitative data. Scatterplots and statistical measures are reported in an HTML report. Run the **Regression Performance** algorithm with the following inputs:
+  * :guilabel:`Regression layer`: :file:`class fraction layer_prediction.tif`
+  * :guilabel:`Observed continuous-valued layer`: :file:`class fraction layer_reference.tif`
 
-  * :guilabel:`Prediction`: :file:`fraction_level1_estimation.bsq`
-  * :guilabel:`Reference`: :file:`berlin_level1_reference.bsq`
-
+* Execute the process, and the results will open in your default explorer.
 * Make yourself familiar with the HTML report.
 
-.. image:: tut_img/17_accuracies.png
+.. image:: tut_img/20_accuracies.png
    :width: 100%
 
 .. admonition:: Learning activities
 
-   * **E1**: Visually compare your estimated fraction map (:file:`fraction_level1_estimation.bsq`) with the reference fraction map (:file:`berlin_level1_reference.bsq`). Do both maps show a good agreement in terms of spatial patterns or are there areas with large differences?
+   * **E1**: Visually compare your estimated fraction map (:file:`class fraction layer_prediction.tif`) with the reference fraction map (:file:`class fraction layer_reference.tif`). Do both maps show a good agreement in terms of spatial patterns or are there areas with large differences?
    * **E2**: Discuss the accuracy of your fraction map. What are the accuracies for the different classes and which classes show striking errors like underestimation or overestimations of fractions?
 
 |
@@ -580,24 +577,9 @@ Additional Exercises
    * **AE1**: Repeat Exercises D & E using the two other class schemes (level 2, level 3) stored in the spectral library metadata and the land cover reference information. How do the accuracies vary and where are the limitations in mapping the more detailed class levels?
    * **AE2**: Explore the effects of changing the mixing parameters on the mapping accuracy of the level 2 classes. For more direct comparison, we recommend to alter only one parameter at a time. We further recommend to use the Random Forest Regression due to the low processing time. For example, …
 
-     * change the **Number of Synthetic Mixtures per Class**: e.g. 10 vs. 1000 vs. 2000
-     * do not **Include Original Library Endmembers**
-     * change the **Mixing Complexity Probabilities**: e.g. only 2EM vs. only 3EM vs. only 4EM
-     * change the **Ensemble Size**: e.g. 1 vs. 10 vs. 20
+     * change the **Number of synthetic mixtures per class**: e.g. 10 vs. 1000 vs. 2000
+     * do not **Include original endmembers**
+     * change the **Mixing complexity probabilities**: e.g. only 2EM vs. only 3EM vs. only 4EM
+     * change the **Ensemble size**: e.g. 1 vs. 10 vs. 20
 
    * **AE3**: Compare the performance of the different regression algorithms offered in the EnMAP-Box. Please note that the other regressors have significantly longer processing times.
-
-
-
-
-
-.. |navtools| image:: tut_img/navtools.png
-   :height: 27px
-
-.. |closemapview| image:: tut_img/cl_mv.png
-
-.. |identifytools| image:: tut_img/identify_tools.png
-   :height: 27px
-
-.. |identifytools2| image:: tut_img/identify_tools2.png
-   :height: 27px
