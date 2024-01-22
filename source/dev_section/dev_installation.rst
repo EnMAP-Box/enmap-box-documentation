@@ -100,7 +100,7 @@ a) OSGeo4W (Windows)
 2. Setup development environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/tree/main/.env/OSGeo4W
+1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/tree/main/.env/osgeo4w
    to a local folder, e.g. your windows desktop
 2. Modify the `qgis-env.bat` config section to fit to your local environment, i.e. set the correct paths to your
    local OSGeoW installation and PyCharm executable
