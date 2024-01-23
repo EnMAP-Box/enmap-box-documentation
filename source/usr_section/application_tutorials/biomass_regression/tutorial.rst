@@ -176,7 +176,7 @@ Exercise A: Getting started with the EnMAP-Box
   viewing attribute information of displayed vector data.
 
 
-.. |navtools| image:: tut_img/navtools.png
+.. |navtools| image:: img/navtools.png
    :height: 27px
 
 
@@ -209,7 +209,7 @@ Exercise A: Getting started with the EnMAP-Box
 
 
 
-.. |cl_mv| image:: tut_img/cl_mv.png
+.. |cl_mv| image:: img/cl_mv.png
 
 .. |float_window| image:: img/float_window.png
 
@@ -244,7 +244,7 @@ Exercise A: Getting started with the EnMAP-Box
   menu. Specify the following settings:
 
     * :guilabel:`Format` = Raster Layer
-    * |mIconCollapse| :guilabel:`Options`: Raster = :file:`enmap_sonoma.bsq`, Vector = :file:`agb_sonoma.gpkg`
+    * |mIconCollapse| :guilabel:`Options`: Raster = :file:`enmap_sonoma.tif`, Vector = :file:`agb_sonoma.gpkg`
     * |mIconCollapse| :guilabel:`Field Value Import`: Click on the |mSourceFields| icon, select ``biomass`` and click :guilabel:`OK`.
 
 * Terminate the Import Spectral Profile dialogue with :guilabel:`OK`. A spectral library is automatically built based on the
@@ -281,16 +281,18 @@ Exercise B: Regression based mapping of AGB
 1. Use the Regression Dataset Manager for data preparation
 ==========================================================
 
-* The **Regression Dataset Manager** offers different options to prepare data for the **Regression Workflow**
+* The **Regression Dataset Manager** offers different options to prepare data for the **Regression workflow**
   application. In the context of this tutorial, you will create a Regression Dataset from a raster and a vector
   layer containing the spectral features (independent variable) and the target variable (dependent variable),
   respectively. The regression dataset will be stored as pickle file (:file:`.pkl`).
-* Open :file:`enmap_sonoma.bsq` and :file:`agb_sonoma.gpkg` in a single **Map Window**. Close all other
+* Open :file:`enmap_sonoma.tif` and :file:`agb_sonoma.gpkg` in a single **Map Window**. Close all other
   opened **Map** and **Spectral Library Windows**.
-* Click on :guilabel:`Applications` in the Menu and select :guilabel:`Regression Dataset Manager`.
+* Navigate to :guilabel:`Applications` in the Menu, choose |filelist_regression| :sup:`Regression` and then :guilabel:`Regression Dataset Manager`.
 * To create the Regression Dataset from a raster and a vector layer, click on the |processing_collapse|
   icon and choose :guilabel:`Create regression dataset (from continuous-valued vector layer and feature raster)`.
   A new widget will be opened. Run the dialog with the following inputs:
+
+
 
     * :guilabel:`Continuous-valued vector layer`: select :file:`agb_sonoma.gpkg`
     * :guilabel:`Raster layer with features`: select :file:`enmap_sonoma.bsq`

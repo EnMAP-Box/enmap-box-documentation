@@ -388,7 +388,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 .. image:: tut_img/12_synthmixing1.png
    :width: 100%
 
-* To set up the :guilabel:`Endmember dataset`, click on the |processingAlgorithm| icon and select |speclib| :sup:`Create classification dataset (from categorized spectral library)`. The :guilabel:`Create Classification Dataset` algorithm will open, where you can specify the following settings:
+* To set up the :guilabel:`Endmember dataset`, click on the |processing_collapse| icon and select |speclib| :sup:`Create classification dataset (from categorized spectral library)`. The :guilabel:`Create Classification Dataset` algorithm will open, where you can specify the following settings:
 
   * :guilabel:`Categorized spectral library`: :file:`library_berlin.gpkg`
   * :guilabel:`Field with class values`: level_1
