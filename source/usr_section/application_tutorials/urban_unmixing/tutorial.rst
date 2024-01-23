@@ -29,7 +29,7 @@ Introduction
 
 This tutorial is featured on the `HYPERedu online learning platform <https://eo-college.org/resource-spectrum/hyperspectral/>`_, an educational initiative under the `EnMAP mission <https://www.enmap.org/>`_ hosted on EO College. HYPERedu offers annotated slide collections and hands-on tutorials utilizing the open-source EnMAP-Box software, covering fundamental principles, methods, and applications of imaging spectroscopy.
 
-Slide collections with annotations for the tutorial on *Regression-based unmixing of urban land cover* and a software description unit for the EnMAP-Box can be found here:
+Slide collections with annotations for the tutorial *Regression-based unmixing of urban land cover* and a software description unit for the EnMAP-Box can be found here:
 
 * `Tutorial slides <https://eo-college.org/resource/regression-based-unmixing-of-urban-land-cover/>`_
 * `EnMAP software description <https://eo-college.org/resource/enmap-box/>`_

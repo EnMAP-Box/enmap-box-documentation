@@ -5,11 +5,14 @@
 Regression-based mapping of forest aboveground biomass
 ######################################################
 
-**Authors:**  Sam Cooper, Akpona Okujeni, Patrick Hostert, Clemens Jaenicke, Benjamin Jakimow, Andreas Rabe, Fabian Thiel & Sebastian van der Linden
+
+**Authors:**  Sam Cooper, Akpona Okujeni, Patrick Hostert, Benjamin Jakimow, Andreas Janz, Fabian Thiel, & Sebastian van der Linden
+
+**Contributors:** Klara Busse, Clemens Jaenicke
 
 **Publication date:** 03/07/2020
 
-**Last update:** 02/08/2022
+**Latest update:** 23/01/2024
 
 
 Introduction
@@ -23,15 +26,12 @@ Introduction
    :align: right
    :width: 30%
 
-This tutorial is part of the `HYPERedu online learning platform <https://eo-college.org/resource-spectrum/hyperspectral/>`_,
-an education initiative within the `EnMAP mission <https://www.enmap.org/>`_ hosted
-on EO College. HYPERedu provides annotated slide collections and hands-on tutorials using the open-source EnMAP-Box software,
-targeting basic principles, methods as well as applications of imaging spectroscopy.
+This tutorial is featured on the `HYPERedu online learning platform <https://eo-college.org/resource-spectrum/hyperspectral/>`_, an educational initiative under the `EnMAP mission <https://www.enmap.org/>`_ hosted on EO College. HYPERedu offers annotated slide collections and hands-on tutorials utilizing the open-source EnMAP-Box software, covering fundamental principles, methods, and applications of imaging spectroscopy.
 
-Annotated slide collections for the tutorial *Regression-based mapping of forest aboveground biomass* and a software description unit for the EnMAP-Box are provided here:
+Slide collections with annotations for the tutorial *Regression-based mapping of forest aboveground biomass* and a software description unit for the EnMAP-Box can be found here:
 
 * `Slide collection <https://eo-college.org/resource/regression-based-mapping-of-forest-aboveground-biomass/>`_
-* `Software description <https://eo-college.org/resource/enmap-box/>`_
+* `EnMAP software description <https://eo-college.org/resource/enmap-box/>`_
 
 
 
