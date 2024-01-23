@@ -53,8 +53,7 @@ EnMAP-Box, as well as hands-on training for implementing regression-based mappin
 3. Requirements
 ===============
 
-This tutorial requires at least version 3.10 of the EnMAP-Box 3. There might be some minor
-changes for higher versions (e.g., changed menu labels, added parameter options, etc.).
+This tutorial is designed for EnMAP-Box 3, version 3.13.0 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
 
 4. Further reading
@@ -86,8 +85,8 @@ taken from the 2011 National Landcover Database (NLCD) [7]_.
    :widths: auto
 
    Data type; Filename; Description
-   Raster; :file:`enmap_sonoma.bsq`; Simulated spaceborne hyperspectral data from the EnMAP sensor with a spatial resolution of 30m, 195 bands, and 1000x200 pixels (ENVI Standard Band Sequential ``bsq``)
-   Raster; :file:`nlcd_sonoma.bsq`; National Land Cover Database 30m classification for the study region (ENVI Standard Band Sequential ``bsq``)
+   Raster; :file:`enmap_sonoma.tif`; Simulated spaceborne hyperspectral data from the EnMAP sensor with a spatial resolution of 30m, 195 bands, and 1000x200 pixels (GeoTIFF ``tif``with QGIS layer style file ``qml``)
+   Raster; :file:`nlcd_sonoma.tif`; National Land Cover Database 30m classification for the study region (GeoTIFF ``bsq`` with QGIS layer style file ``qml``)
    Vector; :file:`agb_sonoma.gpkg`; 343 AGB reference points sampled from the existing LiDAR derived AGB map (GeoPackage ``gpkg``)
 
 
@@ -139,47 +138,34 @@ Exercise A: Getting started with the EnMAP-Box
 ========================
 
 * The EnMAP-Box offers **Map Views** (Map #) for visualizing raster and vector data. Click the |viewlist_mapdock| icon to open a
-  new Map View and drag :file:`enmap_sonoma.bsq` from the :guilabel:`Data Sources` panel into Map #1.
+  new Map View and drag :file:`enmap_sonoma.tif` from the :guilabel:`Data Sources` panel into Map #1.
 
 * In addition to a new Map View opening, a corresponding Data View entry is created in the :guilabel:`Data Views` panel
   which shows all data currently loaded in a given Map View.
 
-* The :file:`enmap_sonoma.bsq` image will be displayed as true color RGB composite. True color rendering is based on predefined
+* The :file:`enmap_sonoma.tif` image will be displayed as true color RGB composite. True color rendering is based on predefined
   RGB band combinations (R: 658 nm, G: 569 nm, B: 479 nm) stored in the QGIS Style File :file:`enmap_sonoma.qml`.
 
   .. image:: img/ex_a_agb_tutorial_figure_3.png
      :width: 100%
 
 
-* To assign a different RGB combination to the RGB channels, right click on the dataset in the :guilabel:`Data Views` panel, select
- :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`. Set Render type to Multiband color and select bands to display in the
- red, green and blue color channels. Choose appropriate Min/Max Value Settings (e.g. Cumulative Count Cut: 2-98%).
- Common RGB combinations are listed below.
+* **Raster Layer Styling** is a versatile tool for defining or modifying the RGB representation of raster images, either manually or through pre-defined settings. To change the RGB representation of :file:`enmap_sonoma.tif`, open the Raster Layer Styling panel by clicking the |symbology| icon in the :guilabel:`Data Views` panel.
 
-
- .. csv-table::
-    :header-rows: 1
-
-    Combination, Red, Green, Blue
-    TrueColor, 658 nm, 569 nm, 479 nm
-    nIR, 847 nm, 658 nm, 569 nm
-    swIR, 847 nm,1645 nm, 658 nm
+    * Choose :file:`enmap_sonoma.tif` from the dropdown menu and the :guilabel:`RGB tab` as render type.
+    * You can now choose between various pre-defined RGB representations from the dropdown menu (note: rasters needs to have wavelength information) or manually specify your RGB band combination.
+    * You may further use the functionalities offered for contrast enhancement (e.g. Cumulative count cut: 2-98%).
 
 .. image:: img/ex_a_agb_tutorial_figure_4.png
    :width: 100%
 
-.. tip::
 
-   If the raster image has wavelength information associated with it, you may also select an RGB combination from
-   different custom RGB band combinations (True Color, Colored IR, SWIR-NIR-R or NIR-SWIR-R). Right click on the dataset
-   in the :guilabel:`Data Views` panel, select :guilabel:`Layer Properties` and navigate to :guilabel:`Raster Band`.
-   Don't forget to choose appropriate Min/Max Value Settings.
 
 4. Basic navigation tools
 =========================
 
 * The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the
-  following navigation tools: |navtools|
+  following navigation tools: |navtools|.
 * Note that the mouse wheel can be used alternatively for zooming
   (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
 * For a better orientation when exploring visualized raster images, you may switch on the crosshairs (right click into
@@ -190,19 +176,17 @@ Exercise A: Getting started with the EnMAP-Box
   viewing attribute information of displayed vector data.
 
 
-.. |navtools| image:: ../urban_unmixing/tut_img/navtools.png
-   :height: 30px
+.. |navtools| image:: tut_img/navtools.png
+   :height: 27px
 
 
 5. Multiple map views
 =====================
 
 * The EnMAP-Box enables users to work with multiple Map Views, which can be flexibly organized and geospatially linked.
-* Open a new Map View (Map #2) by clicking the |viewlist_mapdock| icon.
+* Open a new Map View (Map #2) by clicking the |viewlist_mapdock| icon. A new Data view appears corresponding to the newly added Map View.
 
-  .. note:: A new Data view appears corresponding to the newly added Map View.
-
-* Display :file:`enmap_sonoma.bsq` as an RGB composite of your choice in Map #2.
+* Display :file:`enmap_sonoma.tif` as an RGB composite of your choice in Map #2.
 
 .. tip::
 
@@ -210,9 +194,7 @@ Exercise A: Getting started with the EnMAP-Box
    panel and select either :guilabel:`Open in existing map` or :guilabel:`Open in new map`. If the raster image has wavelength
    information associated with it, you may also select a predefined composite from the context menu.
 
-* For geospatial linking, click on :guilabel:`View` in the Menu and select :guilabel:`Set Map Linking`. In the Map Linking window,
-  select the |link_mapscale_center| :guilabel:`Link Map Scale and Center` option and close the dialog. You may also
-  right click a map window and select :guilabel:`Link with other maps` to initialize the linking process.
+* To establish geospatial linking, click the |link_basic| icon to open the :guilabel:`Map Linking` window. Choose the |link_all_mapscale_center| :sup:`Link Map Scale and Center` option, and close the dialog.
 
 
 .. image:: img/ex_a_agb_tutorial_figure_5.png
@@ -227,7 +209,7 @@ Exercise A: Getting started with the EnMAP-Box
 
 
 
-.. |cl_mv| image:: ../urban_unmixing/tut_img/cl_mv.png
+.. |cl_mv| image:: tut_img/cl_mv.png
 
 .. |float_window| image:: img/float_window.png
 
@@ -238,7 +220,7 @@ Exercise A: Getting started with the EnMAP-Box
 * Close Map #2 from the previous step.
 * Load :file:`agb_sonoma.gpkg` to Map #1.
 * To change the order of stacked layers, go to the :guilabel:`Data Views` panel and drag one layer on top or below
-  another one. Arrange the layer stack so that :file:`agb_sonoma.gpkg` is displayed on top of :file:`enmap_sonoma.bsq`.
+  another one. Arrange the layer stack so that :file:`agb_sonoma.gpkg` is displayed on top of :file:`enmap_sonoma.tif`.
 * By default, vector files are displayed with a single uniform symbol. To change this symbology, right
   click on :file:`agb_sonoma.gpkg` in the :guilabel:`Data Views` panel, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`
   in the Layer Properties window. You can now change the symbology in accordance to the QGIS functionality.
@@ -630,4 +612,3 @@ Additional Exercises
      the **ImageMath** tool to calculate the average estimate and variance. How does running the regression in such an
      ensemble approach affect the results? What is the spatial pattern of variation in estimates?
    * **AE3**: Rerun regression (Exercise B) using NDVI as the input rather than the hyperspectral imagery.
-
