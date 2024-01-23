@@ -216,7 +216,7 @@ Exercise B: Spectral mixing
 * The EnMAP-Box provides **Spectral Library Windows (SpectralLibrary #)** for visualizing spectra and managing their
   metadata. To visualize image spectra, activate the **Identify** tool along with the **Identify raster profiles**
   |identifytools| option.
-* Click on an image pixel, and SpectralLibrary #1 will automatically open, displaying the corresponding pixel spectrum (dotted line). The :guilabel:`Spectral Profile Sources` panel will also open automatically. Note that the plotted spectrum always corresponds to the top-most raster layer of the respective Map Window you click on, unless you change this in the :ref:`Spectral Profile Sources` panel.
+* Click on an image pixel, and SpectralLibrary #1 will automatically open, displaying the corresponding pixel spectrum (dotted line). The :guilabel:`Spectral Profile Sources` panel will also open automatically. Note that the plotted spectrum always corresponds to the top-most raster layer of the respective Map Window you click on, unless you change this in the :guilabel:`Spectral Profile Sources` panel .
 
 * Familiarize yourself with the following tools in the Spectral Library #1 toolbar:
 
