@@ -29,7 +29,7 @@ Introduction
 
 This tutorial is featured on the `HYPERedu online learning platform <https://eo-college.org/resource-spectrum/hyperspectral/>`_, an educational initiative under the `EnMAP mission <https://www.enmap.org/>`_ hosted on EO College. HYPERedu offers annotated slide collections and hands-on tutorials utilizing the open-source EnMAP-Box software, covering fundamental principles, methods, and applications of imaging spectroscopy.
 
-Slide collections with annotations for the tutorial on *Regression-based unmixing of urban land cover* and a software description unit for the EnMAP-Box can be found here:
+Slide collections with annotations for the tutorial *Regression-based unmixing of urban land cover* and a software description unit for the EnMAP-Box can be found here:
 
 * `Tutorial slides <https://eo-college.org/resource/regression-based-unmixing-of-urban-land-cover/>`_
 * `EnMAP software description <https://eo-college.org/resource/enmap-box/>`_
@@ -216,7 +216,7 @@ Exercise B: Spectral mixing
 * The EnMAP-Box provides **Spectral Library Windows (SpectralLibrary #)** for visualizing spectra and managing their
   metadata. To visualize image spectra, activate the **Identify** tool along with the **Identify raster profiles**
   |identifytools| option.
-* Click on an image pixel, and SpectralLibrary #1 will automatically open, displaying the corresponding pixel spectrum (dotted line). The :guilabel:`Spectral Profile Sources` panel will also open automatically. Note that the plotted spectrum always corresponds to the top-most raster layer of the respective Map Window you click on, unless you change this in the :ref:`Spectral Profile Sources` panel.
+* Click on an image pixel, and SpectralLibrary #1 will automatically open, displaying the corresponding pixel spectrum (dotted line). The :guilabel:`Spectral Profile Sources` panel will also open automatically. Note that the plotted spectrum always corresponds to the top-most raster layer of the respective Map Window you click on, unless you change this in the :guilabel:`Spectral Profile Sources` panel .
 
 * Familiarize yourself with the following tools in the Spectral Library #1 toolbar:
 
@@ -371,7 +371,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 ------------------------
 * Close all Map and Spectral Library Windows from the previous exercise.
 * Load :file:`enmap_berlin.tif` as RGB composite of your choice and :file:`library_berlin.gpkg` into new Map and Spectral Library Windows.
-* Navigate to :guilabel:`Applications` in the Menu, choose |raster_multispectral| :sup:`Unmixing` and then |processingAlgorithm| :sup:`Regression-based unmixing`.
+* Navigate to :guilabel:`Applications` in the Menu, choose :guilabel:`Unmixing`, and then :guilabel:`Regression-based unmixing`.
 * The **Regression-based unmixing** GUI will open, consisting of sections for defining :guilabel:`Inputs`, selecting the :guilabel:`Regression algorithm`, configuring the :guilabel:`Mixing parameters`, and specifying the :guilabel:`Outputs`.
 
 .. image:: tut_img/11_synthmixapp1.png
@@ -388,7 +388,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 .. image:: tut_img/12_synthmixing1.png
    :width: 100%
 
-* To set up the :guilabel:`Endmember dataset`, click on the |processingAlgorithm| icon and select |speclib| :sup:`Create classification dataset (from categorized spectral library)`. The :guilabel:`Create Classification Dataset` algorithm will open, where you can specify the following settings:
+* To set up the :guilabel:`Endmember dataset`, click on the |processing_collapse| icon and select |speclib| :sup:`Create classification dataset (from categorized spectral library)`. The :guilabel:`Create Classification Dataset` algorithm will open, where you can specify the following settings:
 
   * :guilabel:`Categorized spectral library`: :file:`library_berlin.gpkg`
   * :guilabel:`Field with class values`: level_1
@@ -404,7 +404,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 -----------------------
 
 * The subsequent step involves selecting a regression algorithm. The EnMAP-Box provides a range of state-of-the-art algorithms from the scikit-learn library (see https://scikit-learn.org/stable/index.html). It's important to note that different algorithms may result in varying accuracies and processing times, especially when incorporating the unmixing process into an ensemble.
-* Choose RandomForestRegression from the dropdown menu as the :guilabel:`Regressor` due to its lower processing time. Keep the default parameter settings (see https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html for more details on parameter settings).
+* Choose RandomForestRegression from the dropdown menu as the :guilabel:`Regressor` due to its lower processing time. Keep the default parameter settings. Refer to the scikit-learn documentation for more information.
 * Iterate the unmixing 3 times by setting :guilabel:`Ensemble size` to 3 (scroll down).
 
 .. image:: tut_img/14_regressionalgo.png

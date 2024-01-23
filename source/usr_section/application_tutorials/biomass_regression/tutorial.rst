@@ -5,11 +5,14 @@
 Regression-based mapping of forest aboveground biomass
 ######################################################
 
-**Authors:**  Sam Cooper, Akpona Okujeni, Patrick Hostert, Clemens Jaenicke, Benjamin Jakimow, Andreas Rabe, Fabian Thiel & Sebastian van der Linden
+
+**Authors:**  Sam Cooper, Akpona Okujeni, Patrick Hostert, Benjamin Jakimow, Andreas Janz, Fabian Thiel, & Sebastian van der Linden
+
+**Contributors:** Klara Busse, Clemens Jaenicke
 
 **Publication date:** 03/07/2020
 
-**Last update:** 02/08/2022
+**Latest update:** 23/01/2024
 
 
 Introduction
@@ -23,15 +26,12 @@ Introduction
    :align: right
    :width: 30%
 
-This tutorial is part of the `HYPERedu online learning platform <https://eo-college.org/resource-spectrum/hyperspectral/>`_,
-an education initiative within the `EnMAP mission <https://www.enmap.org/>`_ hosted
-on EO College. HYPERedu provides annotated slide collections and hands-on tutorials using the open-source EnMAP-Box software,
-targeting basic principles, methods as well as applications of imaging spectroscopy.
+This tutorial is featured on the `HYPERedu online learning platform <https://eo-college.org/resource-spectrum/hyperspectral/>`_, an educational initiative under the `EnMAP mission <https://www.enmap.org/>`_ hosted on EO College. HYPERedu offers annotated slide collections and hands-on tutorials utilizing the open-source EnMAP-Box software, covering fundamental principles, methods, and applications of imaging spectroscopy.
 
-Annotated slide collections for the tutorial *Regression-based mapping of forest aboveground biomass* and a software description unit for the EnMAP-Box are provided here:
+Slide collections with annotations for the tutorial *Regression-based mapping of forest aboveground biomass* and a software description unit for the EnMAP-Box can be found here:
 
 * `Slide collection <https://eo-college.org/resource/regression-based-mapping-of-forest-aboveground-biomass/>`_
-* `Software description <https://eo-college.org/resource/enmap-box/>`_
+* `EnMAP software description <https://eo-college.org/resource/enmap-box/>`_
 
 
 
@@ -53,8 +53,7 @@ EnMAP-Box, as well as hands-on training for implementing regression-based mappin
 3. Requirements
 ===============
 
-This tutorial requires at least version 3.10 of the EnMAP-Box 3. There might be some minor
-changes for higher versions (e.g., changed menu labels, added parameter options, etc.).
+This tutorial is designed for EnMAP-Box 3, version 3.13.0 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
 
 4. Further reading
@@ -72,7 +71,7 @@ an overview of remote sensing of forest AGB and [4]_ for a companion study using
 =======
 
 :download:`You can download the data for this exercise here:`
-    https://box.hu-berlin.de/f/d73fa3ba95c143388832/?dl=1
+    https://box.hu-berlin.de/f/c64b035316f54be08ebb/?dl=1
 
 The tutorial data contains a simulated hyperspectral EnMAP image, plot-based AGB references
 as well as a land cover map for a small study area located in Sonoma County, California, USA. The simulated EnMAP
@@ -86,8 +85,8 @@ taken from the 2011 National Landcover Database (NLCD) [7]_.
    :widths: auto
 
    Data type; Filename; Description
-   Raster; :file:`enmap_sonoma.bsq`; Simulated spaceborne hyperspectral data from the EnMAP sensor with a spatial resolution of 30m, 195 bands, and 1000x200 pixels (ENVI Standard Band Sequential ``bsq``)
-   Raster; :file:`nlcd_sonoma.bsq`; National Land Cover Database 30m classification for the study region (ENVI Standard Band Sequential ``bsq``)
+   Raster; :file:`enmap_sonoma.tif`; Simulated spaceborne hyperspectral data from the EnMAP sensor with a spatial resolution of 30m, 195 bands, and 1000x200 pixels (GeoTIFF ``tif``with QGIS layer style file ``qml``)
+   Raster; :file:`nlcd_sonoma.tif`; National Land Cover Database 30m classification for the study region (GeoTIFF ``bsq`` with QGIS layer style file ``qml``)
    Vector; :file:`agb_sonoma.gpkg`; 343 AGB reference points sampled from the existing LiDAR derived AGB map (GeoPackage ``gpkg``)
 
 
@@ -139,47 +138,34 @@ Exercise A: Getting started with the EnMAP-Box
 ========================
 
 * The EnMAP-Box offers **Map Views** (Map #) for visualizing raster and vector data. Click the |viewlist_mapdock| icon to open a
-  new Map View and drag :file:`enmap_sonoma.bsq` from the :guilabel:`Data Sources` panel into Map #1.
+  new Map View and drag :file:`enmap_sonoma.tif` from the :guilabel:`Data Sources` panel into Map #1.
 
 * In addition to a new Map View opening, a corresponding Data View entry is created in the :guilabel:`Data Views` panel
   which shows all data currently loaded in a given Map View.
 
-* The :file:`enmap_sonoma.bsq` image will be displayed as true color RGB composite. True color rendering is based on predefined
+* The :file:`enmap_sonoma.tif` image will be displayed as true color RGB composite. True color rendering is based on predefined
   RGB band combinations (R: 658 nm, G: 569 nm, B: 479 nm) stored in the QGIS Style File :file:`enmap_sonoma.qml`.
 
   .. image:: img/ex_a_agb_tutorial_figure_3.png
      :width: 100%
 
 
-* To assign a different RGB combination to the RGB channels, right click on the dataset in the :guilabel:`Data Views` panel, select
- :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`. Set Render type to Multiband color and select bands to display in the
- red, green and blue color channels. Choose appropriate Min/Max Value Settings (e.g. Cumulative Count Cut: 2-98%).
- Common RGB combinations are listed below.
+* **Raster Layer Styling** is a versatile tool for defining or modifying the RGB representation of raster images, either manually or through pre-defined settings. To change the RGB representation of :file:`enmap_sonoma.tif`, open the Raster Layer Styling panel by clicking the |symbology| icon in the :guilabel:`Data Views` panel.
 
-
- .. csv-table::
-    :header-rows: 1
-
-    Combination, Red, Green, Blue
-    TrueColor, 658 nm, 569 nm, 479 nm
-    nIR, 847 nm, 658 nm, 569 nm
-    swIR, 847 nm,1645 nm, 658 nm
+    * Choose :file:`enmap_sonoma.tif` from the dropdown menu and the :guilabel:`RGB tab` as render type.
+    * You can now choose between various pre-defined RGB representations from the dropdown menu (note: rasters needs to have wavelength information) or manually specify your RGB band combination.
+    * You may further use the functionalities offered for contrast enhancement (e.g. Cumulative count cut: 2-98%).
 
 .. image:: img/ex_a_agb_tutorial_figure_4.png
    :width: 100%
 
-.. tip::
 
-   If the raster image has wavelength information associated with it, you may also select an RGB combination from
-   different custom RGB band combinations (True Color, Colored IR, SWIR-NIR-R or NIR-SWIR-R). Right click on the dataset
-   in the :guilabel:`Data Views` panel, select :guilabel:`Layer Properties` and navigate to :guilabel:`Raster Band`.
-   Don't forget to choose appropriate Min/Max Value Settings.
 
 4. Basic navigation tools
 =========================
 
 * The Toolbar offers common navigation tools for exploring visualized datasets. Make yourself familiar with the
-  following navigation tools: |navtools|
+  following navigation tools: |navtools|.
 * Note that the mouse wheel can be used alternatively for zooming
   (roll mouse wheel forward/backward) and panning (press and hold mouse wheel).
 * For a better orientation when exploring visualized raster images, you may switch on the crosshairs (right click into
@@ -190,19 +176,17 @@ Exercise A: Getting started with the EnMAP-Box
   viewing attribute information of displayed vector data.
 
 
-.. |navtools| image:: ../urban_unmixing/tut_img/navtools.png
-   :height: 30px
+.. |navtools| image:: img/navtools.png
+   :height: 27px
 
 
 5. Multiple map views
 =====================
 
 * The EnMAP-Box enables users to work with multiple Map Views, which can be flexibly organized and geospatially linked.
-* Open a new Map View (Map #2) by clicking the |viewlist_mapdock| icon.
+* Open a new Map View (Map #2) by clicking the |viewlist_mapdock| icon. A new Data view appears corresponding to the newly added Map View.
 
-  .. note:: A new Data view appears corresponding to the newly added Map View.
-
-* Display :file:`enmap_sonoma.bsq` as an RGB composite of your choice in Map #2.
+* Display :file:`enmap_sonoma.tif` as an RGB composite of your choice in Map #2.
 
 .. tip::
 
@@ -210,9 +194,7 @@ Exercise A: Getting started with the EnMAP-Box
    panel and select either :guilabel:`Open in existing map` or :guilabel:`Open in new map`. If the raster image has wavelength
    information associated with it, you may also select a predefined composite from the context menu.
 
-* For geospatial linking, click on :guilabel:`View` in the Menu and select :guilabel:`Set Map Linking`. In the Map Linking window,
-  select the |link_mapscale_center| :guilabel:`Link Map Scale and Center` option and close the dialog. You may also
-  right click a map window and select :guilabel:`Link with other maps` to initialize the linking process.
+* To establish geospatial linking, click the |link_basic| icon to open the :guilabel:`Map Linking` window. Choose the |link_all_mapscale_center| :sup:`Link Map Scale and Center` option, and close the dialog.
 
 
 .. image:: img/ex_a_agb_tutorial_figure_5.png
@@ -227,7 +209,7 @@ Exercise A: Getting started with the EnMAP-Box
 
 
 
-.. |cl_mv| image:: ../urban_unmixing/tut_img/cl_mv.png
+.. |cl_mv| image:: img/cl_mv.png
 
 .. |float_window| image:: img/float_window.png
 
@@ -238,7 +220,7 @@ Exercise A: Getting started with the EnMAP-Box
 * Close Map #2 from the previous step.
 * Load :file:`agb_sonoma.gpkg` to Map #1.
 * To change the order of stacked layers, go to the :guilabel:`Data Views` panel and drag one layer on top or below
-  another one. Arrange the layer stack so that :file:`agb_sonoma.gpkg` is displayed on top of :file:`enmap_sonoma.bsq`.
+  another one. Arrange the layer stack so that :file:`agb_sonoma.gpkg` is displayed on top of :file:`enmap_sonoma.tif`.
 * By default, vector files are displayed with a single uniform symbol. To change this symbology, right
   click on :file:`agb_sonoma.gpkg` in the :guilabel:`Data Views` panel, select :guilabel:`Layer Properties` and navigate to :guilabel:`Symbology`
   in the Layer Properties window. You can now change the symbology in accordance to the QGIS functionality.
@@ -262,7 +244,7 @@ Exercise A: Getting started with the EnMAP-Box
   menu. Specify the following settings:
 
     * :guilabel:`Format` = Raster Layer
-    * |mIconCollapse| :guilabel:`Options`: Raster = :file:`enmap_sonoma.bsq`, Vector = :file:`agb_sonoma.gpkg`
+    * |mIconCollapse| :guilabel:`Options`: Raster = :file:`enmap_sonoma.tif`, Vector = :file:`agb_sonoma.gpkg`
     * |mIconCollapse| :guilabel:`Field Value Import`: Click on the |mSourceFields| icon, select ``biomass`` and click :guilabel:`OK`.
 
 * Terminate the Import Spectral Profile dialogue with :guilabel:`OK`. A spectral library is automatically built based on the
@@ -299,21 +281,23 @@ Exercise B: Regression based mapping of AGB
 1. Use the Regression Dataset Manager for data preparation
 ==========================================================
 
-* The **Regression Dataset Manager** offers different options to prepare data for the **Regression Workflow**
+* The **Regression Dataset Manager** offers different options to prepare data for the **Regression workflow**
   application. In the context of this tutorial, you will create a Regression Dataset from a raster and a vector
   layer containing the spectral features (independent variable) and the target variable (dependent variable),
   respectively. The regression dataset will be stored as pickle file (:file:`.pkl`).
-* Open :file:`enmap_sonoma.bsq` and :file:`agb_sonoma.gpkg` in a single **Map Window**. Close all other
+* Open :file:`enmap_sonoma.tif` and :file:`agb_sonoma.gpkg` in a single **Map Window**. Close all other
   opened **Map** and **Spectral Library Windows**.
-* Click on :guilabel:`Applications` in the Menu and select :guilabel:`Regression Dataset Manager`.
+* Navigate to :guilabel:`Applications` in the Menu, choose :guilabel:`Regression`, and then :guilabel:`Regression Dataset Manager`.
 * To create the Regression Dataset from a raster and a vector layer, click on the |processing_collapse|
-  icon and choose :guilabel:`Create regression dataset (from continuous-valued vector layer and feature raster)`.
+  icon and select |mIconPolygonLayer| :sup:`Create regression dataset (from continuous-valued vector layer and feature raster)`.
   A new widget will be opened. Run the dialog with the following inputs:
 
+mIconPolygonLayer
+
     * :guilabel:`Continuous-valued vector layer`: select :file:`agb_sonoma.gpkg`
-    * :guilabel:`Raster layer with features`: select :file:`enmap_sonoma.bsq`
+    * :guilabel:`Raster layer with features`: select :file:`enmap_sonoma.tif`
     * :guilabel:`Fields with targets`: select attribute ``biomass``
-    * :guilabel:`Output Data`: select :menuselection:`... --> Save to File…` and define an output path and file name
+    * :guilabel:`Output dataset`: select :menuselection:`... --> Save to File…` and define an output path and file name
       (e.g. :file:`agb_regression_data.pkl`).
 
 * After running the dialog, :file:`agb_regression_data.pkl` will be opened under :guilabel:`Models` in the Data Sources
@@ -334,22 +318,23 @@ Exercise B: Regression based mapping of AGB
 * The **Regression Workflow** application offers several state-of-the-art regression algorithms from the
   scikit-learn library (see https://scikit-learn.org/stable/index.html) for predicting continuous variables.
   The application further includes an optional cross-validation for assessing model performances.
-* Click on :guilabel:`Applications` in the Menu and select :guilabel:`Regression Workflow` to open the regression application.
+* Click on :guilabel:`Applications` in the Menu, select :guilabel:`Regression`, and then :guilabel:`Regression workflow` to open the regression application.
 
    * Choose :file:`agb_regression_data.pkl` as :guilabel:`Training dataset`.
    * Select ``RandomForestRegressor`` (default, due to the low processing time) as :guilabel:`Regressor`,
      and use the default model parameters. Note that the different algorithms provided lead to varying accuracies
      and processing times. Refer to the scikit-learn documentation for more information.
    * :guilabel:`Raster layer with features` specifies the raster image to which the regression model will be applied.
-     Select :file:`enmap_sonoma.bsq`. Specify output path and file name (e.g. :file:`agb_estimation.bsq`)
-     under :guilabel:`Output regressor layer` to save the result in your working directory.
-   * To make use of a cross-validation, set the :guilabel:`Number of cross-validation` folds to ``10`` (default)
-     and leave the :guilabel:`Open output performance report` option |cb1| checked. Specify output path and file name
-     (e.g. :file:`agb_estimation_cv.html`) under :guilabel:`Output regressor performance report` to save the report in
+     Select :file:`enmap_sonoma.tif`.
+   * To make use of a cross-validation, set the :guilabel:`Number of cross-validation folds' to ``10`` (default)
+     and leave the :guilabel:`Open output cross-validation regressor...` option checked. Specify output path and file name
+     (e.g. :file:`agb_estimation_cv.html`) under :guilabel:`Output cross-validation regressor performance report` to save the report in
      your working directory.
    * The regression model can be optionally saved, e.g. for applying the model again to a dataset.
      Specify output path and file name (e.g. :file:`agb_rfmodel.pkl`) under :guilabel:`Output regressor` to save the
      result in your working directory.
+   * Specify output path and file name (e.g. :file:`agb_estimation.tif`)
+     under :guilabel:`Output regressor layer` to save the result in your working directory.
    * Click run to start the Regression Workflow.
 
 .. image:: img/ex_b_agb_tutorial_figure_2.png
@@ -396,40 +381,31 @@ Exercise C: Compare AGB estimates with the NDVI
 
 .. admonition:: Description
 
-   In this exercise, you will learn how to use the ImageMath application to calculate a NDVI map and
+   In this exercise, you will learn how to use the Raster Math application to calculate a NDVI map and
    generate a forest mask based on the NLCD land cover map. Based on the forest area only, you will then
    assess the AGB prediction from Exercise B relative to the NDVI using the Scatter Plot Tool.
 
    Duration: 30 min
 
-1. Introduction to ImageMath
+1. Introduction to Raster Math
 ============================
 
-* The **ImageMath** tool in the EnMAP-Box allows users to apply a mathematical operation, python function or user defined function to an image.
-  In the following sections, you will utilize standard numpy array processing protocols
+* **Raster math** is a powerful raster calculator inspired by the QGIS Raster calculator, the GDAL Raster calculator and ENVI Band Math. In addition to those tools, the EnMAP-Box Raster math calculator supports multi-band arrays, vector layer inputs, multi-line code fragments and metadata handling. In the following sections, you will utilize Raster Math to...
 
     * to calculate a NDVI map from two bands of our EnMAP imagery,
     * to generate a forest mask from the NLCD land cover map,
     * and to apply a forest mask to both the NDVI and AGB maps.
 
-* Close all opened Map/Spectral Library Windows. Display :file:`enmap_sonoma.bsq`, :file:`nlcd_sonoma.bsq`
-  and :file:`agb_estimation.bsq` in a single or in multiple Map Views.
-* Open the **ImageMath** application by going to :guilabel:`Applications` then selecting |numpy| :guilabel:`ImageMath`
-* ImageMath consists of several panels:
+* Close all opened Map/Spectral Library Windows. Display :file:`enmap_sonoma.tif`, :file:`nlcd_sonoma.tif`
+  and :file:`agb_estimation.tif` in a single or in multiple Map Views.
+* Open the ** Raster Math** application by going to :guilabel:`Applications` then selecting :guilabel:`Raster math`
+* Raster Math consists of several panels, including the :
 
-  * :guilabel:`Inputs`: defines input variables and variable names.
-  * :guilabel:`Outputs`: defines output variable names and locations to be saved to.
-  * :guilabel:`Code editor`: Text editor in which programmatic manipulation of the input datasets can be defined using Python scripting syntax.
-  * :guilabel:`Output Grid`: Allows users to manually set the output grid.
-  * :guilabel:`Processing`: Allows users to select block sizes for processing large datasets with limited memory.
-  * :guilabel:`Log Window`: Displays the status (and error messages) of executed code.
-  * Additionally, a tab for :guilabel:`Routines` allows users to select a number of common python-based tools for manipulating spatial datasets with linked documentation.
+  * :guilabel:`Code`: text editor to define a single-line expression or a multi-line code fragment for raster calculations on input datasets
+  * :guilabel:`Data sources`: list of available datasets to conduct the calculations
 
 .. image:: img/ex_c_agb_tutorial_figure_1.png
    :width: 100%
-
-.. |numpy| image:: img/icons/numpy.png
-   :height: 26px
 
 
 2. Calculate NDVI
@@ -447,29 +423,29 @@ Exercise C: Compare AGB estimates with the NDVI
   where NIR is the near-infrared band reflectance (~850nm) and Red is the red band reflectance (~660nm).
   We will now calculate NDVI from the EnMAP imagery using ImageMath.
 
-* In the :guilabel:`Inputs` panel, select :file:`enmap_sonoma.bsq` from the dropdown menu. The variable name is automatically taken
-  from the filename, but may be changed if desired.
-* In the Code Editor, define the RED and NIR bands in our EnMAP imagery. These correspond to bands 42 and 73,
-  respectively, and we can define them using python indexing syntax (i.e. 0 indexed array slicing):
+* In the Code Editor, define the Red and NIR bands in our EnMAP imagery. These correspond to bands 45 (658 nm) and 71 (847 nm),
+  respectively:
 
   .. code-block:: python
 
-     RED = enmap_sonoma[41]
-     NIR = enmap_sonoma[72]
+     red = enmap_sonoma@45
+     nir = enmap_sonoma@71
 
-  Next, we define the formula we wish to run:
+  ... then, define the NDVI formula:
 
   .. code-block:: python
 
-     NDVI = (NIR - RED)/(NIR + RED)
+     ndvi = (nir - red) / (nir + red)
 
-  In the :guilabel:`Outputs` panel, define the output variable name as ``NDVI``, and select an output file
-  path and file name (e.g. :file:`ndvi.bsq`).
-* Finally, click on the |action| button to run the script. A new raster dataset :file:`ndvi.bsq` will appear in the Data Sources panel.
+  ... and, finally, delete the temporary variables used for calculating the NDVI:
 
-.. attention::
+  .. code-block:: python
 
-   Input and output variable names in the Code Editor must exactly match corresponding names deﬁned in the Inputs and Outputs panels.
+     del red,nir
+
+* Specify output path and file name (e.g. :file:`ndvi.tif`) under :guilabel:`Output raster layer` to save the result in your working directory.
+* Click run to start the calculation. A new raster dataset :file:`ndvi.tif` will appear in the Data Sources panel.
+
 
 .. image:: img/ex_c_agb_tutorial_figure_2.png
    :width: 100%
@@ -479,67 +455,56 @@ Exercise C: Compare AGB estimates with the NDVI
 =======================
 
 * As the model was trained using AGB reference plots from forest areas, only limited inference can be made of the non-forest AGB estimates.
-  We will therefore apply a forest mask to our AGB map as well as to the NDVI map.
-  The forest mask will be generated based on the available NLCD land cover map.
+  We will therefore apply a forest mask to our AGB map as well as to the NDVI map. The forest mask will be generated based on the available NLCD land cover map.
 * Below are the NLCD classes and color legend represented in the raster data. We will consider any pixel to be
   forest which is labelled as Deciduous (41), Evergreen (42), or Mixed (43) forest according to the NLCD classification.
 
 .. image:: img/ex_c_agb_tutorial_figure_3.png
   :width: 100%
 
-* Open the **ImageMath** application and set :file:`nlcd_sonoma.bsq` as the input file.
-* Enter the following code into the code editor:
+* Open the **Raster Math** application and enter the following code into the code editor to calculate the forest masks:
 
   .. code-block:: python
 
-     Forest_Mask = nlcd_sonoma
-     forest_classes = [42, 43, 44]
-
-     for x in range(Forest_Mask.shape[1]):
-         for y in range(Forest_Mask.shape[2]):
-             if Forest_Mask[0, x, y] in forest_classes:
-                 Forest_Mask[0, x, y] = 0
-             else:
-                 Forest_Mask[0, x, y] = 1
-
+    forest_mask = nlcd_sonoma
+    forest_classes = [42, 43, 44]
+    for x in range(forest_mask.shape[1]):
+         for y in range(forest_mask.shape[2]):
+              if forest_mask[0, x, y] in forest_classes:
+                  forest_mask[0, x, y] = 0
+              else:
+                  forest_mask[0, x, y] = 1
 
 * Line by line, this
 
   1. Copies the NLCD information to a new object we will manipulate to create the mask
   2. Creates a list of classes which we consider forest
-  3. Loops through the x dimension of the raster. For each loop, x will be an integer representing the current location in the x dimension.
-  4. Loops through the y dimension of the raster. For each loop, y will be an integer representing the current location in the y dimension. These two loops allow us to look at each element in the array individually. While numpy offers more efficient ways to analyse arrays (See section C4), this is one basic approach.
+  3. Loops through the x dimension of the raster.
+  4. Loops through the y dimension of the raster.
   5. Check if the element at the current x and y position is in the forest_classes list
   6. If it is, set that value to 0
-  7. If it is not
+  7. Else
   8. Set that value to 1
 
-* Set :file:`Forest_Mask` as the output and deﬁne the path and file name (e.g. :file:`forest_mask.bsq`) for saving the result.
-* Run the script by clicking |action|.
-* A new raster dataset :file:`forest_mask.bsq` will appear in the Data Sources panel. The resulting mask now has a value of 0
-  for forested pixels, and 1 for non-forested pixels.
+* Specify output path and file name (e.g. :file:`forest_mask.tif`) under :guilabel:`Output raster layer` to save the result in your working directory.
+* Click run to start the calculation. A new raster dataset :file:`forest_mask.tif` will appear in the Data Sources panel. The resulting mask now has a value of 0 for forested pixels, and 1 for non-forested pixels.
 
 .. image:: img/ex_c_agb_tutorial_figure_4.png
    :width: 100%
 
-4. Apply the forest mask
+4. Apply the forest mask to the AGB estimates
 ========================
 
-* Open the **ImageMath** application and set :file:`agb_estimation.bsq`, :file:`ndvi.bsq` and :file:`forest_mask.bsq` as the
-  input files. Note that these datasets need to be opened in a single or in multiple Map Views to make them selectable input files.
-* Enter the following code into the Code Editor to apply the forest mask to the AGB and NDVI images. 
+* Open the **Raster Math** application and enter the following code into the code editor to apply the forest mask to the AGB and NDVI images.:
 
 .. code-block:: python
 
-   Forest_Mask = forest_mask.astype(bool)
+    mask = forest_mask.astype(bool)
+    agb_masked = agb_estimation
+    agb_masked[mask] = -99
+    agb_masked.setNoDataValue(-99)
+    del mask
 
-   AGB_Masked = agb_estimation
-   AGB_Masked[Forest_Mask] = -99
-   setNoDataValue(AGB_Masked, -99)
-
-   NDVI_Masked = ndvi
-   NDVI_Masked[Forest_Mask] = -99
-   setNoDataValue(NDVI_Masked, -99)
 
 * Line by line, this script:
 
@@ -549,30 +514,40 @@ Exercise C: Compare AGB estimates with the NDVI
      we explicitly tell Python to treat these values in this manner.
   2. Copies the AGB values to a new array.
   3. Steps through each value in the new array and sets the value to -99 if the mask value is True.
-     In numpy array speak, this line can therefore read: “For each value in ``AGB_Masked``, if the corresponding
-     value in ``Forest_Mask`` is True (i.e. non-forest), then set that value to -99”. If the mask value is False
+     In numpy array speak, this line can therefore read: “For each value in ``agb_masked``, if the corresponding
+     value in ``forest_mask`` is True (i.e. non-forest), then set that value to -99”. If the mask value is False
      (i.e. forested), nothing will happen, and the biomass value will remain in the array.
   4. Sets the no data value for the masked array to -99. This helps the EnMAP-Box to automatically display the
      data correctly, and since it is not a realistic value for both AGB and NDVI, we can safely ignore it.
-  5. Steps 2-4 are then repeated for NDVI.
-* Set ``AGB_Masked`` and ``NDVI_Masked`` as the outputs and define the path and the file names
-  (e.g. :file:`agb_estimation_masked.bsq`, :file:`ndvi_masked.bsq`) for saving results.
-* Run the script by clicking |action|. The new raster datasets :file:`agb_estimation_masked.bsq` and :file:`ndvi_masked.bsq`
-  will appear in the Data Source panel.
+  5. Deletes the temporary variables used for calculating the NDVI.
 
+* Specify output path and file name (e.g. :file:`agb_masked.tif`) under :guilabel:`Output raster layer` to save the result in your working directory.
+* Click run to start the calculation. A new raster dataset :file:`agb_masked.tif` will appear in the Data Sources panel. The resulting raster now displays AGB estimates for forest areas, while any other land cover types are masked.
 
-.. image:: img/ex_c_agb_tutorial_figure_5.png
-   :width: 100%
+5. Apply the forest mask to the NDVI
+========================
+* Apply the forest mask to the NDVI by using **Raster Math**.
 
-5. Visualize AGB vs. NDVI with the Scatter Plot tool
+.. code-block:: python
+
+    mask = forest_mask.astype(bool)
+    ndvi_masked = ndvi
+    ndvi_masked[mask] = -99
+    ndvi_masked.setNoDataValue(-99)
+    del mask
+
+* Specify output path and file name (e.g. :file:`ndvi_masked.tif`) under :guilabel:`Output raster layer` to save the result in your working directory.
+* Click run to start the calculation. A new raster dataset :file:`ndvi_masked.tif` will appear in the Data Sources panel. The resulting raster now displays the NDVI for forest areas, while any other land cover types are masked.
+
+6. Visualize AGB vs. NDVI with the Scatter Plot tool
 ====================================================
 
 * Close all Map Views.
-* Open an RGB composite of :file:`enmap_sonoma.bsq` in Map #1.
-* Display :file:`agb_estimation_masked.bsq` and :file:`ndvi_masked.bsq` in Map#2 and Map#3, respectively and
+* Open an RGB composite of :file:`enmap_sonoma.tif` in Map #1.
+* Display :file:`agb_masked.tif` and :file:`ndvi_masked.tif` in Map#2 and Map#3, respectively and
   use the Layer Properties to change the color ramp of both maps to white-green. Link all Map Views.
 
-.. image:: img/ex_c_agb_tutorial_figure_6.png
+.. image:: img/ex_c_agb_tutorial_figure_5.png
    :width: 100%
 
 * To investigate the relationship between estimated AGB and NDVI, we will make use of the EnMAP-Box's Scatter Plot tool.
@@ -580,8 +555,8 @@ Exercise C: Compare AGB estimates with the NDVI
 
 * Open the **Scatter Plot** tool by going to :guilabel:`Tools` then selecting :guilabel:`Scatter Plot`.
 
-   * Select :file:`agb_estimation_masked.bsq` and *Band 1* for specifying :guilabel:`X values` and
-     :file:`ndvi_masked.bsq` and *Band 1* for specifying :guilabel:`Y values`.
+   * Select :file:`agb_masked.tif` and *Band 1* for specifying :guilabel:`X values` and
+     :file:`ndvi_masked.tif` and *Band 1* for specifying :guilabel:`Y values`.
      If a selected raster has multiple bands, you would specify the desired band from the dropdown.
    * Click on :guilabel:`Apply` to visualize the Scatter Plot.
 
@@ -602,7 +577,7 @@ Exercise C: Compare AGB estimates with the NDVI
     The linear regression function, the coefficient of determination (r^2) and the Root Mean Squared Error (rmse) will
     be additionally displayed. Activate the *Min-max line* by checking the box to its left.
 
-.. image:: img/ex_c_agb_tutorial_figure_7.png
+.. image:: img/ex_c_agb_tutorial_figure_6.png
    :width: 100%
 
 Learning Activities
@@ -630,4 +605,3 @@ Additional Exercises
      the **ImageMath** tool to calculate the average estimate and variance. How does running the regression in such an
      ensemble approach affect the results? What is the spatial pattern of variation in estimates?
    * **AE3**: Rerun regression (Exercise B) using NDVI as the input rather than the hyperspectral imagery.
-
