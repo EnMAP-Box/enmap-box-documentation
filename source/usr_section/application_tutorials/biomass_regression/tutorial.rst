@@ -86,7 +86,7 @@ taken from the 2011 National Landcover Database (NLCD) [7]_.
 
    Data type; Filename; Description
    Raster; :file:`enmap_sonoma.tif`; Simulated spaceborne hyperspectral data from the EnMAP sensor with a spatial resolution of 30m, 195 bands, and 1000x200 pixels (GeoTIFF ``tif``with QGIS layer style file ``qml``)
-   Raster; :file:`nlcd_sonoma.tif`; National Land Cover Database 30m classification for the study region (GeoTIFF ``bsq`` with QGIS layer style file ``qml``)
+   Raster; :file:`nlcd_sonoma.tif`; National Land Cover Database 30m classification for the study region (GeoTIFF ``tif`` with QGIS layer style file ``qml``)
    Vector; :file:`agb_sonoma.gpkg`; 343 AGB reference points sampled from the existing LiDAR derived AGB map (GeoPackage ``gpkg``)
 
 
@@ -126,7 +126,7 @@ Exercise A: Getting started with the EnMAP-Box
 * To load new datasets into the EnMAP-Box, click the |mActionDataSourceManager| icon and navigate to the file directory
   containing your data. Select :file:`agb_sonoma.gpkg` from the Open data source dialogue and select :guilabel:`Open`.
 * Alternatively, the EnMAP-Box offers simple drag & drop capabilities to load data from an external file manager
-  (e.g. Windows File Explorer). Load :file:`enmap_sonoma.bsq` by dragging and dropping the file from your file manager
+  (e.g. Windows File Explorer). Load :file:`enmap_sonoma.tif` by dragging and dropping the file from your file manager
   into the :guilabel:`Data Sources` panel.
 * All data currently open in the EnMAP-Box will appear in the Data Sources panel.
 
@@ -359,8 +359,8 @@ mIconPolygonLayer
 ========================
 
 * After running the Regression Workflow, all outputs will appear in the Data Sources panel.
-* Close all opened Map/SpectralLibrary Windows. Open :file:`enmap_sonoma.bsq` as an RGB composite of your choice in Map #1.
-* Open the :file:`agb_estimation.bsq` in a new Map View and link to the Map #1. Use the Layer Properties to change the color ramp to white-green (Singleband pseudocolor).
+* Close all opened Map/SpectralLibrary Windows. Open :file:`enmap_sonoma.tif` as an RGB composite of your choice in Map #1.
+* Open the :file:`agb_estimation.tif` in a new Map View and link to the Map #1. Use the Layer Properties to change the color ramp to white-green (Singleband pseudocolor).
 
 .. image:: img/ex_b_agb_tutorial_figure_4.png
    :width: 100%
@@ -421,7 +421,7 @@ Exercise C: Compare AGB estimates with the NDVI
 
 
   where NIR is the near-infrared band reflectance (~850nm) and Red is the red band reflectance (~660nm).
-  We will now calculate NDVI from the EnMAP imagery using ImageMath.
+  We will now calculate NDVI from the EnMAP imagery using Raster Math.
 
 * In the Code Editor, define the Red and NIR bands in our EnMAP imagery. These correspond to bands 45 (658 nm) and 71 (847 nm),
   respectively:
@@ -602,6 +602,6 @@ Additional Exercises
      biomass predictions both with and without the tree mask applied.
    * **AE2**: Because we randomly subsetted the training data prior to model training, the performance of the model
      has an element of uncertainty to it. To better understand this, rerun the regression workflow 3-5 times. Then use
-     the **ImageMath** tool to calculate the average estimate and variance. How does running the regression in such an
+     the **Raster Math** tool to calculate the average estimate and variance. How does running the regression in such an
      ensemble approach affect the results? What is the spatial pattern of variation in estimates?
    * **AE3**: Rerun regression (Exercise B) using NDVI as the input rather than the hyperspectral imagery.
