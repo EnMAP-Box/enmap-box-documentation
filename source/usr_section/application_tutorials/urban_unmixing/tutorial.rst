@@ -12,7 +12,7 @@ Regression-based unmixing of urban land cover
 
 **Publication date:** 05/02/2019
 
-**Latest update:** 18/01/2023
+**Latest update:** 23/01/2024
 
 Introduction
 ============

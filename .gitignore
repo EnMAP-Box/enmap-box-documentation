@@ -8,7 +8,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+Thumbs.db
 # Distribution / packaging
 .Python
 build/
