@@ -371,7 +371,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 ------------------------
 * Close all Map and Spectral Library Windows from the previous exercise.
 * Load :file:`enmap_berlin.tif` as RGB composite of your choice and :file:`library_berlin.gpkg` into new Map and Spectral Library Windows.
-* Navigate to :guilabel:`Applications` in the Menu, choose |raster_multispectral| :sup:`Unmixing` and then |processingAlgorithm| :sup:`Regression-based unmixing`.
+* Navigate to :guilabel:`Applications` in the Menu, choose :guilabel:`Unmixing`, and then :guilabel:`Regression-based unmixing`.
 * The **Regression-based unmixing** GUI will open, consisting of sections for defining :guilabel:`Inputs`, selecting the :guilabel:`Regression algorithm`, configuring the :guilabel:`Mixing parameters`, and specifying the :guilabel:`Outputs`.
 
 .. image:: tut_img/11_synthmixapp1.png
@@ -404,7 +404,7 @@ The approach can be integrated into an ensemble framework, where steps 1-3 are i
 -----------------------
 
 * The subsequent step involves selecting a regression algorithm. The EnMAP-Box provides a range of state-of-the-art algorithms from the scikit-learn library (see https://scikit-learn.org/stable/index.html). It's important to note that different algorithms may result in varying accuracies and processing times, especially when incorporating the unmixing process into an ensemble.
-* Choose RandomForestRegression from the dropdown menu as the :guilabel:`Regressor` due to its lower processing time. Keep the default parameter settings (see https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html for more details on parameter settings).
+* Choose RandomForestRegression from the dropdown menu as the :guilabel:`Regressor` due to its lower processing time. Keep the default parameter settings. Refer to the scikit-learn documentation for more information.
 * Iterate the unmixing 3 times by setting :guilabel:`Ensemble size` to 3 (scroll down).
 
 .. image:: tut_img/14_regressionalgo.png
