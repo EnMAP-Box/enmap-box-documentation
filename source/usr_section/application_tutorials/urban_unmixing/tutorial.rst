@@ -583,3 +583,14 @@ Additional Exercises
      * change the **Ensemble size**: e.g. 1 vs. 10 vs. 20
 
    * **AE3**: Compare the performance of the different regression algorithms offered in the EnMAP-Box. Please note that the other regressors have significantly longer processing times.
+
+.. |navtools| image:: tut_img/navtools.png
+   :height: 27px
+
+.. |closemapview| image:: tut_img/cl_mv.png
+
+.. |identifytools| image:: tut_img/identify_tools.png
+   :height: 27px
+
+.. |identifytools2| image:: tut_img/identify_tools2.png
+   :height: 27px
