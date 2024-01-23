@@ -16,7 +16,7 @@ EnMAP Data
     * The EOWEB |reg| GeoPortal (EGP)
     * Download the data from the FTP server
 
-    For a more detailed description take a look at the `User Manual <https://planning.enmap.org/usermanual.pdf>`_.
+    For a more detailed description take a look at the `Portal User Manual <https://www.enmap.org/data/doc/EN-GS-UM-6020_Portals_User_Manual_v1.4.pdf>`_.
 
 EnMAP Data Access Portal
 ========================
@@ -48,7 +48,7 @@ The IPP enables the user registration, the submission of user proposals, and the
            :align: center
 
     3. In the User Portal, the user has to go through the *Role Assignment* procedure which is used to assign different priorities to observation requests.
-       For more information about the different *User Roles* please take a look at the `User Manual <https://planning.enmap.org/usermanual.pdf>`_.
+       For more information about the different *User Roles* please take a look at the `Portal User Manual <https://www.enmap.org/data/doc/EN-GS-UM-6020_Portals_User_Manual_v1.4.pdf>`_.
 
         * To access the data archive, request **Catalogue (Cat1-Distributor)**
         * To request data takes / submit proposals for data takes, request **Cat-1**
