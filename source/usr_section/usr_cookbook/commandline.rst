@@ -70,7 +70,7 @@ handle intermediate outputs as temporary data.
        --raster="$TMP_DIR/temp.vrt" \
        --creationProfile="GTiff INTERLEAVE=BAND COMPRESS=LZW PREDICTOR=2 BIGTIFF=YES" \
        --outputRaster="$OUTPUT_DIR/$OUTPUT"
-      done
+     done
 
 
 Or run in parallel using GNU ``parallel``:
