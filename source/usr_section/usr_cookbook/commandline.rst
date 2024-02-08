@@ -48,55 +48,17 @@ Finally, to run an algorithm, use the ``run`` command followed by the algorithm 
 Example 1: Bulk import of L2A scenes
 ------------------------------------
 
-In this example we import multiple EnMAP L2A scenes (all located inside a folder ``$DATA_DIR``) and save them as a GeoTiff to another folder ``$OUTPUT_DIR``.
+In this example we import multiple EnMAP L2A scenes (all located inside a folder ``$data_dir``) and save them as a GeoTiff to another folder ``$output_dir``.
 The ``ImportEnmapL2AProduct`` algorithm only outputs virtual rasters (:file:`.vrt`), so we add the ``SaveRasterLayerAs`` algorithm as a second step and
 handle intermediate outputs as temporary data.
 
-.. code-block:: bash
-
-   DATA_DIR="somepath/data"
-   OUTPUT_DIR="somepath/output"
-
-   for f in $(find $DATA_DIR -name "*METADATA.XML")
-     do
-     OUTPUT=$(basename $f | sed "s/\-METADATA.XML/.tif/")
-     TMP_DIR=$(mktemp -d)
-
-     qgis_process run enmapbox:ImportEnmapL2AProduct \
-       --file=$f \
-       --outputEnmapL2ARaster="$TMP_DIR/temp.vrt"
-
-     qgis_process run enmapbox:SaveRasterLayerAs \
-       --raster="$TMP_DIR/temp.vrt" \
-       --creationProfile="GTiff INTERLEAVE=BAND COMPRESS=LZW PREDICTOR=2 BIGTIFF=YES" \
-       --outputRaster="$OUTPUT_DIR/$OUTPUT"
-     done
-
+.. literalinclude:: /../snippets/qgis_process/import_l2a_loop.sh
+   :language: bash
 
 Or run in parallel using GNU ``parallel``:
 
-.. code-block:: bash
-
-   DATA_DIR="somepath/data"
-   OUTPUT_DIR="somepath/output"
-
-   function import_l2a {
-
-     OUTPUT=$(basename $1 | sed "s/\-METADATA.XML/.tif/")
-     TMP_DIR=$(mktemp -d)
-
-     qgis_process run enmapbox:ImportEnmapL2AProduct \
-       --file=$1 \
-       --outputEnmapL2ARaster="$TMP_DIR/temp.vrt"
-
-     qgis_process run enmapbox:SaveRasterLayerAs \
-       --raster="$TMP_DIR/temp.vrt" \
-       --creationProfile="GTiff INTERLEAVE=BAND COMPRESS=LZW PREDICTOR=2 BIGTIFF=YES" \
-       --outputRaster="$2/$OUTPUT"
-   }
-
-   export -f import_l2a
-   find $DATA_DIR -name "*METADATA.XML" | parallel -j4 import_l2a {} $OUTPUT_DIR
+.. literalinclude:: /../snippets/qgis_process/import_l2a_parallel.sh
+   :language: bash
 
 .. tip:: Instead of ``enmapbox:SaveRasterLayerAs`` you could also use the more elaborate ``enmapbox:TranslateRasterLayer``
          where you can, among other things, make spatial and/or spectral subsets of the input raster.
@@ -117,26 +79,28 @@ Using ``qgis_process``, a typical classification workflow could look like this:
 
 .. code-block:: bash
 
-   DATA_DIR="$HOME/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/exampledata"
-   OUTPUT_DIR="somepath/output"
+   #!/bin/bash
+
+   data_dir="$HOME/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/exampledata"
+   output_dir="somepath/output"
 
    qgis_process run enmapbox:CreateClassificationDatasetFromCategorizedVectorLayerAndFeatureRaster \
-     --featureRaster="$DATA_DIR/enmap_potsdam.tif" \
+     --featureRaster="$data_dir/enmap_potsdam.tif" \
      --excludeBadBands=1 \
-     --categorizedVector="$DATA_DIR/landcover_potsdam_point.gpkg" \
+     --categorizedVector="$data_dir/landcover_potsdam_point.gpkg" \
      --categoryField="level_2" \
-     --outputClassificationDataset="$OUTPUT_DIR/dataset.pkl"
+     --outputClassificationDataset="$output_dir/dataset.pkl"
 
    qgis_process run enmapbox:FitRandomforestclassifier \
-     --dataset="$OUTPUT_DIR/dataset.pkl" \
+     --dataset="$output_dir/dataset.pkl" \
      --classifier="from sklearn.ensemble import RandomForestClassifier; classifier = RandomForestClassifier(n_estimators=100, oob_score=True)" \
-     --outputClassifier="$OUTPUT_DIR/rfc_fit.pkl"
+     --outputClassifier="$output_dir/rfc_fit.pkl"
 
    qgis_process run enmapbox:PredictClassificationLayer \
-     --raster="$DATA_DIR/enmap_potsdam.tif" \
-     --classifier="$OUTPUT_DIR/rfc_fit.pkl" \
+     --raster="$data_dir/enmap_potsdam.tif" \
+     --classifier="$output_dir/rfc_fit.pkl" \
      --matchByName=1 \
-     --outputClassification="$OUTPUT_DIR/classification.tif"
+     --outputClassification="$output_dir/classification.tif"
 
 .. seealso::
 
