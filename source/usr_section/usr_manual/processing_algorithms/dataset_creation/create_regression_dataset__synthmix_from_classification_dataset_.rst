@@ -32,7 +32,7 @@ Create synthetically mixed `regression <https://enmap-box.readthedocs.io/en/late
 
 
 :guilabel:`Mixing complexity probabilities` [string]
-    A list of probabilities for using 2, 3, 4, ... endmember mixing models. Trailing 0 probabilities can be skipped. The default values of 0.5, 0.5,results in 50% 2-endmember and 50% 3-endmember models.
+    A list of probabilities for using 2, 3, 4, ... endmember mixing models. Trailing 0 probabilities can be skipped. The default values of 0.5, 0.5,result in 50% 2-endmember and 50% 3-endmember models.
 
     Default: *0.5, 0.5*
 

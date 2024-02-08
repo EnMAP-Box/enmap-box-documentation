@@ -14,7 +14,7 @@ Set `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term
 
 
 :guilabel:`Band names` [string]
-    List of `band name <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band-name>`_ strings (e.g).
+    List of `band name <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band-name>`_ strings.
 
 
 :guilabel:`Center wavelength values` [string]

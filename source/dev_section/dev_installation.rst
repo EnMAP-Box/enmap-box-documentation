@@ -100,7 +100,7 @@ a) OSGeo4W (Windows)
 2. Setup development environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/tree/main/scripts/OSGeo4W
+1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/tree/main/.env/osgeo4w
    to a local folder, e.g. your windows desktop
 2. Modify the `qgis-env.bat` config section to fit to your local environment, i.e. set the correct paths to your
    local OSGeoW installation and PyCharm executable
@@ -213,8 +213,6 @@ it is often much easier to install additional python packages while admin rights
                conda env config vars set QT_MAC_WANTS_LAYER=1
 
 
-
-
 3.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
     the new environment
 
@@ -267,6 +265,29 @@ it is often much easier to install additional python packages while admin rights
 
 
 .. _dev_setup_pycharm:
+
+f) Setup Mambaforge (all platforms)
+-----------------------------------
+
+Mambaforge is a reimplementation of Conda and behaves very similar.
+Make sure to read and understand the previous section explaining Conda, before using Mambaforge.
+
+Execute one of the following installation command inside your Mambaforge/Miniforge prompt:
+
+QGIS Long Term Release (LTR) environment:
+
+.. code-block:: batch
+
+   mamba env create -n enmapbox_long_term -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
+
+QGIS Latest Release (LR) environment:
+
+.. code-block:: batch
+
+   mamba env create -n enmapbox_full_latest -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
+
+
+For additional reading on Mambaforge see: https://mamba.readthedocs.io/en/latest/
 
 4. Setup PyCharm
 ================

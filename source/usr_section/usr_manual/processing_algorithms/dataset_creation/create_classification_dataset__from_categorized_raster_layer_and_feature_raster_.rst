@@ -19,6 +19,12 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
     `Raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ used for sampling `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ data `X <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-x>`_.
 
 
+:guilabel:`Exclude bad bands` [boolean]
+    Whether to exclude `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_, that are marked as `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_, or contain no data, inf or nan values in all `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
+
+    Default: *True*
+
+
 :guilabel:`Band with class values` [band]
     Band with `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ values. If not selected, the `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ defined by the renderer is used. If that is also not specified, the first band is used.
 
@@ -44,6 +50,12 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
     	Argument type:	raster
     	Acceptable values:
     		- Path to a raster layer
+    excludeBadBands: Exclude bad bands (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
     categoryBand: Band with class values (optional)
     	Argument type:	band
     	Acceptable values:

@@ -17,6 +17,12 @@ Used in the Cookbook Recipes: `Classification <https://enmap-box.readthedocs.io/
 :guilabel:`Classifier` [file]
     A fitted `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_.
 
+
+:guilabel:`Match features and bands by name` [boolean]
+    Whether to match raster `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ and `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_ `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ by name.
+
+    Default: *False*
+
 **Outputs**
 
 
@@ -39,6 +45,12 @@ Used in the Cookbook Recipes: `Classification <https://enmap-box.readthedocs.io/
     	Argument type:	file
     	Acceptable values:
     		- Path to a file
+    matchByName: Match features and bands by name (optional)
+    	Default value:	false
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
     outputClassification: Output classification layer
     	Argument type:	rasterDestination
     	Acceptable values:

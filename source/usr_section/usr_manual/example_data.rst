@@ -3,60 +3,68 @@
 Example Data
 ************
 
-.. note::
+The EnMAP-Box comes with a ready-to-use example dataset so you can easily test various aspects of the software.
 
-   For opening the dataset go to the menubar :menuselection:`Project --> Load Example Data`
+Open
+####
 
-   .. image:: /img/gui_loadexampledata.png
+The dataset can be accessed via :menuselection:`Project --> Add Example Data`.
+This will automatically open all layers in one map view.
 
-   If you try to open the dataset for the first time, you will be asked to download the data from the repository:
+.. image:: /img/gui_loadexampledata.png
 
-   .. figure:: /img/gui_downloadtestdata.png
+If you try to open the dataset for the first time, you will be asked to
+download the data (confirm with :guilabel:`Yes`):
 
-   After you downloaded the dataset, you can also use the processing algorithm *Open Test Maps* (in *Auxillary*) to open the dataset.
+.. figure:: /img/gui_downloadtestdata.png
 
-**EnMAP (30m; 177 bands):**
+Once downloaded, the data is located inside the plugin folder under :file:`enmapboxplugin\\enmapbox\\exampledata`.
 
-File name: :file:`enmap_berlin.bsq`
+Layers
+######
 
-Simulated EnMAP data (based on 3.6m HyMap imagery) acquired in August 2009 over south eastern part of Berlin. It has a spectral resolution of 177 bands and a spatial resolution of 30m.
-
-
-**HyMap (3.6m; Blue, Green, Red bands)**
-
-File name: :file:`hires_berlin.bsq`
-
-HyMap image acquired in August 2009 over south eastern part of Berlin. This dataset was reduced to 3 bands for true color display. The spatial resolution is 3.6m.
-
-
-**LandCover Vector Layer (Polygon):**
-
-File name: :file:`landcover_berlin_polygon.gpkg`
-
-Polygon vector geopackage containing land cover information on three classification levels. Derived from very high resolution aerial imagery and cadastral datasets.
-
- * Level 1 classes: Impervious, Vegetation, Soil, Water
- * Level 2 classes: Impervious, Low Vegetation, Soil, Tree, Water
- * Level 3 classes: Roof, Pavement, Low Vegetation, Soil, Tree, Water
-
-**LandCover Vector Layer (Point):**
-
-File name: :file:`landcover_berlin_point.shp`
-
-Point vector geopackage containing land cover information on two classification levels.
-
- * Level 1 classes: Impervious, Vegetation, Soil, Water
- * Level 2 classes: Impervious, Low Vegetation, Soil, Tree, Water
+enmap_potsdam.tif
+	Hyperspectral EnMAP Level 2A data acquired on the 24th of July 2022 over the City of Potsdam, Germany,
+	Provider: DLR (german aerospace center)
+	EnMAP L2A scene ID: ENMAP01-____L2A-DT0000001867_20220724T104526Z_008_V010302_20230628T165614Z (processing v1.3.2)
+	Ground sampling distance: 30 m
+	Number of bands: 224 (from 400 to 2450 nm)
+	Number of bad bands: 6 (filled with no data value)
+	Data: 330x200x244 (Float32)
 
 
-**Spectral Library:**
+aerial_potsdam.tif
+	Aerial image acquired on the 1st of April 2019 over the City of Potsdam, Germany.
+	Provider: LGB (Landesvermessung und Geobasisinformation Brandenburg)
+	Ground sampling distance: 0.2 m resampled to 1 m
+	Number of bands: 4 (red, green, blue, near-infrared)
+	Data: 9000x9000x4 (Byte)
+	Copyrights: GeoBasis-DE/LGB, dl-de/by-2-0 and Geoportal Berlin, dl-de/by-2-0 (data modified). Also see https://geobroker.geobasis-bb.de/gbss.php?MODE=GetProductInformation&PRODUCTID=253b7d3d-6b42-47dc-b127-682de078b7ae
 
-File name: :file:`library_berlin.sli`
 
-Spectral library with 75 spectra (material level, level 2 and level 3 class information)
+landcover_potsdam_polygon.gpkg
+	Land cover reference polygons derived from the aerial imagery described above.
+	Number of polygons: 9677
+	Level 1 classes: Impervious, Vegetation, Soil, Water
+	Level 2 classes: Impervious, Low Vegetation, Soil, Tree, Water
+	Level 3 classes: Roof, Pavement, Low Vegetation, Soil, Tree, Water
 
-.. figure:: /img/testdata_speclib.png
-   :width: 100%
 
-   library_berlin.sli opened in the EnMAP-Box Spectral Library Window
+landcover_potsdam_point.gpkg
+	Land cover reference points derived from the aerial imagery described above.
+	Number of points: 120
+	Level 1 classes: Impervious, Vegetation, Soil, Water
+	Level 2 classes: Impervious, Low Vegetation, Soil, Tree, Water
 
+
+.. figure:: /img/example_data.png
+   :align: center
+
+   All layers from the Example Dataset opened in one map view
+
+Full EnMAP Example Scene
+########################
+
+Download the full EnMAP L2A Scene which :file:`enmap_potsdam.tif` is based on via
+:menuselection:`Project --> Download Example Scene` or from the following link:
+https://box.hu-berlin.de/f/8baee334773b4cb8847e/

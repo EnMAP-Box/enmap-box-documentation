@@ -21,6 +21,12 @@ The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.htm
     A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ used as `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ for mapping. `Regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_ features and raster bands are matched by name. Will be ignored, if map prediction is skipped.
 
 
+:guilabel:`Match regressor features and raster bands by name` [boolean]
+    Whether to match raster `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ and `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_ `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ by name.
+
+    Default: *False*
+
+
 :guilabel:`Number of cross-validation folds` [number]
     The number of folds used for assessing `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance. Will be ignored, if the cross-validation performance assessment is skipped.
 
@@ -66,6 +72,12 @@ The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.htm
     	Argument type:	raster
     	Acceptable values:
     		- Path to a raster layer
+    matchByName: Match regressor features and raster bands by name (optional)
+    	Default value:	false
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
     nfold: Number of cross-validation folds (optional)
     	Default value:	10
     	Argument type:	number

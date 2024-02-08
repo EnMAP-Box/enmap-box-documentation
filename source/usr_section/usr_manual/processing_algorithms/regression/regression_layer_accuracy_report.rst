@@ -4,7 +4,7 @@
 Regression layer accuracy report
 ********************************
 
-Estimates map accuracy.We use the formulars as described in `Scikit-Learn Regression metrics <https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics>`_ user guide. Observed and predicted `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ variables are matched by name.
+Estimates map accuracy.We use the formulas as described in `Scikit-Learn Regression metrics <https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics>`_ user guide. Observed and predicted `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ variables are matched by name.
 
 **Parameters**
 

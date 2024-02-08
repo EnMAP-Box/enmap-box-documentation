@@ -1,0 +1,29 @@
+name: Check URLs
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: urls-checker
+      uses: urlstechie/urlchecker-action@master
+      with:
+        file_types: .md,.py,.rst
+
+        # Choose whether to include file with no URLs in the prints.
+        print_all: false
+
+        timeout: 5
+
+        retry_count: 3
+
+        verbose: true
+
+        force_pass : false
+
+        exclude_files: /scripts/create_external_link_file.py,/source/dev_section/external_links.rst
+
+        exclude_patterns: https://enmap-box.readthedocs.io/en/latest/general/glossary.html,https://tiles.wmflabs.org,https://fbinter.stadt-berlin.de/fb/wfs

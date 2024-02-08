@@ -18,11 +18,17 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
     `Raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ used for sampling `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ data `X <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-x>`_.
 
 
+:guilabel:`Exclude bad bands` [boolean]
+    Whether to exclude `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_, that are marked as `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_, or contain no data, inf or nan values in all `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
+
+    Default: *True*
+
+
 :guilabel:`Field with class values` [field]
     Field with `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ values used as `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ data `y <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-y>`_. If not selected, the `field <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ defined by the renderer is used. If that is also not specified, an error is raised.
 
 
-:guilabel:`Minimum pixel coverage` [number]
+:guilabel:`Minimum pixel coverage [%]` [number]
     Exclude all pixel where (polygon) coverage is smaller than given threshold.
 
     Default: *50*
@@ -37,7 +43,7 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
 
 
 :guilabel:`Output dataset` [fileDestination]
-    `Dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ file destination .
+    `Dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ file destination.
 
 **Command-line usage**
 
@@ -55,12 +61,18 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
     	Argument type:	raster
     	Acceptable values:
     		- Path to a raster layer
+    excludeBadBands: Exclude bad bands (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
     categoryField: Field with class values (optional)
     	Argument type:	field
     	Acceptable values:
     		- The name of an existing field
     		- ; delimited list of existing field names
-    coverage: Minimum pixel coverage
+    coverage: Minimum pixel coverage [%]
     	Default value:	50
     	Argument type:	number
     	Acceptable values:

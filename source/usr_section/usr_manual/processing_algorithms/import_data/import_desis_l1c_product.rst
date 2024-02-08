@@ -12,7 +12,7 @@ Note that the DESIS L1C spectral data file is `band <https://enmap-box.readthedo
 
 :guilabel:`Metadata file` [file]
     The metadata XML file associated with the product.
-    Instead of executing this algorithm, you may drag&drop the metadata XML file directly from your system file browser onto the EnMAP-Box map view area.
+    Instead of executing this algorithm, you may drag&drop the metadata XML file directly from your system file browser a) onto the EnMAP-Box map view area, or b) onto the Sensor Product Import panel.
 
 **Outputs**
 

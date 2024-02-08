@@ -249,7 +249,6 @@ PyQGIS
 
 * https://api.qgis.org/api/
 * https://webgeodatavore.github.io/pyqgis-samples/
-* https://plugins.qgis.org/planet/
 * https://www.qgis.org/en/site/getinvolved/development/index.html
 
 

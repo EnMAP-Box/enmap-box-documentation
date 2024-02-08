@@ -4,7 +4,7 @@
 Classification layer accuracy and area report (for simple random sampling)
 **************************************************************************
 
-Estimates map accuracy and area proportions for (simple) random sampling. We use the formulars for the stratified random sampling described in Stehman (2014): https://doi.org/10.1080/01431161.2014.930207. Note that (simple) random sampling is a special case of stratified random sampling, with exactly one `stratum <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-stratum>`_. 
+Estimates map accuracy and area proportions for (simple) random sampling. We use the formulas for the stratified random sampling described in Stehman (2014): https://doi.org/10.1080/01431161.2014.930207. Note that (simple) random sampling is a special case of stratified random sampling, with exactly one `stratum <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-stratum>`_. 
 Observed and predicted `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ are matched by name.
 
 **Parameters**

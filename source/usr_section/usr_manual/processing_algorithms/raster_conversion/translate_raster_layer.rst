@@ -24,7 +24,7 @@ Convert raster data between different formats, potentially performing some opera
 :guilabel:`Copy metadata` [boolean]
     Whether to copy GDAL metadata from source to destination.
 
-    Default: *False*
+    Default: *True*
 
 
 :guilabel:`Copy style` [boolean]
@@ -34,7 +34,13 @@ Convert raster data between different formats, potentially performing some opera
 
 
 :guilabel:`Exclude bad bands` [boolean]
-    Whether to exclude `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_ (given by BBL metadata item inside ENVI domain). Also see The ENVI Header Format for more details: https://www.l3harrisgeospatial.com/docs/ENVIHeaderFiles.html 
+    Whether to exclude `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_ (given by BBL metadata item inside ENVI domain). Also see The ENVI Header Format for more details: https://www.l3harrisgeospatial.com/docs/ENVIHeaderFiles.html
+
+    Default: *False*
+
+
+:guilabel:`Derive and exclude additional bad bands` [boolean]
+    Whether to derive and exclude additional `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_ fully filled with inf, nan or `no data values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_.
 
     Default: *False*
 
@@ -139,7 +145,7 @@ Convert raster data between different formats, potentially performing some opera
     	Acceptable values:
     		- Path to a raster layer
     copyMetadata: Copy metadata
-    	Default value:	false
+    	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
@@ -151,6 +157,12 @@ Convert raster data between different formats, potentially performing some opera
     		- 1 for true/yes
     		- 0 for false/no
     excludeBadBands: Exclude bad bands
+    	Default value:	false
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    excludeDerivedBadBands: Derive and exclude additional bad bands
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:

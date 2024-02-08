@@ -27,7 +27,7 @@ EnMAP-Box Version 3.11 released
 Oct. 10, 2022
 
 A new EnMAP-Box version has been released.
-A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.rst#version-311>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-311>`_.
 
 
 EnMAP-Box Version 3.10 released
@@ -36,7 +36,7 @@ EnMAP-Box Version 3.10 released
 June 09, 2022
 
 A new EnMAP-Box version has been released.
-A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.rst#version-310>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-310>`_.
 
 
 EnMAP-Box Version 3.9 released
@@ -45,7 +45,7 @@ EnMAP-Box Version 3.9 released
 Oct. 10, 2021
 
 A new EnMAP-Box version has been released.
-A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.rst#version-39>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-39>`_.
 
 EnMAP-Box Workshop 2021
 =======================
@@ -82,7 +82,7 @@ Oct. 27, 2020
 
 A new EnMAP-Box version has been released. It includes product readers for EnMAP L1B, L2C and L2A, PRISMA L2D
 and DESIS L2A images, and a first version of Spectral Math in the QGIS Expression Builder.
-A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.rst>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md>`_.
 
 
 FOSSGIS 2020

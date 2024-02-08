@@ -40,7 +40,7 @@ Implementation of the `regression <https://enmap-box.readthedocs.io/en/latest/ge
 
 
 :guilabel:`Mixing complexity probabilities` [string]
-    A list of probabilities for using 2, 3, 4, ... endmember mixing models. Trailing 0 probabilities can be skipped. The default values of 0.5, 0.5,results in 50% 2-endmember and 50% 3-endmember models.
+    A list of probabilities for using 2, 3, 4, ... endmember mixing models. Trailing 0 probabilities can be skipped. The default values of 0.5, 0.5,result in 50% 2-endmember and 50% 3-endmember models.
 
     Default: *0.5, 0.5*
 
@@ -62,7 +62,13 @@ Implementation of the `regression <https://enmap-box.readthedocs.io/en/latest/ge
 
 
 :guilabel:`Robust decision fusion` [boolean]
-    Whether to use median and IQR (interquartile range) aggregation for ensemble decicion fusion. The default is to use mean and standard deviation.
+    Whether to use median and IQR (interquartile range) aggregation for ensemble decision fusion. The default is to use mean and standard deviation.
+
+    Default: *False*
+
+
+:guilabel:`Sum-to-one constraint` [boolean]
+    Whether to ensure sum-to-one constraint for predicted fractions.
 
     Default: *False*
 
@@ -137,6 +143,12 @@ Implementation of the `regression <https://enmap-box.readthedocs.io/en/latest/ge
     	Acceptable values:
     		- A numeric value
     robustFusion: Robust decision fusion (optional)
+    	Default value:	false
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    sumToOne: Sum-to-one constraint (optional)
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:

@@ -17,6 +17,12 @@ Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossar
     `Raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ used for sampling `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ data `X <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-x>`_.
 
 
+:guilabel:`Exclude bad bands` [boolean]
+    Whether to exclude `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_, that are marked as `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_, or contain no data, inf or nan values in all `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
+
+    Default: *True*
+
+
 :guilabel:`Fields with targets` [field]
     Fields used as `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ data `y <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-y>`_. If not selected, the `fields <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ defined by the renderer are used. If those are also not specified, an error is raised.
 
@@ -42,6 +48,12 @@ Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossar
     	Argument type:	raster
     	Acceptable values:
     		- Path to a raster layer
+    excludeBadBands: Exclude bad bands (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
     targetFields: Fields with targets (optional)
     	Argument type:	field
     	Acceptable values:

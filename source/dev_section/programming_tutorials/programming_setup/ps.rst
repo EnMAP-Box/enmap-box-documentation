@@ -7,10 +7,10 @@ Setup
    `installation instruction <https://enmap-box.readthedocs.io/en/latest/dev_section/dev_installation.html>`_.
 
 #. Download the materials for
-   `Application Tutorial 1 <https://box.hu-berlin.de/f/01d6196ab1e34956bd5d/?dl=1>`_ (227 MB).
+   `Application Tutorial 1 (not available anymore).
 
 #. Download the materials for
-   `Application Tutorial 2 <https://box.hu-berlin.de/f/39389749a3a54ef9bd13/?dl=1>`_ (4 MB).
+   `Application Tutorial 2 (not available anymore).
 
 #. Materials for *Application Tutorial 3* will be provided later.
 
