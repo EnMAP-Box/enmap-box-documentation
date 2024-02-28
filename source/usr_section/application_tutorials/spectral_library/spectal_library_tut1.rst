@@ -1,17 +1,17 @@
 .. include:: /icon_links.rst
 
 Work with a Spectral Library: An Introduction
-###################################
+#############################################
 
 **Author:** Klara Busse, Akpona Okujeni
 
 **Publication date:** 01/03/2024
 
 Getting Started
-***********************************
+***************
 
 Requirements
-===========
+============
 This tutorial is designed for EnMAP-Box 3, version 3.13.0 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
 
