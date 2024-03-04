@@ -66,8 +66,6 @@ Related websites
     usr_section/usr_manual/usr_manual.rst
     usr_section/data_access.rst
     usr_section/application_tutorials/index.rst
-    usr_section/workshop_tutorials/index.rst
-
 
 ..  toctree::
     :maxdepth: 6
