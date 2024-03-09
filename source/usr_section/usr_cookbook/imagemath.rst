@@ -3,18 +3,17 @@
 Map Algebra with ImageMath
 ==========================
 
-You can open the ImageMath raster calculator under :menuselection:`Applications --> ImageMath`
+You can open the ImageMath raster calculator under :menuselection:`Raster analysis --> Raster math`
 
 Calculate NDVI
 ~~~~~~~~~~~~~~
 
 * Make sure to open the testdatasets for this example
-* Specify the input and output parameters according to the screenshot below (you can of course alter the names, but make
-  sure to also adapt them in the script)
+* Under :guilabel:`Code Snippets --> Indices` select NDVI. Select :file:`enmap_potsdam.bsq` as your input.
 
   .. image:: ../../img/im_input_ndvi.png
 
-* Enter this code in the editor on the right side. You do not need to alter :guilabel:`Output Grid` and :guilabel:`Processing` for now.
+* Alternatively, enter this code directly in the editor. Make sure to alter the names according to your raster. You do not need to alter :guilabel:`Output Grid` and :guilabel:`Processing` for now.
 
   .. code-block:: python
 
@@ -33,7 +32,7 @@ Mask raster with vector
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Make sure to open the testdatasets for this example
-* Select :file:`enmap_berlin.bsq` under :guilabel:`Inputs` and name it ``enmap``. Further select :file:`landcover_berlin_polygon.shp` and name
+* Select :file:`enmap_potsdam.bsq` under :guilabel:`Inputs` and name it ``enmap``. Further select :file:`landcover_potsdam_polygon.gpkg` and name
   it ``mask``.
 * Under :guilabel:`Outputs` specify output path and file and name it ``result``
 

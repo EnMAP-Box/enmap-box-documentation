@@ -16,3 +16,13 @@ Usage:
 
     .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/classification/img/class_workflow_interface_3.png
        :align: center
+
+Live Demonstration:
+
+.. raw:: html
+
+   <div style="text-align: center;">
+   <iframe width="100%" height="380" src="https://www.youtube.com/watch?v=D-5qb6cz-O0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </div>
+
+|

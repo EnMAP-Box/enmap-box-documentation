@@ -13,12 +13,12 @@ using K-Means clustering (:ref:`Fit KMeans`) and the :ref:`test dataset <test_da
 #. Open the test dataset
 #. In the processing toolbox go to :menuselection:`EnMAP-Box --> Clustering --> Fit KMeans`
 
-   * Specify :file:`enmap_berlin.bsq` under :guilabel:`Raster`
+   * Specify :file:`enmap_potsdam.tif` under :guilabel:`Raster`
    * Under :guilabel:`Output Clusterer` specify an output file path and click :guilabel:`Run`
 
 #. Now open :menuselection:`EnMAP-Box --> Clustering --> Predict (unsupervised) classification layer`
 
-   * Select :file:`enmap_berlin.bsq` as input :guilabel:`Raster`
+   * Select :file:`enmap_potsdam.tif` as input :guilabel:`Raster`
    * Under :guilabel:`Clusterer` click :guilabel:`...` and select the output :file:`.pkl` file from the Fit KMeans algorithm
    * Specify an output filepath for the transformed raster under :guilabel:`Clustering` and click :guilabel:`Run`
 
