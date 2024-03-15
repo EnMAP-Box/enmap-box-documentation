@@ -132,7 +132,7 @@ Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownload
 
    .. code-block:: console
 
-      sudo apt install python3-pip python3-venv pyqt5-dev-tools
+      sudo apt install python3-pip python3-venv pyqt5-dev-tools python3-matplotlib
 
 #. **(optional)** for some EnMAP-Box tools you may also need the following packages:
 
