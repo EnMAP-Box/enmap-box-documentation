@@ -1,9 +1,10 @@
 .. include:: /icon_links.rst
 
 Work with a Spectral Library: An Introduction
-###################################
+###############################################
 
-**Author:** Klara Busse, Akpona Okujeni
+**Author:** Klara Busse,
+**Contributor:** Akpona Okujeni
 
 **Publication date:** 01/03/2024
 
@@ -11,12 +12,12 @@ Getting Started
 ***********************************
 
 Requirements
-===========
-This tutorial is designed for EnMAP-Box 3, version 3.13.0 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
+=============
+This introduction is designed for EnMAP-Box 3, version 3.13.0 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
 
 Start the EnMAP-Box
-==================
+====================
 
 * Launch QGIS and click the |enmapbox| icon in the toolbar to open the EnMAP-Box. The EnMAP-Box GUI comprises a **Menu** and a **Toolbar**, panels for **Data Sources** and **Data Views**, and the **QGIS Processing Toolbox**, which includes the **EnMAP-Box geoalgorithms**.
 
@@ -24,7 +25,7 @@ Start the EnMAP-Box
    :width: 100%
 
 Load the Example Data
-==================
+===========================
 
 For this introduction the Example Data of the EnMap-Box will be used.
 
@@ -38,29 +39,90 @@ For this introduction the Example Data of the EnMap-Box will be used.
 * Now, the example data is loaded and you can work with it.
 * For clarity, close the map window by clicking on the (x) icon on the blue **Map #1** title bar. The data views panel will be empty afterwards.
 * To load an (own) existing file, you can drag and drop the file from your explorer to the **Data Sources** panel.
-* As the example data from the EnMap box will be used for this introduction, this step can be omitted.
 
-Work with a Spectral Library
-***********************************
-This tutorial shows you how to load, edit and export a spectral library.
+Load a Spectral Library from the Example Data
+============================================
 
-Load an Existing Spectral Library
-=====================
-
-* Open the spectral library  :file:`EnMAP Spectral Response Function (224 Bands)`, using drag and drop:
+* Open the spectral library  :file:`EnMAP Spectral Response Function (224 Bands)` from the Example Data, using drag and drop:
 
 .. image:: img/03_load_spec_lib.gif
+
+
+Import a Spectral Library
+==========================
+
+If you already have a spectral library you can directly import it from your data explorer.
+Depending on your file format there are multiple possibilities to import a spectral library.
+The following formats will be explained below:
+
+* Geopackage
+* ASD Field Spectrometer
+* Raster Layer
+* Using the Field Calculator
+
+
+Geopackage & ASD Field Spectrometer
+-----------------------------------
+
+* To import a spectral library with the data format **Geopackage** or **ASD Field Spectrometer**, open a spectral library window |speclib|
+* Click on |speclib_add| to open the **Import Spectral Profiles** window.
+
+.. image:: img/import_a_speclib.gif
+
+* Choose the correct format and the directory.
+* To import the columns of your choice, click on |mSourceFields| and select the columns.
+* Click **OK**
+
+
+Raster Layer
+------------
+
+* To import a **Raster Layer**, drag and drop your raster file into a new map window.
+* Now, when you open the **Import Spectral Profiles** window and choose **Raster Layer**, the Raster File will automatically appear in the **Options**. If several Raster Layers are open, you can select one.
+* To import the columns of your choice, click on |mSourceFields| and select the columns.
+* Click **OK**
+
+
+Field Calculator
+----------------
+
+* The field calculator helps to create spectral profiles for points, that have no spectral information.
+* Open the :file:`enmap_potsdam` raster layer and the :file:`landcover_potsdam_point` layer in a new map window.
+* Click on the :file:`landcover_potsdam_point` with the right mouse button and select **Open Spectral Library Viewer**. A new spectral library window opens. The points are in the attribute table, but not yet associated with any spectral information.
+
+.. image:: img/field_calculator.gif
+
+* Open the Field Calculator and make the following settings to link the points to spectral profiles:
+
+..
+
+    * Create a new field
+    * Set an output field name
+    * Output field type: Text(string)
+    * In the expression field write the command: raster_profile('enmap_potsdam') to connect the points to the spectral information.
+    * Click **OK** and your profiles are visible in the attribute table now.
+
+.. image:: img/calculator_settings.png
+
+* To show the spectral profiles, click on **Update Profiles** on the left hand side of the toolbar.
+
+
+Work with a Spectral Library
+****************************
+The following shows how to edit and export a spectral library
+
+Basic Visualization Steps
+===========================
 
 * The spectral library viewer should look like this:
 
 .. image:: img/04_spec_lib_window_explained.png
 
-* There are various functions in the **Toolbar** which you can create points for a spectral library with, edit them and export the spectral library.
-* The **Spectral Profiles Window** shows the spectral profiles of the points, that are collected in the spectral library.
-* The **Attribute Table** shows information for the different profiles.
+* There are various functions in the **toolbar** that can be used to create, edit them and export a spectral library.
+* The **spectral profiles window** shows the spectral profiles of the points, that are collected in the spectral library.
+* The **attribute table** shows information for the different profiles.
 
-Basic Visualization Steps
-===========================
+..
 * Let's have a closer look at the toolbar:
 
 .. image:: img/05_spec_lib_toolbar.png
@@ -70,7 +132,7 @@ Basic Visualization Steps
 
 .. image:: img/06_spec_lib_toolbar_more_options.png
 
-
+* These are the tools you already know from the QGIS attribute table (`here is a link to the website  <https://docs.qgis.org/3.34/en/docs/user_manual/working_with_vector/attribute_table.html>`_)
 * Some functions of the toolbar are shown below. There are multiple possibilities, to organize and edit the different profiles in the **Attribute Table**:
 
 .. image:: img/07_functions_speclib_toolbar.gif
@@ -85,7 +147,7 @@ Basic Visualization Steps
 
 
 Export the Spectral Library
-======================
+============================
 * To apply all changes, save the spectral profiles.
 * The spectral profiles can be exported into different data formats (Geopackage, GeoJSON, ENVI spectral library).
 * Click on the |speclib_save| symbol. The **Export Spectral Library** window will open.
@@ -93,15 +155,18 @@ Export the Spectral Library
 .. image:: img/08_export_speclib.png
 
 * Choose between Geopackage, GeoJSON or ENVI spectral library.
+
     * Geopackage:
     * GeoJSON:
     * ENVI spectral library:
+
+..
 * Choose a file name and path and click **OK**
 
 
 Create a Spectral Library
 ***********************************
-This tutorial shows you how to create a spectral library by your own.
+This introduction shows you how to create a spectral library by your own.
 
 Change the RGB Composite
 ============================
@@ -120,7 +185,7 @@ Change the RGB Composite
     Blue band; Band 2: Green
 
 Add Profiles to a Spectral Library
-==================================
+====================================
 
 * Zoom into the tif and make yourself familiar with the image.
 * In this introduction 5 points for each of the following classes will be collected:
@@ -129,6 +194,7 @@ Add Profiles to a Spectral Library
   * Concrete
   * Water
 
+..
 * Search for areas with that kind of surface coverage.
 * Next, click on |select_location| then on |profile|. When you choose a point in the image, a spectral library window will open and show you the spectral profiles of that point.
 * By clicking on |plus_green_icon| you can save that point with its spectral information into your spectral library.
@@ -141,7 +207,7 @@ Add Profiles to a Spectral Library
 .. image:: img/10_add_profiles_automatically_aerial_potsdam.gif
 
 Change the Colours of the Spectra
-=================================
+===================================
 
 * After collecting the points you can organize them by color, for a better separation.
 * Go to the **Layer Properties** of your spectral library in the **Data Views** panel. With **Symbology** you can set the colors.
@@ -155,7 +221,7 @@ Change the Colours of the Spectra
 .. image:: img/12_spec_lib_new_colors.png
 
 Export the Spectral Library and its Style
-===============================
+==========================================
 
 * Export the spectral library |speclib_save| and choose a file path and name.
 * The style can be saved at symbology. Click on **Style**, then on **Save Style**. Select the file path and save the style.
