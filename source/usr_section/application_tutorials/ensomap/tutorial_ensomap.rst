@@ -89,7 +89,7 @@ For iron we use different absorption features: EnSoMAP performs a continuum remo
 
 Load all output files, the overall soil mask and the image file in separate map windows and link them.
 
-Change from greyscale to color ramps by right clicking on the file name in the **Data views** panel and selecting :menuselectio:`Layer Properties > Symbology`. Here, you can change the band rendering to :menuselection:`singleband pseudocolor` and select your favorite color ramp. To look at the map values in the soil and mask pixels use the **Identify cursor location value** button.
+Change from greyscale to color ramps by right clicking on the file name in the **Data views** panel and selecting :menuselection:`Layer Properties > Symbology`. Here, you can change the band rendering to :menuselection:`singleband pseudocolor` and select your favorite color ramp. To look at the map values in the soil and mask pixels use the **Identify cursor location value** button.
 
 .. image:: img/fig9.png
     :width: 800px
