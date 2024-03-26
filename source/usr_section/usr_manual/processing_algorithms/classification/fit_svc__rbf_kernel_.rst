@@ -8,6 +8,8 @@ C-Support Vector `Classification <https://enmap-box.readthedocs.io/en/latest/gen
 The implementation is based on libsvm. The fit time scales at least quadratically with the number of `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ and may be impractical beyond tens of thousands of samples. 
 The multiclass support is handled according to a one-vs-one scheme.
 
+.. include:: ../../processing_algorithms_includes/classification/fit_svc__rbf_kernel_.rst
+
 **Parameters**
 
 
@@ -60,6 +62,8 @@ The multiclass support is handled according to a one-vs-one scheme.
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

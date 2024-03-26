@@ -7,6 +7,9 @@ Import PRISMA L2C product
 Import PRISMA L2C product from HE5 file to QGIS/GDAL conform GTiff/VRT file format.Note that for the spectral cube and error matrix, the interleave is transposed and stored as GTiff to enable proper visualization in QGIS.All other sub-`datasets <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ are stored as light-weight VRT files.
 For further details visit the `PRISMA Documentation Area <http://prisma.asi.it/missionselect/docs.php>`_.
 
+.. include:: ../../processing_algorithms_includes/import_data/import_prisma_l2c_product.rst
+
+
 **Parameters**
 
 

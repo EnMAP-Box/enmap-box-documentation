@@ -7,6 +7,8 @@ Spatial convolution Top-Hat filter
 2D Top-Hat filter.
 The Top-Hat filter is an isotropic smoothing filter. It can produce artifacts when applied repeatedly on the same data.
 
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_convolution_top-hat_filter.rst
+
 **Parameters**
 
 
@@ -57,18 +59,24 @@ The Top-Hat filter is an isotropic smoothing filter. It can produce artifacts wh
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     normalize: Normalize kernel
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     interpolate: Interpolate no data pixel
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

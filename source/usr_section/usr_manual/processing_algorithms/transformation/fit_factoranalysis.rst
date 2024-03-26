@@ -10,6 +10,9 @@ The observations are assumed to be caused by a linear transformation of lower di
 If we would restrict the model further, by assuming that the Gaussian noise is even isotropic (all diagonal entries are the same) we would obtain ProbabilisticPCA.
 FactorAnalysis performs a maximum likelihood estimate of the so-called loading matrix, the transformation of the latent variables to the observed ones, using SVD based approach.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_factoranalysis.rst
+
+
 **Parameters**
 
 
@@ -62,6 +65,8 @@ FactorAnalysis performs a maximum likelihood estimate of the so-called loading m
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     featureRaster: Raster layer with features (optional)
     	Argument type:	raster
     	Acceptable values:
@@ -71,6 +76,8 @@ FactorAnalysis performs a maximum likelihood estimate of the so-called loading m
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

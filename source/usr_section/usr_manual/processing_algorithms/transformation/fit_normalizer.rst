@@ -7,6 +7,9 @@ Fit Normalizer
 Normalize `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ individually to unit norm.
 Each `sample <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ (i.e. each row of the data matrix) with at least one non zero component is rescaled independently of other samples so that its norm (l1, l2 or inf) equals one.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_normalizer.rst
+
+
 **Parameters**
 
 
@@ -53,6 +56,8 @@ Each `sample <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#t
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     featureRaster: Raster layer with features (optional)
     	Argument type:	raster
     	Acceptable values:
@@ -62,6 +67,8 @@ Each `sample <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#t
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

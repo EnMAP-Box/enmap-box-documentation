@@ -6,6 +6,8 @@ Fit generic classifier
 
 A generic `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_.
 
+.. include:: ../../processing_algorithms_includes/classification/fit_generic_classifier.rst
+
 **Parameters**
 
 
@@ -42,6 +44,8 @@ A generic `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossa
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

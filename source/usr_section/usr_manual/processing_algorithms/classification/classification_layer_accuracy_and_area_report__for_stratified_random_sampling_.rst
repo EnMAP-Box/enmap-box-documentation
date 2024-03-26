@@ -7,6 +7,8 @@ Classification layer accuracy and area report (for stratified random sampling)
 Estimates map accuracy and area proportions for stratified random sampling as described in Stehman (2014): https://doi.org/10.1080/01431161.2014.930207. 
 Observed and predicted `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ are matched by name.
 
+.. include:: ../../processing_algorithms_includes/classification/classification_layer_accuracy_and_area_report__for_stratified_random_sampling_.rst
+
 **Parameters**
 
 
@@ -59,6 +61,8 @@ Observed and predicted `categories <https://enmap-box.readthedocs.io/en/latest/g
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outClassificationPerformance: Output report
     	Argument type:	fileDestination
     	Acceptable values:

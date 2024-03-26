@@ -6,6 +6,8 @@ Classifier feature ranking (permutation importance)
 
 Permutation `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ importance is a model inspection technique that is especially useful for non-linear or opaque `estimators <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-estimator>`_. The permutation feature importance is defined to be the decrease in a model score when a single feature value is randomly shuffled. This procedure breaks the relationship between the feature and the `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_, thus the drop in the model score is indicative of how much the model depends on the feature. This technique benefits from being model agnostic and can be calculated many times with different permutations of the feature.
 
+.. include:: ../../processing_algorithms_includes/feature_selection/classifier_feature_ranking__permutation_importance_.rst
+
 **Parameters**
 
 
@@ -99,16 +101,22 @@ Permutation `feature <https://enmap-box.readthedocs.io/en/latest/general/glossar
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     seed: Random seed (optional)
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     openReport: Open output report in webbrowser after running algorithm
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputPermutationImportanceRanking: Output report
     	Argument type:	fileDestination
     	Acceptable values:

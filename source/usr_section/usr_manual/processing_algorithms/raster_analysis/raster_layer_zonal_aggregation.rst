@@ -6,6 +6,8 @@ Raster layer zonal aggregation
 
 Aggregates `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ `pixel profiles <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pixel-profile>`_ by `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_.
 
+.. include:: ../../processing_algorithms_includes/raster_analysis/raster_layer_zonal_aggregation.rst
+
 **Parameters**
 
 

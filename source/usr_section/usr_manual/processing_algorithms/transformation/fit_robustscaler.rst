@@ -9,6 +9,9 @@ This Scaler removes the median and scales the data according to the quantile ran
 Centering and scaling happen independently on each `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ by computing the relevant statistics on the `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ in the training set. Median and interquartile range are then stored to be used on later data using the transform method.
 Standardization of a `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ is a common requirement for many machine learning `estimators <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-estimator>`_. Typically this is done by removing the mean and scaling to unit variance. However, outliers can often influence the `sample <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ mean / variance in a negative way. In such cases, the median and the interquartile range often give better results.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_robustscaler.rst
+
+
 **Parameters**
 
 
@@ -55,6 +58,8 @@ Standardization of a `dataset <https://enmap-box.readthedocs.io/en/latest/genera
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     featureRaster: Raster layer with features (optional)
     	Argument type:	raster
     	Acceptable values:
@@ -64,6 +69,8 @@ Standardization of a `dataset <https://enmap-box.readthedocs.io/en/latest/genera
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

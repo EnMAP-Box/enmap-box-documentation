@@ -6,6 +6,8 @@ Import Sentinel-2 L2A product
 
 Prepare a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ from the given product. `Wavelength <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-wavelength>`_ information is set and data is scaled into the 0 to 10000 range.
 
+.. include:: ../../processing_algorithms_includes/import_data/import_sentinel-2_l2a_product.rst
+
 **Parameters**
 
 

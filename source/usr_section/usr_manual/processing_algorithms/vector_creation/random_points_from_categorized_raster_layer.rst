@@ -6,6 +6,9 @@ Random points from categorized raster layer
 
 This algorithm creates a new `point layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-point-layer>`_ with a given number of random points, all of them within the `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ of the given `categorized raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categorized-raster-layer>`_.
 
+.. include:: ../../processing_algorithms_includes/vector_creation/random_points_from_categorized_raster_layer.rst
+
+
 **Parameters**
 
 
@@ -54,20 +57,28 @@ This algorithm creates a new `point layer <https://enmap-box.readthedocs.io/en/l
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     distanceGlobal: Minimum distance between points (in meters)
     	Default value:	0
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     distanceStatum: Minimum distance between points inside category (in meters)
     	Default value:	0
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     seed: Random seed (optional)
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputPoints: Output point layer
     	Argument type:	vectorDestination
     	Acceptable values:

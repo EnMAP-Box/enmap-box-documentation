@@ -6,6 +6,8 @@ Spatial Sobel filter
 
 Spatial Sobel filter. See `Wikipedia <https://en.wikipedia.org/wiki/Sobel_operator>`_ for general information.
 
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_sobel_filter.rst
+
 **Parameters**
 
 
@@ -46,6 +48,8 @@ Spatial Sobel filter. See `Wikipedia <https://en.wikipedia.org/wiki/Sobel_operat
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

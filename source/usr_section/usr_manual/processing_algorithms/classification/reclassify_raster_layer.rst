@@ -6,6 +6,8 @@ Reclassify raster layer
 
 This algorithm reclassifies a raster by assigning new `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ values based on a class mapping.
 
+.. include:: ../../processing_algorithms_includes/classification/reclassify_raster_layer.rst
+
 **Parameters**
 
 
@@ -48,15 +50,21 @@ This algorithm reclassifies a raster by assigning new `class <https://enmap-box.
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     categories: Categories (optional)
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     noDataValue: No data value
     	Default value:	0
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputClassification: Output classification layer
     	Argument type:	rasterDestination
     	Acceptable values:

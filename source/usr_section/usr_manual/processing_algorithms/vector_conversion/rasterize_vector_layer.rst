@@ -6,6 +6,9 @@ Rasterize vector layer
 
 Converts vector geometries (points, lines and polygons) into a raster `grid <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-grid>`_.
 
+.. include:: ../../processing_algorithms_includes/vector_conversion/rasterize_vector_layer.rst
+
+
 **Parameters**
 
 
@@ -83,11 +86,15 @@ Converts vector geometries (points, lines and polygons) into a raster `grid <htt
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     burnValue: Burn value
     	Default value:	1
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     burnAttribute: Burn attribute (optional)
     	Argument type:	field
     	Acceptable values:
@@ -99,18 +106,24 @@ Converts vector geometries (points, lines and polygons) into a raster `grid <htt
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     addValue: Add value
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     allTouched: All touched
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataType: Data type
     	Default value:	5
     	Argument type:	enum

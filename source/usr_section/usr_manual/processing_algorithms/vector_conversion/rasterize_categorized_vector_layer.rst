@@ -7,6 +7,9 @@ Rasterize categorized vector layer
 Rasterize a `categorized vector layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categorized-vector-layer>`_ into a `categorized raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categorized-raster-layer>`_. Output `category <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-category>`_ names and `colors <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-color>`_ are given by the source `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_.
 Resampling is done via a two-step majority voting approach. First, the categorized `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ is resampled at x10 finer resolution, and subsequently aggregated back to the `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ resolution using majority voting. This approach leads to pixel-wise `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ decisions that are accurate to the percent.
 
+.. include:: ../../processing_algorithms_includes/vector_conversion/rasterize_categorized_vector_layer.rst
+
+
 **Parameters**
 
 
@@ -56,12 +59,16 @@ Resampling is done via a two-step majority voting approach. First, the categoriz
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     majorityVoting: Majority voting
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRasterizedCategories: Output categorized raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

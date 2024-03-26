@@ -7,6 +7,9 @@ Create default paletted raster renderer
 Create a paletted raster renderer from given `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ and set it as the default style of the given `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_.
 This will create/overwrite the QML sidecar file of the given raster `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_.
 
+.. include:: ../../processing_algorithms_includes/auxilliary/create_default_paletted_raster_renderer.rst
+
+
 **Parameters**
 
 
@@ -42,6 +45,8 @@ This will create/overwrite the QML sidecar file of the given raster `layer <http
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     
     ----------------
     Outputs
