@@ -9,7 +9,6 @@ LinearRegression fits a linear model with coefficients w = (w1, ..., wp) to mini
 
 .. include:: ../../processing_algorithms_includes/regression/fit_linearregression.rst
 
-
 **Parameters**
 
 

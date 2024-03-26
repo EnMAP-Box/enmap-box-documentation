@@ -20,7 +20,7 @@ Spatial morphological Binary Propagation filter.
 
     Default::
 
-        from scipy.ndimage.morphology import binary_propagation, generate_binary_structure, iterate_structure
+        from scipy.ndimage import binary_propagation, generate_binary_structure, iterate_structure
         
         structure = generate_binary_structure(rank=2, connectivity=1)
         structure = iterate_structure(structure=structure, iterations=1)
@@ -45,7 +45,7 @@ Spatial morphological Binary Propagation filter.
     	Acceptable values:
     		- Path to a raster layer
     function: Function
-    	Default value:	from scipy.ndimage.morphology import binary_propagation, generate_binary_structure, iterate_structure
+    	Default value:	from scipy.ndimage import binary_propagation, generate_binary_structure, iterate_structure
     
     structure = generate_binary_structure(rank=2, connectivity=1)
     structure = iterate_structure(structure=structure, iterations=1)

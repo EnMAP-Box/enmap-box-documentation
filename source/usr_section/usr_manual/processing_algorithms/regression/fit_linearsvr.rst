@@ -9,7 +9,6 @@ Similar to SVR with parameter kernel=’linear’, but implemented in terms of l
 
 .. include:: ../../processing_algorithms_includes/regression/fit_linearsvr.rst
 
-
 **Parameters**
 
 
@@ -24,7 +23,7 @@ Similar to SVR with parameter kernel=’linear’, but implemented in terms of l
         from sklearn.preprocessing import StandardScaler
         from sklearn.svm import LinearSVR
         
-        svr = LinearSVR()
+        svr = LinearSVR(dual=True)
         param_grid = {'epsilon': [0.], 'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}
         tunedSVR = GridSearchCV(cv=3, estimator=svr, scoring='neg_mean_absolute_error', param_grid=param_grid)
         scaledAndTunedSVR = make_pipeline(StandardScaler(), tunedSVR)
@@ -54,7 +53,7 @@ Similar to SVR with parameter kernel=’linear’, but implemented in terms of l
     from sklearn.preprocessing import StandardScaler
     from sklearn.svm import LinearSVR
     
-    svr = LinearSVR()
+    svr = LinearSVR(dual=True)
     param_grid = {'epsilon': [0.], 'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}
     tunedSVR = GridSearchCV(cv=3, estimator=svr, scoring='neg_mean_absolute_error', param_grid=param_grid)
     scaledAndTunedSVR = make_pipeline(StandardScaler(), tunedSVR)

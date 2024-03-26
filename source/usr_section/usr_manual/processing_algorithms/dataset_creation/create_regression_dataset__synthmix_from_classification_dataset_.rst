@@ -6,9 +6,6 @@ Create regression dataset (SynthMix from classification dataset)
 
 Create synthetically mixed `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_ `datasets <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_, one for each `category <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-category>`_. Results are stored as <category.name>.pkl files inside the destination folder.
 
-.. include:: ../../processing_algorithms_includes/dataset_creation/create_regression_dataset__synthmix_from_classification_dataset_.rst
-
-
 **Parameters**
 
 

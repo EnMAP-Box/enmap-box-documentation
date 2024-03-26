@@ -8,7 +8,6 @@ Uses a fitted `transformer <https://enmap-box.readthedocs.io/en/latest/general/g
 
 .. include:: ../../processing_algorithms_includes/transformation/inverse_transform_raster_layer.rst
 
-
 **Parameters**
 
 

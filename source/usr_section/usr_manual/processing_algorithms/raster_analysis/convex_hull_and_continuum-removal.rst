@@ -8,7 +8,6 @@ Calculate convex hull and continuum-removed `raster layers <https://enmap-box.re
 
 .. include:: ../../processing_algorithms_includes/raster_analysis/convex_hull_and_continuum-removal.rst
 
-
 **Parameters**
 
 

@@ -8,7 +8,6 @@ This algorithm creates a new `point layer <https://enmap-box.readthedocs.io/en/l
 
 .. include:: ../../processing_algorithms_includes/vector_creation/random_points_from_mask_raster_layer.rst
 
-
 **Parameters**
 
 

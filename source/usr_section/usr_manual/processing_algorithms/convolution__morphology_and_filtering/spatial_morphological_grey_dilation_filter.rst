@@ -20,7 +20,7 @@ Spatial morphological Grey Dilation filter. See `Wikipedia <https://en.wikipedia
 
     Default::
 
-        from scipy.ndimage.morphology import grey_dilation, generate_binary_structure, iterate_structure
+        from scipy.ndimage import grey_dilation, generate_binary_structure, iterate_structure
         
         structure = generate_binary_structure(rank=2, connectivity=1)
         structure = iterate_structure(structure=structure, iterations=1)
@@ -44,7 +44,7 @@ Spatial morphological Grey Dilation filter. See `Wikipedia <https://en.wikipedia
     	Acceptable values:
     		- Path to a raster layer
     function: Function
-    	Default value:	from scipy.ndimage.morphology import grey_dilation, generate_binary_structure, iterate_structure
+    	Default value:	from scipy.ndimage import grey_dilation, generate_binary_structure, iterate_structure
     
     structure = generate_binary_structure(rank=2, connectivity=1)
     structure = iterate_structure(structure=structure, iterations=1)

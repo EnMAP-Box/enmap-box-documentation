@@ -20,7 +20,7 @@ Spatial morphological White Top-Hat filter. See `Wikipedia <https://en.wikipedia
 
     Default::
 
-        from scipy.ndimage.morphology import white_tophat
+        from scipy.ndimage import white_tophat
         
         function = lambda array: white_tophat(array, size=(3, 3))
 **Outputs**
@@ -42,7 +42,7 @@ Spatial morphological White Top-Hat filter. See `Wikipedia <https://en.wikipedia
     	Acceptable values:
     		- Path to a raster layer
     function: Function
-    	Default value:	from scipy.ndimage.morphology import white_tophat
+    	Default value:	from scipy.ndimage import white_tophat
     
     function = lambda array: white_tophat(array, size=(3, 3))
     	Argument type:	string

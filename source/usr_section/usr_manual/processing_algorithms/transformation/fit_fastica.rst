@@ -20,7 +20,7 @@ FastICA: a fast algorithm for Independent Component Analysis.
         from sklearn.preprocessing import StandardScaler
         from sklearn.decomposition import FastICA
         
-        fastICA = FastICA(n_components=3)
+        fastICA = FastICA(n_components=3, whiten='unit-variance')
         transformer = make_pipeline(StandardScaler(), fastICA)
 
 :guilabel:`Raster layer with features` [raster]
@@ -55,7 +55,7 @@ FastICA: a fast algorithm for Independent Component Analysis.
     from sklearn.preprocessing import StandardScaler
     from sklearn.decomposition import FastICA
     
-    fastICA = FastICA(n_components=3)
+    fastICA = FastICA(n_components=3, whiten='unit-variance')
     transformer = make_pipeline(StandardScaler(), fastICA)
     	Argument type:	string
     	Acceptable values:

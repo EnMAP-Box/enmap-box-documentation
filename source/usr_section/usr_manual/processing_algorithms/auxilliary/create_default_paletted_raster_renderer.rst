@@ -9,7 +9,6 @@ This will create/overwrite the QML sidecar file of the given raster `layer <http
 
 .. include:: ../../processing_algorithms_includes/auxilliary/create_default_paletted_raster_renderer.rst
 
-
 **Parameters**
 
 

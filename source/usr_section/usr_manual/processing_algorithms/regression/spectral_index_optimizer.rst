@@ -8,7 +8,6 @@ This algorithm finds the optimal two-`feature <https://enmap-box.readthedocs.io/
 
 .. include:: ../../processing_algorithms_includes/regression/spectral_index_optimizer.rst
 
-
 **Parameters**
 
 

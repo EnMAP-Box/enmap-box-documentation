@@ -9,7 +9,6 @@ This `estimator <https://enmap-box.readthedocs.io/en/latest/general/glossary.htm
 
 .. include:: ../../processing_algorithms_includes/transformation/fit_minmaxscaler.rst
 
-
 **Parameters**
 
 

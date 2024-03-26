@@ -6,9 +6,6 @@ Spectral resampling (to response function library)
 
 Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ by applying `spectral response function <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-response-function>`_ convolution, with spectral response function stored inside a `spectral library <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-library>`_. Each `spectral profile <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-profile>`_ defines a destination `spectral band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-band>`_.
 
-.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_response_function_library_.rst
-
-
 **Parameters**
 
 

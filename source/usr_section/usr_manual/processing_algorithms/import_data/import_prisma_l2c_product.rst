@@ -9,7 +9,6 @@ For further details visit the `PRISMA Documentation Area <http://prisma.asi.it/m
 
 .. include:: ../../processing_algorithms_includes/import_data/import_prisma_l2c_product.rst
 
-
 **Parameters**
 
 

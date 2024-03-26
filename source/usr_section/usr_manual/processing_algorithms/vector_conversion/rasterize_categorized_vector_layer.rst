@@ -9,7 +9,6 @@ Resampling is done via a two-step majority voting approach. First, the categoriz
 
 .. include:: ../../processing_algorithms_includes/vector_conversion/rasterize_categorized_vector_layer.rst
 
-
 **Parameters**
 
 

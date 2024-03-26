@@ -9,7 +9,6 @@ Recursively merges pair of clusters of features.
 
 .. include:: ../../processing_algorithms_includes/transformation/fit_featureagglomeration.rst
 
-
 **Parameters**
 
 

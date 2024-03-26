@@ -21,6 +21,12 @@ Note that we assume non-overlapping `feature <https://enmap-box.readthedocs.io/e
     A `vector layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-vector-layer>`_ defining the locations to `sample <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
 
 
+:guilabel:`Skip no data pixel` [boolean]
+    Whether to skip pixels from no data regions.
+
+    Default: *False*
+
+
 :guilabel:`Pixel coverage (%)` [range]
     `Samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ with polygon pixel coverage outside the given range are excluded. This parameter has no effect in case of point locations.
 
@@ -48,6 +54,14 @@ Note that we assume non-overlapping `feature <https://enmap-box.readthedocs.io/e
     	Argument type:	vector
     	Acceptable values:
     		- Path to a vector layer
+    skipNoDataPixel: Skip no data pixel (optional)
+    	Default value:	false
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     coverageRange: Pixel coverage (%) (optional)
     	Default value:	
     	Argument type:	range

@@ -11,7 +11,6 @@ Standardization of a `dataset <https://enmap-box.readthedocs.io/en/latest/genera
 
 .. include:: ../../processing_algorithms_includes/transformation/fit_robustscaler.rst
 
-
 **Parameters**
 
 

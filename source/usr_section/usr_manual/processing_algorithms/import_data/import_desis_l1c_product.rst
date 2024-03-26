@@ -9,7 +9,6 @@ Note that the DESIS L1C spectral data file is `band <https://enmap-box.readthedo
 
 .. include:: ../../processing_algorithms_includes/import_data/import_desis_l1c_product.rst
 
-
 **Parameters**
 
 

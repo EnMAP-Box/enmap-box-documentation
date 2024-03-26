@@ -9,7 +9,6 @@ If you also want to delete or rearrange individual `bands <https://enmap-box.rea
 
 .. include:: ../../processing_algorithms_includes/raster_miscellaneous/stack_raster_layers.rst
 
-
 **Parameters**
 
 

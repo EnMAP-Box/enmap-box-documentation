@@ -9,7 +9,6 @@ Each `sample <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#t
 
 .. include:: ../../processing_algorithms_includes/transformation/fit_normalizer.rst
 
-
 **Parameters**
 
 

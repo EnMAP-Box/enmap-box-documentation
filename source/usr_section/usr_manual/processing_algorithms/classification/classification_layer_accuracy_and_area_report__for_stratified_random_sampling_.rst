@@ -5,9 +5,7 @@ Classification layer accuracy and area report (for stratified random sampling)
 ******************************************************************************
 
 Estimates map accuracy and area proportions for stratified random sampling as described in Stehman (2014): https://doi.org/10.1080/01431161.2014.930207. 
-Observed and predicted `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ are matched by name.
-
-.. include:: ../../processing_algorithms_includes/classification/classification_layer_accuracy_and_area_report__for_stratified_random_sampling_.rst
+Observed and predicted `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ are matched by name, if possible. Otherwise, categories are matched by order (in this case, a warning message is logged).
 
 **Parameters**
 

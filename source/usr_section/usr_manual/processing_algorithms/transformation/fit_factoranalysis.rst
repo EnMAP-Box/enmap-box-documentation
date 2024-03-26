@@ -12,7 +12,6 @@ FactorAnalysis performs a maximum likelihood estimate of the so-called loading m
 
 .. include:: ../../processing_algorithms_includes/transformation/fit_factoranalysis.rst
 
-
 **Parameters**
 
 

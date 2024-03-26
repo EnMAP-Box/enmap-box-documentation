@@ -6,8 +6,6 @@ Create unsupervised dataset (from JSON file)
 
 Create a unsupervised `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ from a JSON file and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
 
-.. include:: ../../processing_algorithms_includes/dataset_creation/create_unsupervised_dataset__from_json_file_.rst
-
 **Parameters**
 
 

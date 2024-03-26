@@ -9,7 +9,6 @@ Linear dimensionality reduction using Singular Value Decomposition of the data t
 
 .. include:: ../../processing_algorithms_includes/transformation/fit_pca.rst
 
-
 **Parameters**
 
 

@@ -14,7 +14,6 @@ For instance many elements used in the objective function of a learning algorith
 
 .. include:: ../../processing_algorithms_includes/transformation/fit_standardscaler.rst
 
-
 **Parameters**
 
 

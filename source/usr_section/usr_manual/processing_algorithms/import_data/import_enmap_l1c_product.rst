@@ -8,7 +8,6 @@ Prepare a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/gen
 
 .. include:: ../../processing_algorithms_includes/import_data/import_enmap_l1c_product.rst
 
-
 **Parameters**
 
 

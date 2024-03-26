@@ -9,7 +9,6 @@ A random forest is a meta `estimator <https://enmap-box.readthedocs.io/en/latest
 
 .. include:: ../../processing_algorithms_includes/regression/fit_randomforestregressor.rst
 
-
 **Parameters**
 
 

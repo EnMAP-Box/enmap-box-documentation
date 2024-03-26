@@ -8,7 +8,6 @@ Implementation of the scikit-learn API for `XGBoost <https://xgboost.readthedocs
 
 .. include:: ../../processing_algorithms_includes/regression/fit_xgbrfregressor.rst
 
-
 **Parameters**
 
 

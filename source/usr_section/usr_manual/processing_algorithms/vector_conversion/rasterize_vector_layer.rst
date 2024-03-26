@@ -8,7 +8,6 @@ Converts vector geometries (points, lines and polygons) into a raster `grid <htt
 
 .. include:: ../../processing_algorithms_includes/vector_conversion/rasterize_vector_layer.rst
 
-
 **Parameters**
 
 

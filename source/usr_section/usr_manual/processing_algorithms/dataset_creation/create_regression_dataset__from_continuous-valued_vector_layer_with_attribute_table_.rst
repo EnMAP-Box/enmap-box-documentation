@@ -6,9 +6,6 @@ Create regression dataset (from continuous-valued vector layer with attribute ta
 
 Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ from `attribute table <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-attribute-table>`_ rows that matches the given `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ variables and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
 
-.. include:: ../../processing_algorithms_includes/dataset_creation/create_regression_dataset__from_continuous-valued_layer_with_attribute_table_.rst
-
-
 **Parameters**
 
 

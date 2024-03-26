@@ -18,7 +18,7 @@ K-Means `clustering <https://enmap-box.readthedocs.io/en/latest/general/glossary
 
         from sklearn.cluster import KMeans
         
-        clusterer = KMeans(n_clusters=8)
+        clusterer = KMeans(n_clusters=8, n_init=10)
 
 :guilabel:`Training dataset` [file]
     `Training dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-training-dataset>`_ `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ used for fitting the `clusterer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-clusterer>`_. If not specified, an unfitted clusterer is created.
@@ -40,7 +40,7 @@ K-Means `clustering <https://enmap-box.readthedocs.io/en/latest/general/glossary
     clusterer: Clusterer
     	Default value:	from sklearn.cluster import KMeans
     
-    clusterer = KMeans(n_clusters=8)
+    clusterer = KMeans(n_clusters=8, n_init=10)
     	Argument type:	string
     	Acceptable values:
     		- String value

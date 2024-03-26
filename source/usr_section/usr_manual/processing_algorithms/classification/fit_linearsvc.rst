@@ -23,7 +23,7 @@ This `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#te
         from sklearn.preprocessing import StandardScaler
         from sklearn.svm import LinearSVC
         
-        svc = LinearSVC()
+        svc = LinearSVC(dual=True)
         param_grid = {'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}
         tunedSVC = GridSearchCV(cv=3, estimator=svc, scoring='f1_macro', param_grid=param_grid)
         classifier = make_pipeline(StandardScaler(), tunedSVC)
@@ -51,7 +51,7 @@ This `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#te
     from sklearn.preprocessing import StandardScaler
     from sklearn.svm import LinearSVC
     
-    svc = LinearSVC()
+    svc = LinearSVC(dual=True)
     param_grid = {'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}
     tunedSVC = GridSearchCV(cv=3, estimator=svc, scoring='f1_macro', param_grid=param_grid)
     classifier = make_pipeline(StandardScaler(), tunedSVC)

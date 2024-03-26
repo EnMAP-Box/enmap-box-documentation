@@ -1,6 +1,7 @@
-import os
 import fnmatch
+import os
 import re
+
 
 def file_search(rootdir,
                 pattern,
@@ -55,4 +56,3 @@ def file_search(rootdir,
                 elif (ignoreCase and fnmatch.fnmatch(name, pattern.lower())) \
                         or fnmatch.fnmatch(name, pattern):
                     yield entry.path.replace('\\', '/')
-

@@ -8,7 +8,6 @@ Prepare VNIR and SWIR `spectral raster layer <https://enmap-box.readthedocs.io/e
 
 .. include:: ../../processing_algorithms_includes/import_data/import_enmap_l1b_product.rst
 
-
 **Parameters**
 
 
