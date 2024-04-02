@@ -3,8 +3,7 @@
 Work with a Spectral Library: An Introduction
 ###############################################
 
-**Author:** Klara Busse,
-**Contributor:** Akpona Okujeni
+**Author:** Klara Busse, Akpona Okujeni
 
 **Publication date:** 01/03/2024
 
