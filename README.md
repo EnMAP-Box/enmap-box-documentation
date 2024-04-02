@@ -37,6 +37,38 @@ as they are released in the QGIS plugin repository.
 | scripts  | Maintenance scripts, e.g. to generate *.rst files       |
 | snippets | Python snippets, e.g. to create widgets for screenshots |
 
+# How to contribute?
+
+
+Everyone can contribute to this documentation using git [pull-requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests).
+If you never have used git before, we recommend to read a basic git tutorial first, e.g. https://rogerdudler.github.io/git-guide/ or https://github.com/git-guides.
+
+1. [Create a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) 
+   of this repository (hereafter referred as `enmap-box-documentation-fork`).
+2. [Clone & checkout](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
+   your fork on your local computer:
+
+   * https: ``git clone https://github.com/mygithubaccount/enmap-box-documentation-fork.git``
+   * ensure that the packages in ``requirements.txt`` are installed to your python environment, e.g. running
+     ``python -m pip install -r requirements.txt``
+
+3. Change the EnMAP-Box documentation. 
+   * E.g. add a new tutorial `*.rst` files to `/source/usr_section/application_tutorials`
+   * It is recommended to use a proper IDE like PyCharm or text editor for your modifications
+
+4. Inspect your changes in a browser:
+   * run (linux) `make html`, or (windows) `make.bat html` to create the webpage's html files to ``build/html``
+   * start a local server that hosts the html files: 
+     Windows: ``python -m http.server build\html ``
+     Linux: ``python -m http.server build/html ``
+   * open the webpage in your local browser using the URL http://localhost:8000/ 
+
+5. Commit your changes with message that describe what you have done, e.g. `added tutorial XY` or `corrected typos`.
+6. [Push](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository) your changes to your 
+   remote repository ``https://github.com/mygithubaccount/enmap-box-documentation-fork.git``
+7. Repeat the previous steps if you need to add further modifications
+8. When done, publish your modifications in the official EnMAP-Box documentation creating a 
+   [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
 # Build the documentation
 
