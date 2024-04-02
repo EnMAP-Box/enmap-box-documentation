@@ -49,6 +49,8 @@ If you never have used git before, we recommend to read a basic git tutorial fir
    your fork on your local computer:
 
    * https: ``git clone https://github.com/mygithubaccount/enmap-box-documentation-fork.git``
+   * ensure that the packages in ``requirements.txt`` are installed to your python environment, e.g. running
+     ``python -m pip install -r requirements.txt``
 
 3. Change the EnMAP-Box documentation. 
    * E.g. add a new tutorial `*.rst` files to `/source/usr_section/application_tutorials`
