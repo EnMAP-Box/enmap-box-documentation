@@ -4,5 +4,5 @@ Usage:
 
 2. Select a raster layer to process and click :guilabel:`run`.
 
-    .. figure:: ./img/PCA.png
+    .. figure:: ../../processing_algorithms_includes/transformation/img/PCA.png
        :align: center

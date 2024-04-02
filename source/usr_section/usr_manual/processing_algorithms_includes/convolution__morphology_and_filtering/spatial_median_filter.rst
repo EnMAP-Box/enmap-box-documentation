@@ -7,10 +7,10 @@ UUsage:
 
 2. Select the raster to process  and modify the parameterization if necessary, then click :guilabel:`run`.
 
-    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/convolution__morphology_and_filtering/img/median_filter_interface.png
+    .. figure:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/img/median_filter_interface.png
        :align: center
 
 3. Processed image in comparison to the original.
 
-    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/convolution__morphology_and_filtering/img/median_filter_result.png
+    .. figure:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/img/median_filter_result.png
        :align: center

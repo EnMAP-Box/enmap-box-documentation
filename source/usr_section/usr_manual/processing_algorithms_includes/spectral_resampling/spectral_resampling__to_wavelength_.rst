@@ -4,6 +4,6 @@ Usage:
 
 2. Select a raster layer to process and a file containing wavelength data, then click :guilabel:`run`.
 
-    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/spectral_resampling/img/to_wavelenthonly.png
+    .. figure:: ../../processing_algorithms_includes/spectral_resampling/img/to_wavelenthonly.png
        :align: center
 

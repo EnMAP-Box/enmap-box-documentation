@@ -7,6 +7,9 @@ Spectral resampling (to EnMAP)
 Spectral resampling to EnMAP sensor.
 For more information see the `mission website <https://www.enmap.org/>`_.
 
+.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_enmap_.rst
+
+
 **Parameters**
 
 

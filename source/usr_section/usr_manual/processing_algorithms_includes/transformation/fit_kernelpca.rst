@@ -6,5 +6,5 @@ Usage:
 
 2. Select a raster layer to process and click :guilabel:`run`.
 
-    .. figure:: ./img/KPCA.png
+    .. figure:: ../../processing_algorithms_includes/transformation/img/KPCA.png
        :align: center

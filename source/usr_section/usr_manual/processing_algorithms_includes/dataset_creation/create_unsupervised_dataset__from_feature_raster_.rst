@@ -4,7 +4,7 @@ Usage:
 
 2. Select a raster layer containing your features, e. g. a satellite image,  then click :guilabel:`run`.
 
-    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/dataset_creation/img/clusraster.png
+    .. figure:: ../../processing_algorithms_includes/dataset_creation/img/clusraster.png
        :align: center
 
 3. The output classification dataset will be listed under Models in your Data Sources panel.
