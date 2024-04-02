@@ -6,6 +6,8 @@ Import EnMAP L2A product
 
 Prepare a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ from the given product. `Wavelength <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-wavelength>`_ and FWHM information is set and data is scaled into the 0 to 1 range.
 
+.. include:: ../../processing_algorithms_includes/import_data/import_enmap_l2a_product.rst
+
 **Parameters**
 
 
@@ -55,12 +57,16 @@ Prepare a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/gen
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     excludeBadBands: Exclude bad bands (optional)
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     detectorOverlap: Detector overlap region
     	Default value:	4
     	Argument type:	enum

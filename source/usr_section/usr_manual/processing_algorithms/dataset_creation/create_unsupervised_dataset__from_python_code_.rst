@@ -6,6 +6,8 @@ Create unsupervised dataset (from Python code)
 
 Create an unsupervised `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ from Python code and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/create_unsupervised_dataset__from_python_code_.rst
+
 **Parameters**
 
 
@@ -54,6 +56,8 @@ Create an unsupervised `dataset <https://enmap-box.readthedocs.io/en/latest/gene
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputUnsupervisedDataset: Output dataset
     	Argument type:	fileDestination
     	Acceptable values:

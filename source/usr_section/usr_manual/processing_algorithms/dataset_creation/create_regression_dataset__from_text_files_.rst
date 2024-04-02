@@ -8,6 +8,8 @@ Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossar
 The format matches that of the `FORCE Higher Level Sampling Submodule <https://force-eo.readthedocs.io/en/latest/components/higher-level/smp/index.html>`_.
 Example files (`classification_dataset_force_features.csv <https://github.com/EnMAP-Box/enmap-box/blob/main/tests/testdata/ml/classification_dataset_force_features.csv>`_ and `classification_dataset_force_labels.csv <https://github.com/EnMAP-Box/enmap-box/blob/main/tests/testdata/ml/classification_dataset_force_labels.csv>`_) can be found in the EnMAP-Box testdata folder).
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/create_regression_dataset__from_text_files_.rst
+
 **Parameters**
 
 

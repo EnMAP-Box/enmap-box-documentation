@@ -8,6 +8,8 @@ Create a stack of `Awesome Spectral Indices <https://awesome-ee-spectral-indices
 Credits: the Awesome Spectral Indices project provides a ready-to-use curated list of Spectral Indices for Remote Sensing applications, maintained by `David Montero Loaiza <https://github.com/davemlz>`_. 
 Note that the list of available indices was last updated on 2021-11-15. Should you need other indices added after this date, please file an issue.
 
+.. include:: ../../processing_algorithms_includes/raster_analysis/create_spectral_indices.rst
+
 **Parameters**
 
 
@@ -52,10 +54,14 @@ Note that the list of available indices was last updated on 2021-11-15. Should y
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     scale: Scale factor (optional)
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     A: Aerosols band (optional)
     	Default value:	-1
     	Argument type:	band
@@ -126,51 +132,71 @@ Note that the list of available indices was last updated on 2021-11-15. Should y
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     g: Gain factor (optional)
     	Default value:	2.5
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     C1: Coefficient 1 for the aerosol resistance term (optional)
     	Default value:	6
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     C2: Coefficient 2 for the aerosol resistance term (optional)
     	Default value:	7.5
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     cexp: Exponent used for OCVI (optional)
     	Default value:	1.16
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     nexp: Exponent used for GDVI (optional)
     	Default value:	2
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     alpha: Weighting coefficient used for WDRVI (optional)
     	Default value:	0.1
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     gamma: Weighting coefficient used for ARVI (optional)
     	Default value:	1
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     sla: Soil line slope (optional)
     	Default value:	1
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     slb: Soil line intercept (optional)
     	Default value:	0
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputVrt: Output VRT layer
     	Argument type:	rasterDestination
     	Acceptable values:

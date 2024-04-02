@@ -7,6 +7,8 @@ Fit LinearSVR
 Linear Support Vector `Regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_.
 Similar to SVR with parameter kernel=’linear’, but implemented in terms of liblinear rather than libsvm, so it has more flexibility in the choice of penalties and loss functions and should scale better to large numbers of `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
 
+.. include:: ../../processing_algorithms_includes/regression/fit_linearsvr.rst
+
 **Parameters**
 
 
@@ -21,7 +23,7 @@ Similar to SVR with parameter kernel=’linear’, but implemented in terms of l
         from sklearn.preprocessing import StandardScaler
         from sklearn.svm import LinearSVR
         
-        svr = LinearSVR()
+        svr = LinearSVR(dual=True)
         param_grid = {'epsilon': [0.], 'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}
         tunedSVR = GridSearchCV(cv=3, estimator=svr, scoring='neg_mean_absolute_error', param_grid=param_grid)
         scaledAndTunedSVR = make_pipeline(StandardScaler(), tunedSVR)
@@ -51,7 +53,7 @@ Similar to SVR with parameter kernel=’linear’, but implemented in terms of l
     from sklearn.preprocessing import StandardScaler
     from sklearn.svm import LinearSVR
     
-    svr = LinearSVR()
+    svr = LinearSVR(dual=True)
     param_grid = {'epsilon': [0.], 'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}
     tunedSVR = GridSearchCV(cv=3, estimator=svr, scoring='neg_mean_absolute_error', param_grid=param_grid)
     scaledAndTunedSVR = make_pipeline(StandardScaler(), tunedSVR)
@@ -59,6 +61,8 @@ Similar to SVR with parameter kernel=’linear’, but implemented in terms of l
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

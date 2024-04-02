@@ -5,7 +5,7 @@ Classification layer accuracy and area report (for simple random sampling)
 **************************************************************************
 
 Estimates map accuracy and area proportions for (simple) random sampling. We use the formulas for the stratified random sampling described in Stehman (2014): https://doi.org/10.1080/01431161.2014.930207. Note that (simple) random sampling is a special case of stratified random sampling, with exactly one `stratum <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-stratum>`_. 
-Observed and predicted `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ are matched by name.
+Observed and predicted `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ are matched by name, if possible. Otherwise, categories are matched by order (in this case, a warning message is logged).
 
 **Parameters**
 
@@ -51,6 +51,8 @@ Observed and predicted `categories <https://enmap-box.readthedocs.io/en/latest/g
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outClassificationPerformance: Output report
     	Argument type:	fileDestination
     	Acceptable values:

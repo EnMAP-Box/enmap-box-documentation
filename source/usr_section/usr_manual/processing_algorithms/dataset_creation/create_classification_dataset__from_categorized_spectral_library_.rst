@@ -7,6 +7,8 @@ Create classification dataset (from categorized spectral library)
 Create a `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ from `spectral profiles <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-profile>`_ that matches the given `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
 If the `spectral library <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-library>`_ is not categorized, or the `field <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ with `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ values is selected manually, categories are derived from `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ data `y <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-y>`_. To be more precise: i) `category <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-category>`_ values are derived from unique `attribute values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-attribute-value>`_ (after excluding no data or zero data values), ii) category names are set equal to the category values, and iii) category `colors <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-color>`_ are picked randomly.
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/create_classification_dataset__from_categorized_spectral_library_.rst
+
 **Parameters**
 
 
@@ -20,6 +22,12 @@ If the `spectral library <https://enmap-box.readthedocs.io/en/latest/general/glo
 
 :guilabel:`Field with spectral profiles used as features` [field]
     Field with `spectral profiles <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-profile>`_ used as `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ data `X <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-x>`_. If not selected, the default `field <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ named "profiles" is used. If that is also not available, an error is raised.
+
+
+:guilabel:`Exclude bad bands` [boolean]
+    Whether to exclude `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_, that are marked as `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_, or contain no data, inf or nan values in all `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
+
+    Default: *True*
 
 **Outputs**
 
@@ -49,6 +57,14 @@ If the `spectral library <https://enmap-box.readthedocs.io/en/latest/general/glo
     	Acceptable values:
     		- The name of an existing field
     		- ; delimited list of existing field names
+    excludeBadBands: Exclude bad bands (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputClassificationDataset: Output dataset
     	Argument type:	fileDestination
     	Acceptable values:

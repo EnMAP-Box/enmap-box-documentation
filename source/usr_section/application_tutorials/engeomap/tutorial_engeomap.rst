@@ -33,7 +33,7 @@ SWIR data are all available.
 
 
 1.   Data Preparation and Requirements
--------------------------------------
+-----------------------------------------------
 
 =====================================
 *Hyperspectral Data:*

@@ -6,6 +6,8 @@ Random samples from regression dataset
 
 Split a `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ by randomly drawing `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_.
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/random_samples_from_regression_dataset.rst
+
 **Parameters**
 
 
@@ -65,26 +67,36 @@ Split a `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.ht
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     n: Number of samples per bin
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     replace: Draw with replacement
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     proportional: Draw proportional
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     seed: Random seed (optional)
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputDatasetRandomSample: Output dataset
     	Argument type:	fileDestination
     	Acceptable values:

@@ -7,6 +7,8 @@ Fit LinearRegression
 Ordinary least squares Linear `Regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_.
 LinearRegression fits a linear model with coefficients w = (w1, ..., wp) to minimize the residual sum of squares between the observed `targets <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ in the `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_, and the targets predicted by the linear approximation.
 
+.. include:: ../../processing_algorithms_includes/regression/fit_linearregression.rst
+
 **Parameters**
 
 
@@ -49,6 +51,8 @@ LinearRegression fits a linear model with coefficients w = (w1, ..., wp) to mini
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

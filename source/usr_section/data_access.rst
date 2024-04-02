@@ -62,7 +62,7 @@ The IPP enables the user registration, the submission of user proposals, and the
     5. Once the role has been assigned, a new box will appear in the User Portal, allowing you tp access the EOWEB |reg| GeoPortal to search the EnMAP Data archive and order images.
 
 Step 2: EOWEB |reg| GeoPortal
-------------------------
+-----------------------------
 
 The EOWEB |reg| GeoPortal access link is created for Cat-1 users after the requested role has been approved by the reviewer.
 The login button appears on the User Portal page, which automatically directs to the EOWEB |reg| GeoPortal login page.
@@ -86,7 +86,7 @@ The login button appears on the User Portal page, which automatically directs to
     5. Place your order and wait until you get notified.
 
 Step 3: Download data from the FTP Delivery Server
-------------------------------------------------
+--------------------------------------------------
 
 After the order is placed, an e-mail is sent including a link to the FTP server and the zipped data.
 

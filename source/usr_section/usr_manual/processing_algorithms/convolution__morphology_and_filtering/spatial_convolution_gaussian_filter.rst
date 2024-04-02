@@ -7,6 +7,8 @@ Spatial convolution Gaussian filter
 2D Gaussian filter.
 The Gaussian filter is a filter with great smoothing properties. It is isotropic and does not produce artifacts.
 
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_convolution_gaussian_filter.rst
+
 **Parameters**
 
 
@@ -57,18 +59,24 @@ The Gaussian filter is a filter with great smoothing properties. It is isotropic
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     normalize: Normalize kernel
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     interpolate: Interpolate no data pixel
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

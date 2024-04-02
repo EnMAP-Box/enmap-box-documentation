@@ -108,6 +108,8 @@ Geolocate a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/gl
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     xBand: X locations band (optional)
     	Argument type:	band
     	Acceptable values:
@@ -121,21 +123,29 @@ Geolocate a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/gl
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     lineOffset: Line offset (optional)
     	Default value:	0
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     pixelStep: Pixel step (optional)
     	Default value:	1
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     lineStep: Line step (optional)
     	Default value:	1
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputGeolocatedRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

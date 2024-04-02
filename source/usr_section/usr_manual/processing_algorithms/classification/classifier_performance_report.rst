@@ -6,6 +6,8 @@ Classifier performance report
 
 Evaluates `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_ performance.
 
+.. include:: ../../processing_algorithms_includes/classification/classifier_performance_report.rst
+
 **Parameters**
 
 
@@ -52,12 +54,16 @@ Evaluates `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossa
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     openReport: Open output report in webbrowser after running algorithm
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputClassifierPerformance: Output report
     	Argument type:	fileDestination
     	Acceptable values:

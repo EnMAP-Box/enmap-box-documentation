@@ -17,7 +17,6 @@ def ensure_lowercase_file_extensions():
         new_path = p + ext.lower()
         print(f'rename: {path}')
         os.rename(path, new_path)
-        s = ""
 
 
 if __name__ == "__main__":

@@ -6,6 +6,8 @@ Classification workflow
 
 The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_ workflow combines `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_ fitting, map prediction and accuracy assessment.
 
+.. include:: ../../processing_algorithms_includes/classification/classification_workflow.rst
+
 **Parameters**
 
 
@@ -18,7 +20,7 @@ The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary
 
 
 :guilabel:`Raster layer with features` [raster]
-    A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ used as `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_.
+    A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ used for prediction.
 
 
 :guilabel:`Match classifier features and raster bands by name` [boolean]
@@ -72,7 +74,9 @@ The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary
     	Argument type:	string
     	Acceptable values:
     		- String value
-    raster: Raster layer with features
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    raster: Raster layer with features (optional)
     	Argument type:	raster
     	Acceptable values:
     		- Path to a raster layer
@@ -82,17 +86,23 @@ The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     nfold: Number of cross-validation folds (optional)
     	Default value:	10
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     openReport: Open output report in webbrowser after running algorithm (optional)
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputClassifier: Output classifier
     	Argument type:	fileDestination
     	Acceptable values:

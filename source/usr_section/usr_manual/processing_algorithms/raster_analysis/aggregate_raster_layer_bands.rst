@@ -6,6 +6,8 @@ Aggregate raster layer bands
 
 Compute various aggregation functions over all `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_, while ignoring `no data values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_.
 
+.. include:: ../../processing_algorithms_includes/raster_analysis/aggregate_raster_layer_bands.rst
+
 **Parameters**
 
 

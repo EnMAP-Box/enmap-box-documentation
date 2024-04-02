@@ -1,0 +1,58 @@
+.. _Export classification/regression dataset (to text files):
+
+********************************************************
+Export classification/regression dataset (to text files)
+********************************************************
+
+Export a `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_/`regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ to tabulated text files.
+The format matches that of the `FORCE Higher Level Sampling Submodule <https://force-eo.readthedocs.io/en/latest/components/higher-level/smp/index.html>`_.
+Example files (force_features.csv and force_labels.csv) can be found in the EnMAP-Box testdata folder).
+
+
+**Parameters**
+
+
+:guilabel:`Classification/Regression dataset` [file]
+    `Dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ to be exported. 
+
+**Outputs**
+
+
+:guilabel:`Output features file` [fileDestination]
+    CSV file destination.
+
+
+:guilabel:`Output labels file` [fileDestination]
+    CSV file destination.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:ExportClassificationregressionDatasetToTextFiles``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    dataset: Classification/Regression dataset
+    	Argument type:	file
+    	Acceptable values:
+    		- Path to a file
+    outputFeatureFile: Output features file
+    	Argument type:	fileDestination
+    	Acceptable values:
+    		- Path for new file
+    outputValueFile: Output labels file
+    	Argument type:	fileDestination
+    	Acceptable values:
+    		- Path for new file
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputFeatureFile: <outputFile>
+    	Output features file
+    outputValueFile: <outputFile>
+    	Output labels file
+    
+    

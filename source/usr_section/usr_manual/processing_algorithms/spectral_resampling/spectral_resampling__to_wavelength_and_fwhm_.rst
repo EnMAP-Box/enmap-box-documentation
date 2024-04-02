@@ -6,6 +6,9 @@ Spectral resampling (to wavelength and FWHM)
 
 Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ by applying `spectral response function <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-response-function>`_ convolution, with spectral response function derived from `wavelength <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-wavelength>`_ and FWHM information.
 
+.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_wavelength_and_fwhm_.rst
+
+
 **Parameters**
 
 
@@ -15,6 +18,10 @@ Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/e
 
 :guilabel:`File with wavelength and FWHM` [file]
     A file with `center wavelength <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-center-wavelength>`_ and FWHM information defining the destination sensor. Possible inputs are i) raster files, ii) ENVI Spectral Library files, iii) ENVI Header files, and iv) CSV `table <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-table>`_ files with `wavelength <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-wavelength>`_ and `fwhm <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-fwhm>`_ columns.
+
+
+:guilabel:`FWHM` [number]
+    Specify a FWHM value used for each `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_. This overwrites FWHM values read from file
 
 **Outputs**
 
@@ -42,6 +49,12 @@ Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/e
     	Argument type:	file
     	Acceptable values:
     		- Path to a file
+    fwhm: FWHM (optional)
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputResponseFunctionLibrary: Output spectral response function library (optional)
     	Argument type:	fileDestination
     	Acceptable values:

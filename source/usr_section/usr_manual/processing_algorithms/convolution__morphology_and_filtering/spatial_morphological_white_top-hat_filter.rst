@@ -6,6 +6,8 @@ Spatial morphological White Top-Hat filter
 
 Spatial morphological White Top-Hat filter. See `Wikipedia <https://en.wikipedia.org/wiki/Top-hat_transform>`_ for general information.
 
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_morphological_white_top-hat_filter.rst
+
 **Parameters**
 
 
@@ -18,7 +20,7 @@ Spatial morphological White Top-Hat filter. See `Wikipedia <https://en.wikipedia
 
     Default::
 
-        from scipy.ndimage.morphology import white_tophat
+        from scipy.ndimage import white_tophat
         
         function = lambda array: white_tophat(array, size=(3, 3))
 **Outputs**
@@ -40,12 +42,14 @@ Spatial morphological White Top-Hat filter. See `Wikipedia <https://en.wikipedia
     	Acceptable values:
     		- Path to a raster layer
     function: Function
-    	Default value:	from scipy.ndimage.morphology import white_tophat
+    	Default value:	from scipy.ndimage import white_tophat
     
     function = lambda array: white_tophat(array, size=(3, 3))
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

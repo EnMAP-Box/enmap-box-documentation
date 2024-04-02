@@ -6,6 +6,8 @@ Spectral resampling (to custom sensor)
 
 Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ by applying `spectral response function <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-response-function>`_ convolution.
 
+.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_custom_sensor_.rst
+
 **Parameters**
 
 
@@ -82,6 +84,8 @@ Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/e
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputResponseFunctionLibrary: Output spectral response function library (optional)
     	Argument type:	fileDestination
     	Acceptable values:

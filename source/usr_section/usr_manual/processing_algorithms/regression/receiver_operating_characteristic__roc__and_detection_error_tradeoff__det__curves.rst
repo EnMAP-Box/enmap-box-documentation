@@ -8,6 +8,8 @@ Compute receiver operating characteristic (ROC) and detection error tradeoff (DE
 For more details see the Scikit-Learn user guide: `Receiver operating characteristic (ROC) <https://scikit-learn.org/stable/modules/model_evaluation.html#receiver-operating-characteristic-roc>`_ and `Detection error tradeoff (DET) <https://scikit-learn.org/stable/modules/model_evaluation.html#detection-error-tradeoff-det>`_.
 Note that observed classes and predicted `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ probabilities are matched by name.
 
+.. include:: ../../processing_algorithms_includes/regression/receiver_operating_characteristic__roc__and_detection_error_tradeoff__det__curves.rst
+
 **Parameters**
 
 
@@ -52,6 +54,8 @@ Note that observed classes and predicted `class <https://enmap-box.readthedocs.i
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outRocCurve: Output report
     	Argument type:	fileDestination
     	Acceptable values:

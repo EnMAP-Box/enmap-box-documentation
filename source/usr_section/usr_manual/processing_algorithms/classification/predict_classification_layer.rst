@@ -7,6 +7,8 @@ Predict classification layer
 Uses a fitted `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_ to predict a `classification layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification-layer>`_ from a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_. 
 Used in the Cookbook Recipes: `Classification <https://enmap-box.readthedocs.io/en/latest/usr_section/usr_cookbook/classification.html>`_, `Graphical Modeler <https://enmap-box.readthedocs.io/en/latest/usr_section/usr_cookbook/graphical_modeler.html>`_ for information on different parameters.
 
+.. include:: ../../processing_algorithms_includes/classification/predict_classification_layer.rst
+
 **Parameters**
 
 
@@ -51,6 +53,8 @@ Used in the Cookbook Recipes: `Classification <https://enmap-box.readthedocs.io/
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputClassification: Output classification layer
     	Argument type:	rasterDestination
     	Acceptable values:

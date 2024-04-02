@@ -6,6 +6,8 @@ Layer to mask raster layer
 
 Interprete a `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_ as a `mask layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-mask-layer>`_.
 
+.. include:: ../../processing_algorithms_includes/masking/layer_to_mask_raster_layer_.rst
+
 **Parameters**
 
 

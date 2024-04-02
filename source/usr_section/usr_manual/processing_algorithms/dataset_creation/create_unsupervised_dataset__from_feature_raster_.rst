@@ -7,6 +7,8 @@ Create unsupervised dataset (from feature raster)
 Create an unsupervised `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ by sampling data from valid pixels and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
 A pixel is concidered valid, if the `pixel profile <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pixel-profile>`_ is free of `no data values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_, and not excluded by the (optionally) selected `mask layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-mask-layer>`_.
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/create_unsupervised_dataset__from_feature_raster_.rst
+
 **Parameters**
 
 
@@ -56,12 +58,16 @@ A pixel is concidered valid, if the `pixel profile <https://enmap-box.readthedoc
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     excludeBadBands: Exclude bad bands (optional)
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputUnsupervisedDataset: Output dataset
     	Argument type:	fileDestination
     	Acceptable values:

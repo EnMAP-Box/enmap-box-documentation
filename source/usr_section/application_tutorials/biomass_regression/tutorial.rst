@@ -388,7 +388,7 @@ Exercise C: Compare AGB estimates with the NDVI
    Duration: 30 min
 
 1. Introduction to Raster Math
-============================
+==============================
 
 * **Raster math** is a powerful raster calculator inspired by the QGIS Raster calculator, the GDAL Raster calculator and ENVI Band Math. In addition to those tools, the EnMAP-Box Raster math calculator supports multi-band arrays, vector layer inputs, multi-line code fragments and metadata handling. In the following sections, you will utilize Raster Math to...
 
@@ -493,7 +493,7 @@ Exercise C: Compare AGB estimates with the NDVI
    :width: 100%
 
 4. Apply the forest mask to the AGB estimates
-========================
+=============================================
 
 * Open the **Raster Math** application and enter the following code into the code editor to apply the forest mask to the AGB and NDVI images.:
 
@@ -525,7 +525,7 @@ Exercise C: Compare AGB estimates with the NDVI
 * Click run to start the calculation. A new raster dataset :file:`agb_masked.tif` will appear in the Data Sources panel. The resulting raster now displays AGB estimates for forest areas, while any other land cover types are masked.
 
 5. Apply the forest mask to the NDVI
-========================
+====================================
 * Apply the forest mask to the NDVI by using **Raster Math**.
 
 .. code-block:: python

@@ -6,6 +6,8 @@ Spatial generic filter
 
 Spatial generic (user-defined) filter.
 
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_generic_filter.rst
+
 **Parameters**
 
 
@@ -58,6 +60,8 @@ Spatial generic (user-defined) filter.
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

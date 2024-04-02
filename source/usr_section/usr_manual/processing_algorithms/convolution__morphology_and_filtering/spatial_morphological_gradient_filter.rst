@@ -6,6 +6,8 @@ Spatial morphological Gradient filter
 
 Spatial morphological Gradient filter. See `Wikipedia <https://en.wikipedia.org/wiki/Morphological_gradient>`_ for general information.
 
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_morphological_gradient_filter.rst
+
 **Parameters**
 
 
@@ -18,7 +20,7 @@ Spatial morphological Gradient filter. See `Wikipedia <https://en.wikipedia.org/
 
     Default::
 
-        from scipy.ndimage.morphology import morphological_gradient, generate_binary_structure, iterate_structure
+        from scipy.ndimage import morphological_gradient, generate_binary_structure, iterate_structure
         
         structure = generate_binary_structure(rank=2, connectivity=1)
         structure = iterate_structure(structure=structure, iterations=1)
@@ -42,7 +44,7 @@ Spatial morphological Gradient filter. See `Wikipedia <https://en.wikipedia.org/
     	Acceptable values:
     		- Path to a raster layer
     function: Function
-    	Default value:	from scipy.ndimage.morphology import morphological_gradient, generate_binary_structure, iterate_structure
+    	Default value:	from scipy.ndimage import morphological_gradient, generate_binary_structure, iterate_structure
     
     structure = generate_binary_structure(rank=2, connectivity=1)
     structure = iterate_structure(structure=structure, iterations=1)
@@ -50,6 +52,8 @@ Spatial morphological Gradient filter. See `Wikipedia <https://en.wikipedia.org/
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

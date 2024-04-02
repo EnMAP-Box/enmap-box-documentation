@@ -7,6 +7,8 @@ Fit PCA
 Principal component analysis (PCA).
 Linear dimensionality reduction using Singular Value Decomposition of the data to project it to a lower dimensional space. The input data is centered but not scaled for each `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ before applying the SVD.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_pca.rst
+
 **Parameters**
 
 
@@ -59,6 +61,8 @@ Linear dimensionality reduction using Singular Value Decomposition of the data t
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     featureRaster: Raster layer with features (optional)
     	Argument type:	raster
     	Acceptable values:
@@ -68,6 +72,8 @@ Linear dimensionality reduction using Singular Value Decomposition of the data t
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

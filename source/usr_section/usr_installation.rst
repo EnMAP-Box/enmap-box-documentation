@@ -52,6 +52,18 @@ In case you have an outdated QGIS version, make sure to install a current versio
 
       pip install --upgrade --user -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/osgeo4w/requirements_osgeo4w.txt
 
+   .. note::
+
+      In rare cases, the user folder may contain wrongly installed packages,
+      which are interfering with the package version managed by OSGeo4W, e.g. numpy, scipy or gdal.
+      Wrongly installed packages can be deleted manually from the user folder.
+
+      To locate the user folder used by your QGIS instance, run the following inside your QGIS Python console::
+
+         >>>import site
+         >>>print(site.USER_SITE)
+         C:\Users\Andreas\AppData\Roaming\Python\Python39\site-packages
+
 #. (Optional) Install **HDF5** dependency via the OSGeo4W installer:
 
     The **HDF5** dependency is only required for importing PRISMA products.
@@ -120,7 +132,7 @@ Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownload
 
    .. code-block:: console
 
-      sudo apt install python3-pip python3-venv pyqt5-dev-tools
+      sudo apt install python3-pip python3-venv pyqt5-dev-tools python3-matplotlib
 
 #. **(optional)** for some EnMAP-Box tools you may also need the following packages:
 

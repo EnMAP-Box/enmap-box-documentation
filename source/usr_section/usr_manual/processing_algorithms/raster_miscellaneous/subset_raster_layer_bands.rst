@@ -6,6 +6,8 @@ Subset raster layer bands
 
 Subsets `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ and stores the result as a VRT file.This is a slimmed down version of the more powerful "Translate raster `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_" algorithm.
 
+.. include:: ../../processing_algorithms_includes/raster_miscellaneous/subset_raster_layer_bands.rst
+
 **Parameters**
 
 
@@ -56,12 +58,16 @@ Subsets `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossa
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     excludeDerivedBadBands: Derive and exclude additional bad bands
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

@@ -1,0 +1,66 @@
+.. _Class fraction layer from categorized layer:
+
+*******************************************
+Class fraction layer from categorized layer
+*******************************************
+
+Rasterize/resample a categorized vector/`raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ into `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ fractions. `Categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ are rasterized/resampled at/to a x10 finer resolution and aggregated to class-wise fractions at destination resolution. This approach leads to fractions that are accurate to the percent.
+
+**Parameters**
+
+
+:guilabel:`Categorized layer` [layer]
+    A `categorized layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categorized-layer>`_ to be rasterized/resampled.
+
+
+:guilabel:`Grid` [raster]
+    The target `grid <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-grid>`_.
+
+
+:guilabel:`Minimum pixel coverage [%]` [number]
+    Exclude all pixel where coverage is smaller than given threshold.
+
+    Default: *0*
+
+**Outputs**
+
+
+:guilabel:`Output class fraction layer` [rasterDestination]
+    Raster file destination.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:ClassFractionLayerFromCategorizedLayer``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    categorizedLayer: Categorized layer
+    	Argument type:	layer
+    	Acceptable values:
+    		- Path to a vector, raster or mesh layer
+    grid: Grid
+    	Argument type:	raster
+    	Acceptable values:
+    		- Path to a raster layer
+    coverage: Minimum pixel coverage [%]
+    	Default value:	0
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    outputFraction: Output class fraction layer
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputFraction: <outputRaster>
+    	Output class fraction layer
+    
+    

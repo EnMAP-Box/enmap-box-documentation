@@ -1,8 +1,9 @@
+import os
 import pathlib
 import re
-import os
 import shutil
 from os.path import basename, splitext, getmtime
+
 from utils import file_search
 
 # source dir (location of conf.py)
@@ -76,7 +77,7 @@ with open(PATH_RST_VIEWER, 'w', encoding='utf-8', newline='') as f:
     f.write('.. include:: /icon_links.rst\n\n')
     for line in lines:
         name = line.split('|')[1]
-        #text = f'{name}\n    |{name}|\n\n'
+        # text = f'{name}\n    |{name}|\n\n'
         text = f'{name}    |{name}| '
         f.write(text)
 

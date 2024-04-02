@@ -6,6 +6,8 @@ Create regression dataset (from continuous-valued vector layer and feature raste
 
 Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ by sampling data and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/create_regression_dataset__from_continuous-valued_vector_layer_and_feature_raster_.rst
+
 **Parameters**
 
 
@@ -54,6 +56,8 @@ Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossar
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     targetFields: Fields with targets (optional)
     	Argument type:	field
     	Acceptable values:

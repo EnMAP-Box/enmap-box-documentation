@@ -8,6 +8,8 @@ Kernel ridge `regression <https://enmap-box.readthedocs.io/en/latest/general/glo
 Kernel ridge regression (KRR) combines ridge regression (linear least squares with l2-norm regularization) with the kernel trick. It thus learns a linear function in the space induced by the respective kernel and the data. For non-linear kernels, this corresponds to a non-linear function in the original space.
 The form of the model learned by KRR is identical to support vector regression (SVR). However, different loss functions are used: KRR uses squared error loss while support vector regression uses epsilon-insensitive loss, both combined with l2 regularization. In contrast to SVR, fitting a KRR model can be done in closed-form and is typically faster for medium-sized `datasets <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_. On the other hand, the learned model is non-sparse and thus slower than SVR, which learns a sparse model for epsilon > 0, at prediction-time.
 
+.. include:: ../../processing_algorithms_includes/regression/fit_kernelridge.rst
+
 **Parameters**
 
 
@@ -60,6 +62,8 @@ The form of the model learned by KRR is identical to support vector regression (
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

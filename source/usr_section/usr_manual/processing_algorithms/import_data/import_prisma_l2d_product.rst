@@ -7,6 +7,8 @@ Import PRISMA L2D product
 Import PRISMA L2D product from HE5 file to QGIS/GDAL conform GTiff/VRT file format with proper coordinate reference system.Note that for the spectral cube and error matrix, the interleave is transposed and stored as GTiff to enable proper visualization in QGIS.All other sub-`datasets <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ are stored as light-weight VRT files.
 For further details visit the `PRISMA Documentation Area <http://prisma.asi.it/missionselect/docs.php>`_.
 
+.. include:: ../../processing_algorithms_includes/import_data/import_prisma_l2d_product.rst
+
 **Parameters**
 
 
@@ -89,6 +91,8 @@ For further details visit the `PRISMA Documentation Area <http://prisma.asi.it/m
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     badPixelType: Select bad pixel (optional)
     	Default value:	
     	Argument type:	enum

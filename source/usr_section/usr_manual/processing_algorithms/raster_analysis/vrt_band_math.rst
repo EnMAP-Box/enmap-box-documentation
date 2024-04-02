@@ -6,6 +6,8 @@ VRT band math
 
 Create a single-`band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ VRT `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ specifying a `VRT Python Pixel Function <https://gdal.org/drivers/raster/vrt.html#using-derived-bands-with-pixel-functions-in-python>`_. Use any `NumPy <https://numpy.org/doc/stable/reference/>`_-based arithmetic, or even arbitrary Python code.
 
+.. include:: ../../processing_algorithms_includes/raster_analysis/vrt_band_math.rst
+
 **Parameters**
 
 
@@ -65,6 +67,8 @@ Create a single-`band <https://enmap-box.readthedocs.io/en/latest/general/glossa
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataType: Data type (optional)
     	Default value:	5
     	Argument type:	enum
@@ -83,14 +87,20 @@ Create a single-`band <https://enmap-box.readthedocs.io/en/latest/general/glossa
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     bandName: Band name (optional)
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     overlap: Buffer radius (optional)
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputVrt: Output VRT layer
     	Argument type:	rasterDestination
     	Acceptable values:

@@ -6,6 +6,8 @@ Apply mask layer to raster layer
 
 Areas where the `mask layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-mask-layer>`_ evaluates to false are set to the source `no data value <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_ (0, if undefined).
 
+.. include:: ../../processing_algorithms_includes/masking/apply_mask_layer_to_raster_layer.rst
+
 **Parameters**
 
 
