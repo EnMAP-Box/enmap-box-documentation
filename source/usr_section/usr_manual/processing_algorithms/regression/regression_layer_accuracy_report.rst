@@ -6,6 +6,8 @@ Regression layer accuracy report
 
 Estimates map accuracy.We use the formulas as described in `Scikit-Learn Regression metrics <https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics>`_ user guide. Observed and predicted `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ variables are matched by name.
 
+.. include:: ../../processing_algorithms_includes/regression/regression_layer_accuracy_report.rst
+
 **Parameters**
 
 
@@ -50,6 +52,8 @@ Estimates map accuracy.We use the formulas as described in `Scikit-Learn Regress
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outRegressionPerformance: Output report
     	Argument type:	fileDestination
     	Acceptable values:

@@ -7,6 +7,8 @@ Fit LogisticRegression
 Logistic `Regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_ (aka logit, MaxEnt) `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_.
 In the multiclass case, the training algorithm uses the one-vs-rest (OvR) scheme if the 'multi_class' option is set to 'ovr', and uses the cross-entropy loss if the 'multi_class' option is set to 'multinomial'.
 
+.. include:: ../../processing_algorithms_includes/classification/fit_logisticregression.rst
+
 **Parameters**
 
 
@@ -47,6 +49,8 @@ In the multiclass case, the training algorithm uses the one-vs-rest (OvR) scheme
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

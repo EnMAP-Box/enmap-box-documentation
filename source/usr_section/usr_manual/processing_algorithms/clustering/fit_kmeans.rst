@@ -6,6 +6,8 @@ Fit KMeans
 
 K-Means `clustering <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-clustering>`_.
 
+.. include:: ../../processing_algorithms_includes/clustering/fit_kmeans.rst
+
 **Parameters**
 
 
@@ -16,7 +18,7 @@ K-Means `clustering <https://enmap-box.readthedocs.io/en/latest/general/glossary
 
         from sklearn.cluster import KMeans
         
-        clusterer = KMeans(n_clusters=8)
+        clusterer = KMeans(n_clusters=8, n_init=10)
 
 :guilabel:`Training dataset` [file]
     `Training dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-training-dataset>`_ `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_ used for fitting the `clusterer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-clusterer>`_. If not specified, an unfitted clusterer is created.
@@ -38,10 +40,12 @@ K-Means `clustering <https://enmap-box.readthedocs.io/en/latest/general/glossary
     clusterer: Clusterer
     	Default value:	from sklearn.cluster import KMeans
     
-    clusterer = KMeans(n_clusters=8)
+    clusterer = KMeans(n_clusters=8, n_init=10)
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset
     	Argument type:	file
     	Acceptable values:

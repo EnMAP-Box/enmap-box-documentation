@@ -6,6 +6,8 @@ Create mask raster layer
 
 Create a `mask raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-mask-raster-layer>`_ by applying a user-defined evaluation function `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_-wise to a source `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_. 
 
+.. include:: ../../processing_algorithms_includes/masking/create_mask_raster_layer.rst
+
 **Parameters**
 
 
@@ -76,6 +78,8 @@ Create a `mask raster layer <https://enmap-box.readthedocs.io/en/latest/general/
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

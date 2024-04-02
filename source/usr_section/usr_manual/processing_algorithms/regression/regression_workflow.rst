@@ -6,6 +6,8 @@ Regression workflow
 
 The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_ workflow combines `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_ fitting and map prediction.Optionally, the `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance of the regressor can be assessed.
 
+.. include:: ../../processing_algorithms_includes/regression/regression_workflow.rst
+
 **Parameters**
 
 
@@ -18,7 +20,7 @@ The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.htm
 
 
 :guilabel:`Raster layer with features` [raster]
-    A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ used as `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ for mapping. `Regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_ features and raster bands are matched by name. Will be ignored, if map prediction is skipped.
+    A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ used for prediction.
 
 
 :guilabel:`Match regressor features and raster bands by name` [boolean]
@@ -68,7 +70,9 @@ The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.htm
     	Argument type:	string
     	Acceptable values:
     		- String value
-    raster: Raster layer with features
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    raster: Raster layer with features (optional)
     	Argument type:	raster
     	Acceptable values:
     		- Path to a raster layer
@@ -78,17 +82,23 @@ The `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.htm
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     nfold: Number of cross-validation folds (optional)
     	Default value:	10
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     openReport: Open output cross-validation regressor performance report in webbrowser after running algorithm
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRegressorPerformance: Output cross-validation regressor performance report (optional)
     	Argument type:	fileDestination
     	Acceptable values:

@@ -6,6 +6,8 @@ Build 3D Cube
 
 Build an 3D Cube visualization of a (spectral) `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_, consisting of two individually stylable cube face and cube side `layers <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_. 
 
+.. include:: ../../processing_algorithms_includes/auxilliary/build_3d_cube.rst
+
 **Parameters**
 
 
@@ -57,16 +59,22 @@ Build an 3D Cube visualization of a (spectral) `raster layer <https://enmap-box.
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dx: Delta x (pixel) (optional)
     	Default value:	1
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dy: Delta y (pixel) (optional)
     	Default value:	1
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputCubeFace: Output cube face
     	Argument type:	rasterDestination
     	Acceptable values:

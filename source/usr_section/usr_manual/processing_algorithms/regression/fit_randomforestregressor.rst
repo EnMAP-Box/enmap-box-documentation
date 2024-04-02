@@ -7,6 +7,8 @@ Fit RandomForestRegressor
 A random forest `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_.
 A random forest is a meta `estimator <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-estimator>`_ that fits a number of classifying decision trees on various sub-`samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ of the `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ and uses averaging to improve the predictive accuracy and control over-fitting. The sub-`sample <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ size is controlled with the max_samples parameter if bootstrap=True (default), otherwise the whole dataset is used to build each tree.
 
+.. include:: ../../processing_algorithms_includes/regression/fit_randomforestregressor.rst
+
 **Parameters**
 
 
@@ -41,6 +43,8 @@ A random forest is a meta `estimator <https://enmap-box.readthedocs.io/en/latest
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

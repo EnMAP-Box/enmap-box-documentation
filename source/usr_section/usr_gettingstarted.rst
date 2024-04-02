@@ -55,14 +55,14 @@ to get to know the GUI functionalities:
        :align: center
        :width: 800
 
-3. In the :guilabel:`Map #1` list in the :guilabel:`Data Views` panel, select :file:`hires_berlin.bsq` and drag the
+3. In the :guilabel:`Map #1` list in the :guilabel:`Data Views` panel, select :file:`aerial_potsdam.tif` and drag the
    layer into :guilabel:`Map #2` (you can drag them directly into the map view or the respective menu item under :guilabel:`Data Views`).
 4. In the next step we link both map views, so that zoom and center are synchronized between both:
    Click the |link_basic| button or go to :menuselection:`View --> Set Map Linking` and select
    |link_all_mapscale_center| :sup:`Link map scale and center`.
 5. Move the map (using |mActionPan| or holding the mouse wheel |mouse_wheel|) and notice how both map views are synchronized now.
 
-Now we want to change the RGB representation of the :file:`enmap_berlin.bsq` image:
+Now we want to change the RGB representation of the :file:`enmap_potsdam.tif` image:
 
 6. In the :guilabel:`Data Views` panel click the |symbology| :sup:`Open Raster Layer Styling` button, which will open
    a new panel. Here you can quickly change the renderer (e.g., singleband gray, RGB) and the band(s) visualized. You can
@@ -88,7 +88,7 @@ Now we want to change the RGB representation of the :file:`enmap_berlin.bsq` ima
 #############################
 
 In this section we will use a processing algorithm from the EnMAP-Box algorithm provider. The EnMAP-Box adds more than
-150 Processing Algorithms to the QGIS processing framework. Their scope ranges from general tasks, e.g. file type
+180 Processing Algorithms to the QGIS processing framework. Their scope ranges from general tasks, e.g. file type
 conversions or data import to specific applications like machine learning.
 In this example we are converting a polygon dataset with information on different landcover types into a
 classification raster, i.e., we are going to rasterize the vector dataset.
@@ -98,8 +98,8 @@ classification raster, i.e., we are going to rasterize the vector dataset.
 2. Open the :guilabel:`Rasterize categorized vector layer` algorithm under :menuselection:`EnMAP-Box --> Vector conversion`
 3. Use the following settings:
 
-  * :guilabel:`Categorized vector layer`: :file:`landcover_berlin_polygon.gpkg`
-  * :guilabel:`Grid`: :file:`enmap_berlin.bsq`
+  * :guilabel:`Categorized vector layer`: :file:`landcover_potsdam_polygon.gpkg`
+  * :guilabel:`Grid`: :file:`enmap_potsdam.tif`
 
 4. Specify an output filepath under :guilabel:`Output Classification` and click :guilabel:`Run`.
 

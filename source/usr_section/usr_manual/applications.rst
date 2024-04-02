@@ -70,12 +70,12 @@ From categorized vector layer and feature raster
         * - .. figure:: /general/img/raster_layer.png
                :height: 400
 
-               enmap_berlin.bsq
+               enmap_potsdam.bsq
 
           - .. figure:: /general/img/categorized_vector_layer_2.png
                :height: 400
 
-               landcover_berlin_point.gpkg
+               landcover_potsdam_point.gpkg
 
     .. figure:: ./img/ClassificationDatasetManager_2a.png
        :align: center
@@ -89,7 +89,7 @@ From categorized raster layer and feature raster
         * - .. figure:: /general/img/raster_layer.png
                :height: 400
 
-               enmap_berlin.bsq
+               enmap_potsdam.bsq
 
           - .. figure:: /general/img/categorized_raster_layer_2.png
                :height: 400
@@ -107,7 +107,7 @@ From categorized spectral library
 
         * - .. figure:: /general/img/categorized_spectral_library.png
 
-               library_berlin.gpkg
+               library_potsdam.gpkg
 
     .. figure:: ./img/ClassificationDatasetManager_2c.png
        :align: center
@@ -485,7 +485,7 @@ Use single-line expressions to evaluate simple numeric formulars.
 Example - sum up 3 raster bands using the '+' operator
     A raster band is represented as a 2d numpy array and can be selected using the `<layer name>@<band number>` syntax.
 
-    ``hires_berlin@1 + hires_berlin@2 + hires_berlin@3``
+    ``aerial_potsdam@1 + aerial_potsdam@2 + aerial_potsdam@3``
 
     ..  youtube:: xK0_whBURQs
         :width: 100%
@@ -494,19 +494,19 @@ Example - sum up 3 raster bands using the '+' operator
 Example - sum up all bands of a raster using `numpy.sum <https://numpy.org/doc/stable/reference/generated/numpy.sum.html>`_ function
     A raster is represented as a 3d numpy array and can be selected using the `<layer name>` syntax.
 
-    ``np.sum(enmap_berlin, axis=0)``
+    ``np.sum(enmap_potsdam, axis=0)``
 
 Use raster bands
 ----------------
 
 An individual raster band can be accessed using the `<layer name>@<band number>` syntax, e.g. band number 42::
 
-    enmap_berlin@42
+    enmap_potsdam@42
 
 In case of a spectral raster, the band nearest to a target wavelength (in nanometers)
 can be selected using the `<layer name>@<band number>nm` syntax, e.g. NIR band at 865 nm::
 
-    enmap_berlin@865nm
+    enmap_potsdam@865nm
 
 Note that prominent target wavelength from the Landsat/Sentinel-2 sensors can be selected inside the
 :guilabel:`Waveband locator` tab.
@@ -516,22 +516,22 @@ Note that prominent target wavelength from the Landsat/Sentinel-2 sensors can be
 
 All raster bands can be accessed at once using the `<layer name>` syntax, e.g.::
 
-    enmap_berlin
+    enmap_potsdam
 
 A band subset can be accessed using the `<layer name>@<start>:<stop>` syntax, e.g. band numbers 10 to 19::
 
-    enmap_berlin@10:20  # note that 20 is not included
+    enmap_potsdam@10:20  # note that 20 is not included
 
     # Note that you can also create a band subset by indexing the the full band array.
     # This has the slight disadvantage, that all bands are read into memory first.
-    enmap_berlin[9:19]
+    enmap_potsdam[9:19]
 
 Use vector fields
 -----------------
 
 Individual vector fields can be accessed using the `<layer name>@"<field name>"` syntax, e.g.::
 
-    landcover_berlin_polygon@"level_3_id"
+    landcover_potsdam_polygon@"level_3_id"
 
 Note that the vector field is automatically rasterized into the destination :guilabel:`Grid`.
 
@@ -544,7 +544,7 @@ nan or inf. All other pixel evaluate to `True`.
 Use the ``<layer name>Mask`` syntax to access the 3d binary mask for all bands,
 and the ``<layer name>Mask@<band number>`` syntax for a 2d single band mask.
 
-2d mask array for a single band: ``enmap_berlinMask@655nm``
+2d mask array for a single band: ``enmap_potsdamMask@655nm``
 
     .. figure:: /general/img/mask_raster_layer.png
         :height: 400
@@ -554,14 +554,14 @@ A vector mask, is a predefined boolean array, which evaluates to `True` for ever
 All other pixel evaluate to `False`.
 Use the ``<layer name>`` syntax to access the 2d binary mask.
 
-2d mask array for a vector layer: ``landcover_berlin_polygon``
+2d mask array for a vector layer: ``landcover_potsdam_polygon``
 
     .. figure:: /general/img/mask_raster_layer_2.png
         :height: 400
         :align: center
 
 Example - mask a raster using a polygon-vector
-    ``enmap_berlin * landcover_berlin_polygon``
+    ``enmap_potsdam * landcover_potsdam_polygon``
 
     .. figure:: ./img/RasterMath_3.png
         :align: center
@@ -607,8 +607,8 @@ Example - calculate the NDVI index
     which we pass to the special ``outputRaster`` identifier,
     that is associated with the :guilabel:`Output raster layer`::
 
-        nir_ = enmap_berlin@865nm
-        red_ = enmap_berlin@655nm
+        nir_ = enmap_potsdam@865nm
+        red_ = enmap_potsdam@655nm
         ndvi_ = (nir_ - red_) / (nir_ + red_)
         outputRaster = ndvi_
 
@@ -620,8 +620,8 @@ Example - calculate the NDVI index
     where the file basename (without extension) matches the variable name,
     e.g. `c:/ndvi.tif`::
 
-        nir_ = enmap_berlin@865nm
-        red_ = enmap_berlin@655nm
+        nir_ = enmap_potsdam@865nm
+        red_ = enmap_potsdam@655nm
         ndvi = (nir_ - red_) / (nir_ + red_)  # ndvi matches with c:/ndvi.tif
 
     If the file basename isn't matching correctly, you will get the following error message inside the Log panel::
@@ -632,8 +632,8 @@ Example - calculate the NDVI index
 
     Instead of using temporary variables, you can also just delete unwanted variables as a last step::
 
-        nir = enmap_berlin@865nm
-        red = enmap_berlin@655nm
+        nir = enmap_potsdam@865nm
+        red = enmap_potsdam@655nm
         ndvi = (nir - red) / (nir + red)
 
         del nir, red  # delete temporary variables manually
@@ -641,9 +641,9 @@ Example - calculate the NDVI index
 Example - calculate multiple outputs
     To calculate multiple outputs, just define multiple non-temporary variables::
 
-        N = enmap_berlin@865nm / 1e4  # EVI needs data scaled to 0-1 range
-        R = enmap_berlin@655nm / 1e4
-        B = enmap_berlin@482nm / 1e4
+        N = enmap_potsdam@865nm / 1e4  # EVI needs data scaled to 0-1 range
+        R = enmap_potsdam@655nm / 1e4
+        B = enmap_potsdam@482nm / 1e4
 
         ndvi = (N - R) / (N + R)
         evi = 2.5 * (N - R) / (N + 6 * R - 7.5 * B + 1)
@@ -667,27 +667,27 @@ Metadata handling
 
 You have full access to the underlying raster metadata like:
 
-- band no data value: ``enmap_berlin.noDataValue(bandNo=1)``::
+- band no data value: ``enmap_potsdam.noDataValue(bandNo=1)``::
 
     -99.0
 
-- band name: ``enmap_berlin.bandName(bandNo=1)``::
+- band name: ``enmap_potsdam.bandName(bandNo=1)``::
 
     band 8 (0.460000 Micrometers)
 
-- band-level metadata dictionary: ``enmap_berlin.metadata(bandNo=1)``::
+- band-level metadata dictionary: ``enmap_potsdam.metadata(bandNo=1)``::
 
     {'': {'wavelength': '0.460000', 'wavelength_units': 'Micrometers'}}
 
-- band-level metadata item: ``enmap_berlin.metadataItem(key='wavelength_units', domain='', bandNo=1)``::
+- band-level metadata item: ``enmap_potsdam.metadataItem(key='wavelength_units', domain='', bandNo=1)``::
 
     Micrometers
 
-- dataset-level metadata dictionary: ``enmap_berlin.metadata()``::
+- dataset-level metadata dictionary: ``enmap_potsdam.metadata()``::
 
-    {'IMAGE_STRUCTURE': {'INTERLEAVE': 'BAND'}, '': {'wavelength_units': 'Micrometers'}, 'ENVI': {'acquisition_time': '2009-08-20T09:44:50', 'bands': '177', 'band_names': ['band 8', 'band 9', 'band 10', 'band 11', 'band 12', 'band 13', 'band 14', 'band 15', 'band 16', 'band 17', 'band 18', 'band 19', 'band 20', 'band 21', 'band 22', 'band 23', 'band 24', 'band 25', 'band 26', 'band 27', 'band 28', 'band 29', 'band 30', 'band 31', 'band 32', 'band 33', 'band 34', 'band 35', 'band 36', 'band 37', 'band 38', 'band 39', 'band 40', 'band 41', 'band 42', 'band 43', 'band 44', 'band 45', 'band 46', 'band 47', 'band 48', 'band 49', 'band 50', 'band 51', 'band 52', 'band 53', 'band 54', 'band 55', 'band 56', 'band 57', 'band 58', 'band 59', 'band 60', 'band 61', 'band 62', 'band 63', 'band 64', 'band 65', 'band 66', 'band 67', 'band 68', 'band 69', 'band 70', 'band 71', 'band 72', 'band 73', 'band 74', 'band 75', 'band 76', 'band 77', 'band 91', 'band 92', 'band 93', 'band 94', 'band 95', 'band 96', 'band 97', 'band 98', 'band 99', 'band 100', 'band 101', 'band 102', 'band 103', 'band 104', 'band 105', 'band 106', 'band 107', 'band 108', 'band 109', 'band 110', 'band 111', 'band 112', 'band 113', 'band 114', 'band 115', 'band 116', 'band 117', 'band 118', 'band 119', 'band 120', 'band 121', 'band 122', 'band 123', 'band 124', 'band 125', 'band 126', 'band 127', 'band 144', 'band 145', 'band 146', 'band 147', 'band 148', 'band 149', 'band 150', 'band 151', 'band 152', 'band 153', 'band 154', 'band 155', 'band 156', 'band 157', 'band 158', 'band 159', 'band 160', 'band 161', 'band 162', 'band 163', 'band 164', 'band 165', 'band 166', 'band 167', 'band 168', 'band 195', 'band 196', 'band 197', 'band 198', 'band 199', 'band 200', 'band 201', 'band 202', 'band 203', 'band 204', 'band 205', 'band 206', 'band 207', 'band 208', 'band 209', 'band 210', 'band 211', 'band 212', 'band 213', 'band 214', 'band 215', 'band 216', 'band 217', 'band 218', 'band 219', 'band 220', 'band 221', 'band 222', 'band 223', 'band 224', 'band 225', 'band 226', 'band 227', 'band 228', 'band 229', 'band 230', 'band 231', 'band 232', 'band 233', 'band 234', 'band 235', 'band 236', 'band 237', 'band 238', 'band 239'], 'byte_order': '0', 'coordinate_system_string': ['PROJCS["UTM_Zone_33N"', 'GEOGCS["GCS_WGS_1984"', 'DATUM["D_WGS_1984"', 'SPHEROID["WGS_1984"', '6378137.0', '298.257223563]]', 'PRIMEM["Greenwich"', '0.0]', 'UNIT["Degree"', '0.0174532925199433]]', 'PROJECTION["Transverse_Mercator"]', 'PARAMETER["False_Easting"', '500000.0]', 'PARAMETER["False_Northing"', '0.0]', 'PARAMETER["Central_Meridian"', '15.0]', 'PARAMETER["Scale_Factor"', '0.9996]', 'PARAMETER["Latitude_Of_Origin"', '0.0]', 'UNIT["Meter"', '1.0]]'], 'data_ignore_value': '-99', 'data_type': '2', 'description': ['EnMAP02_Berlin_Urban_Gradient_2009.bsq', 'http://doi.org/10.5880/enmap.2016.008', 'spectral and spatial subset'], 'file_type': 'ENVI Standard', 'fwhm': ['0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005900', '0.005900', '0.006000', '0.006000', '0.006100', '0.006100', '0.006200', '0.006200', '0.006300', '0.006400', '0.006400', '0.006500', '0.006600', '0.006600', '0.006700', '0.006800', '0.006900', '0.006900', '0.007000', '0.007100', '0.007200', '0.007300', '0.007300', '0.007400', '0.007500', '0.007600', '0.007700', '0.007800', '0.007900', '0.007900', '0.008000', '0.008100', '0.008200', '0.008300', '0.008400', '0.008400', '0.008500', '0.008600', '0.008700', '0.008700', '0.008800', '0.008900', '0.008900', '0.009000', '0.009100', '0.009100', '0.009200', '0.009300', '0.009300', '0.009400', '0.009400', '0.009500', '0.009500', '0.009600', '0.009600', '0.009600', '0.009600', '0.009700', '0.009700', '0.009700', '0.011800', '0.011900', '0.012100', '0.012200', '0.012400', '0.012500', '0.012700', '0.012800', '0.012900', '0.013100', '0.013200', '0.013300', '0.013400', '0.013500', '0.013600', '0.013700', '0.013800', '0.013900', '0.014000', '0.014000', '0.014100', '0.014100', '0.014200', '0.014200', '0.014300', '0.014300', '0.014300', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.013700', '0.013600', '0.013600', '0.013500', '0.013500', '0.013400', '0.013400', '0.013300', '0.013200', '0.013200', '0.013100', '0.013100', '0.013000', '0.012900', '0.012900', '0.012800', '0.012800', '0.012700', '0.012700', '0.012600', '0.012500', '0.012500', '0.012400', '0.012400', '0.012300', '0.010900', '0.010800', '0.010800', '0.010700', '0.010700', '0.010600', '0.010600', '0.010500', '0.010500', '0.010400', '0.010400', '0.010400', '0.010300', '0.010300', '0.010200', '0.010200', '0.010100', '0.010100', '0.010100', '0.010000', '0.010000', '0.009900', '0.009900', '0.009900', '0.009800', '0.009800', '0.009700', '0.009700', '0.009700', '0.009600', '0.009600', '0.009600', '0.009500', '0.009500', '0.009400', '0.009400', '0.009400', '0.009300', '0.009300', '0.009300', '0.009200', '0.009200', '0.009100', '0.009100', '0.009100'], 'header_offset': '0', 'interleave': 'bsq', 'lines': '400', 'reflectance_scale_factor': '10000', 'samples': '220', 'sensor_type': 'Unknown', 'wavelength': ['0.460000', '0.465000', '0.470000', '0.475000', '0.479000', '0.484000', '0.489000', '0.494000', '0.499000', '0.503000', '0.508000', '0.513000', '0.518000', '0.523000', '0.528000', '0.533000', '0.538000', '0.543000', '0.549000', '0.554000', '0.559000', '0.565000', '0.570000', '0.575000', '0.581000', '0.587000', '0.592000', '0.598000', '0.604000', '0.610000', '0.616000', '0.622000', '0.628000', '0.634000', '0.640000', '0.646000', '0.653000', '0.659000', '0.665000', '0.672000', '0.679000', '0.685000', '0.692000', '0.699000', '0.706000', '0.713000', '0.720000', '0.727000', '0.734000', '0.741000', '0.749000', '0.756000', '0.763000', '0.771000', '0.778000', '0.786000', '0.793000', '0.801000', '0.809000', '0.817000', '0.824000', '0.832000', '0.840000', '0.848000', '0.856000', '0.864000', '0.872000', '0.880000', '0.888000', '0.896000', '0.915000', '0.924000', '0.934000', '0.944000', '0.955000', '0.965000', '0.975000', '0.986000', '0.997000', '1.007000', '1.018000', '1.029000', '1.040000', '1.051000', '1.063000', '1.074000', '1.086000', '1.097000', '1.109000', '1.120000', '1.132000', '1.144000', '1.155000', '1.167000', '1.179000', '1.191000', '1.203000', '1.215000', '1.227000', '1.239000', '1.251000', '1.263000', '1.275000', '1.287000', '1.299000', '1.311000', '1.323000', '1.522000', '1.534000', '1.545000', '1.557000', '1.568000', '1.579000', '1.590000', '1.601000', '1.612000', '1.624000', '1.634000', '1.645000', '1.656000', '1.667000', '1.678000', '1.689000', '1.699000', '1.710000', '1.721000', '1.731000', '1.742000', '1.752000', '1.763000', '1.773000', '1.783000', '2.044000', '2.053000', '2.062000', '2.071000', '2.080000', '2.089000', '2.098000', '2.107000', '2.115000', '2.124000', '2.133000', '2.141000', '2.150000', '2.159000', '2.167000', '2.176000', '2.184000', '2.193000', '2.201000', '2.210000', '2.218000', '2.226000', '2.234000', '2.243000', '2.251000', '2.259000', '2.267000', '2.275000', '2.283000', '2.292000', '2.300000', '2.308000', '2.315000', '2.323000', '2.331000', '2.339000', '2.347000', '2.355000', '2.363000', '2.370000', '2.378000', '2.386000', '2.393000', '2.401000', '2.409000'], 'wavelength_units': 'Micrometers', 'y_start': '24', 'z_plot_titles': ['wavelength [!7l!3m]!N', 'reflectance [*10000]']}}}
+    {'IMAGE_STRUCTURE': {'INTERLEAVE': 'BAND'}, '': {'wavelength_units': 'Micrometers'}, 'ENVI': {'acquisition_time': '2009-08-20T09:44:50', 'bands': '177', 'band_names': ['band 8', 'band 9', 'band 10', 'band 11', 'band 12', 'band 13', 'band 14', 'band 15', 'band 16', 'band 17', 'band 18', 'band 19', 'band 20', 'band 21', 'band 22', 'band 23', 'band 24', 'band 25', 'band 26', 'band 27', 'band 28', 'band 29', 'band 30', 'band 31', 'band 32', 'band 33', 'band 34', 'band 35', 'band 36', 'band 37', 'band 38', 'band 39', 'band 40', 'band 41', 'band 42', 'band 43', 'band 44', 'band 45', 'band 46', 'band 47', 'band 48', 'band 49', 'band 50', 'band 51', 'band 52', 'band 53', 'band 54', 'band 55', 'band 56', 'band 57', 'band 58', 'band 59', 'band 60', 'band 61', 'band 62', 'band 63', 'band 64', 'band 65', 'band 66', 'band 67', 'band 68', 'band 69', 'band 70', 'band 71', 'band 72', 'band 73', 'band 74', 'band 75', 'band 76', 'band 77', 'band 91', 'band 92', 'band 93', 'band 94', 'band 95', 'band 96', 'band 97', 'band 98', 'band 99', 'band 100', 'band 101', 'band 102', 'band 103', 'band 104', 'band 105', 'band 106', 'band 107', 'band 108', 'band 109', 'band 110', 'band 111', 'band 112', 'band 113', 'band 114', 'band 115', 'band 116', 'band 117', 'band 118', 'band 119', 'band 120', 'band 121', 'band 122', 'band 123', 'band 124', 'band 125', 'band 126', 'band 127', 'band 144', 'band 145', 'band 146', 'band 147', 'band 148', 'band 149', 'band 150', 'band 151', 'band 152', 'band 153', 'band 154', 'band 155', 'band 156', 'band 157', 'band 158', 'band 159', 'band 160', 'band 161', 'band 162', 'band 163', 'band 164', 'band 165', 'band 166', 'band 167', 'band 168', 'band 195', 'band 196', 'band 197', 'band 198', 'band 199', 'band 200', 'band 201', 'band 202', 'band 203', 'band 204', 'band 205', 'band 206', 'band 207', 'band 208', 'band 209', 'band 210', 'band 211', 'band 212', 'band 213', 'band 214', 'band 215', 'band 216', 'band 217', 'band 218', 'band 219', 'band 220', 'band 221', 'band 222', 'band 223', 'band 224', 'band 225', 'band 226', 'band 227', 'band 228', 'band 229', 'band 230', 'band 231', 'band 232', 'band 233', 'band 234', 'band 235', 'band 236', 'band 237', 'band 238', 'band 239'], 'byte_order': '0', 'coordinate_system_string': ['PROJCS["UTM_Zone_33N"', 'GEOGCS["GCS_WGS_1984"', 'DATUM["D_WGS_1984"', 'SPHEROID["WGS_1984"', '6378137.0', '298.257223563]]', 'PRIMEM["Greenwich"', '0.0]', 'UNIT["Degree"', '0.0174532925199433]]', 'PROJECTION["Transverse_Mercator"]', 'PARAMETER["False_Easting"', '500000.0]', 'PARAMETER["False_Northing"', '0.0]', 'PARAMETER["Central_Meridian"', '15.0]', 'PARAMETER["Scale_Factor"', '0.9996]', 'PARAMETER["Latitude_Of_Origin"', '0.0]', 'UNIT["Meter"', '1.0]]'], 'data_ignore_value': '-99', 'data_type': '2', 'description': ['EnMAP02_potsdam_Urban_Gradient_2009.bsq', 'http://doi.org/10.5880/enmap.2016.008', 'spectral and spatial subset'], 'file_type': 'ENVI Standard', 'fwhm': ['0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005800', '0.005900', '0.005900', '0.006000', '0.006000', '0.006100', '0.006100', '0.006200', '0.006200', '0.006300', '0.006400', '0.006400', '0.006500', '0.006600', '0.006600', '0.006700', '0.006800', '0.006900', '0.006900', '0.007000', '0.007100', '0.007200', '0.007300', '0.007300', '0.007400', '0.007500', '0.007600', '0.007700', '0.007800', '0.007900', '0.007900', '0.008000', '0.008100', '0.008200', '0.008300', '0.008400', '0.008400', '0.008500', '0.008600', '0.008700', '0.008700', '0.008800', '0.008900', '0.008900', '0.009000', '0.009100', '0.009100', '0.009200', '0.009300', '0.009300', '0.009400', '0.009400', '0.009500', '0.009500', '0.009600', '0.009600', '0.009600', '0.009600', '0.009700', '0.009700', '0.009700', '0.011800', '0.011900', '0.012100', '0.012200', '0.012400', '0.012500', '0.012700', '0.012800', '0.012900', '0.013100', '0.013200', '0.013300', '0.013400', '0.013500', '0.013600', '0.013700', '0.013800', '0.013900', '0.014000', '0.014000', '0.014100', '0.014100', '0.014200', '0.014200', '0.014300', '0.014300', '0.014300', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.014400', '0.013700', '0.013600', '0.013600', '0.013500', '0.013500', '0.013400', '0.013400', '0.013300', '0.013200', '0.013200', '0.013100', '0.013100', '0.013000', '0.012900', '0.012900', '0.012800', '0.012800', '0.012700', '0.012700', '0.012600', '0.012500', '0.012500', '0.012400', '0.012400', '0.012300', '0.010900', '0.010800', '0.010800', '0.010700', '0.010700', '0.010600', '0.010600', '0.010500', '0.010500', '0.010400', '0.010400', '0.010400', '0.010300', '0.010300', '0.010200', '0.010200', '0.010100', '0.010100', '0.010100', '0.010000', '0.010000', '0.009900', '0.009900', '0.009900', '0.009800', '0.009800', '0.009700', '0.009700', '0.009700', '0.009600', '0.009600', '0.009600', '0.009500', '0.009500', '0.009400', '0.009400', '0.009400', '0.009300', '0.009300', '0.009300', '0.009200', '0.009200', '0.009100', '0.009100', '0.009100'], 'header_offset': '0', 'interleave': 'bsq', 'lines': '400', 'reflectance_scale_factor': '10000', 'samples': '220', 'sensor_type': 'Unknown', 'wavelength': ['0.460000', '0.465000', '0.470000', '0.475000', '0.479000', '0.484000', '0.489000', '0.494000', '0.499000', '0.503000', '0.508000', '0.513000', '0.518000', '0.523000', '0.528000', '0.533000', '0.538000', '0.543000', '0.549000', '0.554000', '0.559000', '0.565000', '0.570000', '0.575000', '0.581000', '0.587000', '0.592000', '0.598000', '0.604000', '0.610000', '0.616000', '0.622000', '0.628000', '0.634000', '0.640000', '0.646000', '0.653000', '0.659000', '0.665000', '0.672000', '0.679000', '0.685000', '0.692000', '0.699000', '0.706000', '0.713000', '0.720000', '0.727000', '0.734000', '0.741000', '0.749000', '0.756000', '0.763000', '0.771000', '0.778000', '0.786000', '0.793000', '0.801000', '0.809000', '0.817000', '0.824000', '0.832000', '0.840000', '0.848000', '0.856000', '0.864000', '0.872000', '0.880000', '0.888000', '0.896000', '0.915000', '0.924000', '0.934000', '0.944000', '0.955000', '0.965000', '0.975000', '0.986000', '0.997000', '1.007000', '1.018000', '1.029000', '1.040000', '1.051000', '1.063000', '1.074000', '1.086000', '1.097000', '1.109000', '1.120000', '1.132000', '1.144000', '1.155000', '1.167000', '1.179000', '1.191000', '1.203000', '1.215000', '1.227000', '1.239000', '1.251000', '1.263000', '1.275000', '1.287000', '1.299000', '1.311000', '1.323000', '1.522000', '1.534000', '1.545000', '1.557000', '1.568000', '1.579000', '1.590000', '1.601000', '1.612000', '1.624000', '1.634000', '1.645000', '1.656000', '1.667000', '1.678000', '1.689000', '1.699000', '1.710000', '1.721000', '1.731000', '1.742000', '1.752000', '1.763000', '1.773000', '1.783000', '2.044000', '2.053000', '2.062000', '2.071000', '2.080000', '2.089000', '2.098000', '2.107000', '2.115000', '2.124000', '2.133000', '2.141000', '2.150000', '2.159000', '2.167000', '2.176000', '2.184000', '2.193000', '2.201000', '2.210000', '2.218000', '2.226000', '2.234000', '2.243000', '2.251000', '2.259000', '2.267000', '2.275000', '2.283000', '2.292000', '2.300000', '2.308000', '2.315000', '2.323000', '2.331000', '2.339000', '2.347000', '2.355000', '2.363000', '2.370000', '2.378000', '2.386000', '2.393000', '2.401000', '2.409000'], 'wavelength_units': 'Micrometers', 'y_start': '24', 'z_plot_titles': ['wavelength [!7l!3m]!N', 'reflectance [*10000]']}}}
 
-- dataset-level metadata item: ``enmap_berlin.metadataItem(key='wavelength_units', domain='')``::
+- dataset-level metadata item: ``enmap_potsdam.metadataItem(key='wavelength_units', domain='')``::
 
     Micrometers
 
@@ -707,16 +707,16 @@ Example - calculate the NDVI index and set up metadata properly
     This example shows how to properly calculate the NDVI index, masking no data pixel and set up output metadata::
 
         # find bands
-        red = enmap_berlin@655nm
-        nir = enmap_berlin@865nm
+        red = enmap_potsdam@655nm
+        nir = enmap_potsdam@865nm
 
         # calculate NDVI
         ndvi = (nir - red) / (nir + red)
 
         # mask no data region
         noDataValue = -9999
-        ndvi[~enmap_berlinMask@655nm] = noDataValue
-        ndvi[~enmap_berlinMask@865nm] = noDataValue
+        ndvi[~enmap_potsdamMask@655nm] = noDataValue
+        ndvi[~enmap_potsdamMask@865nm] = noDataValue
 
         # set no data value and band name
         ndvi.setNoDataValue(noDataValue)
@@ -729,14 +729,14 @@ Example - copy raster data and metadata
     This example shows how to properly copy a raster data and metadata::
 
         # copy data
-        copy = enmap_berlin
+        copy = enmap_potsdam
 
         # copy metadata
-        copy.setMetadata(enmap_berlin.metadata())
-        for bandNo in enmap_berlin.bandNumbers():
-            copy.setMetadata(enmap_berlin.metadata(bandNo), bandNo)
-            copy.setBandName(enmap_berlin.bandName(bandNo), bandNo)
-            copy.setNoDataValue(enmap_berlin.noDataValue(bandNo), bandNo)
+        copy.setMetadata(enmap_potsdam.metadata())
+        for bandNo in enmap_potsdam.bandNumbers():
+            copy.setMetadata(enmap_potsdam.metadata(bandNo), bandNo)
+            copy.setBandName(enmap_potsdam.bandName(bandNo), bandNo)
+            copy.setNoDataValue(enmap_potsdam.noDataValue(bandNo), bandNo)
 
 Input raster lists
 ------------------

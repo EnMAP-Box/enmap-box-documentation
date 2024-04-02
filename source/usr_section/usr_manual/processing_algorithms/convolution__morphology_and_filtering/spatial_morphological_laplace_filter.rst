@@ -6,6 +6,8 @@ Spatial morphological Laplace filter
 
 Spatial morphological Laplace filter. See `Wikipedia <https://en.wikipedia.org/wiki/Discrete_Laplace_operator#Image_Processing>`_ for general information.
 
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_morphological_laplace_filter.rst
+
 **Parameters**
 
 
@@ -18,7 +20,7 @@ Spatial morphological Laplace filter. See `Wikipedia <https://en.wikipedia.org/w
 
     Default::
 
-        from scipy.ndimage.morphology import morphological_laplace
+        from scipy.ndimage import morphological_laplace
         
         function = lambda array: morphological_laplace(array, size=(3, 3))
 **Outputs**
@@ -40,12 +42,14 @@ Spatial morphological Laplace filter. See `Wikipedia <https://en.wikipedia.org/w
     	Acceptable values:
     		- Path to a raster layer
     function: Function
-    	Default value:	from scipy.ndimage.morphology import morphological_laplace
+    	Default value:	from scipy.ndimage import morphological_laplace
     
     function = lambda array: morphological_laplace(array, size=(3, 3))
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

@@ -67,6 +67,8 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     categoryField: Field with class values (optional)
     	Argument type:	field
     	Acceptable values:
@@ -77,12 +79,16 @@ If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     majorityVoting: Majority voting
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputClassificationDataset: Output dataset
     	Argument type:	fileDestination
     	Acceptable values:

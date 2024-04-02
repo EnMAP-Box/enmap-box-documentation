@@ -6,6 +6,8 @@ Predict regression layer
 
 Uses a fitted `regressor <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regressor>`_ to predict a `regression layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression-layer>`_ from a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_.
 
+.. include:: ../../processing_algorithms_includes/regression/predict_regression_layer.rst
+
 **Parameters**
 
 
@@ -50,6 +52,8 @@ Uses a fitted `regressor <https://enmap-box.readthedocs.io/en/latest/general/glo
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRegression: Output regression layer
     	Argument type:	rasterDestination
     	Acceptable values:

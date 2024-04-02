@@ -6,6 +6,8 @@ Select features from dataset
 
 Subset and/or reorder `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ in `feature <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_ data `X <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-x>`_.
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/select_features_from_dataset.rst
+
 **Parameters**
 
 
@@ -38,6 +40,8 @@ Subset and/or reorder `features <https://enmap-box.readthedocs.io/en/latest/gene
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputDatasetFeatureSubset: Output dataset
     	Argument type:	fileDestination
     	Acceptable values:

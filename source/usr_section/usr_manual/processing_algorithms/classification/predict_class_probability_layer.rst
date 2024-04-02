@@ -6,6 +6,8 @@ Predict class probability layer
 
 Uses a fitted `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_ to predict `class probability layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class-probability-layer>`_ from a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_.
 
+.. include:: ../../processing_algorithms_includes/classification/predict_class_probability_layer.rst
+
 **Parameters**
 
 
@@ -50,6 +52,8 @@ Uses a fitted `classifier <https://enmap-box.readthedocs.io/en/latest/general/gl
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputProbability: Output class probability layer
     	Argument type:	rasterDestination
     	Acceptable values:

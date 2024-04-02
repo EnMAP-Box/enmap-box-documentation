@@ -6,6 +6,8 @@ Fit FastICA
 
 FastICA: a fast algorithm for Independent Component Analysis.
 
+.. include:: ../../processing_algorithms_includes/transformation/fit_fastica.rst
+
 **Parameters**
 
 
@@ -18,7 +20,7 @@ FastICA: a fast algorithm for Independent Component Analysis.
         from sklearn.preprocessing import StandardScaler
         from sklearn.decomposition import FastICA
         
-        fastICA = FastICA(n_components=3)
+        fastICA = FastICA(n_components=3, whiten='unit-variance')
         transformer = make_pipeline(StandardScaler(), fastICA)
 
 :guilabel:`Raster layer with features` [raster]
@@ -53,11 +55,13 @@ FastICA: a fast algorithm for Independent Component Analysis.
     from sklearn.preprocessing import StandardScaler
     from sklearn.decomposition import FastICA
     
-    fastICA = FastICA(n_components=3)
+    fastICA = FastICA(n_components=3, whiten='unit-variance')
     transformer = make_pipeline(StandardScaler(), fastICA)
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     featureRaster: Raster layer with features (optional)
     	Argument type:	raster
     	Acceptable values:
@@ -67,6 +71,8 @@ FastICA: a fast algorithm for Independent Component Analysis.
     	Argument type:	number
     	Acceptable values:
     		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:

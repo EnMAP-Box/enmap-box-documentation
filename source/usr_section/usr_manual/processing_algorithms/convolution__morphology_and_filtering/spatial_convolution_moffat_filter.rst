@@ -7,6 +7,8 @@ Spatial convolution Moffat filter
 2D Moffat filter.
 This kernel is a typical model for a seeing limited PSF.
 
+.. include:: ../../processing_algorithms_includes/convolution__morphology_and_filtering/spatial_convolution_moffat_filter.rst
+
 **Parameters**
 
 
@@ -57,18 +59,24 @@ This kernel is a typical model for a seeing limited PSF.
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     normalize: Normalize kernel
     	Default value:	false
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     interpolate: Interpolate no data pixel
     	Default value:	true
     	Argument type:	boolean
     	Acceptable values:
     		- 1 for true/yes
     		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:

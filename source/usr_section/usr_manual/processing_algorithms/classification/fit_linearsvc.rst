@@ -8,6 +8,8 @@ Linear Support Vector `Classification <https://enmap-box.readthedocs.io/en/lates
 Similar to SVC with parameter kernel='linear', but implemented in terms of liblinear rather than libsvm, so it has more flexibility in the choice of penalties and loss functions and should scale better to large numbers of `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_. 
 This `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ supports both dense and sparse input and the multiclass support is handled according to a one-vs-the-rest scheme.
 
+.. include:: ../../processing_algorithms_includes/classification/fit_linearsvc.rst
+
 **Parameters**
 
 
@@ -21,7 +23,7 @@ This `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#te
         from sklearn.preprocessing import StandardScaler
         from sklearn.svm import LinearSVC
         
-        svc = LinearSVC()
+        svc = LinearSVC(dual=True)
         param_grid = {'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}
         tunedSVC = GridSearchCV(cv=3, estimator=svc, scoring='f1_macro', param_grid=param_grid)
         classifier = make_pipeline(StandardScaler(), tunedSVC)
@@ -49,13 +51,15 @@ This `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#te
     from sklearn.preprocessing import StandardScaler
     from sklearn.svm import LinearSVC
     
-    svc = LinearSVC()
+    svc = LinearSVC(dual=True)
     param_grid = {'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}
     tunedSVC = GridSearchCV(cv=3, estimator=svc, scoring='f1_macro', param_grid=param_grid)
     classifier = make_pipeline(StandardScaler(), tunedSVC)
     	Argument type:	string
     	Acceptable values:
     		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dataset: Training dataset (optional)
     	Argument type:	file
     	Acceptable values:
