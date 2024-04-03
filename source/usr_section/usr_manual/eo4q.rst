@@ -46,6 +46,23 @@ How to cite
     , Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci., XLVI-4/W2-2021, 155-158,
     https://doi.org/10.5194/isprs-archives-XLVI-4-W2-2021-155-2021, 2021.
 
+Used in scientific research
+    Marionei Fomaca de Sousa Junior, Leila Maria Garcia Fonseca and Hugo do Nascimento Bendini (2022)
+    `Estimation of Water Use in Center Pivot Irrigation Using Evapotranspiration Time Series Derived by Landsat: A Study Case in a Southeastern Region of the Brazilian Savanna
+    <https://www.mdpi.com/2072-4292/14/23/5929>`_
+
+    Philippe Rufin, Mayra Daniela Peña-Guerrero, Atabek Umirbekov, Yanbing Wei and Daniel Müller (2022)
+    `Post-Soviet changes in cropping practices in the irrigated drylands of the Aral Sea basin
+    <https://iopscience.iop.org/article/10.1088/1748-9326/ac8daa>`_
+
+    Philippe Rufin, Adia Bey, Michelle Picoli, Patrick Meyfroidt (2022)
+    `Large-area mapping of active cropland and short-term fallows in smallholder landscapes using PlanetScope data
+    <https://www.sciencedirect.com/science/article/pii/S1569843222001340>`_
+
+    `Agência Nacional de Águas. Atlas Irrigação: Uso Da Água Na Agricultura Irrigada
+    <https://www.ana.gov.br/atlasirrigacao/>`_
+    , 2nd ed.; Agência Nacional de Águas: Brasilia, Brazil (2021)
+
 Prerequisite
     The :guilabel:`GEE Time Series Exlorer` depends on the `QGIS Google Earth Engine plugin <https://plugins.qgis.org/plugins/ee_plugin/>`_ .
     In order to access Earth Engine, you must have an Google account that is authorized for Earth Engine.
