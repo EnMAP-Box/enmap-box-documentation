@@ -4,7 +4,9 @@ This repository contains the EnMAP-Box Documentation hosted in https://enmap-box
 
 
 # Requirements
-The packages in `requirements.txt` need to be installed.
+The packages in `requirements.txt` need to be installed:
+
+`pip install --upgrade --user -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box-documentation/main/requirements.txt`
 
 Maintenance scripts in `/scripts` may require additional packages from PyQGIS and the EnMAP-Box source code.
 They may require that:
