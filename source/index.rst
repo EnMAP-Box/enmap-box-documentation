@@ -25,7 +25,7 @@ Key features
 
 
 .. figure:: img/screenshot_main3.png
-   :align: center
+   :align: left
 
 
 Related websites
