@@ -1,6 +1,33 @@
 News
 ****
 
+13th EARSeL Workshop IS
+=======================
+
+The EnMAP-Box and some EnMAP-Box applications will be presented at the
+[13th EARSeL Workshop on Imaging Spectroscopy](https://is.earsel.org/workshop/13-IS-Valencia2024/)
+from 16.-18. April 2024 in València.
+
+Don't miss:
+
+- Wed 17.04. 16:00-17:15 (Session 2-11, ADAIT Room 1.1-1.2): *What's New in the EnMAP-Box? Visualization and Analysis of EnMAP Data for Everyone*
+- Wed 17.04. 10:30-12:00 (Session 2-4, ADAIT Assembly hall): *Towards Informed Default Parametrizations of Machine Learning Algorithms for Biophysical Variable Retrieval in the EnMAP-Box*
+- Thu 18.04. 12:00-13:00 (Poster Session, ADAIT Room 0.1): *Deep Learning based Semantic Segmentation for EnMAP-Box*
+
+
+FOSSGIS 2024 Hamburg
+====================
+
+On 23. March the EnMAP-Box was presented at [FOSSGIS 2024](https://fossgis-konferenz.de/2024/) in Hamburg, Germany.
+
+Here you find the abstract and video recording https://pretalx.com/fossgis2024/talk/RPUBQR/
+
+.. raw:: html
+
+   <div style="text-align: center;">
+   <iframe width="1024" height="576" src="https://media.ccc.de/v/fossgis2024-38966-jenseits-des-ndvi-hyperspektrale-fernerkundung-in-qgis-mit-der-enmap-box/oembed" frameborder="0" allowfullscreen></iframe>
+   </div>
+
 
 FOSSGIS 2023 Berlin
 ===================
