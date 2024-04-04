@@ -57,7 +57,7 @@ Used in scientific research
 
     Philippe Rufin, Adia Bey, Michelle Picoli, Patrick Meyfroidt (2022)
     `Large-area mapping of active cropland and short-term fallows in smallholder landscapes using PlanetScope data
-    <https://www.sciencedirect.com/science/article/pii/S1569843222001340>`_
+    <https://doi.org/10.1016/j.jag.2022.102937>`_
 
     `Agência Nacional de Águas. Atlas Irrigação: Uso Da Água Na Agricultura Irrigada
     <https://www.ana.gov.br/atlasirrigacao/>`_

@@ -55,8 +55,8 @@ BibTeX:
    pages = {101507},
    year = {2023},
    issn = {2352-7110},
-   doi = {https://doi.org/10.1016/j.softx.2023.101507},
-   url = {https://www.sciencedirect.com/science/article/pii/S2352711023002030},
+   doi = {10.1016/j.softx.2023.101507},
+   url = {https://doi.org/10.1016/j.softx.2023.101507},
    author = {Benjamin Jakimow and Andreas Janz and Fabian Thiel and Akpona Okujeni and Patrick Hostert and van der Linden, Sebastian}
    }
 
