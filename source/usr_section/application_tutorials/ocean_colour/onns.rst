@@ -66,8 +66,8 @@ References
 ----------
 
 .. [1] Hieronymi, M., D. Müller, and R. Doerffer (2017), The OLCI Neural Network Swarm (ONNS): A bio-geo-optical algorithm for open ocean and coastal waters, Frontiers in Marine Science, 4 (140). (https://www.frontiersin.org/articles/10.3389/fmars.2017.00140/full)
-.. [2] Hieronymi, M. (2019), Spectral band adaptation of ocean color sensors for applicability of the multi-water biogeo-optical algorithm ONNS, Optics Express, 27 (12), A707-A724. (https://www.osapublishing.org/oe/abstract.cfm?uri=oe-27-12-A707)
-.. [3] Steinmetz, F., P. Y. Deschamps, and D. Ramon (2011), Atmospheric correction in presence of sun glint: application to MERIS, Optics Express, 19(10), 9783-9800. (https://www.osapublishing.org/oe/abstract.cfm?uri=oe-19-10-9783)
+.. [2] Hieronymi, M. (2019), Spectral band adaptation of ocean color sensors for applicability of the multi-water biogeo-optical algorithm ONNS, Optics Express, 27 (12), A707-A724. (https://doi.org/10.1364/OE.27.00A707)
+.. [3] Steinmetz, F., P. Y. Deschamps, and D. Ramon (2011), Atmospheric correction in presence of sun glint: application to MERIS, Optics Express, 19(10), 9783-9800. (https://doi.org/10.1364/OE.19.009783)
 .. [4] Brockmann, C., R. Doerffer, M. Peters, K. Stelzer, S. Embacher, and A. Ruescas (2016), Evolution of the C2RCC neural network for Sentinel 2 and 3 for the retrieval of ocean colour products in normal and extreme optically complex waters, In Proc. Of the Living Planet Symposium, Vol. 740, p. 54. (https://www.brockmann-consult.de/wp-content/uploads/2017/11/sco1_12brockmann.pdf)
 
 |
