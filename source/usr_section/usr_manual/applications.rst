@@ -22,7 +22,7 @@ d) let's you easily draw a random sample.
 Usage
     1. Start the tool from the :guilabel:`Applications > Classification Dataset Manager` menu.
 
-    2. Use the tool for different usecases like:
+    2. Use the tool for different cases like:
 
         - create a dataset
 
@@ -448,7 +448,7 @@ Raster math
 
 The :guilabel:`Raster math` algorithm is a powerful raster calculator inspired by the :guilabel:`QGIS Raster calculator`,
 the :guilabel:`GDAL Raster calculator` and :guilabel:`ENVI Band Math`.
-In addition to those tools, the EnMAP-Box :guilabel:`Raster math` calculator supports multi-band arrays, vector layer inputs,
+In addition to those tools, the EnMAP-Box :guilabel:`Raster math` supports multi-band arrays, vector layer inputs,
 multi-line code fragments and metadata handling.
 
 Usage
@@ -457,7 +457,7 @@ Usage
 
     2. Specify a single-line expression or a multi-line code fragment to be evaluated inside the :guilabel:`Code` editor.
 
-       Therefor select raster bands or numeric vector fields from the :guilabel:`Available data sources` tab.
+       Therefore, select raster bands or numeric vector fields from the :guilabel:`Available data sources` tab.
 
     3. [Optional] Select the destination :guilabel:`Grid`. If not specified, the grid of the first raster layer is used.
        Note that a) all input raster bands are resampled and b) all input vector fields are rasterized
@@ -550,7 +550,7 @@ and the ``<layer name>Mask@<band number>`` syntax for a 2d single band mask.
         :height: 400
         :align: center
 
-A vector mask, is a predefined boolean array, which evaluates to `True` for every pixel covered by a geometry.
+A vector mask is a predefined boolean array, which evaluates to `True` for every pixel covered by a geometry.
 All other pixel evaluate to `False`.
 Use the ``<layer name>`` syntax to access the 2d binary mask.
 
@@ -694,7 +694,7 @@ You have full access to the underlying raster metadata like:
 In general, all the methods provided by the **RasterReader** class can be used:
 https://github.com/EnMAP-Box/enmap-box/blob/main/enmapboxprocessing/rasterreader.py
 
-For outputs you can use all the methods provided by the **RasterWriter** class:
+For the outputs, you can use all the methods provided by the **RasterWriter** class:
 https://github.com/EnMAP-Box/enmap-box/blob/main/enmapboxprocessing/rasterwriter.py
 
 Also note the shortcuts inside the :guilabel:`Available data sources` tab context menu
@@ -741,8 +741,8 @@ Example - copy raster data and metadata
 Input raster lists
 ------------------
 
-For some operations, we may need to input an arbitrary large list of rasters.
-Use the :guilabel:`Raster layers mapped to RS` in this case.
+For some operations it may be necessary to enter an arbitrary large list of rasters.
+In this case, use the :guilabel:`Raster layers mapped to RS`.
 
 Example - average a list of rasters
     ``np.mean(RS, axis=0)``
