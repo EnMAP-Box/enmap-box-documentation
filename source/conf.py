@@ -38,7 +38,7 @@ extensions = [
     # 'sphinxcontrib.mockautodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
-    #'sphinx.ext.autosectionlabel',
+    # 'sphinx.ext.autosectionlabel',
     'sphinxnotes.strike',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
@@ -49,9 +49,12 @@ extensions = [
     'sphinx_copybutton',
 ]
 
-#suppress Duplicate Label Warnings for headings
+
+# suppress Duplicate Label Warnings for headings
 
 def filter_warning_log(app, exception):
+    if not isinstance(exception, Exception):
+        return
     warning_log = exception._warning_log
     # Iterate through the warning log and remove warnings related to labels
     exception._warning_log = [
@@ -62,6 +65,7 @@ def filter_warning_log(app, exception):
             # Add more label-related categories if needed
         ])
     ]
+
 
 # Register the filter_warning_log function to be called when warnings are logged
 def setup(app):
@@ -83,7 +87,6 @@ source_suffix = ['.rst', '.md']
 
 # The master toctree document.
 master_doc = 'index'
-
 
 # config = configparser.ConfigParser()
 # config.read(REPO_ROOT / '.plugin.ini')
