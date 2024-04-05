@@ -4,10 +4,10 @@ Usage:
 
 2. Select a raster layer, then click :guilabel:`run`.
 
-    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/auxilliary/img/cube_interface.png
+    .. figure:: ../../processing_algorithms_includes/auxilliary/img/cube_interface.png
        :align: center
 
 3. The resulting cube side and face can be found under :guilabel:`Data Sources`
 
-    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/auxilliary/img/cube_result.png
+    .. figure:: ../../processing_algorithms_includes/auxilliary/img/cube_result.png
        :align: center

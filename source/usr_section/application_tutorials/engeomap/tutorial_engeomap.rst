@@ -21,7 +21,7 @@ EnGeoMAP has been primarily designed for EnMAP data, yet it works for most full-
 
 
 1.   Data Preparation and Requirements
--------------------------------------
+-----------------------------------------------
 
 =====================================
 *Hyperspectral Data:*

@@ -4,5 +4,5 @@ Usage:
 
 2. Select a raster layer to process and a transformer. Then click :guilabel:`run`.
 
-    .. figure:: ./img/transform.png
+    .. figure:: ../../processing_algorithms_includes/transformation/img/transform.png
        :align: center

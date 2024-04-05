@@ -4,5 +4,5 @@ Usage:
 
 2. Select a raster layer to process and click :guilabel:`run`.
 
-    .. figure:: ./img/maxabs.png
+    .. figure:: ../../processing_algorithms_includes/transformation/img/maxabs.png
        :align: center

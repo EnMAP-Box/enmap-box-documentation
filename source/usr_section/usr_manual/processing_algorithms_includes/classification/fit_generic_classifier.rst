@@ -6,6 +6,6 @@ Usage:
 
 2. Modify the classifier, select a training dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/classification/img/fitgeneric_interface.png
+    .. figure:: ../../processing_algorithms_includes/classification/img/fitgeneric_interface.png
        :align: center
 

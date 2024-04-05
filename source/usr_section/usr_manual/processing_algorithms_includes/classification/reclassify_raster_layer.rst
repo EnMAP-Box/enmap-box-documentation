@@ -8,6 +8,6 @@ Usage:
 
 4. Optionally you can define class names and visualisation under :guilabel:`Categories` as seen in the example below. Then, click :guilabel:`run`.
 
-    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/classification/img/reclassify_interface.png
+    .. figure:: ../../processing_algorithms_includes/classification/img/reclassify_interface.png
        :align: center
 

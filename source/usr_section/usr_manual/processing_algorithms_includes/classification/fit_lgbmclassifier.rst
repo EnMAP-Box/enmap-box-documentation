@@ -4,6 +4,6 @@ Usage:
 
 2. Select a training dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: source/usr_section/usr_manual/processing_algorithms_includes/classification/img/fitLGBM_interface.png
+    .. figure:: ../../processing_algorithms_includes/classification/img/fitLGBM_interface.png
        :align: center
 

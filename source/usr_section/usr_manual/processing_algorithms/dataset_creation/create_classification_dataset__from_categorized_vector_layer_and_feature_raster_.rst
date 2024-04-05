@@ -7,6 +7,8 @@ Create classification dataset (from categorized vector layer and feature raster)
 Create a `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ by sampling data for pixels that match the given `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
 If the `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_ is not categorized, or the `field <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ with `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ values is selected manually, categories are derived from the sampled `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ data `y <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-y>`_. To be more precise: i) `category <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-category>`_ values are derived from unique `attribute values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-attribute-value>`_ (after excluding no data or zero data values), ii) category names are set equal to the category values, and iii) category `colors <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-color>`_ are picked randomly.
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/create_classification_dataset__from_categorized_vector_layer_and_feature_raster_.rst
+
 **Parameters**
 
 

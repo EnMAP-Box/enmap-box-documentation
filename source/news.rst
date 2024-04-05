@@ -69,7 +69,7 @@ is the recording of the presentation:
 |
 
 EnMAP-Box Version 3.11 released
-==============================
+===============================
 
 Oct. 10, 2022
 
@@ -78,7 +78,7 @@ A list of all improvements can be found in the `changelog <https://github.com/En
 
 
 EnMAP-Box Version 3.10 released
-==============================
+===============================
 
 June 09, 2022
 
