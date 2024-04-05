@@ -89,7 +89,7 @@ master_doc = 'index'
 # config.read(REPO_ROOT / '.plugin.ini')
 
 # The full version, including alpha/beta/rc tags.
-release = '3.10.3.20220824T155109'
+release = '3.14'
 
 # The short X.Y version.
 version = u'{}'.format(re.search(r'(\.?[^.]*){2}', release).group())
@@ -157,7 +157,7 @@ html_theme_options = {
     'titles_only': False
 }
 
-html_logo = 'img/EnMAP-Box_logo_black_text.svg'
+html_logo = 'img/logos/logo_enmapbox.svg'
 html_favicon = 'img/icon.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
