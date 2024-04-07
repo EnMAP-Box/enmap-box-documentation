@@ -25,8 +25,8 @@ Key features
 
 
 .. figure:: img/screenshot_main3.png
-   :align: left
 
+   The graphical user interface of the EnMAP-Box
 
 Related websites
 ****************
@@ -37,6 +37,7 @@ Related websites
 
 
 .. show NEWS section
+
 .. include:: news.rst
 
 |

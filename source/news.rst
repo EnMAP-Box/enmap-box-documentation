@@ -4,9 +4,11 @@ News
 13th EARSeL Workshop on Imaging Spectroscopy
 ============================================
 
+ .. image:: /img/events/earsel2024_valencia.png
+
 April 2024
 
-The EnMAP-Box and some EnMAP-Box applications will be presented at the
+The EnMAP-Box will be presented at the
 `13th EARSeL Workshop on Imaging Spectroscopy <https://is.earsel.org/workshop/13-IS-Valencia2024/>`_
 from 16.-18. April 2024 in València.
 
@@ -16,6 +18,7 @@ Don't miss:
 * *Towards Informed Default Parametrizations of Machine Learning Algorithms for Biophysical Variable Retrieval in the EnMAP-Box* (Wed 17.04. 10:30-12:00, Session 2-4, ADAIT Assembly hall)
 * *Deep Learning based Semantic Segmentation for EnMAP-Box* (Thu 18.04. 12:00-13:00, Poster Session, ADAIT Room 0.1)
 
+* *EnMAP-Box Tutorial* https://is.earsel.org/workshop/13-IS-Valencia2024/enmap-box/ (Fri 19.04. Image Processing Laboratory (IPL) of the University of Valencia)
 
 FOSSGIS 2024 Hamburg
 ====================
@@ -97,15 +100,13 @@ A list of all improvements can be found in the `changelog <https://github.com/En
 EnMAP-Box Workshop 2021
 =======================
 
+.. figure:: img/events/workshop2021.banner.png
+
 June 07, 2021
 
 The next EnMAP-Box workshop will be held online on 21-23 June, 2021.
 The workshop aims to demonstrate the current state of the EnMAP-Box by way of presentations, live demos with Q&A and self-paced tutorials.
 Registration for up to 250 participants is now open at the `workshop website <https://bitbucket.org/hu-geomatics/enmap-box/wiki/events/Workshop_2021>`_.
-
-
-.. figure:: img/events/workshop2021.banner.png
-    :align: left
 
 
 FOSSGIS 2021 Rapperswil
