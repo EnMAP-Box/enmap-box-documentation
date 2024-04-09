@@ -121,6 +121,9 @@ Work with a Spectral Library
 ****************************
 The following shows how to edit and export a spectral library
 
+Instead of the *EnMAP Spectral Response* library from the EnMAP-Box example data you can also download the
+:download:`speclib_potsdam.gpkg <speclib_potsdam.zip>` Library.
+
 Basic Visualization Steps
 ===========================
 
