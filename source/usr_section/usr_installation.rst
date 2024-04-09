@@ -146,8 +146,14 @@ Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownload
 
       import sys; sys.executable
 
-   It shows the path of the python executable QGIS is using, usually ``/usr/bin/python3``. It should be the same path as
-   the command ``which python3`` executed in the Terminal returns! Close QGIS.
+   It shows the path of the python executable that QGIS is using, usually it is ``/usr/bin/python3``.
+   We need to ensure that additional python packages get installed into the same python environment.
+   This is the case if the command ``which python3`` returns the path of the python executable
+   shown in QGIS!
+
+   If not, please use the full path, e.g. ``/usr/bin/python3`` instead of ``python3`` in the following steps.
+
+   Close QGIS.
 
 #. Create a `virtual python environment <https://docs.python.org/3/library/venv.html>`_ in a directory of your choice (e.g. ``~/.virtualenvs/enmapbox``):
 
