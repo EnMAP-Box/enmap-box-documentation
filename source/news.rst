@@ -1,9 +1,59 @@
 News
 ****
 
+13th EARSeL Workshop on Imaging Spectroscopy
+============================================
+
+ .. image:: /img/events/earsel2024_valencia.png
+
+April 2024
+
+The EnMAP-Box will be presented at the
+`13th EARSeL Workshop on Imaging Spectroscopy <https://is.earsel.org/workshop/13-IS-Valencia2024/>`_
+from 16.-18. April 2024 in València.
+
+Don't miss:
+
+* *What's New in the EnMAP-Box? Visualization and Analysis of EnMAP Data for Everyone* (Wed 17.04. 16:00-17:15, Session 2-11, ADAIT Room 1.1-1.2)
+* *Towards Informed Default Parametrizations of Machine Learning Algorithms for Biophysical Variable Retrieval in the EnMAP-Box* (Wed 17.04. 10:30-12:00, Session 2-4, ADAIT Assembly hall)
+* *Deep Learning based Semantic Segmentation for EnMAP-Box* (Thu 18.04. 12:00-13:00, Poster Session, ADAIT Room 0.1)
+
+* *EnMAP-Box Tutorial* https://is.earsel.org/workshop/13-IS-Valencia2024/enmap-box/ (Fri 19.04. Image Processing Laboratory (IPL) of the University of Valencia)
+
+FOSSGIS 2024 Hamburg
+====================
+
+March 2024
+
+On 23. March the EnMAP-Box was presented at `FOSSGIS 2024 <https://fossgis-konferenz.de/2024/>`_ in Hamburg, Germany: https://pretalx.com/fossgis2024/talk/RPUBQR/
+
+.. raw:: html
+
+   <div style="text-align: left;">
+   <video width="100%" height="430" controls> <source src="https://cdn.media.ccc.de/events/fossgis/2024/webm-hd/fossgis2024-38966-deu-Jenseits_des_NDVI_Hyperspektrale_Fernerkundung_in_QGIS_mit_der_EnMAP-Box_webm-hd.webm" type="video/webm"></video>
+   </div>
+
+QGIS UC 2024 and QGIS Open Day
+==============================
+
+May 2023
+
+Following the QGIS User and Developer Meeting 2023 in s'Hertogenbosh, Netherlands (https://uc2023.qgis.nl/),
+`Kartoza <https://kartoza.com/>` asked us if we can repeat our presentation on *Imaging spectroscopy data in QGIS: Challenges and Opportunities* for the
+the QGIS Open Day. Here is the recording:
+
+.. raw:: html
+
+   <div style="text-align: left;">
+    <iframe width="100%" height="430" src="https://www.youtube.com/embed/aQyhIpKu1pg?si=IBIEzyRqJa3_BqmL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   </div>
+
+
 
 FOSSGIS 2023 Berlin
 ===================
+
+March 2023
 
 The EnMAP-Box will be present at the FOSSGIS with a demosession:
 *Visualisierung und Analyse von Satellitenbildern mit der EnMAP-Box* (https://pretalx.com/fossgis2023/talk/9WAMJ9/)
@@ -15,7 +65,7 @@ is the recording of the presentation:
 
 .. raw:: html
 
-   <div style="text-align: center;">
+   <div style="text-align: left;">
    <video width="100%" height="430" controls> <source src="https://cdn.media.ccc.de/events/fossgis/2023/webm-hd/fossgis2023-24078-deu-Visualisierung_und_Analyse_von_Satellitenbildern_mit_der_EnMAP-Box_webm-hd.webm" type="video/webm"></video>
    </div>
 
@@ -50,6 +100,8 @@ A list of all improvements can be found in the `changelog <https://github.com/En
 EnMAP-Box Workshop 2021
 =======================
 
+.. figure:: img/events/workshop2021.banner.png
+
 June 07, 2021
 
 The next EnMAP-Box workshop will be held online on 21-23 June, 2021.
@@ -57,11 +109,8 @@ The workshop aims to demonstrate the current state of the EnMAP-Box by way of pr
 Registration for up to 250 participants is now open at the `workshop website <https://bitbucket.org/hu-geomatics/enmap-box/wiki/events/Workshop_2021>`_.
 
 
-.. figure:: img/events/workshop2021.banner.png
-    :align: center
-
-FOSSGIS 2021
-============
+FOSSGIS 2021 Rapperswil
+=======================
 
 June 09, 2021
 
@@ -69,7 +118,7 @@ Benjamin Jakimow presented how to use Spectral Libraries in QGIS using the EnMAP
 
 .. raw:: html
 
-   <div style="text-align: center;">
+   <div style="text-align: left;">
    <video width="100%" height="430" controls> <source src="https://mirror.selfnet.de/CCC//events/fossgis/2021/h264-hd/fossgis2021-8945-deu-Von_Pixeln_und_Profilen_Die_Nutzung_von_Spektralbibliotheken_in_QGIS_mit_der_EnMAP-Box_hd.mp4" type="video/mp4"></video>
    </div>
 
@@ -92,7 +141,7 @@ Andreas Rabe presented the EnMAP-Box at the FOSSGIS 2020 in Freiburg. See the fu
 
 .. raw:: html
 
-   <div style="text-align: center;">
+   <div style="text-align: left;">
    <iframe width="100%" height="430" src="https://www.youtube.com/embed/egaJLUe_eXY" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </div>
 
