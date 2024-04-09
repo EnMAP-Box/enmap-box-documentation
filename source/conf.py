@@ -235,6 +235,8 @@ man_pages = [
      [author], 1)
 ]
 
+numfig = True
+numfig_secnum_depth = 2
 # -- Options for Texinfo output -------------------------------------------
 
 # Grouping the document tree into Texinfo files. List of tuples
@@ -247,7 +249,7 @@ texinfo_documents = [
 ]
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {'python': ('https://docs.python.org/', None)}
 
 # adding this because in pycookbook a lot of text is referencing classes,
 # which cannot be found by sphinx

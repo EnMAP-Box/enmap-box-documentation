@@ -120,7 +120,7 @@ Exercise A: Getting started with the EnMAP-Box
 .. image:: img/ex_a_agb_tutorial_figure_1.png
    :width: 100%
 
-2. Load data
+2. Load data00
 ============
 
 * To load new datasets into the EnMAP-Box, click the |mActionDataSourceManager| icon and navigate to the file directory
