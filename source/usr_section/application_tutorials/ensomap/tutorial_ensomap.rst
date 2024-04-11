@@ -9,9 +9,10 @@ Requirements
 -------------
 Software  
 """""""""
-This tutorial requires some software to be installed on your machine:
+This tutorial requires some software to be installed on your machine:    
+
     - QGIS_ and the EnMAP-Box_
-    - EnSoMAP
+    - EnSoMAP 
 
 .. _QGIS: https://www.qgis.org/de/site/
 .. _EnMAP-Box: https://www.enmap.org/data_tools/enmapbox/
@@ -22,7 +23,7 @@ You can download a subset of HyMap airborne imagery `here <Link>`_,  which can b
 
 The data was acquired over agricultural areas in the Cabo de Gata-Níjar Natural Park, a semi-arid Mediterranean area in southern Spain. The region is only sparsely populated and offers a range of landscape patterns, from Mediterranean steppe, dunes, and salt mines to cliffs. The vegetation cover experienced a decline, followed by a recovery of climax types like Stipa and Palmito in the past 50 years. Today, the area is mainly used for agricultural practices, mining, tourist activities as well as a few built-up areas. The soils developed on volcanic and carbonatic bedrocks are highly variable in their textural and mineralogical composition, thus we can observe an interesting spectral variability.
 
-.. image:: img/fig1.png
+.. image:: img/fig1.jpg
     :width: 400px
 .. image:: img/fig2.png
     :width: 400px
@@ -40,7 +41,7 @@ Open QGIS and start the EnMAP-Box by clicking on the EnMAP-Box icon. Then, look 
 
 Unfold the respective entry in the **Data sources** panel to explore some metadata of the image. The image contains 126 bands and 828 x 829 pixels with a spatial resolution of 5m. 
 
-To display the scene: right click on the raster layer in the **Data sources** panel, select :menuselection:`open in new map` and chose one of the display options. The EnMAP-Box offers a range of pre-configured visualization options, but you can also define your own combination of bands. You may need to improve the contrast of the image for example through the mean standard deviation option. This can be done by right-clicking on :menuselection: `Layer properties > Symbology > Min/Max > mean standard deviation`.
+To display the scene: right click on the raster layer in the **Data sources** panel, select :menuselection:`open in new map` and chose one of the display options. The EnMAP-Box offers a range of pre-configured visualization options, but you can also define your own combination of bands. You may need to improve the contrast of the image for example through the mean standard deviation option. This can be done in the **Data view** panel by right-clicking on :menuselection:`Layer properties > Symbology > Min/Max > mean standard deviation`.
 
 .. image:: img/fig5.png
     :width: 800px
@@ -56,10 +57,13 @@ As sensors operating in the optical domain can only sense the surface and our al
 
 We will use robust narrow-band spectral indices to rule out several typical ground cover types such as water, green and dry vegetation as you probably have no inside information about the situation in the area there. 
 
-Start EnSoMAP under :menuselection:`Applications > Soil Applications > EnSoMAP 2.0`. In the window that pops up, select the **Masking tab**, chose the hyperspectral input file and set the output directory. To generate a soil dominated mask file select all three indices:
+Start EnSoMAP under :menuselection:`Applications > Soil Applications > EnSoMAP 2.0`. In the window that pops up, select the **Masking tab**, chose the hyperspectral input file and set the output directory. To generate a soil dominated mask file select all three indices:    
+
     - The **NDRBI** (Normalized Difference Red Blue Index) identifies water
     - The **NDVI** (Normalized Difference Vegetation Index) reacts to green photosynthetic vegetation
     - The **nCAI** (normalized Cellulose Absorption Index) is sensitive to dry non-photosynthetic vegetation (NPV) cover such as crop residues
+
+Click **Run** to calculate the soil masks.
 
 .. image:: img/fig7.png
     :width: 800px
@@ -79,7 +83,7 @@ Well, as surface cover types change gradually in a landscape, it is difficult to
 
 Calculate soil properties and visualize soil maps
 --------------------------------------------------
-Select the tab **Mapping** in the EnSoMAP 2.0 window. Chose the hyperspectral input file, set the soil dominant mask and the output directory. 
+Select the tab **Mapping** in the EnSoMAP 2.0 window. Chose the hyperspectral input file, set the soil dominant mask :file:`*_soildom_mask.dat` and the output directory. 
 
 The goal is to derive clay and iron soil maps. Therefore, select all algorithms available for these properties.  As we only have ground reference information for clay and iron soil to validate our results in the end, we did not calculate other soil properties. Click on **Run** to launch the process. 
 
@@ -104,22 +108,23 @@ In this chapter we will extract predicted soil properties values from the calibr
 
 Select the tab **Calibrate** in the EnSoMAP window. As input select one of the semi-quantitative soil product files derived in the previous step, for example the file ending with :file:`clay_SWIRFI.dat`. Then set the output directory. 
 
-There are different options to calibrate a linear regression between the index values and the measured soil property. The Gain and Offset parameters can be…
+There are different options to calibrate a linear regression between the index values and the measured soil property. The Gain and Offset parameters can be…    
+
     - … entered directly, if known
     - … estimated from image data and reference field data
     - … estimated from a soil spectral library in ENVI format and a parameter file in ASCII format
 
-In our case we have reference data available. Therefore, chose the second option (Estimated from image data) and blick in “Load” to import a CSV file that was provided for download. For clay this is :file:`Spain_clay_csv`. 
+In our case we have reference data available. Therefore, chose the second option (Estimated from image data) and click on :menuselection:`Load` to import a CSV file that was provided for download. For clay this is :file:`Spain_clay_csv`. 
 
 .. image:: img/fig10.png
     :width: 800px
 
-The clay content data are texture information, and the iron content data are iron oxides (obtained by the dithionite extraction method). Both in-situ datasets are in percent. The first four columns of this file must indicate sample name, latitude, longitude and soil property. The geographical coordinate system must match that of the image. In this case, select semicolon as delimiter and start from row one to exclude the header. Check the table in the **Data preview**. 
+The clay content data are texture information, and the iron content data are iron oxides (obtained by the dithionite extraction method). Both in-situ datasets are in percent. The first four columns of this file must indicate sample name, latitude, longitude and soil property. The geographical coordinate system must match that of the image. In this case, select semicolon as delimiter and start from row one to exclude the header. Check the table in the **Data preview**. Then click on **OK**.
 
 .. image:: img/fig11.png
     :width: 400px
 
-To calculate the Gain and Offset click on :menuselection:`estimate`. This will open a Scatter Plot where you click on :menuselection`Select and Close`. In the EnSoMAP window click **Run** to create a quantitative map.
+To calculate the Gain and Offset click on :menuselection:`Estimate`. This will open a Scatter Plot where you click on :menuselection:`Select and Close`. In the EnSoMAP window click **Run** to create a quantitative map.
 
 Visualize the SWIRFI map from the previous step and the newly derived SWIRFI_calibrated quantitative clay map. Use the same color palette as before. After the calibration with reference data, the pixel values now represent absolute values, and the units correspond to those in the reference data table which is in percent for both clay and iron. 
 
