@@ -186,47 +186,54 @@ Create a Spectral Library
 ***********************************
 This introduction shows you how to create a spectral library by your own.
 
-Change the RGB Composite
+Load the Data
 ============================
-* Open the :file:`aerial_potsdam.tif`, by drag and drop. It will automatically be displayed in a new map window.
-* To open the **Layer Properties**, click on the raster file in the **Data Views** panel with your right mousekey.
-* Under **Symbology** you can change the RGB composite. Display :file:`aerial_potsdam.tif` as an RGB composite of your choice.
-
-* For this example the following settings are used:
-
-    .. csv-table::
-       :delim: ;
-       :widths: auto
-
-        Red band; Band 4: Near-infrared
-        Green band; Band 3: Red
-        Blue band; Band 2: Green
+* Open :file:`aerial_potsdam.tif` and :file:`enmap_potsdam.tif`, by drag and drop. It will automatically be displayed in a new map window.
+* Make sure, that the :file:`aerial_potsdam.tif` is over the :file:`enmap_potsdam.tif`.
 
 Add Profiles to a Spectral Library
 ====================================
 
-* Zoom into the tif and make yourself familiar with the image.
-* In this introduction 5 points for each of the following classes will be collected:
+* Zoom into the images and make yourself familiar with them.
+* In this introduction points for each of the following classes will be collected:
 
-  * Vegetation
   * Concrete
+  * Cropland
+  * Vegetation
   * Water
 
 ..
 * Search for areas with that kind of surface coverage.
-* Next, click on |select_location| then on |profile|. When you choose a point in the image, a spectral library window will open and show you the spectral profiles of that point.
-* By clicking on |plus_green_icon| you can save that point with its spectral information into your spectral library.
-* For a clearer organization you can add columns to add information.
+* Next, click on |select_location| then on |profile|. When you click on a point in the image, a **spectral library window** will open and show you the spectral profiles of that point. Simultaneously the **Spectral Profile Source Panel** opens on the right.
 
-    .. figure:: img/09_add_profiles.gif
+
+    .. figure:: img/open_at_spsp.gif
+
+
+* The plan is to collect profiles from the EnMap image. The aerial image will be used to make the classification easier.
+* Right click on the image, then on **Crosshair**, **Pixel Grid** and select :file:`enmap_potsdam`.
+* Now you can see the pixel size of the EnMap image underneath.
+
+    .. figure:: img/crosshair.gif
+
+* In order to collect the pixels from the EnMap image, let's take a quick look at the **Spectral Profile Source Panel**. Additional functions will be explained in the following section "Spectral Profile Source Panel".
+* Select :file:`enmap_potsdam` from profiles, to collect the profiles of the EnMap image.
+
+    .. figure:: img/spec_prof_to_enmap.gif
+
+* By clicking on |plus_green_icon| you can save a point with its spectral information into your spectral library.
+* For a clearer organization you can add columns |mActionNewAttribute| to add information. Insert a column name and select a type (e.g. integer or string).
+
+    .. figure:: img/add_profiles.gif
 
         Collecting and describing spectral profiles from image data.
 
 * With |profile_add_auto| the spectral profiles can be collected automatically.
 
-    .. figure:: img/10_add_profiles_automatically_aerial_potsdam.gif
+    .. figure:: img/add_profiles_automatically.gif
 
         Automatic profile collection.
+
 
 Spectral Profile Source Panel
 =============================
@@ -244,9 +251,9 @@ Spectral Profile Source Panel
 
 ..
 
-Let us first focus on defining how spectral profiles are collected:
+First, let's focus on the definition of how spectral profiles are collected:
 
-.. image:: img/spec_prof_pan_prof.gif
+    .. image:: img/spec_prof_pan_prof.gif
 
 * **Profiles** specifies how the profiles are stored in the Profiles field in the spectral library attribute table.
 * You can specify the raster source from which the profile is sampled. Choose :file:`enmap_potsdam`.
@@ -270,13 +277,16 @@ Now let's look at how other vector attributes are created:
 
     .. image:: img/Expression_Builder.png
 
+
+
+
 Change the Colours of the Spectra
 =================================
 
-* After collecting the points you can organize them by color, for a better separation.
+* You can organize the points by color, for a better separation.
 * Go to the **Layer Properties** of your spectral library in the **Data Views** panel. With **Symbology** you can set the colors.
 
-    .. figure:: img/11_symbology_colors.png
+    .. figure:: img/colors_symbology.gif
 
         The vector layer symbology panel defines the feature symbols...
 
@@ -284,16 +294,19 @@ Change the Colours of the Spectra
 * You can change the colors by double-clicking on the color you want to change.
 * Press **OK**. Now your spectra have different colors and your graph is more clear.
 
-    .. figure:: img/12_spec_lib_new_colors.png
+    .. figure:: img/graph_col.png
 
         ... whose colors can be used as profile color.
 
+* It is also possible to change the style of all spectra in the **Spectral Library Window** based on their profile source. This is useful when collecting profiles from different sources and wanting to differentiate them.
+
+    .. figure:: img/color_change_speclib.gif
 
 Export the Spectral Library and its Style
 ==========================================
 
 * Export the spectral library |speclib_save| as *.gpkg and choose a file path and name.
-* The style can be saved at symbology. Click on **Style**, then on **Save Style**. Select the file path and save the style.
+* The style can be saved at symbology. Click on **Style**, then on **Save Style**. Select the file path and save the style as *.qml file.
 
     .. figure:: img/13_save_style.gif
 
