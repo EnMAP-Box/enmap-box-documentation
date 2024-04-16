@@ -32,7 +32,7 @@ For this introduction the Example Data of the EnMap-Box will be used.
 
 * To load the Example Data, click on **Project** in the menu, then **Add Example Data**.
 * If you never worked with the Example Data before, a window will appear and you have to download the test data to your explorer.
-* After clicking **yes** you can save the data.
+* After clicking **yes** the example data will be saved.
 
     .. figure:: img/02_add_expldt.gif
 
@@ -84,7 +84,7 @@ Raster Layer
 ------------
 
 * To import a **Raster Layer**, drag and drop your raster file into a new map window.
-* Now, when you open the **Import Spectral Profiles** window and choose **Raster Layer**, the Raster File will automatically appear in the **Options**. If several Raster Layers are open, you can select one.
+* When you open the **Import Spectral Profiles** window and select **Raster Layer**, the Raster File will automatically appear in the **Options**. If multiple Raster Layers are open, you can choose one.
 * To import the columns of your choice, click on |mSourceFields| and select the columns.
 * Click **OK**
 
@@ -100,11 +100,11 @@ Field Calculator
 
         Any vector layer can be opened in a Spectral Library View and edited with the QGIS Field Calculator.
 
-* Open the Field Calculator and make the following settings to link the points to spectral profiles:
+* To link the points to spectral profiles, follow these steps in the Field Calculator:
 
 ..
 
-    * Create a new field
+    * Tick **Create a new field**
     * Set an output field name
     * Output field type: Text(string)
     * In the expression field write the command: raster_profile('enmap_potsdam') to connect the points to the spectral information.
@@ -124,6 +124,8 @@ The following shows how to edit and export a spectral library
 Instead of the *EnMAP Spectral Response* library from the EnMAP-Box example data you can also download the
 :download:`speclib_potsdam.gpkg <speclib_potsdam.zip>` Library.
 
+This zip file contains the :file:`speclib_potsdam.gpkg` and :file:`speclib_potsdam.qml` files, as well as the :file:`speclib_potsdam_style.qml` file that stores the style of the spectral library.
+
 Basic Visualization Steps
 ===========================
 
@@ -131,9 +133,9 @@ Basic Visualization Steps
 
     .. figure:: img/04_spec_lib_window_explained.png
 
-        Overview Spectral Library Viewer
+        Overview Spectral Library Viewer.
 
-* There are various functions in the **toolbar** that can be used to create, edit them and export a spectral library.
+* There are various functions in the **toolbar** that can be used to create, edit and export a spectral library.
 * The **spectral profiles window** shows the spectral profiles of the points, that are collected in the spectral library.
 * The **attribute table** shows information for the different profiles.
 
@@ -173,14 +175,7 @@ Export the Spectral Library
         Dialog to export spectral profiles into other formats.
 
 * Choose between Geopackage, GeoJSON or ENVI spectral library.
-
-    * Geopackage:
-    * GeoJSON:
-    * ENVI spectral library:
-
-..
 * Choose a file name and path and click **OK**
-
 
 Create a Spectral Library
 ***********************************
@@ -209,17 +204,23 @@ Add Profiles to a Spectral Library
 
     .. figure:: img/open_at_spsp.gif
 
+         Start collecting profiles and open Spectral Profile Source Panel.
 
-* The plan is to collect profiles from the EnMap image. The aerial image will be used to make the classification easier.
-* Right click on the image, then on **Crosshair**, **Pixel Grid** and select :file:`enmap_potsdam`.
+
+* Profiles will be collected from the EnMap image. The aerial image will be used to make the classification easier.
+* Right click on the images, then click on **Crosshair**, **Pixel Grid** and select :file:`enmap_potsdam`.
 * Now you can see the pixel size of the EnMap image underneath.
 
     .. figure:: img/crosshair.gif
+
+         Set Crosshair.
 
 * In order to collect the pixels from the EnMap image, let's take a quick look at the **Spectral Profile Source Panel**. Additional functions will be explained in the following section "Spectral Profile Source Panel".
 * Select :file:`enmap_potsdam` from profiles, to collect the profiles of the EnMap image.
 
     .. figure:: img/spec_prof_to_enmap.gif
+
+       Select raster layer from which the profiles are collected.
 
 * By clicking on |plus_green_icon| you can save a point with its spectral information into your spectral library.
 * For a clearer organization you can add columns |mActionNewAttribute| to add information. Insert a column name and select a type (e.g. integer or string).
@@ -266,7 +267,7 @@ First, let's focus on the definition of how spectral profiles are collected:
 
 * **Sample** can be used to define how the profiles are sampled around the mouse coordinate.
 
-Now let's look at how other vector attributes are created:
+Now let's have a look at how other vector attributes are created:
 
 * Make sure the first row is checked. Then you can write an expression for one of the columns in your spetral library.
 
@@ -276,7 +277,6 @@ Now let's look at how other vector attributes are created:
 * With the **Expression Builder** you can design a field expression:
 
     .. image:: img/Expression_Builder.png
-
 
 
 
@@ -290,9 +290,9 @@ Change the Colours of the Spectra
 
         The vector layer symbology panel defines the feature symbols...
 
-* Choose **Categorized**, for **Value**, select the column according to which the classes are to be differentiated. Press **Classify**.
+* Choose **Categorized**, for **Value**, select the column according to which the classes are to be differentiated. Click **Classify**.
 * You can change the colors by double-clicking on the color you want to change.
-* Press **OK**. Now your spectra have different colors and your graph is more clear.
+* Click **OK**. Now your spectra have different colors and your graph is more clear.
 
     .. figure:: img/graph_col.png
 
@@ -301,6 +301,8 @@ Change the Colours of the Spectra
 * It is also possible to change the style of all spectra in the **Spectral Library Window** based on their profile source. This is useful when collecting profiles from different sources and wanting to differentiate them.
 
     .. figure:: img/color_change_speclib.gif
+
+       Change the style of the spectra based on their profile source.
 
 Export the Spectral Library and its Style
 ==========================================
