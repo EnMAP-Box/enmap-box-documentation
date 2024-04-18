@@ -12,7 +12,7 @@ Getting Started
 
 Requirements
 =============
-This introduction is designed for EnMAP-Box 3, version 3.13.0 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
+This introduction is designed for EnMAP-Box 3, version 3.13 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
 
 Start the EnMAP-Box
@@ -31,8 +31,9 @@ Load the Example Data
 For this introduction the Example Data of the EnMap-Box will be used.
 
 * To load the Example Data, click on **Project** in the menu, then **Add Example Data**.
-* If you never worked with the Example Data before, a window will appear and you have to download the test data to your explorer.
-* After clicking **yes** the example data will be saved.
+* If you never worked with the Example Data before, a window will appear and you have
+  to download the data.
+* After clicking **yes** the example data will be saved into the plugin installation folder.
 
     .. figure:: img/02_add_expldt.gif
 
@@ -55,12 +56,13 @@ backend for a spectral library.
 
         Opening a spectral library with EnMAP spectral response functions.
 
-The EnMAP Spectral Response Function Library is stored as GeoJSON file (``enmap_potsdam_srf.geojson``) that you
+The EnMAP Spectral Response Function Library is stored as GeoJSON file ``enmap_potsdam_srf.geojson`` that you
 can inspect with a standard text editor.
 
-Now let's open a spectral library that includes spatial coordinates for each profile:
+Now let's open a spectral library that is stored as `GeoPackage <https://www.geopackage.org/>`_ and includes
+for each profile spatial coordinates:
 
-* download the :download:`speclib_potsdam.gpkg <speclib_potsdam.zip>`
+* Download :download:`speclib_potsdam.gpkg <speclib_potsdam.zip>`
 * Drag and drop the zip file to the EnMAP-Box Data Source Panel.
 * Use the context menu **Open Spectral Library Viewer** to open the spectral library.
 * Open a map view with the **enmap_potsdam** image and use the map view's context menu
@@ -338,7 +340,7 @@ First, let's focus on the definition of how spectral profiles are collected:
 
 * **Sample** can be used to define how the profiles are sampled around the mouse coordinate.
 
-Now let's have a look at how other vector attributes are created:
+Now let's look at how other vector attributes are created:
 
 * Make sure the first row is checked. Then you can write an expression for one of the columns in your spetral library.
 
