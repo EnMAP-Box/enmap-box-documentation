@@ -3,24 +3,22 @@
 Spectral Libraries: An Introduction
 ###################################
 
-**Author:** Klara Busse
+**Authors:** Klara Busse & Benjamin Jakimow
 
-**Publication date:** 09/04/2024
+**Publication date:** 19/04/2024
+
+This tutorial give an introduction into the use of spectral libraries in the EnMAP-Box.
+It is designed for EnMAP-Box 3.14 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
 Getting Started
 ***************
-
-Requirements
-=============
-This introduction is designed for EnMAP-Box 3, version 3.13 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
-
 
 Start the EnMAP-Box
 ====================
 
 * Launch QGIS and click the |enmapbox| icon in the toolbar to open the EnMAP-Box. The EnMAP-Box GUI comprises a **Menu** and a **Toolbar**, panels for **Data Sources** and **Data Views**, and the **QGIS Processing Toolbox**, which includes the **EnMAP-Box Processing Algorithms**.
 
-    .. figure:: img/01_EnMap-Box_surface.png
+    .. figure:: img/01_EnMAP-Box_surface.png
 
         The EnMAP-Box main GUI.
 
@@ -28,7 +26,7 @@ Start the EnMAP-Box
 Load the Example Data
 =====================
 
-For this introduction the Example Data of the EnMap-Box will be used.
+For this introduction the Example Data of the EnMAP-Box will be used.
 
 * To load the Example Data, click on **Project** in the menu, then **Add Example Data**.
 * If you never worked with the Example Data before, a window will appear and you have
@@ -56,30 +54,238 @@ backend for a spectral library.
 
         Opening a spectral library with EnMAP spectral response functions.
 
-The EnMAP Spectral Response Function Library is stored as GeoJSON file ``enmap_potsdam_srf.geojson`` that you
-can inspect with a standard text editor.
+The spectral response functions are stored in as GeoJSON file ``enmap_potsdam_srf.geojson``.
+You may inspect it with a standard text editor.
 
-Now let's open a spectral library that is stored as `GeoPackage <https://www.geopackage.org/>`_ and includes
-for each profile spatial coordinates:
+Basic Visualization Steps
+=========================
 
-* Download :download:`speclib_potsdam.gpkg <speclib_potsdam.zip>`
-* Drag and drop the zip file to the EnMAP-Box Data Source Panel.
-* Use the context menu **Open Spectral Library Viewer** to open the spectral library.
-* Open a map view with the **enmap_potsdam** image and use the map view's context menu
-  to add the speclib_potsdam vector layer, that
-  is already used by the **Spectral Library Viewer**
+* The spectral library viewer should look like this:
 
+    .. figure:: img/04_spec_lib_window_explained.png
+
+        Overview Spectral Library Viewer.
+
+* Most function in **toolbar** you already know from the normal `QGIS attribute table <https://docs.qgis.org/3.34/en/docs/user_manual/working_with_vector/attribute_table.html#introducing-the-attribute-table-interface>`_.
+  The Spectral Library viewer just adds extra tools to create, edit and export profiles.
+* The **spectral profiles window** shows the spectral profiles of the features, in our case points with attributes,
+  that are collected in the spectral library.
+* There is a button to show or hide the properties of the spectral profile window.
+* The **attribute table** shows the none-spatial information for each feature in a row.
+
+..
+* Let's have a closer look at the toolbar:
+
+    .. image:: img/05_spec_lib_toolbar.png
+
+
+* While being in the editing mode |mActionToggleEditing|, additional options are unlocked to modify your attribute table:
+
+    .. image:: img/06_spec_lib_toolbar_more_options.png
+
+* These are the tools you already know from the QGIS attribute table (`here is a link to the website  <https://docs.qgis.org/3.34/en/docs/user_manual/working_with_vector/attribute_table.html>`_)
+* Some functions of the toolbar are shown below. There are multiple possibilities, to organize and edit the different profiles in the **Attribute Table**:
+
+    .. figure:: img/07_functions_speclib_toolbar.gif
+
+        Selecting spectral profiles from attribute table.
+
+* Select every profile |mActionSelectAll|
+* Deselect all profiles |mActionDeselectAll|
+* You can highlight multiple profiles at once: Press the shift key and select 2 profiles - all profiles in between will also be selected.
+* With |mActionInvertSelection| the opposite profiles can be highlighted.
+* You can delete selected profiles |mActionDeleteSelected| (please don't do now)
+  and save or reject your changes |mActionSaveAllEdits| before turning off the editing
+  mode |mActionToggleEditing| afterwards.
+
+
+
+Working with Spectral Libraries
+*******************************
+
+Profiles with Coordinates
+=========================
+
+Let's open a spectral library that provides coordinates for each spectral profile:
+
+* Open a new map view with the **enmap_potsdam** image.
+* Download and extract the :download:`speclib_potsdam.zip <speclib_potsdam.zip>`.
+  The zip file contains the :file:`speclib_potsdam.gpkg` with the data and a :file:`speclib_potsdam.qml` style file
+  that tells QGIS and the EnMAP-Box how to visualize it.
+* Drag and drop the ``speclib_potsdam.gpkg`` to the EnMAP-Box Data Source Panel.
+* Use the context menu **Open Spectral Library Viewer** to visualize the spectral profiles.
+* Use the **Map View** context menu to add the speclib_potsdam vector layer
 
     .. figure:: img/load_speclib_potsdam_with_map.gif
 
-      Open the speclib_potsdam.gpkg library in a Spectral Library View and a Map View.
+      Opening the speclib_potsdam.gpkg library in a Spectral Library View and a Map View.
+
+
+
+Collect profiles from images
+============================
+
+In this introduction we like to collect additional profiles for the following classes:
+
+  * Concrete
+  * Cropland
+  * Vegetation
+  * Water
+
+* Add the ``areal_potsdam`` DOP image to the Map View. It gives us a better understanding
+  which classes are covered by a single EnMAP pixel
+* Search for areas with that kind of surface coverage.
+* Next, click on |select_location| then on |profile|. When you click on a point in the image,
+  a spectral profile will be shown on top of the other profiles in the Spectral Library View.
+  Simultaneously the **Spectral Profile Source Panel** opens on the right.
+* By default, profiles are collected from the top-most raster layer.
+  The **Spectral Profile Source Panel** allows to change this and control how profiles are collected.
+  It will be explained in more detail below.
+
+* In order to collect profiles from the EnMAP image only, select :file:`enmap_potsdam` as profile source .
+
+    .. figure:: img/spec_prof_to_enmap.gif
+
+       Collecting spectral profiles from an EnMAP image.
+
+* Profiles will now be collected from the EnMAP image and the aerial image
+  will make the classification easier.
+
+* To see the EnMAP pixel size underneath, open the Map View context menu, then click on **Crosshair**, **Pixel Grid** and select :file:`enmap_potsdam`.
+
+    .. figure:: img/crosshair.gif
+
+         Showing underneath pixel borders.
+
+* So far, collected profiles are stored temporarily only. We can call them *profile candidates*. By clicking on |plus_green_icon| you can add them to the spectral library.
+
+* With |profile_add_auto| the new spectral profiles candidates are added automatically.
+
+    .. figure:: img/add_profiles_automatically.gif
+
+        Automatic profile collection.
+
+* You may also use
+
+    * CTRL + S to save profiles
+    * CTRL + <arrow key> to navigate by 1 EnMAP Pixel
+    * <arrow key> to pan the map extent
+
+* For a clearer organization you can add columns |mActionNewAttribute| to add information.
+  Insert a column name and select a type (e.g. integer or string).
+
+    .. figure:: img/add_profiles.gif
+
+        Collecting and describing spectral profiles from image data.
+
+
+Spectral Profile Source Panel
+=============================
+* The **Spectral Profile Source** panel allows you to (i) specify how spectral profiles are collected from the raster data, (ii) how these profiles can be described in other attribute fields, and how temporary profiles will be displayed.
+* If you select |select_location| and |profile| without having a Spectral Library View opened, the **Spectral Profiles Source** panel will open one automatically when you click on a pixel in the map for the first time.
+* To open the **Spectral Profiles Source** panel manually, click on **View** in the menu, select **Panels**, and then choose **Spectral Profiles Source**.
+
+    .. figure:: img/spec_profiles_source_panel.png
+
+        The Spectral Profile Source panel (right) specifies how profiles are collected, described
+        and displayed when overlaid in a linked Spectral Library View.
+
+* To add a new relation that describes raster image sources and spectral library vector fields, click on |plus_green_icon|.
+
+First, let's focus on the definition of how spectral profiles are collected:
+
+    .. image:: img/spec_prof_pan_prof.gif
+
+* **Profiles** specifies how the profiles are stored in the Profiles field in the spectral library attribute table.
+* You can specify the raster source from which the profile is sampled. Choose :file:`enmap_potsdam`.
+
+    .. image:: img/spec_prof_pan_col.gif
+
+* **Style** lets you specify how the sampled profiles are displayed when overlaid in the Spectral Library view.
+
+    .. image:: img/spec_prof_pan_sampling.gif
+
+* **Sampling** can be used to define how the profiles are sampled around the mouse coordinate.
+
+* **Scaling** allows to account for scaling differences between the profile source and profiles in your spectral library.
+
+Now let's look at how other attributes, e.g. integer, float or text values, can be created.
+We like to generate a profile name automatically.
+
+* Ensure that the *notes* row is checked.
+* Double Click to edit, or open the **Expression Builder** with ε
+* With the **Expression Builder** you can create expressions that dynamically generate attributes.
+* Write ``'' + format('Px %1,%2', @px_x, @px_y)`` to generate a string that includes the pixel position, as in ``Px 23, 24``.
+
+    .. image:: img/Expression_Builder.png
+
+
+Changing Profile Styles
+=======================
+
+The *profile visualization settings* allow you to change profile color, line- and symbole styles.
+
+* by default, *profiles in the spectral library* use the ``@symbol_color`` that is used in the map visualization.
+* In that case you can use the layer legend to show or hide groups of profiles. Changing the layer rendering in the map will change the profile colors too.
+* You can define your own colors and even use the expression builder to generate colors based profile attributes
+* *temporarily profile candidates* use the style that is defined in the *Spectra Profile Source Panel*.
+
+  .. figure:: img/profile_vis_speclib_legend.gif
+
+    Profile visualization
+
+* Go to the **Layer Properties** of your spectral library in the **Data Views** panel. With **Symbology** you can set the colors.
+
+    .. figure:: img/colors_symbology.gif
+
+        The vector layer symbology panel defines the feature symbols...
+
+* Choose **Categorized**, for **Value**, select the column according to which the classes are to be differentiated. Click **Classify**.
+* You can change the colors by double-clicking on the color you want to change.
+* Click **OK**. Now your spectra have different colors and your graph is more clear.
+
+    .. figure:: img/graph_col.png
+
+        ... whose colors can be used as profile color.
+
+* Click the "+" button to create a new profile visualization.
+  This way you can differentiate profiles by other means than the vector layer map symbology.
+* Create a group for *vegetation* that uses the filter expression `"name" = 'vegetation'`. Double click on entries in the *Value* column to edit the visualization name or define filter expressions.
+* Create a group for *Other* profiles with filter expression `"name" != 'vegetation'`
+* Style both groups differently, e.g. by showing none-vegetation in dotted lines
+
+    .. figure:: img/profile_vis_groups.png
+
+        Using multiple visualization groups allows for fine-tuned profiles styles
+
+
+Save or reject modifications
+****************************
+
+QGIS uses a transaction model to save changes. Modification are saved in an edit-buffer.
+To save changes permanently to the data source requires to:
+
+a) click the *save edits* button |mActionSaveEdits|, or
+
+b) disable the edit mode |mActionToggleEditing|. If changes are available, this opens the *Stop Editing* dialog
+
+    .. image:: img/stop_editing_dialog.png
+
+    * Press *Yes* to save your edits, or
+    * Press *No* to rollback all modifications.
+
+
+.. warning::
+    Be aware that savings may be made to in-memory data sources. These data sources are lost when closing the EnMAP-Box or QGIS. For example a new (and empty) Spectral Library Viewer |viewlist_spectrumdock| uses an in-memory as data source.
+
+    To save such spectral libraries permanently requires to export them into persistant data formats, like a GeoPackage file (see below *Export Spectral Profiles*)
 
 
 Import Spectral Profiles
-========================
+************************
 
 Depending on your file format there are multiple ways to import
-spectral profiles into an existing spectral library.
+spectral profiles from other sources into a spectral library.
 
 The following formats will be explained below:
 
@@ -145,11 +351,7 @@ Raster Layer
 Field Calculator
 ----------------
 
-You probably already know the QGIS field calculator and how you can use it to
-calculate vector layer attribute values.
-
-We can use it to modify our spectral profiles as well,
-for example to enhance an normal vector layer with a field that stores spectral profiles.
+You might already know the QGIS field calculator and have used it to calculate values of vector layer attributes. We can use it to extract or modify spectral profiles as well:
 
 * Open the :file:`enmap_potsdam` raster layer and the :file:`landcover_potsdam_point` layer in a new map window.
 * Click on the :file:`landcover_potsdam_point` with the right mouse button and select **Open Spectral Library Viewer**. A new spectral library window opens.
@@ -187,57 +389,12 @@ for example to enhance an normal vector layer with a field that stores spectral 
 * To show the spectral profiles, click on **Update Profiles** on the left hand side of the toolbar.
 
 
-Work with a Spectral Library
-****************************
-The following shows how to edit and export a spectral library
 
-Instead of the *EnMAP Spectral Response* library from the EnMAP-Box example data you can also download the
-:download:`speclib_potsdam.gpkg <speclib_potsdam.zip>` Library.
+Export Spectral Profiles
+************************
 
-This zip file contains the :file:`speclib_potsdam.gpkg` and :file:`speclib_potsdam.qml` files, as well as the :file:`speclib_potsdam_style.qml` file that stores the style of the spectral library.
+Spectral profiles can be exported as GeoPackage, GeoJSON or ENVI spectral libraries.
 
-Basic Visualization Steps
-===========================
-
-* The spectral library viewer should look like this:
-
-    .. figure:: img/04_spec_lib_window_explained.png
-
-        Overview Spectral Library Viewer.
-
-* There are various functions in the **toolbar** that can be used to create, edit and export a spectral library.
-* The **spectral profiles window** shows the spectral profiles of the points, that are collected in the spectral library.
-* The **attribute table** shows information for the different profiles.
-
-..
-* Let's have a closer look at the toolbar:
-
-    .. image:: img/05_spec_lib_toolbar.png
-
-
-* While being in the editing mode |mActionToggleEditing|, additional options are unlocked to modify your attribute table:
-
-    .. image:: img/06_spec_lib_toolbar_more_options.png
-
-* These are the tools you already know from the QGIS attribute table (`here is a link to the website  <https://docs.qgis.org/3.34/en/docs/user_manual/working_with_vector/attribute_table.html>`_)
-* Some functions of the toolbar are shown below. There are multiple possibilities, to organize and edit the different profiles in the **Attribute Table**:
-
-    .. figure:: img/07_functions_speclib_toolbar.gif
-
-        Selecting spectral profiles from attribute table.
-
-* Select every profile |mActionSelectAll|
-* Deselect all profiles |mActionDeselectAll|
-* You can highlight multiple profiles at once: Press the shift key and select 2 profiles - all profiles in between will also be selected.
-* With |mActionInvertSelection| the opposite profiles can be highlighted.
-* Delete selected profiles |mActionDeleteSelected|
-* Save your changes |mActionSaveAllEdits| and turn off the toggle editing mode |mActionToggleEditing| afterwards.
-
-
-Export the Spectral Library
-============================
-* To apply all changes, save the spectral profiles.
-* The spectral profiles can be exported into different data formats (Geopackage, GeoJSON, ENVI spectral library).
 * Click on the |speclib_save| symbol. The **Export Spectral Library** window will open.
 
     .. figure:: img/08_export_speclib.png
@@ -245,153 +402,11 @@ Export the Spectral Library
         Dialog to export spectral profiles into other formats.
 
 * Choose between Geopackage, GeoJSON or ENVI spectral library.
-* Choose a file name and path and click **OK**
-
-Create a Spectral Library
-***********************************
-This introduction shows you how to create a spectral library by your own.
-
-Load the Data
-============================
-* Open :file:`aerial_potsdam.tif` and :file:`enmap_potsdam.tif`, by drag and drop. It will automatically be displayed in a new map window.
-* Make sure, that the :file:`aerial_potsdam.tif` is over the :file:`enmap_potsdam.tif`.
-
-Add Profiles to a Spectral Library
-====================================
-
-* Zoom into the images and make yourself familiar with them.
-* In this introduction points for each of the following classes will be collected:
-
-  * Concrete
-  * Cropland
-  * Vegetation
-  * Water
-
-..
-* Search for areas with that kind of surface coverage.
-* Next, click on |select_location| then on |profile|. When you click on a point in the image, a **spectral library window** will open and show you the spectral profiles of that point. Simultaneously the **Spectral Profile Source Panel** opens on the right.
-
-
-    .. figure:: img/open_at_spsp.gif
-
-         Start collecting profiles and open Spectral Profile Source Panel.
-
-
-* Profiles will be collected from the EnMap image. The aerial image will be used to make the classification easier.
-* Right click on the images, then click on **Crosshair**, **Pixel Grid** and select :file:`enmap_potsdam`.
-* Now you can see the pixel size of the EnMap image underneath.
-
-    .. figure:: img/crosshair.gif
-
-         Set Crosshair.
-
-* In order to collect the pixels from the EnMap image, let's take a quick look at the **Spectral Profile Source Panel**. Additional functions will be explained in the following section "Spectral Profile Source Panel".
-* Select :file:`enmap_potsdam` from profiles, to collect the profiles of the EnMap image.
-
-    .. figure:: img/spec_prof_to_enmap.gif
-
-       Select raster layer from which the profiles are collected.
-
-
-* By clicking on |plus_green_icon| you can save a point with its spectral information into your spectral library.
-* For a clearer organization you can add columns |mActionNewAttribute| to add information. Insert a column name and select a type (e.g. integer or string).
-
-    .. figure:: img/add_profiles.gif
-
-        Collecting and describing spectral profiles from image data.
-
-
-* With |profile_add_auto| the spectral profiles can be collected automatically.
-
-    .. figure:: img/add_profiles_automatically.gif
-
-        Automatic profile collection.
-
-
-
-Spectral Profile Source Panel
-=============================
-* The **Spectral Profile Source** panel allows you to specify how spectral profiles are collected from the raster data and what profile metadata is included in Spectral Libraries.
-* It allows you to define the new values for each column of a Spectral Library Vector Layer, that will be added when a new feature is added.
-* If you select |select_location| and |profile|, the **Spectral Profiles Source** panel will open automatically when you click on a pixel in the map for the first time.
-* To open the **Spectral Profiles Source** panel manually, click on **View** in the menu, select **Panels**, and then choose **Spectral Profiles Source**.
-
-    .. figure:: img/spec_profiles_source_panel.png
-
-        The Spectral Profile Source panel (right) specifies how profiles are collected, described
-        and displayed when overlaid in a linked Spectral Library View.
-
-* To add a new relation that describes raster image sources and spectral library vector fields click on |plus_green_icon|.
-
-..
-
-First, let's focus on the definition of how spectral profiles are collected:
-
-    .. image:: img/spec_prof_pan_prof.gif
-
-* **Profiles** specifies how the profiles are stored in the Profiles field in the spectral library attribute table.
-* You can specify the raster source from which the profile is sampled. Choose :file:`enmap_potsdam`.
-
-    .. image:: img/spec_prof_pan_col.gif
-
-* **Style** lets you specify how the sampled profiles are displayed when overlaid in the Spectral Library view.
-
-    .. image:: img/spec_prof_pan_sampling.gif
-
-* **Sample** can be used to define how the profiles are sampled around the mouse coordinate.
-
-Now let's look at how other vector attributes are created:
-
-* Make sure the first row is checked. Then you can write an expression for one of the columns in your spetral library.
-
-    .. image:: img/oth_vec_attr.png
-
-* Double Click to edit, or open the **Expression Builder** with ε
-* With the **Expression Builder** you can design a field expression:
-
-    .. image:: img/Expression_Builder.png
-
-
-
-Change the Colours of the Spectra
-=================================
-
-* You can organize the points by color, for a better separation.
-* Go to the **Layer Properties** of your spectral library in the **Data Views** panel. With **Symbology** you can set the colors.
-
-    .. figure:: img/colors_symbology.gif
-
-        The vector layer symbology panel defines the feature symbols...
-
-* Choose **Categorized**, for **Value**, select the column according to which the classes are to be differentiated. Click **Classify**.
-* You can change the colors by double-clicking on the color you want to change.
-* Click **OK**. Now your spectra have different colors and your graph is more clear.
-
-    .. figure:: img/graph_col.png
-
-        ... whose colors can be used as profile color.
-
-* It is also possible to change the style of all spectra in the **Spectral Library Window** based on their profile source. This is useful when collecting profiles from different sources and wanting to differentiate them.
-
-    .. figure:: img/color_change_speclib.gif
-
-       Change the style of the spectra based on their profile source.
-
-Export the Spectral Library and its Style
-==========================================
 
 * Export the spectral library |speclib_save| as ``*.gpkg`` and choose a file path and name.
-* The style can be saved at symbology. Click on **Style**, then on **Save Style**.
-  Select the file path and save the style as ``*.qml`` file.
+* Two files are saved: the geopackage file that contains the points with their spectral information, and the QML file with styling information.
+* You can re.import your spectral library by dragging and dropping the file from your data explorer into the **Data Sources** panel.
 
-    .. figure:: img/13_save_style.gif
+.. note::
 
-        Saving a layer style into a ``*.qml`` file
-
-* You can import your spectral library by dragging and dropping the file from your data explorer into the **Data Sources** panel.
-* To import the style you have to open the spectral library in a **Spectral Library Window** or **Map Canvas** (drag and drop).
-  Then go to **Layer Properties**, **Style** and click on **Load Style**. Choose the file directory to your saved style and **Load Style**.
-
-    .. image:: img/14_export_speclib.png
-
-* Two files are saved: the geopackage file contains the points with their spectral information, and the QML file contains all layer information.
+    Formats like the ENVI spectral library do not allow to save profiles with a differing number of bands. In that case the EnMAP-Box create a new library for all profiles similar in number and the definition of band wavelengths.
