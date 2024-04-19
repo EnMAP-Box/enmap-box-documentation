@@ -323,6 +323,7 @@ ASD Field Spectrometer
 * Map the ASDs "Spectrum" profile to the "profiles" column.
 * Click **OK**
 * Select some of the new imported features in the attribute table and zoom to.
+
     .. figure:: img/import_asd_files.gif
 
         Importing spectral profiles (White Reference + Target) from an ASD Field Spectrometer into an empty Spectral Library.
