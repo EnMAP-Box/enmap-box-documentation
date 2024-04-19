@@ -320,12 +320,13 @@ ASD Field Spectrometer
 * The table allows you to define how attributes from the profile source - the ASD files - will be
   mapped to existing fields in your Spectral Library.
 * Use the **Copy missing source fields** dialog to extend you spectral library by additional fields
-* Map the ASDs "Spectrum" profile our Speclib's "profiles" column.
+* Map the ASDs "Spectrum" profile to the "profiles" column.
 * Click **OK**
-
+* Select some of the new imported features in the attribute table and zoom to.
     .. figure:: img/import_asd_files.gif
 
         Importing spectral profiles (White Reference + Target) from an ASD Field Spectrometer into an empty Spectral Library.
+
 
 
 Raster Layer
