@@ -285,9 +285,7 @@ Import Spectral Profiles
 ************************
 
 Depending on your file format there are multiple ways to import
-spectral profiles from other sources into a spectral library.
-
-The following formats will be explained below:
+spectral profiles from other sources into an existing spectral library.
 
 * Geopackage
 * ASD Field Spectrometer
@@ -296,25 +294,31 @@ The following formats will be explained below:
 
 
 Geopackage
-----------
+==========
 
 * Open a new **Spectral Library View**. It uses an empty and in-memory vector layer that
-  which we can add spectral profiles to
-* To import profiles from a spectral library with the data format **Geopackage**,
-  open a spectral library window |speclib|
+  we can add spectral profiles to.
 * Click on |speclib_add| to open the **Import Spectral Profiles** window.
 
     .. figure:: img/import_a_speclib.gif
 
         The dialog to import spectral profiles into a spectral library.
 
-* Choose **Geopackage** and select the correct format and the directory.
-* To import the columns of your choice, click on |mSourceFields| and select the columns.
+* Choose **Geopackage** and set the path to the downloaded ``speclib_potsdam.gpkg`` filename.
+* The *Field Value Import* table specifies which attribute we like to import into our speclib.
+* Use the *Copy missing source fields* dialog to create a new *notes* field in our in-memory speclib
+
+    .. figure:: img/import_gpkg.png
+
+        Import of profiles from a GeoPackage library.
+
 * Click **OK**
 
-ASD Field Spectrometer
-----------------------
 
+ASD Field Spectrometer
+======================
+
+* Open a new **Spectral Library View**.
 * Download and extract the :download:`asd_files.zip <asd_files.zip>`
 * Click on |speclib_add| to open the **Import Spectral Profiles** window.
 * The table allows you to define how attributes from the profile source - the ASD files - will be
@@ -331,7 +335,7 @@ ASD Field Spectrometer
 
 
 Raster Layer
-------------
+============
 
 * To import profiles from a **Raster Layer**, drag and drop your raster file and a vector file
   with locations to extract the raster profiles into a new map window.
@@ -351,7 +355,7 @@ Raster Layer
         Importing spectral profiles from a raster layer and a vector layer that specifies the profile locations.
 
 Field Calculator
-----------------
+================
 
 You might already know the QGIS field calculator and have used it to calculate values of vector layer attributes. We can use it to extract or modify spectral profiles as well:
 
@@ -397,18 +401,38 @@ Export Spectral Profiles
 
 Spectral profiles can be exported as GeoPackage, GeoJSON or ENVI spectral libraries.
 
+GeoPackage / GeoJSON
+====================
+
 * Click on the |speclib_save| symbol. The **Export Spectral Library** window will open.
 
-    .. figure:: img/08_export_speclib.png
+    .. figure:: img/08_export_speclib_gpkg.png
 
-        Dialog to export spectral profiles into other formats.
+        Dialog to export spectral profiles into a new GeoPackage file.
 
-* Choose between Geopackage, GeoJSON or ENVI spectral library.
+* Export the spectral library |speclib_save| as ``*.gpkg`` and choose a file path and layer name.
+* Two files are saved: the geopackage file which contains the points and attributes, including the spectral profiles, and an QML file with styling information.
 
-* Export the spectral library |speclib_save| as ``*.gpkg`` and choose a file path and name.
-* Two files are saved: the geopackage file that contains the points with their spectral information, and the QML file with styling information.
-* You can re.import your spectral library by dragging and dropping the file from your data explorer into the **Data Sources** panel.
+    .. image:: img/exported_gpkg_qml.png
+
+* The new speclib data source is automatically added to the EnMAP-Box data sources and can be opened in QGIS as well
+
+ENVI Spectral Library
+=====================
+
+* Now export the spectral library |speclib_save| a *ENVI Spectral Library* ``*.sli``.
+  Choose a field from which to export the profiles and a field that contains the profile names.
+
+
+  .. figure:: img/exported_gpkg_qml.png
+
+    Dialog to export spectral profiles as ENVI Spectral Library.
+
+* The new ENVI Spectral Library (``*.sli``) is accompanied by a ``.csv`` file that lists additional values from, like the point coordinates in WKT notation.
+
+    .. image:: img/exported_envi_files.png
 
 .. note::
 
-    Formats like the ENVI spectral library do not allow to save profiles with a differing number of bands. In that case the EnMAP-Box create a new library for all profiles similar in number and the definition of band wavelengths.
+    Our spectral library could contain profiles from different sensors in the same field, but
+    the ENVI spectral library format does not allow to save profiles with a differing number of bands. In that case the EnMAP-Box will create multiple ``*.sli`` file, one for each set of profiles that are similar in the number of bands and wavelengths.
