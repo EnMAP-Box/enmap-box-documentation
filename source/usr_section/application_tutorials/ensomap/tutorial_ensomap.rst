@@ -1,9 +1,9 @@
 EnSoMap - Tutorial
 ===================
 In this tutorial we will generate and validate maps of topsoil properties from hyperspectral data using the EnSoMAP tool within the EnMAP-Box. 
-The tutorial can also be found as screencast on YouTube_:
+The tutorial can also be found as screencast on YouTube_.
 
-.. _YouTube: 
+.. _YouTube. https://www.youtube.com/watch?v=An3ufed4_OM&list=PLh17102P1ko3UOvjNCs4FGdm5OGfeEx8y
 
 Requirements
 -------------
@@ -12,14 +12,13 @@ Software
 This tutorial requires some software to be installed on your machine:    
 
     - QGIS_ and the EnMAP-Box_
-    - EnSoMAP 
 
 .. _QGIS: https://www.qgis.org/de/site/
 .. _EnMAP-Box: https://www.enmap.org/data_tools/enmapbox/
 
 Data
 """""
-You can download a subset of HyMap airborne imagery `here <Link>`_,  which can be used to reproduce this tutorial.
+You can download a subset of HyMap airborne imagery `here <https://doi.org/10.5880/enmap.2024.002>`_,  which can be used to reproduce this tutorial.
 
 The data was acquired over agricultural areas in the Cabo de Gata-Níjar Natural Park, a semi-arid Mediterranean area in southern Spain. The region is only sparsely populated and offers a range of landscape patterns, from Mediterranean steppe, dunes, and salt mines to cliffs. The vegetation cover experienced a decline, followed by a recovery of climax types like Stipa and Palmito in the past 50 years. Today, the area is mainly used for agricultural practices, mining, tourist activities as well as a few built-up areas. The soils developed on volcanic and carbonatic bedrocks are highly variable in their textural and mineralogical composition, thus we can observe an interesting spectral variability.
 
@@ -87,7 +86,7 @@ Select the tab **Mapping** in the EnSoMAP 2.0 window. Chose the hyperspectral in
 
 The goal is to derive clay and iron soil maps. Therefore, select all algorithms available for these properties.  As we only have ground reference information for clay and iron soil to validate our results in the end, we did not calculate other soil properties. Click on **Run** to launch the process. 
 
-In the background EnSoMAP calculated two clay absorption features and three iron absorption features. The clay continuum removed absorption depth (CRAD) performs a continuum removal of the spectrum between 2120 nm and 2250 nm and calculates the absorption depth. The Clay Content SWIR Fine particle index makes use of the same clay absorption feature around 2200 nm (if you want to learn more about the parameterization of absorption features, we recommend `this video <Link>`_).
+In the background EnSoMAP calculated two clay absorption features and three iron absorption features. The clay continuum removed absorption depth (CRAD) performs a continuum removal of the spectrum between 2120 nm and 2250 nm and calculates the absorption depth. The Clay Content SWIR Fine particle index makes use of the same clay absorption feature around 2200 nm (if you want to learn more about the parameterization of absorption features, we recommend `this video <https://youtu.be/UtaqBlyGkaY>`_).
 
 For iron we use different absorption features: EnSoMAP performs a continuum removal absorption depth between 460 nm and 620 nm as well as 760 nm and 1050 nm. The Iron oxide content redness index is also calculated from the first feature. 
 
@@ -166,7 +165,7 @@ To give you a quicker insight to the overall results we prepared a `results tabl
 
 The R square values, which are often used to grade the performance of a regression are not exceedingly high, compared to the performance of models from laboratory data. But from the perspective of remote sensing soil spectroscopy, we are satisfied with the results, especially concerning the iron oxide mapping. There are so many constraints, like the sensor signal integrating the whole landscape (plants and stones) and not only the tiny soil fraction of the pixel, which is at a scale way smaller than the remote sensing scale of observation. Also, soils have to be exposed and dry, and you are looking at a rather large area of 5x5 m from a distance of several hundred meters, besides soils being highly complex in their interaction with light. With only few reference data, we now have a pretty good impression of the spatial distribution of clay and iron in surface soils in the Cabo de Gata National Park, also accurately including the value ranges to expect.
 
-That concludes our feature analysis in EnSoMAP, a comfortable tool to handle soil mapping from hyperspectral imagery. If you would like to learn more, please check out our `massive open online course (MOOC) on hyperspectral soil applications <Link>`_, our other `exercises <Link>`_  and experiment with your own data. In future, EnSoMAP will include Machine Learning as well. So, stay tuned!
+That concludes our feature analysis in EnSoMAP, a comfortable tool to handle soil mapping from hyperspectral imagery. If you would like to learn more, please check out our `massive open online course (MOOC) on hyperspectral soil applications <https://eo-college.org/courses/beyond-the-visible-imaging-spectroscopy-for-soil-applications/>`_, our other exercises on `readthedocs <https://enmap-box.readthedocs.io/en/latest/usr_section/application_tutorials/index.html>`_  as well as `YouTube <https://www.youtube.com/@HYPERedu_GFZ/playlists>`_ and experiment with your own data. In future, EnSoMAP will include Machine Learning as well. So, stay tuned!
 
 
 
