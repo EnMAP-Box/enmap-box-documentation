@@ -1,7 +1,7 @@
 EnSoMap - Tutorial
 ===================
 In this tutorial we will generate and validate maps of topsoil properties from hyperspectral data using the EnSoMAP tool within the EnMAP-Box. 
-The tutorial can also be found as screencast on `YouTube <YouTube https://www.youtube.com/watch?v=An3ufed4_OM&list=PLh17102P1ko3UOvjNCs4FGdm5OGfeEx8y>`_.
+The tutorial can also be found as screencast on `YouTube <https://www.youtube.com/watch?v=An3ufed4_OM&list=PLh17102P1ko3UOvjNCs4FGdm5OGfeEx8y>`_.
 
 Requirements
 -------------
