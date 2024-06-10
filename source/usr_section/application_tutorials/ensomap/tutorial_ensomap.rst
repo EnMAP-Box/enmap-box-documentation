@@ -147,7 +147,7 @@ To visualize the quality of the prediction, plot the predicted versus the measur
 
 Which algorithm is performing best for iron and which for clay prediction? With the proposed options the CRAD at 2120 to 2250 nm performed best for clay and the CRAD 760 to 1050 nm performed best for iron in the Cabo de Gata hematitic soils. But results may differ, for example, through working with a different average window size, or even more if algorithms are applied to a different study area and depending on the respective in-situ data. So, one algorithm will provide better results than the others, depending on the test site, on environmental factors, on soil composition in terms of e.g. type of iron oxides, amount of clay regarding the texture or clay minerals.
 
-To give you a quicker insight to the overall results we prepared a :download:`results table <EmSoMAP_results_table.odg>`.
+To give you a quicker insight to the overall results we prepared a :download:`results table <EnSoMAP_results_table.ods>`.
 
 .. image:: img/fig14.png
     :width: 800px
