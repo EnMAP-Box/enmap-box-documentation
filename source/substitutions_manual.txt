@@ -4,6 +4,8 @@
    :width: 30px
    :height: 30px
 
+.. |reg| unicode:: U+000AE .. REGISTERED SIGN
+
 .. |esa| image:: img/logos/logo_esa.bmp
 
 .. |enmap| image:: img/logos/logo_enmap.svg
