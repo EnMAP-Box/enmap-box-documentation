@@ -77,4 +77,7 @@ If you never have used git before, we recommend to read a basic git tutorial fir
 * open a bash shell and run `./scripts/create_docs.sh` (windows/linux bash shell), or 
 * run (linux) `make html`, or (windows) `make.bat html`.
 
+# Substitutes
+
+
 

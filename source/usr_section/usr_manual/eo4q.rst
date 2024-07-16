@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. _eo4q:
 

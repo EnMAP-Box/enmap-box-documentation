@@ -29,7 +29,7 @@ ENMAPBOX_ICON_DIRS = \
     [DIR_ENMAPBOX_REPO / 'enmapbox/gui/ui/icons',
      DIR_ENMAPBOX_REPO / 'enmapbox/qgispluginsupport/qps/ui/icons']
 
-PATH_RST = DIR_SOURCE / 'icon_links.rst'
+PATH_LINKS_TXT = DIR_SOURCE / 'substitutions_generated.txt'
 PATH_RST_VIEWER = DIR_SOURCE / 'icon_links_viewer.rst'
 
 rx_extensions = re.compile(r'\.(svg|png)$')
@@ -65,16 +65,15 @@ for iconDir in ENMAPBOX_ICON_DIRS:
 
 lines = []
 for linkName, path in ICONS.items():
-    relPath = pathlib.Path(path).relative_to(PATH_RST.parent).as_posix()
-    lines.append(f'.. |{linkName}| image:: /{relPath}\n   :width: 28px')
+    relPath = pathlib.Path(path).relative_to(PATH_LINKS_TXT.parent).as_posix()
+    lines.append(f'.. |{linkName}| image:: {relPath}\n   :width: 28px')
 
 # write rst file
-with open(PATH_RST, 'w', encoding='utf-8', newline='') as f:
+with open(PATH_LINKS_TXT, 'w', encoding='utf-8', newline='') as f:
     f.write('\n'.join(lines))
 
 # write rst file showing all the icons
 with open(PATH_RST_VIEWER, 'w', encoding='utf-8', newline='') as f:
-    f.write('.. include:: /icon_links.rst\n\n')
     for line in lines:
         name = line.split('|')[1]
         # text = f'{name}\n    |{name}|\n\n'

@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. |reset_plot| image:: ../../img/pyqtgraph_reset.png
    :width: 15px
@@ -450,3 +450,35 @@ Virtual Raster Builder
 ======================
 
 See https://virtual-raster-builder.readthedocs.io/en/latest/
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |classinfo_add| image:: /img/icons/classinfo_add.svg
+   :width: 28px
+.. |classinfo_remove| image:: /img/icons/classinfo_remove.svg
+   :width: 28px
+.. |mActionAddRasterLayer| image:: /img/icons/mActionAddRasterLayer.svg
+   :width: 28px
+.. |mActionEditCopy| image:: /img/icons/mActionEditCopy.svg
+   :width: 28px
+.. |mActionEditPaste| image:: /img/icons/mActionEditPaste.svg
+   :width: 28px
+.. |mActionFileSaveAs| image:: /img/icons/mActionFileSaveAs.svg
+   :width: 28px
+.. |plus_green| image:: /img/icons/plus_green.svg
+   :width: 28px
+.. |symbology| image:: /img/icons/symbology.svg
+   :width: 28px

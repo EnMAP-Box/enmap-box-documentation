@@ -102,3 +102,24 @@ Also add a caption to the image if it is **not** placed between two bullet point
        :align: center
 
 *Placement of images for (left) after body text, (right) within bullet points *
+
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |mActionNewAttribute| image:: /img/icons/mActionNewAttribute.svg
+   :width: 28px
+.. |mActionToggleEditing| image:: /img/icons/mActionToggleEditing.svg
+   :width: 28px
