@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 Spectral Libraries: An Introduction
 ###################################
@@ -436,3 +436,53 @@ ENVI Spectral Library
 
     Our spectral library could contain profiles from different sensors in the same field, but
     the ENVI spectral library format does not allow to save profiles with a differing number of bands. In that case the EnMAP-Box will create multiple ``*.sli`` file, one for each set of profiles that are similar in the number of bands and wavelengths.
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |enmapbox| image:: /img/icons/enmapbox.png
+   :width: 28px
+.. |mActionDeleteSelected| image:: /img/icons/mActionDeleteSelected.svg
+   :width: 28px
+.. |mActionDeselectAll| image:: /img/icons/mActionDeselectAll.svg
+   :width: 28px
+.. |mActionInvertSelection| image:: /img/icons/mActionInvertSelection.svg
+   :width: 28px
+.. |mActionNewAttribute| image:: /img/icons/mActionNewAttribute.svg
+   :width: 28px
+.. |mActionSaveAllEdits| image:: /img/icons/mActionSaveAllEdits.svg
+   :width: 28px
+.. |mActionSaveEdits| image:: /img/icons/mActionSaveEdits.svg
+   :width: 28px
+.. |mActionSelectAll| image:: /img/icons/mActionSelectAll.svg
+   :width: 28px
+.. |mActionToggleEditing| image:: /img/icons/mActionToggleEditing.svg
+   :width: 28px
+.. |mSourceFields| image:: /img/icons/mSourceFields.svg
+   :width: 28px
+.. |plus_green_icon| image:: /img/icons/plus_green_icon.svg
+   :width: 28px
+.. |profile| image:: /img/icons/profile.svg
+   :width: 28px
+.. |profile_add_auto| image:: /img/icons/profile_add_auto.svg
+   :width: 28px
+.. |select_location| image:: /img/icons/select_location.svg
+   :width: 28px
+.. |speclib_add| image:: /img/icons/speclib_add.svg
+   :width: 28px
+.. |speclib_save| image:: /img/icons/speclib_save.svg
+   :width: 28px
+.. |viewlist_spectrumdock| image:: /img/icons/viewlist_spectrumdock.svg
+   :width: 28px

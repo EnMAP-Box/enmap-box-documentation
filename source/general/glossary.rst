@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. _QGIS user manual: https://docs.qgis.org/testing/en/docs/user_manual
 .. _Scikit-Learn: https://scikit-learn.org

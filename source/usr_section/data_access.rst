@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. |reg| unicode:: U+000AE .. REGISTERED SIGN
 

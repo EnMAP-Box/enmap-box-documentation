@@ -27,24 +27,24 @@ Agency, granted by the Federal Ministry of Economic Affairs and Energy (BMWi; gr
    |hu|, |ug|, |gfz|, |dlr|, |bmwi|
 
 
-.. |hu| image:: ../img/logos/logo_hu-berlin.svg
-   :target: https://www.geographie.hu-berlin.de/en/professorships/eol
-   :width: 100%
 
-.. |ug| image:: ../img/logos/logo_ug.png
-   :target: https://geo.uni-greifswald.de/eo
-   :width: 100%
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
 
-.. |gfz| image:: ../img/logos/logo_gfz.svg
-   :target: https://www.gfz-potsdam.de/
+.. |bmwi| image:: /img/logos/logo_bmwi.jpg
    :width: 100%
-
-.. |dlr| image:: ../img/logos/logo_dlr.svg
+.. |dlr| image:: /img/logos/logo_dlr.svg
+   :width: 100%
    :target: https://www.dlr.de/
+.. |gfz| image:: /img/logos/logo_gfz.svg
    :width: 100%
-
-.. |bmwi| image:: /img/logos/bmwi.jpg
+   :target: https://www.gfz-potsdam.de/
+.. |hu| image:: /img/logos/logo_hu-berlin.svg
    :width: 100%
-
-|
-
+   :target: https://www.geographie.hu-berlin.de/en/professorships/eol
+.. |ug| image:: /img/logos/logo_ug.png
+   :width: 100%
+   :target: https://geo.uni-greifswald.de/eo

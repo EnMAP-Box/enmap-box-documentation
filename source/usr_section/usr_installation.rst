@@ -1,10 +1,6 @@
-.. include:: /icon_links.rst
 
-.. |icon| image:: ../img/icon.png
-   :width: 30px
-   :height: 30px
 
-.. |osgeoinstaller| image:: ../img/osgeoinstaller.png
+
 
 .. |download_link| raw:: html
 
@@ -347,3 +343,25 @@ EnMAP-Box Plugin Installation
    .. warning::
 
       As the *experimental* tag suggests, this version comes with the newest features and developments, but might also be prone to bugs and crashes.
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |cb0| image:: /img/icons/cb0.png
+   :width: 28px
+.. |cb1| image:: /img/icons/cb1.png
+   :width: 28px
+.. |icon| image:: /img/icon.png
+   :width: 30px

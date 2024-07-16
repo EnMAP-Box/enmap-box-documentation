@@ -128,7 +128,7 @@ todo_include_todos = True
 # A string of reStructuredText that will be included at the
 # beginning of every source file that is read.
 # rst_epilog = """
-# .. include:: /icon_links.rst
+# 
 # """
 
 
