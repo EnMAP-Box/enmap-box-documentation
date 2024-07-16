@@ -207,7 +207,7 @@ Documentation
 The EnMAP-Box documentation is based on `Sphinx-build reStructured text <https://www.sphinx-doc.org/en/master/>`_
 and hosted at https://enmap-box.readthedocs.io/en/latest .
 
-The documentation source code, i.e. *.rst files, are hosted in the :code:`/source` folder in
+The documentation source code, i.e. *.rst* files, are hosted in the :code:`/source` folder in
 https://github.com/EnMAP-Box/enmap-box-documentation
 
 Please read https://github.com/EnMAP-Box/enmap-box-documentation#readme for how you can
@@ -306,6 +306,7 @@ contracts on behalf of the corporation. The CCLA form for filling and signing is
 
 
 .. _contribute_submit_CLAs:
+
 Submitting License Agreements
 .............................
 
