@@ -9,7 +9,9 @@ If a rst file uses substitutions, the substitution definition will be appended t
 from os import path, walk
 import re
 from pathlib import Path
+
 REPO = Path(__file__).parents[1]
+
 
 def find_by_ext(folder, extension):
     """
@@ -40,7 +42,7 @@ def get_subst_from_file(file):
         line = f.readline()
         while line != "":
             if s_title.match(line) is not None:
-                f.seek(pos - 2)
+                f.seek(pos - 4)
                 f.truncate()
                 break
             else:
