@@ -3,11 +3,11 @@
 Metadata Guide
 **************
 
-The metadata guide explaines how the EnMAP-Box uses raster metadata.
+The metadata guide explains how the EnMAP-Box uses raster metadata.
 In general, metadata is used to annotate the actual raster data with additional information to allow tools and
 algorithms to make better use of them.
 E.g. we need the center wavelength of each band in an optical image to properly plot spectral profiles,
-and we need the aquisition datetime of each band in a temporal raster stack to properly plot temporal profiles.
+and we need the acquisition datetime of each band in a temporal raster stack to properly plot temporal profiles.
 
 The EnMAP-Box supports multiple levels of raster metadata specifications.
 If a metadata item is requested, we look for it inside the following places and sequential order:
@@ -18,7 +18,7 @@ If a metadata item is requested, we look for it inside the following places and 
 
 Note that metadata items can be specified in multiple places, with potentially conflicting values.
 It is the responsibility of the user, to make sure, that lower-level metadata
-(e.g. metadata inside an ENVI *.hdr header file), isn't shadowed by higher-level specifications (e.g. GDAL PAM or STAC).
+(e.g. metadata inside an ENVI *.hdr* header file), isn't shadowed by higher-level specifications (e.g. GDAL PAM or STAC).
 
 Introduction to STAC Metadata
 =============================
