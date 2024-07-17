@@ -84,6 +84,7 @@ GIS and Remote Sensing
         .. image:: img/categorized_vector_layer_styling.png
 
     category
+       It refers to a classification used to organize various elements, such as tools, functions, or datasets.
 
     categories
         A category has a value, a name and a :term:`color`.
