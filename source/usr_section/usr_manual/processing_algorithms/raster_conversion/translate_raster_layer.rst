@@ -48,7 +48,7 @@ Convert raster data between different formats, potentially performing some opera
 
 
 :guilabel:`Write ENVI header` [boolean]
-    Whether to write an ENVI header *.hdr sidecar file with spectral metadata required for proper visualization in ENVI software.
+    Whether to write an ENVI header *.hdr* sidecar file with spectral metadata required for proper visualization in ENVI software.
 
     Default: *True*
 

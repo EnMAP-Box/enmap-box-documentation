@@ -18,7 +18,7 @@ Spectrally resample a `spectral raster layer <https://enmap-box.readthedocs.io/e
 
 
 :guilabel:`Save spectral response function` [boolean]
-    Whether to save the `spectral response function library <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-response-function-library>`_ as *.srf.gpkg sidecar file.
+    Whether to save the `spectral response function library <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-response-function-library>`_ as *.srf.gpkg* sidecar file.
 
     Default: *False*
 

@@ -101,4 +101,4 @@ Also add a caption to the image if it is **not** placed between two bullet point
     .. figure:: /img/images_caption_example.png
        :align: center
 
-*Placement of images for (left) after body text, (right) within bullet points *
+*Placement of images for (left) after body text, (right) within bullet points*
