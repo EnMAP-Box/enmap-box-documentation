@@ -6,11 +6,9 @@ Setup
 #. It is assumed that you already followed the
    `installation instruction <https://enmap-box.readthedocs.io/en/latest/dev_section/dev_installation.html>`_.
 
-#. Download the materials for
-   `Application Tutorial 1 (not available anymore).
+#. Download the materials for Application Tutorial 1 (not available anymore).
 
-#. Download the materials for
-   `Application Tutorial 2 (not available anymore).
+#. Download the materials for Application Tutorial 2 (not available anymore).
 
 #. Materials for *Application Tutorial 3* will be provided later.
 
