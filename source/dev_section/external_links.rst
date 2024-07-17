@@ -18,7 +18,6 @@
 .. _miniconda: https://docs.conda.io/en/latest/miniconda.html
 .. _Numba: https://numba.pydata.org/
 .. _Conda: https://docs.conda.io/en/latest/miniconda.html
-.. _conda: https://docs.conda.io/en/latest/miniconda.html
 .. _conda-forge: https://conda-forge.org/
 .. _pip: https://pip.pypa.io/en/stable
 
@@ -1098,7 +1097,7 @@
 .. _Q_FLAGs: https://doc.qt.io/qt-5/q_flag.html
 .. _Q_RETURN_ARG: https://doc.qt.io/qt-5/q_return_arg.html
 .. _Q_RETURN_ARGs: https://doc.qt.io/qt-5/q_return_arg.html
-.. _Qgis: https://api.qgis.org/api/classQgis.html
+.. _Qgis_api: https://api.qgis.org/api/classQgis.html
 .. _Qgiss: https://api.qgis.org/api/classQgis.html
 .. _QgisInterface: https://api.qgis.org/api/classQgisInterface.html
 .. _QgisInterfaces: https://api.qgis.org/api/classQgisInterface.html
