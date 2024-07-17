@@ -23,6 +23,7 @@ Spatial morphological White Top-Hat filter. See `Wikipedia <https://en.wikipedia
         from scipy.ndimage import white_tophat
         
         function = lambda array: white_tophat(array, size=(3, 3))
+
 **Outputs**
 
 

@@ -74,6 +74,7 @@ Basic Visualization Steps
 * The **attribute table** shows the none-spatial information for each feature in a row.
 
 ..
+
 * Let's have a closer look at the toolbar:
 
     .. image:: img/05_spec_lib_toolbar.png
