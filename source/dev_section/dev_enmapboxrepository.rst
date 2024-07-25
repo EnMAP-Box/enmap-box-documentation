@@ -17,7 +17,7 @@ The repository contains the following files and folders:
 Folder/File                     Purpose
 =============================== ========================================================================================
 doc/                            EnMAP-Box Sphinx *.rst documentation
-doc_*/                          Deprecated doc folders (will be removed)
+``doc_*``                       Deprecated doc folders (will be removed)
 enmapbox/                       EnMAP-Box source code
 enmapboxtesting/                Unit tests
 scripts/                        Scripts to maintain the repository and build the EnMAP-Box QGIS Plugin
