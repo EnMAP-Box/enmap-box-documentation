@@ -30,8 +30,7 @@ Requirements
     This tutorial requires version 3.10+ of the EnMAP-Box 3 running in QGIS 3.24+.
 
 Data
-    :download:`You can download the data for this exercise here:`
-    https://box.hu-berlin.de/f/2ecf8943d6fa4474bf38/?dl=1
+   You can download the data for this exercise here: `Download Data <https://box.hu-berlin.de/f/2ecf8943d6fa4474bf38/?dl=1>`_
 
     The tutorial dataset contains a PRISMA L2D image over Berlin, Germany,
     as well as a point based landcover reference sample.

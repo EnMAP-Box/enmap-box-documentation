@@ -66,8 +66,8 @@ We recommend [1]_ for a comprehensive overview on imaging spectroscopy of urban 
 4. Data
 -------
 
-:download:`The tutorial data can be downloaded here:`
-https://box.hu-berlin.de/f/e4fa78c198bc4d868d30/?dl=1
+The tutorial data can be downloaded here: `Download Data <https://box.hu-berlin.de/f/e4fa78c198bc4d868d30/?dl=1>`_
+
 
 The tutorial data covers a region along the urban gradient of Berlin, Germany. It consists of a simulated hyperspectral EnMAP image at 30 m resolution, a corresponding hyperspectral HyMap image at 3.6 m resolution, a spectral library, and detailed land cover reference information.
 

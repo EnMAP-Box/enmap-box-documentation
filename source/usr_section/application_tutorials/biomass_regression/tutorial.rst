@@ -70,8 +70,7 @@ an overview of remote sensing of forest AGB and [4]_ for a companion study using
 5. Data
 =======
 
-:download:`You can download the data for this exercise here:`
-    https://box.hu-berlin.de/f/c64b035316f54be08ebb/?dl=1
+You can download the data for this exercise here: `Download Data <https://box.hu-berlin.de/f/c64b035316f54be08ebb/?dl=1>`_
 
 The tutorial data contains a simulated hyperspectral EnMAP image, plot-based AGB references
 as well as a land cover map for a small study area located in Sonoma County, California, USA. The simulated EnMAP
@@ -120,7 +119,7 @@ Exercise A: Getting started with the EnMAP-Box
 .. image:: img/ex_a_agb_tutorial_figure_1.png
    :width: 100%
 
-2. Load data00
+2. Load data
 ============
 
 * To load new datasets into the EnMAP-Box, click the |mActionDataSourceManager| icon and navigate to the file directory
