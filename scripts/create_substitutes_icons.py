@@ -2,6 +2,7 @@ import os
 import pathlib
 import re
 import shutil
+from io import TextIOWrapper
 from os.path import basename, splitext, getmtime
 
 from utils import file_search
@@ -30,7 +31,7 @@ ENMAPBOX_ICON_DIRS = \
      DIR_ENMAPBOX_REPO / 'enmapbox/qgispluginsupport/qps/ui/icons']
 
 PATH_LINKS_TXT = DIR_SOURCE / 'substitutions_generated.txt'
-PATH_RST_VIEWER = DIR_SOURCE / 'icon_links_viewer.rst'
+PATH_RST_VIEWER = DIR_SOURCE / 'dev_section' / 'icon_links_viewer.rst'
 
 rx_extensions = re.compile(r'\.(svg|png)$')
 
@@ -74,10 +75,14 @@ with open(PATH_LINKS_TXT, 'w', encoding='utf-8', newline='') as f:
 
 # write rst file showing all the icons
 with open(PATH_RST_VIEWER, 'w', encoding='utf-8', newline='') as f:
+    f: TextIOWrapper
+    f.writelines(['EnMAP-Box Icons\n',
+                  '###############\n\n'])
     for line in lines:
         name = line.split('|')[1]
         # text = f'{name}\n    |{name}|\n\n'
         text = f'{name}    |{name}| '
         f.write(text)
+
 
 print('Done')
