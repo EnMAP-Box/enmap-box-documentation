@@ -31,7 +31,7 @@ Prerequisites
 Ensure that you have installed the EnMAP-Box repository and setup your PyCharm environment as described our
 :ref:`installation guide for developers <dev_installation>`.
 
-
+.. include:: setup_pycharmproject.rst
 .. include:: part1_basics.rst
 .. include:: part2_enmapbox.rst
 .. include:: part3_advanced.rst

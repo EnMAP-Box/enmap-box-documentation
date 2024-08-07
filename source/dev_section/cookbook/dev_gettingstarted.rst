@@ -5,9 +5,9 @@
 .. Getting Started
 .. ===============
 
-==============
-EnMAP Cookbook
-==============
+============================
+EnMAP-Box Developer Cookbook
+============================
 
 The following examples show how to interact with the EnMAP-Box GUI.
 They are available unittest TestCases in `examples/api_examples.py`

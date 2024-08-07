@@ -1,8 +1,8 @@
 .. _dev_cookbook:
 
 
-Dev Cookbook
-############
+Cookbook
+########
 
 .. toctree::
    :maxdepth: 4

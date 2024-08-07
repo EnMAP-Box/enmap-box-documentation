@@ -1,7 +1,7 @@
-Programming Tutorials
-#####################
+Tutorials
+#########
 
-This section provides you with two programming tutorials.
+EnMAP-Box Programming Tutorials
 
 Please make sure to setup your environment by following the steps in the *Setup* box below before you start with a tutorial.
 
@@ -10,6 +10,7 @@ Please make sure to setup your environment by following the steps in the *Setup*
 .. toctree::
    :maxdepth: 1
 
+   create_enmapbox_application.rst
    programming_tutorial1/pt1.rst
    programming_tutorial2/tutorial_content.rst
 

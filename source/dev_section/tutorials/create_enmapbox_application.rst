@@ -1,4 +1,4 @@
-.. include:: external_links.rst
+.. include:: ../external_links.rst
 
 Create EnMAP-Box Applications
 #############################
