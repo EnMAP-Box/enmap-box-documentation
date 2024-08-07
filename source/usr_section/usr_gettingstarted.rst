@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. _getting_started:
 
@@ -125,3 +125,37 @@ classification raster, i.e., we are going to rasterize the vector dataset.
 
    If you face issues or have questions, head over to the `GitHub Discussions page <https://github.com/EnMAP-Box/enmap-box/discussions>`_
    and start a new discussion.
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |combo| image:: /img/icons/combo.png
+   :width: 28px
+.. |enmapbox| image:: /img/icons/enmapbox.png
+   :width: 28px
+.. |link_all_mapscale_center| image:: /img/icons/link_all_mapscale_center.svg
+   :width: 28px
+.. |link_basic| image:: /img/icons/link_basic.svg
+   :width: 28px
+.. |mActionPan| image:: /img/icons/mActionPan.svg
+   :width: 28px
+.. |mouse_leftclick| image:: /img/icons/mouse_leftclick.svg
+   :width: 28px
+.. |mouse_wheel| image:: /img/icons/mouse_wheel.svg
+   :width: 28px
+.. |symbology| image:: /img/icons/symbology.svg
+   :width: 28px
+.. |viewlist_mapdock| image:: /img/icons/viewlist_mapdock.svg
+   :width: 28px

@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 Metadata Guide
 **************

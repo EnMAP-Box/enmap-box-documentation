@@ -77,4 +77,13 @@ If you never have used git before, we recommend to read a basic git tutorial fir
 * open a bash shell and run `./scripts/create_docs.sh` (windows/linux bash shell), or 
 * run (linux) `make html`, or (windows) `make.bat html`.
 
+# Substitutes
+
+Substitute allow you to "recycle" code definitions
+
+1. Define a substitute in `source/substitutions_manual.txt`. E.g. write ``.. |my_icon| image:: img/icons/myicon.png``
+2. Use ``|my_icon|`  in any *.rst file you like.
+3. Run ``python scripts/create_substitutes.py`` to append the ``|my_icon|`` to any *.rst file where it is used
+4. Run ``make.bat html`` to build the documentation.
+
 

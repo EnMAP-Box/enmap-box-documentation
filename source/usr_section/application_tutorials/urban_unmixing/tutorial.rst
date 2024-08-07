@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. _tut_urban_unmixing:
 
@@ -594,3 +594,55 @@ Additional Exercises
 
 .. |identifytools2| image:: tut_img/identify_tools2.png
    :height: 27px
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |attributes| image:: /img/icons/attributes.svg
+   :width: 28px
+.. |cb1| image:: /img/icons/cb1.png
+   :width: 28px
+.. |enmapbox| image:: /img/icons/enmapbox.png
+   :width: 28px
+.. |link_all_mapscale_center| image:: /img/icons/link_all_mapscale_center.svg
+   :width: 28px
+.. |link_basic| image:: /img/icons/link_basic.svg
+   :width: 28px
+.. |mActionDeleteAttribute| image:: /img/icons/mActionDeleteAttribute.svg
+   :width: 28px
+.. |mActionDeleteSelected| image:: /img/icons/mActionDeleteSelected.svg
+   :width: 28px
+.. |mActionEditCopy| image:: /img/icons/mActionEditCopy.svg
+   :width: 28px
+.. |mActionEditPaste| image:: /img/icons/mActionEditPaste.svg
+   :width: 28px
+.. |mActionNewAttribute| image:: /img/icons/mActionNewAttribute.svg
+   :width: 28px
+.. |mActionToggleEditing| image:: /img/icons/mActionToggleEditing.svg
+   :width: 28px
+.. |plus_green| image:: /img/icons/plus_green.svg
+   :width: 28px
+.. |processingAlgorithm| image:: /img/icons/processingAlgorithm.svg
+   :width: 28px
+.. |processing_collapse| image:: /img/icons/processing_collapse.svg
+   :width: 28px
+.. |speclib| image:: /img/icons/speclib.svg
+   :width: 28px
+.. |speclib_save| image:: /img/icons/speclib_save.svg
+   :width: 28px
+.. |symbology| image:: /img/icons/symbology.svg
+   :width: 28px
+.. |viewlist_mapdock| image:: /img/icons/viewlist_mapdock.svg
+   :width: 28px

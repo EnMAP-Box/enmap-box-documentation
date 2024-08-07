@@ -179,16 +179,25 @@ Andreas Rabe (Humboldt-Universität zu Berlin)
 Funding
 -------
 
-.. |hzg| image:: img/hzg_rgb_mitzusatz_in_e_300dpi.jpg
-   :target: https://hereon.de/institutes/carbon_cycles/optical_oceanography/index.php.de
-
-.. |esa| image:: img/03_logo_dark_blue.bmp
-
-.. |enmap| image:: img/Enmap_logo.jpg
-
-.. |bmwi| image:: img/BMWi_4C_Gef_en.jpg
-
 .. csv-table::
 
    |hzg|,|esa|,|enmap|,|bmwi|
 
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |bmwi| image:: /img/logos/logo_bmwi.jpg
+   :width: 100%
+.. |enmap| image:: /img/logos/logo_enmap.svg
+.. |esa| image:: /img/logos/logo_esa.bmp
+.. |hzg| image:: /img/logos/logo_hzg.jpg
+   :target: https://hereon.de/institutes/carbon_cycles/optical_oceanography/index.php.de

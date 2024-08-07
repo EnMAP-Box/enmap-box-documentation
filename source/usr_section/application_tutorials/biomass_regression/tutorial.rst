@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. _tutorial_biomass:
 
@@ -604,3 +604,49 @@ Additional Exercises
      the **Raster Math** tool to calculate the average estimate and variance. How does running the regression in such an
      ensemble approach affect the results? What is the spatial pattern of variation in estimates?
    * **AE3**: Rerun regression (Exercise B) using NDVI as the input rather than the hyperspectral imagery.
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |cursorlocationinfo| image:: /img/icons/cursorlocationinfo.svg
+   :width: 28px
+.. |enmapbox| image:: /img/icons/enmapbox.png
+   :width: 28px
+.. |link_all_mapscale_center| image:: /img/icons/link_all_mapscale_center.svg
+   :width: 28px
+.. |link_basic| image:: /img/icons/link_basic.svg
+   :width: 28px
+.. |mActionDataSourceManager| image:: /img/icons/mActionDataSourceManager.svg
+   :width: 28px
+.. |mIconCollapse| image:: /img/icons/mIconCollapse.svg
+   :width: 28px
+.. |mIconPolygonLayer| image:: /img/icons/mIconPolygonLayer.svg
+   :width: 28px
+.. |mSourceFields| image:: /img/icons/mSourceFields.svg
+   :width: 28px
+.. |processingAlgorithm| image:: /img/icons/processingAlgorithm.svg
+   :width: 28px
+.. |processing_collapse| image:: /img/icons/processing_collapse.svg
+   :width: 28px
+.. |select_location| image:: /img/icons/select_location.svg
+   :width: 28px
+.. |speclib_add| image:: /img/icons/speclib_add.svg
+   :width: 28px
+.. |symbology| image:: /img/icons/symbology.svg
+   :width: 28px
+.. |viewlist_mapdock| image:: /img/icons/viewlist_mapdock.svg
+   :width: 28px
+.. |viewlist_spectrumdock| image:: /img/icons/viewlist_spectrumdock.svg
+   :width: 28px

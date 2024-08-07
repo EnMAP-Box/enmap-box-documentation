@@ -1,11 +1,7 @@
-.. include:: /icon_links.rst
+
 .. include:: /dev_section/external_links.rst
 
-.. |osgeoicon| image:: ../img/OSGeo4W.ico
-   :width: 30px
-   :height: 30px
 
-.. |osgeoinstaller| image:: ../img/osgeoinstaller.png
 
 
 =====================
@@ -185,3 +181,16 @@ and/or only affect a specific version of QGIS or operating system:
 * https://github.com/EnMAP-Box/enmap-box/labels/known%20issue
 * Historic (old repository): https://bitbucket.org/hu-geomatics/enmap-box/issues?component=known+issue&status=on+hold
 
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |osgeoinstaller| image:: /img/osgeoinstaller.png

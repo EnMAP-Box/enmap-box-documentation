@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. _tutorial_earsel_part1:
 
