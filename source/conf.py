@@ -47,6 +47,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinxcontrib.youtube',
     'sphinx_copybutton',
+    'myst_parser',
 ]
 
 
@@ -69,7 +70,8 @@ def filter_warning_log(app, exception):
 
 # Register the filter_warning_log function to be called when warnings are logged
 def setup(app):
-    app.connect('build-finished', filter_warning_log)
+    # app.connect('build-finished', filter_warning_log)
+    pass
 
 
 # Add any paths that contain templates here, relative to this directory.
@@ -79,10 +81,10 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 source_parsers = {
-    '.md': 'recommonmark.parser.CommonMarkParser',
+    # '.md': 'recommonmark.parser.CommonMarkParser',
 }
 
-source_suffix = ['.rst', '.md']
+# source_suffix = ['.rst', '.md']
 # source_suffix = '.rst'
 
 # The master toctree document.
