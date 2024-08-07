@@ -8,11 +8,11 @@ Please make sure to setup your environment by following the steps in the *Setup*
 **Tutorials:**
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    create_enmapbox_application.rst
    programming_tutorial1/pt1.rst
-   programming_tutorial2/tutorial_content.rst
+   programming_tutorial2/index.rst
 
 |
 

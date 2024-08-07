@@ -1,3 +1,5 @@
+.. _Processing Algorithms:
+
 Processing Algorithms
 *********************
 

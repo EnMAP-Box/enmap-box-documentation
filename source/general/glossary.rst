@@ -111,7 +111,7 @@ GIS and Remote Sensing
         Learn more here: https://htmlcolorcodes.com/
 
     continuous-valued raster layer
-        A :term:`raster layer`, where each :term:`band` represents a :term:`continuous-valued variable`.
+        A :term:`raster layer`, where each :term:`band` represents a :term:`continuous-valued variable<continuous-valued variable>`.
 
         Variable names are given by the raster band names.
         Variable colors are given by the PAMRasterBand/Metadata "color" item (optional).
@@ -130,7 +130,7 @@ GIS and Remote Sensing
 
         TODO: screenshot for graduated renderer (see issue #1038)
 
-        A *Diagrams* renderer specifies multiple :term:`fields` used as :term:`continuous-valued variables`.
+        A *Diagrams* renderer specifies multiple :term:`fields<field>` used as :term:`continuous-valued variables<continuous-valued variable>`.
         Variable names and colors is given by assigned attribute names and colors.
 
         TODO: screenshot for diagrams renderer (see issue #1038)
@@ -600,14 +600,14 @@ Most of the following definitions are directly taken from the `Scikit-Learn glos
 
         * a model is trained using k-1 of the folds as training dataset
 
-        * the resulting model is used to predict the :term:`targets` of the remaining part of the dataset
+        * the resulting model is used to predict the :term:`targets<target>` of the remaining part of the dataset
 
         The performance can now be calculated from the predictions for the whole training dataset.
 
         .. image:: img/dataset_cross-val.png
 
         This approach can be computationally expensive,
-        but does not waste too much data (as is the case when fixing an arbitrary :term:`validation set`),
+        but does not waste too much data (as is the case when fixing an arbitrary :term:`validation dataset`),
         which is a major advantage in problems where the number of :term:`samples<sample>` is very small.
 
 
@@ -650,7 +650,7 @@ Most of the following definitions are directly taken from the `Scikit-Learn glos
         :term:`n_features` indicates the number of features in a dataset.
 
     n_features
-        The number of :term:`features` in a :term:`dataset`.
+        The number of :term:`features<feature>` in a :term:`dataset`.
 
     n_outputs
         The number of :term:`outputs<output>` in a :term:`dataset`.

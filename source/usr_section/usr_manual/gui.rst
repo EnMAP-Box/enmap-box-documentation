@@ -181,7 +181,6 @@ corresponding metadata are available:
        * |mIconRasterMask| for mask raster layers
        * |mIconRasterClassification| for classification raster layers
 
-       Also see section on :ref:`data types <processing_data_types>` for further information.
 
 
 * |mIconLineLayer| Vector Data

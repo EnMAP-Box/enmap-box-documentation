@@ -3,9 +3,6 @@
 2. Graphical User Interfaces
 ############################
 
-Overview
-========
-
 This tutorial shows you how to create graphical user interfaces (GUI) with Qt, QGIS and the EnMAP-Box.
 It covers the following aspects:
 
@@ -31,7 +28,15 @@ Prerequisites
 Ensure that you have installed the EnMAP-Box repository and setup your PyCharm environment as described our
 :ref:`installation guide for developers <dev_installation>`.
 
-.. include:: setup_pycharmproject.rst
-.. include:: part1_basics.rst
-.. include:: part2_enmapbox.rst
-.. include:: part3_advanced.rst
+
+Tutorial Sections
+-----------------
+
+
+.. toctree::
+    :maxdepth: 3
+
+    setup_pycharmproject.rst
+    part1_basics.rst
+    part2_enmapbox.rst
+    part3_advanced.rst

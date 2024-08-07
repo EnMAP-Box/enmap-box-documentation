@@ -42,7 +42,7 @@ its submodules by:
 
 The last line ensures that pull requests will update submodules as well.
 
-Now you can use `git pull <https://git-scm.com/docs/git-pull>`_ to update your local copy of the
+Now you can use `git pull <https://git-scm.com/docs/git-pull>`__ to update your local copy of the
 EnMAP-Box repository:
 
 .. code-block:: bash
@@ -168,12 +168,12 @@ e) Setup Conda (all platforms)
     Installing QGIS via conda is not officially supported by the QGIS core development team.
     The QGIS versions available in conda can therefore differ from the official QGIS versions!
 
-The installation of QGIS within a `conda <https://docs.conda.io/en/latest>`_ /
-`anaconda <https://www.anaconda.com/>`_ environment is (almost) the same on macOS, windows or linux. Using conda
+The installation of QGIS within a `conda <https://docs.conda.io/en/latest>`__ /
+`anaconda <https://www.anaconda.com/>`__ environment is (almost) the same on macOS, windows or linux. Using conda
 it is often much easier to install additional python packages while admin rights are not required.`
 
 
-1. Make sure `conda <https://docs.conda.io/en/latest/miniconda.html>`_ is installed on your system.
+1. Make sure `conda <https://docs.conda.io/en/latest/miniconda.html>`__ is installed on your system.
 
 2. Create a new conda environment named *qgis_stable* as specified in `conda_environment.yml`:
 

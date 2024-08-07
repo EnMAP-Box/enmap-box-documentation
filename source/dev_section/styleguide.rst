@@ -67,6 +67,16 @@ between information and actual steps and to follow them easily:
 2. Figures & Screenshots
 ------------------------
 
+Icons
+~~~~~
+
+Various icons are available using a substitution
+
+E.g. the EnMAP-Box icon |enmapbox| can be included using :code:`|enmapbox|`
+
+Don't forget to run `scripts/create_substitutes.py` to automatically append the
+substitution definition to the \*.rst files where it is used.
+
 Screenshots with explanations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -103,7 +113,8 @@ Also add a caption to the image if it is **not** placed between two bullet point
 
 *Placement of images for (left) after body text, (right) within bullet points*
 
-
+3. Links
+--------
 
 
 
@@ -119,6 +130,8 @@ Also add a caption to the image if it is **not** placed between two bullet point
    please add it also to the substitutions.txt file in the
    source folder.
 
+.. |enmapbox| image:: /img/icons/enmapbox.png
+   :width: 28px
 .. |mActionNewAttribute| image:: /img/icons/mActionNewAttribute.svg
    :width: 28px
 .. |mActionToggleEditing| image:: /img/icons/mActionToggleEditing.svg

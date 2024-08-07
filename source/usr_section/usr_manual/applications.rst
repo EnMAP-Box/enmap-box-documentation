@@ -402,7 +402,7 @@ Input Parameters:
 
   * :guilabel:`Raster`: Specify the raster you would like to apply the trained classifier to (usually -but not necessarily-
     this is the same as used for training)
-  * :guilabel:`Mask`: Specify a :ref:`mask <datatype_mask>` layer if you want to exclude certain areas from the prediction.
+  * :guilabel:`Mask`: Specify a :term:`mask layer` if you want to exclude certain areas from the prediction.
 
       * Outputs:
 

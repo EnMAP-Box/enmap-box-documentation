@@ -77,7 +77,7 @@ EnMAP-Box Version 3.11 released
 Oct. 10, 2022
 
 A new EnMAP-Box version has been released.
-A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-311>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-311>`__.
 
 
 EnMAP-Box Version 3.10 released
@@ -86,7 +86,7 @@ EnMAP-Box Version 3.10 released
 June 09, 2022
 
 A new EnMAP-Box version has been released.
-A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-310>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-310>`__.
 
 
 EnMAP-Box Version 3.9 released
@@ -95,7 +95,7 @@ EnMAP-Box Version 3.9 released
 Oct. 10, 2021
 
 A new EnMAP-Box version has been released.
-A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-39>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-39>`__.
 
 EnMAP-Box Workshop 2021
 =======================
@@ -106,7 +106,7 @@ June 07, 2021
 
 The next EnMAP-Box workshop will be held online on 21-23 June, 2021.
 The workshop aims to demonstrate the current state of the EnMAP-Box by way of presentations, live demos with Q&A and self-paced tutorials.
-Registration for up to 250 participants is now open at the `workshop website <https://bitbucket.org/hu-geomatics/enmap-box/wiki/events/Workshop_2021>`_.
+Registration for up to 250 participants is now open at the `workshop website <https://bitbucket.org/hu-geomatics/enmap-box/wiki/events/Workshop_2021>`__.
 
 
 FOSSGIS 2021 Rapperswil
@@ -131,7 +131,7 @@ Oct. 27, 2020
 
 A new EnMAP-Box version has been released. It includes product readers for EnMAP L1B, L2C and L2A, PRISMA L2D
 and DESIS L2A images, and a first version of Spectral Math in the QGIS Expression Builder.
-A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md>`_.
+A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md>`__.
 
 
 FOSSGIS 2020
@@ -152,5 +152,5 @@ QGIS User Conference 2019
 
 Two Presentations by EnMAP-Box developers Andreas Rabe and Benjamin Jakimow at the QGIS User conference in Coruña
 
-* `Earth observation data processing in QGIS with a python API <https://av.tib.eu/media/40775>`_
-* `EO Time Series Viewer - A plugin to explore Earth Observation Time Series Data in QGIS <https://av.tib.eu/media/40776>`_
+* `Earth observation data processing in QGIS with a python API <https://av.tib.eu/media/40775>`__
+* `EO Time Series Viewer - A plugin to explore Earth Observation Time Series Data in QGIS <https://av.tib.eu/media/40776>`__

@@ -17,8 +17,8 @@
 .. |Miniconda| replace:: `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`_
 .. |miniconda| replace:: `miniconda <https://docs.conda.io/en/latest/miniconda.html>`_
 .. |Numba| replace:: `Numba <https://numba.pydata.org/>`_
-.. |Conda| replace:: `Conda <https://docs.conda.io/en/latest/miniconda.html>`_
-.. |conda| replace:: `conda <https://docs.conda.io/en/latest/miniconda.html>`_
+.. |Conda| replace:: `Conda <https://docs.anaconda.com/miniconda/>`_
+.. |conda| replace:: `conda <https://docs.anaconda.com/miniconda/>`_
 .. |conda-forge| replace:: `conda-forge <https://conda-forge.org/>`_
 .. |pip| replace:: `pip <https://pip.pypa.io/en/stable>`_
 
@@ -1176,8 +1176,6 @@
 .. |QgsAbstractLayoutUndoCommands| replace:: `QgsAbstractLayoutUndoCommands <https://api.qgis.org/api/classQgsAbstractLayoutUndoCommand.html>`_
 .. |QgsAbstractMapToolHandler|  replace:: `QgsAbstractMapToolHandler <https://api.qgis.org/api/classQgsAbstractMapToolHandler.html>`_
 .. |QgsAbstractMapToolHandlers| replace:: `QgsAbstractMapToolHandlers <https://api.qgis.org/api/classQgsAbstractMapToolHandler.html>`_
-.. |QgsAbstractMeshLayerLabeling|  replace:: `QgsAbstractMeshLayerLabeling <https://api.qgis.org/api/classQgsAbstractMeshLayerLabeling.html>`_
-.. |QgsAbstractMeshLayerLabelings| replace:: `QgsAbstractMeshLayerLabelings <https://api.qgis.org/api/classQgsAbstractMeshLayerLabeling.html>`_
 .. |QgsAbstractMetadataBase|  replace:: `QgsAbstractMetadataBase <https://api.qgis.org/api/classQgsAbstractMetadataBase.html>`_
 .. |QgsAbstractMetadataBases| replace:: `QgsAbstractMetadataBases <https://api.qgis.org/api/classQgsAbstractMetadataBase.html>`_
 .. |QgsAbstractMetadataBaseValidator|  replace:: `QgsAbstractMetadataBaseValidator <https://api.qgis.org/api/classQgsAbstractMetadataBaseValidator.html>`_
@@ -1574,8 +1572,6 @@
 .. |QgsCodeEditorSQLs| replace:: `QgsCodeEditorSQLs <https://api.qgis.org/api/classQgsCodeEditorSQL.html>`_
 .. |QgsCodeEditorShell|  replace:: `QgsCodeEditorShell <https://api.qgis.org/api/classQgsCodeEditorShell.html>`_
 .. |QgsCodeEditorShells| replace:: `QgsCodeEditorShells <https://api.qgis.org/api/classQgsCodeEditorShell.html>`_
-.. |QgsCodeEditorWidget|  replace:: `QgsCodeEditorWidget <https://api.qgis.org/api/classQgsCodeEditorWidget.html>`_
-.. |QgsCodeEditorWidgets| replace:: `QgsCodeEditorWidgets <https://api.qgis.org/api/classQgsCodeEditorWidget.html>`_
 .. |QgsCodeInterpreter|  replace:: `QgsCodeInterpreter <https://api.qgis.org/api/classQgsCodeInterpreter.html>`_
 .. |QgsCodeInterpreters| replace:: `QgsCodeInterpreters <https://api.qgis.org/api/classQgsCodeInterpreter.html>`_
 .. |QgsCodedFieldDomain|  replace:: `QgsCodedFieldDomain <https://api.qgis.org/api/classQgsCodedFieldDomain.html>`_
@@ -1790,8 +1786,6 @@
 .. |QgsDataItemGuiProviders| replace:: `QgsDataItemGuiProviders <https://api.qgis.org/api/classQgsDataItemGuiProvider.html>`_
 .. |QgsDataItemGuiProviderRegistry|  replace:: `QgsDataItemGuiProviderRegistry <https://api.qgis.org/api/classQgsDataItemGuiProviderRegistry.html>`_
 .. |QgsDataItemGuiProviderRegistrys| replace:: `QgsDataItemGuiProviderRegistrys <https://api.qgis.org/api/classQgsDataItemGuiProviderRegistry.html>`_
-.. |QgsDataItemGuiProviderUtils|  replace:: `QgsDataItemGuiProviderUtils <https://api.qgis.org/api/classQgsDataItemGuiProviderUtils.html>`_
-.. |QgsDataItemGuiProviderUtilss| replace:: `QgsDataItemGuiProviderUtilss <https://api.qgis.org/api/classQgsDataItemGuiProviderUtils.html>`_
 .. |QgsDataItemProvider|  replace:: `QgsDataItemProvider <https://api.qgis.org/api/classQgsDataItemProvider.html>`_
 .. |QgsDataItemProviders| replace:: `QgsDataItemProviders <https://api.qgis.org/api/classQgsDataItemProvider.html>`_
 .. |QgsDataItemProviderRegistry|  replace:: `QgsDataItemProviderRegistry <https://api.qgis.org/api/classQgsDataItemProviderRegistry.html>`_
@@ -1942,10 +1936,6 @@
 .. |QgsEffectStackPropertiesDialogs| replace:: `QgsEffectStackPropertiesDialogs <https://api.qgis.org/api/classQgsEffectStackPropertiesDialog.html>`_
 .. |QgsEffectStackPropertiesWidget|  replace:: `QgsEffectStackPropertiesWidget <https://api.qgis.org/api/classQgsEffectStackPropertiesWidget.html>`_
 .. |QgsEffectStackPropertiesWidgets| replace:: `QgsEffectStackPropertiesWidgets <https://api.qgis.org/api/classQgsEffectStackPropertiesWidget.html>`_
-.. |QgsElevationControllerSettingsAction|  replace:: `QgsElevationControllerSettingsAction <https://api.qgis.org/api/classQgsElevationControllerSettingsAction.html>`_
-.. |QgsElevationControllerSettingsActions| replace:: `QgsElevationControllerSettingsActions <https://api.qgis.org/api/classQgsElevationControllerSettingsAction.html>`_
-.. |QgsElevationControllerWidget|  replace:: `QgsElevationControllerWidget <https://api.qgis.org/api/classQgsElevationControllerWidget.html>`_
-.. |QgsElevationControllerWidgets| replace:: `QgsElevationControllerWidgets <https://api.qgis.org/api/classQgsElevationControllerWidget.html>`_
 .. |QgsElevationMap|  replace:: `QgsElevationMap <https://api.qgis.org/api/classQgsElevationMap.html>`_
 .. |QgsElevationMaps| replace:: `QgsElevationMaps <https://api.qgis.org/api/classQgsElevationMap.html>`_
 .. |QgsElevationProfileCanvas|  replace:: `QgsElevationProfileCanvas <https://api.qgis.org/api/classQgsElevationProfileCanvas.html>`_
@@ -2164,10 +2154,6 @@
 .. |QgsFillSymbols| replace:: `QgsFillSymbols <https://api.qgis.org/api/classQgsFillSymbol.html>`_
 .. |QgsFillSymbolLayer|  replace:: `QgsFillSymbolLayer <https://api.qgis.org/api/classQgsFillSymbolLayer.html>`_
 .. |QgsFillSymbolLayers| replace:: `QgsFillSymbolLayers <https://api.qgis.org/api/classQgsFillSymbolLayer.html>`_
-.. |QgsFilledLineSymbolLayer|  replace:: `QgsFilledLineSymbolLayer <https://api.qgis.org/api/classQgsFilledLineSymbolLayer.html>`_
-.. |QgsFilledLineSymbolLayers| replace:: `QgsFilledLineSymbolLayers <https://api.qgis.org/api/classQgsFilledLineSymbolLayer.html>`_
-.. |QgsFilledLineSymbolLayerWidget|  replace:: `QgsFilledLineSymbolLayerWidget <https://api.qgis.org/api/classQgsFilledLineSymbolLayerWidget.html>`_
-.. |QgsFilledLineSymbolLayerWidgets| replace:: `QgsFilledLineSymbolLayerWidgets <https://api.qgis.org/api/classQgsFilledLineSymbolLayerWidget.html>`_
 .. |QgsFilledMarkerSymbolLayer|  replace:: `QgsFilledMarkerSymbolLayer <https://api.qgis.org/api/classQgsFilledMarkerSymbolLayer.html>`_
 .. |QgsFilledMarkerSymbolLayers| replace:: `QgsFilledMarkerSymbolLayers <https://api.qgis.org/api/classQgsFilledMarkerSymbolLayer.html>`_
 .. |QgsFilledMarkerSymbolLayerWidget|  replace:: `QgsFilledMarkerSymbolLayerWidget <https://api.qgis.org/api/classQgsFilledMarkerSymbolLayerWidget.html>`_
@@ -2186,8 +2172,6 @@
 .. |QgsFocusWatchers| replace:: `QgsFocusWatchers <https://api.qgis.org/api/classQgsFocusWatcher.html>`_
 .. |QgsFontButton|  replace:: `QgsFontButton <https://api.qgis.org/api/classQgsFontButton.html>`_
 .. |QgsFontButtons| replace:: `QgsFontButtons <https://api.qgis.org/api/classQgsFontButton.html>`_
-.. |QgsFontDownloadDetails|  replace:: `QgsFontDownloadDetails <https://api.qgis.org/api/classQgsFontDownloadDetails.html>`_
-.. |QgsFontDownloadDetailss| replace:: `QgsFontDownloadDetailss <https://api.qgis.org/api/classQgsFontDownloadDetails.html>`_
 .. |QgsFontManager|  replace:: `QgsFontManager <https://api.qgis.org/api/classQgsFontManager.html>`_
 .. |QgsFontManagers| replace:: `QgsFontManagers <https://api.qgis.org/api/classQgsFontManager.html>`_
 .. |QgsFontMarkerSymbolLayer|  replace:: `QgsFontMarkerSymbolLayer <https://api.qgis.org/api/classQgsFontMarkerSymbolLayer.html>`_
@@ -2232,8 +2216,6 @@
 .. |QgsGeometryGeneratorSymbolLayerWidgets| replace:: `QgsGeometryGeneratorSymbolLayerWidgets <https://api.qgis.org/api/classQgsGeometryGeneratorSymbolLayerWidget.html>`_
 .. |QgsGeometryOptions|  replace:: `QgsGeometryOptions <https://api.qgis.org/api/classQgsGeometryOptions.html>`_
 .. |QgsGeometryOptionss| replace:: `QgsGeometryOptionss <https://api.qgis.org/api/classQgsGeometryOptions.html>`_
-.. |QgsGeometryPaintDevice|  replace:: `QgsGeometryPaintDevice <https://api.qgis.org/api/classQgsGeometryPaintDevice.html>`_
-.. |QgsGeometryPaintDevices| replace:: `QgsGeometryPaintDevices <https://api.qgis.org/api/classQgsGeometryPaintDevice.html>`_
 .. |QgsGeometryParameters|  replace:: `QgsGeometryParameters <https://api.qgis.org/api/classQgsGeometryParameters.html>`_
 .. |QgsGeometryParameterss| replace:: `QgsGeometryParameterss <https://api.qgis.org/api/classQgsGeometryParameters.html>`_
 .. |QgsGeometryPartIterator|  replace:: `QgsGeometryPartIterator <https://api.qgis.org/api/classQgsGeometryPartIterator.html>`_
@@ -2242,8 +2224,6 @@
 .. |QgsGeometryRubberBands| replace:: `QgsGeometryRubberBands <https://api.qgis.org/api/classQgsGeometryRubberBand.html>`_
 .. |QgsGeometryUtils|  replace:: `QgsGeometryUtils <https://api.qgis.org/api/classQgsGeometryUtils.html>`_
 .. |QgsGeometryUtilss| replace:: `QgsGeometryUtilss <https://api.qgis.org/api/classQgsGeometryUtils.html>`_
-.. |QgsGeometryUtilsBase|  replace:: `QgsGeometryUtilsBase <https://api.qgis.org/api/classQgsGeometryUtilsBase.html>`_
-.. |QgsGeometryUtilsBases| replace:: `QgsGeometryUtilsBases <https://api.qgis.org/api/classQgsGeometryUtilsBase.html>`_
 .. |QgsGeometryValidator|  replace:: `QgsGeometryValidator <https://api.qgis.org/api/classQgsGeometryValidator.html>`_
 .. |QgsGeometryValidators| replace:: `QgsGeometryValidators <https://api.qgis.org/api/classQgsGeometryValidator.html>`_
 .. |QgsGeometryWidget|  replace:: `QgsGeometryWidget <https://api.qgis.org/api/classQgsGeometryWidget.html>`_
@@ -2428,8 +2408,6 @@
 .. |QgsLabelObstacleSettingsWidgets| replace:: `QgsLabelObstacleSettingsWidgets <https://api.qgis.org/api/classQgsLabelObstacleSettingsWidget.html>`_
 .. |QgsLabelPlacementSettings|  replace:: `QgsLabelPlacementSettings <https://api.qgis.org/api/classQgsLabelPlacementSettings.html>`_
 .. |QgsLabelPlacementSettingss| replace:: `QgsLabelPlacementSettingss <https://api.qgis.org/api/classQgsLabelPlacementSettings.html>`_
-.. |QgsLabelPointSettings|  replace:: `QgsLabelPointSettings <https://api.qgis.org/api/classQgsLabelPointSettings.html>`_
-.. |QgsLabelPointSettingss| replace:: `QgsLabelPointSettingss <https://api.qgis.org/api/classQgsLabelPointSettings.html>`_
 .. |QgsLabelPosition|  replace:: `QgsLabelPosition <https://api.qgis.org/api/classQgsLabelPosition.html>`_
 .. |QgsLabelPositions| replace:: `QgsLabelPositions <https://api.qgis.org/api/classQgsLabelPosition.html>`_
 .. |QgsLabelSearchTree|  replace:: `QgsLabelSearchTree <https://api.qgis.org/api/classQgsLabelSearchTree.html>`_
@@ -2958,8 +2936,6 @@
 .. |QgsMaskMarkerSymbolLayerWidgets| replace:: `QgsMaskMarkerSymbolLayerWidgets <https://api.qgis.org/api/classQgsMaskMarkerSymbolLayerWidget.html>`_
 .. |QgsMaskPaintDevice|  replace:: `QgsMaskPaintDevice <https://api.qgis.org/api/classQgsMaskPaintDevice.html>`_
 .. |QgsMaskPaintDevices| replace:: `QgsMaskPaintDevices <https://api.qgis.org/api/classQgsMaskPaintDevice.html>`_
-.. |QgsMaskRenderSettings|  replace:: `QgsMaskRenderSettings <https://api.qgis.org/api/classQgsMaskRenderSettings.html>`_
-.. |QgsMaskRenderSettingss| replace:: `QgsMaskRenderSettingss <https://api.qgis.org/api/classQgsMaskRenderSettings.html>`_
 .. |QgsMasterLayoutInterface|  replace:: `QgsMasterLayoutInterface <https://api.qgis.org/api/classQgsMasterLayoutInterface.html>`_
 .. |QgsMasterLayoutInterfaces| replace:: `QgsMasterLayoutInterfaces <https://api.qgis.org/api/classQgsMasterLayoutInterface.html>`_
 .. |QgsMatrix4x4|  replace:: `QgsMatrix4x4 <https://api.qgis.org/api/classQgsMatrix4x4.html>`_
@@ -3030,8 +3006,6 @@
 .. |QgsMeshLayerElevationPropertiess| replace:: `QgsMeshLayerElevationPropertiess <https://api.qgis.org/api/classQgsMeshLayerElevationProperties.html>`_
 .. |QgsMeshLayerProperties|  replace:: `QgsMeshLayerProperties <https://api.qgis.org/api/classQgsMeshLayerProperties.html>`_
 .. |QgsMeshLayerPropertiess| replace:: `QgsMeshLayerPropertiess <https://api.qgis.org/api/classQgsMeshLayerProperties.html>`_
-.. |QgsMeshLayerSimpleLabeling|  replace:: `QgsMeshLayerSimpleLabeling <https://api.qgis.org/api/classQgsMeshLayerSimpleLabeling.html>`_
-.. |QgsMeshLayerSimpleLabelings| replace:: `QgsMeshLayerSimpleLabelings <https://api.qgis.org/api/classQgsMeshLayerSimpleLabeling.html>`_
 .. |QgsMeshLayerTemporalProperties|  replace:: `QgsMeshLayerTemporalProperties <https://api.qgis.org/api/classQgsMeshLayerTemporalProperties.html>`_
 .. |QgsMeshLayerTemporalPropertiess| replace:: `QgsMeshLayerTemporalPropertiess <https://api.qgis.org/api/classQgsMeshLayerTemporalProperties.html>`_
 .. |QgsMeshMultiLevelsAveragingMethod|  replace:: `QgsMeshMultiLevelsAveragingMethod <https://api.qgis.org/api/classQgsMeshMultiLevelsAveragingMethod.html>`_
@@ -3052,8 +3026,6 @@
 .. |QgsMeshRendererVectorStreamlineSettingss| replace:: `QgsMeshRendererVectorStreamlineSettingss <https://api.qgis.org/api/classQgsMeshRendererVectorStreamlineSettings.html>`_
 .. |QgsMeshRendererVectorTracesSettings|  replace:: `QgsMeshRendererVectorTracesSettings <https://api.qgis.org/api/classQgsMeshRendererVectorTracesSettings.html>`_
 .. |QgsMeshRendererVectorTracesSettingss| replace:: `QgsMeshRendererVectorTracesSettingss <https://api.qgis.org/api/classQgsMeshRendererVectorTracesSettings.html>`_
-.. |QgsMeshRendererVectorWindBarbSettings|  replace:: `QgsMeshRendererVectorWindBarbSettings <https://api.qgis.org/api/classQgsMeshRendererVectorWindBarbSettings.html>`_
-.. |QgsMeshRendererVectorWindBarbSettingss| replace:: `QgsMeshRendererVectorWindBarbSettingss <https://api.qgis.org/api/classQgsMeshRendererVectorWindBarbSettings.html>`_
 .. |QgsMeshSigmaAveragingMethod|  replace:: `QgsMeshSigmaAveragingMethod <https://api.qgis.org/api/classQgsMeshSigmaAveragingMethod.html>`_
 .. |QgsMeshSigmaAveragingMethods| replace:: `QgsMeshSigmaAveragingMethods <https://api.qgis.org/api/classQgsMeshSigmaAveragingMethod.html>`_
 .. |QgsMeshSpatialIndex|  replace:: `QgsMeshSpatialIndex <https://api.qgis.org/api/classQgsMeshSpatialIndex.html>`_
@@ -3254,8 +3226,6 @@
 .. |QgsOrientedBox3Ds| replace:: `QgsOrientedBox3Ds <https://api.qgis.org/api/classQgsOrientedBox3D.html>`_
 .. |QgsOuterGlowEffect|  replace:: `QgsOuterGlowEffect <https://api.qgis.org/api/classQgsOuterGlowEffect.html>`_
 .. |QgsOuterGlowEffects| replace:: `QgsOuterGlowEffects <https://api.qgis.org/api/classQgsOuterGlowEffect.html>`_
-.. |QgsOverlayWidgetLayout|  replace:: `QgsOverlayWidgetLayout <https://api.qgis.org/api/classQgsOverlayWidgetLayout.html>`_
-.. |QgsOverlayWidgetLayouts| replace:: `QgsOverlayWidgetLayouts <https://api.qgis.org/api/classQgsOverlayWidgetLayout.html>`_
 .. |QgsOwsConnection|  replace:: `QgsOwsConnection <https://api.qgis.org/api/classQgsOwsConnection.html>`_
 .. |QgsOwsConnections| replace:: `QgsOwsConnections <https://api.qgis.org/api/classQgsOwsConnection.html>`_
 .. |QgsPageSize|  replace:: `QgsPageSize <https://api.qgis.org/api/classQgsPageSize.html>`_
@@ -3294,8 +3264,6 @@
 .. |QgsPasswordLineEdits| replace:: `QgsPasswordLineEdits <https://api.qgis.org/api/classQgsPasswordLineEdit.html>`_
 .. |QgsPathResolver|  replace:: `QgsPathResolver <https://api.qgis.org/api/classQgsPathResolver.html>`_
 .. |QgsPathResolvers| replace:: `QgsPathResolvers <https://api.qgis.org/api/classQgsPathResolver.html>`_
-.. |QgsPdfRenderer|  replace:: `QgsPdfRenderer <https://api.qgis.org/api/classQgsPdfRenderer.html>`_
-.. |QgsPdfRenderers| replace:: `QgsPdfRenderers <https://api.qgis.org/api/classQgsPdfRenderer.html>`_
 .. |QgsPenCapStyleComboBox|  replace:: `QgsPenCapStyleComboBox <https://api.qgis.org/api/classQgsPenCapStyleComboBox.html>`_
 .. |QgsPenCapStyleComboBoxs| replace:: `QgsPenCapStyleComboBoxs <https://api.qgis.org/api/classQgsPenCapStyleComboBox.html>`_
 .. |QgsPenJoinStyleComboBox|  replace:: `QgsPenJoinStyleComboBox <https://api.qgis.org/api/classQgsPenJoinStyleComboBox.html>`_
@@ -3306,8 +3274,6 @@
 .. |QgsPercentageNumericFormats| replace:: `QgsPercentageNumericFormats <https://api.qgis.org/api/classQgsPercentageNumericFormat.html>`_
 .. |QgsPercentageNumericFormatWidget|  replace:: `QgsPercentageNumericFormatWidget <https://api.qgis.org/api/classQgsPercentageNumericFormatWidget.html>`_
 .. |QgsPercentageNumericFormatWidgets| replace:: `QgsPercentageNumericFormatWidgets <https://api.qgis.org/api/classQgsPercentageNumericFormatWidget.html>`_
-.. |QgsPercentageWidget|  replace:: `QgsPercentageWidget <https://api.qgis.org/api/classQgsPercentageWidget.html>`_
-.. |QgsPercentageWidgets| replace:: `QgsPercentageWidgets <https://api.qgis.org/api/classQgsPercentageWidget.html>`_
 .. |QgsPictureSourceLineEditBase|  replace:: `QgsPictureSourceLineEditBase <https://api.qgis.org/api/classQgsPictureSourceLineEditBase.html>`_
 .. |QgsPictureSourceLineEditBases| replace:: `QgsPictureSourceLineEditBases <https://api.qgis.org/api/classQgsPictureSourceLineEditBase.html>`_
 .. |QgsPieDiagram|  replace:: `QgsPieDiagram <https://api.qgis.org/api/classQgsPieDiagram.html>`_
@@ -3318,8 +3284,6 @@
 .. |QgsPkiBundles| replace:: `QgsPkiBundles <https://api.qgis.org/api/classQgsPkiBundle.html>`_
 .. |QgsPkiConfigBundle|  replace:: `QgsPkiConfigBundle <https://api.qgis.org/api/classQgsPkiConfigBundle.html>`_
 .. |QgsPkiConfigBundles| replace:: `QgsPkiConfigBundles <https://api.qgis.org/api/classQgsPkiConfigBundle.html>`_
-.. |QgsPlaybackControllerWidget|  replace:: `QgsPlaybackControllerWidget <https://api.qgis.org/api/classQgsPlaybackControllerWidget.html>`_
-.. |QgsPlaybackControllerWidgets| replace:: `QgsPlaybackControllerWidgets <https://api.qgis.org/api/classQgsPlaybackControllerWidget.html>`_
 .. |QgsPlot|  replace:: `QgsPlot <https://api.qgis.org/api/classQgsPlot.html>`_
 .. |QgsPlots| replace:: `QgsPlots <https://api.qgis.org/api/classQgsPlot.html>`_
 .. |QgsPlotAxis|  replace:: `QgsPlotAxis <https://api.qgis.org/api/classQgsPlotAxis.html>`_
@@ -3502,8 +3466,6 @@
 .. |QgsProcessingModelAlgorithms| replace:: `QgsProcessingModelAlgorithms <https://api.qgis.org/api/classQgsProcessingModelAlgorithm.html>`_
 .. |QgsProcessingModelChildAlgorithm|  replace:: `QgsProcessingModelChildAlgorithm <https://api.qgis.org/api/classQgsProcessingModelChildAlgorithm.html>`_
 .. |QgsProcessingModelChildAlgorithms| replace:: `QgsProcessingModelChildAlgorithms <https://api.qgis.org/api/classQgsProcessingModelChildAlgorithm.html>`_
-.. |QgsProcessingModelChildAlgorithmResult|  replace:: `QgsProcessingModelChildAlgorithmResult <https://api.qgis.org/api/classQgsProcessingModelChildAlgorithmResult.html>`_
-.. |QgsProcessingModelChildAlgorithmResults| replace:: `QgsProcessingModelChildAlgorithmResults <https://api.qgis.org/api/classQgsProcessingModelChildAlgorithmResult.html>`_
 .. |QgsProcessingModelChildDependency|  replace:: `QgsProcessingModelChildDependency <https://api.qgis.org/api/classQgsProcessingModelChildDependency.html>`_
 .. |QgsProcessingModelChildDependencys| replace:: `QgsProcessingModelChildDependencys <https://api.qgis.org/api/classQgsProcessingModelChildDependency.html>`_
 .. |QgsProcessingModelChildParameterSource|  replace:: `QgsProcessingModelChildParameterSource <https://api.qgis.org/api/classQgsProcessingModelChildParameterSource.html>`_
@@ -3518,8 +3480,6 @@
 .. |QgsProcessingModelOutputs| replace:: `QgsProcessingModelOutputs <https://api.qgis.org/api/classQgsProcessingModelOutput.html>`_
 .. |QgsProcessingModelParameter|  replace:: `QgsProcessingModelParameter <https://api.qgis.org/api/classQgsProcessingModelParameter.html>`_
 .. |QgsProcessingModelParameters| replace:: `QgsProcessingModelParameters <https://api.qgis.org/api/classQgsProcessingModelParameter.html>`_
-.. |QgsProcessingModelResult|  replace:: `QgsProcessingModelResult <https://api.qgis.org/api/classQgsProcessingModelResult.html>`_
-.. |QgsProcessingModelResults| replace:: `QgsProcessingModelResults <https://api.qgis.org/api/classQgsProcessingModelResult.html>`_
 .. |QgsProcessingModelerParameterWidget|  replace:: `QgsProcessingModelerParameterWidget <https://api.qgis.org/api/classQgsProcessingModelerParameterWidget.html>`_
 .. |QgsProcessingModelerParameterWidgets| replace:: `QgsProcessingModelerParameterWidgets <https://api.qgis.org/api/classQgsProcessingModelerParameterWidget.html>`_
 .. |QgsProcessingMultiStepFeedback|  replace:: `QgsProcessingMultiStepFeedback <https://api.qgis.org/api/classQgsProcessingMultiStepFeedback.html>`_
@@ -3732,8 +3692,6 @@
 .. |QgsProfileSnapContexts| replace:: `QgsProfileSnapContexts <https://api.qgis.org/api/classQgsProfileSnapContext.html>`_
 .. |QgsProfileSnapResult|  replace:: `QgsProfileSnapResult <https://api.qgis.org/api/classQgsProfileSnapResult.html>`_
 .. |QgsProfileSnapResults| replace:: `QgsProfileSnapResults <https://api.qgis.org/api/classQgsProfileSnapResult.html>`_
-.. |QgsProfileSourceRegistry|  replace:: `QgsProfileSourceRegistry <https://api.qgis.org/api/classQgsProfileSourceRegistry.html>`_
-.. |QgsProfileSourceRegistrys| replace:: `QgsProfileSourceRegistrys <https://api.qgis.org/api/classQgsProfileSourceRegistry.html>`_
 .. |QgsProjOperation|  replace:: `QgsProjOperation <https://api.qgis.org/api/classQgsProjOperation.html>`_
 .. |QgsProjOperations| replace:: `QgsProjOperations <https://api.qgis.org/api/classQgsProjOperation.html>`_
 .. |QgsProjUtils|  replace:: `QgsProjUtils <https://api.qgis.org/api/classQgsProjUtils.html>`_
@@ -3952,8 +3910,6 @@
 .. |QgsRasterLayerTemporalPropertiess| replace:: `QgsRasterLayerTemporalPropertiess <https://api.qgis.org/api/classQgsRasterLayerTemporalProperties.html>`_
 .. |QgsRasterLayerTemporalPropertiesWidget|  replace:: `QgsRasterLayerTemporalPropertiesWidget <https://api.qgis.org/api/classQgsRasterLayerTemporalPropertiesWidget.html>`_
 .. |QgsRasterLayerTemporalPropertiesWidgets| replace:: `QgsRasterLayerTemporalPropertiesWidgets <https://api.qgis.org/api/classQgsRasterLayerTemporalPropertiesWidget.html>`_
-.. |QgsRasterLayerUtils|  replace:: `QgsRasterLayerUtils <https://api.qgis.org/api/classQgsRasterLayerUtils.html>`_
-.. |QgsRasterLayerUtilss| replace:: `QgsRasterLayerUtilss <https://api.qgis.org/api/classQgsRasterLayerUtils.html>`_
 .. |QgsRasterLineSymbolLayer|  replace:: `QgsRasterLineSymbolLayer <https://api.qgis.org/api/classQgsRasterLineSymbolLayer.html>`_
 .. |QgsRasterLineSymbolLayers| replace:: `QgsRasterLineSymbolLayers <https://api.qgis.org/api/classQgsRasterLineSymbolLayer.html>`_
 .. |QgsRasterLineSymbolLayerWidget|  replace:: `QgsRasterLineSymbolLayerWidget <https://api.qgis.org/api/classQgsRasterLineSymbolLayerWidget.html>`_
@@ -3980,8 +3936,6 @@
 .. |QgsRasterRanges| replace:: `QgsRasterRanges <https://api.qgis.org/api/classQgsRasterRange.html>`_
 .. |QgsRasterRenderer|  replace:: `QgsRasterRenderer <https://api.qgis.org/api/classQgsRasterRenderer.html>`_
 .. |QgsRasterRenderers| replace:: `QgsRasterRenderers <https://api.qgis.org/api/classQgsRasterRenderer.html>`_
-.. |QgsRasterRendererRegistry|  replace:: `QgsRasterRendererRegistry <https://api.qgis.org/api/classQgsRasterRendererRegistry.html>`_
-.. |QgsRasterRendererRegistrys| replace:: `QgsRasterRendererRegistrys <https://api.qgis.org/api/classQgsRasterRendererRegistry.html>`_
 .. |QgsRasterRendererUtils|  replace:: `QgsRasterRendererUtils <https://api.qgis.org/api/classQgsRasterRendererUtils.html>`_
 .. |QgsRasterRendererUtilss| replace:: `QgsRasterRendererUtilss <https://api.qgis.org/api/classQgsRasterRendererUtils.html>`_
 .. |QgsRasterRendererWidget|  replace:: `QgsRasterRendererWidget <https://api.qgis.org/api/classQgsRasterRendererWidget.html>`_
@@ -3996,8 +3950,6 @@
 .. |QgsRasterShaders| replace:: `QgsRasterShaders <https://api.qgis.org/api/classQgsRasterShader.html>`_
 .. |QgsRasterShaderFunction|  replace:: `QgsRasterShaderFunction <https://api.qgis.org/api/classQgsRasterShaderFunction.html>`_
 .. |QgsRasterShaderFunctions| replace:: `QgsRasterShaderFunctions <https://api.qgis.org/api/classQgsRasterShaderFunction.html>`_
-.. |QgsRasterSingleColorRenderer|  replace:: `QgsRasterSingleColorRenderer <https://api.qgis.org/api/classQgsRasterSingleColorRenderer.html>`_
-.. |QgsRasterSingleColorRenderers| replace:: `QgsRasterSingleColorRenderers <https://api.qgis.org/api/classQgsRasterSingleColorRenderer.html>`_
 .. |QgsRasterSymbolLegendNode|  replace:: `QgsRasterSymbolLegendNode <https://api.qgis.org/api/classQgsRasterSymbolLegendNode.html>`_
 .. |QgsRasterSymbolLegendNodes| replace:: `QgsRasterSymbolLegendNodes <https://api.qgis.org/api/classQgsRasterSymbolLegendNode.html>`_
 .. |QgsRasterTransparency|  replace:: `QgsRasterTransparency <https://api.qgis.org/api/classQgsRasterTransparency.html>`_
@@ -4018,10 +3970,6 @@
 .. |QgsReadWriteLockers| replace:: `QgsReadWriteLockers <https://api.qgis.org/api/classQgsReadWriteLocker.html>`_
 .. |QgsRecentColorScheme|  replace:: `QgsRecentColorScheme <https://api.qgis.org/api/classQgsRecentColorScheme.html>`_
 .. |QgsRecentColorSchemes| replace:: `QgsRecentColorSchemes <https://api.qgis.org/api/classQgsRecentColorScheme.html>`_
-.. |QgsRecentCoordinateReferenceSystemsModel|  replace:: `QgsRecentCoordinateReferenceSystemsModel <https://api.qgis.org/api/classQgsRecentCoordinateReferenceSystemsModel.html>`_
-.. |QgsRecentCoordinateReferenceSystemsModels| replace:: `QgsRecentCoordinateReferenceSystemsModels <https://api.qgis.org/api/classQgsRecentCoordinateReferenceSystemsModel.html>`_
-.. |QgsRecentCoordinateReferenceSystemsProxyModel|  replace:: `QgsRecentCoordinateReferenceSystemsProxyModel <https://api.qgis.org/api/classQgsRecentCoordinateReferenceSystemsProxyModel.html>`_
-.. |QgsRecentCoordinateReferenceSystemsProxyModels| replace:: `QgsRecentCoordinateReferenceSystemsProxyModels <https://api.qgis.org/api/classQgsRecentCoordinateReferenceSystemsProxyModel.html>`_
 .. |QgsRecentStyleHandler|  replace:: `QgsRecentStyleHandler <https://api.qgis.org/api/classQgsRecentStyleHandler.html>`_
 .. |QgsRecentStyleHandlers| replace:: `QgsRecentStyleHandlers <https://api.qgis.org/api/classQgsRecentStyleHandler.html>`_
 .. |QgsRectangle|  replace:: `QgsRectangle <https://api.qgis.org/api/classQgsRectangle.html>`_
@@ -4172,10 +4120,6 @@
 .. |QgsScreenPropertiess| replace:: `QgsScreenPropertiess <https://api.qgis.org/api/classQgsScreenProperties.html>`_
 .. |QgsScrollArea|  replace:: `QgsScrollArea <https://api.qgis.org/api/classQgsScrollArea.html>`_
 .. |QgsScrollAreas| replace:: `QgsScrollAreas <https://api.qgis.org/api/classQgsScrollArea.html>`_
-.. |QgsScrollBarHighlight|  replace:: `QgsScrollBarHighlight <https://api.qgis.org/api/classQgsScrollBarHighlight.html>`_
-.. |QgsScrollBarHighlights| replace:: `QgsScrollBarHighlights <https://api.qgis.org/api/classQgsScrollBarHighlight.html>`_
-.. |QgsScrollBarHighlightController|  replace:: `QgsScrollBarHighlightController <https://api.qgis.org/api/classQgsScrollBarHighlightController.html>`_
-.. |QgsScrollBarHighlightControllers| replace:: `QgsScrollBarHighlightControllers <https://api.qgis.org/api/classQgsScrollBarHighlightController.html>`_
 .. |QgsSearchQueryBuilder|  replace:: `QgsSearchQueryBuilder <https://api.qgis.org/api/classQgsSearchQueryBuilder.html>`_
 .. |QgsSearchQueryBuilders| replace:: `QgsSearchQueryBuilders <https://api.qgis.org/api/classQgsSearchQueryBuilder.html>`_
 .. |QgsSearchWidgetToolButton|  replace:: `QgsSearchWidgetToolButton <https://api.qgis.org/api/classQgsSearchWidgetToolButton.html>`_
@@ -4196,10 +4140,6 @@
 .. |QgsSensorModels| replace:: `QgsSensorModels <https://api.qgis.org/api/classQgsSensorModel.html>`_
 .. |QgsSensorRegistry|  replace:: `QgsSensorRegistry <https://api.qgis.org/api/classQgsSensorRegistry.html>`_
 .. |QgsSensorRegistrys| replace:: `QgsSensorRegistrys <https://api.qgis.org/api/classQgsSensorRegistry.html>`_
-.. |QgsSensorThingsExpansionDefinition|  replace:: `QgsSensorThingsExpansionDefinition <https://api.qgis.org/api/classQgsSensorThingsExpansionDefinition.html>`_
-.. |QgsSensorThingsExpansionDefinitions| replace:: `QgsSensorThingsExpansionDefinitions <https://api.qgis.org/api/classQgsSensorThingsExpansionDefinition.html>`_
-.. |QgsSensorThingsUtils|  replace:: `QgsSensorThingsUtils <https://api.qgis.org/api/classQgsSensorThingsUtils.html>`_
-.. |QgsSensorThingsUtilss| replace:: `QgsSensorThingsUtilss <https://api.qgis.org/api/classQgsSensorThingsUtils.html>`_
 .. |QgsSerialPortSensor|  replace:: `QgsSerialPortSensor <https://api.qgis.org/api/classQgsSerialPortSensor.html>`_
 .. |QgsSerialPortSensors| replace:: `QgsSerialPortSensors <https://api.qgis.org/api/classQgsSerialPortSensor.html>`_
 .. |QgsServerMetadataUrlProperties|  replace:: `QgsServerMetadataUrlProperties <https://api.qgis.org/api/classQgsServerMetadataUrlProperties.html>`_
@@ -4528,8 +4468,6 @@
 .. |QgsTaskManagers| replace:: `QgsTaskManagers <https://api.qgis.org/api/classQgsTaskManager.html>`_
 .. |QgsTaskManagerWidget|  replace:: `QgsTaskManagerWidget <https://api.qgis.org/api/classQgsTaskManagerWidget.html>`_
 .. |QgsTaskManagerWidgets| replace:: `QgsTaskManagerWidgets <https://api.qgis.org/api/classQgsTaskManagerWidget.html>`_
-.. |QgsTaskWithSerialSubTasks|  replace:: `QgsTaskWithSerialSubTasks <https://api.qgis.org/api/classQgsTaskWithSerialSubTasks.html>`_
-.. |QgsTaskWithSerialSubTaskss| replace:: `QgsTaskWithSerialSubTaskss <https://api.qgis.org/api/classQgsTaskWithSerialSubTasks.html>`_
 .. |QgsTaskWrapper|  replace:: `QgsTaskWrapper <https://api.qgis.org/api/classQgsTaskWrapper.html>`_
 .. |QgsTaskWrappers| replace:: `QgsTaskWrappers <https://api.qgis.org/api/classQgsTaskWrapper.html>`_
 .. |QgsTcpSocketSensor|  replace:: `QgsTcpSocketSensor <https://api.qgis.org/api/classQgsTcpSocketSensor.html>`_
@@ -4768,8 +4706,6 @@
 .. |QgsVectorLayerTemporalPropertiesWidgets| replace:: `QgsVectorLayerTemporalPropertiesWidgets <https://api.qgis.org/api/classQgsVectorLayerTemporalPropertiesWidget.html>`_
 .. |QgsVectorLayerTools|  replace:: `QgsVectorLayerTools <https://api.qgis.org/api/classQgsVectorLayerTools.html>`_
 .. |QgsVectorLayerToolss| replace:: `QgsVectorLayerToolss <https://api.qgis.org/api/classQgsVectorLayerTools.html>`_
-.. |QgsVectorLayerToolsContext|  replace:: `QgsVectorLayerToolsContext <https://api.qgis.org/api/classQgsVectorLayerToolsContext.html>`_
-.. |QgsVectorLayerToolsContexts| replace:: `QgsVectorLayerToolsContexts <https://api.qgis.org/api/classQgsVectorLayerToolsContext.html>`_
 .. |QgsVectorLayerUndoCommand|  replace:: `QgsVectorLayerUndoCommand <https://api.qgis.org/api/classQgsVectorLayerUndoCommand.html>`_
 .. |QgsVectorLayerUndoCommands| replace:: `QgsVectorLayerUndoCommands <https://api.qgis.org/api/classQgsVectorLayerUndoCommand.html>`_
 .. |QgsVectorLayerUndoCommandAddAttribute|  replace:: `QgsVectorLayerUndoCommandAddAttribute <https://api.qgis.org/api/classQgsVectorLayerUndoCommandAddAttribute.html>`_

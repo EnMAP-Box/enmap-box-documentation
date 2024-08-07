@@ -1,6 +1,6 @@
 .. include:: ../../external_links.rst
 
-.. _ProgTT_basics:
+.. _ProgTT_basicsFOO:
 
 Part I: Basics
 ==============

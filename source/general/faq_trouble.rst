@@ -15,9 +15,9 @@ Bug report & feedback
 .. note:: Your feedback is more than welcome! In case you encounter any problems with the EnMAP-Box or have
           suggestions of any kind for improving it (or this documentation), please let us know!
 
-          **Please report issues** `here <https://github.com/EnMAP-Box/enmap-box/issues/new>`_
+          **Please report issues** `here <https://github.com/EnMAP-Box/enmap-box/issues/new>`__
 
-          **For questions use** `GitHub Discussions <https://github.com/EnMAP-Box/enmap-box/discussions>`_
+          **For questions use** `GitHub Discussions <https://github.com/EnMAP-Box/enmap-box/discussions>`__
 
 Contact
 =======
