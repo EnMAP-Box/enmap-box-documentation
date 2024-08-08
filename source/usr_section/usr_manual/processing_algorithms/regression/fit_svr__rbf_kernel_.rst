@@ -8,6 +8,8 @@ Epsilon-Support Vector `Regression <https://enmap-box.readthedocs.io/en/latest/g
 The free parameters in the model are C and epsilon.
 The implementation is based on libsvm. The fit time complexity is more than quadratic with the number of `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ which makes it hard to scale to `datasets <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ with more than a couple of 10000 samples.
 
+.. include:: ../../processing_algorithms_includes/regression/fit_svr__rbf_kernel_.rst
+
 **Parameters**
 
 

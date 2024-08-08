@@ -7,7 +7,7 @@ Part II: EnMAP-Box GUI
 
 Let's create an `EnMAPBoxApplication` called *MyEnMAPBoxWorkshopApplication* that brings our *EnMAPBoxWorkshopUI* into the the EnMAP-Box.
 
-#. Read the `Create EnMAP-Box Applications <https://enmap-box.readthedocs.io/en/latest/dev_section/dev_guide.html>`_ guide and
+#. Read the :ref:`Create EnMAP-Box Applications <dev_tut_create_enmapbox_application>` guide and
 
 #. Create an folder `myworkshopapp` that contains everything required for our EnMAP-Box Application:
 
