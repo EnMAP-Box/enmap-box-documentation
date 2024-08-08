@@ -1,0 +1,22 @@
+name: Build documentation
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build Sphinx docs
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    - name: Install dependencies
+      run: |
+        python3 --version
+        pip list
+        pip install -U -f requirements.txt
+    - name: Sphinx Build
+      uses: ammaraskar/sphinx-action@0.4
+

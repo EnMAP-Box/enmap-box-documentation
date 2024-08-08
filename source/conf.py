@@ -51,23 +51,6 @@ extensions = [
 ]
 
 
-# suppress Duplicate Label Warnings for headings
-
-def filter_warning_log(app, exception):
-    if not isinstance(exception, Exception):
-        return
-    warning_log = exception._warning_log
-    # Iterate through the warning log and remove warnings related to labels
-    exception._warning_log = [
-        w for w in warning_log if not any(label_category in w.message for label_category in [
-            'autosectionlabel.duplicate_label',
-            'autosectionlabel.missing_label',
-            'duplicate_substitution',
-            # Add more label-related categories if needed
-        ])
-    ]
-
-
 # Register the filter_warning_log function to be called when warnings are logged
 def setup(app):
     # app.connect('build-finished', filter_warning_log)
