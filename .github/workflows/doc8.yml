@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set up Python 3.12
-      uses: actions/setup-python@v5
+    - name: Checkout
+      uses: actions/checkout@v4
       with:
-        python-version: '3.12'
+        submodules: recursive
 
     - name: Install dependencies
       run: |
