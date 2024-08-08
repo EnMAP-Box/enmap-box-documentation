@@ -20,5 +20,6 @@ jobs:
     - name: Sphinx Build
       uses: ammaraskar/sphinx-action@0.4
       with:
-        build-command: sphinx-build -j auto -W source build
+        docs-folder: source
+        build-command: sphinx-build -b html -j auto -W . build
 
