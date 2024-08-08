@@ -8,6 +8,8 @@ C-Support Vector `Classification <https://enmap-box.readthedocs.io/en/latest/gen
 The implementation is based on libsvm. The fit time scales at least quadratically with the number of `samples <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-sample>`_ and may be impractical beyond tens of thousands of samples. 
 The multiclass support is handled according to a one-vs-one scheme.
 
+.. include:: ../../processing_algorithms_includes/classification/fit_svc__rbf_kernel_.rst
+
 **Parameters**
 
 
