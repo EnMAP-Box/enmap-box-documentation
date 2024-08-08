@@ -18,7 +18,7 @@ Start the EnMAP-Box
 
 * Launch QGIS and click the |enmapbox| icon in the toolbar to open the EnMAP-Box. The EnMAP-Box GUI comprises a **Menu** and a **Toolbar**, panels for **Data Sources** and **Data Views**, and the **QGIS Processing Toolbox**, which includes the **EnMAP-Box Processing Algorithms**.
 
-    .. figure:: img/01_EnMAP-Box_surface.png
+    .. figure:: img/01_enmapbox_surface.png
 
         The EnMAP-Box main GUI.
 
