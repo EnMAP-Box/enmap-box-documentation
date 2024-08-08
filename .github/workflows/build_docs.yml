@@ -26,5 +26,5 @@ jobs:
         pwd
     - name: Run Sphinx
       run: |
-        sphinx-build -b html -j auto --nitpicky source build
+        sphinx-build -b html -j auto -W --nitpicky source build
 
