@@ -19,6 +19,7 @@ jobs:
         pip list
         pip install -U -r requirements.txt
         pwd
+        ll
     - name: Run doc8
       run: |
         doc8 source
