@@ -6,6 +6,8 @@ Create classification dataset (from Python code)
 
 Create a `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ from Python code and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
 
+.. include:: ../../processing_algorithms_includes/dataset_creation/create_classification_dataset__from_python_code_.rst
+
 **Parameters**
 
 
