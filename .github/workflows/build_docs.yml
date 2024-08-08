@@ -17,9 +17,8 @@ jobs:
         python3 --version
         pip list
         pip install -U -r requirements.txt
-    - name: Sphinx Build
-      uses: ammaraskar/sphinx-action@0.4
-      with:
-        docs-folder: source
-        build-command: sphinx-build -b html -j auto -W . build
+        pwd
+    - name: Run Sphinx
+      run: |
+        sphinx-build -b html -j auto -W source build
 
