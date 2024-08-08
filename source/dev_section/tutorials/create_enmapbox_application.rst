@@ -1,5 +1,7 @@
 .. include:: ../external_links.rst
 
+.. _dev_tut_create_enmapbox_application:
+
 Create EnMAP-Box Applications
 #############################
 

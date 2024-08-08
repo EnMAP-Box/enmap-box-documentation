@@ -83,9 +83,9 @@ release = '3.14'
 version = u'{}'.format(re.search(r'(\.?[^.]*){2}', release).group())
 
 # General information about the project.
-project = u'EnMAP-Box 3'
-copyright = u'2018-2024, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Sebastian van der Linden, Patrick Hostert'
-author = u'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, \nSebastian van der Linden,\nPatrick Hostert'
+project = 'EnMAP-Box 3'
+copyright = '2018-2024, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Aryan Goswarmi, Sebastian van der Linden, Patrick Hostert'
+author = 'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, Aryan Goswarmi,\nSebastian van der Linden,\nPatrick Hostert'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
