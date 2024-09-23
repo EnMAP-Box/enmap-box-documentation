@@ -23,6 +23,7 @@ Spatial morphological Laplace filter. See `Wikipedia <https://en.wikipedia.org/w
         from scipy.ndimage import morphological_laplace
         
         function = lambda array: morphological_laplace(array, size=(3, 3))
+
 **Outputs**
 
 

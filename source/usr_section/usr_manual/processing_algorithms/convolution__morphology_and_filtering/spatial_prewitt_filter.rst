@@ -23,6 +23,7 @@ Spatial Prewitt filter. See `Wikipedia <https://en.wikipedia.org/wiki/Prewitt_op
         from scipy.ndimage.filters import prewitt
         
         function = lambda array: prewitt(array, axis=0)
+
 **Outputs**
 
 

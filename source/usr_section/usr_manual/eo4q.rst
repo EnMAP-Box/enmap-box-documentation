@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. _eo4q:
 
@@ -91,7 +91,7 @@ Usage
 Load a collection, plot a temporal profile and visualize an image
     1. Select the **Landsat 8 Surface Reflectance** collection in the **Data Catalog** tab of the main panel.
     2. Select the **NDVI** band in the **Profile Viewer** panel.
-    3. Activate the **Current Location** map tool |icon_location| and select a location on the map.
+    3. Activate the **Current Location** map tool |cursorlocationinfo| and select a location on the map.
        This will plot the temporal profile for that location in the **Profile Viewer** panel.
     4. Select a data point in the plot to visualize the associated image.
        The image is displayed in it's default visualization.
@@ -353,3 +353,13 @@ Live demonstration
     ..  youtube:: MDjH6SdrDME
         :width: 100%
         :privacy_mode:
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |cursorlocationinfo| image:: /img/icons/cursorlocationinfo.svg
+   :width: 28px

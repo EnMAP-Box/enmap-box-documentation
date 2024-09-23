@@ -1,7 +1,7 @@
 Generic Filter (Majority)
 =========================
 
-With the Spatial Generic Filter Processing Algorithm you can use the `scipy generic_filter <https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.generic_filter.html>`_
+With the :ref:`Spatial Generic Filter Processing Algorithm <Spatial generic filter>` you can use the `scipy generic_filter <https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.generic_filter.html>`_
 function to write your own spatial filter functions.
 
 In this example we will write a mode filter (also known as majority filter). This kind of filter is often used to
@@ -35,7 +35,7 @@ neighborhood around a pixel (e.g. 3x3 pixel window) and assigns this value to th
 .. tip::
 
    Also have a look at the `scipy.stats.mode <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mode.html>`_ documentation. You can change
-   the window size by altering the ``size`` parameter in the :keyword:`generic_filter` function.
+   the window size by altering the ``size`` parameter in the :code:`generic_filter` function.
 
    You could further improve the function above by putting constraints on the definition of majority (for example, only update the original value if
    the frequency of the modal value is higher than 50 percent)

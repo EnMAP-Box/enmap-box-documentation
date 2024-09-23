@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. _applications:
 
@@ -402,7 +402,7 @@ Input Parameters:
 
   * :guilabel:`Raster`: Specify the raster you would like to apply the trained classifier to (usually -but not necessarily-
     this is the same as used for training)
-  * :guilabel:`Mask`: Specify a :ref:`mask <datatype_mask>` layer if you want to exclude certain areas from the prediction.
+  * :guilabel:`Mask`: Specify a :term:`mask layer` if you want to exclude certain areas from the prediction.
 
       * Outputs:
 
@@ -814,3 +814,31 @@ Spectral Index Creator
 ==================================
 
 todo
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |action| image:: /img/icons/action.svg
+   :width: 28px
+.. |cb0| image:: /img/icons/cb0.png
+   :width: 28px
+.. |combo| image:: /img/icons/combo.png
+   :width: 28px
+.. |mIconCollapse| image:: /img/icons/mIconCollapse.svg
+   :width: 28px
+.. |rendererCategorizedSymbol| image:: /img/icons/rendererCategorizedSymbol.svg
+   :width: 28px
+.. |spin| image:: /img/icons/spin.png
+   :width: 28px

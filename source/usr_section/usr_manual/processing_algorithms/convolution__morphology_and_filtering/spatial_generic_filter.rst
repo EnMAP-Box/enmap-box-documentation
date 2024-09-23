@@ -29,6 +29,7 @@ Spatial generic (user-defined) filter.
             return outvalue
         
         function = lambda array: generic_filter(array, function=filter_function, size=3)
+
 **Outputs**
 
 

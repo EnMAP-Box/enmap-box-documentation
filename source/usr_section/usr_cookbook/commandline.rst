@@ -2,7 +2,7 @@ Command line (qgis_process)
 ===========================
 
 Similar to QGIS processing algorithms you can also run EnMAP-Box algorithms directly from the command line using the
-`QGIS Processing Executor <https://docs.qgis.org/3.28/en/docs/user_manual/processing/standalone.html#using-processing-from-the-command-line>`_ ,
+`QGIS Processing Executor <https://docs.qgis.org/latest/en/docs/user_manual/processing/standalone.html#using-processing-from-the-command-line>`_ ,
 i.e., the ``qgis_process`` command. This can be especially useful to automate repetitive tasks (batch processing) and/or
 when deploying EnMAP-Box workflows on server environments.
 

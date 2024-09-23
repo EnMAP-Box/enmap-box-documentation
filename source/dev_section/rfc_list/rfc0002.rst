@@ -32,7 +32,7 @@ API support will be implemented in the **enmapboxprocessing.rasterreader.RasterR
 Motivation
 ----------
 
-GDAL has rudimentary support for spectral properties specified inside ENVI *.hdr header files::
+GDAL has rudimentary support for spectral properties specified inside ENVI *.hdr* header files::
 
     ENVI
     ...

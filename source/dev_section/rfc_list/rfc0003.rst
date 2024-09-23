@@ -91,7 +91,7 @@ Google Earth Engine
 
 
 Landsat products
-    Landsat products specify **DATE_ACQUIRED** and **SCENE_CENTER_TIME** properties in the *MTL.txt metadata file::
+    Landsat products specify **DATE_ACQUIRED** and **SCENE_CENTER_TIME** properties in the *MTL.txt* metadata file::
 
         GROUP = LANDSAT_METADATA_FILE
           GROUP = IMAGE_ATTRIBUTES

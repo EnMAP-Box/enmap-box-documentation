@@ -1,10 +1,6 @@
-.. include:: /icon_links.rst
 
-.. |icon| image:: ../img/icon.png
-   :width: 30px
-   :height: 30px
 
-.. |osgeoinstaller| image:: ../img/osgeoinstaller.png
+
 
 .. |download_link| raw:: html
 
@@ -146,8 +142,14 @@ Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownload
 
       import sys; sys.executable
 
-   It shows the path of the python executable QGIS is using, usually ``/usr/bin/python3``. It should be the same path as
-   the command ``which python3`` executed in the Terminal returns! Close QGIS.
+   It shows the path of the python executable that QGIS is using, usually it is ``/usr/bin/python3``.
+   We need to ensure that additional python packages get installed into the same python environment.
+   This is the case if the command ``which python3`` returns the path of the python executable
+   shown in QGIS!
+
+   If not, please use the full path, e.g. ``/usr/bin/python3`` instead of ``python3`` in the following steps.
+
+   Close QGIS.
 
 #. Create a `virtual python environment <https://docs.python.org/3/library/venv.html>`_ in a directory of your choice (e.g. ``~/.virtualenvs/enmapbox``):
 
@@ -236,37 +238,79 @@ of course also use conda, just swap ``micromamba`` with ``conda`` in the instruc
 QGIS Installation on MacOS
 --------------------------
 
-Option A: Install QGIS via the official installer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+Option A: Install QGIS.app
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Install QGIS
 ...............
 
-Install QGIS as described here https://www.qgis.org/
+As now (April 2024), the official QGIS.app from https://qgis.org/en/site/forusers/download.html
+still uses a meanwhile very outdated GDAL 3.2.2 (see https://github.com/EnMAP-Box/enmap-box/issues/858 )
 
-2. Install Python Dependencies
-..............................
+Therefore please use the installer provided by `OpenGIS.ch <https://www.opengis.ch/>`_ instead:
 
-.. todo::
+1. Download the latest package installer from https://github.com/opengisch/qgis-conda-builder/releases
+2. Open the installer in Finder using the context menu
 
-   Not tested yet! But you should be able to install all packages using the following command executed in the Terminal:
+   .. figure:: /img/macos/opengisch/install_exp_finder.png
+      :width: 60%
 
-   .. code-block:: console
+      Call *Open* from the finder's context menu ...
 
-      /Applications/QGIS.app/Contents/MacOS/bin/pip3 install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/osgeo4w/requirements_osgeo4w.txt
+   .. figure:: /img/macos/opengisch/install_exp_open.png
+      :width: 35%
+
+      ... to show and use the *Open* button in the next dialog.
+
+3. Select a location to install the QGIS.app (e.g. ``QGIS-3.36.app``), e.g. /System/Applications
+
+   .. figure::  /img/macos/opengisch/install_exp_folder.png
 
 
+2. Install missing python dependencies
+......................................
+
+Install missing python dependencies using the QGIS.app internal pip3.
+
+    .. code-block:: bash
+
+        /Applications/QGIS-3.36.app/Contents/bin/pip3 install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/macos/requirements_macos.txt
 
 
-Option B: Install QGIS via conda/mamba
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This step needs to be repeated after updates of the QGIS.app
 
-.. todo::
 
-   Instructions will be updated soon. Look for the :ref:`conda Linux instructions <conda_linux>` above, they should also work on Mac.
+Option B: Install QGIS via conda
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
+1. Install conda
+....................
+
+Install conda for macOS as described in https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html
+It is recommended to use the miniforge installer from https://github.com/conda-forge/miniforge/
+
+
+2. Install QGIS and Python Dependencies
+.......................................
+
+#. Open the Miniforge Prompt from the start menu.
+
+   .. image:: /img/windows_start_miniforge.png
+
+#. Install QGIS and EnMAP-Box Python dependencies into a new "enmapbox" environment:
+
+   .. code-block:: batch
+
+      mamba env create -n enmapbox -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
+
+#. Activate the "enmapbox" environment and open QGIS by executing:
+
+   .. code-block:: batch
+
+      activate enmapbox
+      qgis
+
+
 
 EnMAP-Box Plugin Installation
 -----------------------------
@@ -299,3 +343,25 @@ EnMAP-Box Plugin Installation
    .. warning::
 
       As the *experimental* tag suggests, this version comes with the newest features and developments, but might also be prone to bugs and crashes.
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |cb0| image:: /img/icons/cb0.png
+   :width: 28px
+.. |cb1| image:: /img/icons/cb1.png
+   :width: 28px
+.. |icon| image:: /img/icon.png
+   :width: 30px

@@ -23,6 +23,7 @@ Spatial Laplace filter. See `Wikipedia <https://en.wikipedia.org/wiki/Discrete_L
         from scipy.ndimage.filters import laplace
         
         function = lambda array: laplace(array)
+
 **Outputs**
 
 

@@ -25,6 +25,7 @@ Spatial morphological Grey Erosion filter. See `Wikipedia <https://en.wikipedia.
         structure = generate_binary_structure(rank=2, connectivity=1)
         structure = iterate_structure(structure=structure, iterations=1)
         function = lambda array: grey_erosion(array, structure=structure)
+
 **Outputs**
 
 

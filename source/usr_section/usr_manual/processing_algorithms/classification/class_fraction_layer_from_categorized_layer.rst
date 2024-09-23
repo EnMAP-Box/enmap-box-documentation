@@ -6,6 +6,8 @@ Class fraction layer from categorized layer
 
 Rasterize/resample a categorized vector/`raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ into `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ fractions. `Categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ are rasterized/resampled at/to a x10 finer resolution and aggregated to class-wise fractions at destination resolution. This approach leads to fractions that are accurate to the percent.
 
+.. include:: ../../processing_algorithms_includes/classification/class_fraction_layer_from_categorized_vector_layer.rst
+
 **Parameters**
 
 

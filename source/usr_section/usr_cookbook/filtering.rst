@@ -10,7 +10,7 @@ Spatial Filter
 
 Spatial filters apply a 2D kernel spatially (i.e. y/x dimensions) for each band.
 
-Open the :ref:`testdataset`. In the processing toolbox go to :menuselection:`EnMAP-Box --> Convolution, Morphology and Filtering --> Spatial Median Filter`.
+Open the :ref:`example_data`. In the processing toolbox go to :menuselection:`EnMAP-Box --> Convolution, Morphology and Filtering --> Spatial Median Filter`.
 
 
 * Select :file:`enmap_potsdam.bsq` as :guilabel:`Raster`
@@ -28,7 +28,7 @@ Spectral Filter
 In spectral filtering a 1D kernel is applied along the z dimension of the raster (bands). Mind that in some cases you will
 reduce the overall number of band values as values in the beginning and at the end will be set to nodata (depending on the kernel type and size).
 
-Open the :ref:`testdataset`. In the processing toolbox go to :menuselection:`EnMAP-Box --> Convolution, Morphology and Filtering --> Spectral Convolution Gaussian1DKernel`.
+Open the :ref:`example_data`. In the processing toolbox go to :menuselection:`EnMAP-Box --> Convolution, Morphology and Filtering --> Spectral Convolution Gaussian1DKernel`.
 
 * Select :file:`enmap_potsdam.bsq` as :guilabel:`Raster`
 * In the code window, change ``stddev=1`` to ``stddev=2``

@@ -59,7 +59,7 @@ Provide source code
 ===================
 
 If your are not an EnMAP-Box core developer, the preferred way to contribute your code code is to use
-`pull requests <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request>`_.
+`pull requests <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request>`__.
 
 
 1. :ref:`Fork the EnMAP-Box repository<contribute_fork>`
@@ -207,7 +207,7 @@ Documentation
 The EnMAP-Box documentation is based on `Sphinx-build reStructured text <https://www.sphinx-doc.org/en/master/>`_
 and hosted at https://enmap-box.readthedocs.io/en/latest .
 
-The documentation source code, i.e. *.rst files, are hosted in the :code:`/source` folder in
+The documentation source code, i.e. *.rst* files, are hosted in the :code:`/source` folder in
 https://github.com/EnMAP-Box/enmap-box-documentation
 
 Please read https://github.com/EnMAP-Box/enmap-box-documentation#readme for how you can
@@ -283,7 +283,7 @@ The EnMap-Box Consortium desires that all maintainers and contributors of ideas,
 EnMAP-Box project complete, sign, and submit an ICLA.
 
 A signed ICLA is required to be on file before an individual is given commit rights to the EnMap-Box repository.
-The ICLA form for filling and signing is available `here <../_static/docs/20200820_individual-contributor-license-agreement_GPL3.0_EnMAP_v.1.0.pdf>`_.
+The ICLA form for filling and signing is available `here <../_static/docs/20200820_individual-contributor-license-agreement_GPL3.0_EnMAP_v.1.0.pdf>`__.
 
 The ICLA is not tied to any employer, so it is recommended to use one's personal information, e.g. for email address in
 the contact details, rather than an email address provided by an employer.
@@ -306,6 +306,7 @@ contracts on behalf of the corporation. The CCLA form for filling and signing is
 
 
 .. _contribute_submit_CLAs:
+
 Submitting License Agreements
 .............................
 

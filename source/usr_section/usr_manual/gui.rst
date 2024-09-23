@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. _gui:
 
@@ -181,7 +181,6 @@ corresponding metadata are available:
        * |mIconRasterMask| for mask raster layers
        * |mIconRasterClassification| for classification raster layers
 
-       Also see section on :ref:`data types <processing_data_types>` for further information.
 
 
 * |mIconLineLayer| Vector Data
@@ -401,7 +400,7 @@ Crosshair
        :width: 300
 
 
-.. include:: /icon_links.rst
+
 
 
 Spectral Library View
@@ -891,3 +890,175 @@ Attribute Table View
 --------------------
 
 .. todo:: ...
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |GEE| image:: /img/icons/GEE.svg
+   :width: 28px
+.. |add_datasource| image:: /img/icons/add_datasource.svg
+   :width: 28px
+.. |cross_red| image:: /img/icons/cross_red.svg
+   :width: 28px
+.. |cursorlocationinfo| image:: /img/icons/cursorlocationinfo.svg
+   :width: 28px
+.. |legend| image:: /img/icons/legend.svg
+   :width: 28px
+.. |link_basic| image:: /img/icons/link_basic.svg
+   :width: 28px
+.. |link_center| image:: /img/icons/link_center.svg
+   :width: 28px
+.. |link_mapscale| image:: /img/icons/link_mapscale.svg
+   :width: 28px
+.. |link_mapscale_center| image:: /img/icons/link_mapscale_center.svg
+   :width: 28px
+.. |link_open| image:: /img/icons/link_open.svg
+   :width: 28px
+.. |locationbrowser| image:: /img/icons/locationbrowser.svg
+   :width: 28px
+.. |mAction| image:: /img/icons/mAction.svg
+   :width: 28px
+.. |mActionAddLegend| image:: /img/icons/mActionAddLegend.svg
+   :width: 28px
+.. |mActionCalculateField| image:: /img/icons/mActionCalculateField.svg
+   :width: 28px
+.. |mActionCapturePoint| image:: /img/icons/mActionCapturePoint.svg
+   :width: 28px
+.. |mActionCapturePolygon| image:: /img/icons/mActionCapturePolygon.svg
+   :width: 28px
+.. |mActionCollapseTree| image:: /img/icons/mActionCollapseTree.svg
+   :width: 28px
+.. |mActionConditionalFormatting| image:: /img/icons/mActionConditionalFormatting.svg
+   :width: 28px
+.. |mActionDataSourceManager| image:: /img/icons/mActionDataSourceManager.svg
+   :width: 28px
+.. |mActionDeleteAttribute| image:: /img/icons/mActionDeleteAttribute.svg
+   :width: 28px
+.. |mActionDeleteSelected| image:: /img/icons/mActionDeleteSelected.svg
+   :width: 28px
+.. |mActionDeselectAll| image:: /img/icons/mActionDeselectAll.svg
+   :width: 28px
+.. |mActionEditCopy| image:: /img/icons/mActionEditCopy.svg
+   :width: 28px
+.. |mActionEditCut| image:: /img/icons/mActionEditCut.svg
+   :width: 28px
+.. |mActionEditPaste| image:: /img/icons/mActionEditPaste.svg
+   :width: 28px
+.. |mActionExpandTree| image:: /img/icons/mActionExpandTree.svg
+   :width: 28px
+.. |mActionFilter2| image:: /img/icons/mActionFilter2.svg
+   :width: 28px
+.. |mActionFormView| image:: /img/icons/mActionFormView.svg
+   :width: 28px
+.. |mActionInvertSelection| image:: /img/icons/mActionInvertSelection.svg
+   :width: 28px
+.. |mActionMultiEdit| image:: /img/icons/mActionMultiEdit.svg
+   :width: 28px
+.. |mActionNewAttribute| image:: /img/icons/mActionNewAttribute.svg
+   :width: 28px
+.. |mActionNewTableRow| image:: /img/icons/mActionNewTableRow.svg
+   :width: 28px
+.. |mActionOpenTable| image:: /img/icons/mActionOpenTable.svg
+   :width: 28px
+.. |mActionPan| image:: /img/icons/mActionPan.svg
+   :width: 28px
+.. |mActionPanToSelected| image:: /img/icons/mActionPanToSelected.svg
+   :width: 28px
+.. |mActionRefresh| image:: /img/icons/mActionRefresh.svg
+   :width: 28px
+.. |mActionRemove| image:: /img/icons/mActionRemove.svg
+   :width: 28px
+.. |mActionSaveAllEdits| image:: /img/icons/mActionSaveAllEdits.svg
+   :width: 28px
+.. |mActionSaveEdits| image:: /img/icons/mActionSaveEdits.svg
+   :width: 28px
+.. |mActionSelectAll| image:: /img/icons/mActionSelectAll.svg
+   :width: 28px
+.. |mActionSelectRectangle| image:: /img/icons/mActionSelectRectangle.svg
+   :width: 28px
+.. |mActionSelectedToTop| image:: /img/icons/mActionSelectedToTop.svg
+   :width: 28px
+.. |mActionSetProjection| image:: /img/icons/mActionSetProjection.svg
+   :width: 28px
+.. |mActionToggleEditing| image:: /img/icons/mActionToggleEditing.svg
+   :width: 28px
+.. |mActionZoomActual| image:: /img/icons/mActionZoomActual.svg
+   :width: 28px
+.. |mActionZoomFullExtent| image:: /img/icons/mActionZoomFullExtent.svg
+   :width: 28px
+.. |mActionZoomIn| image:: /img/icons/mActionZoomIn.svg
+   :width: 28px
+.. |mActionZoomOut| image:: /img/icons/mActionZoomOut.svg
+   :width: 28px
+.. |mActionZoomToSelected| image:: /img/icons/mActionZoomToSelected.svg
+   :width: 28px
+.. |mIconExpressionSelect| image:: /img/icons/mIconExpressionSelect.svg
+   :width: 28px
+.. |mIconLineLayer| image:: /img/icons/mIconLineLayer.svg
+   :width: 28px
+.. |mIconRasterClassification| image:: /img/icons/mIconRasterClassification.svg
+   :width: 28px
+.. |mIconRasterImage| image:: /img/icons/mIconRasterImage.svg
+   :width: 28px
+.. |mIconRasterLayer| image:: /img/icons/mIconRasterLayer.svg
+   :width: 28px
+.. |mIconRasterMask| image:: /img/icons/mIconRasterMask.svg
+   :width: 28px
+.. |metadata| image:: /img/icons/metadata.svg
+   :width: 28px
+.. |mouse_rightclick| image:: /img/icons/mouse_rightclick.svg
+   :width: 28px
+.. |mouse_wheel| image:: /img/icons/mouse_wheel.svg
+   :width: 28px
+.. |pan_center| image:: /img/icons/pan_center.svg
+   :width: 28px
+.. |plus_green| image:: /img/icons/plus_green.svg
+   :width: 28px
+.. |processingAlgorithm| image:: /img/icons/processingAlgorithm.svg
+   :width: 28px
+.. |profile| image:: /img/icons/profile.svg
+   :width: 28px
+.. |profile_add_auto| image:: /img/icons/profile_add_auto.svg
+   :width: 28px
+.. |profile_processing| image:: /img/icons/profile_processing.svg
+   :width: 28px
+.. |profileanalytics| image:: /img/icons/profileanalytics.svg
+   :width: 28px
+.. |qgis_icon| image:: /img/icons/qgis_icon.svg
+   :width: 28px
+.. |rasterbandstacking| image:: /img/icons/rasterbandstacking.svg
+   :width: 28px
+.. |select_location| image:: /img/icons/select_location.svg
+   :width: 28px
+.. |sensorimport| image:: /img/icons/sensorimport.svg
+   :width: 28px
+.. |speclib| image:: /img/icons/speclib.svg
+   :width: 28px
+.. |speclib_add| image:: /img/icons/speclib_add.svg
+   :width: 28px
+.. |speclib_save| image:: /img/icons/speclib_save.svg
+   :width: 28px
+.. |speclib_usevectorrenderer| image:: /img/icons/speclib_usevectorrenderer.svg
+   :width: 28px
+.. |symbology| image:: /img/icons/symbology.svg
+   :width: 28px
+.. |system| image:: /img/icons/system.svg
+   :width: 28px
+.. |viewlist_mapdock| image:: /img/icons/viewlist_mapdock.svg
+   :width: 28px
+.. |viewlist_spectrumdock| image:: /img/icons/viewlist_spectrumdock.svg
+   :width: 28px
+.. |viewlist_textview| image:: /img/icons/viewlist_textview.svg
+   :width: 28px

@@ -5,7 +5,7 @@ Cookbook
 ########
 
 This section is a collection of 'recipes' for common tasks you can perform in the EnMAP-Box. For convenience the recipes might use and refer to the
-:ref:`EnMAP-Box test dataset <test_dataset>`, but of course it is desired that you use your own data sets as well.
+:ref:`EnMAP-Box Example Data <example_data>`, but of course it is desired that you use your own data sets as well.
 
 .. todo::
 
@@ -24,5 +24,8 @@ This section is a collection of 'recipes' for common tasks you can perform in th
    imagemath.rst
    transformation.rst
    wavelength_information.rst
+   classification.rst
+   graphical_modeler.rst
+   regression.rst
 
 

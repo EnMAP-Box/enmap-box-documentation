@@ -6,6 +6,8 @@ Classification layer from class probability/fraction layer
 
 Creates `classification layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification-layer>`_ from `class probability layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class-probability-layer>`_ or `class fraction layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class-fraction-layer>`_. Winner `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ is given by the class with maximum class probabiliy/fraction.
 
+.. include:: ../../processing_algorithms_includes/classification/classification_layer_from_class_probability_fraction_layer.rst
+
 **Parameters**
 
 

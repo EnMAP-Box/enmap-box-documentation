@@ -7,6 +7,8 @@ Classification layer accuracy report
 Estimates map accuracy.
 Observed and predicted `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ are matched by name, if possible. Otherwise, categories are matched by order (in this case, a warning message is logged).
 
+.. include:: ../../processing_algorithms_includes/classification/classification_layer_accuracy_and_area_report__for_simple_random_sampling_.rst
+
 **Parameters**
 
 

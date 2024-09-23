@@ -6,6 +6,8 @@ Predict (unsupervised) classification layer
 
 Uses a fitted `clusterer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-clusterer>`_ to predict an (unsupervised) `classification layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification-layer>`_ from a `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ with `features <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-feature>`_.
 
+.. include:: ../../processing_algorithms_includes/clustering/predict__unsupervised__classification_layer.rst
+
 **Parameters**
 
 

@@ -8,7 +8,7 @@
 EnMAP-Box 3 Documentation
 #########################
 
-The EnMAP-Box is a python plugin for `QGIS <https://www.qgis.org/en/site/#>`_, designed to process and visualise
+The EnMAP-Box is a python plugin for `QGIS <https://www.qgis.org/en/site/#>`__, designed to process and visualise
 hyperspectral remote sensing data.
 
 Get going with the :ref:`Installation <usr_installation>` and the :ref:`Getting Started <getting_started>` chapter.
@@ -25,18 +25,19 @@ Key features
 
 
 .. figure:: img/screenshot_main3.png
-   :align: left
 
+   The graphical user interface of the EnMAP-Box
 
 Related websites
 ****************
 
-- `Environmental Mapping and Analysis Program (EnMAP) <https://www.enmap.org/>`_
-- `Source code repository <https://github.com/EnMAP-Box/enmap-box/tree/main/>`_
-- `HYPERedu on eo-college <https://eo-college.org/resource-spectrum/hyperspectral//>`_
+- `Environmental Mapping and Analysis Program (EnMAP) <https://www.enmap.org/>`__
+- `Source code repository <https://github.com/EnMAP-Box/enmap-box/tree/main/>`__
+- `HYPERedu on eo-college <https://eo-college.org/resource-spectrum/hyperspectral//>`__
 
 
 .. show NEWS section
+
 .. include:: news.rst
 
 |
@@ -75,10 +76,11 @@ Related websites
     dev_section/dev_installation.rst
     dev_section/dev_enmapboxrepository
     dev_section/dev_publish_enmapbox.rst
-    dev_section/dev_cookbook/dev_cookbook.rst
-    dev_section/dev_guide.rst
+    dev_section/cookbook/index.rst
+    dev_section/tutorials/index.rst
     dev_section/rfc_list/index.rst
     dev_section/styleguide.rst
+    dev_section/icon_links_viewer.rst
 
 ..    dev_section/api/modules.rst
 ..    dev_section/programming_tutorials/index.rst

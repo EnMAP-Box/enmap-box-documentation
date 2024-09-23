@@ -38,7 +38,7 @@ extensions = [
     # 'sphinxcontrib.mockautodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
-    #'sphinx.ext.autosectionlabel',
+    # 'sphinx.ext.autosectionlabel',
     'sphinxnotes.strike',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
@@ -47,25 +47,14 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinxcontrib.youtube',
     'sphinx_copybutton',
+    'myst_parser',
 ]
 
-#suppress Duplicate Label Warnings for headings
-
-def filter_warning_log(app, exception):
-    warning_log = exception._warning_log
-    # Iterate through the warning log and remove warnings related to labels
-    exception._warning_log = [
-        w for w in warning_log if not any(label_category in w.message for label_category in [
-            'autosectionlabel.duplicate_label',
-            'autosectionlabel.missing_label',
-            'duplicate_substitution',
-            # Add more label-related categories if needed
-        ])
-    ]
 
 # Register the filter_warning_log function to be called when warnings are logged
 def setup(app):
-    app.connect('build-finished', filter_warning_log)
+    # app.connect('build-finished', filter_warning_log)
+    pass
 
 
 # Add any paths that contain templates here, relative to this directory.
@@ -75,29 +64,28 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 source_parsers = {
-    '.md': 'recommonmark.parser.CommonMarkParser',
+    # '.md': 'recommonmark.parser.CommonMarkParser',
 }
 
-source_suffix = ['.rst', '.md']
+# source_suffix = ['.rst', '.md']
 # source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
 
-
 # config = configparser.ConfigParser()
 # config.read(REPO_ROOT / '.plugin.ini')
 
 # The full version, including alpha/beta/rc tags.
-release = '3.10.3.20220824T155109'
+release = '3.14'
 
 # The short X.Y version.
 version = u'{}'.format(re.search(r'(\.?[^.]*){2}', release).group())
 
 # General information about the project.
-project = u'EnMAP-Box 3'
-copyright = u'2018-2024, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Sebastian van der Linden, Patrick Hostert'
-author = u'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, \nSebastian van der Linden,\nPatrick Hostert'
+project = 'EnMAP-Box 3'
+copyright = '2018-2024, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Aryan Goswarmi, Sebastian van der Linden, Patrick Hostert'
+author = 'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, Aryan Goswarmi,\nSebastian van der Linden,\nPatrick Hostert'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -125,7 +113,7 @@ todo_include_todos = True
 # A string of reStructuredText that will be included at the
 # beginning of every source file that is read.
 # rst_epilog = """
-# .. include:: /icon_links.rst
+# 
 # """
 
 
@@ -157,7 +145,7 @@ html_theme_options = {
     'titles_only': False
 }
 
-html_logo = 'img/EnMAP-Box_logo_black_text.svg'
+html_logo = 'img/logos/logo_enmapbox.svg'
 html_favicon = 'img/icon.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -232,6 +220,8 @@ man_pages = [
      [author], 1)
 ]
 
+numfig = True
+numfig_secnum_depth = 2
 # -- Options for Texinfo output -------------------------------------------
 
 # Grouping the document tree into Texinfo files. List of tuples
@@ -244,7 +234,7 @@ texinfo_documents = [
 ]
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {'python': ('https://docs.python.org/', None)}
 
 # adding this because in pycookbook a lot of text is referencing classes,
 # which cannot be found by sphinx

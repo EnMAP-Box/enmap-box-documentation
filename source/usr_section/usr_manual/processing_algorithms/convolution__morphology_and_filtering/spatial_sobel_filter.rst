@@ -23,6 +23,7 @@ Spatial Sobel filter. See `Wikipedia <https://en.wikipedia.org/wiki/Sobel_operat
         from scipy.ndimage.filters import sobel
         
         function = lambda array: sobel(array, axis=0)
+
 **Outputs**
 
 
