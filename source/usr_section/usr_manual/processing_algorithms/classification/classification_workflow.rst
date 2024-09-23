@@ -30,7 +30,9 @@ The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary
 
 
 :guilabel:`Number of cross-validation folds` [number]
-    The number of folds used for assessing `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance.
+    The number of folds (n>=2) used for assessing `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance.
+    If not specified, simple training performance is assessed.
+    If set to a value of 1, out-of-bag (OOB) performance is assessed. Note that OOB estimates are only supported by some `classifiers <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_, e.g. the Random Forest `Classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_.
 
     Default: *10*
 
@@ -56,6 +58,10 @@ The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary
 
 
 :guilabel:`Output classifier performance report` [fileDestination]
+    Report file destination.
+
+
+:guilabel:`Output classification accuracy and area report` [fileDestination]
     Report file destination.
 
 **Command-line usage**
@@ -119,6 +125,10 @@ The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary
     	Argument type:	fileDestination
     	Acceptable values:
     		- Path for new file
+    outputClassificationAccuracy: Output classification accuracy and area report (optional)
+    	Argument type:	fileDestination
+    	Acceptable values:
+    		- Path for new file
     
     ----------------
     Outputs
@@ -132,5 +142,7 @@ The `classification <https://enmap-box.readthedocs.io/en/latest/general/glossary
     	Output class probability layer
     outputClassifierPerformance: <outputHtml>
     	Output classifier performance report
+    outputClassificationAccuracy: <outputHtml>
+    	Output classification accuracy and area report
     
     

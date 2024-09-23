@@ -7,8 +7,6 @@ Create RGB image from class probability/fraction layer
 Create an `RGB image <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-rgb-image>`_ from a `class fraction layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class-fraction-layer>`_ or `class probability layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class-probability-layer>`_.The RGB pixel `color <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-color>`_ of a single pixel is given by the weighted mean of the given `category <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-category>`_ `colors <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-color>`_.The weights are given by `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ fractions/probabilities (i.e. values between 0 and 1).
 For example, pure pixels with cover fractions of 1 appear in its pure category color. A mixed-pixel with a 50% fractions in two `categories <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-categories>`_ colored in red and green,appears in a dull yellow ( 0.5 x (255, 0, 0) + 0.5 x (0, 255, 0) = (127, 127, 0) ).
 
-.. include:: ../../processing_algorithms_includes/raster_conversion/create_rgb_image_from_class_probability_fraction_layer.rst
-
 **Parameters**
 
 

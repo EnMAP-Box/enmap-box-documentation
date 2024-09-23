@@ -12,6 +12,12 @@ Compute `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossa
 :guilabel:`Raster layer` [raster]
     A `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ used for bounding polygon calculation.
 
+
+:guilabel:`Geometry type` [enum]
+    Enclosing geometry type.
+
+    Default: *3*
+
 **Outputs**
 
 
@@ -30,6 +36,17 @@ Compute `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossa
     	Argument type:	raster
     	Acceptable values:
     		- Path to a raster layer
+    geometryType: Geometry type (optional)
+    	Default value:	3
+    	Argument type:	enum
+    	Available values:
+    		- 0: Envelope (Bounding Box)
+    		- 1: Minimum Oriented Rectangle
+    		- 2: Minimum Enclosing Circle
+    		- 3: Convex Hull
+    	Acceptable values:
+    		- Number of selected option, e.g. '1'
+    		- Comma separated list of options, e.g. '1,3'
     outputVector: Output vector layer
     	Argument type:	vectorDestination
     	Acceptable values:

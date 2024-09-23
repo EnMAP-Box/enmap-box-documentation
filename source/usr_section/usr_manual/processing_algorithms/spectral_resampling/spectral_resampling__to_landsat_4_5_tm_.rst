@@ -7,9 +7,6 @@ Spectral resampling (to Landsat 4/5 TM)
 Spectral resampling to Landsat 4/5 TM sensor.
 For more information see the `mission website <https://www.usgs.gov/core-science-systems/nli/landsat/landsat-satellite-missions>`_.
 
-.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_landsat_4_5_tm_.rst
-
-
 **Parameters**
 
 

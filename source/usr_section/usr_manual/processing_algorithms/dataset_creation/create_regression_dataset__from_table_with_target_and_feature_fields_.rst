@@ -6,8 +6,6 @@ Create regression dataset (from table with target and feature fields)
 
 Create a `regression <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-regression>`_ `dataset <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-dataset>`_ from `attribute table <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-attribute-table>`_ rows and store the result as a `pickle file <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-pickle-file>`_.
 
-.. include:: ../../processing_algorithms_includes/dataset_creation/create_regression_dataset__from_table_with_target_and_feature_fields_.rst
-
 **Parameters**
 
 

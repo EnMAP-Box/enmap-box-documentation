@@ -1,0 +1,77 @@
+.. _Import USGS Spectral Library Version 7:
+
+**************************************
+Import USGS Spectral Library Version 7
+**************************************
+
+Import the USGS Spectral Library Version 7 product.
+As a prerequisite, download `usgs_splib07.zip <https://www.sciencebase.gov/catalog/item/5807a2a2e4b0841e59e3a18d>`_ file and unzip it.
+
+**Parameters**
+
+
+:guilabel:`USGS Speclib Library Version 7 folder` [file]
+    The USGS Speclib Library Version 7 folder.
+
+
+:guilabel:`Selected chapters` [enum]
+    Filter spectra to be imported by chapter.
+
+
+:guilabel:`Selected spectrometers` [enum]
+    Filter spectra to be imported by spectrometer.
+
+**Outputs**
+
+
+:guilabel:`Output spectral library` [fileDestination]
+    GeoPackage file destination.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:ImportUsgsSpectralLibraryVersion7``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    folder: USGS Speclib Library Version 7 folder
+    	Argument type:	file
+    	Acceptable values:
+    		- Path to a file
+    chapter: Selected chapters
+    	Argument type:	enum
+    	Available values:
+    		- 0: Artificial Materials
+    		- 1: Coatings
+    		- 2: Liquids
+    		- 3: Minerals
+    		- 4: Organic Compounds
+    		- 5: Soils And Mixtures
+    		- 6: Vegetation
+    	Acceptable values:
+    		- Number of selected option, e.g. '1'
+    		- Comma separated list of options, e.g. '1,3'
+    spectrometer: Selected spectrometers
+    	Argument type:	enum
+    	Available values:
+    		- 0: Beckman 5270 (0.2 to 3 µm)
+    		- 1: hi-resNG ASD (0.35 to 2.5 µm
+    		- 2: Nicolet FTIR (0.1 to 21.6 µm
+    		- 3: AVIRIS (0.37 to 2.5 µm)
+    	Acceptable values:
+    		- Number of selected option, e.g. '1'
+    		- Comma separated list of options, e.g. '1,3'
+    outputLibrary: Output spectral library
+    	Argument type:	fileDestination
+    	Acceptable values:
+    		- Path for new file
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputLibrary: <outputFile>
+    	Output spectral library
+    
+    

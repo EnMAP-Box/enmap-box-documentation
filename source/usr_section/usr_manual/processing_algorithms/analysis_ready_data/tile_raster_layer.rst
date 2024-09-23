@@ -1,0 +1,117 @@
+.. _Tile raster layer:
+
+*****************
+Tile raster layer
+*****************
+
+Tile raster data into given tiling scheme.
+
+**Parameters**
+
+
+:guilabel:`Raster layer` [raster]
+    Source `raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_.
+
+
+:guilabel:`Tiling scheme` [vector]
+    Tiling scheme to be applied.
+
+
+:guilabel:`Tile names` [field]
+    `Field <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ with tile names.
+
+
+:guilabel:`Resample algorithm` [enum]
+    Spatial resample algorithm.
+
+    Default: *0*
+
+
+:guilabel:`Pixel resolution` [number]
+    `Output <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ pixel resolution. If not specified, the original pixel resolution is used.
+
+
+:guilabel:`No data value` [number]
+    A source `no data value <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_ needs to be specified, if it is not already specified by the source raster.
+
+
+:guilabel:`Output basename` [string]
+    `Output <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ basename. If not specified, the original basename is used.
+
+**Outputs**
+
+
+:guilabel:`Output folder` [folderDestination]
+    Folder destination.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:TileRasterLayer``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    raster: Raster layer
+    	Argument type:	raster
+    	Acceptable values:
+    		- Path to a raster layer
+    tilingScheme: Tiling scheme
+    	Argument type:	vector
+    	Acceptable values:
+    		- Path to a vector layer
+    tileNames: Tile names
+    	Argument type:	field
+    	Acceptable values:
+    		- The name of an existing field
+    		- ; delimited list of existing field names
+    resampleAlg: Resample algorithm
+    	Default value:	0
+    	Argument type:	enum
+    	Available values:
+    		- 0: NearestNeighbour
+    		- 1: Bilinear
+    		- 2: Cubic
+    		- 3: CubicSpline
+    		- 4: Lanczos
+    		- 5: Average
+    		- 6: Mode
+    		- 7: Min
+    		- 8: Q1
+    		- 9: Med
+    		- 10: Q3
+    		- 11: Max
+    	Acceptable values:
+    		- Number of selected option, e.g. '1'
+    		- Comma separated list of options, e.g. '1,3'
+    resolution: Pixel resolution (optional)
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    noDataValue: No data value (optional)
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    outputBasename: Output basename (optional)
+    	Argument type:	string
+    	Acceptable values:
+    		- String value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    outputFolder: Output folder
+    	Argument type:	folderDestination
+    	Acceptable values:
+    		- Path for an existing or new folder
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputFolder: <outputFolder>
+    	Output folder
+    
+    

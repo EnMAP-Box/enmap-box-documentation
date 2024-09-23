@@ -7,9 +7,6 @@ Spectral resampling (to Sentinel-2A MSI)
 Spectral resampling to Sentinel-2A MSI sensor.
 For more information see the `mission website <https://sentinel.esa.int/web/sentinel/missions/sentinel-2>`_.
 
-.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_sentinel-2a_msi_.rst
-
-
 **Parameters**
 
 

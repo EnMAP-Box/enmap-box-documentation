@@ -5,10 +5,7 @@ Spectral resampling (to DESIS)
 ******************************
 
 Spectral resampling to DESIS sensor.
-For more information see the `mission website <https://www.dlr.de/eoc/desktopdefault.aspx/tabid-13614/>`_.
-
-.. include:: ../../processing_algorithms_includes/spectral_resampling/spectral_resampling__to_desis_.rst
-
+For more information see the `mission website <https://www.dlr.de/en/images/institutes-1/institute-of-optical-sensor-systems/os-desis>`_.
 
 **Parameters**
 

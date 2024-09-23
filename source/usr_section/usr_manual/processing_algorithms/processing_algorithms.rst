@@ -5,6 +5,7 @@ Processing Algorithms
     :maxdepth: 1
 
 
+    analysis_ready_data/index.rst
     auxilliary/index.rst
     classification/index.rst
     clustering/index.rst
@@ -19,6 +20,7 @@ Processing Algorithms
     raster_miscellaneous/index.rst
     raster_projections/index.rst
     regression/index.rst
+    spectral_library/index.rst
     spectral_resampling/index.rst
     transformation/index.rst
     unmixing/index.rst

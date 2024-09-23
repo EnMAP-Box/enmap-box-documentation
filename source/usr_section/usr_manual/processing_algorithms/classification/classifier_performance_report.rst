@@ -20,7 +20,9 @@ Evaluates `classifier <https://enmap-box.readthedocs.io/en/latest/general/glossa
 
 
 :guilabel:`Number of cross-validation folds` [number]
-    The number of folds used for assessing `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance. If not specified (default), simple test performance is assessed.
+    The number of folds (n>=2) used for assessing `cross-validation <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-cross-validation>`_ performance.
+    If not specified (default), simple test performance is assessed.
+    If set to a value of 1, out-of-bag (OOB) performance is assessed. Note that OOB estimates are only supported by some `classifiers <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_, e.g. the Random Forest `Classifier <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classifier>`_.
 
 
 :guilabel:`Open output report in webbrowser after running algorithm` [boolean]

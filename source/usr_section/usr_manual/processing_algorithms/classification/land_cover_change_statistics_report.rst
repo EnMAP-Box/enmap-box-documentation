@@ -1,0 +1,144 @@
+.. _Land cover change statistics report:
+
+***********************************
+Land cover change statistics report
+***********************************
+
+Visualize land cover change statistics via Sankey plot.
+
+**Parameters**
+
+
+:guilabel:`Classification layers` [multilayer]
+    A series of (at least two) `classification layers <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-classification-layer>`_ to be used.
+
+
+:guilabel:`Node padding` [boolean]
+    Whether to add a margin around the `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ nodes.
+
+    Default: *True*
+
+
+:guilabel:`Show class names` [boolean]
+    Whether to show `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ names in the plot.
+
+    Default: *True*
+
+
+:guilabel:`Show layer names` [boolean]
+    Whether to show `layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-layer>`_ names in the plot.
+
+    Default: *True*
+
+
+:guilabel:`Show class sizes` [boolean]
+    Whether to show `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ sizes in the plot.
+
+    Default: *True*
+
+
+:guilabel:`Class size units` [enum]
+    Are units used, when reporting `class <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-class>`_ size.
+
+    Default: *0*
+
+
+:guilabel:`Link opacity` [number]
+    Opacity used for plotting links between nodes.
+
+    Default: *75*
+
+
+:guilabel:`Open output report in webbrowser after running algorithm` [boolean]
+    Whether to open the output report in the web browser.
+
+    Default: *True*
+
+**Outputs**
+
+
+:guilabel:`Output report` [fileDestination]
+    Report file destination.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:LandCoverChangeStatisticsReport``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    classifications: Classification layers
+    	Argument type:	multilayer
+    nodePadding: Node padding (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    showClassNames: Show class names (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    showLayerNames: Show layer names (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    showClassSizes: Show class sizes (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    classSizeUnits: Class size units (optional)
+    	Default value:	0
+    	Argument type:	enum
+    	Available values:
+    		- 0: Percentages (%)
+    		- 1: Pixels (px)
+    		- 2: Square meters (m²)
+    		- 3: Hectares (ha)
+    		- 4: Square kilometers (km²)
+    	Acceptable values:
+    		- Number of selected option, e.g. '1'
+    		- Comma separated list of options, e.g. '1,3'
+    linkOpacity: Link opacity (optional)
+    	Default value:	75
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    openReport: Open output report in webbrowser after running algorithm (optional)
+    	Default value:	true
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    outReport: Output report
+    	Argument type:	fileDestination
+    	Acceptable values:
+    		- Path for new file
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outReport: <outputHtml>
+    	Output report
+    
+    

@@ -1,0 +1,112 @@
+.. _Scale/truncate/convert raster layer:
+
+***********************************
+Scale/truncate/convert raster layer
+***********************************
+
+Allows to scale, truncate and convert raster data.
+
+**Parameters**
+
+
+:guilabel:`Raster layer` [raster]
+    `Raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-raster-layer>`_ to be processed.
+
+
+:guilabel:`Data offset value` [number]
+    A data offset value applied to each `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
+
+
+:guilabel:`Data scale value` [number]
+    A data scale value applied to each `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
+
+
+:guilabel:`Data minimum value` [number]
+    A data minimum value for truncating the data.
+
+
+:guilabel:`Data maximum value` [number]
+    A data maximum value for truncating the data.
+
+
+:guilabel:`No data value` [number]
+    Specify to recode output `no data values <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-no-data-value>`_.
+
+
+:guilabel:`Data Type` [enum]
+    Output data type.
+
+**Outputs**
+
+
+:guilabel:`Output raster layer` [rasterDestination]
+    Raster file destination.
+
+**Command-line usage**
+
+``>qgis_process help enmapbox:ScaletruncateconvertRasterLayer``::
+
+    ----------------
+    Arguments
+    ----------------
+    
+    raster: Raster layer
+    	Argument type:	raster
+    	Acceptable values:
+    		- Path to a raster layer
+    offset: Data offset value (optional)
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    scale: Data scale value (optional)
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    dataMin: Data minimum value (optional)
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    dataMax: Data maximum value (optional)
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    noDataValue: No data value (optional)
+    	Argument type:	number
+    	Acceptable values:
+    		- A numeric value
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    dataType: Data Type (optional)
+    	Argument type:	enum
+    	Available values:
+    		- 0: Byte
+    		- 1: Int16
+    		- 2: UInt16
+    		- 3: UInt32
+    		- 4: Int32
+    		- 5: Float32
+    		- 6: Float64
+    	Acceptable values:
+    		- Number of selected option, e.g. '1'
+    		- Comma separated list of options, e.g. '1,3'
+    outputRaster: Output raster layer
+    	Argument type:	rasterDestination
+    	Acceptable values:
+    		- Path for new raster layer
+    
+    ----------------
+    Outputs
+    ----------------
+    
+    outputRaster: <outputRaster>
+    	Output raster layer
+    
+    

@@ -3,6 +3,24 @@
 Build and publish the EnMAP-Box
 ###############################
 
+Update the EnMAP-Box Changelog
+==============================
+
+Follow these steps to generated an up-to-date ``CHANGELOG.md`` file on your local system (Windows systems only).
+
+0. Make sure that the GitHub CLI tool (aka ``gh`` tool) is properly installed.
+   For details see https://github.com/cli/cli?tab=readme-ov-file#installation.
+1. Run ``enmap-box\scripts\changelog\create_fetch_issues_bat.py`` script in Python to create the ``fetch_issues.bat`` file.
+2. Execute the ``fetch_issues.bat`` file inside a shell. This fetches relevant information and stores it inside two
+   output files ``fetch_issues.txt`` and ``fetch_releases.txt``.
+3. Run ``enmap-box\scripts\changelog\create_changelog.py`` script in Python to update the ``CHANGELOG.md`` file.
+4. Commit and push changes.
+
+Note that the changelog is generated based on issue titles, labels and milestones (i.e. release versions).
+We currently report implemented features (label is ``feature requests``) and bug fixes (label is ``bugs``).
+Implemented features are further structured into the groups **Applications** (labels are ``application`` and ``eo4q``),
+**Continuous Integration** (label is ``ci``), **Data / Metadata Model** (label is ``data/metadata``),
+**GUI** (label is ``gui``), **Processing Algorithms** (label is ``qpa``) and **Miscellaneous** (all other).
 
 Build the EnMAP-Box Plugin
 ==========================
@@ -64,7 +82,6 @@ To create the HTML based documentation on your local system call:
 
 This creates the folder ``doc/build`` with the HTML documentation. To view the documentation,
 just open ``doc/build/html/index.html`` in your webbrowser of choice.
-
 
 Publish the EnMAP-Box
 =====================
