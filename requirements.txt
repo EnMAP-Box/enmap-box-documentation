@@ -8,5 +8,4 @@ sphinxcontrib-youtube
 docutils
 sphinx_rtd_theme > 1
 sphinx-copybutton
-myst_parsphinx-quickstart
-ser
+myst_parser
