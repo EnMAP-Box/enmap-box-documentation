@@ -136,6 +136,7 @@ html_theme_options = {
     # 'display_version': False,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': True,
+    'version_selector': True,
     'vcs_pageview_mode': 'view',
     # Toc options
     'collapse_navigation': True,
