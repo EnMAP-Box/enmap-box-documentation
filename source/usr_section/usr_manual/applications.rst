@@ -80,7 +80,7 @@ From categorized vector layer and feature raster
     .. figure:: ./img/ClassificationDatasetManager_2a.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from categorized vector layer and feature raster)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedVectorLayerAndFeatureRaster>`.
 
 From categorized raster layer and feature raster
     .. list-table::
@@ -99,7 +99,7 @@ From categorized raster layer and feature raster
     .. figure:: ./img/ClassificationDatasetManager_2b.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from categorized raster layer and feature raster)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedRasterLayerAndFeatureRaster>`.
 
 From categorized spectral library
     .. list-table::
@@ -112,7 +112,7 @@ From categorized spectral library
     .. figure:: ./img/ClassificationDatasetManager_2c.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from categorized spectral library)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedSpectralLibrary>`.
 
 From categorized vector layer with attribute table
     .. figure:: ./img/ClassificationDatasetManager_2d_dataset_2.png
@@ -129,7 +129,7 @@ From categorized vector layer with attribute table
     .. figure:: ./img/ClassificationDatasetManager_2d.png
         :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from categorized vector layer with attribute table)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedVectorLayerWithAttributeTable>`.
 
 From table with categories and feature fields
     .. figure:: ./img/ClassificationDatasetManager_2e_dataset.png
@@ -140,25 +140,25 @@ From table with categories and feature fields
     .. figure:: ./img/ClassificationDatasetManager_2e.png
         :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from table with categories and feature fields)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromTableWithCategoriesAndFeatureFields>`.
 
 From Python code
     .. figure:: ./img/ClassificationDatasetManager_2f.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from Python code)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromPythonCode>`.
 
 From text files
     .. figure:: ./img/ClassificationDatasetManager_2g.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from text files)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromTextFiles>`.
 
 From JSON file
     .. figure:: ./img/ClassificationDatasetManager_2h.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from JSON file)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromJsonFile>`.
 
 Edit categories and features
 ----------------------------
