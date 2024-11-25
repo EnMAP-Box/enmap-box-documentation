@@ -58,6 +58,10 @@ Usage:
     Spectral reflectance scale factor. Some indices require data to be scaled into the 0 to 1 range. If your data is scaled differently, specify an appropriate scale factor.E.g. for Int16 data scaled into the 0 to 10000 range, use a value of 10000.
     
 
+:guilabel:`Formulars` [file]
+    A JSON file with additional spectral index formulars to be used.
+    See `createspectralindicesalgorithm.other.json <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/enmapboxprocessing/algorithm/createspectralindicesalgorithm.other.json>`_ for the expected format.
+
 :guilabel:`Aerosols band` [band]
     
     Default: *-1*
@@ -211,6 +215,10 @@ Usage:
     		- A numeric value
     		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
     		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+    formulars: Formulars (optional)
+    	Argument type:	file
+    	Acceptable values:
+    		- Path to a file
     A: Aerosols band (optional)
     	Default value:	-1
     	Argument type:	band
