@@ -9,6 +9,7 @@ dependencies:
   - docutils
   - sphinx_rtd_theme > 1
   - sphinx-copybutton
+  - sphinx-autobuild
   - flake8
   - doc8
   - pip

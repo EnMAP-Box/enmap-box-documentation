@@ -173,52 +173,54 @@ The installation of QGIS within a `conda <https://docs.conda.io/en/latest>`__ /
 it is often much easier to install additional python packages while admin rights are not required.`
 
 
-1. Make sure `conda <https://docs.conda.io/en/latest/miniconda.html>`__ is installed on your system.
+1. Make sure `conda <https://docs.conda.io/en/latest/miniconda.html>`__ or
+   `miniforge <https://github.com/conda-forge/miniforge>`__ is installed on your system and you can call `conda`
+   from your shell.
 
-2. Create a new conda environment named *qgis_stable* as specified in `conda_environment.yml`:
+2. Create a new conda environment using one of the environment files
+   in `here <https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`__
+
+   .. list-table:: Conda environments to run the EnMAP-Box
+        :header-rows: 1
+
+        *   - Environment File
+            - Description
+        *   - `enmapbox_full_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml>`_
+            - Most-recent QGIS release and python dependencies for all EnMAP-box applications,
+              including numba.
+        *   - `enmapbox_light_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_latest.yml>`_
+            - Most-recent QGIS release and minimum (*light*) set of python dependencies to run EnMAP-Box.
+        *   - `enmapbox_full_longterm.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml>`_
+            - Most-recent QGIS long-term release (LTR) and python dependencies for all
+              EnMAP-box applications, including numba.
+        *   - `enmapbox_light_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_latest.yml>`_
+            - Most-recent QGIS long-term release (LTR) and minimum set of python dependencies
+              to run EnMAP-Box.
+        *   - `enmapbox_light_3.38.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_3.38.yml>`_
+            - QGIS 3.38 with minimum set of python dependencies to run EnMAP-Box.
+
+
+   E.g. to install the latest QGIS with all python requirements in a conda environment named *enmapbox*, use
+   the following command:
 
 .. code-block:: batch
 
-   conda env create --name qgis_stable --file https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/conda_environment.yml
+   conda env create --name enmapbox --file https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
 
 .. tip::
 
    Depending on the components and applications you like to use, it might be required to install more packages.
-   If you cloned the EnMAP-Box repository you can also point to the local :file:`conda_environment.yml`.
-   Edit the ``--name`` or the YAML file itself as you wish. For more information on creating and managing conda environments visit the `conda documentation <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#creating-an-environment-from-an-environment-yml-file>`_
+   If you cloned the EnMAP-Box repository you can also point to the local :file:`enmapbox_full_latest.yml`.
+   Edit the ``--name`` or the YAML file itself as you wish. For more information on creating and managing conda
+   environments visit the
+   `conda documentation <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#creating-an-environment-from-an-environment-yml-file>`_
 
-..
-    .. tip::
-
-       To inspect the The `conda_environment.yml` is part of the EnMAP-Box repo you will find a YAML file which defines a conda environment where all necessary dependencies for the EnMAP-Box are included:
-
-       .. literalinclude:: /../../conda_environment.yml
-          :caption: conda_environment.yml
-          :language: yaml
-
-
-
-    .. admonition:: macOS Users
-
-            If you are using macOS and calling ``qgis`` does not show any application window, it might be necessary to set:
-
-            .. code-block:: bash
-
-               export QT_MAC_WANTS_LAYER=1
-
-            This can be done permanently for the active conda environment by:
-
-            .. code-block:: bash
-
-               conda env config vars set QT_MAC_WANTS_LAYER=1
-
-
-3.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
-    the new environment
+1.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
+    the new environment:
 
     .. code-block:: batch
 
-       conda activate qgis_stable
+       conda activate enmapbox
 
 
 4.  Now you can start `QGIS`_, the :ref:`dev_qt_designer` and :ref:`dev_qt_assistant` from your conda shell:
@@ -234,7 +236,7 @@ it is often much easier to install additional python packages while admin rights
 
     * Create an activation script and define an alias for PyCharm:
 
-      Windows: *<your conda installation>/envs/qgis_stable/etc/conda/activate.d/pycharm-activate.bat*
+      Windows: *<your conda installation>/envs/enmapbox/etc/conda/activate.d/pycharm-activate.bat*
 
       .. code-block:: batch
 
@@ -242,7 +244,7 @@ it is often much easier to install additional python packages while admin rights
          doskey pycharm="<path to pycharm executable>"
 
 
-      MacOS: *<your conda installation>/envs/qgis_stable/etc.conda/activate.d/pycharm-activate.sh*
+      MacOS: *<your conda installation>/envs/enmapbox/etc.conda/activate.d/pycharm-activate.sh*
 
       .. code-block:: bash
 
@@ -250,14 +252,14 @@ it is often much easier to install additional python packages while admin rights
 
     * For completeness, also create a deactivation script:
 
-      Windows: *<your conda installation>/envs/qgis_stable/etc/conda/deactivate.d/others-deactivate.bat*
+      Windows: *<your conda installation>/envs/enmapbox/etc/conda/deactivate.d/others-deactivate.bat*
 
       .. code-block:: batch
 
         @echo off
         doskey pycharm=
 
-      MacOS/Linux: *<your conda installation>/envs/qgis_stable/etc.conda/deactivate.d/pycharm-deactivate.sh*
+      MacOS/Linux: *<your conda installation>/envs/enmapbox/etc.conda/deactivate.d/pycharm-deactivate.sh*
 
       .. code-block:: bash
 
@@ -266,36 +268,14 @@ it is often much easier to install additional python packages while admin rights
 
 .. _dev_setup_pycharm:
 
-f) Setup Mambaforge (all platforms)
------------------------------------
-
-Mambaforge is a reimplementation of Conda and behaves very similar.
-Make sure to read and understand the previous section explaining Conda, before using Mambaforge.
-
-Execute one of the following installation command inside your Mambaforge/Miniforge prompt:
-
-QGIS Long Term Release (LTR) environment:
-
-.. code-block:: batch
-
-   mamba env create -n enmapbox_long_term -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
-
-QGIS Latest Release (LR) environment:
-
-.. code-block:: batch
-
-   mamba env create -n enmapbox_full_latest -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
-
-
-For additional reading on Mambaforge see: https://mamba.readthedocs.io/en/latest/
-
 4. Setup PyCharm
 ================
 
 1.  Start `PyCharm`_ and add `my_repositories/enmap-box` as new project via *File > Open File or Project*
 
 2.  If this is not already the case, tell PyCharm where to find your Git-executable.
-    Open *File > Settings > Version Control > Git* to set *Path to Git executable*. Press *Test* to check the used Git version.
+    Open *File > Settings > Version Control > Git* to set *Path to Git executable*.
+    Press *Test* to check the used Git version.
 
     .. figure:: img/pycharm_git_settings.png
 
@@ -307,8 +287,8 @@ For additional reading on Mambaforge see: https://mamba.readthedocs.io/en/latest
 
         .. code-block:: bat
 
-            (qgis_stable) C:\>where git
-            C:\Users\geo_beja\AppData\Local\Programs\Git\cmd\git.exe
+            (enmapbox) C:\>where git
+            C:\Users\my_username\AppData\Local\Programs\Git\cmd\git.exe
 
 
 3.  Switch to *Project: enmap-box > Project Interpreter* and select the QGIS python as python interpreter.
@@ -317,30 +297,30 @@ For additional reading on Mambaforge see: https://mamba.readthedocs.io/en/latest
 
     .. figure:: img/pycharm_conda_interpreter_add.png
 
-        Add the *qgis_stable* python to the list of python interpreters
+        Add the *enmapbox* python to the list of python interpreters
 
 
     .. figure:: img/pycharm_conda_interpreter.png
 
-        Select the *qgis_stable* python as project interpreter
+        Select the *enmapbox* python as project interpreter
 
 
 
 4.  Switch to *Project Structure* and add the QGIS python folder as additional project content root.
 
-    +---------------+--------------------------------------------------------------------------------------------+
-    | OSGeo4W       | ``<your OSGeo4W folder>\bin\python``                                                       |
-    +---------------+--------------------------------------------------------------------------------------------+
-    | Linux         | ``/usr/bin/python3``                                                                       |
-    +---------------+--------------------------------------------------------------------------------------------+
-    | macOS         | ``/Application/QGIS.app/Contents/MacOS/bin/python3``                                       |
-    +---------------+--------------------------------------------------------------------------------------------+
-    | conda (win)   | ``<your conda installation>/envs/qgis_stable/Library/python``                              |
-    +---------------+--------------------------------------------------------------------------------------------+
-    | conda (linux) | ``<your conda installation>/envs/qgis_stable/share/qgis/python``                           |
-    +---------------+--------------------------------------------------------------------------------------------+
-    | conda (macOS) | ``<your conda installation>/envs/qgis_stable/QGIS.app/Contents/MacOS/../Resources/python`` |
-    +---------------+--------------------------------------------------------------------------------------------+
+    +---------------+----------------------------------------------------------------------------------------+
+    | OSGeo4W       | ``<your OSGeo4W folder>\bin\python``                                                   |
+    +---------------+----------------------------------------------------------------------------------------+
+    | Linux         | ``/usr/bin/python3``                                                                   |
+    +---------------+----------------------------------------------------------------------------------------+
+    | macOS         | ``/Application/QGIS.app/Contents/MacOS/bin/python3``                                   |
+    +---------------+----------------------------------------------------------------------------------------+
+    | conda (win)   | ``<conda root>/envs/enmapbox/Library/python``                              |
+    +---------------+----------------------------------------------------------------------------------------+
+    | conda (linux) | ``<conda root>/envs/enmapbox/share/qgis/python``                           |
+    +---------------+----------------------------------------------------------------------------------------+
+    | conda (macOS) | ``<conda root>/envs/enmapbox/QGIS.app/Contents/MacOS/../Resources/python`` |
+    +---------------+----------------------------------------------------------------------------------------+
 
 
     Right-click on the ``plugins`` subfolder and select :guilabel:`Sources`.
@@ -356,7 +336,7 @@ For additional reading on Mambaforge see: https://mamba.readthedocs.io/en/latest
 
     .. figure:: img/pycharm_project_content_roots.png
 
-        Use ``qgis_stable/Library/python`` as additional content root
+        Use ``enmap/Library/python`` as additional content root
 
 
 5.  PyCharm and PyQGIS may need the environmental variable ``QGIS_PREFIX_PATH``. Typical paths are:
@@ -366,9 +346,9 @@ For additional reading on Mambaforge see: https://mamba.readthedocs.io/en/latest
     ================= ===============================================================================
     OSGeo4W           `<OSGeo4W>/apps/qgis`
     Linux
-    conda (Windows)   `<conda installation>\\envs\\qgis_stable\\Library`
-    conda (Linux)     `<conda installation>/envs/qgis_stable`
-    conda (macOS)     `<conda installation>/envs/qgis_stable/QGIS.app/Contents/Resources`
+    conda (Windows)   `<conda installation>\\envs\\enmap\\Library`
+    conda (Linux)     `<conda installation>/envs/enmapbox`
+    conda (macOS)     `<conda installation>/envs/enmapbox/QGIS.app/Contents/Resources`
     ================= ===============================================================================
 
     If not already set in the environment from which you started PyCharm, you can set it explicitly.
@@ -389,7 +369,7 @@ For additional reading on Mambaforge see: https://mamba.readthedocs.io/en/latest
     QGIS Installation Terminal path
     ================= ===============================================================================
     OSGeo4W           ``cmd.exe "/K" qgis_env.bat`` (see above how to create the ``qgis_env.bat``)
-    conda (Windows)   ``cmd.exe "/K" <conda installation>\Scripts\activate.bat qgis_stable``
+    conda (Windows)   ``cmd.exe "/K" <conda installation>\Scripts\activate.bat enmapbox``
     ================= ===============================================================================
 
 
@@ -424,16 +404,16 @@ For additional reading on Mambaforge see: https://mamba.readthedocs.io/en/latest
     .. code-block:: bash
 
         Application state:
-        QGIS_PREFIX_PATH env var:		D:\miniconda3\envs\qgis_stable\Library
-        Prefix:		D:\miniconda3\envs\qgis_stable\Library
-        Plugin Path:		D:\miniconda3\envs\qgis_stable\Library/plugins
-        Package Data Path:	D:\miniconda3\envs\qgis_stable\Library/.
+        QGIS_PREFIX_PATH env var:		D:\miniconda3\envs\enmapbox\Library
+        Prefix:		D:\miniconda3\envs\enmap\Library
+        Plugin Path:		D:\miniconda3\envs\enmapbox\Library/plugins
+        Package Data Path:	D:\miniconda3\envs\enmapbox\Library/.
         Active Theme Name:
-        Active Theme Path:	D:\miniconda3\envs\qgis_stable\Library/./resources/themes\\icons/
+        Active Theme Path:	D:\miniconda3\envs\enmapbox\Library/./resources/themes\\icons/
         Default Theme Path:	:/images/themes/default/
-        SVG Search Paths:	D:\miniconda3\envs\qgis_stable\Library/./svg/
+        SVG Search Paths:	D:\miniconda3\envs\enmapbox\Library/./svg/
                 C:\Users\geo_beja\AppData\Local\Temp\QGIS-PythonTestConfigPathp1k7w_s_\profiles\default/svg/
-        User DB Path:	D:\miniconda3\envs\qgis_stable\Library/./resources/qgis.db
+        User DB Path:	D:\miniconda3\envs\enmapbox\Library/./resources/qgis.db
         Auth DB Path:	C:\Users\geo_beja\AppData\Local\Temp\QGIS-PythonTestConfigPathp1k7w_s_\profiles\default/qgis-auth.db
 
 
@@ -442,7 +422,7 @@ For additional reading on Mambaforge see: https://mamba.readthedocs.io/en/latest
 
     .. code-block:: bat
 
-        (qgis_stable) ..\enmap-box>python enmapbox
+        (enmapbox) ..\enmap-box>python enmapbox
 
 
 Other Tools
@@ -465,7 +445,7 @@ own source-code documentation as ``.qch`` file as well.
 
     .. code-block:: bat
 
-        (qgis_stable) $>assistant
+        (enmapbox) $>assistant
 
 
 2.  Download the ``*.qch*`` files which contain:
@@ -505,7 +485,7 @@ You can start the Qt Designer from your PyCharm terminal by:
 
     .. code-block:: bat
 
-        (qgis_stable) $>designer
+        (enmapbox) $>designer
 
 
 .. figure:: img/qt_designer_example.png
