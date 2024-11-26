@@ -1,0 +1,19 @@
+# run: conda env create --file enmapboxdocs.yml
+# see also https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file
+name: enmapboxdocs
+channels:
+  - conda-forge
+dependencies:
+  - sphinx
+  - sphinxcontrib-youtube
+  - docutils
+  - sphinx_rtd_theme > 1
+  - sphinx-copybutton
+  - flake8
+  - doc8
+  - pip
+
+  - pip:
+    - flake8-qgis
+    - sphinxnotes-strike
+    - myst_parser
