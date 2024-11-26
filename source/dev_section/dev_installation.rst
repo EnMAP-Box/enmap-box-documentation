@@ -308,19 +308,14 @@ it is often much easier to install additional python packages while admin rights
 
 4.  Switch to *Project Structure* and add the QGIS python folder as additional project content root.
 
-    +---------------+----------------------------------------------------------------------------------------+
-    | OSGeo4W       | ``<your OSGeo4W folder>\bin\python``                                                   |
-    +---------------+----------------------------------------------------------------------------------------+
-    | Linux         | ``/usr/bin/python3``                                                                   |
-    +---------------+----------------------------------------------------------------------------------------+
-    | macOS         | ``/Application/QGIS.app/Contents/MacOS/bin/python3``                                   |
-    +---------------+----------------------------------------------------------------------------------------+
-    | conda (win)   | ``<conda root>/envs/enmapbox/Library/python``                              |
-    +---------------+----------------------------------------------------------------------------------------+
-    | conda (linux) | ``<conda root>/envs/enmapbox/share/qgis/python``                           |
-    +---------------+----------------------------------------------------------------------------------------+
-    | conda (macOS) | ``<conda root>/envs/enmapbox/QGIS.app/Contents/MacOS/../Resources/python`` |
-    +---------------+----------------------------------------------------------------------------------------+
+    ============= ===========================================================================
+    OSGeo4W       ``<your OSGeo4W folder>\bin\python``
+    Linux         ``/usr/bin/python3``
+    macOS         ``/Application/QGIS.app/Contents/MacOS/bin/python3``
+    conda (win)   ``<conda root>/envs/enmapbox/Library/python``
+    conda (linux) ``<conda root>/envs/enmapbox/share/qgis/python``
+    conda (macOS) ``<conda root>/envs/enmapbox/QGIS.app/Contents/MacOS/../Resources/python``
+    ============= ===========================================================================
 
 
     Right-click on the ``plugins`` subfolder and select :guilabel:`Sources`.
