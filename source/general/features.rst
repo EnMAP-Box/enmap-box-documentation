@@ -21,7 +21,7 @@ Visualization
         * maps can be linked spatially, e.g. to always have the same map scale, show the same map-center, or both
         * raster layers can be linked spectrally to always show band combinations with similar wavelengths
 
-    .. tab:: Spectral Dimension
+    .. tab:: Hyperspectral Data
 
         *Think in wavelengths, not band numbers*
 

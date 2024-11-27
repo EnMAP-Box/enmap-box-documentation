@@ -222,7 +222,7 @@ man_pages = [
      [author], 1)
 ]
 
-sphinx_tabs_disable_tab_closing = False
+sphinx_tabs_disable_tab_closing = True
 
 
 numfig = True
