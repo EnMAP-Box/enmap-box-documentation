@@ -222,6 +222,9 @@ man_pages = [
      [author], 1)
 ]
 
+sphinx_tabs_disable_tab_closing = False
+
+
 numfig = True
 numfig_secnum_depth = 2
 # -- Options for Texinfo output -------------------------------------------
