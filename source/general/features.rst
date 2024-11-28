@@ -56,7 +56,11 @@ Spectral Libraries
 
 The EnMAP-Box makes it possible to build and visualize spectral libraries in QGIS.
 
-* Read spectral profiles measured with ASD, SVC (*.sig) or Spectral Evolution (*.sed) field spectrometers
+* Read spectral profiles measured with
+  `ASD <https://www.malvernpanalytical.com/en/products/product-range/asd-range/fieldspec-range>`_,
+  `SVC <https://spectravista.com/>`_ (\*.sig) or
+  `Spectral Evolution <https://spectralevolution.com/remote-sensing-spectroradiometers/>`_ (\*.sed)
+  field spectrometers
 * Create profiles from raster images, e.g. for given vector locations (point or polygons)
 * Save spectral profiles in vector datasets and show their coordinates, e.g. using
   GeoPackage, GeoJSON or DBMS like PostgreSQL or HANA DB
