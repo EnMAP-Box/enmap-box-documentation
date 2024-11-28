@@ -49,8 +49,20 @@ extensions = [
     'sphinxcontrib.youtube',
     'sphinx_copybutton',
     'myst_parser',
+    "sphinxcontrib.jquery",
+    "sphinx_datatables",
 ]
 
+
+# set the version to use for DataTables plugin
+datatables_version = "1.13.4"
+
+# name of the class to use for tables to enable DataTables
+datatables_class = "sphinx-datatable"
+
+# any custom options to pass to the DataTables constructor. Note that any
+# options you set are used for all DataTables.
+datatables_options = {}
 
 # Register the filter_warning_log function to be called when warnings are logged
 def setup(app):

@@ -38,11 +38,15 @@ Visualization
         New raster renderers enhance the visualization of imaging spectroscopy data and outputs
         of state-of-the art approaches, e.g.:
 
-        * Bivariate Color rendering
-        * Class-fraction or probability renderering
-        * CMYK and HSV color rendering
-        * Decorelation Stretch Renderer
-        * Multisource Multiband color rendering
+        .. list-table::
+
+            *   - Bivariate Color rendering
+                - Class-fraction or probability renderering
+                - CMYK and HSV color rendering
+
+            *   - Decorelation Stretch Renderer
+                - Multisource Multiband color rendering
+                -
 
 
 Spectral Libraries
@@ -66,7 +70,7 @@ Algorithms
 ==========
 
 The EnMAP-Box adds more that 190 :ref:`processing algorithms <Processing Algorithms>` to the QGIS Processing Framework.
-Start them from the QGIS/EnMAP-Box GUI, in python or the command line, and
+Start them from the QGIS/EnMAP-Box GUI, from python, command line interfaces, or
 connect them with algorithms from other plugins in the QGIS Model Builder.
 
 .. tabs::
@@ -82,9 +86,9 @@ connect them with algorithms from other plugins in the QGIS Model Builder.
             <show python example>
 
 
-    .. tab:: CLI
+    .. tab:: Windows (CLI)
 
-        Windows (OSGeo4W shell)
+        Open the OSGeo4W or conda shell and call:
 
         .. code-block:: batch
 
@@ -93,8 +97,8 @@ connect them with algorithms from other plugins in the QGIS Model Builder.
                   --classifier="%output_dir%\rfc_fit.pkl" ^
                   --matchByName=1 ^
                   --outputClassification="%output_dir%\classification.tif"
-
-        Linux (bash shell)
+    .. tab::
+        Linux (bash)
 
         .. code-block:: bash
 
@@ -104,8 +108,10 @@ connect them with algorithms from other plugins in the QGIS Model Builder.
                   --matchByName=1 \
                   --outputClassification="$output_dir/classification.tif"
 
+    .. tab:: Model Designer
 
-    .. tab:: Model Builder
+        Using the `QGIS Model Designer <https://docs.qgis.org/3.34/en/docs/user_manual/processing/modeler.html>`_ you
+        can connect EnMAP processing algorithms with others and create powerful processing models.
 
         .. image:: /img/graphical_model_classification.png
 
@@ -116,21 +122,91 @@ Various applications enhance the EnMAP-Box to make it ready
 for different thematic uses, e.g.:
 
 .. list-table::
+    :header-rows: 1
+    :class: sphinx-datatable
 
     *   - Application
-        - What is does
-        - Reference
+        - Keywords
+        - Description
 
     *   - `EnMAP Preprocessing Tools (EnPT) <https://enmap.git-pages.gfz-potsdam.de/GFZ_Tools_EnMAP_BOX/EnPT/doc/>`_
-        - pre-processing pipeline for EnMAP data
-        -
+        - preprocessing
+        - Scheffler et al. 2023, EnPT – an Alternative Pre-Processing Chain for Hyperspectral EnMAP Data,
+          https://doi.org/10.1109/igarss52108.2023.10281805.
 
     *   - Regression-based unmixing
-        -
-        - Okujeni et al. 2017. Ensemble Learning From Synthetically Mixed Training
+        - unmixing
+        - Okujeni et al. 2017, Ensemble Learning From Synthetically Mixed Training
           Data for Quantifying Urban Land Cover With Support Vector Regression.
           https://doi.org/10.1109/jstars.2016.2634859
-    *   - tbc.
+
+    *   - Plant Water Retrieval
+        - vegetation
+        - Wocher et al. 2018, Physically-Based Retrieval of Canopy Equivalent Water Thickness Using Hyperspectral Data, Remote Sensing
+          https://doi.org/10.3390/rs10121924.
+
+    *   - Analyze Spectral Integral (ASI)
+        - vegetation
+        - Wocher et al. 2020, RTM-based dynamic absorption integrals for the retrieval of biochemical vegetation traits,
+          doi: https://doi.org/10.1016/j.jag.2020.102219.
+
+    *   - Vegetation Processor
+        - vegetation
         -
+
+    *   - Interactive Visualization of Vegetation Reflectance Models (IVVRM)
+        - vegetation, data visualization
+        -
+
+    *   - Interactive Red-Edge Inflection Point (iREIP)
+        - vegetation
+        -
+
+    *   - Vegetation Index Toolbox and Spectral Index Creator
+        - spectral indices
+        -
+
+    *   - EnMAP Soil Mapper (EnSoMap)
+        - soil
+        -
+
+    *   - EnMAP Geological Mapper (EnGeoMap)
+        - geology
+        -
+
+    *   - EO Time Series Viewer
+        - timeseries
+        -
+
+    *   - GEE Time Series Explorer
+        - timeseries
+        -
+
+    *   - Scatter Plots
+        - data visualization
+        -
+
+    *   - OLCI Neural Network Swarm (ONNS)
+        - water
+        -
+
+    *   - OC-PFT
+        - water
+        -
+
+    *   - Image Cube
+        - general, data visualization
+        -
+
+    *   - Raster Math
+        - general
+        -
+
+    *   - Classification Workflow
+        - general, classification
+        -
+
+    *   - Regression Workflow
+        - general, regression
         -
 
