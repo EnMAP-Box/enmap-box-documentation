@@ -28,7 +28,7 @@ Usage:
 
 2. Select a raster layer to process as well as a trained clusterer, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/clustering/img/predict_cluster.png
+    .. figure:: ../../processing_algorithms/clustering/img/predict_cluster.png
        :align: center
 
 

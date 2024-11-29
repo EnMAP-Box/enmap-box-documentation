@@ -28,7 +28,7 @@ Usage:
 
 2. Select a raster layer to process and a transformer. Then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/transformation/img/inverse_transformer.png
+    .. figure:: ../../processing_algorithms/transformation/img/inverse_transformer.png
        :align: center
 
 ..

@@ -30,7 +30,7 @@ Usage:
 
 2. Select a raster layer to process and click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/transformation/img/ICA.png
+    .. figure:: ../../processing_algorithms/transformation/img/ICA.png
        :align: center
 
 ..

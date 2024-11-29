@@ -30,7 +30,7 @@ Usage:
 
 2. Select a training dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/regression/img/svrrbf.png
+    .. figure:: ../../processing_algorithms/regression/img/svrrbf.png
        :align: center
 
 

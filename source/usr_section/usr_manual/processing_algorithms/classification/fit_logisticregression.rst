@@ -31,7 +31,7 @@ Usage:
 
 2. Select a training dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/classification/img/fitlogreg_interface.png
+    .. figure:: ../../processing_algorithms/classification/img/fitlogreg_interface.png
        :align: center
 
 ..

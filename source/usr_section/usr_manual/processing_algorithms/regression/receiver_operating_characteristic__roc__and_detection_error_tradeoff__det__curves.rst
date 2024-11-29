@@ -30,7 +30,7 @@ Usage:
 
 2. Select a class probability layer and an observed categorized layer, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/regression/img/rocdet.png
+    .. figure:: ../../processing_algorithms/regression/img/rocdet.png
        :align: center
 
 3. The output report will automatically be opened in your web browser.

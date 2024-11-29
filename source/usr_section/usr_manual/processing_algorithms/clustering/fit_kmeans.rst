@@ -30,7 +30,7 @@ Usage:
 
 2. Load an existing training dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/clustering/img/kmeans.png
+    .. figure:: ../../processing_algorithms/clustering/img/kmeans.png
        :align: center
 
 

@@ -28,7 +28,7 @@ Usage:
 
 2. Select a raster layer and define the X unit, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/raster_analysis/img/hull_removal.png
+    .. figure:: ../../processing_algorithms/raster_analysis/img/hull_removal.png
        :align: center
 
 3. The output raster can be found under :guilabel:`Rasters` in the :guilabel:`Data Source Panel`

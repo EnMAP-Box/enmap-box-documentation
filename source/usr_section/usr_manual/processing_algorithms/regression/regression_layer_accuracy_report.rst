@@ -28,7 +28,7 @@ Usage:
 
 2. Select a regression layer and an observed countinous-valued layer, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/regression/img/regacc.png
+    .. figure:: ../../processing_algorithms/regression/img/regacc.png
        :align: center
 
 3. The output accuracy report will automatically be opened in your web browser.

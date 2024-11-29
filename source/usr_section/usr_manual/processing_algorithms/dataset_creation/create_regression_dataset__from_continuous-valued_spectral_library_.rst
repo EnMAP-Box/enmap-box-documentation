@@ -28,7 +28,7 @@ Usage:
 
 2. Select a spectral library, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/dataset_creation/img/regspeclib.png
+    .. figure:: ../../processing_algorithms/dataset_creation/img/regspeclib.png
        :align: center
 
 3. The output classification dataset will be listed under Models in your Data Sources panel.
