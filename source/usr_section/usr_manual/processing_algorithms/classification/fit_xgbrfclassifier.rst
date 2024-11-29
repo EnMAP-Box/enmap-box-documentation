@@ -30,7 +30,7 @@ Usage:
 
 2. Select a test dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/classification/img/fitxgbrf_interface.png
+    .. figure:: ../../processing_algorithms/classification/img/fitxgbrf_interface.png
        :align: center
 
 

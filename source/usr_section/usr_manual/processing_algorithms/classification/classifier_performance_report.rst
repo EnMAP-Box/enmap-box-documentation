@@ -28,7 +28,7 @@ Usage:
 
 2. Select the classifier as well as the test dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/classification/img/class_performance_interface.png
+    .. figure:: ../../processing_algorithms/classification/img/class_performance_interface.png
        :align: center
 
 3. The generated performance report will be opened in your web browser.

@@ -30,7 +30,7 @@ Usage:
 
 2. Select the files containing your features, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/dataset_creation/img/clustxt.png
+    .. figure:: ../../processing_algorithms/dataset_creation/img/clustxt.png
        :align: center
 
 3. The output classification dataset will be listed under Models in your Data Sources panel.
