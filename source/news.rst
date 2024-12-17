@@ -1,10 +1,83 @@
 News
 ****
 
+Upcoming Events
+===============
+
+.. list-table::
+
+    *   - Title
+        - Date
+        - Location
+        - Comments
+
+    *   - `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
+        - 23-27 June 2025
+        - Vienna, Austria
+        -
+
+    *   - `2nd EnMAP User Workshop <https://enmap.geographie-muenchen.de/>`_
+        - 2-4 April 2025
+        - Munich, Germany
+        - Tutorial
+
+    *   - `FOSSGIS 2025 <https://www.fossgis-konferenz.de/2025/>`_
+        - 26-29 March
+        - Münster, Germany
+        - Oral Presentation
+
+
+
+Hyperspectral 2024 / WICSIS
+===========================
+
+November 2024
+
+The EnMAP-Box was presented at the 3rd Workshop on International Cooperation in Spaceborne Imaging Spectroscopy
+(WICSIS, 13.-15. September) at `ESA-ESTEC  <https://www.esa.int/About_Us/ESTEC>`_ in Noordwijk, Netherlands.
+The workshop participants got the opportunity to visit a training day on September 12th,
+on which they learned how to access EnMAP data and how to use the EnMAP-Box.
+
+Here is the newest EnMAP-Box poster:
+
+.. raw:: html
+
+    <a href="_static/poster/Hyperspectral2024.PosterEnMAP-Box.pdf">
+    <img style="height:250px;"
+        src="_static/poster/Hyperspectral2024.PosterEnMAP-Box.png"
+        alt="EnMAP-Box poster">
+    </a>
+
+
+
+QGIS User Conference 2024
+=========================
+
+September 2024
+
+From September 9-10, the QGIS User Conference 2024 (https://uc2024.qgis.sk/) took place in the beautiful city of Bratislava, Slovakia.
+The EnMAP box was also presented there with the talk *Beyond the NDVI: Hyperspectral remote sensing in QGIS with
+the EnMAP Box*.
+
+.. raw:: html
+
+   <div style="text-align: left;">
+   <p>
+        <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/fwXTNVs8Igs?si=IuukuenLb5r2i8ZR"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+        picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </p>
+   </div>
+
+
 13th EARSeL Workshop on Imaging Spectroscopy
 ============================================
 
  .. image:: /img/events/earsel2024_valencia.png
+
 
 April 2024
 
@@ -45,7 +118,10 @@ the QGIS Open Day. Here is the recording:
 .. raw:: html
 
    <div style="text-align: left;">
-    <iframe width="100%" height="430" src="https://www.youtube.com/embed/aQyhIpKu1pg?si=IBIEzyRqJa3_BqmL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="100%" height="430" src="https://www.youtube.com/embed/aQyhIpKu1pg?si=IBIEzyRqJa3_BqmL"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+           web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    </div>
 
 
