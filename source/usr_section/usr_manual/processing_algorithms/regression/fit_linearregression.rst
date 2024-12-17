@@ -29,7 +29,7 @@ Usage:
 
 2. Select a training dataset or create one by clicking the processing algorithm icon, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/regression/img/linear.png
+    .. figure:: ../../processing_algorithms/regression/img/linear.png
        :align: center
 
 

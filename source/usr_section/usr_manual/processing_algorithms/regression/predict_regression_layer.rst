@@ -28,7 +28,7 @@ Usage:
 
 2. Select a raster and a trained regressor, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/regression/img/predict.png
+    .. figure:: ../../processing_algorithms/regression/img/predict.png
        :align: center
 
 

@@ -28,7 +28,7 @@ Usage:
 
 2. Select a raster layer and click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/raster_conversion/img/envi_eader.png
+    .. figure:: ../../processing_algorithms/raster_conversion/img/envi_eader.png
        :align: center
 
 ..

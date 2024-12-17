@@ -29,7 +29,7 @@ Usage:
 
 2. Select a raster layer, define your style, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/auxilliary/img/pallete.png
+    .. figure:: ../../processing_algorithms/auxilliary/img/pallete.png
        :align: center
 
 

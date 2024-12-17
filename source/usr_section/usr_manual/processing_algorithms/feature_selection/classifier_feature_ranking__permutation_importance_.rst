@@ -28,7 +28,7 @@ Usage:
 
 2. Select a classifier, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/feature_selection/img/feature_ranking.png
+    .. figure:: ../../processing_algorithms/feature_selection/img/feature_ranking.png
        :align: center
 
 3. The output report will automatically open in your web browser
