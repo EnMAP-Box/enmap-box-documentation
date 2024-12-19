@@ -27,5 +27,6 @@ This section is a collection of 'recipes' for common tasks you can perform in th
    classification.rst
    graphical_modeler.rst
    regression.rst
+   run_on_hpc.rst
 
 
