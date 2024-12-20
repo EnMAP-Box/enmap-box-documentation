@@ -205,6 +205,7 @@ contains the reflectance values of the EnMAP bands and enriches this raster with
       --file=$PATH_L2A \
       --outputEnmapL2ARaster=$DIR_DATA/enmap_l2a.vrt
 
+
 The output should look like:
 
 .. code-block:: bash
