@@ -1,5 +1,5 @@
-Use EnMAP-Box on a High Performance Computer (HPC)
-==================================================
+EnMAP-Box in High Performance Computer (HPC) environments
+=========================================================
 
 .. _run_on_hpc:
 
