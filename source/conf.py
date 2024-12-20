@@ -68,6 +68,8 @@ datatables_options = {}
 # Register the filter_warning_log function to be called when warnings are logged
 def setup(app):
     # app.connect('build-finished', filter_warning_log)
+    app.parallel_read_safe = True
+    app.add_config_value('parallel_read_safe', True, 'env')
     pass
 
 
