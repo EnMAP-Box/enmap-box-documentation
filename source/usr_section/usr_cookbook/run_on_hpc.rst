@@ -13,7 +13,7 @@ This section describes how the EnMAP-Box can be installed and used on a Linux Se
 
 1. Login to your HPC shell
 
-2. Ensure that conda / minicoda is installed and available to you.
+2. Ensure that conda / miniconda is installed and available to you.
    See [miniforge3](https://github.com/conda-forge/miniforge) for installation instructions.
 
    Example: to activate conda on the HU HPC, you need to load the miniforge3 module.
@@ -23,22 +23,18 @@ This section describes how the EnMAP-Box can be installed and used on a Linux Se
         module load miniforge3
 
 
-3. Create a new conda environment with EnMAP-Box installed.
+3. Create a conda environment *enmapbox* with all dependencies needed to the EnMAP-Box:
 
     .. code-block:: bash
 
-        # define name of EnMAP-Box environment
-        ENVNAME=enmapbox
+        conda env create -n enmapbox -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
 
-        # create a new conda environment with the EnMAP-Box installed
-        conda env create -n $ENVNAME -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
-
-4. Activate the EnMAP-Box environment and call qgis_process to ensure that the local QGIS installation is setup right.
+4. Activate *enmapbox* and ensure that the local QGIS installation is setup right:
 
     .. code-block:: bash
 
-        # activate the EnMAP-Box environment
-        conda activate $ENVNAME
+        # activate EnMAP-Box environment
+        conda activate enmapbox
 
         # show version infos
         qgis_process --version
@@ -48,7 +44,15 @@ This section describes how the EnMAP-Box can be installed and used on a Linux Se
         qgis_process list # list available processing algorithms
 
 
-5. If required, install the EnMAP-Box from the plugin repository.
+    To visualize geo-data on the HPC, you can start QGIS in a X-Window:
+
+    .. code-block:: bash
+
+        qgis&
+
+
+5. Install the EnMAP-Box from the plugin repository and activate it as a QGIS plugin.
+
    For doing so we use the install https://github.com/3liz/qgis-plugin-manager
 
     .. code-block:: bash
@@ -69,14 +73,24 @@ This section describes how the EnMAP-Box can be installed and used on a Linux Se
         qgis-plugin-manager list
         qgis_process plugins list
 
-6. Disable QGIS / QT apps to show graphical windows.
+        # if required, enable the EnMAP-Box plugin
+        qgis_process plugins enable enmapboxplugin
+
+7. List all available EnMAP-Box processing algorithms
+
+    .. code-block:: bash
+
+        qgis_process list | grep 'enmapbox'
+
+
+6. Disable QGIS / Qt apps to show graphical windows.
     This is necessary to run the EnMAP-Box on a HPC which usually has now graphical interface.
 
     .. code-block:: bash
 
         export QT_QPA_PLATFORM=offscreen
 
-    However, you might enable it, e.g. to show the EnMAP-Box via X-Window
+    However, you might enable it again, e.g. to open QGIS & the EnMAP-Box in an X-Window and inspect your data.
 
 7. Run an EnMAP-Box processing algorithm:
 
