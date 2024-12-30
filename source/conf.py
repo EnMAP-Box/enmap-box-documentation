@@ -53,7 +53,7 @@ extensions = [
     "sphinx_datatables",
 ]
 
-suppress_warnings = ["app.parallel_read_safe"]
+suppress_warnings = ["app.parallel_read_safe"] # , 'app.sphinx_datatables','sphinx_datatables']
 
 # set the version to use for DataTables plugin
 datatables_version = "2.1.8"
