@@ -1,5 +1,5 @@
-EnMAP-Box in High Performance Computer (HPC) environments
-=========================================================
+EnMAP-Box in High Performance Computing (HPC) environments
+==========================================================
 
 .. _run_on_hpc:
 
@@ -9,6 +9,9 @@ This section describes how the EnMAP-Box can be installed and used on a Linux Se
 .. note::
 
     This guide is written for users who are familiar with the command line and job schedulers. If you are not familiar with these topics, please ask your system administrator for help.
+
+    This guide was tested on High-Performance Computing Platform (HPC)  provided by the Humboldt-Universität zu Berlin
+    https://hu.berlin/hpc .
 
 Installation
 ------------
@@ -66,7 +69,7 @@ Installation
             3. Search for 'EnMAP-Box'
             4. Click on 'Install Plugin'
 
-            .. figure:: ../../img/hpc/qgis_plugin_manager.png
+            .. figure:: img/qgis_plugin_manager.png
                :align: center
 
 
@@ -173,11 +176,11 @@ Run EnMAP-Box GUI
 3. Click *Project->Add Exampledata* to download and visualize the EnMAP-Box example data.
 
 
-.. figure:: ../../img/hpc/hpc_qgis_with_enmapbox.png
+.. figure:: img/hpc_qgis_with_enmapbox.png
 
 
-Run EnMAP-Box Processing Algorithms:
-------------------------------------
+Run Processing Algorithms
+-------------------------
 
 Let's create a working directory and download some example data:
 
@@ -243,12 +246,111 @@ Now open the image in QGIS:
 
     qgis $DIR_DATA/enmap_l2a.vrt&
 
-.. figure:: ../../img/hpc/hpc_qgis_enmap_l2a_import.png
+.. figure:: img/hpc_qgis_enmap_l2a_import.png
+
+Run Processing Models
+---------------------
+
+The QGIS Model Designer allows you to create QGIS Processing Models to describe comprehensive workflows that combine EnMAP-Box and other
+QGIS algorithms.
+
+.. figure:: img/hpc_qgis_model_builder.png
+
+
+These models can be saved an shared in \*.model3 files. Download the :download:`CreateSpectralIndices.model3 <models/CreateSpectralIndices.model3>`
+and show its parameters:
+
+.. code-block:: bash
+
+   >qgis_process help ~/CreateSpectralIndices.model3
+
+      CreateIndices (CreateIndices)
+
+   ----------------
+   Description
+   ----------------
+
+
+   ----------------
+   Arguments
+   ----------------
+
+   inputfile: InputFile
+           Argument type:  file
+           Acceptable values:
+                   - Path to a file
+   outputimage: OutputImage
+           Argument type:  rasterDestination
+           Acceptable values:
+                   - Path for new raster layer
+
+   ----------------
+   Outputs
+   ----------------
+
+   outputimage: <outputRaster>
+           OutputImage
+
+
+
+To run it, call:
+
+.. code-block:: bash
+
+   > qgis_process run ~/CreateSpectralIndices.model3 \
+         -- inputfile=ENMAP01-____L2A-DT0000001867_20220724T104526Z_008_V010302_20230628T165614Z-METADATA.XML \
+            outputimage=~/myresult.tif
+
+   ----------------
+   Inputs
+   ----------------
+
+   inputfile:      ENMAP01-____L2A-DT0000001867_20220724T104526Z_008_V010302_20230628T165614Z-METADATA.XML
+   outputimage:    /home/geographie/jakimowb/myresult.vrt
+
+
+   Create Raster [1275x1240x218](Float32) -co INTERLEAVE=BAND COMPRESS=LZW TILED=YES BIGTIFF=YES /tmp/processing_zzyKzi/0854a4cf4d624d69803deeb2ce382e00/outputEnmapL2ARaster.tif
+   0...10...20...30...40...50
+   Execution completed in 18.73 seconds
+   Results: {'outputRaster': '/tmp/processing_zzyKzi/0854a4cf4d624d69803deeb2ce382e00/outputEnmapL2ARaster.tif'}
+   Execution completed in 21.99 seconds
+   gdal_vrt_module_0x557a0e002550:12: RuntimeWarning: invalid value encountered in divide
+   gdal_vrt_module_0x557a0aca6bc0:12: RuntimeWarning: invalid value encountered in divide
+   gdal_vrt_module_0x557a12d68350:12: RuntimeWarning: invalid value encountered in divide
+   gdal_vrt_module_0x557a0dfdbec0:12: RuntimeWarning: invalid value encountered in divide
+   Execution completed in 2.37 seconds
+   ...60...70...80...90...100 - done.
+   Model processed OK. Executed 2 algorithm(s) total in 24.479 s.
+
+   ----------------
+   Results
+   ----------------
+
+   outputimage:    /home/geographie/jakimowb/myresult.tif
+
+
+Call ``qgis ~/myresult.tif`` to visualize the created image in QGIS:
+
+.. figure:: img/hpc_qgis_spectral_indices.png
+
+
+
 
 Use SLURM
 ---------
 
 tbd.
+
+Download EnMAP Data
+...................
+
+tbd.
+
+Extract EnMAP Data
+..................
+
+tbd.
+
 
 Notes
 -----
