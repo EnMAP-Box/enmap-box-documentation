@@ -339,17 +339,132 @@ Call ``qgis ~/myresult.tif`` to visualize the created image in QGIS:
 Use SLURM
 ---------
 
-tbd.
+We assume that a lot of EnMAP Level 2 data has been ordered and already downloaded to ``INPUT_FOLDER``.
 
-Download EnMAP Data
-...................
+.. code-block:: bash
 
-tbd.
+   >INPUT_DIR=~/mydata/enmap_l2
+   > ls -l INPUT_DIR
+   total 22473296
+   -rw-r--r-- 1 jakimowb zwei 1869591839 Aug 13 17:40 dims_op_oc_oc-en_701696137_1.tar.gz
+   -rw-r--r-- 1 jakimowb zwei 4879114711 Aug 13 17:41 dims_op_oc_oc-en_701696137_2.tar.gz
+   -rw-r--r-- 1 jakimowb zwei 1785007592 Aug 13 17:35 dims_op_oc_oc-en_701696243_1.tar.gz
+   -rw-r--r-- 1 jakimowb zwei 4792925417 Aug 13 17:37 dims_op_oc_oc-en_701696243_2.tar.gz
+   -rw-r--r-- 1 jakimowb zwei 1910992910 Aug 13 17:29 dims_op_oc_oc-en_701696349_1.tar.gz
+   ...
 
-Extract EnMAP Data
-..................
+Each ``dims_*_tar.gz`` file contains one or more EnMAP Level 2 products and auxiliary information that can
+be listed with:
 
-tbd.
+.. code-block:: bash
+
+   > tar -tzf dims_op_oc_oc-en_701696137_1.tar.gz
+   dims_op_oc_oc-en_701696137_1/
+   dims_op_oc_oc-en_701696137_1/tools/
+   dims_op_oc_oc-en_701696137_1/tools/defcopyright.html
+   dims_op_oc_oc-en_701696137_1/tools/EnMAP_Data_License_v1.1_final.pdf
+   dims_op_oc_oc-en_701696137_1/tools/EnMAP_Data_License_v1.1_final.pdf.tooldes
+   dims_op_oc_oc-en_701696137_1/tools/iif.xsd
+   dims_op_oc_oc-en_701696137_1/tools/iif.xsd.tooldes
+   dims_op_oc_oc-en_701696137_1/tools/tf.xsd
+   dims_op_oc_oc-en_701696137_1/tools/tf.xsd.tooldes
+   dims_op_oc_oc-en_701696137_1/tools/leiste.gif
+   dims_op_oc_oc-en_701696137_1/tools/logo_dlr.jpg
+   dims_op_oc_oc-en_701696137_1/tools/logo_dfd.jpg
+   dims_op_oc_oc-en_701696137_1/tools/erde_weiss_small.gif
+   dims_op_oc_oc-en_701696137_1/ENMAP.HSI.L2A/
+   dims_op_oc_oc-en_701696137_1/ENMAP.HSI.L2A/ENMAP01-____L2A-DT0000014911_20230428T093524Z_016_V010402_20240809T151155Z.ZIP
+   dims_op_oc_oc-en_701696137_1/ENMAP.HSI.L2A/ENMAP01-____L2A-DT0000014911_20230428T093533Z_018_V010402_20240809T145654Z.ZIP
+   dims_op_oc_oc-en_701696137_1/ENMAP.HSI.L2A/ENMAP01-____L2A-DT0000014911_20230428T093520Z_015_V010402_20240809T151634Z.ZIP
+   dims_op_oc_oc-en_701696137_1/ENMAP.HSI.L2A/ENMAP01-____L2A-DT0000014911_20230428T093529Z_017_V010402_20240809T145835Z.ZIP
+   dims_op_oc_oc-en_701696137_1/ENMAP.HSI.L2A/ENMAP01-____L2A-DT0000014911_20230428T093506Z_012_V010402_20240809T152833Z.ZIP
+   dims_op_oc_oc-en_701696137_1/iif/
+   dims_op_oc_oc-en_701696137_1/iif/dims_nz_pl_dfd_XXXXB00000000681141327206_iif.xml
+   dims_op_oc_oc-en_701696137_1/iif/dims_nz_pl_dfd_XXXXB00000000681141326695_iif.xml
+   dims_op_oc_oc-en_701696137_1/iif/dims_nz_pl_dfd_XXXXB00000000681141327597_iif.xml
+   dims_op_oc_oc-en_701696137_1/iif/dims_nz_pl_dfd_XXXXB00000000681141326969_iif.xml
+   dims_op_oc_oc-en_701696137_1/iif/dims_nz_pl_dfd_XXXXB00000000681141328372_iif.xml
+   dims_op_oc_oc-en_701696137_1/readme.html
+
+
+In order to process and visualize the EnMAP data more easily, we would like to save the image data
+as standardized TIFF format with BSQ interleave and metadata like band-wavelength information. For each tar.gz file we
+like to:
+1. unzip all contained EnMAP01_*.ZIP files
+2. use the EnMAP-Box `enmapbox:importEnmapL2AProduct` algorithm to create a single raster image with
+   reflectance values and band-metadata that can be used in QGIS and the EnMAP-Box.
+3. cleanup unzipped tar.gz and EnMAP01_*.ZIP files.
+
+The following bash script does this for all tar.gz files in the INPUT_DIR:
+
+.. code-block:: bash
+
+   #!/bin/bash
+
+
+   INPUT_DIR=~/mydata/enmap_l2
+   OUTPUT_DIR=~/mydata/enmap_l2_tif
+
+   # ensure that your standard environmental settings are available
+   source ~/.bashrc
+
+   # activate the enmapbox conda environment
+   module load miniforge3
+   conda activate enmapbox
+
+   mkdir -p $OUTPUT_DIR
+
+
+   mapfile -t FILES < <(find "$INPUT_DIR" -name "*.tar.gz" -type f)
+   echo "Found ${#FILES[@]} tar.gz files:"
+   for FILE in "${FILES[@]}"; do
+
+     DIR_TMP="$OUTPUT_DIR/$(basename "$FILE" .tar.gz)"
+     mkdir -p $DIR_TMP
+
+     # Step 1: extract zip files from tar.gz archive
+     echo "Extract $FILE to $DIR_TMP..."
+     tar -xzvf "$FILE" -C $DIR_TMP --wildcards '*.ZIP'
+
+
+     # Step 2: unzip zip files
+     mapfile -t ZIPFILES < <(find "$DIR_TMP" -name "ENMAP01*.ZIP" -type f)
+     DIR_UNZIPPED="$DIR_TMP/unzipped"
+     mkdir -p DIR_UNZIPPED
+     for zip_file in "${ZIPFILES[@]}"; do
+       echo "UNZIP $zip_file..."
+       unzip "$zip_file" -o -d "$DIR_UNZIPPED"
+       break
+     done
+
+     # Step 3: import the L2A product as image to be used with QGIS / EnMAP-Box
+     mapfile -t METADATAFILES < <(find "$DIR_UNZIPPED" -name "ENMAP01*-METADATA.XML" -type f)
+     echo "Found ${#METADATAFILES[@]} *.MEDATA.XML files:"
+     for xml_file in "${METADATAFILES[@]}"; do
+       tif_file="${xml_file%METADATA.XML}-IMAGE_L2A.tif"
+
+       printf "Import $xml_file \nto $tif_file"
+
+       qgis_process run enmapbox:ImportEnmapL2AProduct -- \
+              file=$xml_file \
+              setBadBands=true \
+              excludeBadBands=true \
+              detectorOverlap=0 \
+              outputEnmapL2ARaster=$tif_file
+
+     done
+
+     # Step 4: move the EnMAP Scene folder to output directory and cleanup everything
+     mv -r "$DIR_UNZIPPED"/* "$OUTPUT_DIR"
+     rm -r $DIR_TMP
+     break
+
+   done
+
+Now we enhance this script so that we can schedule it as SLURM job, and run the loop over all tar.gz files in the INPUT_DIR in parallel.
+
+
+
 
 
 Notes
