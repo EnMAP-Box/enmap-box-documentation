@@ -339,22 +339,26 @@ Call ``qgis ~/myresult.tif`` to visualize the created image in QGIS:
 Use SLURM
 ---------
 
-We assume that a lot of EnMAP Level 2 data has been ordered and already downloaded to ``INPUT_FOLDER``.
+Extract multiple EnMAP Level 2A products
+........................................
+
+We assume that a lot of EnMAP Level 2 data has been ordered and was downloaded to ``INPUT_FOLDER``.
 
 .. code-block:: bash
 
    >INPUT_DIR=~/mydata/enmap_l2
-   > ls -l INPUT_DIR
-   total 22473296
-   -rw-r--r-- 1 jakimowb zwei 1869591839 Aug 13 17:40 dims_op_oc_oc-en_701696137_1.tar.gz
-   -rw-r--r-- 1 jakimowb zwei 4879114711 Aug 13 17:41 dims_op_oc_oc-en_701696137_2.tar.gz
-   -rw-r--r-- 1 jakimowb zwei 1785007592 Aug 13 17:35 dims_op_oc_oc-en_701696243_1.tar.gz
-   -rw-r--r-- 1 jakimowb zwei 4792925417 Aug 13 17:37 dims_op_oc_oc-en_701696243_2.tar.gz
-   -rw-r--r-- 1 jakimowb zwei 1910992910 Aug 13 17:29 dims_op_oc_oc-en_701696349_1.tar.gz
-   ...
+   > ls -lh INPUT_DIR
+   total 185G
+   -rw-r--r-- 1 jakimowb zwei 4.5G Aug 13 17:37 dims_op_oc_oc-en_701696243_2.tar.gz
+   -rw-r--r-- 1 jakimowb zwei 1.8G Aug 13 17:29 dims_op_oc_oc-en_701696349_1.tar.gz
+   -rw-r--r-- 1 jakimowb zwei 4.7G Aug 13 17:31 dims_op_oc_oc-en_701696349_2.tar.gz
+   -rw-r--r-- 1 jakimowb zwei 2.1G Aug 13 17:26 dims_op_oc_oc-en_701696455_1.tar.gz
+   -rw-r--r-- 1 jakimowb zwei 4.4G Aug 13 17:28 dims_op_oc_oc-en_701696455_2.tar.gz
+   -rw-r--r-- 1 jakimowb zwei 1.7G Aug 13 17:21 dims_op_oc_oc-en_701696615_1.tar.gz
+   # <many more>
 
-Each ``dims_*_tar.gz`` file contains one or more EnMAP Level 2 products and auxiliary information that can
-be listed with:
+Each ``*.tar.gz`` file contains one or more EnMAP Level 2 products and auxiliary information.
+These files can be listed with:
 
 .. code-block:: bash
 
@@ -387,83 +391,190 @@ be listed with:
    dims_op_oc_oc-en_701696137_1/readme.html
 
 
-In order to process and visualize the EnMAP data more easily, we would like to save the image data
-as standardized TIFF format with BSQ interleave and metadata like band-wavelength information. For each tar.gz file we
-like to:
-1. unzip all contained EnMAP01_*.ZIP files
-2. use the EnMAP-Box `enmapbox:importEnmapL2AProduct` algorithm to create a single raster image with
-   reflectance values and band-metadata that can be used in QGIS and the EnMAP-Box.
-3. cleanup unzipped tar.gz and EnMAP01_*.ZIP files.
+In order to process and visualize the EnMAP data more easily, we would like to:
 
-The following bash script does this for all tar.gz files in the INPUT_DIR:
+1. extract all EnMAP01_*.ZIP files from the tar.gz archive
+2. unzip all contained EnMAP01_*.ZIP files
+3. use the EnMAP-Box `enmapbox:importEnmapL2AProduct` algorithm to create a single raster image with
+   reflectance values and band-metadata that can be used in QGIS and the EnMAP-Box.
+4. cleanup unzipped tar.gz and EnMAP01_*.ZIP files.
+
+We can do this for a single \*.tar.gz file with the following script ``extract_enmap_tgz.sh``:
 
 .. code-block:: bash
 
    #!/bin/bash
+   # A script to extract EnMAP Level 2A *.tar.gz archives
+
+   if [ "$#" -ne 2 ]; then
+       echo "Usage: $0 FILE OUTPUT_DIR"
+       exit 1
+   fi
+
+   # Assign arguments to variables
+   FILE=$1
+   OUTPUT_DIR=$2
+
+   # Validate FILE
+   if [ ! -f "$FILE" ]; then
+       echo "Error: FILE '$FILE' does not exist or is not a regular file."
+       exit 2
+   fi
 
 
-   INPUT_DIR=~/mydata/enmap_l2
-   OUTPUT_DIR=~/mydata/enmap_l2_tif
-
-   # ensure that your standard environmental settings are available
-   source ~/.bashrc
-
-   # activate the enmapbox conda environment
-   module load miniforge3
-   conda activate enmapbox
-
-   mkdir -p $OUTPUT_DIR
+   # Validate OUTPUT_DIR
+   if [ ! -d "$OUTPUT_DIR" ]; then
+       echo "Error: OUTPUT_DIR '$OUTPUT_DIR' does not exist or is not a directory."
+       exit 3
+   fi
 
 
-   mapfile -t FILES < <(find "$INPUT_DIR" -name "*.tar.gz" -type f)
-   echo "Found ${#FILES[@]} tar.gz files:"
-   for FILE in "${FILES[@]}"; do
 
-     DIR_TMP="$OUTPUT_DIR/$(basename "$FILE" .tar.gz)"
-     mkdir -p $DIR_TMP
+   DIR_TMP="$OUTPUT_DIR/$(basename "$FILE" .tar.gz)"
+   mkdir -p $DIR_TMP
 
-     # Step 1: extract zip files from tar.gz archive
-     echo "Extract $FILE to $DIR_TMP..."
-     tar -xzvf "$FILE" -C $DIR_TMP --wildcards '*.ZIP'
+   # Step 1: extract zip files from tar.gz archive
+   echo "Extract $FILE to $DIR_TMP..."
+   tar -xzvf "$FILE" -C $DIR_TMP --wildcards '*.ZIP'
 
 
-     # Step 2: unzip zip files
-     mapfile -t ZIPFILES < <(find "$DIR_TMP" -name "ENMAP01*.ZIP" -type f)
-     DIR_UNZIPPED="$DIR_TMP/unzipped"
-     mkdir -p DIR_UNZIPPED
-     for zip_file in "${ZIPFILES[@]}"; do
-       echo "UNZIP $zip_file..."
-       unzip "$zip_file" -o -d "$DIR_UNZIPPED"
-       break
-     done
+   # Step 2: unzip zip files
+   mapfile -t ZIPFILES < <(find "$DIR_TMP" -name "ENMAP01*.ZIP" -type f)
+   DIR_UNZIPPED="$DIR_TMP/unzipped"
+   mkdir -p DIR_UNZIPPED
 
-     # Step 3: import the L2A product as image to be used with QGIS / EnMAP-Box
-     mapfile -t METADATAFILES < <(find "$DIR_UNZIPPED" -name "ENMAP01*-METADATA.XML" -type f)
-     echo "Found ${#METADATAFILES[@]} *.MEDATA.XML files:"
-     for xml_file in "${METADATAFILES[@]}"; do
-       tif_file="${xml_file%METADATA.XML}-IMAGE_L2A.tif"
+   for zip_file in "${ZIPFILES[@]}"; do
+     echo "unzip $zip_file..."
+     unzip -o "$zip_file" -d "$DIR_UNZIPPED"
+   done
 
-       printf "Import $xml_file \nto $tif_file"
+   # Step 3: import the L2A product as image to be used with QGIS / EnMAP-Box
+   mapfile -t METADATAFILES < <(find "$DIR_UNZIPPED" -name "ENMAP01*-METADATA.XML" -type f)
+   echo "Found ${#METADATAFILES[@]} *.MEDATA.XML files:"
 
-       qgis_process run enmapbox:ImportEnmapL2AProduct -- \
+   for xml_file in "${METADATAFILES[@]}"; do
+     tif_file="${xml_file%METADATA.XML}-IMAGE_L2A.tif"
+
+     printf "Import $xml_file \nto $tif_file"
+
+     qgis_process run enmapbox:ImportEnmapL2AProduct -- \
               file=$xml_file \
               setBadBands=true \
               excludeBadBands=true \
               detectorOverlap=0 \
               outputEnmapL2ARaster=$tif_file
 
-     done
-
-     # Step 4: move the EnMAP Scene folder to output directory and cleanup everything
-     mv -r "$DIR_UNZIPPED"/* "$OUTPUT_DIR"
-     rm -r $DIR_TMP
-     break
-
    done
 
-Now we enhance this script so that we can schedule it as SLURM job, and run the loop over all tar.gz files in the INPUT_DIR in parallel.
+   # Step 4: move the EnMAP Scene folder to output directory and cleanup everything
+   # temporary outputs
+   rsync -a "$DIR_UNZIPPED/" "$OUTPUT_DIR"
+   rm -r $DIR_TMP
+
+Parallelize extraction and import
+.................................
+
+The extraction and import can take a while. Therefore we like to run it in parallel for multiple
+files. We can do this using two other scripts, one that defines the SLURM job ``extract_all.slurm`` and one that starts it ``extract_all.sh``.
+
+    .. tabs::
+
+        .. tab:: extract_all.slurm
+
+            This script defines the SLURM job that extracts each \*.tar.gz in a separated slurm [job array task](https://slurm.schedmd.com/job_array.html)
+
+            .. code-block:: bash
+
+               #!/bin/bash
+               # Slurm job to extract EnMAP Level 2A *.tar.gz in parallel
+
+               #SBATCH --ntasks=1                    # Run on a single CPU
+               #SBATCH --mem=4gb                     # Job memory request
+               #SBATCH --partition=standard
+               #SBATCH --account=jakimowb
+               #SBATCH --output=job_output_%A_%a.log
+               #SBATCH --error=job_error_%A_%a.log
+               #SBATCH --cpus-per-task=1             # CPUs per task
+
+               OUTPUT_DIR=$2
+               JOBLIST=$1
+
+               # ensure that your standard environmental settings are available
+               source ~/.bashrc
+               # activate the enmapbox conda environment
+               module load miniforge3
+               conda activate enmapbox
+               export QT_QPA_PLATFORM=offscreen
+               mkdir -p $OUTPUT_DIR
+
+               FILE=$(sed -n "$((SLURM_ARRAY_TASK_ID + 1))p" "$JOBLIST")
+               if [ -z "$FILE" ]; then
+                   echo "No file found for SLURM_ARRAY_TASK_ID=$SLURM_ARRAY_TASK_ID"
+                   exit 1
+               fi
+
+               # Process the file
+               echo "Processing file: $FILE"
+               source extract_enmap_tgz.sh "$FILE" "$OUTPUT_DIR"
 
 
+        .. tab:: extract_all.sh
+
+            This script adds the slurm job and all its sub-tasks to the SLURM job queue:
+
+            .. code-block:: bash
+
+               #!/bin/bash
+               # A script to submit a SLURM job array to extract EnMAP Level 2A *.tar.gz archives
+
+               INPUT_DIR=~/mydata/enmap_input
+               OUTPUT_DIR=~/mydata/enmap_l2_tif
+               JOBLIST=~/joblist.txt
+               # mapfile -t FILES < <(find "$INPUT_DIR" -name "*.tar.gz" -type f)
+               find "$INPUT_DIR" -name "*.tar.gz" -type f > "$JOBLIST"
+
+
+               # ensure that your standard environmental settings are available
+               source ~/.bashrc
+
+               # activate the enmapbox conda environment
+               module load miniforge3
+               conda activate enmapbox
+
+               export QT_QPA_PLATFORM=offscreen
+               mkdir -p $OUTPUT_DIR
+
+               # Count the number of files
+               NUM_FILES=$(wc -l < "$JOBLIST")
+               echo "Found $NUM_FILES tar.gz files."
+
+               if [ "$NUM_FILES" -eq 0 ]; then
+                   echo "No files found. Exiting."
+                   exit 1
+               fi
+
+               # Submit the Slurm job array
+               echo "Submitting Slurm job array with $NUM_FILES files..."
+               sbatch --array=0-$(($NUM_FILES - 1))%4 extract.slurm $JOBLIST $OUTPUT_DIR
+
+
+Calling ``./extract_all.sh`` will submit a SLURM job array that processes all EnMAP Level 2A \*.tar.gz files in parallel.
+
+Inspect the job status
+......................
+
+The [squeue](https://slurm.schedmd.com/squeue.html) command can be used to inspect the job status:
+
+.. code-block:: bash
+
+   > squeue -u $USER
+   JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+   19523_0  standard extract. jakimowb  R       9:45      1 slurm-exec-029
+   19523_1  standard extract. jakimowb  R       9:45      1 slurm-exec-029
+   19523_2  standard extract. jakimowb  R       9:45      1 slurm-exec-029
+   19523_3  standard extract. jakimowb  R       9:45      1 slurm-exec-029
+
+Actually 4 jobs are running (ST = *R*) in parallel, as intended when starting the slurm job with ``--array=0-$(($NUM_FILES - 1))%4``.
 
 
 
