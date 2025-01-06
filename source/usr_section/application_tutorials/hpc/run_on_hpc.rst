@@ -10,7 +10,7 @@ This section describes how the EnMAP-Box can be installed and used on a Linux Se
 
     This guide is written for users who are familiar with the command line and job schedulers. If you are not familiar with these topics, please ask your system administrator for help.
 
-    This guide was tested on High-Performance Computing Platform (HPC)  provided by the Humboldt-Universität zu Berlin
+    This guide was tested on High-Performance Computing Platform (HPC) provided by the Humboldt-Universität zu Berlin
     https://hu.berlin/hpc .
 
 Installation
@@ -19,41 +19,42 @@ Installation
 1. Login to your HPC shell
 
 2. Ensure that conda / miniconda is installed and available to you.
-   See [miniforge3](https://github.com/conda-forge/miniforge) for installation instructions.
+   See `miniforge3 <https://github.com/conda-forge/miniforge>`_ for installation instructions.
 
    Example: to activate conda on the HU HPC, you need to load the miniforge3 module.
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        module load miniforge3
+      module load miniforge3
 
 
-3. Create a conda environment *enmapbox* with all dependencies needed to the EnMAP-Box:
+3. Create a conda environment *enmapbox* with all dependencies that are needed to run the EnMAP-Box:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        conda env create -n enmapbox -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
+      conda env create -n enmapbox -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
+
 
 4. Activate *enmapbox* and ensure that the local QGIS installation is setup right:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        # activate EnMAP-Box environment
-        conda activate enmapbox
+      # activate EnMAP-Box environment
+      conda activate enmapbox
 
-        # show version infos
-        qgis_process --version
+      # show version infos
+      qgis_process --version
 
-        # list qgis plugins
-        qgis_process plugins # list plugins
-        qgis_process list # list available processing algorithms
+      # list qgis plugins
+      qgis_process plugins # list plugins
+      qgis_process list # list available processing algorithms
 
 
-    To visualize geo-data on the HPC, you can start QGIS in a X-Window:
+   To visualize geo-data on the HPC, you can start QGIS in a X-Window:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        qgis&
+      qgis&
 
 
 5. Install and activate the EnMAP-Box QGIS plugin. Either start the QGIS GUI and use the QGIS plugin manager, or use
@@ -64,7 +65,7 @@ Installation
 
         .. tab:: QGIS GUI
 
-            1. Call ``qgis&`` to ppen QGIS in an X-Window
+            1. Call ``qgis&`` to open QGIS in an X-Window
             2. Go to Plugins -> Manage and Install Plugins
             3. Search for 'EnMAP-Box'
             4. Click on 'Install Plugin'
@@ -95,77 +96,77 @@ Installation
 
 
 
-7. Check that the EnMAP-Box is installed and their processing algorithms available on your CLI:
+6. Check that the EnMAP-Box is installed and their processing algorithms available on your CLI:
 
-    Call ``qgis_process plugins list`` to see which plugins are loaded and available.
+   Call ``qgis_process plugins list`` to see which plugins are loaded and available.
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        jakimowb@slurm-login:~> qgis_process plugins list
-        load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/enmapboxresources_rc.py
-        load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/coreapps/enmapboxapplications/ressources_rc.py
-        load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/qgispluginsupport/qps/qpsresources_rc.py
-        <frozen importlib._bootstrap>:488: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 216 from C header, got 232 from PyObject
-        Problem with GRASS installation: GRASS was not found or is not correctly installed
-        Available plugins
-        (* indicates loaded plugins which implement Processing providers)
+      jakimowb@slurm-login:~> qgis_process plugins list
+      load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/enmapboxresources_rc.py
+      load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/coreapps/enmapboxapplications/ressources_rc.py
+      load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/qgispluginsupport/qps/qpsresources_rc.py
+      <frozen importlib._bootstrap>:488: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 216 from C header, got 232 from PyObject
+      Problem with GRASS installation: GRASS was not found or is not correctly installed
+      Available plugins
+      (* indicates loaded plugins which implement Processing providers)
 
-          enmapboxplugin
-        * grassprovider
-        * processing
-
-
-    If necessary, enable the EnMAP-Box plugin with ``qgis_process plugins enable enmapboxplugin``:
-
-    .. code-block:: bash
-
-        jakimowb@slurm-login:~> qgis_process plugins enable enmapboxplugin
-        Enabling plugin: "enmapboxplugin"
-        load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/enmapboxresources_rc.py
-        load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/coreapps/enmapboxapplications/ressources_rc.py
-        load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/qgispluginsupport/qps/qpsresources_rc.py
-        <frozen importlib._bootstrap>:488: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 216 from C header, got 232 from PyObject
-        Enabled enmapboxplugin (EnMAP-Box 3)
-
-        Available plugins
-        (* indicates enabled plugins which implement Processing providers)
-
-        * enmapboxplugin
-        * grassprovider
-        * processing
+       enmapboxplugin
+      * grassprovider
+      * processing
 
 
+   If necessary, enable the EnMAP-Box plugin with ``qgis_process plugins enable enmapboxplugin``:
 
-    Now list the processing algorithms provided by the EnMAP-Box:
+   .. code-block:: bash
 
-    .. code-block:: bash
+     jakimowb@slurm-login:~> qgis_process plugins enable enmapboxplugin
+     Enabling plugin: "enmapboxplugin"
+     load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/enmapboxresources_rc.py
+     load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/coreapps/enmapboxapplications/ressources_rc.py
+     load /home/geographie/jakimowb/.local/share/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/qgispluginsupport/qps/qpsresources_rc.py
+     <frozen importlib._bootstrap>:488: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 216 from C header, got 232 from PyObject
+     Enabled enmapboxplugin (EnMAP-Box 3)
 
-        qgis_process list | grep 'enmapbox'
-        <frozen importlib._bootstrap>:488: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 216 from C header, got 232 from PyObject
-        Problem with GRASS installation: GRASS was not found or is not correctly installed
-        enmapbox:AggregateRasterLayerBands      Aggregate raster layer bands
-        enmapbox:AggregateRasterLayers  Aggregate raster layers
-        enmapbox:ApplyMaskLayerToRasterLayer    Apply mask layer to raster layer
-        enmapbox:Build3DCube    Build 3D Cube
-        enmapbox:ClassFractionLayerFromCategorizedLayer Class fraction layer from categorized layer
-        enmapbox:ClassSeparabilityReport        Class separability report
-        enmapbox:ClassificationLayerAccuracyAndAreaReportForStratifiedRandomSampling    Classification layer accuracy and area report (for stratified random sampling)
-        enmapbox:ClassificationLayerAccuracyReport      Classification layer accuracy report
-        enmapbox:ClassificationLayerFromClassProbabilityfractionLayer   Classification layer from class probability/fraction layer
-        enmapbox:ClassificationLayerFromRenderedImage   Classification layer from rendered image
-        enmapbox:ClassificationWorkflow Classification workflow
-        enmapbox:ClassifierFeatureRankingPermutationImportance  Classifier feature ranking (permutation importance)
-        enmapbox:ClassifierPerformanceReport    Classifier performance report
-        enmapbox:ConvexHullAndContinuumremoval  Convex hull and continuum-removal
-        enmapbox:CreateClassificationDatasetFromCategorizedRasterLayerAndFeatureRaster  Create classification dataset (from categorized raster layer and feature raster)
-        enmapbox:CreateClassificationDatasetFromCategorizedSpectralLibrary      Create classification dataset (from categorized spectral library)
-        enmapbox:CreateClassificationDatasetFromCategorizedVectorLayerAndFeatureRaster  Create classification dataset (from categorized vector layer and feature raster)
-        enmapbox:CreateClassificationDatasetFromCategorizedVectorLayerWithAttributeTable        Create classification dataset (from categorized vector layer with attribute table)
-        enmapbox:CreateClassificationDatasetFromJsonFile        Create classification dataset (from JSON file)
-        enmapbox:CreateClassificationDatasetFromPythonCode      Create classification dataset (from Python code)
-        enmapbox:CreateClassificationDatasetFromTableWithCategoriesAndFeatureFields     Create classification dataset (from table with categories and feature fields)
-        enmapbox:CreateClassificationDatasetFromTextFiles       Create classification dataset (from text files)
-        . . .
+     Available plugins
+     (* indicates enabled plugins which implement Processing providers)
+
+     * enmapboxplugin
+     * grassprovider
+     * processing
+
+
+
+   Now list the processing algorithms provided by the EnMAP-Box:
+
+   .. code-block:: bash
+
+     qgis_process list | grep 'enmapbox'
+     <frozen importlib._bootstrap>:488: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 216 from C header, got 232 from PyObject
+     Problem with GRASS installation: GRASS was not found or is not correctly installed
+     enmapbox:AggregateRasterLayerBands      Aggregate raster layer bands
+     enmapbox:AggregateRasterLayers  Aggregate raster layers
+     enmapbox:ApplyMaskLayerToRasterLayer    Apply mask layer to raster layer
+     enmapbox:Build3DCube    Build 3D Cube
+     enmapbox:ClassFractionLayerFromCategorizedLayer Class fraction layer from categorized layer
+     enmapbox:ClassSeparabilityReport        Class separability report
+     enmapbox:ClassificationLayerAccuracyAndAreaReportForStratifiedRandomSampling    Classification layer accuracy and area report (for stratified random sampling)
+     enmapbox:ClassificationLayerAccuracyReport      Classification layer accuracy report
+     enmapbox:ClassificationLayerFromClassProbabilityfractionLayer   Classification layer from class probability/fraction layer
+     enmapbox:ClassificationLayerFromRenderedImage   Classification layer from rendered image
+     enmapbox:ClassificationWorkflow Classification workflow
+     enmapbox:ClassifierFeatureRankingPermutationImportance  Classifier feature ranking (permutation importance)
+     enmapbox:ClassifierPerformanceReport    Classifier performance report
+     enmapbox:ConvexHullAndContinuumremoval  Convex hull and continuum-removal
+     enmapbox:CreateClassificationDatasetFromCategorizedRasterLayerAndFeatureRaster  Create classification dataset (from categorized raster layer and feature raster)
+     enmapbox:CreateClassificationDatasetFromCategorizedSpectralLibrary      Create classification dataset (from categorized spectral library)
+     enmapbox:CreateClassificationDatasetFromCategorizedVectorLayerAndFeatureRaster  Create classification dataset (from categorized vector layer and feature raster)
+     enmapbox:CreateClassificationDatasetFromCategorizedVectorLayerWithAttributeTable        Create classification dataset (from categorized vector layer with attribute table)
+     enmapbox:CreateClassificationDatasetFromJsonFile        Create classification dataset (from JSON file)
+     enmapbox:CreateClassificationDatasetFromPythonCode      Create classification dataset (from Python code)
+     enmapbox:CreateClassificationDatasetFromTableWithCategoriesAndFeatureFields     Create classification dataset (from table with categories and feature fields)
+     enmapbox:CreateClassificationDatasetFromTextFiles       Create classification dataset (from text files)
+     . . .
 
 
 Run EnMAP-Box GUI
@@ -336,8 +337,22 @@ Call ``qgis ~/myresult.tif`` to visualize the created image in QGIS:
 
 
 
-Use SLURM
----------
+SLURM Workload Manager
+----------------------
+
+The SLURM workload manager allows to schedule and execute processing jobs for large and small Linux clusters.
+To cite from the `SLURM project <https://slurm.schedmd.com/overview.html>`_:
+
+   * *First, it allocates exclusive and/or non-exclusive access to resources (compute nodes) to users for some
+     duration of time so they can perform work.*
+
+   * *Second, it provides a framework for starting, executing, and monitoring work (normally a parallel job) on the set
+     of allocated nodes.*
+
+   * *Finally, it arbitrates contention for resources by managing a queue of pending work.*
+
+In the following we like to use SLURM to schedule and run some potentially time-consuming processes.
+
 
 Extract multiple EnMAP Level 2A products
 ........................................
@@ -391,179 +406,202 @@ These files can be listed with:
    dims_op_oc_oc-en_701696137_1/readme.html
 
 
-In order to process and visualize the EnMAP data more easily, we would like to:
 
-1. extract all EnMAP01_*.ZIP files from the tar.gz archive
-2. unzip all contained EnMAP01_*.ZIP files
-3. use the EnMAP-Box `enmapbox:importEnmapL2AProduct` algorithm to create a single raster image with
-   reflectance values and band-metadata that can be used in QGIS and the EnMAP-Box.
-4. cleanup unzipped tar.gz and EnMAP01_*.ZIP files.
+Extract, Import, Parallize
+..........................
 
-We can do this for a single \*.tar.gz file with the following script ``extract_enmap_tgz.sh``:
+In order to process and visualize the EnMAP data more easily, we would like for each *\*.tar.gz* file to:
 
-.. code-block:: bash
+1. extract all ENMAP01_*.ZIP files from the tar.gz archive,
+2. unzip each extracted *ENMAP01_\*.ZIP* file,
+3. create a single raster image with reflectance values and band-metadata that can be used in QGIS and the EnMAP-Box,
+4. cleanup unzipped *\*.tar.gz* and *ENMAP01_\*.ZIP* files.
 
-   #!/bin/bash
-   # A script to extract EnMAP Level 2A *.tar.gz archives
+We can use the ``extract_enmap_tgz.sh`` script to run step 1-4 for a single *\*.tar.gz* file.
+However, as the extraction and import can take a while, we do not like to simply loop over all files, but extract them
+in parallel. We can do so using two other scripts: ``extract_all.slurm`` defines a SLURM job and ``extract_all.sh`` that starts it.
 
-   if [ "$#" -ne 2 ]; then
-       echo "Usage: $0 FILE OUTPUT_DIR"
-       exit 1
-   fi
+   .. tabs::
 
-   # Assign arguments to variables
-   FILE=$1
-   OUTPUT_DIR=$2
+      .. tab:: extract_enmap_tgz.sh
 
-   # Validate FILE
-   if [ ! -f "$FILE" ]; then
-       echo "Error: FILE '$FILE' does not exist or is not a regular file."
-       exit 2
-   fi
+         This script extracts a single *\*.tar.gz* file and uncompresses the contained ZIP files that contain EnMAP image
+         data. After that, the EnMAP-Box :ref:`enmapbox:ImportEnmapL2AProduct <alg-enmapbox-ImportEnmapL2AProduct>`
+         algorithm is used to create an image that is easy to visualize in QGIS and the EnMAP-Box.
 
+         .. code-block:: bash
 
-   # Validate OUTPUT_DIR
-   if [ ! -d "$OUTPUT_DIR" ]; then
-       echo "Error: OUTPUT_DIR '$OUTPUT_DIR' does not exist or is not a directory."
-       exit 3
-   fi
+            #!/bin/bash
+            # A script to extract EnMAP Level 2A *.tar.gz archives
 
+            if [ "$#" -ne 2 ]; then
+                echo "Usage: $0 FILE OUTPUT_DIR"
+                exit 1
+            fi
 
+            # Assign arguments to variables
+            FILE=$1
+            OUTPUT_DIR=$2
 
-   DIR_TMP="$OUTPUT_DIR/$(basename "$FILE" .tar.gz)"
-   mkdir -p $DIR_TMP
-
-   # Step 1: extract zip files from tar.gz archive
-   echo "Extract $FILE to $DIR_TMP..."
-   tar -xzvf "$FILE" -C $DIR_TMP --wildcards '*.ZIP'
+            # Validate FILE
+            if [ ! -f "$FILE" ]; then
+                echo "Error: FILE '$FILE' does not exist or is not a regular file."
+                exit 2
+            fi
 
 
-   # Step 2: unzip zip files
-   mapfile -t ZIPFILES < <(find "$DIR_TMP" -name "ENMAP01*.ZIP" -type f)
-   DIR_UNZIPPED="$DIR_TMP/unzipped"
-   mkdir -p DIR_UNZIPPED
-
-   for zip_file in "${ZIPFILES[@]}"; do
-     echo "unzip $zip_file..."
-     unzip -o "$zip_file" -d "$DIR_UNZIPPED"
-   done
-
-   # Step 3: import the L2A product as image to be used with QGIS / EnMAP-Box
-   mapfile -t METADATAFILES < <(find "$DIR_UNZIPPED" -name "ENMAP01*-METADATA.XML" -type f)
-   echo "Found ${#METADATAFILES[@]} *.MEDATA.XML files:"
-
-   for xml_file in "${METADATAFILES[@]}"; do
-     tif_file="${xml_file%METADATA.XML}-IMAGE_L2A.tif"
-
-     printf "Import $xml_file \nto $tif_file"
-
-     qgis_process run enmapbox:ImportEnmapL2AProduct -- \
-              file=$xml_file \
-              setBadBands=true \
-              excludeBadBands=true \
-              detectorOverlap=0 \
-              outputEnmapL2ARaster=$tif_file
-
-   done
-
-   # Step 4: move the EnMAP Scene folder to output directory and cleanup everything
-   # temporary outputs
-   rsync -a "$DIR_UNZIPPED/" "$OUTPUT_DIR"
-   rm -r $DIR_TMP
-
-Parallelize extraction and import
-.................................
-
-The extraction and import can take a while. Therefore we like to run it in parallel for multiple
-files. We can do this using two other scripts, one that defines the SLURM job ``extract_all.slurm`` and one that starts it ``extract_all.sh``.
-
-    .. tabs::
-
-        .. tab:: extract_all.slurm
-
-            This script defines the SLURM job that extracts each \*.tar.gz in a separated slurm [job array task](https://slurm.schedmd.com/job_array.html)
-
-            .. code-block:: bash
-
-               #!/bin/bash
-               # Slurm job to extract EnMAP Level 2A *.tar.gz in parallel
-
-               #SBATCH --ntasks=1                    # Run on a single CPU
-               #SBATCH --mem=4gb                     # Job memory request
-               #SBATCH --partition=standard
-               #SBATCH --account=jakimowb
-               #SBATCH --output=job_output_%A_%a.log
-               #SBATCH --error=job_error_%A_%a.log
-               #SBATCH --cpus-per-task=1             # CPUs per task
-
-               OUTPUT_DIR=$2
-               JOBLIST=$1
-
-               # ensure that your standard environmental settings are available
-               source ~/.bashrc
-               # activate the enmapbox conda environment
-               module load miniforge3
-               conda activate enmapbox
-               export QT_QPA_PLATFORM=offscreen
-               mkdir -p $OUTPUT_DIR
-
-               FILE=$(sed -n "$((SLURM_ARRAY_TASK_ID + 1))p" "$JOBLIST")
-               if [ -z "$FILE" ]; then
-                   echo "No file found for SLURM_ARRAY_TASK_ID=$SLURM_ARRAY_TASK_ID"
-                   exit 1
-               fi
-
-               # Process the file
-               echo "Processing file: $FILE"
-               source extract_enmap_tgz.sh "$FILE" "$OUTPUT_DIR"
+            # Validate OUTPUT_DIR
+            if [ ! -d "$OUTPUT_DIR" ]; then
+                echo "Error: OUTPUT_DIR '$OUTPUT_DIR' does not exist or is not a directory."
+                exit 3
+            fi
 
 
-        .. tab:: extract_all.sh
 
-            This script adds the slurm job and all its sub-tasks to the SLURM job queue:
+            DIR_TMP="$OUTPUT_DIR/$(basename "$FILE" .tar.gz)"
+            mkdir -p $DIR_TMP
 
-            .. code-block:: bash
-
-               #!/bin/bash
-               # A script to submit a SLURM job array to extract EnMAP Level 2A *.tar.gz archives
-
-               INPUT_DIR=~/mydata/enmap_input
-               OUTPUT_DIR=~/mydata/enmap_l2_tif
-               JOBLIST=~/joblist.txt
-               # mapfile -t FILES < <(find "$INPUT_DIR" -name "*.tar.gz" -type f)
-               find "$INPUT_DIR" -name "*.tar.gz" -type f > "$JOBLIST"
+            # Step 1: extract zip files from tar.gz archive
+            echo "Extract $FILE to $DIR_TMP..."
+            tar -xzvf "$FILE" -C $DIR_TMP --wildcards '*.ZIP'
 
 
-               # ensure that your standard environmental settings are available
-               source ~/.bashrc
+            # Step 2: unzip zip files
+            mapfile -t ZIPFILES < <(find "$DIR_TMP" -name "ENMAP01*.ZIP" -type f)
+            DIR_UNZIPPED="$DIR_TMP/unzipped"
+            mkdir -p DIR_UNZIPPED
 
-               # activate the enmapbox conda environment
-               module load miniforge3
-               conda activate enmapbox
+            for zip_file in "${ZIPFILES[@]}"; do
+              echo "unzip $zip_file..."
+              unzip -o "$zip_file" -d "$DIR_UNZIPPED"
+            done
 
-               export QT_QPA_PLATFORM=offscreen
-               mkdir -p $OUTPUT_DIR
+            # Step 3: import the L2A product as image to be used with QGIS / EnMAP-Box
+            mapfile -t METADATAFILES < <(find "$DIR_UNZIPPED" -name "ENMAP01*-METADATA.XML" -type f)
+            echo "Found ${#METADATAFILES[@]} *.MEDATA.XML files:"
 
-               # Count the number of files
-               NUM_FILES=$(wc -l < "$JOBLIST")
-               echo "Found $NUM_FILES tar.gz files."
+            for xml_file in "${METADATAFILES[@]}"; do
+              tif_file="${xml_file%METADATA.XML}-IMAGE_L2A.tif"
 
-               if [ "$NUM_FILES" -eq 0 ]; then
-                   echo "No files found. Exiting."
-                   exit 1
-               fi
+              printf "Import $xml_file \nto $tif_file"
 
-               # Submit the Slurm job array
-               echo "Submitting Slurm job array with $NUM_FILES files..."
-               sbatch --array=0-$(($NUM_FILES - 1))%4 extract.slurm $JOBLIST $OUTPUT_DIR
+              qgis_process run enmapbox:ImportEnmapL2AProduct -- \
+                       file=$xml_file \
+                       setBadBands=true \
+                       excludeBadBands=true \
+                       detectorOverlap=0 \
+                       outputEnmapL2ARaster=$tif_file
+
+            done
+
+            # Step 4: move the EnMAP Scene folder to output directory and cleanup everything
+            # temporary outputs
+            rsync -a "$DIR_UNZIPPED/" "$OUTPUT_DIR"
+            rm -r $DIR_TMP
+
+      .. tab:: extract_all.slurm
+
+         This script defines the SLURM job that extracts each \*.tar.gz in a separated slurm
+         `job array task <https://slurm.schedmd.com/job_array.html>`_:
+
+         .. code-block:: bash
+
+            #!/bin/bash
+            # Slurm job to extract EnMAP Level 2A *.tar.gz in parallel
+
+            #SBATCH --ntasks=1                    # Run on a single CPU
+            #SBATCH --mem=4gb                     # Job memory request
+            #SBATCH --partition=standard
+            #SBATCH --account=jakimowb
+            #SBATCH --output=job_output_%A_%a.log
+            #SBATCH --error=job_error_%A_%a.log
+            #SBATCH --cpus-per-task=1             # CPUs per task
+
+            OUTPUT_DIR=$2
+            JOBLIST=$1
+
+            # ensure that your standard environmental settings are available
+            source ~/.bashrc
+            # activate the enmapbox conda environment
+            module load miniforge3
+            conda activate enmapbox
+            export QT_QPA_PLATFORM=offscreen
+            mkdir -p $OUTPUT_DIR
+
+            FILE=$(sed -n "$((SLURM_ARRAY_TASK_ID + 1))p" "$JOBLIST")
+            if [ -z "$FILE" ]; then
+                echo "No file found for SLURM_ARRAY_TASK_ID=$SLURM_ARRAY_TASK_ID"
+                exit 1
+            fi
+
+            # Process the file
+            echo "Processing file: $FILE"
+            source extract_enmap_tgz.sh "$FILE" "$OUTPUT_DIR"
 
 
-Calling ``./extract_all.sh`` will submit a SLURM job array that processes all EnMAP Level 2A \*.tar.gz files in parallel.
+      .. tab:: extract_all.sh
 
-Inspect the job status
+         This script adds the slurm job and all its sub-tasks to the SLURM job queue.
+
+         The last line of the ``extract_all.sh`` script calls `sbatch <https://slurm.schedmd.com/sbatch.html>`_ to send the
+         ``extrac.slurm`` to the slurm cluster. The parameter ``--array=0-$(($NUM_FILES - 1))%4`` creates a
+         `job array <https://slurm.schedmd.com/job_array.html>`_ for *n=$NUM_FILES* jobs,
+         of which up to 4 are processed in parallel.
+
+         .. code-block:: bash
+
+            #!/bin/bash
+            # A script to submit a SLURM job array to extract EnMAP Level 2A *.tar.gz archives
+
+            INPUT_DIR=~/mydata/enmap_input
+            OUTPUT_DIR=~/mydata/enmap_l2_tif
+            JOBLIST=~/joblist.txt
+            # mapfile -t FILES < <(find "$INPUT_DIR" -name "*.tar.gz" -type f)
+            find "$INPUT_DIR" -name "*.tar.gz" -type f > "$JOBLIST"
+
+
+            # ensure that your standard environmental settings are available
+            source ~/.bashrc
+
+            # activate the enmapbox conda environment
+            module load miniforge3
+            conda activate enmapbox
+
+            export QT_QPA_PLATFORM=offscreen
+            mkdir -p $OUTPUT_DIR
+
+            # Count the number of files
+            NUM_FILES=$(wc -l < "$JOBLIST")
+            echo "Found $NUM_FILES tar.gz files."
+
+            if [ "$NUM_FILES" -eq 0 ]; then
+                echo "No files found. Exiting."
+                exit 1
+            fi
+
+            # Submit the Slurm job array
+            echo "Submitting Slurm job array with $NUM_FILES files..."
+            sbatch --array=0-$(($NUM_FILES - 1))%4 extract.slurm $JOBLIST $OUTPUT_DIR
+
+
+.. note::
+
+   SLURM jobs are executed on nodes. These nodes may provide a different environment that that where you tested
+   your processing script. To inspect the environment on which SLURM will processes your script, you can create
+   a new node with `srun <https://slurm.schedmd.com/srun.html>`_ and open an interactive shell:
+
+   .. code-block:: bash
+
+        >srun --nodes=1 --exclusive --slurmd-debug debug2 --pty bash -i
+        user@slurm-exec-019:~> which unzip
+        /usr/bin/unzip
+
+   Obviously the unzip command is available here.
+
+Monitor the job status
 ......................
 
-The [squeue](https://slurm.schedmd.com/squeue.html) command can be used to inspect the job status:
+The `squeue <https://slurm.schedmd.com/squeue.html>`_ command can be used to inspect the job status:
 
 .. code-block:: bash
 
@@ -574,21 +612,62 @@ The [squeue](https://slurm.schedmd.com/squeue.html) command can be used to inspe
    19523_2  standard extract. jakimowb  R       9:45      1 slurm-exec-029
    19523_3  standard extract. jakimowb  R       9:45      1 slurm-exec-029
 
-Actually 4 jobs are running (ST = *R*) in parallel, as intended when starting the slurm job with ``--array=0-$(($NUM_FILES - 1))%4``.
+Actually 4 jobs are running in parallel (ST = *R*), as defined when starting
+the job with ``--array=0-$(($NUM_FILES - 1))%4``.
+
+Using the job id, we can log-in to a job session with `srun <https://slurm.schedmd.com/srun.html>`_:
+
+.. code-block:: bash
+
+   user@slurm-login:~> srun --jobid 19523_0 --pty bash
+   user@slurm-exec-013:~>
+
+Similar, jobs can be canceled with `scancel <https://slurm.schedmd.com/scancel.html>`_:
+
+.. code-block:: bash
+
+   user@slurm-login:~> scancel 19523     # to cancel the entire job
+   user@slurm-login:~> scancel 19523_1   # to cancel the a single array job
 
 
 
 Notes
 -----
 
+QT_QPA_PLATFORM
+...............
 
-The *QT_QPA_PLATFORM* environment variable can be used to enable or disable graphical windows for QGIS / Qt apps.
+Qt apps like QGIS and the EnMAP-Box expect a graphical interface where they can draw a graphical user interface
+(windows, widgets, pixel). If your Qt app raises an error like:
 
-This is necessary to run the EnMAP-Box on a HPC which usually has now graphical interface.
+.. code-block:: batch
+
+   qt.qpa.xcb: could not connect to display localhost:14.0
+   qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+   This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+   Available platform plugins are: eglfs, minimal, minimalegl, offscreen, vnc, webgl, xcb.
+
+it means that Qt can't connect to the expected graphical interface. In this case the expected
+Qt Platform Abstraction (QPA) layer - the `QXcbIntegrationPlugin `xcb` plugin
+`for Linux/X11 <https://doc.qt.io/qt-5/linux.html>`_, is not available, because no X Server has been started.
+
+However, if we want to run the Qt apps from the command line only, we can change the default QPA layer using the
+*QT_QPA_PLATFORM* environment variable:
 
 .. code-block:: bash
 
     export QT_QPA_PLATFORM=offscreen
+
+
+XGD_RUNTIME_DIR
+...............
+
+If you want to start a Qt app like ``qgis_process`` get an error like:
+
+.. code-block:: bash
+   > qgis_process plugins list
+   QStandardPaths: error creating runtime directory '/run/user/8169' (Permission denied)
 
 
 
