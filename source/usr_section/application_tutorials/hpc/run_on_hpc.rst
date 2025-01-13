@@ -429,10 +429,6 @@ Replace `<user>` with your personal user account in the EnMAP Data Access Portal
     lftp <user>@download.dsda.dlr.de:~>exit
 
 
-
-Extract multiple EnMAP Level 2A products
-........................................
-
 Now check the *\*.tar.gz* files in `INPUT_DIR`:
 
 .. code-block:: bash
@@ -482,18 +478,16 @@ These files can be listed with:
    dims_op_oc_oc-en_701696137_1/readme.html
 
 
-
 Extract, Import, Queue
 ......................
 
-In order to process and visualize the EnMAP data more easily, we would like for each *\*.tar.gz* file to:
 
-1. extract all ENMAP01_*.ZIP files from the tar.gz archive,
+In order to visualize and analyze the EnMAP data, we would like for each *\*.tar.gz* file to:
+
+1. extract all ENMAP01_*.ZIP files,
 2. unzip each extracted *ENMAP01_\*.ZIP* file,
 3. create a single raster image with reflectance values and band-metadata that can be used in QGIS and the EnMAP-Box,
 4. cleanup unzipped *\*.tar.gz* and *ENMAP01_\*.ZIP* files.
-
-
 
 
 We can use the ``extract_enmap_tgz.sh`` script to run step 1-4 for a single *\*.tar.gz* file.
@@ -679,7 +673,7 @@ in parallel. We can do so using two other scripts: ``extract_all.slurm`` defines
         user@slurm-exec-019:~> which unzip
         /usr/bin/unzip
 
-   Obviously the unzip command is available here.
+   Obviously the unzip command is available on this slurm execution node slurm-exec-019.
 
 Monitor job status
 ..................
