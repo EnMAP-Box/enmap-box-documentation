@@ -9,7 +9,7 @@ EnMAP-Box in High Performance Computing (HPC) environments
 
 **Publication date:** 06/01/2025
 
-**Latest update:** 07/01/2025
+**Latest update:** 13/01/2025
 
 Introduction
 ------------
@@ -363,7 +363,6 @@ Call ``qgis ~/myresult.tif`` to visualize the created image in QGIS:
 
 
 
-
 SLURM Workload Manager
 ----------------------
 
@@ -378,18 +377,63 @@ To cite from the `SLURM project <https://slurm.schedmd.com/overview.html>`_:
 
    * *Finally, it arbitrates contention for resources by managing a queue of pending work.*
 
-In the following we like to use SLURM to schedule and run some potentially time-consuming processes.
-, in our case the extraction and import of EnMAP data,
+In the next section we use SLURM to schedule and run the time-consuming processes of EnMAP-data extraction and
+import.
 
 
-Extract multiple EnMAP Level 2A products
-........................................
+Example: Import EnMAP L2A data
+------------------------------
 
-We assume that a lot of EnMAP Level 2 data has been ordered and downloaded to ``INPUT_FOLDER``.
+
+Download EnMAP products
+.......................
+
+We assume that a lot of EnMAP Level 2 data has been ordered in the `EnMAP Data Access Portal <https://planning.enmap.org/>`_.
+are now several tar.gz file are ready to be downloaded from ``download.dsda.dlr.de``.
+
+First, we create a folder to download these files. As we will refer to in the next steps, we save the folder path in a
+variable:
 
 .. code-block:: bash
 
-   >INPUT_DIR=~/mydata/enmap_l2
+    mkdir -p ~/mydata/enmap_input
+
+To download the data from the FTP server we can use
+the `Sophisticated file transfer program - lftp <https://linux.die.net/man/1/lftp>`_ command.
+Replace `<user>` with your personal user account in the EnMAP Data Access Portal:
+
+.. code-block:: bash
+
+    # connect to FTP server and enter your password
+    lftp -u <user>@download.dsda.dlr.de
+    Password: <type your password>
+
+    # list files available for download
+    lftp <user>@download.dsda.dlr.de:~>ls
+    -rw-r--r--   1 7385     7385     1089871343 Jan  3 13:49 dims_op_oc_oc-en_702052263_1.tar.gz
+    -rw-r--r--   1 7385     7385     4871929662 Jan  3 13:53 dims_op_oc_oc-en_702052263_2.tar.gz
+    -rw-r--r--   1 7385     7385     1419200394 Jan  2 15:18 dims_op_oc_oc-en_702052361_1.tar.gz
+    -rw-r--r--   1 7385     7385     2779919913 Jan  2 20:08 dims_op_oc_oc-en_702052407_1.tar.gz
+    -rw-r--r--   1 7385     7385     4662669786 Jan  2 20:10 dims_op_oc_oc-en_702052407_2.tar.gz
+
+    # download all *.tar.gz files with 4 file at the same time to your local $INPUT_DIR
+    lftp <user>@download.dsda.dlr.de:~>mirror --parallel=4 -v . ~/mydata/enmap_input
+    Transferring file `dims_op_oc_oc-en_702052263_1.tar.gz'
+    Transferring file `dims_op_oc_oc-en_702052263_2.tar.gz'
+    Transferring file `dims_op_oc_oc-en_702052361_1.tar.gz'
+    Transferring file `dims_op_oc_oc-en_702052407_1.tar.gz'
+    Transferring file `dims_op_oc_oc-en_702052407_2.tar.gz'
+    `dims_op_oc_oc-en_702052263_2.tar.gz' at 1758625792 (36%) 44.45M/s eta:69s [Receiving data/TLS]
+
+    # finally call exit to leave the lftp shell
+    lftp <user>@download.dsda.dlr.de:~>exit
+
+
+Now check the *\*.tar.gz* files in `INPUT_DIR`:
+
+.. code-block:: bash
+
+   > $INPUT_DIR=~/mydata/enmap_input
    > ls -lh $INPUT_DIR
    total 185G
    -rw-r--r-- 1 jakimowb zwei 4.5G Aug 13 17:37 dims_op_oc_oc-en_701696243_2.tar.gz
@@ -434,16 +478,17 @@ These files can be listed with:
    dims_op_oc_oc-en_701696137_1/readme.html
 
 
-
 Extract, Import, Queue
 ......................
 
-In order to process and visualize the EnMAP data more easily, we would like for each *\*.tar.gz* file to:
 
-1. extract all ENMAP01_*.ZIP files from the tar.gz archive,
+In order to visualize and analyze the EnMAP data, we would like for each *\*.tar.gz* file to:
+
+1. extract all ENMAP01_*.ZIP files,
 2. unzip each extracted *ENMAP01_\*.ZIP* file,
 3. create a single raster image with reflectance values and band-metadata that can be used in QGIS and the EnMAP-Box,
 4. cleanup unzipped *\*.tar.gz* and *ENMAP01_\*.ZIP* files.
+
 
 We can use the ``extract_enmap_tgz.sh`` script to run step 1-4 for a single *\*.tar.gz* file.
 However, as the extraction and import can take a while, we do not like to simply loop over all files, but extract them
@@ -628,7 +673,7 @@ in parallel. We can do so using two other scripts: ``extract_all.slurm`` defines
         user@slurm-exec-019:~> which unzip
         /usr/bin/unzip
 
-   Obviously the unzip command is available here.
+   Obviously the unzip command is available on this slurm execution node slurm-exec-019.
 
 Monitor job status
 ..................
@@ -807,7 +852,7 @@ This tutorial is largely based on own experience and the following documentation
      - Link
 
    * - EnMAP-Box Installation Guide
-     - :ref:`Linux installation <usr_installation`
+     - :ref:`Linux installation <usr_installation>`
 
    * - QGIS processing framework
      - https://docs.qgis.org/3.34/en/docs/user_manual/processing/index.html
