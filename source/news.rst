@@ -11,10 +11,11 @@ Upcoming Events
         - Location
         - Comments
 
-    *   - `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
-        - 23-27 June 2025
-        - Vienna, Austria
-        -
+    *   - `EnMAP - Webinar on the application and Commercialisation potential <https://live.invitario.com/data/uploads/files/27034/Agenda_EnMAP_Webinar.pdf>`_
+        - 29. \+ 31. January 2025
+        - Webinar
+        - EnMAP-Box demo Fri 31.01. 10:00-12:00 "Data access, tasking and EnMAP-Box"
+
 
     *   - `2nd EnMAP User Workshop <https://enmap.geographie-muenchen.de/>`_
         - 2-4 April 2025
@@ -25,6 +26,13 @@ Upcoming Events
         - 26-29 March
         - Münster, Germany
         - Oral Presentation
+
+    *   - `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
+        - 23-27 June 2025
+        - Vienna, Austria
+        -
+
+
 
 
 New tutorial: EnMAP-Box in High Performance Computing environments
