@@ -29,7 +29,7 @@ Usage:
 
 2. Select a raster layer to process and click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/spectral_resampling/img/sentinel2AMSI.png
+    .. figure:: ../../processing_algorithms/spectral_resampling/img/sentinel2AMSI.png
        :align: center
 
 

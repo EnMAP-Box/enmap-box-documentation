@@ -28,7 +28,7 @@ Usage:
 
 2. Select a raster layer, define data format and file path, then click :guilabel:`run`.
 
-    .. figure:: ../../processing_algorithms_includes/raster_conversion/img/export_raster.png
+    .. figure:: ../../processing_algorithms/raster_conversion/img/export_raster.png
        :align: center
 
 ..
