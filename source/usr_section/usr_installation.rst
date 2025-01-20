@@ -14,15 +14,12 @@ Installation
 
 The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python packages**.
 
-Complete QGIS Installation Setup
-********************************
-
-Installation of QGIS
-====================
+Install QGIS
+============
 
 .. tabs::
 
-   .. tab:: Windows
+   .. group-tab:: Windows
 
       **QGIS Installation on Windows**
 
@@ -38,7 +35,7 @@ Installation of QGIS
          In case you have an outdated QGIS version, make sure to install a current version.
 
 
-   .. tab:: Linux
+   .. group-tab:: Linux
 
      **QGIS Installation on Linux (Ubuntu)**
 
@@ -47,7 +44,7 @@ Installation of QGIS
      Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
 
 
-   .. tab:: MacOS
+   .. group-tab:: MacOS
 
      **QGIS Installation on MacOS**
 
@@ -76,7 +73,7 @@ Installation of QGIS
           .. figure:: /img/macos/opengisch/install_exp_folder.png
 
 
-   .. tab:: Conda
+   .. group-tab:: Conda
 
       **Install QGIS via the Mambaforge Package Manager in Windows**
 
@@ -97,13 +94,13 @@ Installation of QGIS
          It is recommended to use the Miniforge installer from https://github.com/conda-forge/miniforge/.
 
 
-Installation of Python Dependencies
-===================================
+Install Python Dependencies
+===========================
 
 
 .. tabs::
 
-   .. tab:: Windows
+   .. group-tab:: Windows
 
       **Install Python Dependencies**
 
@@ -145,7 +142,7 @@ Installation of Python Dependencies
 
          #. Open QGIS from the start menu.
 
-   .. tab:: Linux
+   .. group-tab:: Linux
 
      **Install Python Dependencies**
 
@@ -219,7 +216,7 @@ Installation of Python Dependencies
              Type=Application
              Categories=Education;Science;Geography;
 
-   .. tab:: MacOS
+   .. group-tab:: MacOS
 
      **Install Python Dependencies**
 
@@ -232,7 +229,7 @@ Installation of Python Dependencies
        .. note::
          This step needs to be repeated after updates to the QGIS.app.
 
-   .. tab:: Conda
+   .. group-tab:: Conda
 
       **Install Python Dependencies in Windows**
 
@@ -295,43 +292,40 @@ Installation of Python Dependencies
                qgis
 
 
-Installation of EnMAP Plugin
-****************************
+Install EnMAP-Box
+=================
 
 .. tabs::
+   .. tab:: QGIS GUI
 
-   .. tab:: Plugin Installation
-      .. tabs::
-         .. tab:: QGIS GUI
+      1. Call ``qgis&`` to open QGIS in an X-Window
+      2. Go to Plugins -> Manage and Install Plugins
+      3. Search for 'EnMAP-Box'
+      4. Click on 'Install Plugin'
 
-            1. Call ``qgis&`` to open QGIS in an X-Window
-            2. Go to Plugins -> Manage and Install Plugins
-            3. Search for 'EnMAP-Box'
-            4. Click on 'Install Plugin'
-
-            .. figure:: /img/qgis_plugin_manager.png
-              :align: center
+      .. figure:: /img/qgis_plugin_manager.png
+        :align: center
 
 
-         .. tab:: Command Line (Bash)
+   .. tab:: Command Line (Bash)
 
-          To install QGIS plugins from CLI only, we fist install the https://github.com/3liz/qgis-plugin-manager
+    To install QGIS plugins from CLI only, we fist install the https://github.com/3liz/qgis-plugin-manager
 
-          .. code-block:: bash
+    .. code-block:: bash
 
 
 
-             # define the path where your plugins are stored
-             export QGIS_PLUGINPATH=~/.local/share/QGIS/QGIS3/profiles/default/python/plugins
-             mkdir $QGIS_PLUGINPATH
+       # define the path where your plugins are stored
+       export QGIS_PLUGINPATH=~/.local/share/QGIS/QGIS3/profiles/default/python/plugins
+       mkdir $QGIS_PLUGINPATH
 
-             # install the 3Liz qgis-plugin-manager
-             conda install qgis-plugin-manager
-             qgis-plugin-manager init
-             qgis-plugin-manager update
+       # install the 3Liz qgis-plugin-manager
+       conda install qgis-plugin-manager
+       qgis-plugin-manager init
+       qgis-plugin-manager update
 
-             # install the EnMAP-Box
-             qgis-plugin-manger install 'EnMAP-Box 3'
+       # install the EnMAP-Box
+       qgis-plugin-manger install 'EnMAP-Box 3'
 
 
 
