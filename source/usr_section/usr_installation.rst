@@ -8,10 +8,17 @@
 
 .. _usr_installation:
 
+############
 Installation
-============
+############
 
 The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python packages**.
+
+Complete QGIS Installation Setup
+********************************
+
+Installation of QGIS
+====================
 
 .. tabs::
 
@@ -90,6 +97,8 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
          It is recommended to use the Miniforge installer from https://github.com/conda-forge/miniforge/.
 
 
+Installation of Python Dependencies
+===================================
 
 
 .. tabs::
@@ -286,10 +295,8 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
                qgis
 
 
-
-
-
-
+Installation of EnMAP Plugin
+****************************
 
 .. tabs::
 
