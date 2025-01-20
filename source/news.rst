@@ -11,10 +11,11 @@ Upcoming Events
         - Location
         - Comments
 
-    *   - `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
-        - 23-27 June 2025
-        - Vienna, Austria
-        -
+    *   - `EnMAP - Webinar on the application and Commercialisation potential <https://live.invitario.com/data/uploads/files/27034/Agenda_EnMAP_Webinar.pdf>`_
+        - 29. \+ 31. January 2025
+        - Webinar
+        - EnMAP-Box demo Fri 31.01. 10:00-12:00 "Data access, tasking and EnMAP-Box"
+
 
     *   - `2nd EnMAP User Workshop <https://enmap.geographie-muenchen.de/>`_
         - 2-4 April 2025
@@ -26,12 +27,34 @@ Upcoming Events
         - Münster, Germany
         - Oral Presentation
 
+    *   - `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
+        - 23-27 June 2025
+        - Vienna, Austria
+        -
+
+
+
+
+New tutorial: EnMAP-Box in High Performance Computing environments
+==================================================================
+
+*January 2024*
+
+We just published our newest application tutorial :ref:`"EnMAP-Box in High Performance Computing (HPC) environments" <run_on_hpc>`
+
+The tutorial shows how you can:
+
+- install the EnMAP-Box on Linux servers
+- start and use QGIS/EnMAP-Box on HPC systems
+- process data using QGIS processing algorithms and processing models, that you may have been previously created
+  with the `QGIS Model Designer <https://docs.qgis.org/latest/en/docs/user_manual/processing/modeler.html>`_
+- use the `SLURM workload manager <https://slurm.schedmd.com/overview.html>`_ to schedule, run and monitor processing jobs
 
 
 Hyperspectral 2024 / WICSIS
 ===========================
 
-November 2024
+*November 2024*
 
 The EnMAP-Box was presented at the 3rd Workshop on International Cooperation in Spaceborne Imaging Spectroscopy
 (WICSIS, 13.-15. September) at `ESA-ESTEC  <https://www.esa.int/About_Us/ESTEC>`_ in Noordwijk, Netherlands.
@@ -53,7 +76,7 @@ Here is the newest EnMAP-Box poster:
 QGIS User Conference 2024
 =========================
 
-September 2024
+*September 2024*
 
 From September 9-10, the QGIS User Conference 2024 (https://uc2024.qgis.sk/) took place in the beautiful city of Bratislava, Slovakia.
 The EnMAP box was also presented there with the talk *Beyond the NDVI: Hyperspectral remote sensing in QGIS with
@@ -79,7 +102,7 @@ the EnMAP Box*.
  .. image:: /img/events/earsel2024_valencia.png
 
 
-April 2024
+*April 2024*
 
 The EnMAP-Box will be presented at the
 `13th EARSeL Workshop on Imaging Spectroscopy <https://is.earsel.org/workshop/13-IS-Valencia2024/>`_
@@ -96,7 +119,7 @@ Don't miss:
 FOSSGIS 2024 Hamburg
 ====================
 
-March 2024
+*March 2024*
 
 On 23. March the EnMAP-Box was presented at `FOSSGIS 2024 <https://fossgis-konferenz.de/2024/>`_ in Hamburg, Germany: https://pretalx.com/fossgis2024/talk/RPUBQR/
 
@@ -109,7 +132,7 @@ On 23. March the EnMAP-Box was presented at `FOSSGIS 2024 <https://fossgis-konfe
 QGIS UC 2024 and QGIS Open Day
 ==============================
 
-May 2023
+*May 2023*
 
 Following the QGIS User and Developer Meeting 2023 in s'Hertogenbosh, Netherlands (https://uc2023.qgis.nl/),
 `Kartoza <https://kartoza.com/>` asked us if we can repeat our presentation on *Imaging spectroscopy data in QGIS: Challenges and Opportunities* for the
@@ -129,7 +152,7 @@ the QGIS Open Day. Here is the recording:
 FOSSGIS 2023 Berlin
 ===================
 
-March 2023
+*March 2023*
 
 The EnMAP-Box will be present at the FOSSGIS with a demosession:
 *Visualisierung und Analyse von Satellitenbildern mit der EnMAP-Box* (https://pretalx.com/fossgis2023/talk/9WAMJ9/)
@@ -150,7 +173,7 @@ is the recording of the presentation:
 EnMAP-Box Version 3.11 released
 ===============================
 
-Oct. 10, 2022
+*Oct. 10, 2022*
 
 A new EnMAP-Box version has been released.
 A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-311>`__.
@@ -159,7 +182,7 @@ A list of all improvements can be found in the `changelog <https://github.com/En
 EnMAP-Box Version 3.10 released
 ===============================
 
-June 09, 2022
+*June 09, 2022*
 
 A new EnMAP-Box version has been released.
 A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-310>`__.
@@ -168,7 +191,7 @@ A list of all improvements can be found in the `changelog <https://github.com/En
 EnMAP-Box Version 3.9 released
 ==============================
 
-Oct. 10, 2021
+*Oct. 10, 2021*
 
 A new EnMAP-Box version has been released.
 A list of all improvements can be found in the `changelog <https://github.com/EnMAP-Box/enmap-box/blob/main/CHANGELOG.md#version-39>`__.
@@ -178,7 +201,7 @@ EnMAP-Box Workshop 2021
 
 .. figure:: img/events/workshop2021.banner.png
 
-June 07, 2021
+*June 07, 2021*
 
 The next EnMAP-Box workshop will be held online on 21-23 June, 2021.
 The workshop aims to demonstrate the current state of the EnMAP-Box by way of presentations, live demos with Q&A and self-paced tutorials.
@@ -188,7 +211,7 @@ Registration for up to 250 participants is now open at the `workshop website <ht
 FOSSGIS 2021 Rapperswil
 =======================
 
-June 09, 2021
+*June 09, 2021*
 
 Benjamin Jakimow presented how to use Spectral Libraries in QGIS using the EnMAP-Box (german).
 
@@ -203,7 +226,7 @@ Benjamin Jakimow presented how to use Spectral Libraries in QGIS using the EnMAP
 EnMAP-Box Version 3.7 released
 ==============================
 
-Oct. 27, 2020
+*Oct. 27, 2020*
 
 A new EnMAP-Box version has been released. It includes product readers for EnMAP L1B, L2C and L2A, PRISMA L2D
 and DESIS L2A images, and a first version of Spectral Math in the QGIS Expression Builder.
