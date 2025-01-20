@@ -37,10 +37,7 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
 
      The following instructions were written for and tested on Ubuntu (22.04 & 23.10). They should also work for other Debian-based distributions.
 
-     **Install QGIS via the official repository**
-
-       Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
-
+     Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
 
 
    .. tab:: MacOS
@@ -57,19 +54,19 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
        #. Download the latest package installer from https://github.com/opengisch/qgis-conda-builder/releases.
        #. Open the installer in Finder using the context menu.
 
-         .. figure:: /img/macos/opengisch/install_exp_finder.png
-            :width: 60%
+          .. figure:: /img/macos/opengisch/install_exp_finder.png
+             :width: 60%
 
-            Call *Open* from the finder's context menu ...
+             Call *Open* from the finder's context menu ...
 
-         .. figure:: /img/macos/opengisch/install_exp_open.png
-            :width: 35%
+          .. figure:: /img/macos/opengisch/install_exp_open.png
+             :width: 35%
 
-            ... to show and use the *Open* button in the next dialog.
+             ... to show and use the *Open* button in the next dialog.
 
        #. Select a location to install the QGIS.app (e.g., ``QGIS-3.36.app``), such as `/System/Applications`.
 
-         .. figure:: /img/macos/opengisch/install_exp_folder.png
+          .. figure:: /img/macos/opengisch/install_exp_folder.png
 
 
    .. tab:: Conda
@@ -147,55 +144,55 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
 
        #. Make sure the following packages are installed using the system package manager:
 
-         .. code-block:: console
+          .. code-block:: console
 
-            sudo apt install python3-pip python3-venv pyqt5-dev-tools python3-matplotlib
+             sudo apt install python3-pip python3-venv pyqt5-dev-tools python3-matplotlib
 
        #. **(Optional)** For some EnMAP-Box tools you may also need the following packages:
 
-         .. code-block:: console
+          .. code-block:: console
 
-            sudo apt install python3-h5py python3-pyqt5.qtopengl python3-netcdf4
+             sudo apt install python3-h5py python3-pyqt5.qtopengl python3-netcdf4
 
        #. Open QGIS and the QGIS Python Console (:kbd:`Ctrl` + :kbd:`Alt` + :kbd:`P`). Type the following and confirm with enter:
 
-         .. code-block:: python
+          .. code-block:: python
 
-            import sys; sys.executable
+             import sys; sys.executable
 
-         This shows the path of the Python executable that QGIS is using, usually it is ``/usr/bin/python3``.
-         We need to ensure that additional Python packages get installed into the same Python environment.
-         This is the case if the command ``which python3`` returns the path of the Python executable shown in QGIS!
+          This shows the path of the Python executable that QGIS is using, usually it is ``/usr/bin/python3``.
+          We need to ensure that additional Python packages get installed into the same Python environment.
+          This is the case if the command ``which python3`` returns the path of the Python executable shown in QGIS!
 
-         If not, please use the full path, e.g. ``/usr/bin/python3`` instead of ``python3`` in the following steps.
+          If not, please use the full path, e.g. ``/usr/bin/python3`` instead of ``python3`` in the following steps.
 
-         Close QGIS.
+          Close QGIS.
 
        #. Create a `virtual python environment <https://docs.python.org/3/library/venv.html>`_ in a directory of your choice (e.g. ``~/.virtualenvs/enmapbox``):
 
-         .. code-block:: console
+          .. code-block:: console
 
-            python3 -m venv --upgrade-deps --system-site-packages ~/.virtualenvs/enmapbox
+             python3 -m venv --upgrade-deps --system-site-packages ~/.virtualenvs/enmapbox
 
        #. Activate the environment:
 
-         .. code-block:: console
+          .. code-block:: console
 
-            source ~/.virtualenvs/enmapbox/bin/activate
+             source ~/.virtualenvs/enmapbox/bin/activate
 
-         Now you should see the environment name in brackets at the beginning of your prompt, e.g. ``(enmapbox)``.
+          Now you should see the environment name in brackets at the beginning of your prompt, e.g. ``(enmapbox)``.
 
        #. Install missing Python dependencies with pip inside the virtual environment:
 
-         .. code-block:: console
+          .. code-block:: console
 
-            python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements_ubuntu.txt
+             python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements_ubuntu.txt
 
        #. Start QGIS (from the activated environment, see step 6):
 
-         .. code-block:: console
+          .. code-block:: console
 
-            qgis
+             qgis
 
        .. hint::
 
@@ -203,15 +200,15 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
 
          Create the file :file:`~/.local/share/applications/enmapbox.desktop` with the following content (if you used another installation path in the instructions above, change accordingly):
 
-         .. code-block:: text
+          .. code-block:: text
 
-            [Desktop Entry]
-            Name=QGIS (EnMAP-Box)
-            Exec=/bin/bash -c "source ~/.virtualenvs/enmapbox/bin/activate && qgis %F"
-            Terminal=false
-            Icon=qgis
-            Type=Application
-            Categories=Education;Science;Geography;
+             [Desktop Entry]
+             Name=QGIS (EnMAP-Box)
+             Exec=/bin/bash -c "source ~/.virtualenvs/enmapbox/bin/activate && qgis %F"
+             Terminal=false
+             Icon=qgis
+             Type=Application
+             Categories=Education;Science;Geography;
 
    .. tab:: MacOS
 
@@ -249,25 +246,25 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
 
       **Install Python Dependencies in Linux**
 
-        #. Open the Terminal, and install QGIS LTR and EnMAP-Box Python dependencies into a new "enmapbox" environment:
+         #. Open the Terminal, and install QGIS LTR and EnMAP-Box Python dependencies into a new "enmapbox" environment:
 
-          .. code-block:: bash
+            .. code-block:: bash
 
-             curl -O https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
-             micromamba env create -n enmapbox -f ./enmapbox_full_longterm.yml
-             rm -v ./enmapbox_full_longterm.yml
+               curl -O https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
+               micromamba env create -n enmapbox -f ./enmapbox_full_longterm.yml
+               rm -v ./enmapbox_full_longterm.yml
 
-          .. note::
+            .. note::
 
-             There are `multiple environment files available <https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`_,
-             depending on whether you want to install the latest QGIS version or the long-term release.
+               There are `multiple environment files available <https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`_,
+               depending on whether you want to install the latest QGIS version or the long-term release.
 
-        #. Activate the created "enmapbox" environment and open QGIS by executing:
+         #. Activate the created "enmapbox" environment and open QGIS by executing:
 
-          .. code-block:: bash
+            .. code-block:: bash
 
-             micromamba activate enmapbox
-             qgis
+               micromamba activate enmapbox
+               qgis
 
       **Install Python Dependencies in MacOS**
 
