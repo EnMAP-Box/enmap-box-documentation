@@ -19,11 +19,7 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
 
       **QGIS Installation on Windows**
 
-      On a Windows system you have multiple options to install QGIS.
-
-      **Option A: Install QGIS via the official Standalone/OSGeo4W Installer**
-
-      **1. Install QGIS**
+      **Install QGIS via the official Standalone/OSGeo4W Installer**
 
          Install either the current QGIS Long Term Release (LTR) or the current QGIS Latest Release (LR) to run the latest EnMAP-Box.
          You can `get the QGIS Standalone Installer here <https://www.qgis.org/en/site/forusers/alldownloads.html#windows>`_.
@@ -34,7 +30,76 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
 
          In case you have an outdated QGIS version, make sure to install a current version.
 
-      **2. Install Python Dependencies**
+
+   .. tab:: Linux
+
+     **QGIS Installation on Linux (Ubuntu)**
+
+     The following instructions were written for and tested on Ubuntu (22.04 & 23.10). They should also work for other Debian-based distributions.
+
+     **Install QGIS via the official repository**
+
+       Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
+
+
+
+   .. tab:: MacOS
+
+     **QGIS Installation on MacOS**
+
+     **Install QGIS.app**
+
+       As of April 2024, the official QGIS.app from https://qgis.org/en/site/forusers/download.html
+       still uses an outdated GDAL 3.2.2 (see https://github.com/EnMAP-Box/enmap-box/issues/858).
+
+       Therefore, please use the installer provided by `OpenGIS.ch <https://www.opengis.ch/>`_ instead:
+
+       #. Download the latest package installer from https://github.com/opengisch/qgis-conda-builder/releases.
+       #. Open the installer in Finder using the context menu.
+
+         .. figure:: /img/macos/opengisch/install_exp_finder.png
+            :width: 60%
+
+            Call *Open* from the finder's context menu ...
+
+         .. figure:: /img/macos/opengisch/install_exp_open.png
+            :width: 35%
+
+            ... to show and use the *Open* button in the next dialog.
+
+       #. Select a location to install the QGIS.app (e.g., ``QGIS-3.36.app``), such as `/System/Applications`.
+
+         .. figure:: /img/macos/opengisch/install_exp_folder.png
+
+
+   .. tab:: Conda
+
+      **Install QGIS via the Mambaforge Package Manager in Windows**
+
+         It is recommended to use Miniforge, a minimal installer for Conda specific to conda-forge.
+         You can `get the Miniforge Windows Installer here <https://conda-forge.org/miniforge/>`_.
+
+
+      **Install QGIS via conda/mamba in Linux**
+
+        It is recommended to use Micromamba, a minimal installer for conda/mamba.
+        You can `get Micromamba here <https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html>`_. You may
+        of course also use conda, just swap ``micromamba`` with ``conda`` in the instructions below.
+
+
+      **Install QGIS via conda in MacOS**
+
+         Install conda for macOS as described in https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html.
+         It is recommended to use the Miniforge installer from https://github.com/conda-forge/miniforge/.
+
+
+
+
+.. tabs::
+
+   .. tab:: Windows
+
+      **Install Python Dependencies**
 
          #. Close QGIS, if it is open.
 
@@ -48,17 +113,17 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
 
                pip install --upgrade --user -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/osgeo4w/requirements_osgeo4w.txt
 
-         .. note::
+            .. note::
 
-            In rare cases, the user folder may contain wrongly installed packages,
-            which are interfering with the package version managed by OSGeo4W, e.g. numpy, scipy or gdal.
-            Wrongly installed packages can be deleted manually from the user folder.
+              In rare cases, the user folder may contain wrongly installed packages,
+              which are interfering with the package version managed by OSGeo4W, e.g. numpy, scipy or gdal.
+              Wrongly installed packages can be deleted manually from the user folder.
 
-            To locate the user folder used by your QGIS instance, run the following inside your QGIS Python console::
+              To locate the user folder used by your QGIS instance, run the following inside your QGIS Python console::
 
-               >>> import site
-               >>> print(site.USER_SITE)
-               C:\Users\Andreas\AppData\Roaming\Python\Python39\site-packages
+                 >>> import site
+                 >>> print(site.USER_SITE)
+                 C:\Users\Andreas\AppData\Roaming\Python\Python39\site-packages
 
          #. (Optional) Install **HDF5** dependency via the OSGeo4W installer:
 
@@ -74,46 +139,9 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
 
          #. Open QGIS from the start menu.
 
-      **Option B: Install QGIS via the Mambaforge Package Manager**
-
-      **1. Install Miniforge**
-
-         It is recommended to use Miniforge, a minimal installer for Conda specific to conda-forge.
-         You can `get the Miniforge Windows Installer here <https://conda-forge.org/miniforge/>`_.
-
-      **2. Install QGIS and Python Dependencies**
-
-         #. Open the Miniforge Prompt from the start menu.
-
-            .. image:: /img/windows_start_miniforge.png
-
-         #. Install QGIS LTR and EnMAP-Box Python dependencies into a new "enmapbox" environment:
-
-            .. code-block:: batch
-
-               mamba env create -n enmapbox -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
-
-         #. Activate the "enmapbox" environment and open QGIS by executing:
-
-            .. code-block:: batch
-
-               activate enmapbox
-               qgis
-
-
    .. tab:: Linux
 
-     **QGIS Installation on Linux (Ubuntu)**
-
-     The following instructions were written for and tested on Ubuntu (22.04 & 23.10). They should also work for other Debian-based distributions.
-
-     **Option A: Install QGIS via the official repository**
-
-     **1. Install QGIS**
-
-       Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
-
-     **2. Install Python Dependencies**
+     **Install Python Dependencies**
 
        #. Open the Terminal (:kbd:`Ctrl` + :kbd:`Alt` + :kbd:`T`).
 
@@ -185,67 +213,9 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
             Type=Application
             Categories=Education;Science;Geography;
 
-     **Option B: Install QGIS via conda/mamba**
-
-     **1. Install Micromamba**
-
-       It is recommended to use Micromamba, a minimal installer for conda/mamba.
-       You can `get Micromamba here <https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html>`_. You may
-       of course also use conda, just swap ``micromamba`` with ``conda`` in the instructions below.
-
-     **2. Install QGIS and Python Dependencies**
-
-       #. Open the Terminal, and install QGIS LTR and EnMAP-Box Python dependencies into a new "enmapbox" environment:
-
-         .. code-block:: bash
-
-            curl -O https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
-            micromamba env create -n enmapbox -f ./enmapbox_full_longterm.yml
-            rm -v ./enmapbox_full_longterm.yml
-
-         .. note::
-
-            There are `multiple environment files available <https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`_,
-            depending on whether you want to install the latest QGIS version or the long-term release.
-
-       #. Activate the created "enmapbox" environment and open QGIS by executing:
-
-         .. code-block:: bash
-
-            micromamba activate enmapbox
-            qgis
-
    .. tab:: MacOS
 
-     **QGIS Installation on MacOS**
-
-     **Option A: Install QGIS.app**
-
-     **1. Install QGIS**
-
-       As of April 2024, the official QGIS.app from https://qgis.org/en/site/forusers/download.html
-       still uses an outdated GDAL 3.2.2 (see https://github.com/EnMAP-Box/enmap-box/issues/858).
-
-       Therefore, please use the installer provided by `OpenGIS.ch <https://www.opengis.ch/>`_ instead:
-
-       #. Download the latest package installer from https://github.com/opengisch/qgis-conda-builder/releases.
-       #. Open the installer in Finder using the context menu.
-
-         .. figure:: /img/macos/opengisch/install_exp_finder.png
-            :width: 60%
-
-            Call *Open* from the finder's context menu ...
-
-         .. figure:: /img/macos/opengisch/install_exp_open.png
-            :width: 35%
-
-            ... to show and use the *Open* button in the next dialog.
-
-       #. Select a location to install the QGIS.app (e.g., ``QGIS-3.36.app``), such as `/System/Applications`.
-
-         .. figure:: /img/macos/opengisch/install_exp_folder.png
-
-     **2. Install Missing Python Dependencies**
+     **Install Python Dependencies**
 
        Install missing Python dependencies using the QGIS.app internal pip3.
 
@@ -256,66 +226,121 @@ The **EnMAP-Box** is a plugin for **QGIS** and requires additional **python pack
        .. note::
          This step needs to be repeated after updates to the QGIS.app.
 
-     **Option B: Install QGIS via conda**
+   .. tab:: Conda
 
-     **1. Install conda**
+      **Install Python Dependencies in Windows**
 
-        Install conda for macOS as described in https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html.
-        It is recommended to use the Miniforge installer from https://github.com/conda-forge/miniforge/.
+         #. Open the Miniforge Prompt from the start menu.
 
-     **2. Install QGIS and Python Dependencies**
+            .. image:: /img/windows_start_miniforge.png
 
-        #. Open the Miniforge Prompt from the start menu.
+         #. Install QGIS LTR and EnMAP-Box Python dependencies into a new "enmapbox" environment:
 
-           .. image:: /img/windows_start_miniforge.png
+            .. code-block:: batch
 
-        #. Install QGIS and EnMAP-Box Python dependencies into a new "enmapbox" environment:
+               mamba env create -n enmapbox -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
 
-           .. code-block:: batch
+         #. Activate the "enmapbox" environment and open QGIS by executing:
 
-              mamba env create -n enmapbox -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
+            .. code-block:: batch
 
-        #. Activate the "enmapbox" environment and open QGIS by executing:
+               activate enmapbox
+               qgis
 
-           .. code-block:: batch
+      **Install Python Dependencies in Linux**
 
-              activate enmapbox
-              qgis
+        #. Open the Terminal, and install QGIS LTR and EnMAP-Box Python dependencies into a new "enmapbox" environment:
 
+          .. code-block:: bash
+
+             curl -O https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
+             micromamba env create -n enmapbox -f ./enmapbox_full_longterm.yml
+             rm -v ./enmapbox_full_longterm.yml
+
+          .. note::
+
+             There are `multiple environment files available <https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`_,
+             depending on whether you want to install the latest QGIS version or the long-term release.
+
+        #. Activate the created "enmapbox" environment and open QGIS by executing:
+
+          .. code-block:: bash
+
+             micromamba activate enmapbox
+             qgis
+
+      **Install Python Dependencies in MacOS**
+
+         #. Open the Miniforge Prompt from the start menu.
+
+            .. image:: /img/windows_start_miniforge.png
+
+         #. Install QGIS and EnMAP-Box Python dependencies into a new "enmapbox" environment:
+
+            .. code-block:: batch
+
+               mamba env create -n enmapbox -f https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
+
+         #. Activate the "enmapbox" environment and open QGIS by executing:
+
+            .. code-block:: batch
+
+               activate enmapbox
+               qgis
+
+
+
+
+
+
+
+.. tabs::
 
    .. tab:: Plugin Installation
+      .. tabs::
+         .. tab:: QGIS GUI
 
-     **EnMAP-Box Plugin Installation**
+            1. Call ``qgis&`` to open QGIS in an X-Window
+            2. Go to Plugins -> Manage and Install Plugins
+            3. Search for 'EnMAP-Box'
+            4. Click on 'Install Plugin'
 
-     #. In QGIS go to :menuselection:`Plugins --> Manage and Install Plugins --> All`
-     #. In the search bar, enter ``enmap``
-     #. Now the EnMAP-Box should be listed in the plugin list:
+            .. figure:: /img/qgis_plugin_manager.png
+              :align: center
 
-        .. figure:: ../img/pluginmanager_all.png
 
-           Select it and click :guilabel:`Install plugin` (or :guilabel:`Upgrade` in case you update to a new version).
+         .. tab:: Command Line (Bash)
 
-     #. The following dialog might pop up afterward:
+          To install QGIS plugins from CLI only, we fist install the https://github.com/3liz/qgis-plugin-manager
 
-        .. image:: /img/plugin_dep_manager.png
+          .. code-block:: bash
 
-        Depending on whether you want to use the GEE Time Series Explorer, check |cb1| or uncheck |cb0| the checkbox
-        and confirm with :guilabel:`OK`.
 
-     #. Start the EnMAP-Box via the |icon| icon or from the menubar :menuselection:`Raster --> EnMAP-Box`.
-     #. *(Optional)*: You can download a demo dataset via :menuselection:`Project --> Load Example Data`.
 
-     .. admonition:: Experimental version
+             # define the path where your plugins are stored
+             export QGIS_PLUGINPATH=~/.local/share/QGIS/QGIS3/profiles/default/python/plugins
+             mkdir $QGIS_PLUGINPATH
 
-        It is also possible to install the most recent develop version of the EnMAP-Box. To do so, make sure that the option
-        |cb1| **Show also experimental plugins** is activated in the plugin manager settings. Once activated, there is an additional button
-        :guilabel:`Install Experimental Plugin` in the plugin manager.
+             # install the 3Liz qgis-plugin-manager
+             conda install qgis-plugin-manager
+             qgis-plugin-manager init
+             qgis-plugin-manager update
 
-        .. image:: /img/experimental_install.png
+             # install the EnMAP-Box
+             qgis-plugin-manger install 'EnMAP-Box 3'
 
-        .. warning::
 
-           As the *experimental* tag suggests, this version comes with the newest features and developments, but might also be prone to bugs and crashes.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
