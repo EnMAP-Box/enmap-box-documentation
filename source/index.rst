@@ -24,7 +24,7 @@ Key features
 * Develop your own image processing algorithms using a powerful Python API
 
 
-.. figure:: img/screenshot_main3.png
+.. figure:: img/Screenshot_mainpage1.jpg
 
    The graphical user interface of the EnMAP-Box
 
