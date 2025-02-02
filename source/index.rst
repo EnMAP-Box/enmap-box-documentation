@@ -24,10 +24,9 @@ Key features
 * Develop your own image processing algorithms using a powerful Python API
 
 
-.. figure:: img/screenshot_main4.png
+.. figure:: img/Screenshot_mainpage1.jpg
 
-   The graphical user interface of the EnMAP-Box visualizing (left) a hyperspectral EnMAP image and (right) a multi-spectral
-   PlanetScope image from the city of Valencia, Spain.
+   The graphical user interface of the EnMAP-Box
 
 Related websites
 ****************
@@ -52,7 +51,6 @@ Related websites
 
 
     general/about.rst
-    news.rst
     general/faq_trouble.rst
     general/contribute.rst
     general/roadmap.rst

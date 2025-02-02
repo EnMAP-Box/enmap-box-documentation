@@ -65,6 +65,16 @@ datatables_class = "sphinx-datatable"
 # options you set are used for all DataTables.
 datatables_options = {}
 
+# set the version to use for DataTables plugin
+datatables_version = "1.13.4"
+
+# name of the class to use for tables to enable DataTables
+datatables_class = "sphinx-datatable"
+
+# any custom options to pass to the DataTables constructor. Note that any
+# options you set are used for all DataTables.
+datatables_options = {}
+
 # Register the filter_warning_log function to be called when warnings are logged
 def setup(app):
     # app.connect('build-finished', filter_warning_log)
@@ -98,8 +108,8 @@ version = u'{}'.format(re.search(r'(\.?[^.]*){2}', release).group())
 
 # General information about the project.
 project = 'EnMAP-Box 3'
-copyright = '2018-2024, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Aryan Goswarmi, Sebastian van der Linden, Patrick Hostert'
-author = 'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, Aryan Goswarmi,\nSebastian van der Linden,\nPatrick Hostert'
+copyright = '2018-2024, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Aryan Goswami, Sebastian van der Linden, Patrick Hostert'
+author = 'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, Aryan Goswami,\nSebastian van der Linden,\nPatrick Hostert'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
