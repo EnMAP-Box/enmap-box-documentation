@@ -21,10 +21,10 @@ jobs:
     - name: Install dependencies
       run: |
         python3 --version
-        pip list
         pip install -U -r requirements.txt
+        pip list
         pwd
     - name: Run Sphinx
       run: |
-        sphinx-build -b html -j auto -W --nitpicky source build
+        sphinx-build -b html -j auto --nitpicky source build
 

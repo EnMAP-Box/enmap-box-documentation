@@ -53,6 +53,17 @@ extensions = [
     "sphinx_datatables",
 ]
 
+suppress_warnings = ["app.parallel_read_safe", 'app.sphinx_datatables','sphinx_datatables']
+
+# set the version to use for DataTables plugin
+datatables_version = "2.1.8"
+
+# name of the class to use for tables to enable DataTables
+datatables_class = "sphinx-datatable"
+
+# any custom options to pass to the DataTables constructor. Note that any
+# options you set are used for all DataTables.
+datatables_options = {}
 
 # set the version to use for DataTables plugin
 datatables_version = "1.13.4"

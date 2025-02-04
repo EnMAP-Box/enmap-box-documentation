@@ -30,6 +30,10 @@ Key features
 * Read more in our :ref:`feature overview ... <features>`
 
 
+.. figure:: img/screenshot_main4.png
+
+   The graphical user interface of the EnMAP-Box visualizing (left) a hyperspectral EnMAP image and (right) a multi-spectral
+   PlanetScope image from the city of Valencia, Spain.
 
 Related websites
 ****************
@@ -55,6 +59,7 @@ Related websites
 
     general/about.rst
     general/features.rst
+    news.rst
     general/faq_trouble.rst
     general/contribute.rst
     general/roadmap.rst
