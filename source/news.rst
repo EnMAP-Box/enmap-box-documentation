@@ -11,12 +11,6 @@ Upcoming Events
         - Location
         - Comments
 
-    *   - `EnMAP - Webinar on the application and Commercialisation potential <https://live.invitario.com/data/uploads/files/27034/Agenda_EnMAP_Webinar.pdf>`_
-        - 29. \+ 31. January 2025
-        - Webinar
-        - EnMAP-Box demo Fri 31.01. 10:00-12:00 "Data access, tasking and EnMAP-Box"
-
-
     *   - `2nd EnMAP User Workshop <https://enmap.geographie-muenchen.de/>`_
         - 2-4 April 2025
         - Munich, Germany
@@ -33,6 +27,17 @@ Upcoming Events
         -
 
 
+
+
+
+EnMAP Webinar
+=============
+
+*31. January 2025*
+
+More than 100 participants joined the
+`EnMAP - Webinar on the application and Commercialisation potential <https://live.invitario.com/data/uploads/files/27034/Agenda_EnMAP_Webinar.pdf>`_
+in which the EnMAP-Box was demonstrated as well.
 
 
 New tutorial: EnMAP-Box in High Performance Computing environments
