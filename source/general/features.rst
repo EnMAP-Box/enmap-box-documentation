@@ -1,9 +1,9 @@
 
 .. _features:
 
-============
-Key Features
-============
+========
+Features
+========
 
 Visualization
 =============
@@ -31,30 +31,53 @@ Visualization
         * link raster visualization spectrally to  always show similar wavelength combinations,
           no-matter how many bands your raster sources have
 
-    .. tab:: Data Rendering
+    .. tab:: Raster Rendering
 
         *Explore your raster data interactively*
 
-        New raster renderers enhance the visualization of imaging spectroscopy data and outputs
-        of state-of-the art approaches, e.g.:
+        The EnMAP-Box provides new raster renderers that enhance the visualization of imaging spectroscopy data
+        and other raster outputs, e.g.:
+
 
         .. list-table::
+            :header-rows: 1
 
-            *   - Bivariate Color rendering
-                - Class-fraction or probability renderering
-                - CMYK and HSV color rendering
+            *   - Renderer
+                - Example
 
-            *   - Decorelation Stretch Renderer
-                - Multisource Multiband color rendering
-                -
+            *   - **Bivariate Color Renderer**
+
+                  Visualize two bands using a 2d color ramp.
+                - .. image:: /usr_section/usr_manual/img/BivariateColorRasterRenderer.png
+
+            *   - **Class-fraction or probability rendering**
+
+                  Visualizes multiple class factions/probabilities at the same time using the original class colors.
+                - .. image:: /usr_section/usr_manual/img//ClassFractionRenderer.png
+
+            *   - **HSV color rendering**
+
+                  Visualizes 3 bands using the HSV (Hue, Saturation, Value/Black) color model
+                - .. image:: /usr_section/usr_manual/img/HSVColorRasterRenderer.png
+
+
+            *   - **CMYK Color Raster Renderer**
+
+                  Visualizes 4 bands using the CMYK (Cyan, Magenta, Yellow, and Key/Black) color model
+                - .. image:: /usr_section/usr_manual/img/CMYKColorRasterRenderer.png
+
+            *   - **Decorelation Stretch Renderer**
+
+                  Removing the high correlation between 3 band for a more colorful color composite image.
+                - .. image:: /usr_section/usr_manual/img/DecorrelationStretchRenderer.png
 
 
 Spectral Libraries
 ==================
 
-*Your measurements, your data*
+*Your measurements, your data.*
 
-The EnMAP-Box makes it possible to build and visualize spectral libraries in QGIS.
+The EnMAP box offers a wide range of options for creating spectral libraries and to describe and visualize their spectral profiles.
 
 * Read spectral profiles measured with
   `ASD <https://www.malvernpanalytical.com/en/products/product-range/asd-range/fieldspec-range>`_,
@@ -69,6 +92,7 @@ The EnMAP-Box makes it possible to build and visualize spectral libraries in QGI
 * Query your profiles using powerful SQL expressions
 * Plot profiles from different instruments simultaneously against wavelength units, e.g. nanometers, micrometers
 
+.. figure:: /usr_section/application_tutorials/spectral_library/img/add_profiles.gif
 
 Algorithms
 ==========
@@ -156,35 +180,52 @@ for different thematic uses, e.g.:
 
     *   - Vegetation Processor
         - vegetation
-        -
+        - Danner et al. 2021, "Efficient RTM-based training of machine learning regression algorithms to quantify biophysical & biochemical traits of agricultural crops",
+          ISPRS J Photogramm Remote Sens, 09242716, 173 (2021), pp. 278-296, doi: https://doi.org/10.1016/j.isprsjprs.2021.01.017
 
     *   - Interactive Visualization of Vegetation Reflectance Models (IVVRM)
         - vegetation, data visualization
-        -
+        - Danner et al. 2018, "Developing a sandbox environment for prosail, suitable for education and research"
+          IEEE international geoscience and remote sensing symposium (2018), pp. 783-786,
+          doi: https://doi.org/10.1109/IGARSS.2018.8519378
 
     *   - Interactive Red-Edge Inflection Point (iREIP)
         - vegetation
-        -
+        - Hank et al. 2021, "Introducing the potential of the EnMAP-box for agricultural applications using desis and prisma data",
+          IEEE international geoscience and remote sensing symposium (2021), pp. 467-470,
+          doi: https://doi.org/10.1109/IGARSS47720.2021.9554729
 
     *   - Vegetation Index Toolbox and Spectral Index Creator
         - spectral indices
-        -
+        - Hank et al. 2021, "Introducing the potential of the EnMAP-box for agricultural applications using desis and prisma data",
+          IEEE international geoscience and remote sensing symposium (2021), pp. 467-470,
+          doi: https://doi.org/10.1109/IGARSS47720.2021.9554729
 
     *   - EnMAP Soil Mapper (EnSoMap)
         - soil
-        -
+        - Mielke et al. 2018, “Engeomap and Ensomap: Software Interfaces for Mineral and Soil Mapping under Development
+          in the Frame of the Enmap Mission,” in IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium,
+          IEEE, Jul. 2018, pp. 8369–8372.
+          doi: https://doi.org/10.1109/igarss.2018.8517902
 
     *   - EnMAP Geological Mapper (EnGeoMap)
         - geology
-        -
+        - Mielke et al. 2018, “Engeomap and Ensomap: Software Interfaces for Mineral and Soil Mapping under Development
+          in the Frame of the Enmap Mission,” in IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium,
+          IEEE, Jul. 2018, pp. 8369–8372.
+          doi: https://doi.org/10.1109/igarss.2018.8517902
 
     *   - EO Time Series Viewer
         - timeseries
-        -
+        - Jakimow et al. 2020, "Visualizing and labeling dense multi-sensor earth observation time series: The EO time series viewer",
+          Environ Model Softw, 13648152, 125 (2020),
+          doi: https://doi.org/10.1016/j.envsoft.2020.104631
 
     *   - GEE Time Series Explorer
         - timeseries
-        -
+        - Rufin Pet al. 2021, "GEE Timeseries Explorer for QGIS – Instant Access to Petabytes of Earth Observaton Data."
+          Int Arch Photogramm Remote Sens Spatial Inf Sci, 2194-9034, XLVI-4/W2-2021 (2021), pp. 155-158,
+          doi: https://doi.org/10.5194/isprs-archives-XLVI-4-W2-2021-155-2021
 
     *   - Scatter Plots
         - data visualization
@@ -192,11 +233,18 @@ for different thematic uses, e.g.:
 
     *   - OLCI Neural Network Swarm (ONNS)
         - water
-        -
+        - Ocean color analysis
+
+          Hieronymi et al. 2017, "The OLCI neural network swarm (ONNS): A bio-geo-optical algorithm for open ocean and coastal waters"
+          Front Mar Sci, 2296-7745, 4 (2017), p. 140,
+          doi: https://doi.org/10.3389/fmars.2017.00140
 
     *   - OC-PFT
         - water
-        -
+        - Retrieval of Phytoplankton Functional Types (PFTs) from satellite or in situ chlorophyll-a (Chl-a) measurements.
+
+          Alvarado et al. 2022, "Retrievals of the main phytoplankton groups at Lake Constance using OLCI, DESIS, and evaluated with fieldobservations".
+          12th EARSeL workshop. 2022.
 
     *   - Image Cube
         - general, data visualization
