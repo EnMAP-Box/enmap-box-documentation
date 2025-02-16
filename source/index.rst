@@ -27,7 +27,6 @@ Key features
 * Integrate machine learning algorithms into your image classification and regression with Random Forests, Support Vector Machines and many more
 * Create and manage spectral libraries with attribute data
 * Develop your own image processing algorithms using a powerful Python API
-* Read more in our :ref:`feature overview ... <features>`
 
 
 .. figure:: img/screenshot_main4.png
@@ -58,7 +57,6 @@ Related websites
 
 
     general/about.rst
-    general/features.rst
     news.rst
     general/faq_trouble.rst
     general/contribute.rst
