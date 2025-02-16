@@ -27,7 +27,6 @@ Key features
 * Integrate machine learning algorithms into your image classification and regression with Random Forests, Support Vector Machines and many more
 * Create and manage spectral libraries with attribute data
 * Develop your own image processing algorithms using a powerful Python API
-* Read more in our :ref:`feature overview ... <features>`
 
 
 .. figure:: img/screenshot_main4.png
@@ -58,10 +57,8 @@ Related websites
 
 
     general/about.rst
-    general/features.rst
     news.rst
     general/faq_trouble.rst
-    general/contribute.rst
     general/roadmap.rst
     general/glossary.rst
 
@@ -85,6 +82,7 @@ Related websites
     dev_section/dev_installation.rst
     dev_section/dev_enmapboxrepository
     dev_section/dev_publish_enmapbox.rst
+    dev_section/contribute.rst
     dev_section/cookbook/index.rst
     dev_section/tutorials/index.rst
     dev_section/rfc_list/index.rst
