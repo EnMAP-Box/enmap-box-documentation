@@ -5,10 +5,6 @@
 .. Getting Started
 .. ===============
 
-============================
-EnMAP-Box Developer Cookbook
-============================
-
 The following examples show how to interact with the EnMAP-Box GUI.
 They are available unittest TestCases in `examples/api_examples.py`
 
@@ -254,7 +250,7 @@ The `dockType` keyword serves as filter::
 
 
 
-5. Map Tools
+4. Map Tools
 =================================
 
 QgsMapTools_ control what happens when a user clicks into a QgsMapCanvas_, e.g. to zoom in or zoom out.
@@ -282,7 +278,7 @@ Icon  Key (str)              Key (Enum)                  Description
 
      Map tool icons to pan, zoom in, out, full extent and pixel scale, and to get cursor location information.
 
-6. Spatial Points and Extents
+5. Spatial Points and Extents
 =====================================
 
 Working with spatial data often requires to convert coordinates between different coordinate reference systems (CRS).
@@ -332,7 +328,7 @@ Same can be done with map layer extents::
 
 
 
-7. Map Locations and Spectral Profiles
+6. Map Locations and Spectral Profiles
 =========================================
 
 
