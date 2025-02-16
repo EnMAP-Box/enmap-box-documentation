@@ -303,8 +303,17 @@ Install EnMAP-Box
       3. Search for 'EnMAP-Box'
       4. Click on 'Install Plugin'
 
-      .. figure:: /img/qgis_plugin_manager.png
+      .. figure:: /img/QgisGUI_InstallPlugin.gif
         :align: center
+
+      **Activate Experimental Plugins (Optional)**
+       5. Go to Plugins -> Manage and Install Plugins -> Settings
+       6. Enable *Show also Experimental Plugins*
+
+      .. figure:: /img/QgisGUI_Experimental.gif
+        :align: center
+
+
 
 
    .. tab:: Command Line (Bash)
