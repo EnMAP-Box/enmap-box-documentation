@@ -1,7 +1,7 @@
 .. _contribute:
 
-How to contribute
-#################
+Contribute
+##########
 
 The EnMAP-Box is a freely available, platform-independent software designed to process hyperspectral remote sensing data,
 and particularly developed to handle data from the EnMAP sensor.
