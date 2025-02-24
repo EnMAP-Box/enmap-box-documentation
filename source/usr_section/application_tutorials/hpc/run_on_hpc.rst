@@ -214,8 +214,9 @@ Let's create a working directory and download some example data:
 
 .. code-block:: bash
 
+    # replace with your local data directory
+    DIR_DATA=/lustre/geographie/jakimowb>/data
 
-    DIR_DATA=/lustre/geographie/jakimowb/data
     mkdir -p $DIR_DATA
     cd $DIR_DATA
     wget -O enmapdata.zip https://box.hu-berlin.de/f/c35a6b0655c54d518aab/?dl=1
@@ -234,7 +235,7 @@ contains the reflectance values of the EnMAP bands and enriches this raster with
    qgis_process run enmapbox:ImportEnmapL2AProduct \
       --detectorOverlap=1 \
       --file=$PATH_L2A \
-      --outputEnmapL2ARaster=$DIR_DATA/enmap_l2a.vrt
+      --outputEnmapL2ARaster="${DIR_DATA}/enmap_l2a.vrt"
 
 
 The output should look like:
