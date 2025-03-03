@@ -57,6 +57,7 @@ Related websites
 
 
     general/about.rst
+    general/features.rst
     news.rst
     general/faq_trouble.rst
     general/roadmap.rst
