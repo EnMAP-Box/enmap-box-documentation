@@ -59,6 +59,7 @@ Related websites
     general/about.rst
     general/features.rst
     news.rst
+    general/contribute.rst
     general/faq_trouble.rst
     general/roadmap.rst
     general/glossary.rst
@@ -83,7 +84,6 @@ Related websites
     dev_section/dev_installation.rst
     dev_section/dev_enmapboxrepository
     dev_section/dev_publish_enmapbox.rst
-    dev_section/contribute.rst
     dev_section/cookbook/index.rst
     dev_section/tutorials/index.rst
     dev_section/rfc_list/index.rst
