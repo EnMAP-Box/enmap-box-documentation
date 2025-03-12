@@ -133,6 +133,9 @@ Here we describe how you can install QGIS, the required python packages and the 
 
             Search for **h5py**, select the latest version of the *python3-h5py* package and finish the installation.
 
+            .. image:: /img/osgeo4w_install_h5py.png
+
+
          #. Open QGIS from the start menu.
 
    .. group-tab:: Linux
