@@ -45,7 +45,7 @@ Usage:
     Instead of executing this algorithm, you may drag&drop the metadata file directly from your system file browser a\) onto the EnMAP-Box map view area, or b\) onto the Sensor Product Import panel.
 
 :guilabel:`Band list` [enum]
-    Bands to be stacked together. Defaults to all 10m and 20m `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ ordered by `center wavelength <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-center-wavelength>`_. Note that the destination pixel size matches the smallest/finest pixel size over all selected bands.
+    Bands to be stacked together. Defaults to all `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ ordered by `center wavelength <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-center-wavelength>`_. Note that the destination pixel size matches the smallest/finest pixel size over all selected bands \(i.e. 10, 20 or 60 meters\).
     Default: *\[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\]*
 
 

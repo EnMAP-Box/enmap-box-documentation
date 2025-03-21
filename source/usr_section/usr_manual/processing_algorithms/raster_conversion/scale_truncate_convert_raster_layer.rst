@@ -49,6 +49,11 @@ Allows to scale, truncate and convert raster data.
 :guilabel:`Data Type` [enum]
     Output data type.
 
+:guilabel:`Monolithic processing` [boolean]
+    Whether to read all data at once, instead of `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_-wise processing. This may be useful for converting compressed pixel-interleaved raster.In this case, monolithic processing will be much faster, but also more RAM demanding.
+    Default: *False*
+
+
 
 **Outputs**
 
@@ -118,6 +123,14 @@ Allows to scale, truncate and convert raster data.
     	Acceptable values:
     		- Number of selected option, e.g. '1'
     		- Comma separated list of options, e.g. '1,3'
+    monolithic: Monolithic processing (optional)
+    	Default value:	false
+    	Argument type:	boolean
+    	Acceptable values:
+    		- 1 for true/yes
+    		- 0 for false/no
+    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputRaster: Output raster layer
     	Argument type:	rasterDestination
     	Acceptable values:
