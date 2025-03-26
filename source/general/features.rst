@@ -218,13 +218,13 @@ for different thematic uses, e.g.:
     *   - EO Time Series Viewer
         - timeseries
         - Jakimow et al. 2020, "Visualizing and labeling dense multi-sensor earth observation time series: The EO time series viewer",
-          Environ Model Softw, 13648152, 125 (2020),
+          Environmental Modelling & Software, 13648152, 125 (2020),
           doi: https://doi.org/10.1016/j.envsoft.2020.104631
 
     *   - GEE Time Series Explorer
         - timeseries
-        - Rufin Pet al. 2021, "GEE Timeseries Explorer for QGIS – Instant Access to Petabytes of Earth Observaton Data."
-          Int Arch Photogramm Remote Sens Spatial Inf Sci, 2194-9034, XLVI-4/W2-2021 (2021), pp. 155-158,
+        - Rufin et al. 2021, "GEE Timeseries Explorer for QGIS – Instant Access to Petabytes of Earth Observation Data."
+          The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 2194-9034, XLVI-4/W2-2021 (2021), pp. 155-158,
           doi: https://doi.org/10.5194/isprs-archives-XLVI-4-W2-2021-155-2021
 
     *   - Scatter Plots
