@@ -45,31 +45,40 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
+    'sphinx_tabs.tabs',
     'sphinxcontrib.youtube',
     'sphinx_copybutton',
+    'myst_parser',
+    "sphinxcontrib.jquery",
+    "sphinx_datatables",
 ]
 
+suppress_warnings = ["app.parallel_read_safe", 'app.sphinx_datatables','sphinx_datatables']
 
-# suppress Duplicate Label Warnings for headings
+# set the version to use for DataTables plugin
+datatables_version = "2.1.8"
 
-def filter_warning_log(app, exception):
-    if not isinstance(exception, Exception):
-        return
-    warning_log = exception._warning_log
-    # Iterate through the warning log and remove warnings related to labels
-    exception._warning_log = [
-        w for w in warning_log if not any(label_category in w.message for label_category in [
-            'autosectionlabel.duplicate_label',
-            'autosectionlabel.missing_label',
-            'duplicate_substitution',
-            # Add more label-related categories if needed
-        ])
-    ]
+# name of the class to use for tables to enable DataTables
+datatables_class = "sphinx-datatable"
 
+# any custom options to pass to the DataTables constructor. Note that any
+# options you set are used for all DataTables.
+datatables_options = {}
+
+# set the version to use for DataTables plugin
+datatables_version = "1.13.4"
+
+# name of the class to use for tables to enable DataTables
+datatables_class = "sphinx-datatable"
+
+# any custom options to pass to the DataTables constructor. Note that any
+# options you set are used for all DataTables.
+datatables_options = {}
 
 # Register the filter_warning_log function to be called when warnings are logged
 def setup(app):
-    app.connect('build-finished', filter_warning_log)
+    # app.connect('build-finished', filter_warning_log)
+    pass
 
 
 # Add any paths that contain templates here, relative to this directory.
@@ -79,10 +88,10 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 source_parsers = {
-    '.md': 'recommonmark.parser.CommonMarkParser',
+    # '.md': 'recommonmark.parser.CommonMarkParser',
 }
 
-source_suffix = ['.rst', '.md']
+# source_suffix = ['.rst', '.md']
 # source_suffix = '.rst'
 
 # The master toctree document.
@@ -98,9 +107,9 @@ release = '3.14'
 version = u'{}'.format(re.search(r'(\.?[^.]*){2}', release).group())
 
 # General information about the project.
-project = u'EnMAP-Box 3'
-copyright = u'2018-2024, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Sebastian van der Linden, Patrick Hostert'
-author = u'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, \nSebastian van der Linden,\nPatrick Hostert'
+project = 'EnMAP-Box 3'
+copyright = '2018-2024, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Aryan Goswami, Sebastian van der Linden, Patrick Hostert'
+author = 'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, Aryan Goswami,\nSebastian van der Linden,\nPatrick Hostert'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -128,7 +137,7 @@ todo_include_todos = True
 # A string of reStructuredText that will be included at the
 # beginning of every source file that is read.
 # rst_epilog = """
-# .. include:: /icon_links.rst
+# 
 # """
 
 
@@ -148,9 +157,10 @@ html_theme_options = {
     'canonical_url': '',
     'analytics_id': '',
     'logo_only': False,
-    'display_version': False,
+    # 'display_version': False,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': True,
+    'version_selector': True,
     'vcs_pageview_mode': 'view',
     # Toc options
     'collapse_navigation': True,
@@ -234,6 +244,9 @@ man_pages = [
     (master_doc, 'enmap-box3', u'EnMAP-Box 3 Documentation',
      [author], 1)
 ]
+
+sphinx_tabs_disable_tab_closing = True
+
 
 numfig = True
 numfig_secnum_depth = 2

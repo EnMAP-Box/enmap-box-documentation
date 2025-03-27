@@ -8,8 +8,13 @@
 EnMAP-Box 3 Documentation
 #########################
 
-The EnMAP-Box is a python plugin for `QGIS <https://www.qgis.org/en/site/#>`_, designed to process and visualise
-hyperspectral remote sensing data.
+The EnMAP-Box is a python plugin for `QGIS <https://www.qgis.org/en/site/#>`__, designed to process, visualise and
+analyze hyperspectral remote sensing data.
+
+.. figure:: img/screenshot_3.15.1.png
+   :figwidth: 150%
+
+   The graphical user interface of the EnMAP-Box
 
 Get going with the :ref:`Installation <usr_installation>` and the :ref:`Getting Started <getting_started>` chapter.
 Have a look at the :ref:`Cookbook <cookbook>` for usage examples!
@@ -24,16 +29,17 @@ Key features
 * Develop your own image processing algorithms using a powerful Python API
 
 
-.. figure:: img/screenshot_main3.png
+.. figure:: img/screenshot_main4.png
 
-   The graphical user interface of the EnMAP-Box
+   The graphical user interface of the EnMAP-Box visualizing (left) a hyperspectral EnMAP image and (right) a multi-spectral
+   PlanetScope image from the city of Valencia, Spain.
 
 Related websites
 ****************
 
-- `Environmental Mapping and Analysis Program (EnMAP) <https://www.enmap.org/>`_
-- `Source code repository <https://github.com/EnMAP-Box/enmap-box/tree/main/>`_
-- `HYPERedu on eo-college <https://eo-college.org/resource-spectrum/hyperspectral//>`_
+- `Environmental Mapping and Analysis Program (EnMAP) <https://www.enmap.org/>`__
+- `Source code repository <https://github.com/EnMAP-Box/enmap-box/tree/main/>`__
+- `HYPERedu on eo-college <https://eo-college.org/resource-spectrum/hyperspectral//>`__
 
 
 .. show NEWS section
@@ -51,8 +57,10 @@ Related websites
 
 
     general/about.rst
-    general/faq_trouble.rst
+    general/features.rst
+    news.rst
     general/contribute.rst
+    general/faq_trouble.rst
     general/roadmap.rst
     general/glossary.rst
 
@@ -76,10 +84,11 @@ Related websites
     dev_section/dev_installation.rst
     dev_section/dev_enmapboxrepository
     dev_section/dev_publish_enmapbox.rst
-    dev_section/dev_cookbook/dev_cookbook.rst
-    dev_section/dev_guide.rst
+    dev_section/cookbook/index.rst
+    dev_section/tutorials/index.rst
     dev_section/rfc_list/index.rst
     dev_section/styleguide.rst
+    dev_section/icon_links_viewer.rst
 
 ..    dev_section/api/modules.rst
 ..    dev_section/programming_tutorials/index.rst

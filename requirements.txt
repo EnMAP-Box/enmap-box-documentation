@@ -8,3 +8,7 @@ sphinxcontrib-youtube
 docutils
 sphinx_rtd_theme > 1
 sphinx-copybutton
+sphinx-autobuild
+sphinx-tabs
+sphinx-datatables
+myst_parser

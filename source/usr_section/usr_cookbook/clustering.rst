@@ -6,7 +6,7 @@ Several clustering methods are available in the EnMAP-Box. You can find them in 
 algorithm first and then apply it to an image with :guilabel:`Predict (unsupervised) classification layer`.
 
 This recipe demonstrates the basic workflow of applying clusterers
-using K-Means clustering (:ref:`Fit KMeans`) and the :ref:`test dataset <test_dataset>`.
+using K-Means clustering (:ref:`alg-enmapbox-FitKmeans`) and the :ref:`example data <example_data>`.
 
 .. seealso:: You can find all the available clustering algorithms :ref:`here <Clustering>`.
 

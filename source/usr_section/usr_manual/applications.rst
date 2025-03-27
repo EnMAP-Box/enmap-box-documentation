@@ -1,4 +1,4 @@
-.. include:: /icon_links.rst
+
 
 .. _applications:
 
@@ -80,7 +80,7 @@ From categorized vector layer and feature raster
     .. figure:: ./img/ClassificationDatasetManager_2a.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from categorized vector layer and feature raster)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedVectorLayerAndFeatureRaster>`.
 
 From categorized raster layer and feature raster
     .. list-table::
@@ -99,7 +99,7 @@ From categorized raster layer and feature raster
     .. figure:: ./img/ClassificationDatasetManager_2b.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from categorized raster layer and feature raster)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedRasterLayerAndFeatureRaster>`.
 
 From categorized spectral library
     .. list-table::
@@ -112,7 +112,7 @@ From categorized spectral library
     .. figure:: ./img/ClassificationDatasetManager_2c.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from categorized spectral library)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedSpectralLibrary>`.
 
 From categorized vector layer with attribute table
     .. figure:: ./img/ClassificationDatasetManager_2d_dataset_2.png
@@ -129,7 +129,7 @@ From categorized vector layer with attribute table
     .. figure:: ./img/ClassificationDatasetManager_2d.png
         :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from categorized vector layer with attribute table)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedVectorLayerWithAttributeTable>`.
 
 From table with categories and feature fields
     .. figure:: ./img/ClassificationDatasetManager_2e_dataset.png
@@ -140,25 +140,25 @@ From table with categories and feature fields
     .. figure:: ./img/ClassificationDatasetManager_2e.png
         :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from table with categories and feature fields)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromTableWithCategoriesAndFeatureFields>`.
 
 From Python code
     .. figure:: ./img/ClassificationDatasetManager_2f.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from Python code)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromPythonCode>`.
 
 From text files
     .. figure:: ./img/ClassificationDatasetManager_2g.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from text files)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromTextFiles>`.
 
 From JSON file
     .. figure:: ./img/ClassificationDatasetManager_2h.png
        :align: center
 
-    For details see the :ref:`algorithm description <Create classification dataset (from JSON file)>`.
+    For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromJsonFile>`.
 
 Edit categories and features
 ----------------------------
@@ -402,7 +402,7 @@ Input Parameters:
 
   * :guilabel:`Raster`: Specify the raster you would like to apply the trained classifier to (usually -but not necessarily-
     this is the same as used for training)
-  * :guilabel:`Mask`: Specify a :ref:`mask <datatype_mask>` layer if you want to exclude certain areas from the prediction.
+  * :guilabel:`Mask`: Specify a :term:`mask layer` if you want to exclude certain areas from the prediction.
 
       * Outputs:
 
@@ -814,3 +814,31 @@ Spectral Index Creator
 ==================================
 
 todo
+
+
+
+
+
+
+
+
+
+
+.. Substitutions definitions - AVOID EDITING PAST THIS LINE
+   This will be automatically updated by the find_set_subst.py script.
+   If you need to create a new substitution manually,
+   please add it also to the substitutions.txt file in the
+   source folder.
+
+.. |action| image:: /img/icons/action.svg
+   :width: 28px
+.. |cb0| image:: /img/icons/cb0.png
+   :width: 28px
+.. |combo| image:: /img/icons/combo.png
+   :width: 28px
+.. |mIconCollapse| image:: /img/icons/mIconCollapse.svg
+   :width: 28px
+.. |rendererCategorizedSymbol| image:: /img/icons/rendererCategorizedSymbol.svg
+   :width: 28px
+.. |spin| image:: /img/icons/spin.png
+   :width: 28px

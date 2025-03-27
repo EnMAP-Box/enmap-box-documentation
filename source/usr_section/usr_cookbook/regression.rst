@@ -1,7 +1,7 @@
 Regression
 ==========
 
-This section will demonstrate a case of image regression using the :ref:`test dataset <test_dataset>`.
+This section will demonstrate a case of image regression using the :ref:`example data <example_data>`.
 We will regress the sub-pixel fractions of impervious, vegetation, soil and water, derived from a high resolution land cover
 polygon vector dataset, against the spectral signature of an EnMAP image. So in this case we are performing a multi target
 regression (more than one response variable), but mind that single target regression works in the same way.

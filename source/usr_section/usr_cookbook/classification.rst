@@ -1,9 +1,9 @@
 Classification
 ==============
 
-This section will demonstrate the process of image classification using the :ref:`test dataset <test_dataset>`.
+This section will demonstrate the process of image classification using the :term:`test dataset`.
 In this example we will use the processing algorithms only. For classification purposes you might also want to have a look
-at the :ref:`Classification Workflow` application, which provides a convenient graphical user interface and manages all intermediate
+at the :ref:`alg-enmapbox-ClassificationWorkflow` application, which provides a convenient graphical user interface and manages all intermediate
 steps 'under the hood' (see also :ref:`Getting Started <getting_started>`).
 
 Fit a Classifier
@@ -11,8 +11,8 @@ Fit a Classifier
 
 The first step towards image classification is to fit a classifier. The available algorithms are listed in the processing
 toolbox under :menuselection:`EnMAP-Box --> Classification --> Fit [...]`. These Fit [...] algorithms expect a raster dataset
-where samples are extracted from as first input (:guilabel:`Raster`). The second input is a :ref:`classification raster <datatype_classification>`
-which contains the class labels/target variable (:guilabel:`Labels`). Optionally you can include a :ref:`mask layer <datatype_mask>`.
+where samples are extracted from as first input (:guilabel:`Raster`). The second input is a :term:`classification layer`
+which contains the class labels/target variable (:guilabel:`Labels`). Optionally you can include a :term:`mask layer`.
 The output of those algorithms is a :file:`.pkl` file, an intermediate exchange format which stores all relevant information
 and will be needed in the consecutive step.
 
@@ -24,7 +24,7 @@ and will be needed in the consecutive step.
 
 Often reference datasets with class information are available as vector datasets, for example point shapefiles where
 class information is stored in the attribute table. In order to use this information in the Fit algorithm,
-the vector dataset has to be converted to a classification raster first. This can be done with the :ref:`Classification from Vector <>`
+the vector dataset has to be converted to a classification raster first. This can be done with the :ref:`Rasterize categorized vector layer <alg-enmapbox-RasterizeCategorizedVectorLayer>`
 algorithm (in the processing toolbox under :menuselection:`EnMAP-Box --> Create Raster`).
 
 .. figure:: ../../img/landcover_berlin_point.png
