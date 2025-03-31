@@ -427,7 +427,7 @@ as well.
 
 .. tabs::
 
-    .. group-tab:: Qt Assistant
+   .. group-tab:: Qt Assistant
 
         The Qt Assistant allows you to browse fast and offline through Qt help files (``*.qch``). These files exists for
         all Qt classes and the QGIS API. They can be generated event with Sphinx, which allows you to provide your
@@ -482,9 +482,6 @@ as well.
              :width: 100%
 
              Qt Designer showing the metadataeditor.ui for the Metadata editor.
-
-
-        ..
 
    .. group-tab:: Qt Creator
 
