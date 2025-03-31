@@ -26,9 +26,15 @@ Upcoming Events
         - Vienna, Austria
         -
 
+Bluesky Feed
+============
 
+.. raw:: html
 
-
+   <div style="text-align: left; margin: 0;">
+       <rssapp-list id="ITz0NaWac0ImLiH9"></rssapp-list>
+       <script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script>
+   </div>
 
 EnMAP Webinar
 =============
