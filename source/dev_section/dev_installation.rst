@@ -14,8 +14,8 @@ If you like to develop an EnMAP-Box application, or more general, a QGIS and Qt 
 a state-of-the-art Integrated Development Environment (IDE) like `PyCharm`_. It offers run-time debugging,
 code completion, spell-checking, syntax highlighting, SCM support, unit-testing and many other helpful things.
 
-1. Have Git installed
-=====================
+Ensure Git is Installed
+=======================
 
 If not, download and install *Git* from https://git-scm.com/downloads
 
@@ -27,8 +27,8 @@ Check if git is installed to your local shell, e.g. as:
     git version 2.26.0.windows.1
 
 
-2. Clone this repository
-========================
+Repository Cloning
+==================
 
 Clone the EnMAP-Box repository (or a fork) to your local ``my_repositories`` folder and update
 its submodules by:
@@ -58,110 +58,107 @@ EnMAP-Box repository:
 
 .. _dev_installation_create_conda_qgis:
 
-3. Setup a QGIS environment
+Configure a QGIS Environment
 ============================
 
 This section gives examples how you can setup a QGIS & EnMAP-Box development used by PyCharm on different platforms.
 
-a) OSGeo4W (Windows)
---------------------
+a) OSGeo4W
+----------
+
+.. tabs::
+
+   .. group-tab:: Windows
+        **Install or update packages**
+
+            1. Install QGIS using the OSGeo4W Network installer https://qgis.org/en/site/forusers/download.html
+
+            2. Install the OSGeo4W environment to a folder of choice (preferably one you have permanent writing access to).
+               In following this is called `OSGeo4W`.
+
+            3. Start the OSGeo4W Setup.
+
+            4. Go forward to these steps by clicking `next`. Usually the default settings should be fine
+                * 'Advanced Install'
+                * 'Install from Internet'
+                * 'Root Directory' (should be your `OSGEO4W` directory)
+                * Select Local Package Directory (default)
+                * Select Your Internet Connect (default Direct Connection)
+                * Choose A Download Site (default https://download.osgeo.org )
+
+            5. Select Packages to install / update
+
+                +---------------------+------------------------------+
+                | Package             | Note                         |
+                +=====================+==============================+
+                | qgis                | recent official QGIS version |
+                +---------------------+------------------------------+
+                |python3-scikit-learn |                              |
+                +---------------------+------------------------------+
+
+            6. Press Next to install packages / updates
+
+        **Setup development environment**
+
+            1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/tree/main/.env/osgeo4w
+               to a local folder, e.g. your windows desktop
+            2. Modify the `qgis-env.bat` config section to fit to your local environment, i.e. set the correct paths to your
+               local OSGeoW installation and PyCharm executable
+
+                .. code-block:: batch
+
+                    @echo off
+
+                    :: ### CONFIG SECTION ###
+                    :: root of local OSGEO4W installation
+                    set OSGEO4W_ROOT=D:\OSGeo4W
+                    :: PyCharm executable, adjust for version updates
+                    set PYCHARM_EXE="C:\Program Files (x86)\JetBrains\PyCharm 2022.1.2\bin\pycharm64.exe"
+
+                    :: git binaries and git lfs binaries
+                    set BIN_GIT=C:\Program Files\Git\bin
+                    set BIN_LFS=C:\Program Files\Git LFS
+
+            3. Call `start_pycharm.bat` to open PyCharm within the latest QGIS release.
+               You can modify the start script to start a different QGIS build. E.g.
+
+                .. code-block:: batch
+
+                    call "%~dp0\qgis-env.bat" qgis-ltr
+                    start "PYCHARM" /B %PYCHARM_EXE%
+
+               will start the QGIS Long Term Release (if installed) instead of the latest QGIS release (`qgis`).
+
+               Possible QGIS versions provided by the OSGeo4W installer are:
+
+               +----------------+--------------------------------------------------+
+               | Build          | Description                                      |
+               +================+==================================================+
+               | `qgis`         | QGIS Desktop (latest release)                    |
+               +----------------+--------------------------------------------------+
+               | `qgis-ltr`     | QGIS Desktop (long term release)                 |
+               +----------------+--------------------------------------------------+
+               | `qgis-dev`     | QGIS nightly build of the development branch     |
+               +----------------+--------------------------------------------------+
+               | `qgis-rel-dev` | QGIS nightly build of the latest release branch  |
+               +----------------+--------------------------------------------------+
+
+   .. group-tab:: Linux
+
+        1. Install QGIS  as described in https://qgis.org/en/site/forusers/download.html
 
 
-1. Install or update packages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   .. group-tab:: MacOS
 
-1. Install QGIS using the OSGeo4W Network installer https://qgis.org/en/site/forusers/download.html
-
-2. Install the OSGeo4W environment to a folder of choice (preferably one you have permanent writing access to).
-   In following this is called `OSGeo4W`.
-
-2. Start the OSGeo4W Setup.
-
-3. Go forward to these steps by clicking `next`. Usually the default settings should be fine
-    * 'Advanced Install'
-    * 'Install from Internet'
-    * 'Root Directory' (should be your `OSGEO4W` directory)
-    * Select Local Package Directory (default)
-    * Select Your Internet Connect (default Direct Connection)
-    * Choose A Download Site (default https://download.osgeo.org )
-
-4. Select Packages to install / update
-
-    +---------------------+------------------------------+
-    | Package             | Note                         |
-    +=====================+==============================+
-    | qgis                | recent official QGIS version |
-    +---------------------+------------------------------+
-    |python3-scikit-learn |                              |
-    +---------------------+------------------------------+
-
-5. Press Next to install packages / updates
-
-2. Setup development environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/tree/main/.env/osgeo4w
-   to a local folder, e.g. your windows desktop
-2. Modify the `qgis-env.bat` config section to fit to your local environment, i.e. set the correct paths to your
-   local OSGeoW installation and PyCharm executable
-
-    .. code-block:: batch
-
-        @echo off
-
-        :: ### CONFIG SECTION ###
-        :: root of local OSGEO4W installation
-        set OSGEO4W_ROOT=D:\OSGeo4W
-        :: PyCharm executable, adjust for version updates
-        set PYCHARM_EXE="C:\Program Files (x86)\JetBrains\PyCharm 2022.1.2\bin\pycharm64.exe"
-
-        :: git binaries and git lfs binaries
-        set BIN_GIT=C:\Program Files\Git\bin
-        set BIN_LFS=C:\Program Files\Git LFS
-
-3. Call `start_pycharm.bat` to open PyCharm within the latest QGIS release.
-   You can modify the start script to start a different QGIS build. E.g.
-
-    .. code-block:: batch
-
-        call "%~dp0\qgis-env.bat" qgis-ltr
-        start "PYCHARM" /B %PYCHARM_EXE%
-
-   will start the QGIS Long Term Release (if installed) instead of the latest QGIS release (`qgis`).
-
-   Possible QGIS versions provided by the OSGeo4W installer are:
-
-   +----------------+--------------------------------------------------+
-   | Build          | Description                                      |
-   +================+==================================================+
-   | `qgis`         | QGIS Desktop (latest release)                    |
-   +----------------+--------------------------------------------------+
-   | `qgis-ltr`     | QGIS Desktop (long term release)                 |
-   +----------------+--------------------------------------------------+
-   | `qgis-dev`     | QGIS nightly build of the development branch     |
-   +----------------+--------------------------------------------------+
-   | `qgis-rel-dev` | QGIS nightly build of the latest release branch  |
-   +----------------+--------------------------------------------------+
-
-b) Linux
---------
-
-1. Install QGI  as described in https://qgis.org/en/site/forusers/download.html
+        1. Install QGIS as described in https://qgis.org/en/site/forusers/download.html
 
 
-c) macOS
---------
-1. Install QGIS as described in https://qgis.org/en/site/forusers/download.html
+   .. group-tab:: Docker
+
+         tbd.
 
 
-
-d) Docker
----------
-
- tbd.
-
-
-e) Setup Conda (all platforms)
+b) Setup Conda (All Platforms)
 --------------------------------
 .. warning::
 
@@ -215,7 +212,7 @@ it is often much easier to install additional python packages while admin rights
    environments visit the
    `conda documentation <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#creating-an-environment-from-an-environment-yml-file>`_
 
-1.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
+3.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
     the new environment:
 
     .. code-block:: batch
@@ -268,8 +265,8 @@ it is often much easier to install additional python packages while admin rights
 
 .. _dev_setup_pycharm:
 
-4. Setup PyCharm
-================
+Setup PyCharm
+=============
 
 1.  Start `PyCharm`_ and add `my_repositories/enmap-box` as new project via *File > Open File or Project*
 
@@ -375,7 +372,7 @@ it is often much easier to install additional python packages while admin rights
         How to use the conda terminal in PyCharm
 
 
-7.  Test the Python environment
+6.  Test the Python environment
 
     To check if the QGIS API is available, open a *Python Console* and import the `QgsApplication`_ object.
 
@@ -420,104 +417,101 @@ it is often much easier to install additional python packages while admin rights
         (enmapbox) ..\enmap-box>python enmapbox
 
 
-Other Tools
-===========
+Additional Tools
+================
 
 The Qt company provides several tools to that help to create Qt applications and are useful for PyQt and PyQGIS users
 as well.
 
 .. _dev_qt_assistant:
 
+.. tabs::
 
-Qt Assistant
-------------
+    .. group-tab:: Qt Assistant
 
-The Qt Assistant allows you to browse fast and offline through Qt help files (``*.qch``). These files exists for
-all Qt classes and the QGIS API. They can be generated event with Sphinx, which allows you to provide your
-own source-code documentation as ``.qch`` file as well.
+        The Qt Assistant allows you to browse fast and offline through Qt help files (``*.qch``). These files exists for
+        all Qt classes and the QGIS API. They can be generated event with Sphinx, which allows you to provide your
+        own source-code documentation as ``.qch`` file as well.
 
-1.  Start the Qt Assistant, e.g. from your PyCharm terminal:
+        1.  Start the Qt Assistant, e.g. from your PyCharm terminal:
 
-    .. code-block:: bat
+            .. code-block:: bat
 
-        (enmapbox) $>assistant
-
-
-2.  Download the ``*.qch*`` files which contain:
-
-    * the Qt API documentation files: https://github.com/PierreRaybaut/PyQtdoc
-    * the QGIS API documentation  `qgis.qch <https://api.qgis.org/api/qgis.qch>`_
+                (enmapbox) $>assistant
 
 
-    Go to *Preferences > Add* and add the following ``*.qch`` files
+        2.  Download the ``*.qch*`` files which contain:
 
-    ============= =====================================
-    File          Documentation
-    ============= =====================================
-    qgis.qch      qgis.core, qgis.gui
-    qtcore.qch    Qt5.QtCore
-    qtgui.qch     Qt5.QtGui
-    qtwidgets.qch Qt5.QtWidgets
-    ============= =====================================
-
-    Now you can explore the Qt (``Q...``) and QGIS (``Qgs...``) classes
-
-    .. figure:: img/qt_assistant.png
-         :width: 100%
+            * the Qt API documentation files: https://github.com/PierreRaybaut/PyQtdoc
+            * the QGIS API documentation  `qgis.qch <https://api.qgis.org/api/qgis.qch>`_
 
 
-.. _dev_qt_designer:
+            Go to *Preferences > Add* and add the following ``*.qch`` files
+
+            ============= =====================================
+            File          Documentation
+            ============= =====================================
+            qgis.qch      qgis.core, qgis.gui
+            qtcore.qch    Qt5.QtCore
+            qtgui.qch     Qt5.QtGui
+            qtwidgets.qch Qt5.QtWidgets
+            ============= =====================================
+
+            Now you can explore the Qt (``Q...``) and QGIS (``Qgs...``) classes
+
+            .. figure:: img/qt_assistant.png
+                 :width: 100%
 
 
-Qt Designer
------------
+        .. _dev_qt_designer:
 
-The Qt Designer is a powerful tool to create GUI frontends by drawing, drag and drop.
-Created GUI form files are saved in a XML file ending with ``*.ui``. These can be called from
-python to automatically create the entire GUI backend, e.g. windows and buttons defined with the Qt Designer.
+   .. group-tab:: Qt Designer
 
-You can start the Qt Designer from your PyCharm terminal by:
+        The Qt Designer is a powerful tool to create GUI frontends by drawing, drag and drop.
+        Created GUI form files are saved in a XML file ending with ``*.ui``. These can be called from
+        python to automatically create the entire GUI backend, e.g. windows and buttons defined with the Qt Designer.
 
-    .. code-block:: bat
+        You can start the Qt Designer from your PyCharm terminal by:
 
-        (enmapbox) $>designer
+            .. code-block:: bat
 
-
-.. figure:: img/qt_designer_example.png
-     :width: 100%
-
-     Qt Designer showing the metadataeditor.ui for the Metadata editor.
+                (enmapbox) $>designer
 
 
-..
+        .. figure:: img/qt_designer_example.png
+             :width: 100%
 
-Qt Creator
-----------
+             Qt Designer showing the metadataeditor.ui for the Metadata editor.
 
-Qt Creator is the one-in-all IDE to develop Qt C++ applications. It includes the functionality covered by Qt Assistant
-(here called Help) and Qt Designer (here called form designer) and helps to browse C++ code. It is the preferred tool to
-explore the QGIS C++ source code, for example if you like to better understand what it does behind the QGIS python API.
 
-Qt and the Qt Creator are available at https://www.qt.io/download. Ensure to install the code documentation for the same
-Qt version used by QGIS.
+        ..
 
-.. figure:: img/qt_creator_example_ui.png
-     :width: 100%
+   .. group-tab:: Qt Creator
 
-     Qt Creator with opened metadataeditor.ui.
+        The Qt Creator is the one-in-all IDE to develop Qt C++ applications. It includes the functionality covered by Qt Assistant
+        (here called Help) and Qt Designer (here called form designer) and helps to browse C++ code. It is the preferred tool to
+        explore the QGIS C++ source code, for example if you like to better understand what it does behind the QGIS python API.
 
-..
-        SSH access on windows
-        1. create a ssh key pair
-        2. upload public key to repository of choice
-        3. install Putty
-        4. start Pageant.ext and add your private key to
-        5. add :code:`set GIT_SSH=C:\Program Files\PuTTY\plink.exe` to your startup script
-        6. there is an issue with a frozen command line when a server is connected the first time with ssh
-           (see https://stackoverflow.com/questions/33240137/git-clone-pull-continually-freezing-at-store-key-in-cache)
-           to solve it, start putty and connect to the server once per SSH (e.g. to github.com).
-           putty will save its fingerprint
-        7. now you can call git push using ssh authentication in background
+        Qt and the Qt Creator are available at https://www.qt.io/download. Ensure to install the code documentation for the same
+        Qt version used by QGIS.
+
+        .. figure:: img/qt_creator_example_ui.png
+             :width: 100%
+
+             Qt Creator with opened metadataeditor.ui.
+
+        ..
+                SSH access on windows
+                1. create a ssh key pair
+                2. upload public key to repository of choice
+                3. install Putty
+                4. start Pageant.ext and add your private key to
+                5. add :code:`set GIT_SSH=C:\Program Files\PuTTY\plink.exe` to your startup script
+                6. there is an issue with a frozen command line when a server is connected the first time with ssh
+                   (see https://stackoverflow.com/questions/33240137/git-clone-pull-continually-freezing-at-store-key-in-cache)
+                   to solve it, start putty and connect to the server once per SSH (e.g. to github.com).
+                   putty will save its fingerprint
+                7. now you can call git push using ssh authentication in background
 
 OSGeo4W for Devs
 ================
