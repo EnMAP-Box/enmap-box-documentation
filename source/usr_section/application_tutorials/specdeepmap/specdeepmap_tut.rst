@@ -25,7 +25,6 @@ SpecDeepMap Menu
 
 * Launch QGIS and click the enmapbox icon in the toolbar to open the EnMAP-Box. In the EnMAP-Box GUI you can find the SpecDeepMap application in the algorithms in the **EnMAP-Box Processing Algorithms**.
 
-
 Download Example Data
 *********************
 
