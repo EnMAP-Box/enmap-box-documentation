@@ -14,8 +14,11 @@ If you like to develop an EnMAP-Box application, or more general, a QGIS and Qt 
 a state-of-the-art Integrated Development Environment (IDE) like `PyCharm`_. It offers run-time debugging,
 code completion, spell-checking, syntax highlighting, SCM support, unit-testing and many other helpful things.
 
-Ensure Git is Installed
-=======================
+1. Have Git Installed
+=====================
+
+..
+    @Arayan add Windows | Linux | macOS tabs
 
 If not, download and install *Git* from https://git-scm.com/downloads
 
@@ -27,11 +30,14 @@ Check if git is installed to your local shell, e.g. as:
     git version 2.26.0.windows.1
 
 
-Repository Cloning
-==================
+2. Clone the EnMAP-Box Repository
+=================================
 
 Clone the EnMAP-Box repository (or a fork) to your local ``my_repositories`` folder and update
 its submodules by:
+
+..
+    @Arayan add Windows | Linux | macOS tabs here
 
 .. code-block:: bash
 
@@ -58,10 +64,17 @@ EnMAP-Box repository:
 
 .. _dev_installation_create_conda_qgis:
 
-Configure a QGIS Environment
-============================
+3. Setup the QGIS Environment
+=============================
 
-This section gives examples how you can setup a QGIS & EnMAP-Box development used by PyCharm on different platforms.
+To use the QGIS Python API from an IDE,
+
+
+This section gives examples how you can setup a QGIS & EnMAP-Box development to be used by PyCharm
+on different platforms.
+
+..
+    @Arayan add Windows | Linux | macOS tabs here
 
 a) OSGeo4W
 ----------
@@ -265,8 +278,9 @@ it is often much easier to install additional python packages while admin rights
 
 .. _dev_setup_pycharm:
 
-Setup PyCharm
-=============
+4. Setup the IDE (PyCharm)
+===========================
+
 
 1.  Start `PyCharm`_ and add `my_repositories/enmap-box` as new project via *File > Open File or Project*
 
@@ -420,7 +434,7 @@ Setup PyCharm
 Additional Tools
 ================
 
-The Qt company provides several tools to that help to create Qt applications and are useful for PyQt and PyQGIS users
+The Qt company provides various tools that help to create Qt applications. They are useful for PyQt and PyQGIS users
 as well.
 
 .. _dev_qt_assistant:
@@ -429,18 +443,17 @@ as well.
 
    .. group-tab:: Qt Assistant
 
-        The Qt Assistant allows you to browse fast and offline through Qt help files (``*.qch``). These files exists for
-        all Qt classes and the QGIS API. They can be generated event with Sphinx, which allows you to provide your
-        own source-code documentation as ``.qch`` file as well.
+        The Qt Assistant allows to discover and read `*.qch` files, which are provided for the
+        Qt and QGIS APIs. Although written to document the C++ code, most descriptions apply 1:1 to the Python API.
 
-        1.  Start the Qt Assistant, e.g. from your PyCharm terminal:
-
-            .. code-block:: bat
-
-                (enmapbox) $>assistant
+        The Qt Assistant browses `*.qch` files super fast and also offline, which is why it is often a better
+        alternative to the slower Python online documentation.
+        In addition, the `*.qch` docs link into the QGIS C++ source code,
+        which makes it easier to understand the functionality of the QGIS API.
 
 
-        2.  Download the ``*.qch*`` files which contain:
+
+        1.  Download the ``*.qch*`` files which contain:
 
             * the Qt API documentation files: https://github.com/PierreRaybaut/PyQtdoc
             * the QGIS API documentation  `qgis.qch <https://api.qgis.org/api/qgis.qch>`_
@@ -457,10 +470,19 @@ as well.
             qtwidgets.qch Qt5.QtWidgets
             ============= =====================================
 
+            `D:\OSGEO4W\apps\Python312\Lib\site-packages\PyQtdoc`
+
             Now you can explore the Qt (``Q...``) and QGIS (``Qgs...``) classes
 
             .. figure:: img/qt_assistant.png
                  :width: 100%
+
+
+        1.  Start the Qt Assistant, e.g. from your PyCharm terminal:
+
+            .. code-block:: bat
+
+                (enmapbox) $>assistant
 
 
         .. _dev_qt_designer:
@@ -513,9 +535,30 @@ as well.
 OSGeo4W for Devs
 ================
 
-If you work on windows and want to test your code based on nightly builds of the upcoming QGIS
-version, or like to inspect/debug the QGIS C++ API at runtime, you might use the OSGeo4W
-installer to setup your development environment:
+The OSGeo4W installer for QGIS on windows allows you to install and maintain
+different QGIS versions in parallel.
+
+.. list-table:: Some OSGeo4W QGIS versions
+    :widths: 30 50
+    :header-rows: 1
+
+    *   - Package
+        - Descriptions
+
+    *   - ``qgis``
+        - Latest QGIS release (LR)
+
+    *   - ``qgis-ltr``
+        - QGIS long term release (LTR)
+
+    *   - ``qgis-dev``
+        - Nightly build of QGIS developer branch
+
+    *   - ``qgis-qt6``
+        -   QGIS Desktop using Qt6 (QGIS 4.0)
+
+
+
 
 Setup Environment
 -----------------
