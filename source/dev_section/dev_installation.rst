@@ -73,12 +73,6 @@ To use the QGIS Python API from an IDE,
 This section gives examples how you can setup a QGIS & EnMAP-Box development to be used by PyCharm
 on different platforms.
 
-..
-    @Arayan add Windows | Linux | macOS tabs here
-
-a) OSGeo4W
-----------
-
 .. tabs::
 
    .. group-tab:: Windows
@@ -165,81 +159,78 @@ a) OSGeo4W
 
         1. Install QGIS as described in https://qgis.org/en/site/forusers/download.html
 
+   .. group-tab:: conda
+
+
+        The installation of QGIS within a `conda <https://docs.conda.io/en/latest>`__ /
+        `anaconda <https://www.anaconda.com/>`__ environment is (almost) the same on macOS, windows or linux. Using conda
+        it is often much easier to install additional python packages while admin rights are not required.`
+
+
+        1. Make sure `conda <https://docs.conda.io/en/latest/miniconda.html>`__ or
+           `miniforge <https://github.com/conda-forge/miniforge>`__ is installed on your system and you can call `conda`
+           from your shell.
+
+        2. Create a new conda environment using one of the environment files
+           in `here <https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`__
+
+           .. list-table:: Conda environments to run the EnMAP-Box
+                :header-rows: 1
+
+                *   - Environment File
+                    - Description
+                *   - `enmapbox_full_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml>`_
+                    - Most-recent QGIS release and python dependencies for all EnMAP-box applications,
+                      including numba.
+                *   - `enmapbox_light_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_latest.yml>`_
+                    - Most-recent QGIS release and minimum (*light*) set of python dependencies to run EnMAP-Box.
+                *   - `enmapbox_full_longterm.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml>`_
+                    - Most-recent QGIS long-term release (LTR) and python dependencies for all
+                      EnMAP-box applications, including numba.
+                *   - `enmapbox_light_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_latest.yml>`_
+                    - Most-recent QGIS long-term release (LTR) and minimum set of python dependencies
+                      to run EnMAP-Box.
+                *   - `enmapbox_light_3.38.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_3.38.yml>`_
+                    - QGIS 3.38 with minimum set of python dependencies to run EnMAP-Box.
+
+
+           E.g. to install the latest QGIS with all python requirements in a conda environment named *enmapbox*, use
+           the following command:
+
+        .. code-block:: batch
+
+           conda env create --name enmapbox --file https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
+
+        .. tip::
+
+           Depending on the components and applications you like to use, it might be required to install more packages.
+           If you cloned the EnMAP-Box repository you can also point to the local :file:`enmapbox_full_latest.yml`.
+           Edit the ``--name`` or the YAML file itself as you wish. For more information on creating and managing conda
+           environments visit the
+           `conda documentation <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#creating-an-environment-from-an-environment-yml-file>`_
+
+        3.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
+            the new environment:
+
+            .. code-block:: batch
+
+               conda activate enmapbox
+
+
+        4.  Now you can start `QGIS`_, the :ref:`dev_qt_designer` and :ref:`dev_qt_assistant` from your conda shell:
+
+            .. code-block:: batch
+
+               qgis
+               designer
+               assistant
+
 
    .. group-tab:: Docker
 
          tbd.
 
 
-b) Setup Conda (All Platforms)
---------------------------------
-.. warning::
-
-    Installing QGIS via conda is not officially supported by the QGIS core development team.
-    The QGIS versions available in conda can therefore differ from the official QGIS versions!
-
-The installation of QGIS within a `conda <https://docs.conda.io/en/latest>`__ /
-`anaconda <https://www.anaconda.com/>`__ environment is (almost) the same on macOS, windows or linux. Using conda
-it is often much easier to install additional python packages while admin rights are not required.`
-
-
-1. Make sure `conda <https://docs.conda.io/en/latest/miniconda.html>`__ or
-   `miniforge <https://github.com/conda-forge/miniforge>`__ is installed on your system and you can call `conda`
-   from your shell.
-
-2. Create a new conda environment using one of the environment files
-   in `here <https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`__
-
-   .. list-table:: Conda environments to run the EnMAP-Box
-        :header-rows: 1
-
-        *   - Environment File
-            - Description
-        *   - `enmapbox_full_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml>`_
-            - Most-recent QGIS release and python dependencies for all EnMAP-box applications,
-              including numba.
-        *   - `enmapbox_light_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_latest.yml>`_
-            - Most-recent QGIS release and minimum (*light*) set of python dependencies to run EnMAP-Box.
-        *   - `enmapbox_full_longterm.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml>`_
-            - Most-recent QGIS long-term release (LTR) and python dependencies for all
-              EnMAP-box applications, including numba.
-        *   - `enmapbox_light_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_latest.yml>`_
-            - Most-recent QGIS long-term release (LTR) and minimum set of python dependencies
-              to run EnMAP-Box.
-        *   - `enmapbox_light_3.38.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_3.38.yml>`_
-            - QGIS 3.38 with minimum set of python dependencies to run EnMAP-Box.
-
-
-   E.g. to install the latest QGIS with all python requirements in a conda environment named *enmapbox*, use
-   the following command:
-
-.. code-block:: batch
-
-   conda env create --name enmapbox --file https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
-
-.. tip::
-
-   Depending on the components and applications you like to use, it might be required to install more packages.
-   If you cloned the EnMAP-Box repository you can also point to the local :file:`enmapbox_full_latest.yml`.
-   Edit the ``--name`` or the YAML file itself as you wish. For more information on creating and managing conda
-   environments visit the
-   `conda documentation <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#creating-an-environment-from-an-environment-yml-file>`_
-
-3.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
-    the new environment:
-
-    .. code-block:: batch
-
-       conda activate enmapbox
-
-
-4.  Now you can start `QGIS`_, the :ref:`dev_qt_designer` and :ref:`dev_qt_assistant` from your conda shell:
-
-    .. code-block:: batch
-
-       qgis
-       designer
-       assistant
 
 5. To easily start applications like PyCharm in this environment, which have not been installed by conda, you might
    define an alias during the activation of the environment.
@@ -278,8 +269,11 @@ it is often much easier to install additional python packages while admin rights
 
 .. _dev_setup_pycharm:
 
-4. Setup the IDE (PyCharm)
-===========================
+4. Setup the IDE
+================
+
+..
+    @aryan add PyCharm and VSCode Tab
 
 
 1.  Start `PyCharm`_ and add `my_repositories/enmap-box` as new project via *File > Open File or Project*
