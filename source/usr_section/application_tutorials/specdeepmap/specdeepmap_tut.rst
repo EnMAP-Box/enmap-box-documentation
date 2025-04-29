@@ -28,9 +28,9 @@ SpecDeepMap Menu
 Download Example Data
 *********************
 
-* Download the imagery data and example label rasters from here:
-Sentienl-2 TOA imagery: :download:`Sentinel-2 TOA imagery.
-EUCropmap labels: :download:`EUCropmap labels.*
+* Download the imagery data and example label rasters from here
+* Sentienl-2 TOA imagery download Sentinel-2 TOA imagery.
+* EUCropmap labels: :download: EUCropmap labels.
 
 
 1. Raster Splitter
@@ -108,9 +108,8 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 4. Tensorboard visualizer (optional)
 ************************************
 
-*If you want to inspect the model behavior in more detail after the trianing, you can use this algorithm and the logger location to open a Tensorboard, which is an interactive graphical environment to inspect model training behavior.
+* If you want to inspect the model behavior in more detail after the training you can use this algorithm and the logger location to open a Tensorboard, which is an interactive graphical environment to inspect model training behavior.
 
-*
 
 5. Deep Learning Tester
 =======================
