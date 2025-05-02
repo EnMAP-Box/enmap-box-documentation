@@ -44,13 +44,13 @@ In this example we split the Sentienl-2TOA image and the EUCROPMAP labels into s
 
 .. figure:: img/1_Rastersplitter.jpeg
 
-* Use the following inputs:  Input raster image: Sentinel_2_TOA_1.tif and Input raster labels: EUCROPMAP_1.tif .
+* Use the following inputs:  **Input raster image**: Sentinel_2_TOA_1.tif and **Input raster labels**: EUCROPMAP_1.tif .
 
-* Set tile size X to 224 and tile size Y to 224 and step size X to 275 and step size Y to 275, to avoid spatial autocorrelation of the chips.
+* Set **tile size X** to 224 and **tile size Y** to 224 and **step size X** to 275 and **step size Y** to 275, to avoid spatial autocorrelation of the chips.
 
-* By the parameter : % of valid class labels we can define if we want only image chips with full label coverage or also partial covered label. In our case we use only fully covered labels chips so, set the parameter to 100.
+* Set **Minimum Class Label coverage per Tile (%)** to 100. This parameter define if we want only image chips with full label coverage or also partial covered label. In our case we use only fully covered labels chips so, set the parameter to 100.
 
-* Create a new main folder for the output and call it SpecDeepMap_tutorial , chose the folder for the raster splitter output.*
+* As **Output folder** Create a new folder call it SpecDeepMap_tutorial , chose the folder for the raster splitter output.*
 
 * Run the algorithm with the given parameters this results in 2328 image and label chips. These are now stored in sub folder 'images' and 'labels' in the created folder 'SpecDeepMap_tutorial'.
 
@@ -62,10 +62,10 @@ In this example we split the Sentienl-2TOA image and the EUCROPMAP labels into s
 The Dataset Maker takes the created folder as Input and generates a training, validation and test datatsets with similar class distributions in form of CSV files with stored relative file paths to the image chips.
 As well as a summary CSV file which show class distribution per dataset as well as suitable class weights for balanced training.
 
-* As Data folder use the created  SpecDeepMap_tutorial folder.
-* A default class split is 80% training, 10% test and 10% validation. You can change this to a subset, if you have less computing power e.g. 10, 5, 5.
+* As **Data folder** use the created  SpecDeepMap_tutorial folder.
+* A default dataset split **Percentages of train images** is 80 and **Percentages of test images** is 10  and **Percentages of validation images** is 10. We will run the algorithm with this default setting. You can change this to a subset if you have less computing power e.g. **Percentages of train images** to 10 and  **Percentages of test images** to 5  and **Percentages of validation images** to 5.
 
-* As Output parameter also just use the SpecDeepMap_tutorial folder.
+* As **Output folder** use the previously created SpecDeepMap_tutorial folder.
 
 .. figure:: img/2_Dataset_Maker.jpeg
 
@@ -109,27 +109,38 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 ************************************
 
 * If you want to inspect the model behavior in more detail after the training you can use this algorithm and the logger location to open a Tensorboard, which is an interactive graphical environment to inspect model training behavior.
+* in the Tensorboard visualizer you need to define as input the location where you saved the model logger in the Deep Learning trainer algorithm. The location should be the folder we used through out the tutorial and ist subfolder so at SpecDeepMap_tutorial/lightning_logs .
+* As a port is 8000. In windows there is no need to change the port as each tensorboard port will be terminated before a new tensorboard is initialized. In other systems the algorithm doesnt support the port termiantaion and it is  necessary to define a different port each time to open a new tensorboard.
 
+.. figure:: img/4_Tensorboard_visualizer.jpeg
+
+* Here a snippet of the Tensorboard visualization.
+
+.. figure:: img/4_Tensorboard_visualizer_output.jpeg
 
 5. Deep Learning Tester
 =======================
 
-input test dataset csv
+The Deep Learning Tester evaluates the performance of a trained model on the test dataset. Hereby it calculates the Intersection over Union per class as well as the overall mean.
+For the parameter **Test Dataset** input the test_files.csv which we created with the Dataset Maker, it should be located in the folder SpecDeepMap_tutorial.
 
-model checkpoint epoch 26 or yours with highet val iou. or load this checpoint here.
-
-use device gpu or cpu
-
-leave other default parameter
-
-and create test_score.csv in the SpecDeepMap_tutorial folder.
+As model checkpoint you should load the model with the highest Val IoU ( score is written in created checkpoint file names).
+Load the model with highest val iou score or download this checkpoint file and load the model from the checkpoint file.
 
 
-If you load test_score.csv in enmapbox you can inspect the  iou score per class and mean on test dataset.
+.. figure:: img/5_Deep_learning_tester.jpeg
 
-Mean Iou 0.56 in line with other foundation model fine tuning. Nice!
+*Use as **Device** GPU if available otherwise CPU.
 
+* Define the location where you want to save **CSV IoU**. Use SpecDeepMap_tutorial as folder location and save a file test_score.csv in it.
 
+* leave rest of default values as is. Run the algorithm. If you load test_score.csv in enmapbox you can inspect the Iou score per class and mean on test dataset. For this load the CSV and open it attribute table.
+
+* Test achived a performance of Iou 0.56, which is in line with other foundation model performances on similar tasks.
+
+* Here the test_score.csv visualized in enmapbox.
+
+.. figure::  img/5_Deep_learning_tester_output.jpeg
 
 
 6. Deep learning Mapper
@@ -137,6 +148,8 @@ Mean Iou 0.56 in line with other foundation model fine tuning. Nice!
 
 this algo takes in the a whole ortomosai and extract with overlap image chips crops t and stiches it back to one entrie scense.
 Easy employment and boundary effect correction.
+
+.. figure::  img/6_Deep_learning_mapper.jpeg
 
 if you have small compute use Sentienl-2_tiny and EU_CROPMAP_2_tiny . still need to make that crop !
 
@@ -161,7 +174,7 @@ iou visualize
 map visualize
 
 
-
+.. figure::  img/6_Deep_learning_mapper_output.jpeg
 
 
 
