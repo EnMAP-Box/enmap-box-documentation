@@ -268,11 +268,11 @@ Here we describe how you can install QGIS, the required python packages and the 
 
 
 
-         #. Install the selected conda environment, e.g.
+         #. Download and install the selected conda environment yml file, e.g.
 
             .. code-block:: batch
 
-               mamba env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml
+               mamba env create -n enmapbox --file=C:\Users\username\Downloads\enmapbox_full_longterm.yml
 
          #. Activate the "enmapbox" environment and open QGIS by executing:
 
