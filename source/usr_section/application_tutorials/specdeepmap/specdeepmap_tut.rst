@@ -13,6 +13,73 @@ It is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in sub
 In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task.
 
 
+Installation of SpecDeepMap
+===========================
+
+* SpecDeepMap is available by default in EnMAP-box from 3.16 onwards. Follow EnMap-Box installation guide to regulary set up EnMAP-Box here or install via QGIS:
+https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html
+
+* In the follwing a EnMAP-box + SpecDeepMap  installation guide via conda/miniforge3 is given to set up a custom python environment, in which the graphical user interface of QGIS/EnMapbox can be used.
+* This is necessary for cuda setup, if user have capable cuda GPU and want to use SpecDeepMap with cuda.
+
+
+Install QGIS with conda (cross-platform)
+
+Conda is a cross-platform package manager that allows install software in separated environments.
+
+It is recommended to use Miniforge, a minimal installer for conda specific to the `conda-forge<https://conda-forge.org/>`_ channel.
+
+You can get the Miniforge Installer here <https://conda-forge.org/download/>`_.
+
+* Install a python environment for the EnMAP-Box/SpecDeepMap
+
+Open the Miniforge Prompt from the start menu.
+
+    .. figure:: img/conda.jpeg
+
+* Install the selected conda environment, e.g.
+
+   .. code-block:: batch
+
+   mamba env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/specdeepmap.yml -c conda-forge -y
+
+* Activate the "specdeepmap" environment and open QGIS by executing:
+
+   .. code-block:: batch
+
+   activate specdeepmap
+   qgis
+
+* In Qgis you can open EnMAP-Box and access SpecDeepMap via the EnMAP-box processing algorithm menu.
+
+* Install cuda for GPU use:
+
+*  If you have an available NVIDIA GPU, you need to download and install the CUDA Toolkit first from here https://developer.nvidia.com/cuda-downloads.
+
+Step 1: Activate the environment
+
+   .. code-block:: batch
+
+   mamba activate specdeepmap
+
+Step 2: Remove existing PyTorch packages (optional but clean)
+
+   .. code-block:: batch
+
+   mamba remove torch torchvision lightning segmentation-models-pytorch -y
+
+Step 3: Reinstall GPU versions via pip (example for CUDA 11.7).
+
+   .. code-block:: batch
+
+   pip install --upgrade --force-reinstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+
+   .. code-block:: batch
+
+   pip install --upgrade --force-reinstall lightning segmentation-models-pytorch --index-url https://download.pytorch.org/whl/cu117
+
+
+
 Introduction to SpecDeepMap
 ===========================
 
@@ -130,9 +197,9 @@ Load the model with highest val iou score or download this checkpoint file and l
 
 .. figure:: img/5_Deep_learning_tester.jpeg
 
-*Use as **Device** GPU if available otherwise CPU.
+* Use as **Device** GPU if available otherwise CPU.
 
-* Define the location where you want to save **CSV IoU**. Use SpecDeepMap_tutorial as folder location and save a file test_score.csv in it.
+* Define the location where you want to save **IoU CSV**. Use SpecDeepMap_tutorial as folder location and save a file test_score.csv in it.
 
 * leave rest of default values as is. Run the algorithm. If you load test_score.csv in enmapbox you can inspect the Iou score per class and mean on test dataset. For this load the CSV and open it attribute table.
 
@@ -141,43 +208,38 @@ Load the model with highest val iou score or download this checkpoint file and l
 * Here the test_score.csv visualized in enmapbox.
 
 .. figure::  img/5_Deep_learning_tester_output.jpeg
+   :scale: 90%
 
 
-6. Deep learning Mapper
+6. Deep Learning Mapper
 ============================
 
-this algo takes in the a whole ortomosai and extract with overlap image chips crops t and stiches it back to one entrie scense.
-Easy employment and boundary effect correction.
+The Deep Learning Mapper can apply a trained model to an entire orthomosaic or satellite scene. In the background this algorithm automatically extracts overlapping image chips from the Input raster, predicts on them and crops them and combine them back together to a continiuos prediction image.
+This enables easy employment of the model (also automatically apply same scaling and normalization as used in training of model). By cropping boundary pixels it also minimizes noise in prediction by reducing boundary effect common in 2D- CNNs.
+
 
 .. figure::  img/6_Deep_learning_mapper.jpeg
 
-if you have small compute use Sentienl-2_tiny and EU_CROPMAP_2_tiny . still need to make that crop !
+* Use as **Input Raster** the spectral image Sentinel_2_TOA_2.tif and **Ground Truth Raster**: EUCROPMAP_2.tif .
 
-interface
+* Use your model checkpoint with highest IoU on Validation data for **Model Checkpoint** ( same checkpoint as we used for the Deep Learning Tester).
+* Otherwise use the downloaded checkpoint.
 
-Input Sentinel-2 2 and eu crop map 2
+* For the **Minimum overlap of tiles in Percentage** use 20.
 
-model checkpoint 26
+* Use ** Device** GPU if available otherwise CPU.
 
-20 % overlap
-
-define output prediction as Raster : EU_CROPMAP_2_prediction.tif in the SpecDeepMap_tutorial folder.
-define output IoU CSV :EU_CROPMAP_2_score.csv in the SpecDeepMap_tutorial folder.
-
-interface
-
-run algo and here output
-
-iou visualize
-
-
-map visualize
+* For **Prediction as Raster** define the output: EU_CROPMAP_2_prediction.tif in the SpecDeepMap_tutorial folder.
+* For **IoU CSV** define output: EU_CROPMAP_2_score.csv in the SpecDeepMap_tutorial folder.
+* Run the algorithm. you can open the predicted Raster and CSV in the Enmap-box to inspect the prediction visualy and the IoU score per class.
+* Mean IoU is 0.71 great!
 
 
 .. figure::  img/6_Deep_learning_mapper_output.jpeg
+   :scale: 90%
 
 
-
+* Now you have absolved the Tutorial!
 
 
 
