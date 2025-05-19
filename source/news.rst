@@ -1,33 +1,85 @@
 News
 ****
 
-Upcoming Events
-===============
+.. raw:: html
 
-.. list-table::
+    <div style="display: flex; justify-content: space-between; gap: 40px; align-items: flex-start;">
 
-    *   - Title
-        - Date
-        - Location
-        - Comments
+        <div style="flex: 1; min-width: 45%;">
 
-    *   - `2nd EnMAP User Workshop <https://enmap.geographie-muenchen.de/>`_
-        - 2-4 April 2025
-        - Munich, Germany
-        - Tutorial
+            <h2>Upcoming Events</h2>
 
-    *   - `FOSSGIS 2025 <https://www.fossgis-konferenz.de/2025/>`_
-        - 26-29 March
-        - Münster, Germany
-        - Oral Presentation
+            <table border="1" class="docutils">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="https://enmap.geographie-muenchen.de/">2nd EnMAP User Workshop</a></td>
+                        <td>2-4 April 2025</td>
+                        <td>Munich, Germany</td>
+                        <td>Tutorial</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.fossgis-konferenz.de/2025/">FOSSGIS 2025</a></td>
+                        <td>26-29 March</td>
+                        <td>Münster, Germany</td>
+                        <td>Oral Presentation</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://lps25.esa.int/">Living Planet Symposium 2025</a></td>
+                        <td>23-27 June 2025</td>
+                        <td>Vienna, Austria</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
 
-    *   - `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
-        - 23-27 June 2025
-        - Vienna, Austria
-        -
+        </div>
 
+        <div style="flex: 1; min-width: 45%;">
 
+            <h2>Bluesky Feed</h2>
 
+            <div style="height: 50%; overflow: visible; padding-right: 20px; margin-bottom: 20px;">
+                <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:7obrng4uimcvfje4j3x7vubi/app.bsky.feed.post/3llvlcc4sws2d" data-bluesky-cid="bafyreibob4ndupbeqpye6bph45cypag4ztql6655fxj76waq4x2uls2a3a" data-bluesky-embed-color-mode="system">
+                    <p lang="en">Dr. Akpona Okujeni including colleagues Shawn Schneidereit , @lasseharkort.bsky.social and @patrickhostert.bsky.social on NPV mapping from #EnMAP Hyperspectral time series in California &amp; Namibia 🛰️
+
+                     At the #EnMAP User Conference:
+                     www.enmap.org/user_confere...<br><br><a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3llvlcc4sws2d?ref_src=embed">[image or embed]</a></p>&mdash; Earth Observation Lab (<a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi?ref_src=embed">@humboldteolab.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3llvlcc4sws2d?ref_src=embed">April 3, 2025 at 11:23 AM</a>
+                </blockquote>
+                <script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+            </div>
+
+            <div style="height: 50%; overflow: visible; padding-right: 20px; margin-bottom: 20px;">
+                <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:7obrng4uimcvfje4j3x7vubi/app.bsky.feed.post/3lltwn2wuhk2p" data-bluesky-cid="bafyreiblkwcht2vkht3x5kfdrrs4sywq37gua4tq6gaqf2ag2lmnpzqp2u" data-bluesky-embed-color-mode="system">
+                   <p lang="en">Our PhD student Shawn Schneidereit at the EnMAP User Workshop in Munich presenting his research on global NPV mapping 🛰️
+
+                     The EnMAP User Workshop is goes until Friday 4th
+                     enmap.geographie-muenchen.de
+
+                     Join online via:
+                     lmu-munich.zoom-x.de/meeting/regi...<br><br><a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3lltwn2wuhk2p?ref_src=embed">[image or embed]</a></p>&mdash; Earth Observation Lab (<a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi?ref_src=embed">@humboldteolab.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3lltwn2wuhk2p?ref_src=embed">April 2, 2025 at 7:40 PM</a>
+                </blockquote>
+                <script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+            </div>
+
+            <div style="height: 50%; overflow: visible; padding-right: 20px; margin-bottom: 20px;">
+                EMBED 3
+            </div>
+
+            <div style="height: 50%; overflow: visible; padding-right: 20px; margin-bottom: 20px;">
+                EMBED 4
+            </div>
+
+        </div>
+
+    </div>
 
 
 EnMAP Webinar
