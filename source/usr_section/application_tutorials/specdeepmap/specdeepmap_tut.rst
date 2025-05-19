@@ -16,68 +16,46 @@ In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2
 Installation of SpecDeepMap
 ===========================
 
-* SpecDeepMap is available by default in EnMAP-box from 3.16 onwards. Follow EnMap-Box installation guide to regulary set up EnMAP-Box here or install via QGIS:
+SpecDeepMap is available by default in EnMAP-box from 3.16 onwards until further notice. Follow EnMap-Box installation guide to regulary set up EnMAP-Box here or install via QGIS:
 https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html
 
-* In the follwing a EnMAP-box + SpecDeepMap  installation guide via conda/miniforge3 is given to set up a custom python environment, in which the graphical user interface of QGIS/EnMapbox can be used.
-* This is necessary for cuda setup, if user have capable cuda GPU and want to use SpecDeepMap with cuda.
+* Install QGIS+SpecDeepMAp via mini-conda (cross-platform).
 
+Miniconda is a cross-platform package manager that allows install software in separated environments. Get miniconda from https://www.anaconda.com/docs/getting-started/miniconda/main
+After installing miniconda open the Mini-conda Prompt from the start menu.
 
-Install QGIS with conda (cross-platform)
+    .. figure:: img/conda.jpg
 
-Conda is a cross-platform package manager that allows install software in separated environments.
+Install the an python environment using a yml file via the following command.
 
-It is recommended to use Miniforge, a minimal installer for conda specific to the `conda-forge<https://conda-forge.org/>`_ channel.
+.. code-block:: bash
 
-You can get the Miniforge Installer here <https://conda-forge.org/download/>`_.
+   conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/specdeepmap.yml -c conda-forge -y
 
-* Install a python environment for the EnMAP-Box/SpecDeepMap
+Activate the "specdeepmap" environment and open QGIS by executing:
 
-Open the Miniforge Prompt from the start menu.
-
-    .. figure:: img/conda.jpeg
-
-* Install the selected conda environment, e.g.
-
-   .. code-block:: batch
-
-   mamba env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/specdeepmap.yml -c conda-forge -y
-
-* Activate the "specdeepmap" environment and open QGIS by executing:
-
-   .. code-block:: batch
+.. code-block:: bash
 
    activate specdeepmap
    qgis
 
-* In Qgis you can open EnMAP-Box and access SpecDeepMap via the EnMAP-box processing algorithm menu.
+In Qgis you can open EnMAP-Box and access SpecDeepMap via the EnMAP-box processing algorithm menu.
 
-* Install cuda for GPU use:
-
-*  If you have an available NVIDIA GPU, you need to download and install the CUDA Toolkit first from here https://developer.nvidia.com/cuda-downloads.
+* If you have a cuda capable GPU you can also install cuda for use SpecDeepMap with GPU support (optional):
 
 Step 1: Activate the environment
 
-   .. code-block:: batch
+.. code-block:: bash
 
-   mamba activate specdeepmap
+   conda activate specdeepmap
 
-Step 2: Remove existing PyTorch packages (optional but clean)
+Step 2: Re-install pytorch with GPU support + cuda via pip (example for CUDA 12.4). This might take some time as cuda is around 4,5 GB.
 
-   .. code-block:: batch
+.. code-block:: bash
 
-   mamba remove torch torchvision lightning segmentation-models-pytorch -y
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 -y --force-reinstall
 
-Step 3: Reinstall GPU versions via pip (example for CUDA 11.7).
-
-   .. code-block:: batch
-
-   pip install --upgrade --force-reinstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
-
-   .. code-block:: batch
-
-   pip install --upgrade --force-reinstall lightning segmentation-models-pytorch --index-url https://download.pytorch.org/whl/cu117
-
+Not tested by myself but setting up cuda support is also possible via OSGeo4W Shell under windows. For this the developer of GEO-SAM recommend to first download and install the CUDA Toolkit (https://developer.nvidia.com/cuda-downloads) e.g. cuda 12.4 and then run step.2 command in the shell. (see:https://geo-sam.readthedocs.io/en/latest/installation.html ).
 
 
 Introduction to SpecDeepMap
@@ -152,22 +130,22 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 
 .. figure:: img/3_Deep_learning_trainer.jpeg
 
-* As Input folder (Train and Validation dataset) use the SpecDeepMap_tutorial folder. By model architecture and backbone you can define possible model combinations. For this example leave the default values.
-* Change the Load pretrained weights parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al 2023 (https://arxiv.org/abs/2211.07044).
-* We will use the default parameter (freeze backbone, data augumentation, early stopping and balanced Training using class weights)
+* As **Input folder (Train and Validation dataset)** use the SpecDeepMap_tutorial folder. By **model architecture** and **model backbone** you can define possible model combinations. For this example leave the default values so Unet and resnet18.
+* Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al 2023 (https://arxiv.org/abs/2211.07044).
+* We will use the default for the following parameter and leave them checked (**freeze backbone**, **data augumentation**, **early stopping** and **balanced Training using class weights**)
 
-* As Batch size we use 16 and for Epochs 50. ( If you have less computational resources you can use als a batch size of 4 or 8 and only train for 5-8 epochs.
-* As Learning rate we will use 0.003.
-* As type of device use GPU if available and installed for the enmapbox python environment. Otherwise use CPU, you can also just reduce the epochs to 2 if you run it on CPU.
+* As **Batch size** we use 16 and for **Epochs** 50. ( If you have less computational resources you can use als a batch size of 4 or 8 and only train for 5-8 epochs.
+* As **Learning rate** we will use 0.003.
+* As **type of device** use GPU if available and installed for the enmapbox python environment. Otherwise use CPU, isf you use CPU you can also just reduce the **Epochs** to 2, to minimize the waiting time.
 
-* As Path for saving tensorboard logger use the SpecDeepMap_tutorial folder.
-* As Path for saving model use the SpecDeepMap_tutorial folder.
+* As **Path for saving tensorboard logger** use the SpecDeepMap_tutorial folder.
+* As **Path for saving model** use the SpecDeepMap_tutorial folder.
 
 * Lest run the model. During training in the Logger Interface the progress of the training is printed after each epoch. (epoch means one loop through the training dataset). In the logger the train and validation loss is displayed, which should reduce during training and the train IoU and val IoU should increase.
 * The model uses the training data for learning the weights and the validation data is just used to check if the model over or underfits. ( if train and validation values are very different)
 
 * After training the logger displays the best model path for the best model. In general you want to use the model with the highest IoU score on the validation dataset. This is also written into the model file name, so you can find it later again at any time.
-* Here a logger visualization of the training we just performed. In our case with GPU 47 epochs took around 12 min. 47 because of early stopping ( stops training if not val Iou doenst increase for 20 epochs).
+* Here a logger visualization of the training we just performed. In our case with GPU 47 epochs took around 12 min. 47 because of early stopping ( stops training if val IoU doesn't increases).
 
 .. figure:: img/3_Deep_learning_trainer_output.jpeg
 
@@ -188,7 +166,7 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 5. Deep Learning Tester
 =======================
 
-The Deep Learning Tester evaluates the performance of a trained model on the test dataset. Hereby it calculates the Intersection over Union per class as well as the overall mean.
+The Deep Learning Tester evaluates the performance of a trained model on the test dataset. Hereby it calculates the Intersection over Union Score per class as well as the overall mean.
 For the parameter **Test Dataset** input the test_files.csv which we created with the Dataset Maker, it should be located in the folder SpecDeepMap_tutorial.
 
 As model checkpoint you should load the model with the highest Val IoU ( score is written in created checkpoint file names).
@@ -208,7 +186,6 @@ Load the model with highest val iou score or download this checkpoint file and l
 * Here the test_score.csv visualized in enmapbox.
 
 .. figure::  img/5_Deep_learning_tester_output.jpeg
-   :scale: 90%
 
 
 6. Deep Learning Mapper
@@ -236,7 +213,7 @@ This enables easy employment of the model (also automatically apply same scaling
 
 
 .. figure::  img/6_Deep_learning_mapper_output.jpeg
-   :scale: 90%
+
 
 
 * Now you have absolved the Tutorial!
