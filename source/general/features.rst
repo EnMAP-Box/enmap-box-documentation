@@ -5,6 +5,114 @@
 Features
 ========
 
+GUI Overview
+============
+This is an interactive overview of the EnMAP-Box GUI. Hover over different sections to see tooltips describing their function.
+
+.. raw:: html
+
+    <svg
+      width="1085"
+      height="682"
+      viewBox="0 15 385.22895 202.58583"
+      style="display: block; margin: auto; font-family: Arial, sans-serif;">
+
+      <style>
+        rect {
+          fill: transparent;
+          stroke: none;
+          pointer-events: all;
+          transition: stroke 0.3s ease, fill-opacity 0.3s ease;
+        }
+        rect:hover {
+          stroke: red;
+          stroke-width: 1;
+          fill-opacity: 0.1;
+          cursor: pointer;
+        }
+        text.label {
+          font-size: 8px;
+          fill: red;
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          font-weight: normal;
+          user-select: none;
+        }
+        rect.bg {
+          fill: beige;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+          rx: 2;
+          ry: 2;
+        }
+        rect:hover + rect.bg {
+          opacity: 1;
+        }
+        rect:hover + rect.bg + text.label {
+          opacity: 1;
+        }
+      </style>
+
+      <!-- Base image -->
+      <image
+        href="../_static/img/enmap_gui_base.png"
+        x="0" y="0"
+        width="385.22895"
+        height="202.58583"
+        preserveAspectRatio="none" />
+
+      <a href="gui.html#options" target="_self">
+        <rect x="0.2717" y="5.977" width="65.747" height="4.8903" />
+        <rect class="bg" x="8" y="12" width="45" height="12" />
+        <text class="label" x="10" y="20">Options</text>
+      </a>
+
+      <a href="gui.html#toolbar" target="_self">
+        <rect x="0.5434" y="11.4107" width="236.092" height="9.2372" />
+        <rect class="bg" x="95" y="22" width="40" height="12" />
+        <text class="label" x="100" y="30">Toolbar</text>
+      </a>
+
+      <a href="gui.html#data-sources-panel" target="_self">
+        <rect x="0.5434" y="21.4629" width="53.521" height="77.1579" />
+        <rect class="bg" x="10" y="58" width="75" height="14" />
+        <text class="label" x="12" y="70">Data Sources Panel</text>
+      </a>
+
+      <a href="gui.html#data-views-panel" target="_self">
+        <rect x="0.5434" y="99.4359" width="53.25" height="99.1642" />
+        <rect class="bg" x="10" y="158" width="68" height="14" />
+        <text class="label" x="12" y="170">Data Views Panel</text>
+      </a>
+
+      <a href="gui.html#map-viewer" target="_self">
+        <rect x="54.0649" y="20.3762" width="265.706" height="89.927" />
+        <rect class="bg" x="145" y="58" width="50" height="14" />
+        <text class="label" x="147" y="70">Map Viewer</text>
+      </a>
+
+      <a href="gui.html#spectral-library-viewer" target="_self">
+        <rect x="54.0649" y="109.7598" width="265.977" height="88.8402" />
+        <rect class="bg" x="145" y="158" width="90" height="14" />
+        <text class="label" x="147" y="170">Spectral Library Viewer</text>
+      </a>
+
+      <a href="gui.html#processing-toolbox" target="_self">
+        <rect x="320.0422" y="20.6479" width="65.204" height="118.454" />
+        <rect class="bg" x="255" y="58" width="75" height="14" />
+        <text class="label" x="257" y="70">Processing Toolbox</text>
+      </a>
+
+      <a href="gui.html#spectral-profile-sources" target="_self">
+        <rect x="320.0422" y="139.1015" width="65.747" height="59.4985" />
+        <rect class="bg" x="255" y="183" width="90" height="14" />
+        <text class="label" x="257" y="190">Spectral Profile Sources</text>
+      </a>
+
+    </svg>
+
 Visualization
 =============
 
