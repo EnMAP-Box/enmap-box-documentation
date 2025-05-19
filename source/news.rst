@@ -46,33 +46,41 @@ News
 
             <h2>Bluesky Feed</h2>
 
-            <!-- Your embed HTML will be inserted here by the script -->
-            <div>
-                EMBED 1
+            <div style="height: 50%; overflow: visible; padding-right: 20px; margin-bottom: 20px;">
+                <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:7obrng4uimcvfje4j3x7vubi/app.bsky.feed.post/3llvlcc4sws2d" data-bluesky-cid="bafyreibob4ndupbeqpye6bph45cypag4ztql6655fxj76waq4x2uls2a3a" data-bluesky-embed-color-mode="system">
+                    <p lang="en">Dr. Akpona Okujeni including colleagues Shawn Schneidereit , @lasseharkort.bsky.social and @patrickhostert.bsky.social on NPV mapping from #EnMAP Hyperspectral time series in California &amp; Namibia 🛰️
+
+                     At the #EnMAP User Conference:
+                     www.enmap.org/user_confere...<br><br><a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3llvlcc4sws2d?ref_src=embed">[image or embed]</a></p>&mdash; Earth Observation Lab (<a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi?ref_src=embed">@humboldteolab.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3llvlcc4sws2d?ref_src=embed">April 3, 2025 at 11:23 AM</a>
+                </blockquote>
+                <script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
             </div>
-            <div style="margin-top: 20px;">
-                EMBED 2
+
+            <div style="height: 50%; overflow: visible; padding-right: 20px; margin-bottom: 20px;">
+                <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:7obrng4uimcvfje4j3x7vubi/app.bsky.feed.post/3lltwn2wuhk2p" data-bluesky-cid="bafyreiblkwcht2vkht3x5kfdrrs4sywq37gua4tq6gaqf2ag2lmnpzqp2u" data-bluesky-embed-color-mode="system">
+                   <p lang="en">Our PhD student Shawn Schneidereit at the EnMAP User Workshop in Munich presenting his research on global NPV mapping 🛰️
+
+                     The EnMAP User Workshop is goes until Friday 4th
+                     enmap.geographie-muenchen.de
+
+                     Join online via:
+                     lmu-munich.zoom-x.de/meeting/regi...<br><br><a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3lltwn2wuhk2p?ref_src=embed">[image or embed]</a></p>&mdash; Earth Observation Lab (<a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi?ref_src=embed">@humboldteolab.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3lltwn2wuhk2p?ref_src=embed">April 2, 2025 at 7:40 PM</a>
+                </blockquote>
+                <script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
             </div>
-            <div style="margin-top: 20px;">
+
+            <div style="height: 50%; overflow: visible; padding-right: 20px; margin-bottom: 20px;">
                 EMBED 3
             </div>
 
+            <div style="height: 50%; overflow: visible; padding-right: 20px; margin-bottom: 20px;">
+                EMBED 4
+            </div>
+
         </div>
+
     </div>
 
-
-    <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:7obrng4uimcvfje4j3x7vubi/app.bsky.feed.post/3llvlcc4sws2d" data-bluesky-cid="bafyreibob4ndupbeqpye6bph45cypag4ztql6655fxj76waq4x2uls2a3a" data-bluesky-embed-color-mode="system"><p lang="en">Dr. Akpona Okujeni including colleagues Shawn Schneidereit , @lasseharkort.bsky.social and @patrickhostert.bsky.social on NPV mapping from #EnMAP Hyperspectral time series in California &amp; Namibia 🛰️
-
-    At the #EnMAP User Conference:
-    www.enmap.org/user_confere...<br><br><a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3llvlcc4sws2d?ref_src=embed">[image or embed]</a></p>&mdash; Earth Observation Lab (<a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi?ref_src=embed">@humboldteolab.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3llvlcc4sws2d?ref_src=embed">April 3, 2025 at 11:23 AM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
-
-    <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:7obrng4uimcvfje4j3x7vubi/app.bsky.feed.post/3lltwn2wuhk2p" data-bluesky-cid="bafyreiblkwcht2vkht3x5kfdrrs4sywq37gua4tq6gaqf2ag2lmnpzqp2u" data-bluesky-embed-color-mode="system"><p lang="en">Our PhD student Shawn Schneidereit at the EnMAP User Workshop in Munich presenting his research on global NPV mapping 🛰️
-
-    The EnMAP User Workshop is goes until Friday 4th
-    enmap.geographie-muenchen.de
-
-    Join online via:
-    lmu-munich.zoom-x.de/meeting/regi...<br><br><a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3lltwn2wuhk2p?ref_src=embed">[image or embed]</a></p>&mdash; Earth Observation Lab (<a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi?ref_src=embed">@humboldteolab.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:7obrng4uimcvfje4j3x7vubi/post/3lltwn2wuhk2p?ref_src=embed">April 2, 2025 at 7:40 PM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 
 EnMAP Webinar
 =============
