@@ -1,40 +1,65 @@
 News
 ****
 
-Upcoming Events
-===============
-
-.. list-table::
-
-    *   - Title
-        - Date
-        - Location
-        - Comments
-
-    *   - `2nd EnMAP User Workshop <https://enmap.geographie-muenchen.de/>`_
-        - 2-4 April 2025
-        - Munich, Germany
-        - Tutorial
-
-    *   - `FOSSGIS 2025 <https://www.fossgis-konferenz.de/2025/>`_
-        - 26-29 March
-        - Münster, Germany
-        - Oral Presentation
-
-    *   - `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
-        - 23-27 June 2025
-        - Vienna, Austria
-        -
-
-Bluesky Feed
-============
-
 .. raw:: html
 
-   <div style="text-align: left; margin: 0;">
-       <rssapp-list id="ITz0NaWac0ImLiH9"></rssapp-list>
-       <script src="https://widget.rss.app/v1/list.js" type="text/javascript" async></script>
-   </div>
+    <div style="display: flex; justify-content: space-between; gap: 40px; align-items: flex-start;">
+
+        <div style="flex: 1; min-width: 45%;">
+
+            <h2>Upcoming Events</h2>
+
+            <table border="1" class="docutils">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="https://enmap.geographie-muenchen.de/">2nd EnMAP User Workshop</a></td>
+                        <td>2-4 April 2025</td>
+                        <td>Munich, Germany</td>
+                        <td>Tutorial</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.fossgis-konferenz.de/2025/">FOSSGIS 2025</a></td>
+                        <td>26-29 March</td>
+                        <td>Münster, Germany</td>
+                        <td>Oral Presentation</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://lps25.esa.int/">Living Planet Symposium 2025</a></td>
+                        <td>23-27 June 2025</td>
+                        <td>Vienna, Austria</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div style="flex: 1; min-width: 45%;">
+
+            <h2>Bluesky Feed</h2>
+
+            <!-- Your embed HTML will be inserted here by the script -->
+            <div>
+                EMBED 1
+            </div>
+            <div style="margin-top: 20px;">
+                EMBED 2
+            </div>
+            <div style="margin-top: 20px;">
+                EMBED 3
+            </div>
+
+        </div>
+    </div>
+
 
     <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:7obrng4uimcvfje4j3x7vubi/app.bsky.feed.post/3llvlcc4sws2d" data-bluesky-cid="bafyreibob4ndupbeqpye6bph45cypag4ztql6655fxj76waq4x2uls2a3a" data-bluesky-embed-color-mode="system"><p lang="en">Dr. Akpona Okujeni including colleagues Shawn Schneidereit , @lasseharkort.bsky.social and @patrickhostert.bsky.social on NPV mapping from #EnMAP Hyperspectral time series in California &amp; Namibia 🛰️
 

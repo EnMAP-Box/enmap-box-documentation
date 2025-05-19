@@ -12,3 +12,7 @@ sphinx-autobuild
 sphinx-tabs
 sphinx-datatables
 myst_parser
+selenium
+webdriver-manager
+requests
+beautifulsoup4
