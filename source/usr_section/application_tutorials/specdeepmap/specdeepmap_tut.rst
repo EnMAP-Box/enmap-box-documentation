@@ -214,7 +214,7 @@ To call the Tensorboard visualizer you need to define as input the location wher
 The Deep Learning Tester evaluates the performance of a trained model on the test dataset. Hereby it calculates the Intersection over Union Score per class as well as the overall mean.
 For the parameter **Test Dataset** input the test_files.csv which we created with the Dataset Maker, it should be located in the folder SpecDeepMap_tutorial.
 
-*As model checkpoint you should load the model with the highest Val IoU ( score is written in created checkpoint file names). Load the model with highest val iou score or download this checkpoint file and load the model from the checkpoint file.
+* As model checkpoint you should load the model with the highest Val IoU ( score is written in created checkpoint file names). Load the model with highest val iou score or download this checkpoint file and load the model from the checkpoint file.
 
 
    .. figure:: img/5_Deep_learning_tester.jpeg
@@ -259,8 +259,9 @@ This enables easy employment of the model (also automatically apply same scaling
 
 * For **Prediction as Raster** define the output: EU_CROPMAP_2_prediction.tif in the SpecDeepMap_tutorial folder.
 * For **IoU CSV** define output: EU_CROPMAP_2_score.csv in the SpecDeepMap_tutorial folder.
-* Run the algorithm. you can open the predicted Raster and CSV in the Enmap-box to inspect the prediction visualy and the IoU score per class.
-* Mean IoU is 0.71 great!
+* Run the algorithm.
+
+You can open the predicted Raster and CSV in the Enmap-box to inspect the prediction visually and the IoU score per class. Mean IoU is 0.71 great!
 
 
    .. figure::  img/6_Deep_learning_mapper_output.jpeg
