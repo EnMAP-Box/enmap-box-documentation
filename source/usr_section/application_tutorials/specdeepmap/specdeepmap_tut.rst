@@ -1,7 +1,7 @@
 
 
-Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Segmentation 
-#########################################################################################
+11. Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Segmentation
+#############################################################################################
 
 **Authors:** Leon-Friedrich Thomas
 
@@ -12,6 +12,14 @@ It is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in sub
 
 In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task.
 
+Introduction to SpecDeepMap
+***************************
+
+The SpecDeepMap applictaion consists of six QGIS processing algorithms and is designed for Semantic Segmentation tasks (pixel classification). With this application a user can train  deep-learning architectures U-Net, U-Net++, DeepLabV3+, and SegFormer with a variety of encoder backbones, such as ResNet-18 and -50, EfficientNet, MobileNet, ConvNext, and Swin-Transformer. SpecDeepMap is designed for multispectral and hyperspectral images and takes geospatial data characteristics into account. A highlight is the integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery.
+
+    .. figure:: img/1_SpecDeepMap_Overview.png
+
+         SpecDeepMap Workflow
 
 Installation of SpecDeepMap
 ***************************
@@ -79,19 +87,19 @@ For GPU version with cuda 12.4 run the following command in miniconda shell. If 
 
    conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/specdeepmap_cuda.yml -c conda-forge -y
 
-Introduction to SpecDeepMap
-***************************
 
-The SpecDeepMap applictaion consists of six QGIS processing algorithms and is designed for Semantic Segmentation tasks (pixel classification). With this application a user can train  deep-learning architectures U-Net, U-Net++, DeepLabV3+, and SegFormer with a variety of encoder backbones, such as ResNet-18 and -50, EfficientNet, MobileNet, ConvNext, and Swin-Transformer. SpecDeepMap is designed for multispectral and hyperspectral images and takes geospatial data characteristics into account. A highlight is the integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery.
 
-    .. figure:: img/1_SpecDeepMap_Overview.png
-
-         SpecDeepMap Workflow
+Getting started
+***************
 
 SpecDeepMap Menu
 ================
 
-Launpython -m http.server 8080 --directory build\htmlch QGIS and click the enmapbox icon in the toolbar to open the EnMAP-Box. In the EnMAP-Box GUI you can find the SpecDeepMap application in the algorithms in the **EnMAP-Box Processing Algorithms**.
+Launch QGIS and click the enmapbox icon in the toolbar to open the EnMAP-Box. In the EnMAP-Box GUI you can find the SpecDeepMap application in the algorithms in the **EnMAP-Box Processing Algorithms**.
+
+    .. figure:: img/specdeepmap_menu.png
+
+         SpecDeepMap Workflow
 
 Download Example Data
 =====================
@@ -169,24 +177,26 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 
 * As **Path for saving tensorboard logger** use the SpecDeepMap_tutorial folder.
 * As **Path for saving model** use the SpecDeepMap_tutorial folder.
+* Lest run the model.
 
-* Lest run the model. During training in the Logger Interface the progress of the training is printed after each epoch. (epoch means one loop through the training dataset). In the logger the train and validation loss is displayed, which should reduce during training and the train IoU and val IoU should increase.
-* The model uses the training data for learning the weights and the validation data is just used to check if the model over or underfits. ( if train and validation values are very different)
+During training in the Logger Interface the progress of the training is printed after each epoch. (epoch means one loop through the training dataset). In the logger the train and validation loss is displayed, which should reduce during training and the train IoU and val IoU should increase.
+The model uses the training data for learning the weights and the validation data is just used to check if the model over or underfits. ( if train and validation values are very different).
+After training the logger displays the best model path for the best model. In general you want to use the model with the highest IoU score on the validation dataset. This is also written into the model file name, so you can find it later again at any time.
+Here a logger visualization of the training we just performed. In our case with GPU 47 epochs took around 12 min. 47 because of early stopping ( stops training if val IoU doesn't increases).
 
-* After training the logger displays the best model path for the best model. In general you want to use the model with the highest IoU score on the validation dataset. This is also written into the model file name, so you can find it later again at any time.
-* Here a logger visualization of the training we just performed. In our case with GPU 47 epochs took around 12 min. 47 because of early stopping ( stops training if val IoU doesn't increases).
+   .. figure:: img/3_Deep_learning_trainer_output.jpeg
 
-.. figure:: img/3_Deep_learning_trainer_output.jpeg
-
-      Visualization of IoU and Loss per epoch during training of Deep Learning Trainer
+         Visualization of IoU and Loss per epoch during training of Deep Learning Trainer
 
 
 4. Tensorboard visualizer (optional)
 ************************************
 
-* If you want to inspect the model behavior in more detail after the training you can use this algorithm and the logger location to open a Tensorboard, which is an interactive graphical environment to inspect model training behavior.
-* in the Tensorboard visualizer you need to define as input the location where you saved the model logger in the Deep Learning trainer algorithm. The location should be the folder we used through out the tutorial and ist subfolder so at SpecDeepMap_tutorial/lightning_logs .
-* As a port is 8000. In windows there is no need to change the port as each tensorboard port will be terminated before a new tensorboard is initialized. In other systems the algorithm doesnt support the port termiantaion and it is  necessary to define a different port each time to open a new tensorboard.
+If you want to inspect the model behavior in more detail after the training you can use this algorithm and the logger location to open a Tensorboard, which is an interactive graphical environment to inspect model training behavior.
+To call the Tensorboard visualizer you need to define as input the location where you saved the model logger in the Deep Learning trainer algorithm.
+
+* Define for **Tensorboard logger Directory** the subfolder SpecDeepMap_tutorial/lightning_logs.
+* The default **TensorBoard port** is 8000. In windows there is no need to change the port as each tensorboard port will be terminated before a new tensorboard is initialized. In other systems the algorithm doesnt support the port terminataion and it is  necessary to define a different port each time to open a new tensorboard.
 
    .. figure:: img/4_Tensorboard_visualizer.jpeg
 
@@ -204,8 +214,7 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 The Deep Learning Tester evaluates the performance of a trained model on the test dataset. Hereby it calculates the Intersection over Union Score per class as well as the overall mean.
 For the parameter **Test Dataset** input the test_files.csv which we created with the Dataset Maker, it should be located in the folder SpecDeepMap_tutorial.
 
-As model checkpoint you should load the model with the highest Val IoU ( score is written in created checkpoint file names).
-Load the model with highest val iou score or download this checkpoint file and load the model from the checkpoint file.
+*As model checkpoint you should load the model with the highest Val IoU ( score is written in created checkpoint file names). Load the model with highest val iou score or download this checkpoint file and load the model from the checkpoint file.
 
 
    .. figure:: img/5_Deep_learning_tester.jpeg
