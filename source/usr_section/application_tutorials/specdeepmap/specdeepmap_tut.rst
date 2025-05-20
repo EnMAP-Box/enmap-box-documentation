@@ -14,17 +14,19 @@ In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2
 
 
 Installation of SpecDeepMap
-===========================
+***************************
 
 SpecDeepMap is available by default in EnMAP-box from 3.16 onwards until further notice. Follow EnMap-Box installation guide to regulary set up EnMAP-Box here or install via QGIS:
 https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html
 
-* Install QGIS+SpecDeepMAp via mini-conda (cross-platform).
+Install QGIS & SpecDeepMAp via mini-conda (cross-platform)
+==========================================================
 
 Miniconda is a cross-platform package manager that allows install software in separated environments. Get miniconda from https://www.anaconda.com/docs/getting-started/miniconda/main
 After installing miniconda open the Mini-conda Prompt from the start menu.
 
     .. figure:: img/conda.jpg
+         :scale: 60%
 
 Install the an python environment using a yml file via the following command.
 
@@ -41,7 +43,10 @@ Activate the "specdeepmap" environment and open QGIS by executing:
 
 In Qgis you can open EnMAP-Box and access SpecDeepMap via the EnMAP-box processing algorithm menu.
 
-* If you have a cuda capable GPU you can also install cuda for use SpecDeepMap with GPU support (optional):
+Install QGIS & SpecDeepMAp via mini-conda with GPU support (optional)
+=====================================================================
+
+If you have a cuda capable GPU you can also install cuda to use SpecDeepMap with GPU support:
 
 Step 1: Activate the environment
 
@@ -49,7 +54,7 @@ Step 1: Activate the environment
 
    conda activate specdeepmap
 
-Step 2: Re-install pytorch with GPU support + cuda via pip (example for CUDA 12.4). This might take some time as cuda is around 4,5 GB.
+Step 2: Re-install pytorch with cuda GPU support via pip (example for CUDA 12.4). This might take some time as cuda is around 4,5 GB.
 
 .. code-block:: bash
 
@@ -57,21 +62,39 @@ Step 2: Re-install pytorch with GPU support + cuda via pip (example for CUDA 12.
 
 Not tested by myself but setting up cuda support is also possible via OSGeo4W Shell under windows. For this the developer of GEO-SAM recommend to first download and install the CUDA Toolkit (https://developer.nvidia.com/cuda-downloads) e.g. cuda 12.4 and then run step.2 command in the shell. (see:https://geo-sam.readthedocs.io/en/latest/installation.html ).
 
+Recovery Environment with Explicitly Defined Setup for QGIS & SpecDeepMap via Miniconda (Cross-Platform)
+========================================================================================================
+
+If SpecDeepMap encounters issues due to Python package updates or incompatibilities, you can restore a fully functional environment using the provided configuration files. These define all required packages explicitly, ensuring that both CPU and GPU versions run reliably across platforms.
+
+For cpu version run the following command in miniconda shell:
+
+.. code-block:: bash
+
+   conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/specdeepmap_cpu.yml -c conda-forge -y
+
+For GPU version with cuda 12.4 run the following command in miniconda shell. If you need newer cuda version you can also create just the cpu environment and run a re-force install with newer cuda version (see step 2. of cuda installation).
+
+.. code-block:: bash
+
+   conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/specdeepmap_cuda.yml -c conda-forge -y
 
 Introduction to SpecDeepMap
-===========================
+***************************
 
-* The SpecDeepMap applictaion consists of six QGIS processing algorithms and is designed for Semantic Segmentation tasks (pixel classification). With this application a user can train  deep-learning architectures U-Net, U-Net++, DeepLabV3+, and SegFormer with a variety of encoder backbones, such as ResNet-18 and -50, EfficientNet, MobileNet, ConvNext, and Swin-Transformer. SpecDeepMap is designed for multispectral and hyperspectral images and takes geospatial data characteristics into account. A highlight is the integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery.
+The SpecDeepMap applictaion consists of six QGIS processing algorithms and is designed for Semantic Segmentation tasks (pixel classification). With this application a user can train  deep-learning architectures U-Net, U-Net++, DeepLabV3+, and SegFormer with a variety of encoder backbones, such as ResNet-18 and -50, EfficientNet, MobileNet, ConvNext, and Swin-Transformer. SpecDeepMap is designed for multispectral and hyperspectral images and takes geospatial data characteristics into account. A highlight is the integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery.
 
     .. figure:: img/1_SpecDeepMap_Overview.png
 
-SpecDeepMap Menu
-****************
+         SpecDeepMap Workflow
 
-* Launch QGIS and click the enmapbox icon in the toolbar to open the EnMAP-Box. In the EnMAP-Box GUI you can find the SpecDeepMap application in the algorithms in the **EnMAP-Box Processing Algorithms**.
+SpecDeepMap Menu
+================
+
+Launpython -m http.server 8080 --directory build\htmlch QGIS and click the enmapbox icon in the toolbar to open the EnMAP-Box. In the EnMAP-Box GUI you can find the SpecDeepMap application in the algorithms in the **EnMAP-Box Processing Algorithms**.
 
 Download Example Data
-*********************
+=====================
 
 * Download the imagery data and example label rasters from here
 * Sentienl-2 TOA imagery download Sentinel-2 TOA imagery.
@@ -79,7 +102,7 @@ Download Example Data
 
 
 1. Raster Splitter
-==================
+******************
 
 The Raster Splitter split a spectral imagery raster and a corresponding label raster with the same size into smaller image and label chips.
 Classification Label raster should be expressed in any numeric values in range 0-255. The value 0 is reserved for unclassified or no-data.
@@ -87,7 +110,9 @@ The software user can define the chip size in X and y direction by the parameter
 In this example we split the Sentienl-2TOA image and the EUCROPMAP labels into smaller chips.
 
 
-.. figure:: img/1_Rastersplitter.jpeg
+   .. figure:: img/1_Rastersplitter.jpeg
+
+         Raster Splitter Interface
 
 * Use the following inputs:  **Input raster image**: Sentinel_2_TOA_1.tif and **Input raster labels**: EUCROPMAP_1.tif .
 
@@ -102,7 +127,7 @@ In this example we split the Sentienl-2TOA image and the EUCROPMAP labels into s
 
 
 2. Dataset Maker
-================
+****************
 
 The Dataset Maker takes the created folder as Input and generates a training, validation and test datatsets with similar class distributions in form of CSV files with stored relative file paths to the image chips.
 As well as a summary CSV file which show class distribution per dataset as well as suitable class weights for balanced training.
@@ -112,23 +137,27 @@ As well as a summary CSV file which show class distribution per dataset as well 
 
 * As **Output folder** use the previously created SpecDeepMap_tutorial folder.
 
-.. figure:: img/2_Dataset_Maker.jpeg
+   .. figure:: img/2_Dataset_Maker.jpeg
+
+         Dataset Maker Interface
 
 * Run the algorithm with the default split percentages of train images 80%, percentage of test image 10%, percentage of validation images 10%.
 
 * After the algorithm run it displays all created CSV files in a window. If you feel like inspecting one you can click on it and it will be added to the file menus. Otherwise you can just close the window.
 * Optionally if you want to later inspect a csv file e.g. the summary table in the enmapbox and load the 'Summary_train_val.csv' located in the SpecDeepMap_tutorial folder and open the attribute table.
 
-.. figure:: img/2_Dataset_Maker_Output.jpeg
+   .. figure:: img/2_Dataset_Maker_Output.jpeg
 
-
+         Dataset Maker Outputs: Summary CSV
 
 3. Deep Learning Trainer
-========================
+************************
 
 The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervised manner for a semantic segmentation task. It offers flexibility by enabling the training of various architectures, like U-Net, U-Net++, DeeplabV3+, and SegFormer paired with diverse backbones such as ResNet-50. A list of natively supported backbones can be found at https://smp.readthedocs.io/en/latest/encoders.html. Moreover, approximately 500 backbones from Pytorch Image Model Library, also known as Timm, are available, such as ConvNext and Swin-Transformers. A complete list of available Timm Encoders backbones is provided here: https://smp.readthedocs.io/en/latest/encoders_timm.html . To use any of the timm encoders 'tu-' must be added before the model string name.
 
-.. figure:: img/3_Deep_learning_trainer.jpeg
+   .. figure:: img/3_Deep_learning_trainer.jpeg
+
+         Deep Learning Trainer Interface
 
 * As **Input folder (Train and Validation dataset)** use the SpecDeepMap_tutorial folder. By **model architecture** and **model backbone** you can define possible model combinations. For this example leave the default values so Unet and resnet18.
 * Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al 2023 (https://arxiv.org/abs/2211.07044).
@@ -149,6 +178,8 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 
 .. figure:: img/3_Deep_learning_trainer_output.jpeg
 
+      Visualization of IoU and Loss per epoch during training of Deep Learning Trainer
+
 
 4. Tensorboard visualizer (optional)
 ************************************
@@ -157,14 +188,18 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 * in the Tensorboard visualizer you need to define as input the location where you saved the model logger in the Deep Learning trainer algorithm. The location should be the folder we used through out the tutorial and ist subfolder so at SpecDeepMap_tutorial/lightning_logs .
 * As a port is 8000. In windows there is no need to change the port as each tensorboard port will be terminated before a new tensorboard is initialized. In other systems the algorithm doesnt support the port termiantaion and it is  necessary to define a different port each time to open a new tensorboard.
 
-.. figure:: img/4_Tensorboard_visualizer.jpeg
+   .. figure:: img/4_Tensorboard_visualizer.jpeg
+
+         Tensorboard Interface
 
 * Here a snippet of the Tensorboard visualization.
 
-.. figure:: img/4_Tensorboard_visualizer_output.jpeg
+   .. figure:: img/4_Tensorboard_visualizer_output.jpeg
+
+         Visualized Tensorboard
 
 5. Deep Learning Tester
-=======================
+***********************
 
 The Deep Learning Tester evaluates the performance of a trained model on the test dataset. Hereby it calculates the Intersection over Union Score per class as well as the overall mean.
 For the parameter **Test Dataset** input the test_files.csv which we created with the Dataset Maker, it should be located in the folder SpecDeepMap_tutorial.
@@ -173,7 +208,10 @@ As model checkpoint you should load the model with the highest Val IoU ( score i
 Load the model with highest val iou score or download this checkpoint file and load the model from the checkpoint file.
 
 
-.. figure:: img/5_Deep_learning_tester.jpeg
+   .. figure:: img/5_Deep_learning_tester.jpeg
+
+         Deep Learning Tester Interface
+
 
 * Use as **Device** GPU if available otherwise CPU.
 
@@ -185,17 +223,21 @@ Load the model with highest val iou score or download this checkpoint file and l
 
 * Here the test_score.csv visualized in enmapbox.
 
-.. figure::  img/5_Deep_learning_tester_output.jpeg
+   .. figure::  img/5_Deep_learning_tester_output.jpeg
+
+         Deep Learning Tester Output - IoU Scores on test dataset
 
 
 6. Deep Learning Mapper
-============================
+***********************
 
 The Deep Learning Mapper can apply a trained model to an entire orthomosaic or satellite scene. In the background this algorithm automatically extracts overlapping image chips from the Input raster, predicts on them and crops them and combine them back together to a continiuos prediction image.
 This enables easy employment of the model (also automatically apply same scaling and normalization as used in training of model). By cropping boundary pixels it also minimizes noise in prediction by reducing boundary effect common in 2D- CNNs.
 
 
-.. figure::  img/6_Deep_learning_mapper.jpeg
+   .. figure::  img/6_Deep_learning_mapper.jpeg
+
+         Deep Learning Mapper Interface
 
 * Use as **Input Raster** the spectral image Sentinel_2_TOA_2.tif and **Ground Truth Raster**: EUCROPMAP_2.tif .
 
@@ -212,11 +254,12 @@ This enables easy employment of the model (also automatically apply same scaling
 * Mean IoU is 0.71 great!
 
 
-.. figure::  img/6_Deep_learning_mapper_output.jpeg
+   .. figure::  img/6_Deep_learning_mapper_output.jpeg
+
+         Deep Learning mapper Output:Predicted Raster and IoU score
 
 
-
-* Now you have absolved the Tutorial!
+* Now you have absolved the Tutorial, congratultions!
 
 
 
