@@ -4,10 +4,7 @@ SpecDeepMap is a free and open source Application available in EnMAP-BOX v3.16 [
 
 The SpecDeepMap Application consists of six QGIS processing algorithms and is designed for deep learning based semantic segmentation tasks (pixel classification).  
 
-1_SpecDeepMap_Overview.png
-
-SpecDeepMap Workflow
-
+![Workflow](img/1_SpecDeepMap_Overview.jpg)
 
 # Highlights
 
@@ -19,7 +16,7 @@ SpecDeepMap Workflow
 
 * Integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery. These pretrained weights stemm from : Wang, Yi et al. “SSL4EO-S12: A Large-Scale Multi-Modal, Multi-Temporal Dataset for Self-Supervised Learning in Earth Observation.” ArXiv abs/2211.07044 (2022): n. pag. 
 
-Documentation: 
+Documentation: https://enmap-box.readthedocs.io/en/latest/usr_section/application_tutorials/specdeepmap/tutorial_specdeepmap.html
 
 Git Repository: https://github.com/EnMAP-Box/enmap-box/tree/main/enmapbox/apps/SpecDeepMap
 
