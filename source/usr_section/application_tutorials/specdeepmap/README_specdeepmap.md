@@ -114,7 +114,12 @@ the LICENSE.txt file that is part of the SpecDeepMap folder here [https://github
 The SpecDeepMap application partially uses code from TorchGeo, originally authored by Adam Stewart and developed and licenced by Microsoft Corporation with a MIT license. 
 TorchGeo is licensed under the MIT License, full license with Notice here [https://github.com/EnMAP-Box/enmap-box/blob/main/enmapbox/apps/SpecDeepMap/NOTICE.md]
 
+# Contact 
 
+Main developer: 
+
+Leon-Friedrich Thomas 
+mail: leon-friedrich.thomas@helsinki.fi
 
 
 
