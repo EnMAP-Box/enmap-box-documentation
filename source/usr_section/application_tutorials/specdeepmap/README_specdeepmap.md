@@ -2,7 +2,7 @@
 
 SpecDeepMap is a free and open source Application available in EnMAP-BOX v3.16 [QGIS Plugin ](https://www.qgis.org).
 
-The SpecDeepMap Applictaion consists of six QGIS processing algorithms and is designed for deep learning based semantic segmentation tasks (pixel classification).  
+The SpecDeepMap Application consists of six QGIS processing algorithms and is designed for deep learning based semantic segmentation tasks (pixel classification).  
 
 1_SpecDeepMap_Overview.png
 
@@ -44,7 +44,7 @@ Miniconda is a cross-platform package manager that allows you to install softwar
 
 3.1 Run the following command to create the SpecDeepMap environment with limited EnMAP-box function
 ```bash
-conda env create -n specdeepmap --file=https://github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_specdeepmap.yml -c conda-forge -y
+conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_specdeepmap.yml -c conda-forge -y
 ```
 
 or 
@@ -52,7 +52,7 @@ or
 3.2 Run the following command to create the SpecDeepMap environment with full EnMAP-box function:
 
 ```bash
-conda env create -n specdeepmap --file=https://github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_full_latest.yml -c conda-forge -y
+conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_full_latest.yml -c conda-forge -y
 ```
 
 4. Activate the environment and start QGIS:
@@ -94,13 +94,13 @@ These files ensure full reproducibility by pinning exact package versions of the
 ### CPU-Only Environment
 
 ```bash
-conda env create -n specdeepmap --file=https://github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_cpu_time_capsul.yml -c conda-forge -y
+conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_cpu_time_capsul.yml -c conda-forge -y
 ```
 
 ### GPU Environment (CUDA 12.4)
 
 ```bash
-conda env create -n specdeepmap --file=https://github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_cuda124_time_capsul.yml -c conda-forge -y
+conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_cuda124_time_capsul.yml -c conda-forge -y
 ```
 
 If you want to use a newer CUDA version, you can first create the CPU environment, then manually re-install PyTorch using the appropriate pip install command (as shown in Step 2: Install PyTorch with CUDA).
@@ -111,8 +111,8 @@ If you want to use a newer CUDA version, you can first create the CPU environmen
 The SpecDeepMap is released under the GNU Public License (GPL) Version 3 or above. A copy of this licence can be found in
 the LICENSE.txt file that is part of the SpecDeepMap folder here [https://github.com/EnMAP-Box/enmap-box/blob/main/enmapbox/apps/SpecDeepMap/LICENSE_specdeepmap.md] 
 
-The SpecDeepMap application partially uses code from TorchGeo, originally authored by Adam Stewart and developed and licenced by Microsoft with a MIT license. 
-TorchGeo is licensed under the MIT License, full license here [https://github.com/EnMAP-Box/enmap-box/blob/main/enmapbox/apps/SpecDeepMap/NOTICE.md]
+The SpecDeepMap application partially uses code from TorchGeo, originally authored by Adam Stewart and developed and licenced by Microsoft Corporation with a MIT license. 
+TorchGeo is licensed under the MIT License, full license with Notice here [https://github.com/EnMAP-Box/enmap-box/blob/main/enmapbox/apps/SpecDeepMap/NOTICE.md]
 
 
 
