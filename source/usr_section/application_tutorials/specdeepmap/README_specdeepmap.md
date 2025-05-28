@@ -4,7 +4,7 @@ SpecDeepMap is a free and open source Application available in EnMAP-BOX v3.16 [
 
 The SpecDeepMap Application consists of six QGIS processing algorithms and is designed for deep learning based semantic segmentation tasks (pixel classification).  
 
-<img src="img/1_SpecDeepMap_Overview.jpg" alt="Workflow" width="200"/>
+<img src="img/1_SpecDeepMap_Overview.jpg" alt="Workflow" width="400"/>
 
 # Highlights
 
