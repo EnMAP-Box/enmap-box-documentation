@@ -32,7 +32,7 @@ To install EnMAP-Box, follow the official guide:
 [https://enmap-box.readthedocs.io/en/latest/usr\_section/usr\_installation.html](https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html)
 
 
-## Install QGIS & SpecDeepMap via Miniconda (Cross-Platform)
+# Install QGIS & SpecDeepMap via Miniconda (Cross-Platform)
 
 The following steps show you how to install and run the EnMAP-Box with SpecDeepMap Application from a conda python environment. This enables cross-system platforms set up and enabling of GPU support.
 
@@ -40,10 +40,19 @@ Miniconda is a cross-platform package manager that allows you to install softwar
 
 1. Download and install Miniconda: [https://www.anaconda.com/docs/getting-started/miniconda/main](https://www.anaconda.com/docs/getting-started/miniconda/main)
 2. Open the Miniconda Prompt from your start menu.
-3. Run the following command to create the specdeepmap environment:
+3. Run the following command in 3.1 or 3.2. to create the specdeepmap environment:
+
+3.1 Run the following command to create the SpecDeepMap environment with limited EnMAP-box function
+```bash
+conda env create -n specdeepmap --file=https://github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_specdeepmap.yml -c conda-forge -y
+```
+
+or 
+
+3.2 Run the following command to create the SpecDeepMap environment with full EnMAP-box function:
 
 ```bash
-conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/specdeepmap.yml -c conda-forge -y
+conda env create -n specdeepmap --file=https://github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_full_latest.yml -c conda-forge -y
 ```
 
 4. Activate the environment and start QGIS:
@@ -85,16 +94,16 @@ These files ensure full reproducibility by pinning exact package versions of the
 ### CPU-Only Environment
 
 ```bash
-conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/specdeepmap_cpu.yml -c conda-forge -y
+conda env create -n specdeepmap --file=https://github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_cpu_time_capsul.yml -c conda-forge -y
 ```
 
 ### GPU Environment (CUDA 12.4)
 
 ```bash
-conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/specdeepmap_cuda.yml -c conda-forge -y
+conda env create -n specdeepmap --file=https://github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_cuda124_time_capsul.yml -c conda-forge -y
 ```
 
-If you want to use a newer CUDA version, you can first create the CPU environment, then manually re-install PyTorch using the appropriate pip install command (as shown in Step 2 of the GPU setup).
+If you want to use a newer CUDA version, you can first create the CPU environment, then manually re-install PyTorch using the appropriate pip install command (as shown in Step 2: Install PyTorch with CUDA).
 
 
 # License
