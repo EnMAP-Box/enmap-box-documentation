@@ -5,9 +5,9 @@
 
 **Authors:** Leon-Friedrich Thomas
 
-**Publication date:** 01/04/2025
+**Publication date:** 21/05/2025
 
-This tutorial give an introduction to the Processing Algorithms of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application.
+This tutorial gives an introduction to the Processing Algorithms of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application.
 It is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
 In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task.
@@ -15,7 +15,7 @@ In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2
 Introduction to SpecDeepMap
 ***************************
 
-The SpecDeepMap applictaion consists of six QGIS processing algorithms and is designed for Semantic Segmentation tasks (pixel classification). With this application a user can train  deep-learning architectures U-Net, U-Net++, DeepLabV3+, and SegFormer with a variety of encoder backbones, such as ResNet-18 and -50, EfficientNet, MobileNet, ConvNext, and Swin-Transformer. SpecDeepMap is designed for multispectral and hyperspectral images and takes geospatial data characteristics into account. A highlight is the integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery.
+The SpecDeepMap application consists of six QGIS processing algorithms and is designed for Semantic Segmentation tasks (pixel classification). With this application a user can train  deep-learning architectures U-Net, U-Net++, DeepLabV3+, and SegFormer with a variety of encoder backbones, such as ResNet-18 and -50, EfficientNet, MobileNet, ConvNext, and Swin-Transformer. SpecDeepMap is designed for multispectral and hyperspectral images and takes geospatial data characteristics into account. A highlight is the integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery.
 
     .. figure:: img/1_SpecDeepMap_Overview.png
 
@@ -51,7 +51,7 @@ Activate the "specdeepmap" environment and open QGIS by executing:
 
 In Qgis you can open EnMAP-Box and access SpecDeepMap via the EnMAP-box processing algorithm menu.
 
-Install QGIS & SpecDeepMAp via mini-conda with GPU support (optional)
+Enable QGIS & SpecDeepMap via mini-conda with GPU support (optional)
 =====================================================================
 
 If you have a cuda capable GPU you can also install cuda to use SpecDeepMap with GPU support:
@@ -68,12 +68,12 @@ Step 2: Re-install pytorch with cuda GPU support via pip (example for CUDA 12.4)
 
    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 -y --force-reinstall
 
-Not tested by myself but setting up cuda support is also possible via OSGeo4W Shell under windows. For this the developer of GEO-SAM recommend to first download and install the CUDA Toolkit (https://developer.nvidia.com/cuda-downloads) e.g. cuda 12.4 and then run step.2 command in the shell. (see:https://geo-sam.readthedocs.io/en/latest/installation.html ).
+Hint: Not implemented by myself but setting up cuda support is also possible via OSGeo4W Shell under windows. For this the developer of GEO-SAM recommend to first download and install the CUDA Toolkit (https://developer.nvidia.com/cuda-downloads ) e.g. cuda 12.4 and then run step.2 command in the shell. (see: https://geo-sam.readthedocs.io/en/latest/installation.html ).
 
 Recovery Environment with Explicitly Defined Setup for QGIS & SpecDeepMap via Miniconda (Cross-Platform)
 ========================================================================================================
 
-If SpecDeepMap encounters issues due to Python package updates or incompatibilities, you can restore a fully functional environment using the provided configuration files. These define all required packages explicitly, ensuring that both CPU and GPU versions run reliably across platforms.
+If SpecDeepMap encounters issues due to Python package updates or incompatibilities, you can restore a fully functional environment according to the original release environment using the provided configuration files. These define all required packages explicitly, ensuring that both CPU and GPU versions run reliably across platforms.
 
 For cpu version run the following command in miniconda shell:
 
@@ -81,7 +81,7 @@ For cpu version run the following command in miniconda shell:
 
    conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/specdeepmap_cpu.yml -c conda-forge -y
 
-For GPU version with cuda 12.4 run the following command in miniconda shell. If you need newer cuda version you can also create just the cpu environment and run a re-force install with newer cuda version (see step 2. of cuda installation).
+For GPU version with cuda 12.4 run the following command in miniconda shell. If you need newer cuda version you can also create just the cpu environment and run a re-force install with newer cuda version (see step 2. of cuda enable installation).
 
 .. code-block:: bash
 
@@ -228,7 +228,7 @@ For the parameter **Test Dataset** input the test_files.csv which we created wit
 
 * leave rest of default values as is. Run the algorithm. If you load test_score.csv in enmapbox you can inspect the Iou score per class and mean on test dataset. For this load the CSV and open it attribute table.
 
-* Test achived a performance of Iou 0.56, which is in line with other foundation model performances on similar tasks.
+* Test achieved a performance of Iou 0.56, which is in line with other foundation model performances on similar tasks.
 
 * Here the test_score.csv visualized in enmapbox.
 
