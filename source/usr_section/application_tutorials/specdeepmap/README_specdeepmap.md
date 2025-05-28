@@ -2,7 +2,7 @@
 
 SpecDeepMap is a free and open source Application available in EnMAP-BOX v3.16 [QGIS Plugin ](https://www.qgis.org).
 
-The SpecDeepMap Applictaion consists of six QGIS processing algorithms and is designed for Semantic Segmentation tasks (pixel classification).  
+The SpecDeepMap Applictaion consists of six QGIS processing algorithms and is designed for deep learning based semantic segmentation tasks (pixel classification).  
 
 1_SpecDeepMap_Overview.png
 
@@ -13,32 +13,28 @@ SpecDeepMap Workflow
 
 * an easy-to-use graphical user interface for training a deep learning model for semantic segmentation
 
-* SpecDeepMap algorithm take geographical data characteristics into account as well as higher dimensional data structure common for multi &hyperspectral images.
-  e.g. raster images, field spectrometer or table-sheets.
+* SpecDeepMap algorithm take geographical data characteristics into account as well as higher dimensional data structure common for multi & hyperspectral raster images.
 
 * Available Deep Learning architectures  U-Net, U-Net++, DeepLabV3+, and SegFormer with a variety of encoder backbones, such as ResNet-18 and -50, EfficientNet, MobileNet, ConvNext, and Swin-Transformer. 
 
-* Integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery.
+* Integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery. These pretrained weights stemm from : Wang, Yi et al. “SSL4EO-S12: A Large-Scale Multi-Modal, Multi-Temporal Dataset for Self-Supervised Learning in Earth Observation.” ArXiv abs/2211.07044 (2022): n. pag. 
 
 Documentation: 
 
 Git Repository: https://github.com/EnMAP-Box/enmap-box/tree/main/enmapbox/apps/SpecDeepMap
 
 
-# Run SpecDeepMap
+# Install SpecDeepMap via QGIS
 
-SpecDeepMap Applicatio is a QGIS Plugin that can be installed from the QGIS Plugin Manager with .
-
-However, the following steps show you how to run the EnMAP-Box from python without starting the QGIS Desktop
-application.
-
-# Installation of SpecDeepMap
-
-SpecDeepMap is available by default in EnMAP-Box from version 3.16 onwards. To install EnMAP-Box, follow the official guide:
+SpecDeepMap Application is available in the QGIS Plugin EnMAP-Box version 3.16 and can be installed from the QGIS Plugin Manager.
+To install EnMAP-Box, follow the official guide:
 
 [https://enmap-box.readthedocs.io/en/latest/usr\_section/usr\_installation.html](https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html)
 
+
 ## Install QGIS & SpecDeepMap via Miniconda (Cross-Platform)
+
+The following steps show you how to install and run the EnMAP-Box with SpecDeepMap Application from a conda python environment. This enables cross-system platforms set up and enabling of GPU support.
 
 Miniconda is a cross-platform package manager that allows you to install software in isolated environments.
 
@@ -77,15 +73,14 @@ This download is large (\~4.5 GB).
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 -y --force-reinstall
 ```
 
-Note: Although not tested personally, CUDA setup is also possible via the OSGeo4W Shell on Windows. First, install the CUDA Toolkit: [https://developer.nvidia.com/cuda-downloads](https://developer.nvidia.com/cuda-downloads), then run Step 2 in the OSGeo4W Shell.
-
-See more details here: [https://geo-sam.readthedocs.io/en/latest/installation.html](https://geo-sam.readthedocs.io/en/latest/installation.html)
+Note: It is also possible to setup  CUDA via the OSGeo4W Shell on Windows. First, install the CUDA Toolkit: [https://developer.nvidia.com/cuda-downloads](https://developer.nvidia.com/cuda-downloads), then run Step 2 in the OSGeo4W Shell.
+For more details on how to set up GPU via OsGeo4W Shell see GEO-SAM installation here: [https://geo-sam.readthedocs.io/en/latest/installation.html](https://geo-sam.readthedocs.io/en/latest/installation.html)
 
 ## Recovery Environment with Explicit Setup (CPU/GPU)
 
 If SpecDeepMap breaks due to package updates or compatibility issues, you can recover a working environment using pre-defined environment files.
 
-These files ensure full reproducibility by pinning exact package versions.
+These files ensure full reproducibility by pinning exact package versions of the release python environment of SpecDeepMap which ensures an always functional version of the SpecDeepMap application.
 
 ### CPU-Only Environment
 
@@ -102,16 +97,13 @@ conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-B
 If you want to use a newer CUDA version, you can first create the CPU environment, then manually re-install PyTorch using the appropriate pip install command (as shown in Step 2 of the GPU setup).
 
 
-
 # License
 
 The SpecDeepMap is released under the GNU Public License (GPL) Version 3 or above. A copy of this licence can be found in
 the LICENSE.txt file that is part of the SpecDeepMap folder here [https://github.com/EnMAP-Box/enmap-box/blob/main/enmapbox/apps/SpecDeepMap/LICENSE_specdeepmap.md] 
 
-The SpecDeepMap application partially uses code from TorchGeo, originally authored by Adam Stewart and developed under Microsoft.
-
+The SpecDeepMap application partially uses code from TorchGeo, originally authored by Adam Stewart and developed and licenced by Microsoft with a MIT license. 
 TorchGeo is licensed under the MIT License, full license here [https://github.com/EnMAP-Box/enmap-box/blob/main/enmapbox/apps/SpecDeepMap/NOTICE.md]
-
 
 
 
