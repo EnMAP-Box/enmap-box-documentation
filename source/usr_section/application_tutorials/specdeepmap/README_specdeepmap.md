@@ -82,7 +82,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 Note: It is also possible to setup  CUDA via the OSGeo4W Shell on Windows. First, install the CUDA Toolkit: [https://developer.nvidia.com/cuda-downloads](https://developer.nvidia.com/cuda-downloads), then run Step 2 in the OSGeo4W Shell.
 For more details on how to set up GPU via OsGeo4W Shell see GEO-SAM installation here: [https://geo-sam.readthedocs.io/en/latest/installation.html](https://geo-sam.readthedocs.io/en/latest/installation.html)
 
-## Recovery Environment with Explicit Setup of Python Packages Versions of Original Release (CPU/GPU) - Always fully functional
+# Recovery Environment with Explicit Setup of Python Packages Versions of Original Release (CPU/GPU) - Always fully functional
 
 If SpecDeepMap breaks due to package updates or compatibility issues, you can recover a working environment using pre-defined environment files.
 
@@ -115,8 +115,8 @@ TorchGeo is licensed under the MIT License, full license with Notice here [https
 
 Main developer: 
 
-Leon-Friedrich Thomas 
-mail: leon-friedrich.thomas@helsinki.fi
+* Leon-Friedrich Thomas
+* mail: leon-friedrich.thomas@helsinki.fi
 
 
 
