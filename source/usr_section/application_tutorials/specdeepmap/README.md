@@ -4,7 +4,7 @@ SpecDeepMap is a free and open source Application available in EnMAP-BOX v3.16 [
 
 The SpecDeepMap Application consists of six QGIS processing algorithms and is designed for deep learning based semantic segmentation tasks (pixel classification).  
 
-<img src="img/1_SpecDeepMap_Overview.jpg" alt="Workflow" width="500"/>
+<img src="img/1_SpecDeepMap_Overview.jpg" alt="Workflow" width="600"/>
 
 # Highlights
 
@@ -39,7 +39,7 @@ It is strongly recommended to use Miniforge, a minimal installer for conda speci
 (If you nevertheless use miniconda instead of miniforge- make sure conda-forge channel is set to priority)
 
 1. Download Miniforge Installer & Install Miniforge: You find the Installer here <https://conda-forge.org/download/>.
-2. Open the Miniconda Prompt from your start menu.**
+2. Open the Miniconda Prompt from your start menu.
 3. Run the following command in 3.1 or 3.2. to create the specdeepmap environment:
 
 3.1 Run the following command to create the SpecDeepMap environment with limited EnMAP-box function
@@ -57,12 +57,11 @@ conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-b
 
 4. Activate the environment & start qgis:
 
-4.1 activate envrionment
+4.1 activate environment
 ```bash
 activate specdeepmap
-qgis
 ```
-4.2. start qgis and then open enmapbox in qgis interface
+4.2. start qgis and then open enmapbox in qgis interface via the enmapbox plugin icon
 ```bash
 qgis
 ```
