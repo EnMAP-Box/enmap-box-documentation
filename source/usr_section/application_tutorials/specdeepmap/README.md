@@ -1,6 +1,6 @@
 # Spectral Imaging Deep Learning Mapper (SpecDeepMap)
 
-SpecDeepMap is a free and open source Application available in [EnMAP-BOX](https://enmap-box.readthedocs.io/en/latest/index.html) v3.16 [QGIS Plugin ](https://www.qgis.org).
+SpecDeepMap is a free and open source Application available in EnMAP-Box v3.16. The [EnMAP-Box](https://enmap-box.readthedocs.io/en/latest/index.html) is an open source [QGIS Plugin ](https://www.qgis.org).
 
 The SpecDeepMap Application consists of six QGIS processing algorithms and is designed for deep learning based semantic segmentation tasks (pixel classification).  
 
