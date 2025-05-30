@@ -1,6 +1,6 @@
 # Spectral Imaging Deep Learning Mapper (SpecDeepMap)
 
-SpecDeepMap is a free and open source Application available in EnMAP-BOX v3.16 [QGIS Plugin ](https://www.qgis.org).
+SpecDeepMap is a free and open source Application available in [EnMAP-BOX](https://enmap-box.readthedocs.io/en/latest/index.html) v3.16 [QGIS Plugin ](https://www.qgis.org).
 
 The SpecDeepMap Application consists of six QGIS processing algorithms and is designed for deep learning based semantic segmentation tasks (pixel classification).  
 
@@ -89,7 +89,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 Note: It is also possible to setup  CUDA via the OSGeo4W Shell on Windows. First, install the CUDA Toolkit: [https://developer.nvidia.com/cuda-downloads](https://developer.nvidia.com/cuda-downloads), then run Step 2 in the OSGeo4W Shell.
 For more details on how to set up GPU via OsGeo4W Shell see GEO-SAM installation here: [https://geo-sam.readthedocs.io/en/latest/installation.html](https://geo-sam.readthedocs.io/en/latest/installation.html)
 
-# Recovery Environment with Explicit Setup of Python Packages Versions of Original Release (CPU/GPU) 
+# Timeless Recovery Environment with Explicit Python Package Versions of Original Release (CPU/GPU) 
 
 If SpecDeepMap breaks due to package updates or compatibility issues, you can recover a working environment using pre-defined environment files.
 
