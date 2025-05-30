@@ -4,7 +4,7 @@ SpecDeepMap is a free and open source Application available in EnMAP-BOX v3.16 [
 
 The SpecDeepMap Application consists of six QGIS processing algorithms and is designed for deep learning based semantic segmentation tasks (pixel classification).  
 
-<img src="img/1_SpecDeepMap_Overview.jpg" alt="Workflow" width="700"/>
+<img src="img/1_SpecDeepMap_Overview.jpg" alt="Workflow" width="500"/>
 
 # Highlights
 
@@ -16,7 +16,7 @@ The SpecDeepMap Application consists of six QGIS processing algorithms and is de
 
 * Integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery. These pretrained weights stemm from : Wang, Yi et al. “SSL4EO-S12: A Large-Scale Multi-Modal, Multi-Temporal Dataset for Self-Supervised Learning in Earth Observation.” ArXiv abs/2211.07044 (2022): n. pag. 
 
-Documentation: https://enmap-box.readthedocs.io/en/latest/usr_section/application_tutorials/specdeepmap/tutorial_specdeepmap.html
+Documentation & Tutorial: https://enmap-box.readthedocs.io/en/latest/usr_section/application_tutorials/specdeepmap/tutorial_specdeepmap.html
 
 Git Repository: https://github.com/EnMAP-Box/enmap-box/tree/main/enmapbox/apps/SpecDeepMap
 
@@ -29,19 +29,22 @@ To install EnMAP-Box, follow the official guide:
 [https://enmap-box.readthedocs.io/en/latest/usr\_section/usr\_installation.html](https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html)
 
 
-# Install QGIS & SpecDeepMap via Miniconda (Cross-Platform)
+# Install QGIS & SpecDeepMap via Miniforge/Conda (Cross-Platform)
 
 The following steps show you how to install and run the EnMAP-Box with SpecDeepMap Application from a conda python environment. This enables cross-system platforms set up and enabling of GPU support.
 
-Miniconda is a cross-platform package manager that allows you to install software in isolated environments.
+Conda is a cross-platform package manager that allows install software in separated environments.
 
-1. Download and install Miniconda: [https://www.anaconda.com/docs/getting-started/miniconda/main](https://www.anaconda.com/docs/getting-started/miniconda/main)
-2. Open the Miniconda Prompt from your start menu.
+It is strongly recommended to use Miniforge, a minimal installer for conda specific to the `conda-forge<https://conda-forge.org/>`_ channel.
+(If you nevertheless use miniconda instead of miniforge- make sure conda-forge channel is set to priority)
+
+1. Download Miniforge Installer & Install Miniforge: You find the Installer here <https://conda-forge.org/download/>.
+2. Open the Miniconda Prompt from your start menu.**
 3. Run the following command in 3.1 or 3.2. to create the specdeepmap environment:
 
 3.1 Run the following command to create the SpecDeepMap environment with limited EnMAP-box function
 ```bash
-conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_specdeepmap.yml -c conda-forge -y
+conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-box-fork/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_specdeepmap.yml
 ```
 
 or 
@@ -49,13 +52,18 @@ or
 3.2 Run the following command to create the SpecDeepMap environment with full EnMAP-box function:
 
 ```bash
-conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_full_latest.yml -c conda-forge -y
+conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-box-fork/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_full_latest.yml
 ```
 
-4. Activate the environment and start QGIS:
+4. Activate the environment & start qgis:
 
+4.1 activate envrionment
 ```bash
 activate specdeepmap
+qgis
+```
+4.2. start qgis and then open enmapbox in qgis interface
+```bash
 qgis
 ```
 
@@ -91,17 +99,17 @@ These files ensure full reproducibility by pinning exact package versions of the
 ### CPU-Only Environment
 
 ```bash
-conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_cpu_time_capsul.yml -c conda-forge -y
+conda env create -n specdeepmap_cpu_time_capsul --file=https://raw.github.com/thomaslfEO/enmap-box-fork/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_cpu_time_capsul.yml
 ```
 
 ### GPU Environment (CUDA 12.4)
 
 ```bash
-conda env create -n specdeepmap --file=https://raw.github.com/thomaslfEO/enmap-box-fork/blob/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_cuda124_time_capsul.yml -c conda-forge -y
+conda env create -n specdeepmap_gpu_time_capsul --file=https://raw.github.com/thomaslfEO/enmap-box-fork/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_gpu_time_capsul.yml
 ```
 
 If you want to use a newer CUDA version, you can first create the CPU environment, then manually re-install PyTorch using the appropriate pip install command (as shown in Step 2: Install PyTorch with CUDA).
-
+Activate environment using conda activate specdeepmap_cpu_time_capsul or conda activate specdeepmap_cgu_time_capsul  
 
 # License
 
