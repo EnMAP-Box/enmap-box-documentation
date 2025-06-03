@@ -17,7 +17,7 @@ Introduction to SpecDeepMap
 
 The SpecDeepMap application consists of six QGIS processing algorithms and is designed for Semantic Segmentation tasks (pixel classification). With this application a user can train  deep-learning architectures U-Net, U-Net++, DeepLabV3+, and SegFormer with a variety of encoder backbones, such as ResNet-18 and -50, EfficientNet, MobileNet, ConvNext, and Swin-Transformer. SpecDeepMap is designed for multispectral and hyperspectral images and takes geospatial data characteristics into account. A highlight is the integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery.
 
-    .. figure:: img/1_SpecDeepMap_Overview.png
+    .. figure:: img/1_SpecDeepMap_Overview.jpg
 
          SpecDeepMap Workflow
 
