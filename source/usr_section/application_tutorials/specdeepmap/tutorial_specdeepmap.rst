@@ -5,7 +5,7 @@
 
 **Authors:** Leon-Friedrich Thomas
 
-**Publication date:** 21/05/2025
+**Publication date:** 09/06/2025
 
 This tutorial gives an introduction to the Processing Algorithms of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application.
 It is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
@@ -132,15 +132,15 @@ Launch QGIS and click the EnMAP-Box icon in the toolbar to open the EnMAP-Box. I
 Download Example Data
 =====================
 
-Download either the tutorial_small or tutorial_large folder. Each folder contains same data just in different sizes, both come with a pretrained model. If you fewer computational resource use the tutorial_small folder, otherwise use the tutorial_large one. Both datasets work, however.
+Download either the tutorial_small or tutorial_large folder. Each folder contains same data just in different sizes, both come with a pretrained model. If you have fewer computational resource use the tutorial_small folder, otherwise use the tutorial_large one. Both datasets work the same way the only difference is the tutorial_large has a larger training data volume and larger raster image to apply the final prediction. As you can use the pretrained model, which is in both folders the evaluation performance won't differ much.
 
-* Tutorial_small:
+* tutorial_small:https://drive.google.com/drive/folders/1PtLU0YJ4hmUUHRNDPkh7ovjwzQj_SIEL?usp=drive_link
 
-* Tutorial_large:
+* tutorial_large: https://drive.google.com/drive/folders/1fFhm3pRxVX2ynnlTYkEB6FJNqC-XdOaW?usp=drive_link
 
 More info on datasets:
 
-Both datasets were prepared and downloaded using the Google Earth Engine. For the Sentinel 2 TOA data, multiple cloud- free tiles from 23 June 2022 over Germany were mosaiced. For the same region of interest, the corresponding EUCROPMAP class labels from 2022 were downloaded. Both dataset were reprojected to spatially align.  The EUCROPMAP class labels were resampled from 25 classes to 10 to ensure minimum class presence of 0.5 % per class in the dataset. Classes smaller than 0.5% were combined under ‘other classes’. Original EUROCROPMAP Lables here: https://developers.google.com/earth-engine/datasets/catalog/JRC_D5_EUCROPMAP_V1
+Both datasets were prepared and downloaded using the Google Earth Engine. For the Sentinel 2 TOA data, multiple cloud- free tiles from 23 June 2022 over Germany were mosaiced.For the same region of interest, the corresponding EUCROPMAP class labels from 2022 were downloaded. Both dataset were reprojected to spatially align.  The EUCROPMAP class labels were resampled from 25 classes to 10 to ensure minimum class presence of 0.5 % per class in the dataset. Classes smaller than 0.5% were combined under ‘other classes’. Here the adapted numeric encoding per class: 0 = unclassifed ,1 = other classes (less then 0.5% in ROI),2 = Artificial ,3 = Common wheat,4 = Barley, 5 = Maize, 6 = Woodland and Shrubland (incl. permanent crops),7 = Grasslands,8 = Water, 9 = Rapeseed and turnip rapeseed, 10= Sugar beet. Original link to dataset: EUROCROPMAP Lables here: https://developers.google.com/earth-engine/datasets/catalog/JRC_D5_EUCROPMAP_V1 and link to Sentinel 2 TOA dataset source: https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_HARMONIZED .
 
 1. Raster Splitter
 ******************
@@ -155,7 +155,7 @@ In this example we split the Sentienl-2TOA image and the EUCROPMAP labels into s
 
          Raster Splitter Interface
 
-* Use the following inputs:  **Input raster image**: Sentinel_2_TOA_1.tif and **Input raster labels**: EUCROPMAP_1.tif or their '_tiny' counter parts from the small_tutorial folder.
+* Use the following inputs:  **Input raster image**: Sentinel_2_TOA_1.tif and **Input raster labels**: EUCROPMAP_1.tif or their counterparts 'Sentinel_2_TOA_1_tiny.tif' and 'EUCROPMAP_1_tiny.tif'if you use the tutorial_small folder.
 
 * Set **tile size X** to 224 and **tile size Y** to 224 and **step size X** to 275 and **step size Y** to 275, to avoid spatial autocorrelation of the chips.
 
@@ -163,7 +163,7 @@ In this example we split the Sentienl-2TOA image and the EUCROPMAP labels into s
 
 * As **Output folder** Create a new folder call it SpecDeepMap_tutorial , chose the folder for the raster splitter output folder.
 
-* Run the algorithm with the given parameters this results in ~2300 image and label chips for the tutorial_large dataset (or ~150, when using the tutorial_small dataset). These are now stored in sub folder 'images' and 'labels' in the created folder 'SpecDeepMap_tutorial'.
+* Run the algorithm with the given parameters this results in ~2300 image and label chips for the tutorial_large dataset (or ~120, when using the tutorial_small dataset). These are now stored in sub folder 'images' and 'labels' in the created folder 'SpecDeepMap_tutorial'.
 
 
 
@@ -204,7 +204,7 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 * Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al 2023 (https://arxiv.org/abs/2211.07044).
 * We will use the default for the following parameter and leave them checked (**freeze backbone**, **data augumentation**, **early stopping** and **balanced Training using class weights**)
 
-* As **Batch size** we use 16 and for **Epochs** 50, if you have sufficient computation and downloaded the tutorial_large data. ( If you have less computational resources or use the small dataset folder use batch size of 4 or 8 and only train for 5-10 epochs).
+* As **Batch size** we use 16 and for **Epochs** 50, if you have sufficient computation and downloaded the tutorial_large data. ( If you have less computational resources or use the small dataset folder use batch size of 4 and only train for 5-10 epochs).
 * As **Learning rate** we will use 0.003.
 * As **type of device** use GPU if available and installed for the enmapbox python environment. Otherwise use CPU, and reduce the epoch numbers ( e.g. 5-10)
 
@@ -263,7 +263,7 @@ For the parameter **Test Dataset** input the test_files.csv which we created wit
 
 * Test results, depending on the dataset used, yield an IoU of approximately 0.49–0.56 IoU, which is in line with other foundation model performances on similar tasks.
 
-* Here the test_score.csv visualized in enmapbox.
+* Here the test_score.csv visualized in enmapbox, based on the tutorial_large dataset ( However, performance for tutorial_small is similar).
 
    .. figure::  img/5_Deep_learning_tester_output.jpeg
 
@@ -281,7 +281,7 @@ This enables easy employment of the model (also automatically apply same scaling
 
          Deep Learning Mapper Interface
 
-* Use as **Input Raster** the spectral image Sentinel_2_TOA_2.tif and **Ground Truth Raster**: EUCROPMAP_2.tif .
+* Use as **Input Raster** the spectral image Sentinel_2_TOA_2.tif and **Ground Truth Raster**: EUROCROPMAP_2.tif, or their counterparts 'Sentinel_2_TOA_2_tiny.tif' and 'EUROCROPMAP_2_tiny.tif'if you use the tutorial_small folder.
 
 * You can use the checkpoint file from the tutorial_small or tutorial_large folder  as **Model Checkpoint** or the model with the highest validation IoU from your own training.
 
@@ -289,11 +289,11 @@ This enables easy employment of the model (also automatically apply same scaling
 
 * Use ** Device** GPU if available, otherwise CPU.
 
-* For **Prediction as Raster** define the output: EU_CROPMAP_2_prediction.tif in the SpecDeepMap_tutorial folder.
-* For **IoU CSV** define output: EU_CROPMAP_2_score.csv in the SpecDeepMap_tutorial folder.
+* For **Prediction as Raster** define the output: EUCROPMAP_2_prediction.tif in the SpecDeepMap_tutorial folder.
+* For **IoU CSV** define output: EUCROPMAP_2_score.csv in the SpecDeepMap_tutorial folder.
 * Run the algorithm.
 
-You can open the predicted Raster and CSV in the Enmap-box to inspect the prediction visually and the IoU score per class. Mean IoU is ~0,69-0.71 great!
+You can open the predicted Raster and CSV in the EnMAP-box to inspect the prediction visually and the IoU score per class. Mean IoU is ~0,68-0.71 great!
 
 
    .. figure::  img/6_Deep_learning_mapper_output.jpeg
