@@ -1,6 +1,6 @@
 
 
-11. Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Segmentation
+Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Segmentation
 #############################################################################################
 
 **Authors:** Leon-Friedrich Thomas
@@ -240,8 +240,9 @@ To call the Tensorboard visualizer you need to define as input the location wher
 * Here a snippet of the Tensorboard visualization.
 
    .. figure:: img/4_Tensorboard_visualizer_output.jpeg
+      :scale: 50%
 
-         Visualized Tensorboard
+      Visualized Tensorboard
 
 5. Deep Learning Tester
 ***********************
@@ -298,7 +299,7 @@ You can open the predicted Raster and CSV in the EnMAP-Box to inspect the predic
 
    .. figure::  img/6_Deep_learning_mapper_output.jpg
 
-         Deep Learning mapper Output:Predicted Raster and IoU score
+      Deep Learning mapper Output:Predicted Raster and IoU score
 
 
 * Now completed the tutorial, congratulations!
