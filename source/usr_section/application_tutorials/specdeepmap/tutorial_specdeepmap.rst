@@ -1,7 +1,7 @@
 
 
 Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Segmentation
-#############################################################################################
+#########################################################################################
 
 **Authors:** Leon-Friedrich Thomas
 
