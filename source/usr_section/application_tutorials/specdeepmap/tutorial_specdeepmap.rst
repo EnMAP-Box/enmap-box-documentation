@@ -136,7 +136,7 @@ Download either the tutorial_small or tutorial_large folder. Each folder contain
 
 * tutorial_small: https://drive.google.com/file/d/1bht6OCEcWY0sIfYdBdcOaUxdmAn1K0_H/view?usp=drive_link
 
-* tutorial_large: https://drive.google.com/drive/folders/1fFhm3pRxVX2ynnlTYkEB6FJNqC-XdOaW?usp=drive_link
+* tutorial_large: https://drive.google.com/file/d/1Y-3JlcTwztdzCY107cuH60ydAB0mkytc/view?usp=drive_link
 
 The tutorial files are zipped, download either tutorial_small or tutorial_large. Create a new folder 'specdeepmap_tutorial' and unzip either of the datasets folders in that folder.
 
