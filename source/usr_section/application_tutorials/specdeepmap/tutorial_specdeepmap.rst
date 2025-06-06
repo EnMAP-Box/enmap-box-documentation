@@ -34,7 +34,7 @@ The following steps show you how to install and run the EnMAP-Box with SpecDeepM
 
 Conda is a cross-platform package manager that allows install software in separate environments.
 
-It is strongly recommended to use Miniforge, a minimal installer for conda specific to the `conda-forge<https://conda-forge.org/>`_ channel.
+It is strongly recommended to use Miniforge, a minimal installer for conda specific to the conda-forge channel (https://conda-forge.org/ ).
 (If you nevertheless use miniconda instead of miniforge- make sure conda-forge channel is set to priority)
 
 1. Download Miniforge Installer & Install Miniforge: You find the Installer here <https://conda-forge.org/download/>.
@@ -165,7 +165,7 @@ In this example we split the Sentienl-2 TOA image and the EUCROPMAP labels into 
 
 * As **Output folder** choose the created folder 'specdeepmap_tutorial'  or if not previsouly created create an folder 'specdeepmap_tutorial', chose the folder for the raster splitter output.
 
-* Run the algorithm with the given parameters this results in ~2300 image and label chips for the tutorial_large dataset (or ~120, when using the tutorial_small dataset). These are now stored in the sub folders 'images' and 'labels' in the created folder 'SpecDeepMap_tutorial'.
+* Run the algorithm with the given parameters this results in ~2300 image and label chips for the tutorial_large dataset (or ~120, when using the tutorial_small dataset). These are now stored in the sub folders 'images' and 'labels' in the created folder 'specdeepmap_tutorial'.
 
 
 
@@ -258,7 +258,7 @@ The Deep Learning Tester evaluates the performance of a trained model on the tes
 
 * Use as **Device** GPU if available otherwise CPU.
 
-* Define the location where you want to save **IoU CSV**. Use SpecDeepMap_tutorial as folder location and save a file test_score.csv in it.
+* Define the location where you want to save **IoU CSV**. Use 'specdeepmap_tutorial' as folder location and save a file test_score.csv in it.
 
 * Leave the remaining default values unchanged. Run the algorithm. If you load test_score.csv in enmapbox you can inspect the Iou score per class and mean on test dataset. For this load the CSV and open it attribute table.
 
@@ -289,8 +289,8 @@ This enables easy employment of the model (also automatically apply same scaling
 
 * Use ** Device** GPU if available, otherwise CPU.
 
-* For **Prediction as Raster** define the output: EUCROPMAP_2_prediction.tif in the SpecDeepMap_tutorial folder.
-* For **IoU CSV** define output: EUCROPMAP_2_score.csv in the SpecDeepMap_tutorial folder.
+* For **Prediction as Raster** define the output: EUCROPMAP_2_prediction.tif in the 'specdeepmap_tutorial' folder.
+* For **IoU CSV** define output: EUCROPMAP_2_score.csv in the 'specdeepmap_tutorial' folder.
 * Run the algorithm.
 
 You can open the predicted Raster and CSV in the EnMAP-Box to inspect the prediction visually and the IoU score per class. Mean IoU is ~0,68-0.71 great!
