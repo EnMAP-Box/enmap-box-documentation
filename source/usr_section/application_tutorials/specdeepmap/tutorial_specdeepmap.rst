@@ -5,7 +5,7 @@ Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Seg
 
 **Authors:** Leon-Friedrich Thomas
 
-**Publication date:** 06/06/2025
+**Publication date:** 09/06/2025
 
 This tutorial gives an introduction to the Processing Algorithms of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application.
 The Application is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
