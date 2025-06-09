@@ -180,7 +180,7 @@ As well as a summary CSV file which show class distribution per dataset as well 
 
 * As **Output folder** use the previously created 'specdeepmap_tutorial' folder.
 
-   .. figure:: img/2_Dataset_Maker.jpeg
+   .. figure:: img/2_Dataset_maker.jpeg
 
          Dataset Maker Interface
 
@@ -189,7 +189,7 @@ As well as a summary CSV file which show class distribution per dataset as well 
 * (After the algorithm run it displays all created CSV files in a window. If you feel like inspecting one you can click on it and it will be added to the file menus. Otherwise you can just close the window).
 * Optionally if you want to later inspect a csv file e.g. the summary table in the enmapbox and load the 'Summary_train_val.csv' located in the 'specdeepmap_tutorial' folder and open the attribute table.
 
-   .. figure:: img/2_Dataset_Maker_Output.jpeg
+   .. figure:: img/2_Dataset_maker_Output.jpeg
 
          Dataset Maker Outputs: Summary CSV
 
