@@ -466,6 +466,15 @@ own source-code documentation as ``.qch`` file as well.
          :width: 100%
 
 
+    The following script can be used to regularly update the QGIS documentation:
+
+    .. code-block:: bash
+
+        curl --output <path_to>/qgis.qch --url https://api.qgis.org/api/qgis.qch
+        assistant -register <path_to>/qgis.qch -quiet
+
+
+
 .. _dev_qt_designer:
 
 
