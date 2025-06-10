@@ -11,23 +11,27 @@ Upcoming Events
         - Location
         - Comments
 
-    *   - `2nd EnMAP User Workshop <https://enmap.geographie-muenchen.de/>`_
-        - 2-4 April 2025
-        - Munich, Germany
-        - Tutorial
-
-    *   - `FOSSGIS 2025 <https://www.fossgis-konferenz.de/2025/>`_
-        - 26-29 March
-        - Münster, Germany
-        - Oral Presentation
+    *   - Release of EnMAP-Box 3.17
+        - September/October 2025
+        - `QGIS Plugin Repository <https://plugins.qgis.org/plugins/enmapboxplugin/>`_
+        - This will be the first EnMAP-Box version that runs with `QGIS 4.0 <https://blog.qgis.org/2025/04/17/qgis-is-moving-to-qt6-and-launching-qgis-4-0/>`_.
 
     *   - `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
-        - 23-27 June 2025
+        - 22-27 June 2025
         - Vienna, Austria
-        -
+        - | 22 Jun, 15:30-16:45, Room 1.61/1.62
+          | `C.02.21 TUTORIAL - Visualization and analysis of Imaging Spectroscopy data with the EnMAP-Box <https://lps25.esa.int/programme/programme-session/?id=66EA2276-ED78-45BB-B984-3EFF03E0C4AE>`_
+          | 25 Jun, 17:45-19:00, X5 - Poster Area
+          | `C.05.05 POSTER - The German EnMAP Mission: 3 Years of hyperspectral data - From Science to Environmental Applications <https://lps25.esa.int/programme/programme-session/?id=0C242DFF-ED02-48E0-A4BD-18A251B289C9>`_
 
 
+2nd EnMAP User Workshop
+=======================
 
+*14. April 2025*
+
+The `2nd EnMAP User Workshop <https://enmap.geographie-muenchen.de>`_ took place from April 2-4, 2025 in in Munich.
+Here, the EnMAP-Box was presented, and participants could join an *Introduction to the EnMAP-Box* workshop.
 
 
 EnMAP Webinar
