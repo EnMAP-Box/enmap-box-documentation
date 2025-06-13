@@ -14,15 +14,15 @@ Upcoming Events
     *   - Release of EnMAP-Box 3.17
         - September/October 2025
         - `QGIS Plugin Repository <https://plugins.qgis.org/plugins/enmapboxplugin/>`_
-        - This will be the first EnMAP-Box version that runs with `QGIS 4.0 <https://blog.qgis.org/2025/04/17/qgis-is-moving-to-qt6-and-launching-qgis-4-0/>`_.
+        - This will be the first EnMAP-Box version running on `QGIS 4.0 <https://blog.qgis.org/2025/04/17/qgis-is-moving-to-qt6-and-launching-qgis-4-0/>`_.
 
-    *   - `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
+    *   - | `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
+
+
         - 22-27 June 2025
         - Vienna, Austria
-        - | 22 Jun, 15:30-16:45, Room 1.61/1.62
-          | `C.02.21 TUTORIAL - Visualization and analysis of Imaging Spectroscopy data with the EnMAP-Box <https://lps25.esa.int/programme/programme-session/?id=66EA2276-ED78-45BB-B984-3EFF03E0C4AE>`_
-          | 25 Jun, 17:45-19:00, X5 - Poster Area
-          | `C.05.05 POSTER - The German EnMAP Mission: 3 Years of hyperspectral data - From Science to Environmental Applications <https://lps25.esa.int/programme/programme-session/?id=0C242DFF-ED02-48E0-A4BD-18A251B289C9>`_
+        - | 22 Jun, 15:30-16:45, Room 1.61/1.62, `C.02.21 Tutorial: Visualization and analysis of Imaging Spectroscopy data with the EnMAP-Box <https://lps25.esa.int/programme/programme-session/?id=66EA2276-ED78-45BB-B984-3EFF03E0C4AE>`_
+          | 25 Jun, 17:45-19:00, X5 - Poster Area, `C.05.05 Poster: The German EnMAP Mission: 3 Years of hyperspectral data - From Science to Environmental Applications <https://lps25.esa.int/programme/programme-session/?id=0C242DFF-ED02-48E0-A4BD-18A251B289C9>`_
 
 
 2nd EnMAP User Workshop
