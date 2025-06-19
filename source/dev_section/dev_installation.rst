@@ -67,7 +67,7 @@ EnMAP-Box repository:
 3. Setup the QGIS Environment
 =============================
 
-To use the QGIS Python API from an IDE,
+This section gives examples how you can setup a QGIS & EnMAP-Box development used by PyCharm on different platforms.
 
 
 This section gives examples how you can setup a QGIS & EnMAP-Box development to be used by PyCharm
@@ -480,6 +480,17 @@ as well.
 
 
         .. _dev_qt_designer:
+
+    The following script can be used to regularly update the QGIS documentation:
+
+    .. code-block:: bash
+
+        curl --output <path_to>/qgis.qch --url https://api.qgis.org/api/qgis.qch
+        assistant -register <path_to>/qgis.qch -quiet
+
+
+
+.. _dev_qt_designer:
 
    .. group-tab:: Qt Designer
 
