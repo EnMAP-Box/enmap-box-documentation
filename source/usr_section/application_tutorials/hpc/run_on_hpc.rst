@@ -877,4 +877,3 @@ This tutorial is largely based on own experience and the following documentation
 
 .. |enmapbox| image:: /img/icons/enmapbox.png
    :width: 28px
-

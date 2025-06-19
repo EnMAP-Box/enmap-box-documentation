@@ -352,8 +352,7 @@ GUI
 Live demonstration
     ..  youtube:: MDjH6SdrDME
         :width: 100%
-        :privacy_mode:
-
+        :privacy_mode
 
 .. Substitutions definitions - AVOID EDITING PAST THIS LINE
    This will be automatically updated by the find_set_subst.py script.

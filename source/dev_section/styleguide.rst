@@ -122,8 +122,6 @@ Also add a caption to the image if it is **not** placed between two bullet point
 
 
 
-
-
 .. Substitutions definitions - AVOID EDITING PAST THIS LINE
    This will be automatically updated by the find_set_subst.py script.
    If you need to create a new substitution manually,
