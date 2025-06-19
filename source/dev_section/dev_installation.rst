@@ -1,6 +1,6 @@
-.. include:: external_links.rst
+.. .. include:: external_links.rst
 
-*Last Update: 2020-08-12*
+*Last Update: 2025-06-19*
 
 .. _dev_installation:
 
@@ -67,114 +67,106 @@ EnMAP-Box repository:
 3. Setup the QGIS Environment
 =============================
 
-This section gives examples how you can setup a QGIS & EnMAP-Box development used by PyCharm on different platforms.
-
-
-This section gives examples how you can setup a QGIS & EnMAP-Box development to be used by PyCharm
-on different platforms.
+This section gives examples how you can setup a QGIS & EnMAP-Box development environment, e.g. to be used by PyCharm.
 
 .. tabs::
 
-   .. group-tab:: Windows
+    .. group-tab:: Windows
+
         **Install or update packages**
 
-            1. Install QGIS using the OSGeo4W Network installer https://qgis.org/en/site/forusers/download.html
+        1. Install QGIS using the OSGeo4W Network installer https://qgis.org/en/site/forusers/download.html
 
-            2. Install the OSGeo4W environment to a folder of choice (preferably one you have permanent writing access to).
-               In following this is called `OSGeo4W`.
+        2. Install the OSGeo4W environment to a folder of choice (preferably one you have permanent writing access to).
+           In following this is called `OSGeo4W`.
 
-            3. Start the OSGeo4W Setup.
+        3. Start the OSGeo4W Setup.
 
-            4. Go forward to these steps by clicking `next`. Usually the default settings should be fine
-                * 'Advanced Install'
-                * 'Install from Internet'
-                * 'Root Directory' (should be your `OSGEO4W` directory)
-                * Select Local Package Directory (default)
-                * Select Your Internet Connect (default Direct Connection)
-                * Choose A Download Site (default https://download.osgeo.org )
+        4. Go forward to these steps by clicking `next`. Usually the default settings should be fine
+            * 'Advanced Install'
+            * 'Install from Internet'
+            * 'Root Directory' (should be your `OSGEO4W` directory)
+            * Select Local Package Directory (default)
+            * Select Your Internet Connect (default Direct Connection)
+            * Choose A Download Site (default https://download.osgeo.org )
 
-            5. Select Packages to install / update
+        5. Select Packages to install / update
 
-                +---------------------+------------------------------+
-                | Package             | Note                         |
-                +=====================+==============================+
-                | qgis                | recent official QGIS version |
-                +---------------------+------------------------------+
-                |python3-scikit-learn |                              |
-                +---------------------+------------------------------+
+            +---------------------+------------------------------+
+            | Package             | Note                         |
+            +=====================+==============================+
+            | qgis                | recent official QGIS version |
+            +---------------------+------------------------------+
+            |python3-scikit-learn |                              |
+            +---------------------+------------------------------+
 
-            6. Press Next to install packages / updates
+        6. Press Next to install packages / updates
 
         **Setup development environment**
 
-            1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/tree/main/.env/osgeo4w
-               to a local folder, e.g. your windows desktop
-            2. Modify the `qgis-env.bat` config section to fit to your local environment, i.e. set the correct paths to your
-               local OSGeoW installation and PyCharm executable
+        1. Copy the `qgis-env.bat` and `start_pycharm.bat` from https://github.com/EnMAP-Box/enmap-box/tree/main/.env/osgeo4w
+           to a local folder, e.g. your windows desktop
+        2. Modify the `qgis-env.bat` config section to fit to your local environment, i.e. set the correct paths to your
+           local OSGeoW installation and PyCharm executable
 
-                .. code-block:: batch
+            .. code-block:: batch
 
-                    @echo off
+                @echo off
 
-                    :: ### CONFIG SECTION ###
-                    :: root of local OSGEO4W installation
-                    set OSGEO4W_ROOT=D:\OSGeo4W
-                    :: PyCharm executable, adjust for version updates
-                    set PYCHARM_EXE="C:\Program Files (x86)\JetBrains\PyCharm 2022.1.2\bin\pycharm64.exe"
+                :: ### CONFIG SECTION ###
+                :: root of local OSGEO4W installation
+                set OSGEO4W_ROOT=D:\OSGeo4W
+                :: PyCharm executable, adjust for version updates
+                set PYCHARM_EXE="C:\Program Files (x86)\JetBrains\PyCharm 2022.1.2\bin\pycharm64.exe"
 
-                    :: git binaries and git lfs binaries
-                    set BIN_GIT=C:\Program Files\Git\bin
-                    set BIN_LFS=C:\Program Files\Git LFS
+                :: git binaries and git lfs binaries
+                set BIN_GIT=C:\Program Files\Git\bin
+                set BIN_LFS=C:\Program Files\Git LFS
 
-            3. Call `start_pycharm.bat` to open PyCharm within the latest QGIS release.
-               You can modify the start script to start a different QGIS build. E.g.
+        3. Call `start_pycharm.bat` to open PyCharm within the latest QGIS release.
+           You can modify the start script to start a different QGIS build. E.g.
 
-                .. code-block:: batch
+            .. code-block:: batch
 
-                    call "%~dp0\qgis-env.bat" qgis-ltr
-                    start "PYCHARM" /B %PYCHARM_EXE%
+                call "%~dp0\qgis-env.bat" qgis-ltr
+                start "PYCHARM" /B %PYCHARM_EXE%
 
-               will start the QGIS Long Term Release (if installed) instead of the latest QGIS release (`qgis`).
+           will start the QGIS Long Term Release (if installed) instead of the latest QGIS release (`qgis`).
 
-               Possible QGIS versions provided by the OSGeo4W installer are:
+           Possible QGIS versions provided by the OSGeo4W installer are:
 
-               +----------------+--------------------------------------------------+
-               | Build          | Description                                      |
-               +================+==================================================+
-               | `qgis`         | QGIS Desktop (latest release)                    |
-               +----------------+--------------------------------------------------+
-               | `qgis-ltr`     | QGIS Desktop (long term release)                 |
-               +----------------+--------------------------------------------------+
-               | `qgis-dev`     | QGIS nightly build of the development branch     |
-               +----------------+--------------------------------------------------+
-               | `qgis-rel-dev` | QGIS nightly build of the latest release branch  |
-               +----------------+--------------------------------------------------+
+           +----------------+--------------------------------------------------+
+           | Build          | Description                                      |
+           +================+==================================================+
+           | `qgis`         | QGIS Desktop (latest release)                    |
+           +----------------+--------------------------------------------------+
+           | `qgis-ltr`     | QGIS Desktop (long term release)                 |
+           +----------------+--------------------------------------------------+
+           | `qgis-dev`     | QGIS nightly build of the development branch     |
+           +----------------+--------------------------------------------------+
+           | `qgis-rel-dev` | QGIS nightly build of the latest release branch  |
+           +----------------+--------------------------------------------------+
 
-   .. group-tab:: Linux
+    .. group-tab:: Linux & macOS
 
-        1. Install QGIS  as described in https://qgis.org/en/site/forusers/download.html
+        Due to the much simpler installation and maintenance, we recommend to install QGIS for Linux and macOS
+        using conda.
 
+    .. group-tab:: Conda
 
-   .. group-tab:: MacOS
+        The installation of QGIS within `conda <https://docs.conda.io/en/latest>`_
+        is (almost) the same on macOS, Windows or Linux. Using conda
+        it is often much easier to install additional python packages, and
+        admin rights are not required.
 
-        1. Install QGIS as described in https://qgis.org/en/site/forusers/download.html
+        1. Make sure `conda <https://docs.conda.io/projects/conda/en/stable/>`_ is installed on your system.
+           We recommend to use the `miniforge <https://github.com/conda-forge/miniforge>`_
+           installer, which defaults to packages from the `conda-forge channel <https://conda-forge.org/>`_.
 
-   .. group-tab:: conda
+        2. Create a new conda environment using one of the EnMAP-Box environment files
+           from `<https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`_
 
-
-        The installation of QGIS within a `conda <https://docs.conda.io/en/latest>`__ /
-        `anaconda <https://www.anaconda.com/>`__ environment is (almost) the same on macOS, windows or linux. Using conda
-        it is often much easier to install additional python packages while admin rights are not required.`
-
-
-        1. Make sure `conda <https://docs.conda.io/en/latest/miniconda.html>`__ or
-           `miniforge <https://github.com/conda-forge/miniforge>`__ is installed on your system and you can call `conda`
-           from your shell.
-
-        2. Create a new conda environment using one of the environment files
-           in `here <https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`__
-
-           .. list-table:: Conda environments to run the EnMAP-Box
+            .. list-table:: Conda environments to run the EnMAP-Box
                 :header-rows: 1
 
                 *   - Environment File
@@ -194,12 +186,11 @@ on different platforms.
                     - QGIS 3.38 with minimum set of python dependencies to run EnMAP-Box.
 
 
-           E.g. to install the latest QGIS with all python requirements in a conda environment named *enmapbox*, use
-           the following command:
+           E.g. to install the latest QGIS with all python requirements in a conda environment named *enmapbox*, run:
 
-        .. code-block:: batch
+            .. code-block:: batch
 
-           conda env create --name enmapbox --file https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
+               conda env create --name enmapbox --file https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
 
         .. tip::
 
@@ -217,7 +208,8 @@ on different platforms.
                conda activate enmapbox
 
 
-        4.  Now you can start `QGIS`_, the :ref:`dev_qt_designer` and :ref:`dev_qt_assistant` from your conda shell:
+        4.  Now you can start `QGIS`_, the :ref:`Qt Designer <dev_additional_tools>` and
+            :ref:`Qt Assistant <dev_additional_tools>` from your conda shell:
 
             .. code-block:: batch
 
@@ -226,45 +218,47 @@ on different platforms.
                assistant
 
 
-   .. group-tab:: Docker
+        5. To easily start applications in this environment that have not been installed by conda, you might
+           define aliases during the activation of the environment, e.g. to start PyCharm
 
-         tbd.
+            * Create an activation script and define an alias for PyCharm:
 
+                Windows: *<your conda installation>/envs/enmapbox/etc/conda/activate.d/pycharm-activate.bat*
 
+                .. code-block:: batch
 
-5. To easily start applications like PyCharm in this environment, which have not been installed by conda, you might
-   define an alias during the activation of the environment.
-
-    * Create an activation script and define an alias for PyCharm:
-
-      Windows: *<your conda installation>/envs/enmapbox/etc/conda/activate.d/pycharm-activate.bat*
-
-      .. code-block:: batch
-
-         @echo off
-         doskey pycharm="<path to pycharm executable>"
+                 @echo off
+                 doskey pycharm="<path to pycharm executable>"
 
 
-      MacOS: *<your conda installation>/envs/enmapbox/etc.conda/activate.d/pycharm-activate.sh*
+                MacOS: *<your conda installation>/envs/enmapbox/etc.conda/activate.d/pycharm-activate.sh*
 
-      .. code-block:: bash
+                .. code-block:: bash
 
-         alias pycharm='open -a PyCharm\ CE.app'
+                 alias pycharm='open -a PyCharm\ CE.app'
 
-    * For completeness, also create a deactivation script:
+            * For completeness, also create a deactivation script:
 
-      Windows: *<your conda installation>/envs/enmapbox/etc/conda/deactivate.d/others-deactivate.bat*
+                Windows: *<your conda installation>/envs/enmapbox/etc/conda/deactivate.d/others-deactivate.bat*
 
-      .. code-block:: batch
+                .. code-block:: batch
 
-        @echo off
-        doskey pycharm=
+                    @echo off
+                    doskey pycharm=
 
-      MacOS/Linux: *<your conda installation>/envs/enmapbox/etc.conda/deactivate.d/pycharm-deactivate.sh*
+                MacOS/Linux: *<your conda installation>/envs/enmapbox/etc.conda/deactivate.d/pycharm-deactivate.sh*
 
-      .. code-block:: bash
+                .. code-block:: bash
 
-        alias pycharm=
+                    alias pycharm=
+
+
+    .. group-tab:: Docker
+
+        .. todo::
+
+            Describe installation using docker image
+
 
 
 .. _dev_setup_pycharm:
@@ -275,68 +269,80 @@ on different platforms.
 ..
     @aryan add PyCharm and VSCode Tab
 
+.. tabs::
 
-1.  Start `PyCharm`_ and add `my_repositories/enmap-box` as new project via *File > Open File or Project*
-
-2.  If this is not already the case, tell PyCharm where to find your Git-executable.
-    Open *File > Settings > Version Control > Git* to set *Path to Git executable*.
-    Press *Test* to check the used Git version.
-
-    .. figure:: img/pycharm_git_settings.png
-
-        Set the Git executable used by PyCharm
-
-    .. tip::
-
-        Use ``where`` to return the path of a git-executable that is available in your DOS/Linux/macOS shell
-
-        .. code-block:: bat
-
-            (enmapbox) C:\>where git
-            C:\Users\my_username\AppData\Local\Programs\Git\cmd\git.exe
-
-
-3.  Switch to *Project: enmap-box > Project Interpreter* and select the QGIS python as python interpreter.
+   .. group-tab:: PyCharm
 
 
 
-    .. figure:: img/pycharm_conda_interpreter_add.png
+        1.  Start `PyCharm`_ and add `my_repositories/enmap-box` as new project via *File > Open File or Project*
 
-        Add the *enmapbox* python to the list of python interpreters
+        2.  If this is not already the case, tell PyCharm where to find your Git-executable.
+            Open *File > Settings > Version Control > Git* to set *Path to Git executable*.
+            Press *Test* to check the used Git version.
 
+            .. figure:: img/pycharm_git_settings.png
 
-    .. figure:: img/pycharm_conda_interpreter.png
+                Set the Git executable used by PyCharm
 
-        Select the *enmapbox* python as project interpreter
+            .. tip::
 
+                Use ``where`` to return the path of a git-executable that is available in your DOS/Linux/macOS shell
 
+                .. code-block:: bat
 
-4.  Switch to *Project Structure* and add the QGIS python folder as additional project content root.
-
-    ============= ===========================================================================
-    OSGeo4W       ``<your OSGeo4W folder>\bin\python``
-    Linux         ``/usr/bin/python3``
-    macOS         ``/Application/QGIS.app/Contents/MacOS/bin/python3``
-    conda (win)   ``<conda root>/envs/enmapbox/Library/python``
-    conda (linux) ``<conda root>/envs/enmapbox/share/qgis/python``
-    conda (macOS) ``<conda root>/envs/enmapbox/QGIS.app/Contents/MacOS/../Resources/python``
-    ============= ===========================================================================
+                    (enmapbox) C:\>where git
+                    C:\Users\my_username\AppData\Local\Programs\Git\cmd\git.exe
 
 
-    Right-click on the ``plugins`` subfolder and select :guilabel:`Sources`.
-    This makes QGIS internal plugins like the "processing" plugin available to PyCharm.
-
-    Now the PyQGIS API is available to your Python installation.
-
-    .. tip::
-
-        The same way allows you to include other directories to your project's *PYTHONPATH*,
-        e.g. to make code available from other folder or repositories.
+        3.  Switch to *Project: enmap-box > Project Interpreter* and select the QGIS python as python interpreter.
 
 
-    .. figure:: img/pycharm_project_content_roots.png
 
-        Use ``enmap/Library/python`` as additional content root
+            .. figure:: img/pycharm_conda_interpreter_add.png
+
+                Add the *enmapbox* python to the list of python interpreters
+
+
+            .. figure:: img/pycharm_conda_interpreter.png
+
+                Select the *enmapbox* python as project interpreter
+
+
+
+        4.  Switch to *Project Structure* and add the QGIS python folder as additional project content root.
+
+            ============= ===========================================================================
+            OSGeo4W       ``<your OSGeo4W folder>\bin\python``
+            Linux         ``/usr/bin/python3``
+            macOS         ``/Application/QGIS.app/Contents/MacOS/bin/python3``
+            conda (win)   ``<conda root>/envs/enmapbox/Library/python``
+            conda (linux) ``<conda root>/envs/enmapbox/share/qgis/python``
+            conda (macOS) ``<conda root>/envs/enmapbox/QGIS.app/Contents/MacOS/../Resources/python``
+            ============= ===========================================================================
+
+
+            Right-click on the ``plugins`` subfolder and select :guilabel:`Sources`.
+            This makes QGIS internal plugins like the "processing" plugin available to PyCharm.
+
+            Now the PyQGIS API is available to your Python installation.
+
+            .. tip::
+
+                The same way allows you to include other directories to your project's *PYTHONPATH*,
+                e.g. to make code available from other folder or repositories.
+
+
+            .. figure:: img/pycharm_project_content_roots.png
+
+                Use ``enmap/Library/python`` as additional content root
+
+
+   .. group-tab:: VS Code
+
+        .. todo:
+
+            Describe Setup with VS Code
 
 
 5.  PyCharm and PyQGIS may need the environmental variable ``QGIS_PREFIX_PATH``. Typical paths are:
@@ -431,11 +437,12 @@ Additional Tools
 The Qt company provides various tools that help to create Qt applications. They are useful for PyQt and PyQGIS users
 as well.
 
-.. _dev_qt_assistant:
+.. _dev_additional_tools:
 
 .. tabs::
 
-   .. group-tab:: Qt Assistant
+    .. _dev_qt_assistant:
+    .. group-tab:: Qt Assistant
 
         The Qt Assistant allows to discover and read `*.qch` files, which are provided for the
         Qt and QGIS APIs. Although written to document the C++ code, most descriptions apply 1:1 to the Python API.
@@ -444,8 +451,6 @@ as well.
         alternative to the slower Python online documentation.
         In addition, the `*.qch` docs link into the QGIS C++ source code,
         which makes it easier to understand the functionality of the QGIS API.
-
-
 
         1.  Download the ``*.qch*`` files which contain:
 
@@ -479,8 +484,6 @@ as well.
                 (enmapbox) $>assistant
 
 
-        .. _dev_qt_designer:
-
     The following script can be used to regularly update the QGIS documentation:
 
     .. code-block:: bash
@@ -489,10 +492,7 @@ as well.
         assistant -register <path_to>/qgis.qch -quiet
 
 
-
-.. _dev_qt_designer:
-
-   .. group-tab:: Qt Designer
+    .. group-tab:: Qt Designer
 
         The Qt Designer is a powerful tool to create GUI frontends by drawing, drag and drop.
         Created GUI form files are saved in a XML file ending with ``*.ui``. These can be called from
@@ -510,7 +510,7 @@ as well.
 
              Qt Designer showing the metadataeditor.ui for the Metadata editor.
 
-   .. group-tab:: Qt Creator
+    .. group-tab:: Qt Creator
 
         The Qt Creator is the one-in-all IDE to develop Qt C++ applications. It includes the functionality covered by Qt Assistant
         (here called Help) and Qt Designer (here called form designer) and helps to browse C++ code. It is the preferred tool to

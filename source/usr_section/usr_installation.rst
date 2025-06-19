@@ -39,53 +39,63 @@ Here we describe how you can install QGIS, the required python packages and the 
 
      **Install QGIS on Linux**
 
-     The following instructions were written for and tested on Ubuntu (22.04 & 24.04). They should also work for other Debian-based distributions.
-
-     Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
-
+     Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu ,
+     or follow the instructions for conda.
 
    .. group-tab:: MacOS
 
       **Install QGIS on MacOS**
 
-      *Note*
+      .. note::
 
-      As of March 2025, the official QGIS.app from https://qgis.org/en/site/forusers/download.html
-      still uses Python 3.9 and GDAL 3.2.2 (see https://github.com/EnMAP-Box/enmap-box/issues/858).
-      Various EnMAP-Box components and Python packages used by them now require newer versions of GDAL and Python.
+         As of June 2025, the official QGIS page https://qgis.org/en/site/forusers/download.html
+         shows the following notice:
 
-      Therefore, please install QGIS either using **conda**, or using
-      the installer provided `OpenGIS.ch <https://www.opengis.ch/>`_:
+         .. image:: /img/installation_macos_qgiswarning.png
 
 
-      #. Download the latest package installer from https://github.com/opengisch/qgis-conda-builder/releases.
-      #. Open the installer in Finder using the context menu.
 
-          .. figure:: /img/macos/opengisch/install_exp_finder.png
-             :width: 60%
+         However, we have made better experiences in using :ref:`conda <usr_installation_qgis_conda>` to
+         install QGIS and all python requirements to run the EnMAP-Box
+         (on macOS Sequoia 15.5 (24F74), Intel MacBook 2010 and Mac Mini 2024).
 
-             Call *Open* from the finder's context menu ...
+         Therefore, we please follow the instructions give in the *Conda* tab.
 
-          .. figure:: /img/macos/opengisch/install_exp_open.png
-             :width: 35%
+      ..
+         Therefore, please install QGIS either using **conda**, or using
+         the installer provided `OpenGIS.ch <https://www.opengis.ch/>`_:
 
-             ... to show and use the *Open* button in the next dialog.
 
-       #. Select a location to install the QGIS.app (e.g., ``QGIS-3.36.app``), such as `/System/Applications`.
+         #. Download the latest package installer from https://github.com/opengisch/qgis-conda-builder/releases.
+         #. Open the installer in Finder using the context menu.
 
-          .. figure:: /img/macos/opengisch/install_exp_folder.png
+             .. figure:: /img/macos/opengisch/install_exp_finder.png
+                :width: 60%
 
-   .. _usr_installation_qgis_conda:
+                Call *Open* from the finder's context menu ...
+
+             .. figure:: /img/macos/opengisch/install_exp_open.png
+                :width: 35%
+
+                ... to show and use the *Open* button in the next dialog.
+
+          #. Select a location to install the QGIS.app (e.g., ``QGIS-3.36.app``), such as `/System/Applications`.
+
+             .. figure:: /img/macos/opengisch/install_exp_folder.png
+
+
    .. group-tab:: Conda
+
+      .. _usr_installation_qgis_conda:
 
       **Install QGIS with conda (cross-platform)**
 
       Conda is a cross-platform package manager that allows install software in separated environments.
 
       It is recommended to use Miniforge, a minimal installer for conda specific to the
-      `conda-forge<https://conda-forge.org/>`_ channel.
+      `conda-forge <https://conda-forge.org/>`_ channel.
 
-      You can get the Miniforge Installer here <https://conda-forge.org/download/>`_.
+      You can get the Miniforge Installer from https://conda-forge.org/download/.
 
 
 2. Install Python Dependencies
@@ -344,19 +354,3 @@ Here we describe how you can install QGIS, the required python packages and the 
 
 
 
-
-
-
-
-.. Substitutions definitions - AVOID EDITING PAST THIS LINE
-   This will be automatically updated by the find_set_subst.py script.
-   If you need to create a new substitution manually,
-   please add it also to the substitutions.txt file in the
-   source folder.
-
-.. |cb0| image:: /img/icons/cb0.png
-   :width: 28px
-.. |cb1| image:: /img/icons/cb1.png
-   :width: 28px
-.. |icon| image:: /img/icon.png
-   :width: 30px
