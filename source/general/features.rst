@@ -65,49 +65,49 @@ be displayed together in different views. Move the mouse over the GUI areas for 
         height="202.58583"
         preserveAspectRatio="none" />
 
-      <a href="/usr_section/usr_manual/gui.html#the-gui" target="_self">
+      <a href="usr_section/usr_manual/gui.html#the-gui" target="_self">
         <rect x="0.2717" y="5.977" width="65.747" height="4.8903" />
         <rect class="bg" x="8" y="12" width="45" height="12" />
         <text class="label" x="10" y="20">Menu</text>
       </a>
 
-      <a href="/usr_section/usr_manual/gui.html#toolbar" target="_self">
+      <a href="usr_section/usr_manual/gui.html#toolbar" target="_self">
         <rect x="0.5434" y="11.4107" width="236.092" height="9.2372" />
         <rect class="bg" x="95" y="22" width="40" height="12" />
         <text class="label" x="100" y="30">Toolbar</text>
       </a>
 
-      <a href="/usr_section/usr_manual/gui.html#gui-panels-data-sources" target="_self">
+      <a href="usr_section/usr_manual/gui.html#gui-panels-data-sources" target="_self">
         <rect x="0.5434" y="21.4629" width="53.521" height="77.1579" />
         <rect class="bg" x="10" y="58" width="75" height="14" />
         <text class="label" x="12" y="70">Data Sources Panel</text>
       </a>
 
-      <a href="/usr_section/usr_manual/gui.html#data-views" target="_self">
+      <a href="usr_section/usr_manual/gui.html#data-views" target="_self">
         <rect x="0.5434" y="99.4359" width="53.25" height="99.1642" />
         <rect class="bg" x="10" y="158" width="68" height="14" />
         <text class="label" x="12" y="170">Data Views Panel</text>
       </a>
 
-      <a href="/usr_section/usr_manual/gui.html#map-view" target="_self">
+      <a href="usr_section/usr_manual/gui.html#map-view" target="_self">
         <rect x="54.0649" y="20.3762" width="265.706" height="89.927" />
         <rect class="bg" x="145" y="58" width="50" height="14" />
         <text class="label" x="147" y="70">Map Viewer</text>
       </a>
 
-      <a href="/usr_section/usr_manual/gui.html#spectral-library-view" target="_self">
+      <a href="usr_section/usr_manual/gui.html#spectral-library-view" target="_self">
         <rect x="54.0649" y="109.7598" width="265.977" height="88.8402" />
         <rect class="bg" x="145" y="158" width="90" height="14" />
         <text class="label" x="147" y="170">Spectral Library Viewer</text>
       </a>
 
-      <a href="/usr_section/usr_manual/gui.html#processing-toolbox" target="_self">
+      <a href="usr_section/usr_manual/gui.html#processing-toolbox" target="_self">
         <rect x="320.0422" y="20.6479" width="65.204" height="118.454" />
         <rect class="bg" x="255" y="58" width="75" height="14" />
         <text class="label" x="257" y="70">Processing Toolbox</text>
       </a>
 
-      <a href="/usr_section/usr_manual/gui.html#collect-profiles" target="_self">
+      <a href="usr_section/usr_manual/gui.html#collect-profiles" target="_self">
         <rect x="320.0422" y="139.1015" width="65.747" height="59.4985" />
         <rect class="bg" x="255" y="183" width="90" height="14" />
         <text class="label" x="257" y="190">Spectral Profile Sources</text>
