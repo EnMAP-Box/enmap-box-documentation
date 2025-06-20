@@ -10,6 +10,8 @@ The GUI
 
        Overview of the EnMAP-Box
 
+.. _gui_toolbar:
+
 Toolbar
 =======
 
@@ -22,6 +24,8 @@ In the toolbar you can find the most common tasks. See table below for informati
        :align: center
 
        Enable and disable different toolbars
+
+.. _gui_datasources:
 
 Data Sources
 ------------
@@ -36,6 +40,8 @@ Data Sources
    * - |mActionDataSourceManager|
      - Adds a data source
      - Here you can add data from different sources, e.g. raster and vector
+
+.. _gui_maps_and_views:
 
 Maps and Views
 --------------
@@ -56,6 +62,9 @@ Maps and Views
    * - |viewlist_textview|
      - Open a text window
      - Opens a new text window, you can for example use it to store metadata, take notes etc.
+
+
+.. _gui_map_tools:
 
 Map Tools
 ---------
@@ -100,6 +109,9 @@ Map Tools
    * - |processingAlgorithm|
      - Toggle processing toolbox visibility
      - Opens the Processing toolbox panel
+
+
+.. _gui_vector_tools:
 
 Vector Tools
 ------------
@@ -161,6 +173,8 @@ Earth Observation for QGIS (EO4Q)
 Panels
 =======
 
+.. _gui_panels_data_sources:
+
 Data Sources
 ------------
 
@@ -219,6 +233,9 @@ corresponding metadata are available:
      your QGIS project as you normally would, and then click the |qgis_icon| :superscript:`Synchronize Data Sources with QGIS`
      button. Now they should appear in the data source panel and can be added to a Map View.
 
+.. _gui_panels_data_views:
+
+
 Data Views
 ----------
 
@@ -247,6 +264,8 @@ You may change the name of a Window by double-clicking onto the name in the list
 Example of how different window types and their contents are organized in the Data Views panel. In this case there
 are two Map Views and one Spectral Library View in the project.
 
+
+.. _gui_spectra_profile_source:
 
 Spectral Profile Sources
 ------------------------
@@ -349,6 +368,8 @@ use the |select_location| :superscript:`Select Cursor Location` button together 
 Views
 ======
 
+.. _gui_map_view:
+
 Map View
 -----------
 
@@ -401,7 +422,7 @@ Crosshair
 
 
 
-
+.. _gui_spectral_library_view:
 
 Spectral Library View
 ---------------------
@@ -635,6 +656,8 @@ The following table shows some examples of how *spectralMath* and *spectralData*
      - *spectralData("profiles")*
    * - Return xUnit string of the spectral profile e.g. 'nm' for wavelength unit
      - *spectralData("profiles")['xUnit']*
+
+.. _gui_spectral_processing:
 
 Spectral Processing
 """""""""""""""""""
@@ -890,8 +913,6 @@ Attribute Table View
 --------------------
 
 .. todo:: ...
-
-
 
 
 

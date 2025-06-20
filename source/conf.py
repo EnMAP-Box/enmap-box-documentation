@@ -52,7 +52,7 @@ extensions = [
     "sphinxcontrib.jquery",
     "sphinx_datatables",
 ]
-
+todo_include_todos = True
 suppress_warnings = ["app.parallel_read_safe", 'app.sphinx_datatables','sphinx_datatables']
 
 # set the version to use for DataTables plugin

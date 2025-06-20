@@ -98,8 +98,7 @@ a look at `Downloading Ordered Data <https://eoweb.dlr.de/egp/docs/user/download
     .. figure:: /img/enmap_downloadData.png
        :align: center
 
-       Example of FTPS settings in FileZilla
-
+       Example of FTPS settings in FileZill
 
 .. Substitutions definitions - AVOID EDITING PAST THIS LINE
    This will be automatically updated by the find_set_subst.py script.

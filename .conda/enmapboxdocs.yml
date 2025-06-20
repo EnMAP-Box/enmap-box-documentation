@@ -18,4 +18,5 @@ dependencies:
   - pip:
     - flake8-qgis
     - sphinxnotes-strike
+    - sphinx-datatables
     - myst_parser

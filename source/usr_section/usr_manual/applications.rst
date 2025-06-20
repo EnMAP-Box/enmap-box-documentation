@@ -443,6 +443,9 @@ Image Math (deprecated)
 
 Deprecated, use `Raster math`_
 
+
+.. _raster_math_app:
+
 Raster math
 ===========
 
@@ -814,8 +817,6 @@ Spectral Index Creator
 ==================================
 
 todo
-
-
 
 
 

@@ -23,15 +23,16 @@ spectral library management, (ii) a set of algorithms, and
 
 The EnMAP-Box is developed at Humboldt-Universität zu Berlin under contract by the Helmholtz Centre Potsdam GFZ and is
 part of the EnMAP Core Science Team activities. It is funded by the German Aerospace Centre (DLR) - Project Management
-Agency, granted by the Federal Ministry for Economic Affairs and Climate Action  (BMWK; grant no. 50EE2401A).
+Agency, granted by the Federal Ministry of Research, Technology and Space
+(BMFTR; grant no. `50EE2401A <https://foerderportal.bund.de/foekat/jsp/SucheAction.do?actionMode=view&fkz=50EE2401A>`_).
 
 .. list-table::
-   :widths: 15 15 15 15 40
+   :widths: 25 15 15 15 40
    :header-rows: 0
 
-   * - .. image:: /img/logos/logo_bmwk.jpg
+   * - .. image:: /img/logos/logo_bmftr.svg
          :width: 100%
-         :target: https://www.bundesregierung.de/breg-en/federal-government/ministries/ministry-for-economic-affairs-and-climate-action
+         :target: https://www.bmbf.de/EN/Home/home_node.html
      - .. image:: /img/logos/logo_dlr.svg
          :width: 100%
          :target: https://www.dlr.de
@@ -44,26 +45,3 @@ Agency, granted by the Federal Ministry for Economic Affairs and Climate Action 
      - .. image:: /img/logos/logo_ug.png
          :width: 100%
          :target: https://www.uni-greifswald.de/
-
-
-
-.. Substitutions definitions - AVOID EDITING PAST THIS LINE
-   This will be automatically updated by the find_set_subst.py script.
-   If you need to create a new substitution manually,
-   please add it also to the substitutions.txt file in the
-   source folder.
-
-.. |bmwi| image:: /img/logos/logo_bmwi.jpg
-   :width: 100%
-.. |dlr| image:: /img/logos/logo_dlr.svg
-   :width: 100%
-   :target: https://www.dlr.de/
-.. |gfz| image:: /img/logos/logo_gfz.svg
-   :width: 100%
-   :target: https://www.gfz-potsdam.de/
-.. |hu| image:: /img/logos/logo_hu-berlin.svg
-   :width: 100%
-   :target: https://www.geographie.hu-berlin.de/en/professorships/eol
-.. |ug| image:: /img/logos/logo_ug.png
-   :width: 100%
-   :target: https://geo.uni-greifswald.de/eo
