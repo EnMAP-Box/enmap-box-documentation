@@ -16,20 +16,22 @@ It is also possible to drag&drop products from the file explorer (e.g. Windows E
 The different import algorithms assign proper metadata like wavelength, band names and data offset and scale, resulting in analysis ready raster data.
 
 Usage
-    1. Choose the product type from the :guilabel:`Project > Add Product` menu.
+
+1. Choose the product type from the :guilabel:`Project > Add Product` menu.
 
     .. figure:: ./img/gifs/Add_Products_1.gif
-       :align: center
+      :align: center
 
-    2. Select the associated (metadata) file and Open in Maps View.
+2. Select the associated (metadata) file and Open in Maps View.
 
-    .. figure:: ./img/gifs/Add_Products_2.gif
-       :align: center
+   .. figure:: ./img/gifs/Add_Products_2.gif
+      :align: center
 
-    3. Adding multiple Map Views.
+3. Adding multiple Map Views.
 
-    .. figure:: ./img/gifs/Add_Products_3.gif
-       :align: center
+   .. figure:: ./img/gifs/Add_Products_3.gif
+      :align: center
+
 
 Add Web Map Services (WMS)
 ==========================
