@@ -7,7 +7,9 @@ Features
 
 GUI Overview
 ============
-This is an interactive overview of the EnMAP-Box GUI. Hover over different sections to see tooltips describing their function.
+
+The EnMAP-Box offers a graphical user interface (GUI) with which raster, vector and spectral library sources can
+be displayed together in different views. Move the mouse over the GUI areas for further information.
 
 .. raw:: html
 
