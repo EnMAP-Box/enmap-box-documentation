@@ -399,6 +399,8 @@ Specify the output path for the reclassified image under :guilabel:`Output File`
 
 Click :guilabel:`OK` to run the tool.
 
+.. _scatter_plot_tool:
+
 Scatter Plot
 ============
 
@@ -450,8 +452,6 @@ Virtual Raster Builder
 ======================
 
 See https://virtual-raster-builder.readthedocs.io/en/latest/
-
-
 
 
 
