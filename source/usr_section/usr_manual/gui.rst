@@ -2,8 +2,8 @@
 
 .. _gui:
 
-The GUI
-#######
+GUI
+###
 
     .. figure:: /img/manual_gui.png
        :align: center
