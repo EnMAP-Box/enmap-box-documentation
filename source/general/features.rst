@@ -141,6 +141,10 @@ Visualization
         * link raster visualization spectrally to  always show similar wavelength combinations,
           no-matter how many bands your raster sources have
 
+        .. image:: img/rasterlayer_stylingpanel.png
+            :align: center
+
+
     .. tab:: Raster Rendering
 
         *Explore your raster data interactively*
