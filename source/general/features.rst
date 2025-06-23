@@ -59,7 +59,7 @@ be displayed together in different views. Move the mouse over the GUI areas for 
 
       <!-- Base image -->
       <image
-        href="../_static/img/enmap_gui_base.png"
+        href="../_static/img/EnMAP_GUI.png"
         x="0" y="0"
         width="385.22895"
         height="202.58583"
