@@ -65,7 +65,7 @@ or
 
 .. code-block:: bash
 
-   activate specdeepmap
+   conda activate specdeepmap
 
 4.2. Start QGIS and then open EnMAP-Box in QGIS interface via the EnMAP-Box plugin icon
 
@@ -202,6 +202,7 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 
          Deep Learning Trainer Interface
 
+(Note: In 3.16.3 the Trainer runs, but will give a sys.flush error after running. The checkpoint can be used after training however as the error occures after the training script. To avoid this open QGIS python console and close trainer interface again and reopen it. This is a hotfix until the bug is fixed in QGIS with enmapbox-version 3.16.4)
 * As **Input folder (Train and Validation dataset)** use the 'specdeepmap_tutorial' folder. By **model architecture** and **model backbone** you can define possible model combinations. For this example leave the default values so Unet and 'resnet18'.
 * Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al 2023 (https://arxiv.org/abs/2211.07044).
 * We will use the default for the following parameter and leave them checked & activated (**freeze backbone**, **data augumentation**, **early stopping** and **balanced Training using class weights**)
@@ -218,6 +219,7 @@ During training in the Logger Interface the progress of the training is printed 
 The model uses the training data for learning the weights and the validation data is just used to check if the model over or underfits (if the train and validation values differ significantly).
 After training the logger displays the best model path for the best model. In general you want to use the model with the highest IoU score on the validation dataset. This is also written into the model file name, so you can find it later again at any time.
 Here a logger visualization of the training we just performed. In our case with GPU for 47 epochs took around 12 min. ( 47 out of 50 epochs as early stopping stops training if val IoU is not increasing for 20 epochs)
+
 
    .. figure:: img/3_Deep_learning_trainer_output.jpeg
 
@@ -294,7 +296,7 @@ This enables easy employment of the model (also automatically apply same scaling
 * For **IoU CSV** define output: EUCROPMAP_2_score.csv in the 'specdeepmap_tutorial' folder.
 * Run the algorithm.
 
-You can open the predicted Raster and CSV in the EnMAP-Box to inspect the prediction visually and the IoU score per class. Mean IoU is ~0,68-0.71 great!
+You can open the predicted Raster and CSV in the EnMAP-Box to inspect the prediction visually and the IoU score per class (Mean IoU is ~0,68-0.71).
 
 
    .. figure::  img/6_Deep_learning_mapper_output.jpg
@@ -302,7 +304,7 @@ You can open the predicted Raster and CSV in the EnMAP-Box to inspect the predic
       Deep Learning mapper Output:Predicted Raster and IoU score
 
 
-* Now completed the tutorial, congratulations!
+
 
 
 
