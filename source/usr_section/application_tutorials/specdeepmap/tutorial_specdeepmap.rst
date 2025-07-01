@@ -10,7 +10,9 @@ Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Seg
 This tutorial gives an introduction to the Processing Algorithms of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application.
 The Application is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
-In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task.
+In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task. The pretrained Resnet18 for Sentinel-2 Top of Atmosphere reflectance stemms from Wang et al 2023 (https://arxiv.org/abs/2211.07044) and is loaded via torchgeo functions (https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html ).
+
+The github repository for the integration in enmapbox 3.16 can be found here: https://github.com/EnMAP-Box/enmap-box/tree/release_3.16/enmapbox/apps/SpecDeepMap
 
 Introduction to SpecDeepMap
 ***************************
@@ -24,8 +26,7 @@ The SpecDeepMap application consists of six QGIS processing algorithms and is de
 Installation of SpecDeepMap
 ***************************
 
-SpecDeepMap is available by default in EnMAP-Box from 3.16 onwards until further notice. Follow EnMAP-Box installation guide to regularly set up EnMAP-Box here or install via QGIS:
-https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html
+SpecDeepMap is available by default in EnMAP-Box from 3.16 onwards, and has to be installed via Miniforge/Conda.
 
 Install QGIS & SpecDeepMap via Miniforge/Conda (cross-platform)
 ===============================================================
@@ -202,9 +203,9 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 
          Deep Learning Trainer Interface
 
-(Note: In 3.16.3 the Trainer runs, but will give a sys.flush error after running. The checkpoint can be used after training however as the error occures after the training script. To avoid this open QGIS python console and close trainer interface again and reopen it. This is a hotfix until the bug is fixed in QGIS with enmapbox-version 3.16.4)
+
 * As **Input folder (Train and Validation dataset)** use the 'specdeepmap_tutorial' folder. By **model architecture** and **model backbone** you can define possible model combinations. For this example leave the default values so Unet and 'resnet18'.
-* Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al 2023 (https://arxiv.org/abs/2211.07044).
+* Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al 2023 (https://arxiv.org/abs/2211.07044) .
 * We will use the default for the following parameter and leave them checked & activated (**freeze backbone**, **data augumentation**, **early stopping** and **balanced Training using class weights**)
 
 * As **Batch size** we use 16 and for **Epochs** 50, if you want to do the full training and have sufficient computation and downloaded the tutorial_large data. ( If you have less computational resources or use the small dataset folder use batch size of 4 and only train for 5-10 epochs). Further you can reduce the amount of epochs to 3, if you just want to later use the pretained model from the tutorial_small or tutorial_large folder.
@@ -213,6 +214,9 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 
 * As **Path for saving tensorboard logger** use the 'specdeepmap_tutorial' folder.
 * As **Path for saving model** use the 'specdeepmap_tutorial' folder.
+
+(IMPORTANT: In enmapbox 3.16.3 the Trainer runs through, but will give a sys.flush error after running. All  checkpoint during training are saved  correctly and the training functions as intended as the error occures after the training process.To avoid this error open the QGIS python console before running the algorithm. close deep learning trainer interface again and reopen it . This will correctly set the sys parameters. (This is a hotfix until the bug is fixed with the next update with enmapbox-version 3.16.4)
+
 * Let's run the model.
 
 During training in the Logger Interface the progress of the training is printed after each epoch. (epoch means one loop through the training dataset). In the logger the train and validation loss is displayed, which should reduce during training and the train IoU and val IoU should increase.
@@ -235,7 +239,7 @@ To call the Tensorboard visualizer you need to define as input the location wher
 * Define for **Tensorboard logger Directory** the subfolder 'specdeepmap_tutorial/lightning_logs'.
 * The default **TensorBoard port** is 8000. In windows there is no need to change the port as each tensorboard port will be terminated before a new tensorboard is initialized. In other systems the algorithm doesn't support the port termination and it is  necessary to define a different port each time to open a new tensorboard (Ports are also terminated if PC is shut down).
 
-   .. figure:: img/4_Tensorboard_visualizer.jpeg
+   .. figure:: img/4_Tensorboard_visualizer.jpg
 
          Tensorboard Interface
 
