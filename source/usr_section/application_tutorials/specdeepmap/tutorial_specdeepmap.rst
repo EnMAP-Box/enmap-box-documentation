@@ -214,7 +214,6 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 
 * As **Path for saving tensorboard logger** use the 'specdeepmap_tutorial' folder.
 * As **Path for saving model** use the 'specdeepmap_tutorial' folder.
-
 (IMPORTANT: In enmapbox 3.16.3 the Trainer runs through, but will give a sys.flush error after running. All  checkpoint during training are saved  correctly and the training functions as intended as the error occures after the training process.To avoid this error open the QGIS python console before running the algorithm. close deep learning trainer interface again and reopen it . This will correctly set the sys parameters. (This is a hotfix until the bug is fixed with the next update with enmapbox-version 3.16.4)
 
 * Let's run the model.
