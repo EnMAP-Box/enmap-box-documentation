@@ -5,6 +5,8 @@ Upcoming Events
 ===============
 
 .. list-table::
+    :widths: 30 10 15 35
+    :header-rows: 1
 
     *   - Title
         - Date
@@ -12,17 +14,39 @@ Upcoming Events
         - Comments
 
     *   - Release of EnMAP-Box 3.17
-        - September/October 2025
+        - Sep/Oct 2025
         - `QGIS Plugin Repository <https://plugins.qgis.org/plugins/enmapboxplugin/>`_
         - This will be the first EnMAP-Box version running on `QGIS 4.0 <https://blog.qgis.org/2025/04/17/qgis-is-moving-to-qt6-and-launching-qgis-4-0/>`_.
 
-    *   - | `Living Planet Symposium 2025 <https://lps25.esa.int/>`_
+    *   - Workshop on Advanced Earth Observation, Machine Learning and Artificial Intelligence in Agricultural Applications
+        - 10. Sep 2025
+        - ZALF, Müncheberg, Germany
+        -
 
 
-        - 22-27 June 2025
-        - Vienna, Austria
-        - | 22 Jun, 15:30-16:45, Room 1.61/1.62, `C.02.21 Tutorial: Visualization and analysis of Imaging Spectroscopy data with the EnMAP-Box <https://lps25.esa.int/programme/programme-session/?id=66EA2276-ED78-45BB-B984-3EFF03E0C4AE>`_
-          | 25 Jun, 17:45-19:00, X5 - Poster Area, `C.05.05 Poster: The German EnMAP Mission: 3 Years of hyperspectral data - From Science to Environmental Applications <https://lps25.esa.int/programme/programme-session/?id=0C242DFF-ED02-48E0-A4BD-18A251B289C9>`_
+Living Planet Symposium 2025
+============================
+
+*09. July 2025*
+
+On the `Living Planet Symposium 2025 <https://lps25.esa.int/>`_ in Vienna, Austria (22-27. July 2025),
+many participants used the change to get in touch with the EnMAP-Box in a `tutorial <https://lps25.esa.int/programme/programme-session/?id=66EA2276-ED78-45BB-B984-3EFF03E0C4AE>`_
+and by visiting the latest EnMAP-Box poster:
+
+
+.. image:: img/events/enmapbox_lps25.png
+    :height: 250px
+
+.. raw:: html
+
+    <a href="_static/poster/Poster.EnMAP-Box.LPS25.pdf">
+    <img style="height:250px;"
+        src="_static/poster/Poster.EnMAP-Box.LPS25.png"
+        alt="EnMAP-Box poster">
+    </a>
+
+We were very pleased to get in touch with many EnMAP-Box users personally. It was quite
+impressed how much demand there was for our brand new EnMAP box stickers.
 
 
 2nd EnMAP User Workshop
