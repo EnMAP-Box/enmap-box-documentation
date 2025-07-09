@@ -49,7 +49,7 @@ application of suitable in-water algorithms. Ocean, coastal and inland water bod
 these algorithms. The core in-water processor including optical water type classification is the ONNS
 (OLCI Neural Network Swarm) algorithm [1]_ version 0.9. It is an EnMAP-precursor algorithm, which is specially developed
 for data evaluation of the multi-spectral Ocean and Land Colour Instrument (OLCI) on board
-`Sentinel-3 <https://sentinel.esa.int/web/sentinel/missions/sentinel-3/overview/mission-summary>`_.
+`Sentinel-3 <https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-3>`_.
 Satellite data from other ocean colour sensors can be analysed as well by means of an intermediate band-shifting procedure [2]_.
 Atmospheric correction must be provided before utilization of the in-water algorithm, different models are available
 for this, e.g. Polymer [3]_ or C2RCC [4]_ (but may lead to different retrieval results). Alternatively, in situ
