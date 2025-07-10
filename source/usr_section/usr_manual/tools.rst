@@ -193,7 +193,6 @@ HSV Color Raster Renderer
 =========================
 
 The :guilabel:`HSV Color Raster Renderer` allows to visualize 3 bands using the HSV (Hue, Saturation, Value/Black) color model.
-.. Find a mapping example here: https://landmonitoring.earth/portal/ ; select Maps > Global Landcover Dynamics 2016-2020
 
 Usage
     1. Start the tool from the :guilabel:`Tools > HSV Color Raster Renderer` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
