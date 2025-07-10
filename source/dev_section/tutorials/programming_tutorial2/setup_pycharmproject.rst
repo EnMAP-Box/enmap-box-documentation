@@ -1,5 +1,3 @@
-.. include:: ../../external_links.rst
-
 Setup your programming project
 ##############################
 

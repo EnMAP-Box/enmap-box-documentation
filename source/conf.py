@@ -45,11 +45,35 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
+    'sphinx_tabs.tabs',
     'sphinxcontrib.youtube',
     'sphinx_copybutton',
     'myst_parser',
+    "sphinxcontrib.jquery",
+    "sphinx_datatables",
 ]
+todo_include_todos = True
+suppress_warnings = ["app.parallel_read_safe", 'app.sphinx_datatables','sphinx_datatables']
 
+# set the version to use for DataTables plugin
+datatables_version = "2.1.8"
+
+# name of the class to use for tables to enable DataTables
+datatables_class = "sphinx-datatable"
+
+# any custom options to pass to the DataTables constructor. Note that any
+# options you set are used for all DataTables.
+datatables_options = {}
+
+# set the version to use for DataTables plugin
+datatables_version = "1.13.4"
+
+# name of the class to use for tables to enable DataTables
+datatables_class = "sphinx-datatable"
+
+# any custom options to pass to the DataTables constructor. Note that any
+# options you set are used for all DataTables.
+datatables_options = {}
 
 # Register the filter_warning_log function to be called when warnings are logged
 def setup(app):
@@ -84,8 +108,8 @@ version = u'{}'.format(re.search(r'(\.?[^.]*){2}', release).group())
 
 # General information about the project.
 project = 'EnMAP-Box 3'
-copyright = '2018-2024, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Aryan Goswarmi, Sebastian van der Linden, Patrick Hostert'
-author = 'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, Aryan Goswarmi,\nSebastian van der Linden,\nPatrick Hostert'
+copyright = '2018-2024, Andreas Janz, Benjamin Jakimow, \nFabian Thiel, Aryan Goswami, Sebastian van der Linden, Patrick Hostert'
+author = 'Fabian Thiel,\nAndreas Janz,\nBenjamin Jakimow, Aryan Goswami,\nSebastian van der Linden,\nPatrick Hostert'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -133,9 +157,10 @@ html_theme_options = {
     'canonical_url': '',
     'analytics_id': '',
     'logo_only': False,
-    'display_version': False,
+    # 'display_version': False,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': True,
+    'version_selector': True,
     'vcs_pageview_mode': 'view',
     # Toc options
     'collapse_navigation': True,
@@ -219,6 +244,9 @@ man_pages = [
     (master_doc, 'enmap-box3', u'EnMAP-Box 3 Documentation',
      [author], 1)
 ]
+
+sphinx_tabs_disable_tab_closing = True
+
 
 numfig = True
 numfig_secnum_depth = 2

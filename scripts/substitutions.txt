@@ -1,0 +1,43 @@
+# manually defined substitutions
+# run update_substitutions to append / update in each *.rst file
+# the substitution definitions for used icons or the substitutes defined below
+
+.. |cbc| image:: /img/checkbox_checked.png
+.. |cbu| image:: /img/checkbox_unchecked.png
+
+.. |timeseriesdock| image:: /img/timeseriespanel.png
+.. |mapviewbutton| image:: /img/mapviewbutton.png
+.. |questionmark| image:: /img/questionmark.png
+.. |osgeoinstaller| image:: /img/osgeoinstaller.png
+
+.. |bmwi| image:: /img/logos/logo_bmwi.jpg
+   :width: 100%
+.. |enmap| image:: /img/logos/logo_enmap.svg
+.. |esa| image:: /img/logos/logo_esa.bmp
+.. |hzg| image:: /img/logos/logo_hzg.jpg
+   :target: https://hereon.de/institutes/carbon_cycles/optical_oceanography/index.php.de
+
+
+.. |reg| unicode:: U+000AE .. REGISTERED SIGN
+    :ltrim:
+.. |EnMAP-Box| replace:: `EnMAP-Box <https://enmap-box.readthedocs.io>`__
+.. |PyCharm| replace:: `PyCharm <https://www.jetbrains.com/pycharm/>`__
+.. |PyQtGraph| replace:: `PyQtGraph <https://pyqtgraph.readthedocs.io/en/latest/>`__
+.. |PyDev| replace:: `PyDev <https://www.pydev.org>`__
+.. |OSGeo4W| replace:: `OSGeo4W <https://www.osgeo.org/projects/osgeo4w>`__
+.. |Bitbucket| replace:: `Bitbucket <https://bitbucket.org>`__
+.. |Git| replace:: `Git <https://git-scm.com/>`__
+.. |GitHub| replace:: `GitHub <https://github.com/>`__
+.. |GDAL| replace:: `GDAL <https://www.gdal.org>`__
+.. |QtWidgets| replace:: `QtWidgets <https://doc.qt.io/qt-5/qtwidgets-index.html>`__
+.. |QtCore| replace:: `QtCore <https://doc.qt.io/qt-5/qtcore-index.html>`__
+.. |QtGui| replace:: `QtGui <https://doc.qt.io/qt-5/qtgui-index.html>`__
+.. |QGIS| replace:: `QGIS <https://www.qgis.org>`__
+.. |qgis.gui| replace:: `qgis.gui <https://api.qgis.org/api/group__gui.html>`__
+.. |qgis.core| replace:: `qgis.core <https://api.qgis.org/api/group__core.html>`__
+.. |Miniconda| replace:: `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`__
+.. |miniconda| replace:: `miniconda <https://docs.conda.io/en/latest/miniconda.html>`__
+.. |Numba| replace:: `Numba <https://numba.pydata.org/>`__
+.. |Conda| replace:: `Conda <https://docs.anaconda.com/miniconda/>`__
+.. |conda-forge| replace:: `conda-forge <https://conda-forge.org/>`__
+.. |pip| replace:: `pip <https://pip.pypa.io/en/stable>`__

@@ -20,4 +20,4 @@ jobs:
         force_pass : false
         exclude_files: /scripts/create_external_link_file.py,/source/dev_section/external_links.rst
         exclude_patterns: https://enmap-box.readthedocs.io/en/latest/general/glossary.html,https://tiles.wmflabs.org,https://fbinter.stadt-berlin.de/fb/wfs
-        exclude_urls: http://localhost:8000/,https://github.com/mygithubaccount/enmap-box-documentation-fork.git
+        exclude_urls: http://localhost:8000/,https://github.com/mygithubaccount/enmap-box-documentation-fork.git,https://www.gnu.org/licenses/gpl-3.0.en.html,https://www.gnu.org/licenses/
