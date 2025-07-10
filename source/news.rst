@@ -29,9 +29,12 @@ Living Planet Symposium 2025
 
 *09. July 2025*
 
-On the `Living Planet Symposium 2025 <https://lps25.esa.int/>`_ in Vienna, Austria (22-27. July 2025),
-many participants used the change to get in touch with the EnMAP-Box in a `tutorial <https://lps25.esa.int/programme/programme-session/?id=66EA2276-ED78-45BB-B984-3EFF03E0C4AE>`_
-and by visiting the latest EnMAP-Box poster:
+At the `Living Planet Symposium 2025 <https://lps25.esa.int/>`_ in Vienna, Austria (22–27 July),
+participants had the opportunity to explore the capabilities of the EnMAP-Box.
+They engaged with us through a `tutorial <https://lps25.esa.int/programme/programme-session/?id=66EA2276-ED78-45BB-B984-3EFF03E0C4AE>`_
+session and by visiting the latest EnMAP-Box poster:
+We enjoyed connecting with many EnMAP-Box users in person.
+It was especially exciting to see the high interest for our brand-new EnMAP-Box stickers!
 
 
 .. image:: img/events/enmapbox_lps25.png
@@ -44,9 +47,6 @@ and by visiting the latest EnMAP-Box poster:
         src="_static/poster/Poster.EnMAP-Box.LPS25.png"
         alt="EnMAP-Box poster">
     </a>
-
-We were very pleased to get in touch with many EnMAP-Box users personally. It was quite
-impressed how much demand there was for our brand new EnMAP box stickers.
 
 
 2nd EnMAP User Workshop
