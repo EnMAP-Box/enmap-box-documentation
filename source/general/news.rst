@@ -37,14 +37,14 @@ We enjoyed connecting with many EnMAP-Box users in person.
 It was especially exciting to see the high interest for our brand-new EnMAP-Box stickers!
 
 
-.. image:: img/events/enmapbox_lps25.png
+.. image:: /img/events/enmapbox_lps25.png
     :height: 250px
 
 .. raw:: html
 
-    <a href="_static/poster/Poster.EnMAP-Box.LPS25.pdf">
+    <a href="/_static/poster/Poster.EnMAP-Box.LPS25.pdf">
     <img style="height:250px;"
-        src="_static/poster/Poster.EnMAP-Box.LPS25.png"
+        src="/_static/poster/Poster.EnMAP-Box.LPS25.png"
         alt="EnMAP-Box poster">
     </a>
 
@@ -232,7 +232,7 @@ A list of all improvements can be found in the `changelog <https://github.com/En
 EnMAP-Box Workshop 2021
 =======================
 
-.. figure:: img/events/workshop2021.banner.png
+.. figure:: /img/events/workshop2021.banner.png
 
 *June 07, 2021*
 

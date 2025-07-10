@@ -44,7 +44,7 @@ Related websites
 
 .. show NEWS section
 
-.. include:: news.rst
+.. include:: general/news.rst
 
 |
 |
@@ -58,7 +58,7 @@ Related websites
 
     general/about.rst
     general/features.rst
-    news.rst
+    general/news.rst
     general/contribute.rst
     general/faq_trouble.rst
     general/roadmap.rst
