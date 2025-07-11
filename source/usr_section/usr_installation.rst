@@ -23,8 +23,8 @@ Here we describe how you can install QGIS, the required python packages and the 
 
       **Install QGIS via the official Standalone/OSGeo4W Installer**
 
-         Install either the current QGIS Long Term Release (LTR) or the current QGIS Latest Release (LR) to run the latest EnMAP-Box.
-         You can `get the QGIS Standalone Installer here <https://www.qgis.org/en/site/forusers/alldownloads.html#windows>`_.
+         Install either the current QGIS Long Term Release (LTR) or the current QGIS Latest Release (LR) to run the latest EnMAP-Box
+         using the QGIS installer from https://www.qgis.org/en/site/forusers/alldownloads.html#windows.
 
          For beginners, we recommend using the standalone installers. More advanced QGIS users can use OSGeo4W installer,
          which eases updates of existing QGIS installation.
