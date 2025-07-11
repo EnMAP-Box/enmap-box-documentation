@@ -270,20 +270,24 @@ Here we describe how you can install QGIS, the required python packages and the 
 
                 conda env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full.yml
 
-            ``-n <name>`` can be used to change the environment name.
+            ``--file=<uri>`` specifies the path to the \*.yml file that defines the environment.
 
-            The environment files provided for download vary by QGIS release and the amount of python packages that is installed.
+            ``-n <name>`` or ``--name <nam>`` can be used to change the environment name.
 
-            * *full* environments contains *all* python packages, including those used by single EnMAP-Box applications only.
-            * *light* environments contain python packages that are required to run most and all core EnMAP-Box applications.
-            * *ltr* environments use the current `QGIS Long Term release <https://qgis.org/resources/roadmap/#release-schedule>`_
-                    instead of the latest (newest) QGIS version available in conda.
+            The environment files provided for download vary by used QGIS release and python packages to be:
+
+            * *full* environments contains *all* python packages, including those used by single EnMAP-Box applications only
+            * *light* environments contain python packages that are required to run most and all core EnMAP-Box applications
+            * *ltr* environments use the current
+              `QGIS Long Term release <https://qgis.org/resources/roadmap/#release-schedule>`_ instead of the
+              latest (and newer) QGIS release that is available in conda.
 
 
             Use the *raw content* uri to download and install an EnMAP-Box conda environment from github.
 
             .. list-table::
                :header-rows: 1
+               :widths: 15 10 70
 
                *  - Environment
                   - Size
