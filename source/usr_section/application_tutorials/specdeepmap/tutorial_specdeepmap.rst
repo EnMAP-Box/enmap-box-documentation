@@ -36,7 +36,7 @@ The following steps show you how to install and run the EnMAP-Box with SpecDeepM
 Conda is a cross-platform package manager that allows install software in separate environments.
 
 It is strongly recommended to use Miniforge, a minimal installer for conda specific to the conda-forge channel (https://conda-forge.org/ ).
-(If you nevertheless use miniconda instead of miniforge- make sure conda-forge channel is set to priority. Further Specdeepmap is developed ans tested via miniforge, use of miniconda might lead to errors)
+(If you nevertheless use miniconda instead of miniforge- make sure conda-forge channel is set to priority. Further Specdeepmap is developed and tested via miniforge, use of miniconda might lead to errors)
 
 1. Download Miniforge Installer & Install Miniforge: You find the Installer here <https://conda-forge.org/download/>.
 2. Open the Miniconda Prompt from your start menu.
