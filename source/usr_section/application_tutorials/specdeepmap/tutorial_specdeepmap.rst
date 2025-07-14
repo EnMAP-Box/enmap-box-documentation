@@ -11,6 +11,9 @@ This tutorial gives an introduction to the Processing Algorithms of the Spectral
 The Application is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
 In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task.
+The pretrained Resnet18 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model pretraining performed by Wang et al. 2022 on SSL4EO-S12 (https://arxiv.org/abs/2211.07044) and is loaded via torchgeo functions (https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
+
+The github repository for the integration in enmapbox 3.16 can be found here: https://github.com/EnMAP-Box/enmap-box/tree/release_3.16/enmapbox/apps/SpecDeepMap
 
 Introduction to SpecDeepMap
 ***************************
@@ -24,8 +27,7 @@ The SpecDeepMap application consists of six QGIS processing algorithms and is de
 Installation of SpecDeepMap
 ***************************
 
-SpecDeepMap is available by default in EnMAP-Box from 3.16 onwards until further notice. Follow EnMAP-Box installation guide to regularly set up EnMAP-Box here or install via QGIS:
-https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html
+SpecDeepMap is available by default in EnMAP-Box from 3.16 onwards until further notice, and has to be installed via Miniforge/Conda.
 
 Install QGIS & SpecDeepMap via Miniforge/Conda (cross-platform)
 ===============================================================
@@ -35,7 +37,7 @@ The following steps show you how to install and run the EnMAP-Box with SpecDeepM
 Conda is a cross-platform package manager that allows install software in separate environments.
 
 It is strongly recommended to use Miniforge, a minimal installer for conda specific to the conda-forge channel (https://conda-forge.org/ ).
-(If you nevertheless use miniconda instead of miniforge- make sure conda-forge channel is set to priority)
+(If you nevertheless use miniconda instead of miniforge- make sure conda-forge channel is set to priority. Further SpecDeepMap is developed and tested via Miniforge, use of miniconda might lead to errors)
 
 1. Download Miniforge Installer & Install Miniforge: You find the Installer here <https://conda-forge.org/download/>.
 2. Open the Miniconda Prompt from your start menu.
@@ -65,7 +67,7 @@ or
 
 .. code-block:: bash
 
-   activate specdeepmap
+   conda activate specdeepmap
 
 4.2. Start QGIS and then open EnMAP-Box in QGIS interface via the EnMAP-Box plugin icon
 
@@ -203,7 +205,7 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
          Deep Learning Trainer Interface
 
 * As **Input folder (Train and Validation dataset)** use the 'specdeepmap_tutorial' folder. By **model architecture** and **model backbone** you can define possible model combinations. For this example leave the default values so Unet and 'resnet18'.
-* Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al 2023 (https://arxiv.org/abs/2211.07044).
+* Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al. 2022 (https://arxiv.org/abs/2211.07044).
 * We will use the default for the following parameter and leave them checked & activated (**freeze backbone**, **data augumentation**, **early stopping** and **balanced Training using class weights**)
 
 * As **Batch size** we use 16 and for **Epochs** 50, if you want to do the full training and have sufficient computation and downloaded the tutorial_large data. ( If you have less computational resources or use the small dataset folder use batch size of 4 and only train for 5-10 epochs). Further you can reduce the amount of epochs to 3, if you just want to later use the pretained model from the tutorial_small or tutorial_large folder.
@@ -213,6 +215,9 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 * As **Path for saving tensorboard logger** use the 'specdeepmap_tutorial' folder.
 * As **Path for saving model** use the 'specdeepmap_tutorial' folder.
 * Let's run the model.
+
+(IMPORTANT: In version enmapbox 3.16.3 the Trainer runs through, but will give a sys.flush error after running. However the training functions as intended and is by then already completed and all  model checkpoint during training are saved correctly. This error can be therefore ignored as it does not influence the functionality. If you want to avoid this error message open the QGIS python console before running the algorithm and close deep learning trainer interface again and reopen it. This will correctly set the sys parameters. (This can be applied as hotfix until the bug is fixed with the next update with enmapbox-version 3.16.4)
+
 
 During training in the Logger Interface the progress of the training is printed after each epoch. (epoch means one loop through the training dataset). In the logger the train and validation loss is displayed, which should reduce during training and the train IoU and val IoU should increase.
 The model uses the training data for learning the weights and the validation data is just used to check if the model over or underfits (if the train and validation values differ significantly).
@@ -224,11 +229,11 @@ Here a logger visualization of the training we just performed. In our case with 
          Visualization of IoU and Loss per epoch during training of Deep Learning Trainer
 
 
-4. Tensorboard visualizer (optional)
+4. TensorBoard Visualizer (optional)
 ************************************
 
-If you want to inspect the model behavior in more detail after the training you can use this algorithm and the logger location to open a Tensorboard, which is an interactive graphical environment to inspect model training behavior.
-To call the Tensorboard visualizer you need to define as input the location where you saved the model logger in the Deep Learning trainer algorithm.
+If you want to inspect the model behavior in more detail after the training you can use this algorithm and the logger location to open a TensorBoard, which is an interactive graphical environment to inspect model training behavior.
+To call the TensorBoard Visualizer you need to define as input the location where you saved the model logger in the Deep Learning trainer algorithm.
 
 * Define for **Tensorboard logger Directory** the subfolder 'specdeepmap_tutorial/lightning_logs'.
 * The default **TensorBoard port** is 8000. In windows there is no need to change the port as each tensorboard port will be terminated before a new tensorboard is initialized. In other systems the algorithm doesn't support the port termination and it is  necessary to define a different port each time to open a new tensorboard (Ports are also terminated if PC is shut down).
@@ -237,12 +242,12 @@ To call the Tensorboard visualizer you need to define as input the location wher
 
          Tensorboard Interface
 
-* Here a snippet of the Tensorboard visualization.
+* Here a snippet of the TensorBoard visualization.
 
    .. figure:: img/4_Tensorboard_visualizer_output.jpeg
       :scale: 50%
 
-      Visualized Tensorboard
+      Visualized TensorBoard
 
 5. Deep Learning Tester
 ***********************
@@ -294,7 +299,7 @@ This enables easy employment of the model (also automatically apply same scaling
 * For **IoU CSV** define output: EUCROPMAP_2_score.csv in the 'specdeepmap_tutorial' folder.
 * Run the algorithm.
 
-You can open the predicted Raster and CSV in the EnMAP-Box to inspect the prediction visually and the IoU score per class. Mean IoU is ~0,68-0.71 great!
+You can open the predicted Raster and CSV in the EnMAP-Box to inspect the prediction visually and the IoU score per class (Mean IoU is ~0,68-0.71).
 
 
    .. figure::  img/6_Deep_learning_mapper_output.jpg
@@ -302,4 +307,4 @@ You can open the predicted Raster and CSV in the EnMAP-Box to inspect the predic
       Deep Learning mapper Output:Predicted Raster and IoU score
 
 
-* Now completed the tutorial, congratulations!
+
