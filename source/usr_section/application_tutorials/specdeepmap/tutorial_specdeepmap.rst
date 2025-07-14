@@ -11,7 +11,7 @@ This tutorial gives an introduction to the Processing Algorithms of the Spectral
 The Application is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
 In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task.
-The pretrained Resnet18 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model training performed by Wang et al. 2022 (https://arxiv.org/abs/2211.07044) and is loaded via torchgeo functions (https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
+The pretrained Resnet18 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model pretraining performed by Wang et al. 2022 on SSL4EO-S12 (https://arxiv.org/abs/2211.07044) and is loaded via torchgeo functions (https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
 
 The github repository for the integration in enmapbox 3.16 can be found here: https://github.com/EnMAP-Box/enmap-box/tree/release_3.16/enmapbox/apps/SpecDeepMap
 
