@@ -215,6 +215,9 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 * As **Path for saving model** use the 'specdeepmap_tutorial' folder.
 * Let's run the model.
 
+(IMPORTANT: In version enmapbox 3.16.3 the Trainer runs through, but will give a sys.flush error after running. However the training functions as intended and is by then already completed and all  model checkpoint during training are saved correctly. This error can be therefore ignored as it does not influence the functionality. If you want to avoid this error message open the QGIS python console before running the algorithm and close deep learning trainer interface again and reopen it. This will correctly set the sys parameters. (This can be applied as hotfix until the bug is fixed with the next update with enmapbox-version 3.16.4)
+
+
 During training in the Logger Interface the progress of the training is printed after each epoch. (epoch means one loop through the training dataset). In the logger the train and validation loss is displayed, which should reduce during training and the train IoU and val IoU should increase.
 The model uses the training data for learning the weights and the validation data is just used to check if the model over or underfits (if the train and validation values differ significantly).
 After training the logger displays the best model path for the best model. In general you want to use the model with the highest IoU score on the validation dataset. This is also written into the model file name, so you can find it later again at any time.
