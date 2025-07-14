@@ -10,7 +10,9 @@ Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Seg
 This tutorial gives an introduction to the Processing Algorithms of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application.
 The Application is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
 
-In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task.
+In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task. The pretrained Resnet18 for Sentinel-2 Top of Atmosphere reflectance stemms from Wang et al 2023 (https://arxiv.org/abs/2211.07044) and is loaded via torchgeo functions (https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html ).
+
+The github repository for the integration in enmapbox 3.16 can be found here: https://github.com/EnMAP-Box/enmap-box/tree/release_3.16/enmapbox/apps/SpecDeepMap
 
 Introduction to SpecDeepMap
 ***************************
@@ -24,8 +26,7 @@ The SpecDeepMap application consists of six QGIS processing algorithms and is de
 Installation of SpecDeepMap
 ***************************
 
-SpecDeepMap is available by default in EnMAP-Box from 3.16 onwards until further notice. Follow EnMAP-Box installation guide to regularly set up EnMAP-Box here or install via QGIS:
-https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html
+SpecDeepMap is available by default in EnMAP-Box from 3.16 onwards until further notice, and has to be installed via Miniforge/Conda.
 
 Install QGIS & SpecDeepMap via Miniforge/Conda (cross-platform)
 ===============================================================
@@ -35,7 +36,7 @@ The following steps show you how to install and run the EnMAP-Box with SpecDeepM
 Conda is a cross-platform package manager that allows install software in separate environments.
 
 It is strongly recommended to use Miniforge, a minimal installer for conda specific to the conda-forge channel (https://conda-forge.org/ ).
-(If you nevertheless use miniconda instead of miniforge- make sure conda-forge channel is set to priority)
+(If you nevertheless use miniconda instead of miniforge- make sure conda-forge channel is set to priority. Further Specdeepmap is developed ans tested via miniforge, use of miniconda might lead to errors)
 
 1. Download Miniforge Installer & Install Miniforge: You find the Installer here <https://conda-forge.org/download/>.
 2. Open the Miniconda Prompt from your start menu.
@@ -65,7 +66,7 @@ or
 
 .. code-block:: bash
 
-   activate specdeepmap
+   conda activate specdeepmap
 
 4.2. Start QGIS and then open EnMAP-Box in QGIS interface via the EnMAP-Box plugin icon
 
@@ -224,11 +225,11 @@ Here a logger visualization of the training we just performed. In our case with 
          Visualization of IoU and Loss per epoch during training of Deep Learning Trainer
 
 
-4. Tensorboard visualizer (optional)
+4. TensorBoard Visualizer (optional)
 ************************************
 
-If you want to inspect the model behavior in more detail after the training you can use this algorithm and the logger location to open a Tensorboard, which is an interactive graphical environment to inspect model training behavior.
-To call the Tensorboard visualizer you need to define as input the location where you saved the model logger in the Deep Learning trainer algorithm.
+If you want to inspect the model behavior in more detail after the training you can use this algorithm and the logger location to open a TensorBoard, which is an interactive graphical environment to inspect model training behavior.
+To call the TensorBoard Visualizer you need to define as input the location where you saved the model logger in the Deep Learning trainer algorithm.
 
 * Define for **Tensorboard logger Directory** the subfolder 'specdeepmap_tutorial/lightning_logs'.
 * The default **TensorBoard port** is 8000. In windows there is no need to change the port as each tensorboard port will be terminated before a new tensorboard is initialized. In other systems the algorithm doesn't support the port termination and it is  necessary to define a different port each time to open a new tensorboard (Ports are also terminated if PC is shut down).
@@ -237,12 +238,12 @@ To call the Tensorboard visualizer you need to define as input the location wher
 
          Tensorboard Interface
 
-* Here a snippet of the Tensorboard visualization.
+* Here a snippet of the TensorBoard visualization.
 
    .. figure:: img/4_Tensorboard_visualizer_output.jpeg
       :scale: 50%
 
-      Visualized Tensorboard
+      Visualized TensorBoard
 
 5. Deep Learning Tester
 ***********************
@@ -294,7 +295,7 @@ This enables easy employment of the model (also automatically apply same scaling
 * For **IoU CSV** define output: EUCROPMAP_2_score.csv in the 'specdeepmap_tutorial' folder.
 * Run the algorithm.
 
-You can open the predicted Raster and CSV in the EnMAP-Box to inspect the prediction visually and the IoU score per class. Mean IoU is ~0,68-0.71 great!
+You can open the predicted Raster and CSV in the EnMAP-Box to inspect the prediction visually and the IoU score per class (Mean IoU is ~0,68-0.71).
 
 
    .. figure::  img/6_Deep_learning_mapper_output.jpg
@@ -302,4 +303,4 @@ You can open the predicted Raster and CSV in the EnMAP-Box to inspect the predic
       Deep Learning mapper Output:Predicted Raster and IoU score
 
 
-* Now completed the tutorial, congratulations!
+
