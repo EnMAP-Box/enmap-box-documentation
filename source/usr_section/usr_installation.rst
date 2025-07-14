@@ -350,6 +350,7 @@ Here we describe how you can install QGIS, the required python packages and the 
 
       .. figure:: /img/QgisGUI_InstallPlugin.gif
         :align: center
+        :width: 100%
 
       **Activate Experimental Plugins (Optional)**
        5. Go to Plugins -> Manage and Install Plugins -> Settings
@@ -357,6 +358,7 @@ Here we describe how you can install QGIS, the required python packages and the 
 
       .. figure:: /img/QgisGUI_Experimental.gif
         :align: center
+        :width: 120%
 
 
 
