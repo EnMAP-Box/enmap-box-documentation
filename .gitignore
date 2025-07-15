@@ -1,6 +1,7 @@
 .idea/
 tmp/
 
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -12,6 +13,7 @@ Thumbs.db
 # Distribution / packaging
 .Python
 build/
+deploy/
 develop-eggs/
 dist/
 downloads/

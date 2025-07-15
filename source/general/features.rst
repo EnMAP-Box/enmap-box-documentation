@@ -5,11 +5,11 @@
 Features
 ========
 
-GUI Overview
-============
+GUI
+===
 
-The EnMAP-Box offers a graphical user interface (GUI) with which raster, vector and spectral library sources can
-be displayed together in different views. Move the mouse over the GUI areas for further information.
+The EnMAP-Box offers a powerful graphical user interface (GUI) for an integrated visualization of raster, vector and spectral library data.
+Move the mouse over the GUI sections for further information.
 
 .. raw:: html
 
@@ -140,6 +140,10 @@ Visualization
           e.g. True Color, NIR-SWIR-Red, ...
         * link raster visualization spectrally to  always show similar wavelength combinations,
           no-matter how many bands your raster sources have
+
+        .. image:: img/rasterlayer_stylingpanel.png
+            :align: center
+
 
     .. tab:: Raster Rendering
 

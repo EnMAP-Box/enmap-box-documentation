@@ -1,13 +1,16 @@
 EnSoMap - Tutorial
 ===================
-In this tutorial we will generate and validate maps of topsoil properties from hyperspectral data using the EnSoMAP tool within the EnMAP-Box. 
+
+In this tutorial we will generate and validate maps of topsoil properties from hyperspectral data using the EnSoMAP tool within the EnMAP-Box.
 The tutorial can also be found as screencast on `YouTube <https://www.youtube.com/watch?v=An3ufed4_OM&list=PLh17102P1ko3UOvjNCs4FGdm5OGfeEx8y>`__.
 
 Requirements
--------------
-Software  
-"""""""""
-This tutorial requires some software to be installed on your machine:    
+------------
+
+Software
+""""""""
+
+This tutorial requires some software to be installed on your machine:
 
     - QGIS_ and the EnMAP-Box_
 
@@ -27,23 +30,23 @@ The data was acquired over agricultural areas in the Cabo de Gata-Níjar Natural
 .. image:: img/fig3.png
     :width: 400px
 
-Deriving the soil maps, we will focus on soil properties of interest in the Cabo de Gata area, which are clay and iron oxides. In the following steps we will first create a soil mask, map the soil properties based on different algorithms and derive different soil maps. Lastly, you can analyze and validate the derived soil maps. 
+Deriving the soil maps, we will focus on soil properties of interest in the Cabo de Gata area, which are clay and iron oxides. In the following steps we will first create a soil mask, map the soil properties based on different algorithms and derive different soil maps. Lastly, you can analyze and validate the derived soil maps.
 
 Explore and display the airborne imagery
 -----------------------------------------
-Open QGIS and start the EnMAP-Box by clicking on the EnMAP-Box icon. Then, look at the data provided for download. Open the first folder containing the airborne data. Drag and drop the raster image in BSQ format :file:`Spain_hymap.bsq` into the EnMAP-Box. 
+Open QGIS and start the EnMAP-Box by clicking on the EnMAP-Box icon. Then, look at the data provided for download. Open the first folder containing the airborne data. Drag and drop the raster image in BSQ format :file:`Spain_hymap.bsq` into the EnMAP-Box.
 
 .. image:: img/fig4.png
     :width: 800px
 
-Unfold the respective entry in the **Data sources** panel to explore some metadata of the image. The image contains 126 bands and 828 x 829 pixels with a spatial resolution of 5m. 
+Unfold the respective entry in the **Data sources** panel to explore some metadata of the image. The image contains 126 bands and 828 x 829 pixels with a spatial resolution of 5m.
 
 To display the scene: right click on the raster layer in the **Data sources** panel, select :menuselection:`open in new map` and chose one of the display options. The EnMAP-Box offers a range of pre-configured visualization options, but you can also define your own combination of bands. You may need to improve the contrast of the image for example through the mean standard deviation option. This can be done in the **Data view** panel by right-clicking on :menuselection:`Layer properties > Symbology > Min/Max > mean standard deviation`.
 
 .. image:: img/fig5.png
     :width: 800px
 
-To show the spectrum of a pixel click on the **Spectrum icon** in the menu above and then into the data display. Thereby you can automatically open a graph showing the spectrum of the corresponding pixel. Now you can explore the different surface materials and associated spectra.  
+To show the spectrum of a pixel click on the **Spectrum icon** in the menu above and then into the data display. Thereby you can automatically open a graph showing the spectrum of the corresponding pixel. Now you can explore the different surface materials and associated spectra.
 
 .. image:: img/fig6.png
     :width: 800px
@@ -52,9 +55,9 @@ Calculate soil masks
 ---------------------
 As sensors operating in the optical domain can only sense the surface and our algorithms only work on bare or at least almost bare soil we calculate masks to discard any pixels that are not bare soil before starting the actual analysis.
 
-We will use robust narrow-band spectral indices to rule out several typical ground cover types such as water, green and dry vegetation as you probably have no inside information about the situation in the area there. 
+We will use robust narrow-band spectral indices to rule out several typical ground cover types such as water, green and dry vegetation as you probably have no inside information about the situation in the area there.
 
-Start EnSoMAP under :menuselection:`Applications > Soil Applications > EnSoMAP 2.0`. In the window that pops up, select the **Masking tab**, chose the hyperspectral input file and set the output directory. To generate a soil dominated mask file select all three indices:    
+Start EnSoMAP under :menuselection:`Applications > Soil Applications > EnSoMAP 2.0`. In the window that pops up, select the **Masking tab**, chose the hyperspectral input file and set the output directory. To generate a soil dominated mask file select all three indices:
 
     - The **NDRBI** (Normalized Difference Red Blue Index) identifies water
     - The **NDVI** (Normalized Difference Vegetation Index) reacts to green photosynthetic vegetation
@@ -72,21 +75,21 @@ Load the original image file as well as all the output files in separate map win
 .. image:: img/fig8.png
     :width: 800px
 
-To look at the index values and mask values use the **Identify cursor location value** button. As you can see, bare soil pixels are assigned 1 and all other masked surfaces are 0. 
+To look at the index values and mask values use the **Identify cursor location value** button. As you can see, bare soil pixels are assigned 1 and all other masked surfaces are 0.
 
 Have a look at the quality of the masks. Were all pixels containing non-bare soil, e.g. green or dry vegetation, or water masked out? Are there limitations you observe?
 
-Well, as surface cover types change gradually in a landscape, it is difficult to work with fixed index values. Therefore, the indices were set to average values that work in different environments and might perform better in some areas than in others. You probably noticed that in our scene, for example a small water pond was not masked. Indeed, the water index used discriminates clear waters, and is less performant with shallow waters full of sediments or from the shore. 
+Well, as surface cover types change gradually in a landscape, it is difficult to work with fixed index values. Therefore, the indices were set to average values that work in different environments and might perform better in some areas than in others. You probably noticed that in our scene, for example a small water pond was not masked. Indeed, the water index used discriminates clear waters, and is less performant with shallow waters full of sediments or from the shore.
 
 Calculate soil properties and visualize soil maps
 --------------------------------------------------
-Select the tab **Mapping** in the EnSoMAP 2.0 window. Chose the hyperspectral input file, set the soil dominant mask :file:`*_soildom_mask.dat` and the output directory. 
+Select the tab **Mapping** in the EnSoMAP 2.0 window. Chose the hyperspectral input file, set the soil dominant mask :file:`*_soildom_mask.dat` and the output directory.
 
-The goal is to derive clay and iron soil maps. Therefore, select all algorithms available for these properties.  As we only have ground reference information for clay and iron soil to validate our results in the end, we did not calculate other soil properties. Click on **Run** to launch the process. 
+The goal is to derive clay and iron soil maps. Therefore, select all algorithms available for these properties.  As we only have ground reference information for clay and iron soil to validate our results in the end, we did not calculate other soil properties. Click on **Run** to launch the process.
 
 In the background EnSoMAP calculated two clay absorption features and three iron absorption features. The clay continuum removed absorption depth (CRAD) performs a continuum removal of the spectrum between 2120 nm and 2250 nm and calculates the absorption depth. The Clay Content SWIR Fine particle index makes use of the same clay absorption feature around 2200 nm (if you want to learn more about the parameterization of absorption features, we recommend `this video <https://youtu.be/UtaqBlyGkaY>`_).
 
-For iron we use different absorption features: EnSoMAP performs a continuum removal absorption depth between 460 nm and 620 nm as well as 760 nm and 1050 nm. The Iron oxide content redness index is also calculated from the first feature. 
+For iron we use different absorption features: EnSoMAP performs a continuum removal absorption depth between 460 nm and 620 nm as well as 760 nm and 1050 nm. The Iron oxide content redness index is also calculated from the first feature.
 
 Load all output files, the overall soil mask and the image file in separate map windows and link them.
 
@@ -101,17 +104,17 @@ For now, the pixel values are only the result calculated by the algorithms witho
 
 Derive quantitative soil maps and analyze the results
 ------------------------------------------------------
-In this chapter we will extract predicted soil properties values from the calibrated image using EnSoMAP. 
+In this chapter we will extract predicted soil properties values from the calibrated image using EnSoMAP.
 
-Select the tab **Calibrate** in the EnSoMAP window. As input select one of the semi-quantitative soil product files derived in the previous step, for example the file ending with :file:`clay_SWIRFI.dat`. Then set the output directory. 
+Select the tab **Calibrate** in the EnSoMAP window. As input select one of the semi-quantitative soil product files derived in the previous step, for example the file ending with :file:`clay_SWIRFI.dat`. Then set the output directory.
 
-There are different options to calibrate a linear regression between the index values and the measured soil property. The Gain and Offset parameters can be…    
+There are different options to calibrate a linear regression between the index values and the measured soil property. The Gain and Offset parameters can be…
 
     - … entered directly, if known
     - … estimated from image data and reference field data
     - … estimated from a soil spectral library in ENVI format and a parameter file in ASCII format
 
-In our case we have reference data available. Therefore, chose the second option (Estimated from image data) and click on :menuselection:`Load` to import a CSV file that was provided for download. For clay this is :file:`Spain_clay_csv`. 
+In our case we have reference data available. Therefore, chose the second option (Estimated from image data) and click on :menuselection:`Load` to import a CSV file that was provided for download. For clay this is :file:`Spain_clay_csv`.
 
 .. image:: img/fig10.png
     :width: 800px
@@ -123,7 +126,7 @@ The clay content data are texture information, and the iron content data are iro
 
 To calculate the Gain and Offset click on :menuselection:`Estimate`. This will open a Scatter Plot where you click on :menuselection:`Select and Close`. In the EnSoMAP window click **Run** to create a quantitative map.
 
-Visualize the SWIRFI map from the previous step and the newly derived SWIRFI_calibrated quantitative clay map. Use the same color palette as before. After the calibration with reference data, the pixel values now represent absolute values, and the units correspond to those in the reference data table which is in percent for both clay and iron. 
+Visualize the SWIRFI map from the previous step and the newly derived SWIRFI_calibrated quantitative clay map. Use the same color palette as before. After the calibration with reference data, the pixel values now represent absolute values, and the units correspond to those in the reference data table which is in percent for both clay and iron.
 
 What are the differences between the spatial mapping before calibration and after calibration? The values of the semi-quantitative map (from the last step) were calibrated using reference samples by means of a linear transformation. Hence the maps appearances are the same but the values of the semi-quantitative and the quantitative map are totally different.
 
@@ -167,7 +170,3 @@ To give you a quicker insight to the overall results we prepared a :download:`re
 The R square values, which are often used to grade the performance of a regression are not exceedingly high, compared to the performance of models from laboratory data. But from the perspective of remote sensing soil spectroscopy, we are satisfied with the results, especially concerning the iron oxide mapping. There are so many constraints, like the sensor signal integrating the whole landscape (plants and stones) and not only the tiny soil fraction of the pixel, which is at a scale way smaller than the remote sensing scale of observation. Also, soils have to be exposed and dry, and you are looking at a rather large area of 5x5 m from a distance of several hundred meters, besides soils being highly complex in their interaction with light. With only few reference data, we now have a pretty good impression of the spatial distribution of clay and iron in surface soils in the Cabo de Gata National Park, also accurately including the value ranges to expect.
 
 That concludes our feature analysis in EnSoMAP, a comfortable tool to handle soil mapping from hyperspectral imagery. If you would like to learn more, please check out our `massive open online course (MOOC) on hyperspectral soil applications <https://eo-college.org/courses/beyond-the-visible-imaging-spectroscopy-for-soil-applications/>`__, our other exercises on `readthedocs <https://enmap-box.readthedocs.io/en/latest/usr_section/application_tutorials/index.html>`_  as well as `YouTube <https://www.youtube.com/@HYPERedu_GFZ/playlists>`__ and experiment with your own data. In future, EnSoMAP will include Machine Learning as well. So, stay tuned!
-
-
-
-

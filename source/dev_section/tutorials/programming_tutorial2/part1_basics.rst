@@ -1,5 +1,3 @@
-.. include:: ../../external_links.rst
-
 .. _ProgTT_basicsFOO:
 
 Part I: Basics
@@ -12,7 +10,7 @@ Part I: Basics
 --------------
 
 Creating a GUI with Qt is simple. If we start from scratch, we first need to
-create a QApplication_ instance::
+create a |QApplication| instance::
 
     from PyQt5.QtWidgets import QApplication, QWidget
 
@@ -35,12 +33,12 @@ inputs. Now we can create our first widget and show it::
 
 .. tip::
 
-    QWidget_ is the base class of all Qt widgets. QWidgets_ offer several customizations, e.g.::
+    |QWidget| is the base class of all Qt widgets. |QWidgets| offer several customizations, e.g.::
 
         widget.setFixedSize(150, 200) # change width and height
         widget.setVisible(False) # hide the widget
 
-Please note the ``app._exec_()`` line. It tells our QApplication_ instance to enter the event loop.
+Please note the ``app._exec_()`` line. It tells our |QApplication| instance to enter the event loop.
 This loop regularly checks if there are any user inputs, e.g. mouse movements or keyboard events, and react to.
 
 
@@ -50,13 +48,13 @@ some milliseconds, but disappears as the main application terminates immediately
 
 .. note::
 
-    * A QApplication_ already exists if we start from the QGIS python console or when our code is called from an EnMAP-Box instance.
+    * A |QApplication| already exists if we start from the QGIS python console or when our code is called from an EnMAP-Box instance.
 
-    * If we start our own python shell, e.g. out of PyCharm, we (i) need to initialize a QApplication_ and
+    * If we start our own python shell, e.g. out of PyCharm, we (i) need to initialize a |QApplication| and
       (ii) enter it's event loop.
 
 
-    * A QApplication_ needs to be instantiated *only once*. The `Qt documentation <https://doc.qt.io/qt-5/qapplication.html#details>`_ writes:
+    * A |QApplication| needs to be instantiated *only once*. The `Qt documentation <https://doc.qt.io/qt-5/qapplication.html#details>`_ writes:
 
         `For any GUI application using Qt, there is precisely one QApplication object, no matter whether the application has
         0, 1, 2 or more windows at any given time.
@@ -66,9 +64,9 @@ some milliseconds, but disappears as the main application terminates immediately
 
 You now learned to:
 
-* initialize a QApplication_ and start the GUI event loop
+* initialize a |QApplication| and start the GUI event loop
 
-* create QWidgets_ and show them on screen
+* create |QWidgets| and show them on screen
 
 
 **Complete code**
@@ -99,30 +97,30 @@ You now learned to:
 This tutorial addresses GIS and remote sensing people, so let's use the
 `QGIS API <https://api.qgis.org/api/>`_ to visualize *real world* spatial data.
 
-Similar to the Qt framework and its QApplication_, we need to initialize the QGIS API first by
-creating a QgsApplication_. To simplify a couple issues, we use the EnMAP-Box API to do so::
+Similar to the Qt framework and its |QApplication|, we need to initialize the QGIS API first by
+creating a |QgsApplication|. To simplify a couple issues, we use the EnMAP-Box API to do so::
 
     from enmapbox.testing import start_app
     app = start_app()
 
 .. note::
 
-    * QgsApplication_ inherits *QApplication_*, so it's not required to create a separated one
+    * |QgsApplication| inherits *|QApplication|*, so it's not required to create a separated one
 
-    * ``enmapbox.testing.start_app(...)`` creates a QgsApplication_ instance *and* emulates
+    * ``enmapbox.testing.start_app(...)`` creates a |QgsApplication| instance *and* emulates
       several aspects of a real QGIS Desktop Application. E.g. it loads different raster drivers, initializes
       the QGIS Processing Framework and create a QGIS Desktop Application mockup.
 
 
-Now we can create a QgsRasterLayer_ that shows a web map service with the google satellite map::
+Now we can create a |QgsRasterLayer| that shows a web map service with the google satellite map::
 
     from qgis.core import QgsRasterLayer
     uri = r'crs=EPSG:3857&format&type=xyz&url=https://mt1.google.com/vt/lyrs%3Ds%26x%3D%7Bx%7D%26y%3D%7By%7D%26z%3D%7Bz%7D&zmax=19&zmin=0'
     layer = QgsRasterLayer(uri, 'google maps', 'wms')
     assert layer.isValid()
 
-The QgsMapCanvas_ visualizes QgsMapLayers_, like our QgsRasterLayer_. Before map layers can be rendered, they need to be
-stored in a QgsMapLayerStore_. This will be done if we add them to the current QgsProject_ instance::
+The |QgsMapCanvas| visualizes |QgsMapLayers|, like our |QgsRasterLayer|. Before map layers can be rendered, they need to be
+stored in a |QgsMapLayerStore|. This will be done if we add them to the current |QgsProject| instance::
 
         from qgis.gui import QgsMapCanvas
         from qgis.core import QgsProject
@@ -154,7 +152,7 @@ Of course we can visualize local files like from the EnMAP-Box testdata as well:
 .. figure:: img/example2_hello_real_world_berlin.png
     :width: 50%
 
-    Example 2b: QgsMapCanvas_ visualizing the EnMAP example image.
+    Example 2b: |QgsMapCanvas| visualizing the EnMAP example image.
 
 
 The canvas CRS can be set to any CRS of choice. This becomes impressive when reprojecting the global google satellite map
@@ -172,11 +170,11 @@ into a non-global UTM Zone, like that for 32N(`EPSG code 32632 <https://spatialr
 
 You now can:
 
-* open raster data sources as QgsRasterLayer_
+* open raster data sources as |QgsRasterLayer|
 
-* visualize QgsMapLayers_ on a QgsMapCanvas_
+* visualize |QgsMapLayers| on a |QgsMapCanvas|
 
-* create a QgsCoordinateReferenceSystem_ for any EPSG code of interest
+* create a |QgsCoordinateReferenceSystem| for any EPSG code of interest
 
 * specify a map canvas CRS
 
@@ -223,7 +221,7 @@ You now can:
 `Widgets` can be small like a single button, but also complex forms which allow to enter various inputs.
 Technically, a new widget is created by:
 
-#. inheriting QWidget_ or one of its child classes, e.g. QDialog_
+#. inheriting |QWidget| or one of its child classes, e.g. |QDialog|
 
 #. modification of the **frontend**, e.g. adding other widgets or changing visual properties
 
@@ -243,7 +241,7 @@ Let's create a simple widget that contains:
 Create the main widget
 ........................
 
-First, we create a new class that inherits from QWidget_. Because we will need a couple of other widgets as well,
+First, we create a new class that inherits from |QWidget|. Because we will need a couple of other widgets as well,
 we also import the Qt and QGIS widget libraries::
 
     from qgis.core import *
@@ -260,7 +258,7 @@ we also import the Qt and QGIS widget libraries::
         self.resize(QSize(300,200))
 
 ``super(ExampleWidget, self).__init__(parent)`` calls the constructor of ``QWidget`` and initializes all properties
-and functions available for QWidgets_. To visualize this widget call::
+and functions available for |QWidgets|. To visualize this widget call::
 
         app = start_app()
 
@@ -281,7 +279,7 @@ Now we add other *child* widgets to the *parent* widget::
         self.button = QPushButton('Press me')
 
 `Qt Layout classes <https://doc.qt.io/qt-5/layout.html>`_ control the widget position and resizing behaviour.
-In this case we want a nested layout that orders widgets in two rows of a major vertical QVBoxLayout_. Each row is realized with a QHBoxLayout_ ::
+In this case we want a nested layout that orders widgets in two rows of a major vertical |QVBoxLayout|. Each row is realized with a |QHBoxLayout| ::
 
         self.setLayout(QVBoxLayout())
 
@@ -417,7 +415,7 @@ Re-start the widget, zoom or pan within the map canvas and click the button:
 Create Signals
 ..............
 
-QObjects_ like our widget can define and emit their own signals. This might become useful if other widgets need to be informed about changes.
+|QObjects| like our widget can define and emit their own signals. This might become useful if other widgets need to be informed about changes.
 Signals are defined like class (not instance) variables::
 
     class ExampleWidget(...)
@@ -478,7 +476,7 @@ You now can:
 
 `Context menus <https://doc.qt.io/qt-5/qtwidgets-mainwindows-menus-example.html>`_ inform users about possible settings
 and operations. To show a context menu, we need to implement the virtual `contextMenuEvent <https://doc.qt.io/qt-5/qwidget.html#contextMenuEvent>`_ method
-and execute a QMenu_ ::
+and execute a |QMenu| ::
 
         class ContextMenuExample(QWidget):
 
@@ -505,8 +503,8 @@ and execute a QMenu_ ::
 
 .. image:: img/example_context_menu1.png
 
-As you see, QActions_ objects are used to describe menu items. The `triggered` signal is fired on mouse-click and can be used
-to call slot functions. More complex QMenus_ should be structured with separators and child menus::
+As you see, |QActions| objects are used to describe menu items. The `triggered` signal is fired on mouse-click and can be used
+to call slot functions. More complex |QMenus| should be structured with separators and child menus::
 
                 menu.addSeparator()
                 subMenu = menu.addMenu('More actions..')
@@ -520,7 +518,7 @@ to call slot functions. More complex QMenus_ should be structured with separator
 .. image:: img/example_context_menu_more_actions.png
 
 
-QAction_ objects can be made checkable. This is useful to present On/Off switches, e.g. to set internal options. For this we
+|QAction| objects can be made checkable. This is useful to present On/Off switches, e.g. to set internal options. For this we
 define two boolean variables in the class constructor::
 
     class ContextMenuExample(QWidget):
@@ -557,7 +555,7 @@ You now learned how to:
 
 * create and show context menus
 
-* create a QAction_ and use its `triggered` and `toggled` signals
+* create a |QAction| and use its `triggered` and `toggled` signals
 
 * overwrite a virtual method / function
 
@@ -612,7 +610,7 @@ Now we want to create a new widget called `EnMAPBoxWorkshopUI`, which later on c
 
 * receive these spectral profiles from the EnMAP-Box and draw them in a plot
 
-For this we first create a new form that derives from QWidget_ and save it as `enmapboxworkshop.ui`:
+For this we first create a new form that derives from |QWidget| and save it as `enmapboxworkshop.ui`:
 
 .. figure:: img/example5_exampleform.png
     :width: 75%
@@ -621,22 +619,22 @@ For this we first create a new form that derives from QWidget_ and save it as `e
 
 * the the parent widget's window title to `EnMAPBox Workshop UI`
 
-* create a QLabel_ with object name ``applicationLogo``
+* create a |QLabel| with object name ``applicationLogo``
 
 * set the image ``programming_tutorial2/tut2_part1_basics/application_logo.svg``
   as background pixmap for the application logo
 
-* create a QHBoxLayout_ that contains:
+* create a |QHBoxLayout| that contains:
 
-    * a QLabel_ `Map Tools`
-    * a QToolButton_ with object name ``btnSelectProfiles``. It will be used to activate the profile selection
-    * a QToolButton_ with object name ``btnClear``. It will be used to clear the plot window
+    * a |QLabel| `Map Tools`
+    * a |QToolButton| with object name ``btnSelectProfiles``. It will be used to activate the profile selection
+    * a |QToolButton| with object name ``btnClear``. It will be used to clear the plot window
 
-* add a QGraphicsView_ with object name ``plotWidget``
+* add a |QGraphicsView| with object name ``plotWidget``
 
-* add a QgsCollapsibleGroupBox_ with title `Options`
+* add a |QgsCollapsibleGroupBox| with title `Options`
 
-* add a QLabel_ `Background Color` and add a QgsColorButton_ with object name ``btnBackgroundColor``
+* add a |QLabel| `Background Color` and add a |QgsColorButton| with object name ``btnBackgroundColor``
 
 * use the preview (Ctrl+R) to check how your widgets look like, in particular when resizing it, or when you
   collapse or expand the group box
@@ -706,7 +704,7 @@ There might be a tiny difference between the Qt Designer's preview [Ctrl+R] and 
 
 .. image:: img/example5_enmapboxworkshopui_missing_icon.png
 
-In this case the missing QgsCollapsibleGroupBox_ icon has not been loaded into the `Qt resource system <https://doc.qt.io/qt-5/resources.html>`_.
+In this case the missing |QgsCollapsibleGroupBox| icon has not been loaded into the `Qt resource system <https://doc.qt.io/qt-5/resources.html>`_.
 However, the icon is available:
 
 * if we start our widget from the QGIS python, or
@@ -718,13 +716,13 @@ and extract it into the enmapbox root folder:
 
 .. image:: img/pycharm_qgisresources.png
 
-The QGIS icons are available after initializing a QgsApplication_ with::
+The QGIS icons are available after initializing a |QgsApplication| with::
 
     from enmapboxtesting import start_app
     app = start_app()
 
 
-To show a QGIS icon, we just need to create a QIcon_ with the icon's resource identifier::
+To show a QGIS icon, we just need to create a |QIcon| with the icon's resource identifier::
 
     self.btnSelectProfiles.setIcon(QIcon('://enmapbox/gui/ui/icons/spectralprofile.svg'))
     self.btnClear.setIcon(QIcon(':/images/themes/default/mIconClearText.svg'))
@@ -741,7 +739,7 @@ To show a QGIS icon, we just need to create a QIcon_ with the icon's resource id
 Promote widgets
 ...............
 
-You might have realized that some widgets are missing in the widget box, e.g. the QgsMapCanvas_ that we have used in
+You might have realized that some widgets are missing in the widget box, e.g. the |QgsMapCanvas| that we have used in
 the first exercises.
 
 *So how can we design a GUI frontend with widgets unavailable in the widget box?*
@@ -750,7 +748,7 @@ In this case we (i) use a widget as a placeholder that is available in the widge
 
 In our `EnMAPBoxWorkshopUI` we like to plot spectral profiles for which we use a
 `pyqtgraph.PlotWidget <https://pyqtgraph.readthedocs.io/en/latest/widgets/plotwidget.html>`_. This widget is not available in
-the widget box, but it inherits from QGraphicsView_. Therefore we can promote our QGraphicView (object name `plotWidget`)
+the widget box, but it inherits from |QGraphicsView|. Therefore we can promote our QGraphicView (object name `plotWidget`)
 into a `pyqtgraph.PlotWidget`::
 
 #. Open your `enmapboxworkshop.ui`, select the `plotWidget`, right-mouse context menu and open *Promoted Widgets*.
@@ -771,7 +769,7 @@ into a `pyqtgraph.PlotWidget`::
 
 #. Save your changes (Ctrl+S).
 
-#. Verify that our `plotWidget` indeed is a `pyqtgraph.PlotWidget` instance (and not just a QGraphicsView_) with an additional ``assert``::
+#. Verify that our `plotWidget` indeed is a `pyqtgraph.PlotWidget` instance (and not just a |QGraphicsView|) with an additional ``assert``::
 
     from pyqtgraph import PlotWidget
     assert isinstance(self.plotWidget, PlotWidget)
@@ -782,7 +780,7 @@ into a `pyqtgraph.PlotWidget`::
 
 .. tip::
 
-    Each widgets inherits from QWidget_, so you can always use a QWidget_ in the Qt Designer and promote
+    Each widgets inherits from |QWidget|, so you can always use a |QWidget| in the Qt Designer and promote
     it into a more specialized widget class.
 
 
@@ -804,7 +802,34 @@ You now can:
 
 * use the Qt Designer to create a GUI frontend
 
-* promote basic Qt / QGIS widgets into any other derived widgets 
+* promote basic Qt / QGIS widgets into any other derived widgets
 
 * write a backend that connects widgets and responses to user inputs
 
+
+.. AUTOGENERATED SUBSTITUTIONS - DO NOT EDIT PAST THIS LINE
+
+.. |QAction| replace:: `QAction <https://doc.qt.io/qt-5/qaction.html>`__
+.. |QActions| replace:: `QActions <https://doc.qt.io/qt-5/qaction.html>`__
+.. |QApplication| replace:: `QApplication <https://doc.qt.io/qt-5/qapplication.html>`__
+.. |QDialog| replace:: `QDialog <https://doc.qt.io/qt-5/qdialog.html>`__
+.. |QGraphicsView| replace:: `QGraphicsView <https://doc.qt.io/qt-5/qgraphicsview.html>`__
+.. |QHBoxLayout| replace:: `QHBoxLayout <https://doc.qt.io/qt-5/qhboxlayout.html>`__
+.. |QIcon| replace:: `QIcon <https://doc.qt.io/qt-5/qicon.html>`__
+.. |QLabel| replace:: `QLabel <https://doc.qt.io/qt-5/qlabel.html>`__
+.. |QMenu| replace:: `QMenu <https://doc.qt.io/qt-5/qmenu.html>`__
+.. |QMenus| replace:: `QMenus <https://doc.qt.io/qt-5/qmenu.html>`__
+.. |QObjects| replace:: `QObjects <https://doc.qt.io/qt-5/qobject.html>`__
+.. |QToolButton| replace:: `QToolButton <https://doc.qt.io/qt-5/qtoolbutton.html>`__
+.. |QVBoxLayout| replace:: `QVBoxLayout <https://doc.qt.io/qt-5/qvboxlayout.html>`__
+.. |QWidget| replace:: `QWidget <https://doc.qt.io/qt-5/qwidget.html>`__
+.. |QWidgets| replace:: `QWidgets <https://doc.qt.io/qt-5/qwidget.html>`__
+.. |QgsApplication| replace:: `QgsApplication <https://api.qgis.org/api/classQgsApplication.html>`__
+.. |QgsCollapsibleGroupBox| replace:: `QgsCollapsibleGroupBox <https://api.qgis.org/api/classQgsCollapsibleGroupBox.html>`__
+.. |QgsColorButton| replace:: `QgsColorButton <https://api.qgis.org/api/classQgsColorButton.html>`__
+.. |QgsCoordinateReferenceSystem| replace:: `QgsCoordinateReferenceSystem <https://api.qgis.org/api/classQgsCoordinateReferenceSystem.html>`__
+.. |QgsMapCanvas| replace:: `QgsMapCanvas <https://api.qgis.org/api/classQgsMapCanvas.html>`__
+.. |QgsMapLayerStore| replace:: `QgsMapLayerStore <https://api.qgis.org/api/classQgsMapLayerStore.html>`__
+.. |QgsMapLayers| replace:: `QgsMapLayers <https://api.qgis.org/api/classQgsMapLayer.html>`__
+.. |QgsProject| replace:: `QgsProject <https://api.qgis.org/api/classQgsProject.html>`__
+.. |QgsRasterLayer| replace:: `QgsRasterLayer <https://api.qgis.org/api/classQgsRasterLayer.html>`__
