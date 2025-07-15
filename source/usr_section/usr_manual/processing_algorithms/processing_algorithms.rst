@@ -87,51 +87,47 @@ Command Line Usage
     ----------------
 
     raster: Raster layer with features
-    	Argument type:	raster
-    	Acceptable values:
-    		- Path to a raster layer
+        Argument type:    raster
+        Acceptable values:
+            - Path to a raster layer
     spectralScale: Spectral Scale (optional)
-    	Default value:	1
-    	Argument type:	number
-    	Acceptable values:
-    		- A numeric value
-    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
-    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+        Default value:    1
+        Argument type:    number
+        Acceptable values:
+            - A numeric value
+            - field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+            - expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dx: Delta x (pixel) (optional)
-    	Default value:	1
-    	Argument type:	number
-    	Acceptable values:
-    		- A numeric value
-    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
-    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+        Default value:    1
+        Argument type:    number
+        Acceptable values:
+            - A numeric value
+            - field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+            - expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     dy: Delta y (pixel) (optional)
-    	Default value:	1
-    	Argument type:	number
-    	Acceptable values:
-    		- A numeric value
-    		- field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
-    		- expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
+        Default value:    1
+        Argument type:    number
+        Acceptable values:
+            - A numeric value
+            - field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
+            - expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     outputCubeFace: Output cube face
-    	Argument type:	rasterDestination
-    	Acceptable values:
-    		- Path for new raster layer
+        Argument type:    rasterDestination
+        Acceptable values:
+            - Path for new raster layer
     outputCubeSide: Output cube side
-    	Argument type:	rasterDestination
-    	Acceptable values:
-    		- Path for new raster layer
+        Argument type:    rasterDestination
+        Acceptable values:
+            - Path for new raster layer
 
     ----------------
     Outputs
     ----------------
 
     outputCubeFace: <outputRaster>
-    	Output cube face
+        Output cube face
     outputCubeSide: <outputRaster>
-    	Output cube side
-
-
-
-
+        Output cube side
 
 Python Script (e.g. from PyCharm)
 ---------------------------------
