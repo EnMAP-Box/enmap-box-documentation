@@ -8,7 +8,7 @@
 Installation
 ############
 
-The EnMAP-Box is a plugin for QGIS. It required the QGIS python API and various other python packages.
+The EnMAP-Box is a plugin for QGIS. It requires the QGIS Python API and various other Python packages.
 Here we describe how you can install QGIS, the required python packages and the EnMAP-Box plugin.
 
 
@@ -55,7 +55,7 @@ Here we describe how you can install QGIS, the required python packages and the 
 
 
          We have made better experiences in using conda to
-         install QGIS and all python packages require to run the EnMAP-Box
+         install QGIS and all Python packages required to run the EnMAP-Box
          (tested on macOS Sequoia 15.5 (24F74), Intel MacBook 2010 and Mac Mini 2024).
 
          Therefore, please follow the installation guide given in the *Conda* tab.
