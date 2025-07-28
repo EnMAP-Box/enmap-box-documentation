@@ -386,6 +386,30 @@ Here we describe how you can install QGIS, the required python packages and the 
 
 
 
+4. How to include EnMAP-box into your Python project
+====================================================
+
+EnMAP-Box installed as QGIS project only
+Here is how you would use an algorithm from Python using the PyCharm IDE:
+
+#. Setup a PyCharm Project and use the Python Interpreter that comes with QGIS.
+
+    .. figure:: usr_manual/img/ProAlgo_PyCharm1.png
+       :align: center
+       :width: 100%
+
+#. Include the installed EnMAP-Box Plugin as a Sources Root.
+
+    .. figure:: usr_manual/img/ProAlgo_PyCharm2.png
+       :align: center
+       :width: 100%
+
+#. Now you can use the EnMAP-Box API, i.e. enmapbox and enmapboxprocessing modules.
+
+    .. figure:: usr_manual/img/ProAlgo_PyCharm3.png
+       :align: center
+       :width: 100%
+
 
 
 

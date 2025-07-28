@@ -64,17 +64,17 @@ Python Console
        :width: 100%
 
 
-#. Once you know the algorithm ID (like enmapbox:build3dcube), you can get help like this:
+#. Once you know the algorithm ID (like enmapbox:Build3DCube), you can get help like this:
 
     .. code-block:: batch
 
-        processing.algorithmHelp("enmapbox:build3dcube")
+        processing.algorithmHelp("enmapbox:Build3DCube")
 
 #. Use the processing.run() function to run the algorithm:
 
     .. code-block:: batch
 
-        processing.run("enmapbox:build3dcube", {
+        processing.run("enmapbox:Build3DCube", {
         'INPUT_LAYERS': ['layer1.tif', 'layer2.tif', 'layer3.tif'],
         'TEMPORAL_LABELS': ['2021-01', '2021-02', '2021-03'],
         'OUTPUT_CUBE': 'C:/Users/YourName/Documents/output_cube.tif'
