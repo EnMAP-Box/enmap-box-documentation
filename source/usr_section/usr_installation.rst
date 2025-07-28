@@ -283,7 +283,7 @@ Here we describe how you can install QGIS, the required python packages and the 
               latest (and newer) QGIS release that is available in conda.
 
 
-            Use the *raw content* uri to download and install an EnMAP-Box conda environment from github.
+            Use the *raw content* url to download and install an EnMAP-Box conda environment from github.
 
             .. list-table::
                :header-rows: 1

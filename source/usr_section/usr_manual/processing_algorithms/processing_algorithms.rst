@@ -13,8 +13,8 @@ Processing Algorithms
 Usage
 =====
 
-QGIS Processing Toolbox
------------------------
+Processing Toolbox
+------------------
 
 #. Open the Processing Toolbox: *Processing > Toolbox* or press Ctrl + Alt + T.
 
@@ -26,9 +26,10 @@ QGIS Processing Toolbox
 
     .. figure:: ../img/gifs/QGIS_Toolbox.gif
        :align: center
+       :width: 100%
 
-QGIS Model Designer
--------------------
+Model Designer
+--------------
 
 #. Open Model Designer: *Processing > Graphical Modeler* or press Ctrl + Alt + G.
 
@@ -40,9 +41,11 @@ QGIS Model Designer
 
     .. figure:: ../img/gifs/QGIS_ModelDesigner.gif
        :align: center
+       :width: 100%
 
-QGIS Python Console
--------------------
+
+Python Console
+--------------
 
 #. QGIS installed (with EnMAP-Box plugin installed).
 
@@ -58,6 +61,8 @@ QGIS Python Console
 
     .. figure:: ../img/gifs/QGIS_PyConsole.gif
        :align: center
+       :width: 100%
+
 
 #. Once you know the algorithm ID (like enmapbox:build3dcube), you can get help like this:
 
@@ -129,24 +134,6 @@ Command Line Usage
     outputCubeSide: <outputRaster>
         Output cube side
 
-Python Script (e.g. from PyCharm)
----------------------------------
-Here is how you would use an algorithm from Python using the PyCharm IDE:
-
-#. Setup a PyCharm Project and use the Python Interpreter that comes with QGIS.
-
-    .. figure:: ../img/ProAlgo_PyCharm1.png
-       :align: center
-
-#. Include the installed EnMAP-Box Plugin as a Sources Root.
-
-    .. figure:: ../img/ProAlgo_PyCharm2.png
-       :align: center
-
-#. Now you can use the EnMAP-Box API, i.e. enmapbox and enmapboxprocessing modules.
-
-    .. figure:: ../img/ProAlgo_PyCharm3.png
-       :align: center
 
 Algorithms
 ==========

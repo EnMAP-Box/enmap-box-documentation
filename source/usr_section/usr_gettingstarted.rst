@@ -22,9 +22,10 @@ in the QGIS toolbar or via :menuselection:`Raster --> EnMAP-Box` from the menuba
 Furthermore, the EnMAP-Box :ref:`Processing Algorithms` provider is available in the Processing Toolbox.
 
     .. figure:: ../img/manual_gui.png
-       :align: center
+        :width: 100%
+        :align: center
 
-       The Graphical User Interface (GUI) of the EnMAP-Box on first open
+        The Graphical User Interface (GUI) of the EnMAP-Box on first open
 
 .. tip:: Have a look at the :ref:`User Manual <gui>` for a detailed description of the GUI.
 
@@ -72,6 +73,7 @@ Now we want to change the RGB representation of the :file:`enmap_potsdam.tif` im
 
   .. figure:: /img/rasterlayerstyling.png
      :align: center
+     :width: 100%
 
      Raster Layer Styling panel with selected Color infrared preset
 
@@ -103,6 +105,7 @@ classification raster, i.e., we are going to rasterize the vector dataset.
 
     .. figure:: /img/example_rasterize_classification.png
        :align: center
+       :width: 100%
 
        Result of the Classification from Vector algorithm (right) and the input grid (left) and polygon dataset (middle)
 

@@ -142,6 +142,7 @@ Visualization
           no-matter how many bands your raster sources have
 
         .. image:: img/rasterlayer_stylingpanel.png
+            :width: 100%
             :align: center
 
 
@@ -163,27 +164,32 @@ Visualization
 
                   Visualize two bands using a 2d color ramp.
                 - .. image:: /usr_section/usr_manual/img/BivariateColorRasterRenderer.png
+                    :width: 100%
 
             *   - **Class-fraction or probability rendering**
 
                   Visualizes multiple class factions/probabilities at the same time using the original class colors.
                 - .. image:: /usr_section/usr_manual/img//ClassFractionRenderer.png
+                    :width: 100%
 
             *   - **HSV color rendering**
 
                   Visualizes 3 bands using the HSV (Hue, Saturation, Value/Black) color model
                 - .. image:: /usr_section/usr_manual/img/HSVColorRasterRenderer.png
+                    :width: 100%
 
 
             *   - **CMYK Color Raster Renderer**
 
                   Visualizes 4 bands using the CMYK (Cyan, Magenta, Yellow, and Key/Black) color model
                 - .. image:: /usr_section/usr_manual/img/CMYKColorRasterRenderer.png
+                    :width: 100%
 
             *   - **Decorelation Stretch Renderer**
 
                   Removing the high correlation between 3 band for a more colorful color composite image.
                 - .. image:: /usr_section/usr_manual/img/DecorrelationStretchRenderer.png
+                    :width: 100%
 
 
 Spectral Libraries
@@ -207,6 +213,7 @@ The EnMAP box offers a wide range of options for creating spectral libraries and
 * Plot profiles from different instruments simultaneously against wavelength units, e.g. nanometers, micrometers
 
 .. figure:: /usr_section/application_tutorials/spectral_library/img/add_profiles.gif
+    :width: 100%
 
 Algorithms
 ==========
@@ -220,6 +227,7 @@ connect them with algorithms from other plugins in the QGIS Model Builder.
     .. tab:: GUI
 
         .. image:: /img/fit_classification.png
+            :width: 100%
 
     .. tab:: Python
 
@@ -256,6 +264,7 @@ connect them with algorithms from other plugins in the QGIS Model Builder.
         can connect EnMAP processing algorithms with others and create powerful processing models.
 
         .. image:: /img/graphical_model_classification.png
+            :width: 100%
 
 Applications
 ============

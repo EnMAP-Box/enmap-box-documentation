@@ -19,16 +19,19 @@ Usage
 
     .. figure:: ./img/gifs/Add_Products_1.gif
       :align: center
+      :width: 100%
 
 2. Select the associated (metadata) file and Open in Maps View.
 
    .. figure:: ./img/gifs/Add_Products_2.gif
       :align: center
+      :width: 100%
 
 3. Adding multiple Map Views.
 
    .. figure:: ./img/gifs/Add_Products_3.gif
       :align: center
+      :width: 100%
 
 
 Add Web Map Services (WMS)
@@ -42,6 +45,7 @@ Usage
 
     .. figure:: ./img/gifs/Add_WMS.gif
        :align: center
+       :width: 100%
 
 Band Statistics
 ===============
@@ -54,11 +58,13 @@ Usage
 
     .. figure:: ./img/gifs/Band_Stats_1.gif
        :align: center
+       :width: 100%
 
     3. Interactively explore the map.
 
     .. figure:: ./img/gifs/Band_Stats_2.gif
        :align: center
+       :width: 100%
 
 Bivariate Color Raster Renderer
 ===============================
@@ -74,6 +80,8 @@ Usage
 
     .. figure:: ./img/gifs/BCRR.gif
        :align: center
+       :width: 100%
+
 
 Class Fraction/Probability Renderer and Statistics
 ==================================================
@@ -90,6 +98,7 @@ Usage
 
     .. figure:: ./img/gifs/ClassFrac.gif
        :align: center
+       :width: 100%
 
     Note that the visibility of individual classes can be turned on and off.
 
@@ -104,11 +113,13 @@ Usage
 
     .. figure:: ./img/gifs/classStats1.gif
        :align: center
+       :width: 100%
 
     3. Tweak the settings according to your parameters and interactively explore the map.
 
     .. figure:: ./img/gifs/classStats2.gif
        :align: center
+       :width: 100%
 
 CMYK Color Raster Renderer
 ==========================
@@ -123,6 +134,7 @@ Usage
 
     .. figure:: ./img/gifs/CMYKrenderer.gif
        :align: center
+       :width: 100%
 
 Color Space Explorer
 ====================
@@ -134,12 +146,14 @@ b) to animate RGB bands.
 GUI
     .. figure:: ./img/ColorSpaceExplorer.png
        :align: center
+       :width: 100%
 
 Usage
     1. Start the tool from the :guilabel:`Tools > Color Space Explorer` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
 
     .. figure:: ./img/gifs/ColorSpaceEx1.gif
        :align: center
+       :width: 100%
 
     2. Select a :term:`raster layer`.
     3. Select RGB bands:
@@ -152,6 +166,7 @@ Usage
 
     .. figure:: ./img/gifs/ColorSpaceEx2.gif
        :align: center
+       :width: 100%
 
 Decorrelation Stretch Renderer
 ==============================
@@ -171,6 +186,7 @@ Usage
 GUI
     .. figure:: ./img/DecorrelationStretchRenderer.png
        :align: center
+       :width: 100%
 
 Enhanced Multiband Color Renderer
 =================================
@@ -188,6 +204,7 @@ Usage
 GUI
     .. figure:: ./img/EnhancedMultibandColorRenderer.png
        :align: center
+       :width: 100%
 
 HSV Color Raster Renderer
 =========================
@@ -204,6 +221,7 @@ Usage
 GUI
     .. figure:: ./img/HSVColorRasterRenderer.png
        :align: center
+       :width: 100%
 
 .. todo::
 
@@ -216,6 +234,7 @@ Image Cube
 The :guilabel:`Image Cube` tool visualizes a raster image in an interactive 3D view:
 
 .. image:: /img/imagecube_animation.gif
+    :width: 100%
 
 1.  Select the raster image.
 
@@ -231,6 +250,7 @@ The :guilabel:`Image Cube` tool visualizes a raster image in an interactive 3D v
 3.  Press **Load Data** to (re)load and render the raster image values.
 
 .. image:: /img/imagecube_gui.png
+    :width: 100%
 
 
 The 3D scene contains the following elements:
@@ -245,6 +265,7 @@ The 3D scene contains the following elements:
   image areas
 
 .. image:: /img/imagecube_gui_slices.png
+    :width: 100%
 
 Metadata Viewer
 ===============
@@ -261,6 +282,7 @@ Usage
 GUI
     .. figure:: ./img/MetadataViewer.png
        :align: center
+       :width: 100%
 
 Multisource Multiband Color Raster Renderer
 ===========================================
@@ -278,16 +300,19 @@ Usage
 
     .. figure:: ./img/gifs/RasterStyle1.gif
        :align: center
+       :width: 100%
 
     3. View and Adjust in GRAY/PSEUDO Panels
 
     .. figure:: ./img/gifs/RasterStyle2.gif
        :align: center
+       :width: 100%
 
 It also supports the linking of the style between multiple  :term:`raster layer`.
 
     .. figure:: ./img/gifs/RasterStyle_stylelinking.gif
        :align: center
+       :width: 100%
 
 Raster Source Band Properties Editor
 ====================================
@@ -305,6 +330,7 @@ Usage
 GUI
     .. figure:: ./img/RasterSourceBandPropertiesEditor.png
        :align: center
+       :width: 100%
 
 Reclassify
 ==========
@@ -326,6 +352,7 @@ will be created.
   |mActionEditPaste| :sup:`Paste Classes` buttons.
 
 .. image:: /img/reclassifytool1.png
+    :width: 100%
 
 * The table is sorted by the **Label** field in ascending order. The value in **Label** will become the pixel value
   of this class and can not be altered.
@@ -335,6 +362,7 @@ will be created.
 Under :guilabel:`Class Mapping` you can reassign the old classes (**From**) to values of the new classification scheme (**To**)
 
 .. image:: /img/reclassifytool2.png
+    :width: 100%
 
 Specify the output path for the reclassified image under :guilabel:`Output File`
 
@@ -356,6 +384,7 @@ When plotting raster data against each other, we usually want to display the bin
 GUI
     .. figure:: ./img/ScatterPlot.png
        :align: center
+       :width: 100%
 
 Usage
     1. Start the tool from the :guilabel:`Tools > Scatter Plot` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
@@ -364,12 +393,14 @@ Usage
 
     .. figure:: ./img/gifs/ScatterPlot1.gif
        :align: center
+       :width: 100%
 
     3. Select `Density` option for :guilabel:`Coloring` and choose a color ramp.
     4. Tweak the settings according to your needs and explore the plot.
 
     .. figure:: ./img/gifs/ScatterPlot2.gif
        :align: center
+       :width: 100%
 
 Plotting Raster Band vs. Vector Field
 -------------------------------------
@@ -388,6 +419,7 @@ Usage
 GUI
     .. figure:: ./img/ScatterPlot_2.png
        :align: center
+       :width: 100%
 
 Virtual Raster Builder
 ======================

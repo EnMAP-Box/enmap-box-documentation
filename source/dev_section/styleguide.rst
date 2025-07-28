@@ -59,7 +59,8 @@ between information and actual steps and to follow them easily:
 
 
 .. figure:: /img/numbering_workflow.png
-   :align: center
+    :width: 100%
+    :align: center
 
 *Workflow example with numbering*
 
