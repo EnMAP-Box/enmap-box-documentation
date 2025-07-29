@@ -1,8 +1,8 @@
 .. _data_access:
 
-==================
-EnMAP Data
-==================
+========================
+EnMAP Data Access Portal
+========================
 
 .. admonition:: Info
 
@@ -14,8 +14,6 @@ EnMAP Data
 
     For a more detailed description take a look at the `Portal User Manual <https://www.enmap.org/data/doc/EN-GS-UM-6020_Portals_User_Manual_v1.4.pdf>`_.
 
-EnMAP Data Access Portal
-========================
 
 The EnMAP Data Access Portal (EDAP) includes two major entry points:
 
