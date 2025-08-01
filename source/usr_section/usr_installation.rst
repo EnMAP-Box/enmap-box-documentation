@@ -148,9 +148,9 @@ Here we describe how you can install QGIS, the required python packages and the 
                  >>> print(site.USER_SITE)
                  C:\Users\Andreas\AppData\Roaming\Python\Python39\site-packages
 
-         #. (Optional) Install **HDF5** dependency via the OSGeo4W installer:
+         #. (Optional) Install **h5py** and **gdal-hdf5** dependencies via the OSGeo4W installer:
 
-            The **HDF5** dependency is only required for importing PRISMA products.
+            The dependencies are only required for importing PRISMA products.
 
             Start the OSGeo4W installer by executing:
 
@@ -158,10 +158,11 @@ Here we describe how you can install QGIS, the required python packages and the 
 
                setup
 
-            Search for **h5py**, select the latest version of the *python3-h5py* package and finish the installation.
+            Search for **h5py**, select the latest version of the *python3-h5py* package.
 
             .. image:: /img/osgeo4w_install_h5py.png
 
+            Now search for **gdal-hdf5**, select the latest version and finish the installation.
 
          #. Open QGIS from the start menu.
 
