@@ -8,11 +8,11 @@ Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Seg
 **Publication date:** 09/06/2025
 
 This tutorial gives an introduction of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application, which is designed for Semantic Segmentation of spectral imagery (spatial-spectral pixel classification).
-With this software user can train deep-learning architectures e.g. U-Net, SegFormer with a variety of encoder backbones, such as ConvNext, and Swin-Transformer and Segment Anything Model 2 (+ 800 encoders from Pytorch Image Models (timm) library).
-Additionally, pretrained ResNet-18 and ResNet-50 foundation model encoders, trained on Sentinel-2 Top of Atmosphere Reflectance imagery from SSL4EO-S1/2, are also available.
+With this application, users can train deep-learning architectures such as U-Net, SegFormer with a variety of encoder backbones, e.g. ConvNext, Swin-Transformer and Segment Anything Model 2 (+ 800 encoders from Pytorch Image Models (timm) library).
+Additionally,the pretrained ResNet-18 and ResNet-50 foundation model encoders, trained on Sentinel-2 Top of Atmosphere Reflectance imagery from SSL4EO-S1/2, are also available.
 
-**IMPORTANT: Installation of PYTHON dependencies:**
-SpecDeepMap dependencies can be installed with **ONE-LINE OF CODE** in miniforge + conda environment or in OSGeo4W Shell.  Here short instruction (in installation chapter you find more details on how to use miniforge + conda and also on GPU installation – only available for miniforge setup).
+**IMPORTANT: Installation of necessary Python dependencies:**
+SpecDeepMap dependencies can be installed with **one-line of code** in miniforge + conda environment or in OSGeo4W Shell.  Here short instruction (in installation chapter you find more details on how to use miniforge + conda and also on GPU installation – only available for miniforge setup).
 
 
 **Option 1: Create a complete python environment with Miniforge + conda:**
@@ -233,7 +233,7 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
          Deep Learning Trainer Interface
 
 * As **Input folder (Train and Validation dataset)** use the 'specdeepmap_tutorial' folder. By **model architecture** and **model backbone** you can define possible model combinations. For this example leave the default values so Unet and 'resnet18'.
-* (Side Note: In case you would like to use timm backbones instead with no pretrained weights or imagenet weights just copy a model name from this table https://smp.readthedocs.io/en/latest/encoders_timm.html and attach  **tu-** before the model name e.g. for a small variant of Segment Anything Model 2:  model name **sam2_hiera_tiny** you need to paste **tu-sam2_hiera_tiny** as backbone name.)
+* (Side Note: In case you would like to use timm backbones instead with no pretrained weights or imagenet weights just copy a model name from this table https://smp.readthedocs.io/en/latest/encoders_timm.html and attach  **tu-** before the model name e.g. for a small variant of Segment Anything Model 2 with the model name **sam2_hiera_tiny** you need to paste **tu-sam2_hiera_tiny** as backbone name.)
 * Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al. 2022 (https://arxiv.org/abs/2211.07044).
 * We will use the default for the following parameter and leave them checked & activated (**freeze backbone**, **data augumentation**, **early stopping** and **balanced Training using class weights**)
 
