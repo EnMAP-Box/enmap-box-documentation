@@ -802,7 +802,7 @@ You now can:
 
 * use the Qt Designer to create a GUI frontend
 
-* promote basic Qt / QGIS widgets into any other derived widgets 
+* promote basic Qt / QGIS widgets into any other derived widgets
 
 * write a backend that connects widgets and responses to user inputs
 

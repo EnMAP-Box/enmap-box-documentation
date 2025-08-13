@@ -31,7 +31,7 @@ Citation
 
 Please cite the EnMAP-Box as:
 
-.. code-block:: none
+.. code-block::
 
    Jakimow, B., Janz, A., Thiel, F., Okujeni, A., Hostert, P., van der Linden, S., 2023. EnMAP-Box:
    Imaging spectroscopy in QGIS. SoftwareX 23, 101507. https://doi.org/10.1016/j.softx.2023.101507

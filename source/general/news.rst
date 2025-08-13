@@ -21,7 +21,7 @@ Upcoming Events
     *   - Workshop on Advanced Earth Observation, Machine Learning and Artificial Intelligence in Agricultural Applications
         - 10. Sep 2025
         - ZALF, Müncheberg, Germany
-        -
+        - Please check https://www.zalf.de/en/aktuelles/Pages/PB4/Multi-Source-Remote-Sensing.aspx for details.
 
 
 Living Planet Symposium 2025
