@@ -169,8 +169,8 @@ More info on datasets:
 
 Both datasets were prepared and downloaded using the Google Earth Engine. For the Sentinel 2 TOA data, multiple cloud- free tiles from 23 June 2022 over Germany were mosaiced.For the same region of interest, the corresponding EUCROPMAP class labels from 2022 were downloaded. Both dataset were reprojected to spatially align.  The EUCROPMAP class labels were resampled from 25 classes to 10 to ensure minimum class presence of 0.5 % per class in the dataset. Classes smaller than 0.5% were combined under ‘other classes’. Here the adapted numeric encoding per class: 0 = unclassifed ,1 = other classes (less then 0.5% in ROI),2 = Artificial ,3 = Common wheat,4 = Barley, 5 = Maize, 6 = Woodland and Shrubland (incl. permanent crops),7 = Grasslands,8 = Water, 9 = Rapeseed and turnip rapeseed, 10= Sugar beet. Original link to dataset: EUCROPMAP Lables here: https://developers.google.com/earth-engine/datasets/catalog/JRC_D5_EUCROPMAP_V1 and link to Sentinel-2 TOA dataset source: https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_HARMONIZED .
 
-1. Raster Splitter
-******************
+Raster Splitter
+***************
 
 The Raster Splitter splits a spectral imagery raster and a corresponding label raster with the same size into smaller image and label chips.
 Classification label raster should be expressed in any numeric values in range 0-255. The value 0 is reserved for unclassified or no-data.
@@ -194,8 +194,8 @@ In this example we split the Sentienl-2 TOA image and the EUCROPMAP labels into 
 
 
 
-2. Dataset Maker
-****************
+Dataset Maker
+*************
 
 The Dataset Maker takes the created folder as Input and generates a training, validation and test datasets with similar class distributions in form of CSV files with stored relative file paths to the image chips.
 As well as a summary CSV file which show class distribution per dataset as well as suitable class weights for balanced training.
@@ -218,8 +218,8 @@ As well as a summary CSV file which show class distribution per dataset as well 
 
          Dataset Maker Outputs: Summary CSV
 
-3. Deep Learning Trainer
-************************
+Deep Learning Trainer
+*********************
 
 The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervised manner for a semantic segmentation task. It offers flexibility by enabling the training of various architectures, like U-Net, U-Net++, DeeplabV3+, and SegFormer paired with diverse backbones such as ResNet-50. A list of natively supported backbones can be found at https://smp.readthedocs.io/en/latest/encoders.html. Moreover, approximately 500 backbones from Pytorch Image Model Library, also known as Timm, are available, such as ConvNext and Swin-Transformers. A complete list of available Timm Encoders backbones is provided here: https://smp.readthedocs.io/en/latest/encoders_timm.html . To use any of the timm encoders 'tu-' must be added before the model string name.
 
@@ -240,9 +240,6 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 * As **Path for saving model** use the 'specdeepmap_tutorial' folder.
 * Let's run the model.
 
-(IMPORTANT: In version enmapbox 3.16.3 the Trainer runs through, but will give a sys.flush error after running. However the training functions as intended and is by then already completed and all  model checkpoint during training are saved correctly. This error can be therefore ignored as it does not influence the functionality. If you want to avoid this error message open the QGIS python console before running the algorithm and close deep learning trainer interface again and reopen it. This will correctly set the sys parameters. (This can be applied as hotfix until the bug is fixed with the next update with enmapbox-version 3.16.4)
-
-
 During training in the Logger Interface the progress of the training is printed after each epoch. (epoch means one loop through the training dataset). In the logger the train and validation loss is displayed, which should reduce during training and the train IoU and val IoU should increase.
 The model uses the training data for learning the weights and the validation data is just used to check if the model over or underfits (if the train and validation values differ significantly).
 After training the logger displays the best model path for the best model. In general you want to use the model with the highest IoU score on the validation dataset. This is also written into the model file name, so you can find it later again at any time.
@@ -253,8 +250,8 @@ Here a logger visualization of the training we just performed. In our case with 
          Visualization of IoU and Loss per epoch during training of Deep Learning Trainer
 
 
-4. TensorBoard Visualizer (optional)
-************************************
+TensorBoard Visualizer (optional)
+*********************************
 
 If you want to inspect the model behavior in more detail after the training you can use this algorithm and the logger location to open a TensorBoard, which is an interactive graphical environment to inspect model training behavior.
 To call the TensorBoard Visualizer you need to define as input the location where you saved the model logger in the Deep Learning trainer algorithm.
@@ -273,8 +270,8 @@ To call the TensorBoard Visualizer you need to define as input the location wher
 
       Visualized TensorBoard
 
-5. Deep Learning Tester
-***********************
+Deep Learning Tester
+********************
 
 The Deep Learning Tester evaluates the performance of a trained model on the test dataset. Hereby it calculates the Intersection over Union Score per class as well as the overall mean.
 
@@ -301,8 +298,8 @@ The Deep Learning Tester evaluates the performance of a trained model on the tes
          Deep Learning Tester Output - IoU Scores on test dataset
 
 
-6. Deep Learning Mapper
-***********************
+Deep Learning Mapper
+********************
 
 The Deep Learning Mapper can apply a trained model to an entire orthomosaic or satellite scene. In the background this algorithm automatically extracts overlapping image chips from the Input raster, predicts on them and crops them and combine them back together to a continuous large prediction image.
 This enables easy employment of the model (also automatically apply same scaling and normalization as used in training of model). Throughout the predicting and cropping of the overlap areas the algorithm reduces boundary effect common in 2D - deeplearning models.
@@ -332,8 +329,8 @@ You can open the predicted Raster and CSV in the EnMAP-Box to inspect the predic
 
 
 
-7. Credits
-**********
+Credits
+*******
 * The pretrained Resnet18 and Resnet50 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model pretraining performed by Wang et al. 2022 on SSL4EO-S12 (https://arxiv.org/abs/2211.07044) and is loaded by torchgeo functions (Adam Stewart et al. 2022 https://arxiv.org/abs/2111.08872 library: https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
 
 * Iakubovskii, P. Segmentation Models Pytorch. 2019  [cited 2025 February 03]; Available from: https://github.com/qubvel/segmentation_models.pytorch
@@ -343,9 +340,8 @@ You can open the predicted Raster and CSV in the EnMAP-Box to inspect the predic
 * Wang, Y.;  N.A.A. Braham;  Z. Xiong;  C. Liu;  C.M. Albrecht and X.X. Zhu, SSL4EO-S12: A Large-Scale Multi-Modal, Multi-Temporal Dataset for Self-Supervised Learning in Earth Observation. ArXiv, 2022. abs/2211.07044
 * Wightman, R., PyTorch Image Models. GitHub. 2019. https://doi.org/10.5281/zenodo.7618837
 
-* Thanks to the EnMAP-Box core team!
 
-8. Github Repository
-********************
+Github Repository
+*****************
 The github repository for the integration in EnMAP-Box 3.16 can be found here: https://github.com/EnMAP-Box/enmap-box/tree/release_3.16/enmapbox/apps/SpecDeepMap
 
