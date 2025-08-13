@@ -12,7 +12,8 @@ With this application, users can train deep-learning architectures such as U-Net
 Additionally,the pretrained ResNet-18 and ResNet-50 foundation model encoders, trained on Sentinel-2 Top of Atmosphere Reflectance imagery from SSL4EO-S1/2, are also available.
 
 **IMPORTANT: INSTALLATION of PYTHON DEPENDENCIES:**
-SpecDeepMap dependencies can be installed with **one-line of code** in miniforge + conda environment or in OSGeo4W Shell.  Here short instruction (in installation chapter you find more details on how to use miniforge + conda and also on GPU installation – only available for miniforge setup).
+
+**SpecDeepMap dependencies can be installed with one-line of code** in miniforge + conda environment or in OSGeo4W Shell.  Here short instruction (in installation chapter you find more details on how to use miniforge + conda and also on GPU installation – only available for miniforge setup).
 
 **Option 1: Create a complete python environment with Miniforge + conda:**
 
@@ -35,12 +36,6 @@ run in OSGeo4W Shell the following command:
     pip install lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0
 
 More on OSGeo4W Shell: https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html#install-python-dependencies
-
-**Additional Credits**:
-The pretrained Resnet18 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model pretraining performed by Wang et al. 2022 on SSL4EO-S12 (https://arxiv.org/abs/2211.07044) and is loaded via torchgeo functions (https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
-
-**Github Repro**:
-The github repository for the integration in EnMAP-Box 3.16 can be found here: https://github.com/EnMAP-Box/enmap-box/tree/release_3.16/enmapbox/apps/SpecDeepMap
 
 
 Introduction to SpecDeepMap
@@ -146,7 +141,8 @@ Activate environment using **conda activate specdeepmap_cpu_time_capsul** or **c
 Getting started
 ***************
 
-In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task.
+In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task. The pretrained Resnet18 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model pretraining performed by Wang et al. 2022 on SSL4EO-S12 (https://arxiv.org/abs/2211.07044) and is loaded by torchgeo functions(Adam Stewart et al 2022 https://arxiv.org/abs/2111.08872 library: https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
+
 
 SpecDeepMap Menu
 ================
@@ -335,4 +331,21 @@ You can open the predicted Raster and CSV in the EnMAP-Box to inspect the predic
       Deep Learning mapper Output:Predicted Raster and IoU score
 
 
+
+7. Credits
+**********
+* The pretrained Resnet18 and Resnet50 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model pretraining performed by Wang et al. 2022 on SSL4EO-S12 (https://arxiv.org/abs/2211.07044) and is loaded by torchgeo functions (Adam Stewart et al. 2022 https://arxiv.org/abs/2111.08872 library: https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
+
+* Iakubovskii, P. Segmentation Models Pytorch. 2019  [cited 2025 February 03]; Available from: https://github.com/qubvel/segmentation_models.pytorch
+* Falcon, W. and The PyTorch Lightning team, PyTorch Lightning. 2019. https://doi.org/10.5281/zenodo.3828935
+* Jakimow, B.;  A. Janz;  F. Thiel;  A. Okujeni;  P. Hostert and S. van der Linden, EnMAP-Box: Imaging spectroscopy in QGIS. SoftwareX, 2023. 23: p. 101507
+* Stewart, A.J.;  C. Robinson;  I.A. Corley;  A. Ortiz;  J.M.L. Ferres and A. Banerjee, TorchGeo: deep learning with geospatial data. Proceedings of the 30th International Conference on Advances in Geographic Information Systems, 2021
+* Wang, Y.;  N.A.A. Braham;  Z. Xiong;  C. Liu;  C.M. Albrecht and X.X. Zhu, SSL4EO-S12: A Large-Scale Multi-Modal, Multi-Temporal Dataset for Self-Supervised Learning in Earth Observation. ArXiv, 2022. abs/2211.07044
+* Wightman, R., PyTorch Image Models. GitHub. 2019. https://doi.org/10.5281/zenodo.7618837
+
+* Thanks to the EnMAP-Box core team!
+
+8. Github Repository
+********************
+The github repository for the integration in EnMAP-Box 3.16 can be found here: https://github.com/EnMAP-Box/enmap-box/tree/release_3.16/enmapbox/apps/SpecDeepMap
 
