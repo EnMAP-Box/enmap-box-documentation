@@ -8,12 +8,11 @@ Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Seg
 **Publication date:** 09/06/2025
 
 This tutorial gives an introduction of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application, which is designed for Semantic Segmentation of spectral imagery (spatial-spectral pixel classification).
-With this application, users can train deep-learning architectures such as U-Net, SegFormer with a variety of encoder backbones, e.g. ConvNext, Swin-Transformer and Segment Anything Model 2 (+ 800 encoders from Pytorch Image Models (timm) library).
+With this application, users can train deep-learning architectures such as U-Net, SegFormer with a variety of encoder backbones e.g. ConvNext, Swin-Transformer and Segment Anything Model 2 (+ 800 encoders from Pytorch Image Models (timm) library).
 Additionally,the pretrained ResNet-18 and ResNet-50 foundation model encoders, trained on Sentinel-2 Top of Atmosphere Reflectance imagery from SSL4EO-S1/2, are also available.
 
-**IMPORTANT: Installation of necessary Python dependencies:**
+**IMPORTANT: INSTALLATION of PYTHON DEPENDENCIES:**
 SpecDeepMap dependencies can be installed with **one-line of code** in miniforge + conda environment or in OSGeo4W Shell.  Here short instruction (in installation chapter you find more details on how to use miniforge + conda and also on GPU installation – only available for miniforge setup).
-
 
 **Option 1: Create a complete python environment with Miniforge + conda:**
 
