@@ -3,22 +3,48 @@
 Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Segmentation
 #########################################################################################
 
-**Authors:** Leon-Friedrich Thomas
+**Author:** Leon-Friedrich Thomas
 
 **Publication date:** 09/06/2025
 
-This tutorial gives an introduction to the Processing Algorithms of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application.
-The Application is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
+This tutorial gives an introduction of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application, which is designed for Semantic Segmentation of spectral imagery (spatial-spectral pixel classification).
+With this software user can train deep-learning architectures e.g. U-Net, SegFormer with a variety of encoder backbones, such as ConvNext, and Swin-Transformer and Segment Anything Model 2 (+ 800 encoders from Pytorch Image Models (timm) library).
+Further, pretrained foundation model backbones ResNet-18 and ResNet-50 trained on Sentinel-2 Top of Atmosphere Reflectance Imagery from SSL4EO-S1/2 are also available.
 
-In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task.
+INSTALLATION of PYTHON DEPENDENCIES:
+SpecDeepMap dependencies can be installed with ONE-LINE OF CODE in miniforge + conda environment or in OSGeo4W Shell.  Here short instruction (in installation chapter you find more details on how to use miniforge + conda and also on GPU installation – only available for miniforge setup).
+
+Option 1: create a complete python environment with Miniforge + conda:
+conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_full_latest.yml
+
+or
+
+Option 2: OSGeo4W Shell:
+
+run in OSGeo4W Shell the following command:
+
+.. code-block:: bash
+
+    pip install lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0
+
+Additional Credits:
 The pretrained Resnet18 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model pretraining performed by Wang et al. 2022 on SSL4EO-S12 (https://arxiv.org/abs/2211.07044) and is loaded via torchgeo functions (https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
 
+Github Repro:
 The github repository for the integration in enmapbox 3.16 can be found here: https://github.com/EnMAP-Box/enmap-box/tree/release_3.16/enmapbox/apps/SpecDeepMap
+
 
 Introduction to SpecDeepMap
 ***************************
 
-The SpecDeepMap application consists of six QGIS processing algorithms and is designed for Semantic Segmentation tasks (pixel classification). With this application a user can train  deep-learning architectures U-Net, U-Net++, DeepLabV3+, and SegFormer with a variety of encoder backbones, such as ResNet-18 and -50, EfficientNet, MobileNet, ConvNext, and Swin-Transformer. SpecDeepMap is designed for multispectral and hyperspectral images and takes geospatial data characteristics into account. A highlight is the integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery.
+SpecDeepMap is designed for semantic segmentation (spatial-spectral pixel classification) of geospatial imagery. It consists of six algorithm each for a step of the workflow:
+
+1.	Chip Generation: Splits spectral rasters (e.g., orthomosaics, satellite tiles) and their corresponding pixel-labeled ground truth rasters into smaller, standardized chips.
+2.	Dataset Creation: Organize these chips into structured training, validation and test datasets
+3.	Model Training: Train a semantic segmentation model (e.g., U-Net, Segformer + 800 available timm encoders)
+4.	(Optional) Exploration of Model training: Inspect Model training with TensorBoard
+5.	Test Model: Evaluate model performance on test dataset
+6.	Map with Model: Apply the trained model directly on spectral rasters (e.g., orthomosaics, satellite tiles) to create classification raster
 
     .. figure:: img/1_SpecDeepMap_Overview.jpg
 
@@ -27,7 +53,7 @@ The SpecDeepMap application consists of six QGIS processing algorithms and is de
 Installation of SpecDeepMap
 ***************************
 
-SpecDeepMap is available by default in EnMAP-Box from 3.16 onwards until further notice, and has to be installed via Miniforge/Conda.
+SpecDeepMap is available by default in EnMAP-Box from 3.16 onwards until further notice, and python dependencies have to be installed via Miniforge/Conda or OSGeo4W Shell.
 
 Install QGIS & SpecDeepMap via Miniforge/Conda (cross-platform)
 ===============================================================
@@ -45,17 +71,9 @@ It is strongly recommended to use Miniforge, a minimal installer for conda speci
     .. figure:: img/conda.jpg
          :scale: 60%
 
-3. Run the following command in 3.1 or 3.2. to create the specdeepmap environment:
+3. Run the following command in 3.1 to create the specdeepmap environment:
 
-3.1 Run the following command to create the SpecDeepMap environment with limited EnMAP-box function
-
-.. code-block:: bash
-
-   conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_specdeepmap.yml
-
-or
-
-3.2 Run the following command to create the SpecDeepMap environment with full EnMAP-box function:
+3.1 Run the following command to create the SpecDeepMap environment with full EnMAP-box function:
 
 .. code-block:: bash
 
@@ -78,10 +96,10 @@ or
 Once QGIS opens, you can access SpecDeepMap via the EnMAP-Box processing algorithm menu.
 
 
-Install QGIS & SpecDeepMap with GPU Support (Optional)
-======================================================
+Install QGIS & SpecDeepMap with GPU Support (Optional & ONLY available via miniforge + conda)
+=============================================================================================
 
-If you have a cuda capable GPU you can also install cuda to use SpecDeepMap with GPU support:
+If you have a cuda capable GPU you can also install cuda to use SpecDeepMap with GPU support - ONLY works on miniforge + conda :
 
 Step 1: Activate the environment
 
@@ -95,8 +113,7 @@ Step 2: Re-install pytorch with cuda GPU support via pip (example for CUDA 12.4)
 
    pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124 --force-reinstall
 
-Note: It is also possible to setup  CUDA via the OSGeo4W Shell on Windows. First, install the CUDA Toolkit: https://developer.nvidia.com/cuda-downloads , then run Step 2 in the OSGeo4W Shell.
-For more details on how to set up GPU via OsGeo4W Shell see GEO-SAM installation here: https://geo-sam.readthedocs.io/en/latest/installation.html .
+
 
 Timeless Recovery Environment with Explicit Python Package Versions of Original Release (CPU/GPU)
 =================================================================================================
@@ -115,8 +132,8 @@ For GPU version with cuda 12.4 run the following command in miniconda shell. If 
 
    conda env create -n specdeepmap_gpu_time_capsul --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_gpu_time_capsul.yml
 
-If you want to use a newer CUDA version, you can first create the CPU environment, then manually re-install PyTorch using the appropriate pip install command (as shown in Step 2: Install PyTorch with CUDA).
-Activate environment using conda activate specdeepmap_cpu_time_capsul or conda activate specdeepmap_gpu_time_capsul
+If you want to use a newer CUDA version or have trouble with the direct install, you can first create the CPU environment, then manually re-install PyTorch using the appropriate pip install command (as shown in Step 2: Install PyTorch with CUDA).
+Activate environment using 'conda activate specdeepmap_cpu_time_capsul' or 'conda activate specdeepmap_gpu_time_capsul'
 
 
 Getting started
@@ -126,7 +143,7 @@ SpecDeepMap Menu
 ================
 
 Launch QGIS and click the EnMAP-Box icon in the toolbar to open the EnMAP-Box. In the EnMAP-Box GUI you can find the SpecDeepMap application in the algorithms in the **EnMAP-Box Processing Algorithms**.
-
+You can find SpecDeepMap in Applications as well as in processing Algorithms. If Algorithms are grey in application the python dependencies are not installed.
     .. figure:: img/specdeepmap_menu.png
 
          SpecDeepMap Workflow
@@ -205,6 +222,7 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
          Deep Learning Trainer Interface
 
 * As **Input folder (Train and Validation dataset)** use the 'specdeepmap_tutorial' folder. By **model architecture** and **model backbone** you can define possible model combinations. For this example leave the default values so Unet and 'resnet18'.
+ (Side Note:In case you would like to use timm backbones instead with no pretrained weights or imagenet weights just copy a model name from this table https://smp.readthedocs.io/en/latest/encoders_timm.html and attach  'tu-' before the model name e.g. for a small variant of Segment Anything Model 2:  model name 'sam2_hiera_tiny' you need to paste 'tu-sam2_hiera_tiny' as backbone name.
 * Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al. 2022 (https://arxiv.org/abs/2211.07044).
 * We will use the default for the following parameter and leave them checked & activated (**freeze backbone**, **data augumentation**, **early stopping** and **balanced Training using class weights**)
 
