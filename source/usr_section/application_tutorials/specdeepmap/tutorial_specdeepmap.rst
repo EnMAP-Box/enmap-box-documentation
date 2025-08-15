@@ -29,14 +29,13 @@ or
 
 **Option 2: OSGeo4W Shell:**
 
-run in OSGeo4W Shell the following command:
+run in OSGeo4W Shell the following command to install additional python dependencies:
 
 .. code-block:: bash
 
-    pip install lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0
+    pip install --user lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0 pandas==2.2.3 --no-warn-script-location
 
 More on OSGeo4W Shell: https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html#install-python-dependencies
-
 
 Introduction to SpecDeepMap
 ***************************
