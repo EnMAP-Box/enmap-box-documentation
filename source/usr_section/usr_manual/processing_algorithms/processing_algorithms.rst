@@ -70,20 +70,43 @@ Python Console
 
         processing.algorithmHelp("enmapbox:Build3DCube")
 
-#. Use the processing.run() function to run the algorithm:
+#. You can obtain the Python command for any algorithm by opening its dialog box, clicking the *Advanced button*, and selecting *Copy as Python Command*.
+
+    .. figure:: ../img/pyConsole_advanced.png
+       :align: center
+       :width: 100%
+
+#. Use the copied function to run the algorithm:
 
     .. code-block:: batch
 
         processing.run("enmapbox:Build3DCube", {
-        'INPUT_LAYERS': ['layer1.tif', 'layer2.tif', 'layer3.tif'],
-        'TEMPORAL_LABELS': ['2021-01', '2021-02', '2021-03'],
-        'OUTPUT_CUBE': 'C:/Users/YourName/Documents/output_cube.tif'
+        'raster':'C:/Users/Aryan/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/exampledata/enmap_potsdam.tif',
+        'spectralScale':1,'dx':1,'dy':1,
+        'outputCubeFace':'TEMPORARY_OUTPUT',
+        'outputCubeSide':'TEMPORARY_OUTPUT'
         })
 
 You need to adjust the parameters according to the algorithm’s needs. Paths can be to files on disk or to in-memory layers.
 
 Command Line Usage
 ------------------
+#. Open your conda prompt and activate the enmapbox.
+
+#. You can obtain the Command line code for any algorithm by opening its dialog box, clicking the *Advanced button*, and selecting *Copy as Python Command*.
+
+    .. figure:: ../img/CommandLine_advanced.png
+       :align: center
+       :width: 100%
+
+#. Use the copied function to run the algorithm:
+
+    .. code-block:: batch
+
+        qgis_process run enmapbox:Build3DCube --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --raster='C:/Users/Aryan/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/exampledata/enmap_potsdam.tif' --spectralScale=1 --dx=1 --dy=1 --outputCubeFace=TEMPORARY_OUTPUT --outputCubeSide=TEMPORARY_OUTPUT
+
+You need to adjust the parameters according to the algorithm’s needs. Paths can be to files on disk or to in-memory layers.
+
 
 ``>qgis_process help enmapbox:Build3DCube``::
 
