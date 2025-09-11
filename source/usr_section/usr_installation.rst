@@ -393,15 +393,15 @@ Here is how you can use an algorithm from Python using the PyCharm IDE:
 
 #. Setup a PyCharm Project and use the Python Interpreter that comes with QGIS.
 
-.. figure:: usr_manual/img/PyCharm_algo_use1.png
-   :align: center
-   :width: 100%
+    .. figure:: usr_manual/img/Pycharm_algo_use1.png
+       :align: center
+       :width: 100%
 
 #. Include the installed EnMAP-Box Plugin as a Sources Root.
 
-.. figure:: usr_manual/img/PyCharm_algo_use2.png
-   :align: center
-   :width: 100%
+    .. figure:: usr_manual/img/Pycharm_algo_use2.png
+       :align: center
+       :width: 100%
 
 #. Now you can use the EnMAP-Box API, i.e. enmapbox and enmapboxprocessing modules.
 
