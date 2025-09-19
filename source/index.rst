@@ -1,42 +1,27 @@
-#########################
-EnMAP-Box 3 Documentation
-#########################
+#######################
+EnMAP-Box Documentation
+#######################
 
-The EnMAP-Box is a Python plugin for `QGIS <https://www.qgis.org/en/site/#>`__, designed to process, visualize and
-analyze hyperspectral remote sensing data.
+The EnMAP-Box is Python plugin for `QGIS <https://www.qgis.org/en/site/#>`__,
+to process, visualize and analyze mulit- and hyperspectral remote sensing data.
 
 .. figure:: img/screenshot_3.15.1.png
    :figwidth: 150%
 
-   The graphical user interface of the EnMAP-Box
+   Graphical user interface of the EnMAP-Box
 
-Get going with the :ref:`Installation <usr_installation>` and the :ref:`Getting Started <getting_started>` chapter.
+Visit our overview on EnMAP-Box :ref:`features <features>` and get going
+with the :ref:`Installation <usr_installation>` and :ref:`Getting Started <getting_started>` chapters.
 Have a look at the :ref:`Cookbook <cookbook>` for usage examples!
 
-Key features
-************
 
-* Extend your QGIS for remote sensing image analysis
-* Add powerful tools to process and analyze imaging spectroscopy data
-* Integrate machine learning algorithms into your image classification and regression with Random Forests, Support Vector Machines and many more
-* Create and manage spectral libraries with attribute data
-* Develop your own image processing algorithms using a powerful Python API
+Related Sites
+*************
 
+- Environmental Mapping and Analysis Program (EnMAP) https://www.enmap.org
+- Source code repository https://github.com/EnMAP-Box/enmap-box>
+- HYPERedu on eo-college https://eo-college.org/resource-spectrum/hyperspectral
 
-.. figure:: img/screenshot_main4.png
-
-   The graphical user interface of the EnMAP-Box visualizing (left) a hyperspectral EnMAP image and (right) a multi-spectral
-   PlanetScope image from the city of Valencia, Spain.
-
-Related websites
-****************
-
-- `Environmental Mapping and Analysis Program (EnMAP) <https://www.enmap.org/>`__
-- `Source code repository <https://github.com/EnMAP-Box/enmap-box/tree/main/>`__
-- `HYPERedu on eo-college <https://eo-college.org/resource-spectrum/hyperspectral/>`__
-
-
-.. show NEWS section
 
 .. include:: general/news.rst
 
