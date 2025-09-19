@@ -4,27 +4,27 @@
 Contribute
 ==========
 
-The EnMAP-Box is a freely available, platform-independent software designed to process hyperspectral remote sensing data,
-and particularly developed to handle data from the EnMAP sensor.
+Everyone is welcome to contribute to the EnMAP-Box.
+We are continuously working to improve the EnMAP-Box and develop new features.
 
-The EnMAP-Box source code is hosted in a public git repository at https://github.com/EnMAP-Box/enmap-box.
+If you find the EnMAP-Box useful and would like to support its ongoing development,
+we warmly welcome your contributions. Your support helps us keep the project growing and
+improving for everyone.
 
-Approved `QGIS plugin <https://www.qgis.org/en/site>`_ versions (“production releases”) are available in the QGIS Plugin Repository https://plugins.qgis.org/plugins/enmapboxplugin/.
+Funding Support
+===============
+
+If you would like to support the development of the EnMAP-Box financially, you are
+welcome to contact us at enmapbox@enmap.org.
 
 
-The development of the EnMAP-Box is funded within the EnMAP scientific preparation program under the
-DLR Space Administration (mission lead) and GFZ Potsdam (scientific lead) with resources from the
-German Federal Ministry for Economic Affairs and Energy.
-
-
-Everyone is welcome to contribute to the EnMAP-Box
-
-Submit a bug report or feature request
-======================================
+Bug reports & feature requests
+==============================
 
 In case you experience issues with the EnMAP-Box, do not hesitate to submit a
-ticket to our `Issue Tracker <https://github.com/EnMAP-Box/enmap-box/issues>`_. You are also welcome
-to post feature requests or pull requests.
+ticket to our `Issue Tracker <https://github.com/EnMAP-Box/enmap-box/issues>`_.
+
+You are also welcome to send us feature requests or pull requests.
 
 It is recommended to check that your issue complies with the
 following rules before submitting:
