@@ -3,22 +3,51 @@
 Spectral Imaging Deep Learning Mapper (SpecDeepMap): A Tutorial for Semantic Segmentation
 #########################################################################################
 
-**Authors:** Leon-Friedrich Thomas
+**Author:** Leon-Friedrich Thomas
 
 **Publication date:** 09/06/2025
 
-This tutorial gives an introduction to the Processing Algorithms of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application.
-The Application is designed for EnMAP-Box 3.16 or higher. Minor changes may be present in subsequent versions, such as modified menu labels or added parameter options.
+This tutorial gives an introduction of the Spectral Imaging Deep Learning Mapper (SpecDeepMap) application, which is designed for Semantic Segmentation of spectral imagery (spatial-spectral pixel classification).
+With this application, users can train deep-learning architectures such as U-Net, SegFormer with a variety of encoder backbones e.g. ConvNext, Swin-Transformer and Segment Anything Model 2 (+ 800 encoders from Pytorch Image Models (timm) library).
+Additionally,the pretrained ResNet-18 and ResNet-50 foundation model encoders, trained on Sentinel-2 Top of Atmosphere Reflectance imagery from SSL4EO-S1/2, are also available.
 
-In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task.
-The pretrained Resnet18 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model pretraining performed by Wang et al. 2022 on SSL4EO-S12 (https://arxiv.org/abs/2211.07044) and is loaded via torchgeo functions (https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
+**IMPORTANT: INSTALLATION of PYTHON DEPENDENCIES:**
 
-The github repository for the integration in enmapbox 3.16 can be found here: https://github.com/EnMAP-Box/enmap-box/tree/release_3.16/enmapbox/apps/SpecDeepMap
+**SpecDeepMap dependencies can be installed with one-line of code** in miniforge + conda environment or in OSGeo4W Shell.  Here short instruction (in installation chapter you find more details on how to use miniforge + conda and also on GPU installation – only available for miniforge setup).
+
+**Option 1: Create a complete python environment with Miniforge + conda:**
+
+run in miniforge Shell the following command:
+
+.. code-block:: bash
+
+    conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_full_latest.yml
+
+More on miniforge + conda install: https://enmap-box.readthedocs.io/en/latest/usr_section/application_tutorials/specdeepmap/tutorial_specdeepmap.html#install-qgis-specdeepmap-via-miniforge-conda-cross-platform
+
+or
+
+**Option 2: OSGeo4W Shell:**
+
+run in OSGeo4W Shell the following command to install additional python dependencies:
+
+.. code-block:: bash
+
+    pip install --user lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0 pandas==2.2.3 --no-warn-script-location
+
+More on OSGeo4W Shell: https://enmap-box.readthedocs.io/en/latest/usr_section/usr_installation.html#install-python-dependencies
 
 Introduction to SpecDeepMap
 ***************************
 
-The SpecDeepMap application consists of six QGIS processing algorithms and is designed for Semantic Segmentation tasks (pixel classification). With this application a user can train  deep-learning architectures U-Net, U-Net++, DeepLabV3+, and SegFormer with a variety of encoder backbones, such as ResNet-18 and -50, EfficientNet, MobileNet, ConvNext, and Swin-Transformer. SpecDeepMap is designed for multispectral and hyperspectral images and takes geospatial data characteristics into account. A highlight is the integration of the foundation model backbones ResNet-18 and ResNet-50 trained for Sentinel-2 Top of Atmosphere Reflectance Imagery.
+SpecDeepMap is designed for semantic segmentation (spatial-spectral pixel classification) of geospatial imagery. It consists of six algorithm each for a step of the workflow:
+
+1.	Chip Generation: Splits spectral rasters (e.g., orthomosaics, satellite tiles) and their corresponding pixel-labeled ground truth rasters into smaller, standardized chips.
+2.	Dataset Creation: Organize these chips into structured training, validation and test datasets
+3.	Model Training: Train a semantic segmentation model (e.g., U-Net, Segformer + 800 available timm encoders)
+4.	(Optional) Exploration of Model training: Inspect Model training with TensorBoard
+5.	Test Model: Evaluate model performance on test dataset
+6.	Map with Model: Apply the trained model directly on spectral rasters (e.g., orthomosaics, satellite tiles) to create classification raster
 
     .. figure:: img/1_SpecDeepMap_Overview.jpg
 
@@ -27,14 +56,12 @@ The SpecDeepMap application consists of six QGIS processing algorithms and is de
 Installation of SpecDeepMap
 ***************************
 
-SpecDeepMap is available by default in EnMAP-Box from 3.16 onwards until further notice, and has to be installed via Miniforge/Conda.
+SpecDeepMap is available by default in EnMAP-Box from 3.16 onwards until further notice, and python dependencies have to be installed via Miniforge/Conda or OSGeo4W Shell.
 
 Install QGIS & SpecDeepMap via Miniforge/Conda (cross-platform)
 ===============================================================
 
-The following steps show you how to install and run the EnMAP-Box with SpecDeepMap Application from a conda python environment. This enables cross-platform setup and enables optionally GPU support.
-
-Conda is a cross-platform package manager that allows install software in separate environments.
+The following steps show you how to install and run the EnMAP-Box with SpecDeepMap Application from a conda python environment. This enables cross-platform setup and enables optionally GPU support. Conda is a cross-platform package manager that allows install software in separate environments.
 
 It is strongly recommended to use Miniforge, a minimal installer for conda specific to the conda-forge channel (https://conda-forge.org/ ).
 (If you nevertheless use miniconda instead of miniforge- make sure conda-forge channel is set to priority. Further SpecDeepMap is developed and tested via Miniforge, use of miniconda might lead to errors)
@@ -45,17 +72,9 @@ It is strongly recommended to use Miniforge, a minimal installer for conda speci
     .. figure:: img/conda.jpg
          :scale: 60%
 
-3. Run the following command in 3.1 or 3.2. to create the specdeepmap environment:
+3. Run the following command in 3.1 to create the specdeepmap environment:
 
-3.1 Run the following command to create the SpecDeepMap environment with limited EnMAP-box function
-
-.. code-block:: bash
-
-   conda env create -n specdeepmap --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/enmapbox/apps/SpecDeepMap/conda_envs/enmapbox_specdeepmap.yml
-
-or
-
-3.2 Run the following command to create the SpecDeepMap environment with full EnMAP-box function:
+3.1 Run the following command to create the SpecDeepMap environment with full EnMAP-box function:
 
 .. code-block:: bash
 
@@ -75,13 +94,13 @@ or
 
    qgis
 
-Once QGIS opens, you can access SpecDeepMap via the EnMAP-Box processing algorithm menu.
+Once QGIS opens, you can access SpecDeepMap via the EnMAP-Box processing algorithm or application menu.
 
 
-Install QGIS & SpecDeepMap with GPU Support (Optional)
-======================================================
+Install QGIS & SpecDeepMap with GPU Support (Optional & ONLY available via miniforge + conda)
+=============================================================================================
 
-If you have a cuda capable GPU you can also install cuda to use SpecDeepMap with GPU support:
+If you have a cuda capable GPU you can also install cuda to use SpecDeepMap with GPU support - **ONLY works on miniforge + conda**:
 
 Step 1: Activate the environment
 
@@ -95,37 +114,40 @@ Step 2: Re-install pytorch with cuda GPU support via pip (example for CUDA 12.4)
 
    pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124 --force-reinstall
 
-Note: It is also possible to setup  CUDA via the OSGeo4W Shell on Windows. First, install the CUDA Toolkit: https://developer.nvidia.com/cuda-downloads , then run Step 2 in the OSGeo4W Shell.
-For more details on how to set up GPU via OsGeo4W Shell see GEO-SAM installation here: https://geo-sam.readthedocs.io/en/latest/installation.html .
+
 
 Timeless Recovery Environment with Explicit Python Package Versions of Original Release (CPU/GPU)
 =================================================================================================
 
 If SpecDeepMap encounters issues due to Python package updates or incompatibilities, you can restore a fully functional environment according to the original release environment using the provided configuration files. These define all required packages explicitly, ensuring that both CPU and GPU versions run reliably across platforms.
 
-For cpu version run the following command in miniconda shell:
+For cpu version run the following command in miniforge shell:
 
 .. code-block:: bash
 
    conda env create -n specdeepmap_cpu_time_capsul --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_cpu_time_capsul.yml
 
-For GPU version with cuda 12.4 run the following command in miniconda shell. If you need newer cuda version you can also create just the cpu environment and run a force-reinstall with newer cuda version (see step 2. of cuda enable installation).
+For GPU version with cuda 12.4 run the following command in miniforge shell. If you need newer cuda version you can also create just the cpu environment and run a force-reinstall with newer cuda version (see step 2. of cuda enable installation).
 
 .. code-block:: bash
 
    conda env create -n specdeepmap_gpu_time_capsul --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/enmapbox/apps/SpecDeepMap/conda_envs/specdeepmap_gpu_time_capsul.yml
 
-If you want to use a newer CUDA version, you can first create the CPU environment, then manually re-install PyTorch using the appropriate pip install command (as shown in Step 2: Install PyTorch with CUDA).
-Activate environment using conda activate specdeepmap_cpu_time_capsul or conda activate specdeepmap_gpu_time_capsul
+If you want to use a newer CUDA version or have trouble with the direct install, you can first create the CPU environment, then manually re-install PyTorch using the appropriate pip install command (as shown in Step 2: Install PyTorch with CUDA).
+Activate environment using **conda activate specdeepmap_cpu_time_capsul** or **conda activate specdeepmap_gpu_time_capsul**
 
 
 Getting started
 ***************
 
+In this Tutorial we will fine-tune a pretrained Resnet18 backbone for Sentinel-2 Top of Atmosphere reflectance imagery with European Union Crop type Map (EUCROPMAP) labels for a semantic segmentation task. The pretrained Resnet18 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model pretraining performed by Wang et al. 2022 on SSL4EO-S12 (https://arxiv.org/abs/2211.07044) and is loaded by torchgeo functions(Adam Stewart et al 2022 https://arxiv.org/abs/2111.08872 library: https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
+
+
 SpecDeepMap Menu
 ================
 
-Launch QGIS and click the EnMAP-Box icon in the toolbar to open the EnMAP-Box. In the EnMAP-Box GUI you can find the SpecDeepMap application in the algorithms in the **EnMAP-Box Processing Algorithms**.
+Launch QGIS and click the EnMAP-Box icon in the toolbar to open the EnMAP-Box. In the EnMAP-Box GUI you can find the SpecDeepMap application in the algorithms in **Applications** menu the **EnMAP-Box Processing Algorithms**
+If Algorithms are displayed in grey in application menu the python dependencies are not installed.
 
     .. figure:: img/specdeepmap_menu.png
 
@@ -146,8 +168,8 @@ More info on datasets:
 
 Both datasets were prepared and downloaded using the Google Earth Engine. For the Sentinel 2 TOA data, multiple cloud- free tiles from 23 June 2022 over Germany were mosaiced.For the same region of interest, the corresponding EUCROPMAP class labels from 2022 were downloaded. Both dataset were reprojected to spatially align.  The EUCROPMAP class labels were resampled from 25 classes to 10 to ensure minimum class presence of 0.5 % per class in the dataset. Classes smaller than 0.5% were combined under ‘other classes’. Here the adapted numeric encoding per class: 0 = unclassifed ,1 = other classes (less then 0.5% in ROI),2 = Artificial ,3 = Common wheat,4 = Barley, 5 = Maize, 6 = Woodland and Shrubland (incl. permanent crops),7 = Grasslands,8 = Water, 9 = Rapeseed and turnip rapeseed, 10= Sugar beet. Original link to dataset: EUCROPMAP Lables here: https://developers.google.com/earth-engine/datasets/catalog/JRC_D5_EUCROPMAP_V1 and link to Sentinel-2 TOA dataset source: https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_HARMONIZED .
 
-1. Raster Splitter
-******************
+Raster Splitter
+***************
 
 The Raster Splitter splits a spectral imagery raster and a corresponding label raster with the same size into smaller image and label chips.
 Classification label raster should be expressed in any numeric values in range 0-255. The value 0 is reserved for unclassified or no-data.
@@ -171,8 +193,8 @@ In this example we split the Sentienl-2 TOA image and the EUCROPMAP labels into 
 
 
 
-2. Dataset Maker
-****************
+Dataset Maker
+*************
 
 The Dataset Maker takes the created folder as Input and generates a training, validation and test datasets with similar class distributions in form of CSV files with stored relative file paths to the image chips.
 As well as a summary CSV file which show class distribution per dataset as well as suitable class weights for balanced training.
@@ -195,8 +217,8 @@ As well as a summary CSV file which show class distribution per dataset as well 
 
          Dataset Maker Outputs: Summary CSV
 
-3. Deep Learning Trainer
-************************
+Deep Learning Trainer
+*********************
 
 The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervised manner for a semantic segmentation task. It offers flexibility by enabling the training of various architectures, like U-Net, U-Net++, DeeplabV3+, and SegFormer paired with diverse backbones such as ResNet-50. A list of natively supported backbones can be found at https://smp.readthedocs.io/en/latest/encoders.html. Moreover, approximately 500 backbones from Pytorch Image Model Library, also known as Timm, are available, such as ConvNext and Swin-Transformers. A complete list of available Timm Encoders backbones is provided here: https://smp.readthedocs.io/en/latest/encoders_timm.html . To use any of the timm encoders 'tu-' must be added before the model string name.
 
@@ -205,6 +227,7 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
          Deep Learning Trainer Interface
 
 * As **Input folder (Train and Validation dataset)** use the 'specdeepmap_tutorial' folder. By **model architecture** and **model backbone** you can define possible model combinations. For this example leave the default values so Unet and 'resnet18'.
+* (Side Note: In case you would like to use timm backbones instead with no pretrained weights or imagenet weights just copy a model name from this table https://smp.readthedocs.io/en/latest/encoders_timm.html and attach  **tu-** before the model name e.g. for a small variant of Segment Anything Model 2 with the model name **sam2_hiera_tiny** you need to paste **tu-sam2_hiera_tiny** as backbone name.)
 * Change the **Load pretrained weights** parameter to Sentinel_2_TOA_Resnet18 to load the pretrained weights for Sentinel-2 TOA imagery stemming from Wang et al. 2022 (https://arxiv.org/abs/2211.07044).
 * We will use the default for the following parameter and leave them checked & activated (**freeze backbone**, **data augumentation**, **early stopping** and **balanced Training using class weights**)
 
@@ -216,9 +239,6 @@ The Deep Learning Trainer algorithm,  trains a deep-learning model in a supervis
 * As **Path for saving model** use the 'specdeepmap_tutorial' folder.
 * Let's run the model.
 
-(IMPORTANT: In version enmapbox 3.16.3 the Trainer runs through, but will give a sys.flush error after running. However the training functions as intended and is by then already completed and all  model checkpoint during training are saved correctly. This error can be therefore ignored as it does not influence the functionality. If you want to avoid this error message open the QGIS python console before running the algorithm and close deep learning trainer interface again and reopen it. This will correctly set the sys parameters. (This can be applied as hotfix until the bug is fixed with the next update with enmapbox-version 3.16.4)
-
-
 During training in the Logger Interface the progress of the training is printed after each epoch. (epoch means one loop through the training dataset). In the logger the train and validation loss is displayed, which should reduce during training and the train IoU and val IoU should increase.
 The model uses the training data for learning the weights and the validation data is just used to check if the model over or underfits (if the train and validation values differ significantly).
 After training the logger displays the best model path for the best model. In general you want to use the model with the highest IoU score on the validation dataset. This is also written into the model file name, so you can find it later again at any time.
@@ -229,8 +249,8 @@ Here a logger visualization of the training we just performed. In our case with 
          Visualization of IoU and Loss per epoch during training of Deep Learning Trainer
 
 
-4. TensorBoard Visualizer (optional)
-************************************
+TensorBoard Visualizer (optional)
+*********************************
 
 If you want to inspect the model behavior in more detail after the training you can use this algorithm and the logger location to open a TensorBoard, which is an interactive graphical environment to inspect model training behavior.
 To call the TensorBoard Visualizer you need to define as input the location where you saved the model logger in the Deep Learning trainer algorithm.
@@ -249,8 +269,8 @@ To call the TensorBoard Visualizer you need to define as input the location wher
 
       Visualized TensorBoard
 
-5. Deep Learning Tester
-***********************
+Deep Learning Tester
+********************
 
 The Deep Learning Tester evaluates the performance of a trained model on the test dataset. Hereby it calculates the Intersection over Union Score per class as well as the overall mean.
 
@@ -277,8 +297,8 @@ The Deep Learning Tester evaluates the performance of a trained model on the tes
          Deep Learning Tester Output - IoU Scores on test dataset
 
 
-6. Deep Learning Mapper
-***********************
+Deep Learning Mapper
+********************
 
 The Deep Learning Mapper can apply a trained model to an entire orthomosaic or satellite scene. In the background this algorithm automatically extracts overlapping image chips from the Input raster, predicts on them and crops them and combine them back together to a continuous large prediction image.
 This enables easy employment of the model (also automatically apply same scaling and normalization as used in training of model). Throughout the predicting and cropping of the overlap areas the algorithm reduces boundary effect common in 2D - deeplearning models.
@@ -307,4 +327,20 @@ You can open the predicted Raster and CSV in the EnMAP-Box to inspect the predic
       Deep Learning mapper Output:Predicted Raster and IoU score
 
 
+
+Credits
+*******
+* The pretrained Resnet18 and Resnet50 for Sentinel-2 Top of Atmosphere reflectance originates from foundation model pretraining performed by Wang et al. 2022 on SSL4EO-S12 (https://arxiv.org/abs/2211.07044) and is loaded by torchgeo functions (Adam Stewart et al. 2022 https://arxiv.org/abs/2111.08872 library: https://torchgeo.readthedocs.io/en/stable/tutorials/torchgeo.html).
+
+* Iakubovskii, P. Segmentation Models Pytorch. 2019  [cited 2025 February 03]; Available from: https://github.com/qubvel/segmentation_models.pytorch
+* Falcon, W. and The PyTorch Lightning team, PyTorch Lightning. 2019. https://doi.org/10.5281/zenodo.3828935
+* Jakimow, B.;  A. Janz;  F. Thiel;  A. Okujeni;  P. Hostert and S. van der Linden, EnMAP-Box: Imaging spectroscopy in QGIS. SoftwareX, 2023. 23: p. 101507
+* Stewart, A.J.;  C. Robinson;  I.A. Corley;  A. Ortiz;  J.M.L. Ferres and A. Banerjee, TorchGeo: deep learning with geospatial data. Proceedings of the 30th International Conference on Advances in Geographic Information Systems, 2021
+* Wang, Y.;  N.A.A. Braham;  Z. Xiong;  C. Liu;  C.M. Albrecht and X.X. Zhu, SSL4EO-S12: A Large-Scale Multi-Modal, Multi-Temporal Dataset for Self-Supervised Learning in Earth Observation. ArXiv, 2022. abs/2211.07044
+* Wightman, R., PyTorch Image Models. GitHub. 2019. https://doi.org/10.5281/zenodo.7618837
+
+
+Github Repository
+*****************
+The github repository for the integration in EnMAP-Box 3.16 can be found here: https://github.com/EnMAP-Box/enmap-box/tree/release_3.16/enmapbox/apps/SpecDeepMap
 

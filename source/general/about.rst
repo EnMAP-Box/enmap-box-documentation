@@ -21,6 +21,9 @@ The plugin consists of a (i) graphical user interface for hyperspectral data vis
 spectral library management, (ii) a set of algorithms, and
 (iii) a high-level application programming interface (:ref:`EnMAP API <GUI_GettingStarted>`).
 
+Approved versions of the EnMAP-Box (“production releases”) are
+made available in the QGIS Plugin Repository https://plugins.qgis.org/plugins/enmapboxplugin/.
+
 The EnMAP-Box is developed at Humboldt-Universität zu Berlin under contract by the Helmholtz Centre Potsdam GFZ and is
 part of the EnMAP Core Science Team activities. It is funded by the German Aerospace Centre (DLR) - Project Management
 Agency, granted by the Federal Ministry of Research, Technology and Space

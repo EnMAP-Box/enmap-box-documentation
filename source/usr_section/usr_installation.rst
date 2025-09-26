@@ -8,7 +8,7 @@
 Installation
 ############
 
-The EnMAP-Box is a plugin for QGIS. It required the QGIS python API and various other python packages.
+The EnMAP-Box is a plugin for QGIS. It requires the QGIS Python API and various other Python packages.
 Here we describe how you can install QGIS, the required python packages and the EnMAP-Box plugin.
 
 
@@ -55,7 +55,7 @@ Here we describe how you can install QGIS, the required python packages and the 
 
 
          We have made better experiences in using conda to
-         install QGIS and all python packages require to run the EnMAP-Box
+         install QGIS and all Python packages required to run the EnMAP-Box
          (tested on macOS Sequoia 15.5 (24F74), Intel MacBook 2010 and Mac Mini 2024).
 
          Therefore, please follow the installation guide given in the *Conda* tab.
@@ -148,9 +148,17 @@ Here we describe how you can install QGIS, the required python packages and the 
                  >>> print(site.USER_SITE)
                  C:\Users\Andreas\AppData\Roaming\Python\Python39\site-packages
 
-         #. (Optional) Install **HDF5** dependency via the OSGeo4W installer:
+         #. (Optional) Install additional Python dependencies for SpecDeepMap (torch, lightning, tensorboard, torchvision, and segmentation-models-pytorch)
 
-            The **HDF5** dependency is only required for importing PRISMA products.
+            The dependencies are only required for using algorithms of the SpecDeepMap Application. Run the following command in the OSGeo4W Shell.
+
+            .. code-block:: batch
+
+               pip install --user lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0 pandas==2.2.3 --no-warn-script-location
+
+         #. (Optional) Install **h5py** and **gdal-hdf5** dependencies via the OSGeo4W installer:
+
+            The dependencies are only required for importing PRISMA products.
 
             Start the OSGeo4W installer by executing:
 
@@ -158,10 +166,11 @@ Here we describe how you can install QGIS, the required python packages and the 
 
                setup
 
-            Search for **h5py**, select the latest version of the *python3-h5py* package and finish the installation.
+            Search for **h5py**, select the latest version of the *python3-h5py* package.
 
             .. image:: /img/osgeo4w_install_h5py.png
 
+            Now search for **gdal-hdf5**, select the latest version and finish the installation.
 
          #. Open QGIS from the start menu.
 

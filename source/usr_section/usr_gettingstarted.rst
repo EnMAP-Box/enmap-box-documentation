@@ -41,7 +41,7 @@ The data will be added automatically into a single map view and will be listed i
 3. First steps in the GUI
 #########################
 
-By default the example data is loaded into a single map view. Let's rearrange those for better visualisation and in order
+By default the example data is loaded into a single map view. Let's rearrange those for better visualization and in order
 to get to know the GUI functionalities:
 
 1. Click the |viewlist_mapdock| :sup:`Open a map view` button to add a second map view. This view will appear below the
