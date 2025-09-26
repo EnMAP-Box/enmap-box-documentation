@@ -12,11 +12,13 @@ The dataset can be accessed via :menuselection:`Project --> Add Example Data`.
 This will automatically open all layers in one map view.
 
 .. image:: /img/gui_loadexampledata.png
+    :width: 100%
 
 If you try to open the dataset for the first time, you will be asked to
 download the data (confirm with :guilabel:`Yes`):
 
 .. figure:: /img/gui_downloadtestdata.png
+    :width: 100%
 
 Once downloaded, the data is located inside the plugin folder under :file:`enmapboxplugin\\enmapbox\\exampledata`.
 
@@ -60,6 +62,8 @@ landcover_potsdam_point.gpkg
 
 .. figure:: /img/example_data.png
    :align: center
+   :width: 100%
+
 
    All layers from the Example Dataset opened in one map view
 

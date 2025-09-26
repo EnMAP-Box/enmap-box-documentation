@@ -49,6 +49,7 @@ It was especially exciting to see the high interest for our brand-new EnMAP-Box 
 
 
 .. image:: /img/events/enmapbox_lps25.png
+    :width: 100%
     :height: 250px
 
 .. raw:: html
@@ -146,6 +147,7 @@ the EnMAP Box*.
 --------------------------------------------
 
  .. image:: /img/events/earsel2024_valencia.png
+    :width: 100%
 
 
 *April 2024*

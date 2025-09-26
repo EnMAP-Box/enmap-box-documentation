@@ -5,6 +5,7 @@ GUI
 
     .. figure:: /img/manual_gui.png
        :align: center
+       :width: 100%
 
        Overview of the EnMAP-Box
 
@@ -20,6 +21,7 @@ In the toolbar you can find the most common tasks. See table below for informati
 
     .. figure:: /img/toolbarView.png
        :align: center
+       :width: 100%
 
        Enable and disable different toolbars
 
@@ -258,6 +260,7 @@ You may change the name of a Window by double-clicking onto the name in the list
 
     .. figure:: ../../img/example_data_views.png
        :align: center
+       :width: 100%
 
 Example of how different window types and their contents are organized in the Data Views panel. In this case there
 are two Map Views and one Spectral Library View in the project.
@@ -382,6 +385,7 @@ zoom in/out.
 
     .. figure:: /img/mapWindow.png
        :align: center
+       :width: 100%
 
 Linking
 ^^^^^^^
@@ -432,6 +436,7 @@ Add a new spectral library view by using the *Add Spectral Library Window* |view
 
     .. figure:: /img/SpecLib_overview.PNG
        :align: center
+       :width: 100%
 
 *Overview of the Spectral Library view with several collected and labeled spectra and main tools*
 
@@ -486,6 +491,7 @@ As an alternative to the mouse you can also identify and select pixel profiles u
 
    .. figure:: /img/crosshair.png
       :align: center
+      :width: 100%
 
 * To identify, select and add a pixel profile, use the following key combinations:
 
@@ -540,6 +546,7 @@ Add additional fields to the table, e.g. in order to add information to every sp
 
     .. figure:: /img/SpecLib_addNewField.png
        :align: center
+       :width: 100%
 
 3. Select a data type of your choice.
 4. A new column is added to the attribute table, which you can edit with a double click.
@@ -556,6 +563,7 @@ It is also possible to add new information to the attribute table in the **Layer
 
     .. figure:: /img/LayerProperties_addField.png
        :align: center
+       :width: 100%
 
 *Overview of the Layer Properties / Fields section*
 
@@ -565,6 +573,7 @@ In addition, the Layer Properties panel allows you to set a certain widget for a
 
     .. figure:: /img/SpecLib_AddWidget.png
        :align: center
+       :width: 100%
 
 *Selecting widget types for specific columns*
 
@@ -573,7 +582,8 @@ In addition, the Layer Properties panel allows you to set a certain widget for a
 The field calculator allows you to modify or assess spectra and calculate new columns or modify existing ones using an expression.
 
     .. figure:: /img/fieldCalculator.png
-      :align: center
+       :align: center
+       :width: 100%
 
 *Overview of the Field Calculator*
 
@@ -586,6 +596,7 @@ Spectra can be selected in the attribute table and in the plot window itself. Se
 
     .. figure:: /img/SpecLib_SelectSpectra.png
        :align: center
+       :width: 100%
 
 * Selected spectra can be removed by using the |mActionDeleteSelected| button.
 
@@ -596,6 +607,7 @@ It is also possible to select and filter profiles with the common vector filter 
 
     .. figure:: /img/SpecLib_SelectByExpr.png
        :align: center
+       :width: 100%
 
 *Select profiles using an expression*
 
@@ -633,6 +645,7 @@ In addition, the field calculator can be used to calculate spectral profiles.
 
     .. figure:: /img/SpecLib_FieldCalc.png
        :align: center
+       :width: 100%
 
 *Example of calculating new spectral profiles*
 
@@ -662,6 +675,7 @@ Spectral Processing
 
     .. figure:: /img/SpecLib_spectralProcessing.png
        :align: center
+       :width: 100%
 
 *Overview of the spectral processing idea*
 
@@ -716,6 +730,7 @@ spectral libraries and raster image processing.
 
     .. figure:: /img/SpecLib_specProDialog.png
        :align: center
+       :width: 100%
 
 *Spectral Processing Example*
 
@@ -737,6 +752,7 @@ You can adjust the extent of the visualized data range and units
 
     .. figure:: /img/SpecLib_units.png
        :align: center
+       :width: 100%
 
 You can also export the entire plot scene or visible view box by clicking into the plot and select :menuselection:`Export`.
 
@@ -754,6 +770,7 @@ You can define multiple visualization groups that describe how profiles from a s
 
     .. figure:: /img/SpecLib_VisualSettings.png
        :align: center
+       :width: 100%
 
 *Overview of the visualization settings in the Spectral Library window*
 
@@ -762,6 +779,7 @@ You can define multiple visualization groups that describe how profiles from a s
 
     .. figure:: /img/SpecLib_themes.png
        :align: center
+       :width: 100%
 
 
 * The **Current Profiles** section shows you all the spectra that have been collected but do not yet appear in the attribute table. Change the color and symbol, or add a line between the points by double clicking the profile below the *Current Profile* section and adjust the style settings.
@@ -779,12 +797,14 @@ If you have more than one column that stores spectral information, you can have 
 
     .. figure:: /img/SpecLib_visualization1.png
        :align: center
+       :width: 100%
 
 If you have only one column where spectral information is stored, but you have another column storing e.g. class names,
 you can use the :guilabel:`Filter` field to define an expression and select only specific class names, e.g. *Impervious* and *Vegetation* and visualize these profiles in different colors.
 
     .. figure:: /img/SpecLib_visualization2.PNG
        :align: center
+       :width: 100%
 
 Colorize spectra by attribute
 """""""""""""""""""""""""""""
@@ -798,6 +818,7 @@ Spectra can be colorized according to their attributes, e.g. their class name.
 
     ..  image:: /img/SpecLib_visualization.gif
         :align: center
+        :width: 100%
 
 5. In the :guilabel:`Spectral Library` Window activate the visualization settings with the |mActionAddLegend| button.
 6. Right-click on **Color** and select *Use vector symbol colors* |speclib_usevectorrenderer|.
@@ -829,6 +850,7 @@ are not saved in the data source file, but the QGIS project or a QGIS specific s
 
     .. figure:: /img/SpecLib_defaultStyle.png
        :align: center
+       :width: 100%
 
 Exporting Profiles
 """"""""""""""""""
@@ -837,6 +859,7 @@ The Export dialog |speclib_save| allows you to export all or selected profiles a
 
     .. figure:: /img/SpecLib_exportProfiles.png
        :align: center
+       :width: 100%
 
 The ENVI Spectral Library does not allow saving profiles with different spectral settings (number of bands, wavelength units, FWHM, …)
 in the same file. Therefore, you need to select one (out of multiple) profile fields.

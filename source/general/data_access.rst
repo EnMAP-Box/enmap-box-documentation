@@ -24,6 +24,7 @@ To access the EnMAP image archive, a primary registration to the IPP is necessar
 
     .. figure:: /img/enmap_dataAccess.png
        :align: center
+       :width: 100%
 
        Overview of the EnMAP Data Access Portals
 
@@ -40,6 +41,7 @@ The IPP enables the user registration, the submission of user proposals, and the
 
         .. figure:: /img/enmap_userPortal.png
            :align: center
+           :width: 100%
 
     3. In the User Portal, the user has to go through the *Role Assignment* procedure which is used to assign different priorities to observation requests.
        For more information about the different *User Roles* please take a look at the `Portal User Manual <https://www.enmap.org/data/doc/EN-GS-UM-6020_Portals_User_Manual_v1.4.pdf>`_.
@@ -63,6 +65,7 @@ The login button appears on the User Portal page, which automatically directs to
 
     .. figure:: /img/enmap_eoweb_login.png
        :align: center
+       :width: 100%
 
        Entry point to the EOWEB GeoPortal
 
@@ -76,6 +79,7 @@ The login button appears on the User Portal page, which automatically directs to
 
         .. figure:: /img/enmap_eowebPortal.png
            :align: center
+           :width: 100%
 
     5. Place your order and wait until you get notified.
 
@@ -91,6 +95,7 @@ a look at `Downloading Ordered Data <https://eoweb.dlr.de/egp/docs/user/download
 
     .. figure:: /img/enmap_downloadData.png
        :align: center
+       :width: 100%
 
        Example of FTPS settings in FileZill
 

@@ -14,53 +14,68 @@ code completion, spell-checking, syntax highlighting, SCM support, unit-testing 
 
 1. Have Git Installed
 =====================
+.. tabs::
 
-..
-    @Arayan add Windows | Linux | macOS tabs
+    .. group-tab:: Windows
 
-If not, download and install *Git* from https://git-scm.com/downloads
+        If not, download and install *Git* from https://git-scm.com/downloads
 
-Check if git is installed to your local shell, e.g. as:
+        Check if git is installed to your local shell, e.g. as:
 
-.. code-block:: bat
+        .. code-block:: bat
 
-    C:\Windows\System32>git --version
-    git version 2.26.0.windows.1
+            C:\Windows\System32>git --version
+            git version 2.26.0.windows.1
+
+    .. group-tab:: Linux
+        under construction...
+
+
+    .. group-tab:: MacOS
+        under construction...
 
 
 2. Clone the EnMAP-Box Repository
 =================================
+.. tabs::
 
-Clone the EnMAP-Box repository (or a fork) to your local ``my_repositories`` folder and update
-its submodules by:
+    .. group-tab:: Windows
 
-..
-    @Arayan add Windows | Linux | macOS tabs here
+        Clone the EnMAP-Box repository (or a fork) to your local ``my_repositories`` folder and update
+        its submodules by:
 
-.. code-block:: bash
+        .. code-block:: bash
 
-    cd my_repositories
-    git clone --recurse-submodules git@github.com:EnMAP-Box/enmap-box.git
-    cd enmap-box
-    git config --local include.path ../.gitconfig
+            cd my_repositories
+            git clone --recurse-submodules git@github.com:EnMAP-Box/enmap-box.git
+            cd enmap-box
+            git config --local include.path ../.gitconfig
 
-The last line ensures that pull requests will update submodules as well.
+        The last line ensures that pull requests will update submodules as well.
 
-Now you can use `git pull <https://git-scm.com/docs/git-pull>`__ to update your local copy of the
-EnMAP-Box repository:
+        Now you can use `git pull <https://git-scm.com/docs/git-pull>`__ to update your local copy of the
+        EnMAP-Box repository:
 
-.. code-block:: bash
+        .. code-block:: bash
 
-    cd my_repositories/enmap-box
-    git pull
+            cd my_repositories/enmap-box
+            git pull
 
 
-.. tip::
+        .. tip::
 
-        Replace the repo uri with that of your EnMAP-Box repo fork, if you like to
-        provide code via pull requests.
+                Replace the repo url with that of your EnMAP-Box repo fork, if you like to
+                provide code via pull requests.
 
-.. _dev_installation_create_conda_qgis:
+        .. _dev_installation_create_conda_qgis:
+
+    .. group-tab:: Linux
+        under construction...
+
+
+    .. group-tab:: MacOS
+        under construction...
+
 
 3. Setup the QGIS Environment
 =============================
@@ -161,42 +176,52 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
            We recommend to use the `miniforge <https://github.com/conda-forge/miniforge>`_
            installer, which defaults to packages from the `conda-forge channel <https://conda-forge.org/>`_.
 
-        2. Create a new conda environment using one of the EnMAP-Box environment files
-           from `<https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda>`_
-
-            .. list-table:: Conda environments to run the EnMAP-Box
-                :header-rows: 1
-
-                *   - Environment File
-                    - Description
-                *   - `enmapbox_full_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml>`_
-                    - Most-recent QGIS release and python dependencies for all EnMAP-box applications,
-                      including numba.
-                *   - `enmapbox_light_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_latest.yml>`_
-                    - Most-recent QGIS release and minimum (*light*) set of python dependencies to run EnMAP-Box.
-                *   - `enmapbox_full_longterm.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_longterm.yml>`_
-                    - Most-recent QGIS long-term release (LTR) and python dependencies for all
-                      EnMAP-box applications, including numba.
-                *   - `enmapbox_light_latest.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_latest.yml>`_
-                    - Most-recent QGIS long-term release (LTR) and minimum set of python dependencies
-                      to run EnMAP-Box.
-                *   - `enmapbox_light_3.38.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_light_3.38.yml>`_
-                    - QGIS 3.38 with minimum set of python dependencies to run EnMAP-Box.
-
-
-           E.g. to install the latest QGIS with all python requirements in a conda environment named *enmapbox*, run:
+        2. Install QGIS and python dependencies, using one of the conda environment files (`enmapbox_*.yml`) from
+           https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda, e.g.
 
             .. code-block:: batch
 
-               conda env create --name enmapbox --file https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/conda/enmapbox_full_latest.yml
+                conda env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full.yml
 
-        .. tip::
+            ``--file=<uri>`` specifies the path to the \*.yml file that defines the environment.
 
-           Depending on the components and applications you like to use, it might be required to install more packages.
-           If you cloned the EnMAP-Box repository you can also point to the local :file:`enmapbox_full_latest.yml`.
-           Edit the ``--name`` or the YAML file itself as you wish. For more information on creating and managing conda
-           environments visit the
-           `conda documentation <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#creating-an-environment-from-an-environment-yml-file>`_
+            ``-n <name>`` or ``--name <nam>`` can be used to change the environment name.
+
+            The environment files provided for download vary by used QGIS release and python packages to be:
+
+            * *full* environments contains *all* python packages, including those used by single EnMAP-Box applications only
+            * *light* environments contain python packages that are required to run most and all core EnMAP-Box applications
+            * *ltr* environments use the current
+              `QGIS Long Term release <https://qgis.org/resources/roadmap/#release-schedule>`_ instead of the
+              latest (and newer) QGIS release that is available in conda.
+
+
+            Use the *raw content* url to download and install an EnMAP-Box conda environment from github.
+
+            .. list-table::
+               :header-rows: 1
+               :widths: 15 10 70
+
+               *  - Environment
+                  - Size
+                  - Path
+
+               *  - `enmapbox_light`
+                  - 4.58 GB
+                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_light.yml
+
+               *  - `enmapbox_light_ltr`
+                  - 4.65 GB
+                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_light_ltr.yml
+
+               *  - `enmapbox_full`
+                  - 6.46 GB
+                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full.yml
+
+               *  - `enmapbox_full_ltr`
+                  - 6.90 GB
+                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full_ltr.yml
+
 
         3.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
             the new environment:
@@ -264,9 +289,6 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
 4. Setup the IDE
 ================
 
-..
-    @aryan add PyCharm and VSCode Tab
-
 .. tabs::
 
    .. group-tab:: PyCharm
@@ -280,6 +302,7 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
             Press *Test* to check the used Git version.
 
             .. figure:: img/pycharm_git_settings.png
+                :width: 100%
 
                 Set the Git executable used by PyCharm
 
@@ -298,11 +321,13 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
 
 
             .. figure:: img/pycharm_conda_interpreter_add.png
+                :width: 100%
 
                 Add the *enmapbox* python to the list of python interpreters
 
 
             .. figure:: img/pycharm_conda_interpreter.png
+                :width: 100%
 
                 Select the *enmapbox* python as project interpreter
 
@@ -332,6 +357,7 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
 
 
             .. figure:: img/pycharm_project_content_roots.png
+                :width: 100%
 
                 Use ``enmap/Library/python`` as additional content root
 
@@ -360,11 +386,14 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
     This way PyCharm runs python files in a environment with *QGIS_PREFIX_PATH* defined.
 
     .. figure:: img/pycharm_QGIS_PREFIX_PATH.png
+        :width: 100%
+
 
     Also define the Environment variables for the Python console. Go to *File > Settings > Build, Execution, Deployment > Console > Python Console*
     and add *QGIS_PREFIX_PATH* to the Environment variables.
 
     .. figure:: img/pycharm_qgispath_console.png
+                :width: 100%
 
     You may also modify the shell used in your PyCharm terminal to use the QGIS environment.
     Open *Tools > Terminal* and set the shell path to, for example:
@@ -380,6 +409,7 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
 
 
     .. figure:: img/pycharm_conda_terminal.png
+        :width: 100%
 
         How to use the conda terminal in PyCharm
 

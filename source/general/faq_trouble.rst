@@ -83,6 +83,7 @@ suggest new entries!
      setup
 
   .. image:: ../img/shell_setup.png
+    :width: 100%
 
   which will open the OSGeo4W Setup dialog.
 

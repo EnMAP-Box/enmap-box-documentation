@@ -9,6 +9,8 @@ In both environments, EO4Q applications can be started from the :guilabel:`Earth
 
     .. figure:: ./img/EO4QToolbar.png
             :align: center
+            :width: 100%
+
 
 GEE Time Series Explorer
 ========================
@@ -77,6 +79,8 @@ Usage
 
        .. figure:: ./img/GeeTimeSeriesExplorer_DataCatalog.png
            :align: center
+           :width: 100%
+
 
            GEE Time Series Explorer main panel, showing the Data Catalog tab with Landsat collections.
 
@@ -84,6 +88,7 @@ Usage
 
        .. figure:: ./img/GeeTimeSeriesExplorer_ProfileViewer.png
            :align: center
+           :width: 100%
 
            GEE Time Series Explorer (Profile Viewer) panel, showing available bands and spectral indices.
 
@@ -179,11 +184,13 @@ Usage
 GUI
     .. figure:: ./img/LocationBrowser.png
         :align: center
+        :width: 100%
 
     |
 
     .. figure:: ./img/LocationBrowser_2.png
         :align: center
+        :width: 100%
 
 Live demonstration
     ..  youtube:: 2mgx4_pIHqg
@@ -258,19 +265,23 @@ GUI
     Spectral Z-Profile
         .. figure:: ./img/ProfileAnalytics.png
             :align: center
+            :width: 100%
 
     Temporal Z-Profiles
         .. figure:: ./img/ProfileAnalytics_2.png
             :align: center
+            :width: 100%
 
     Temporal Z-Profile annotated with a Support Vector Regression fit (``svr_fitting.py`` used as ufunc)
         .. figure:: ./img/ProfileAnalytics_3.png
             :align: center
+            :width: 100%
 
         |
 
         .. figure:: ./img/ProfileAnalytics_4.png
             :align: center
+            :width: 100%
 
 Live demonstration
     ..  youtube:: 5Un7lxw-PN8
@@ -314,6 +325,7 @@ Usage
 GUI
     .. figure:: ./img/RasterBandStacking.png
         :align: center
+        :width: 100%
 
 Live demonstration
     ..  youtube:: KGKVvBwz2S0
@@ -329,6 +341,7 @@ E.g. a downloaded Landsat product can be imported as is:
 Landsat 9 Product Example
     .. figure:: ./img/SensorProductImport.png
         :align: center
+        :width: 100%
 
 All the surface reflectance bands are automatically stacked, band offset and scaling factors are applied,
 and proper metadata, like center wavelength and band names, are specified.
@@ -347,6 +360,7 @@ Usage
 GUI
     .. figure:: ./img/SensorProductImport_2.png
         :align: center
+        :width: 100%
 
 Live demonstration
 
