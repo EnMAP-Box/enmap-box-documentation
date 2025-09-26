@@ -426,4 +426,3 @@ Here is how you can use an algorithm from Python using the PyCharm IDE:
                 'outputCubeSide':'TEMPORARY_OUTPUT'
             }
         )
-        
