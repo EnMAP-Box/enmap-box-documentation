@@ -582,7 +582,7 @@ In addition, the Layer Properties panel allows you to set a certain widget for a
 The field calculator allows you to modify or assess spectra and calculate new columns or modify existing ones using an expression.
 
     .. figure:: /img/fieldCalculator.png
-      :align: center
+       :align: center
        :width: 100%
 
 *Overview of the Field Calculator*
