@@ -267,12 +267,24 @@ Here we describe how you can install QGIS, the required python packages and the 
 
          **Install a python environment for the EnMAP-Box**
 
-         #. Open the `Miniforge <https://conda-forge.org>`_ prompt
+         1. Open the `Miniforge <https://conda-forge.org>`_ prompt
+              .. image:: /img/windows_start_miniforge.png
 
-            .. image:: /img/windows_start_miniforge.png
+         .. note::
+             **Use the libmamba solver for a faster installation**
 
+             To significantly speed up the environment creation, it is highly recommended to use the ``libmamba`` solver.
+             You can install and configure it with the following commands:
 
-         #. Install QGIS and python dependencies, using one of the conda environment files (`enmapbox_*.yml`) from
+             .. code-block:: batch
+
+                 conda update -n base conda
+                 conda install -n base conda-libmamba-solver
+                 conda config --set solver libmamba
+
+             For more details, see the `Anaconda blog post <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ on this topic.
+
+         2. Install QGIS and python dependencies, using one of the conda environment files (`enmapbox_*.yml`) from
             https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda, e.g.
 
             .. code-block:: batch
@@ -321,26 +333,26 @@ Here we describe how you can install QGIS, the required python packages and the 
 
 
 
-         #. Activate the conda environment and start QGIS:
+         3. Activate the conda environment and start QGIS:
 
             .. code-block:: batch
 
                activate enmapbox
                qgis
 
-        .. note::
+         .. note::
 
-            QGIS is developing rapidly. To keep an environment *<env_name>* up to date, call:
+                QGIS is developing rapidly. To keep an environment *<env_name>* up to date, call:
 
-            .. code-block:: bash
+                .. code-block:: bash
 
-                conda env update -n <env_name> --file=<env_name>.yml --prune
+                    conda env update -n <env_name> --file=<env_name>.yml --prune
 
-            To delete a conda environment, call:
+                To delete a conda environment, call:
 
-            .. code-block:: bash
+                .. code-block:: bash
 
-                conda env remove -n <env_name>
+                    conda env remove -n <env_name>
 
 
 
