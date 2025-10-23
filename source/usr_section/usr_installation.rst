@@ -267,22 +267,25 @@ Here we describe how you can install QGIS, the required python packages and the 
 
          **Install a python environment for the EnMAP-Box**
 
+
          1. Open the `Miniforge <https://conda-forge.org>`_ prompt
               .. image:: /img/windows_start_miniforge.png
 
-         .. note::
-             **Use the libmamba solver for a faster installation**
 
-             To significantly speed up the environment creation, it is highly recommended to use the ``libmamba`` solver.
-             You can install and configure it with the following commands:
+         2. Ensure to use the libmamba solver.
 
-             .. code-block:: batch
+            To significantly speed up the environment creation, it is highly recommended to use the ``libmamba`` solver.
+            First, check which solver is used::
+
+                conda config --show solver
+
+            If the used is not *libmamba*, you can install it with the following commands::
 
                  conda update -n base conda
                  conda install -n base conda-libmamba-solver
                  conda config --set solver libmamba
 
-             For more details, see the `Anaconda blog post <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ on this topic.
+            For more details, see the `Anaconda blog post <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ on this topic.
 
          2. Install QGIS and python dependencies, using one of the conda environment files (`enmapbox_*.yml`) from
             https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda, e.g.
@@ -293,7 +296,7 @@ Here we describe how you can install QGIS, the required python packages and the 
 
             ``--file=<uri>`` specifies the path to the \*.yml file that defines the environment.
 
-            ``-n <name>`` or ``--name <nam>`` can be used to change the environment name.
+            ``-n <name>`` or ``--name <name>`` can be used to change the environment name.
 
             The environment files provided for download vary by used QGIS release and python packages to be:
 
