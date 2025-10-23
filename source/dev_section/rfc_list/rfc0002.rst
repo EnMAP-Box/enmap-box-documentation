@@ -106,24 +106,25 @@ into float values. As now, this is supported by the GTiff, SENTINEL2, ENVI and V
 Approach
 --------
 
-Band-wise spectral properties like **wavelength**, **wavelength units**, full width at half maximum (**fwhm**),
-and bad band multiplier (**bbl**) values, are fetched with the following priorisation:
+Band-wise spectral properties like *wavelength*, *wavelength units*, full width at half maximum (*fwhm*),
+and bad band multiplier (*bbl*) values, are fetched with the following prioritization:
 
-1. Look into the QgsRasterLayer custom properties and search for keys with **enmapbox** prefix.
-This is mainly relevant for GUI applications, where we need to modify
-spectral properties using **QgsRasterLayer** objects, without being able to modify the underlying raster source:
+1. Look into the QgsRasterLayer custom properties and search for keys with *enmapbox/* prefix.
+   This is mainly relevant for GUI applications, where we need to modify spectral properties using QgsRasterLayer
+   objects, without being able to modify the underlying raster source:
 
-.. code-block:: python
-    layer = QgsRasterLayer(path)
-    wavelengthUnits = layer.customProperty('enmapbox/wavelength_units')
-    wavelength = layer.customProperty('enmapbox/wavelength')
-    fwhm = layer.customProperty('enmapbox/fwhm')
-    bbl = layer.customProperty('enmapbox/bbl')
+   .. code-block:: python
+
+        layer = QgsRasterLayer(path)
+        wavelengthUnits = layer.customProperty('enmapbox/wavelength_units')
+        wavelength = layer.customProperty('enmapbox/wavelength')
+        fwhm = layer.customProperty('enmapbox/fwhm')
+        bbl = layer.customProperty('enmapbox/bbl')
 
 
-2. Look at GDAL band metadata. Search within the standard and ENVI domain
+2. If still undefined, search in GDAL band metadata. Search first within the IMAGERY, standard and ENVI domains:
 
-    .. code-block:: python
+   .. code-block:: python
 
         ds = gdal.Dataset(path)
         band = ds.GetRasterBand(42)
@@ -143,8 +144,9 @@ spectral properties using **QgsRasterLayer** objects, without being able to modi
                 wl = band.GetMetadataItem('wavelength', domain)
 
 
-3. Look at GDAL dataset metadata. Search within the standard and ENVI domain
-    .. code-block:: python
+3. If still undefined, search GDAL dataset metadata. Search first within the standard and ENVI domain:
+
+   .. code-block:: python
 
         ds = gdal.Dataset(path)
 
@@ -160,20 +162,20 @@ spectral properties using **QgsRasterLayer** objects, without being able to modi
 Note that the *parseEnviString* function helps to parse returned ENVI list string like '{1, 2, 3}' into Python lists like [1, 2, 3].
 
 Guide line 1:
-    If you need to set band-wise spectral properties in a processing algorithm:
-    set it to the **gdal.Band** 'IMAGERY' or default ('') domain.
+    If you need to set band-wise spectral properties for **GDAL** processing output:
+    set it to the **gdal.Band** *IMAGERY* or default ('') domain.
     This way, i) the information is accessible with the GDAL API,
     and ii) consecutive band subsetting via gdal.Translate and gdal.BuildVrt can easily copy the band domains to the destination dataset.
 
 Guide line 2:
-    If you need to set/update metadata for a QgsRasterLayer in an EnMAP-Box GUI application: set it to layer's custom properties
+    If you need to set band-wise metadata for a **QgsRasterLayer** in an EnMAP-Box GUI application: set it to layer's custom properties
     This is most flexible and secure. The spectral properties are i) available from the layer instance, ii) can be
-    inspected in the layer property dialog, ii) are stored in the QGIS project, and iii) can be saved to QML layer style files
+    inspected in the layer property dialog, and iii) can be saved to and reloaded from the QGIS project and QML layer style files.
 
 Guide line 3:
     Do not update the GDAL Metadata model (\*.aux.xml files),
-    while the corresponding source is opened as a **QgsRasterLayer** in QGIS.
-    QGIS will potentially overwrite any changes, when closing the layer.
+    while the corresponding source is opened as a QgsRasterLayer in QGIS.
+    QGIS may overwrite theses changes, e.g. when closing the layer or calculating new band statistics.
 
 Implementation
 --------------
