@@ -85,17 +85,17 @@ into float values. As now, this is supported by the GTiff, SENTINEL2, ENVI and V
 3. Depending on data providers, spectral information may still be defined in different places of the GDAL metadata model.
 
 4. GDAL is flexible to write spectral information into different locations. If not handled by the driver,
-   GDAL will write it into a separated **aux.xml** file::
+   GDAL will write it into a separated **aux.xml** file:
 
-    .. code-block:: text
+   .. code-block:: text
 
-        <Metadata domain="ENVI">
-          ...
-          <MDI key="fwhm">{ 0.005800, 0.005800, 0.005800, ..., , 0.009100, 0.009100, 0.009100}</MDI>
-          <MDI key="wavelength">{ 0.46, 0.465, 0.47, ..., 2.393, 2.401, 2.409}</MDI>
-          <MDI key="bbl">{ 1, 1, 1, ..., 1, 1, 1}</MDI>
-          <MDI key="wavelength_units">Micrometers</MDI>
-        </Metadata>
+    <Metadata domain="ENVI">
+      ...
+      <MDI key="fwhm">{ 0.005800, 0.005800, 0.005800, ..., , 0.009100, 0.009100, 0.009100}</MDI>
+      <MDI key="wavelength">{ 0.46, 0.465, 0.47, ..., 2.393, 2.401, 2.409}</MDI>
+      <MDI key="bbl">{ 1, 1, 1, ..., 1, 1, 1}</MDI>
+      <MDI key="wavelength_units">Micrometers</MDI>
+    </Metadata>
 
 5. Correcting or supplementing missing spectral information requires write permissions, which may not be available.
    Furthermore, while being opened in QGIS as QgsRasterLayer, modifications of the datasource's GDAL metadata may
@@ -109,20 +109,28 @@ Approach
 Band-wise spectral properties like *wavelength*, *wavelength units*, full width at half maximum (*fwhm*),
 and bad band multiplier (*bbl*) values, are fetched with the following prioritization:
 
-1. Look into the QgsRasterLayer custom properties and search for keys with *enmapbox/* prefix.
-   This is mainly relevant for GUI applications, where we need to modify spectral properties using QgsRasterLayer
-   objects, without being able to modify the underlying raster source:
 
-   .. code-block:: python
+.. todo::
+    Add support for QgsRasterLayer::customProperties to overwrite GDAL properties
+..
+    1. Look into the QgsRasterLayer custom properties and search for keys with *enmapbox/* prefix.
+       This is mainly relevant for GUI applications, where we need to modify spectral properties using QgsRasterLayer
+       objects, without being able to modify the underlying raster source:
 
-        layer = QgsRasterLayer(path)
-        wavelengthUnits = layer.customProperty('enmapbox/wavelength_units')
-        wavelength = layer.customProperty('enmapbox/wavelength')
-        fwhm = layer.customProperty('enmapbox/fwhm')
-        bbl = layer.customProperty('enmapbox/bbl')
+       .. code-block:: python
+
+            layer = QgsRasterLayer(path)
+            pam: dict = layer.customProperty('enmapbox/pam')
+
+            layer.setCustomProperty('enmapbox/wavelength', [400, 420, 300])
+
+            wavelength = pam['dataset'] == ds.GetMetadata_Dict()
+            wavelength_band1 = pam['bands'][0]['']['wavelength'] == ds.GetRasterBand(1).GetMetadata_Dict()
+            fwhm = layer.customProperty('enmapbox/fwhm')
+            bbl = layer.customProperty('enmapbox/bbl')
 
 
-2. If still undefined, search in GDAL band metadata. Search first within the IMAGERY, standard and ENVI domains:
+1. Search in GDAL band metadata. Search first within the IMAGERY, standard and ENVI domains:
 
    .. code-block:: python
 
@@ -130,8 +138,8 @@ and bad band multiplier (*bbl*) values, are fetched with the following prioritiz
         band = ds.GetRasterBand(42)
 
         # test IMAGERY domain
-        fwhm = band.GetMetadataItem('FWHM_UM', 'IMAGERY)
-        wl =   band.GetMetadataItem('CENTRAL_WAVELENGTH_UM')
+        fwhm = band.GetMetadataItem('FWHM_UM', 'IMAGERY')
+        wl =   band.GetMetadataItem('CENTRAL_WAVELENGTH_UM', 'IMAGERY')
 
         # bad band multiplier
         bbl = band.GetMetadataItem('bbl')
@@ -144,7 +152,7 @@ and bad band multiplier (*bbl*) values, are fetched with the following prioritiz
                 wl = band.GetMetadataItem('wavelength', domain)
 
 
-3. If still undefined, search GDAL dataset metadata. Search first within the standard and ENVI domain:
+2. If still undefined, search GDAL dataset metadata. Search first within the standard and ENVI domain:
 
    .. code-block:: python
 
