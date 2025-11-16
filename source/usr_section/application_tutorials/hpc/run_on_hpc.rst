@@ -558,7 +558,7 @@ in parallel. We can do so using two other scripts: ``extract_all.slurm`` defines
 
               printf "Import $xml_file \nto $tif_file"
 
-              qgis_process run enmapbox:ImportEnmapL2AProduct -- \
+              qgis_process run enmapbox:importenmapl2aproduct -- \
                        file=$xml_file \
                        setBadBands=true \
                        excludeBadBands=true \
