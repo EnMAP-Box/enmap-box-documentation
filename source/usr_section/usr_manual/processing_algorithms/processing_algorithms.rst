@@ -43,7 +43,6 @@ Model Designer
        :align: center
        :width: 100%
 
-
 Python Console
 --------------
 
@@ -62,7 +61,6 @@ Python Console
     .. figure:: ../img/gifs/QGIS_PyConsole.gif
        :align: center
        :width: 100%
-
 
 #. Once you know the algorithm ID (like enmapbox:Build3DCube), you can get help like this:
 
@@ -106,7 +104,6 @@ Command Line Usage
         qgis_process run enmapbox:Build3DCube --distance_units=meters --area_units=m2 --ellipsoid=EPSG:7030 --raster='C:/Users/Aryan/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/exampledata/enmap_potsdam.tif' --spectralScale=1 --dx=1 --dy=1 --outputCubeFace=TEMPORARY_OUTPUT --outputCubeSide=TEMPORARY_OUTPUT
 
 You need to adjust the parameters according to the algorithm’s needs. Paths can be to files on disk or to in-memory layers.
-
 
 ``>qgis_process help enmapbox:Build3DCube``::
 
@@ -156,7 +153,6 @@ You need to adjust the parameters according to the algorithm’s needs. Paths ca
         Output cube face
     outputCubeSide: <outputRaster>
         Output cube side
-
 
 Algorithms
 ==========
