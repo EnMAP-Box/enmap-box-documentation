@@ -92,7 +92,7 @@ Here we describe how you can install QGIS, the required python packages and the 
       **Install QGIS with conda (cross-platform)**
 
       Conda is a cross-platform package manager that allows to install software in separated environments. We recommend
-      installing conda using `Miniforge <https://conda-forge.org/download>`_, a minimal installer which
+      installing conda using `Miniforge <https://conda-forge.org/download>`__, a minimal installer which
       by default installs conda packages from the `conda-forge <https://conda-forge.org/>`_ channel.
 
       *Linux / Unix / MacOS:*
@@ -268,7 +268,7 @@ Here we describe how you can install QGIS, the required python packages and the 
          **Install a python environment for the EnMAP-Box**
 
 
-         1. Open the `Miniforge <https://conda-forge.org>`_ prompt
+         1. Open the `Miniforge <https://conda-forge.org>`__ prompt
               .. image:: /img/windows_start_miniforge.png
 
 
