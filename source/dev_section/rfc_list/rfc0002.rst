@@ -1,38 +1,48 @@
 RFC 2: Spectral Properties
 ==========================
 
-Author: Andreas Janz
+| Authors:
+| Andreas Janz andreas.janz@geo.hu-berlin.de
+| Benjamin Jakimow, benjamin.jakimow@geo.hu-berlin.de
 
-Contact: andreas.janz@geo.hu-berlin.de
-
-Started: 2021-12-23
-
-Last modified: 2021-12-24
+| Started: 2021-12-23
+| Last modified: 2025-10-23
 
 Status: Proposed
 
 Summary
 -------
 
-It is proposed to implement functions or methods for reading and writing spectral properties from/to
-**QGIS PAM**. Relevant items are: center **wavelength**, **wavelength units**, full width at half maximum (**fwhm**) and
-**bad band multiplier** values.
+Based on the `ENVI header format <https://www.nv5geospatialsoftware.com/docs/enviheaderfiles.html#HeaderFields>`_ and
+the `STAC Electro-Optical Extension Specification <https://github.com/stac-extensions/eo>`_, it is proposed to
+implement functions or methods for reading and writing band-specific spectral properties from/to
+QGIS Raster Layers using the custom properties. Addressed spectral properties are:
 
-Both, QGIS and GDAL, don't have a concept for spectral property management.
-In GDAL we have rudimentary support for ENVI files.
-We currently use the ENVI format as a conceptual base for spectral property handling in the EnMAP-Box.
+.. csv-table::
+    :header: "Band Property", "Examples", "ENVI Header Field", "STAC EO"
 
-The here proposed approach will integrate spectral property handling into **QGIS PAM** management,
-while honoring the well known ENVI format and naming conventions.
-This allows to set/update spectral properties for **QgsRasterLayer** objects,
-which is critical for GUI applications.
+    "(center) wavelength", "0.38638 (float)", "wavelength", "eo:center_wavelength *(in micrometers)*"
+    "wavelength unit", "micrometers, μm (string)", "wavelength units", "N/A"
+    "full with at half maximum (fwhm)", 	0.00545 (float), "fwhm", "eo:full_width_half_max *(in micrometers)*"
+    "bad band multiplier", 1 or 0 (int), "bbl", N/A
 
-API support will be implemented in the **enmapboxprocessing.rasterreader.RasterReader** class.
+QGIS doesn't provides a concept for spectral property management, and GDAL just recently implemented (version 3.10)
+`support for wavelengths and fwhm <https://gdal.org/en/stable/user/raster_data_model.html#imagery-domain-remote-sensing>`_.
+The here proposed approach integrates spectral property handling into *QGIS custom properties*.
+This allows to set/update spectral properties for each band of a *QgsRasterLayer* and to set spectral information
+for layers, whose data sources are immutable / read-only.
+
+Exemplary API support is implemented in the
+`enmapboxprocessing.rasterreader.RasterReader <https://github.com/EnMAP-Box/enmap-box/blob/main/enmapboxprocessing/rasterreader.py>`_ and
+`qps.qgsrasterlayerproperties.QgsRasterLayerSpectralProperties <https://github.com/EnMAP-Box/qgispluginsupport/blob/master/qps/qgsrasterlayerproperties.py>`_ classes
 
 Motivation
 ----------
 
-GDAL has rudimentary support for spectral properties specified inside ENVI *.hdr* header files::
+The ENVI format is very common in the hyperspectral community. It describes spectral properties
+of raster images in the fields of `ENVI header files <https://www.nv5geospatialsoftware.com/docs/enviheaderfiles.html#HeaderFields>`_:
+
+.. code-block:: text
 
     ENVI
     ...
@@ -41,9 +51,43 @@ GDAL has rudimentary support for spectral properties specified inside ENVI *.hdr
     fwhm = {0.0058, 0.0058, 0.0058, ..., 0.0091, 0.0091, 0.0091}
     bbl = {1, 1, 1, ..., 1, 1, 1}
 
-GDAL will dump all items into the ENVI dataset domain, including relevant spectral properties like the list of
-center **wavelength**, the **wavelength units**, the list of full width at half maximum (**fwhm**) values,
-and the list of bad band multipliers (**bbl**)::
+In GDAL, these values can be read from the *ENVI* metadata domain:
+
+.. code-block:: python
+
+    ds: gdal.Dataset = gdal.Open(path_envifile)
+
+    wl: str = ds.GetMetadataItem('wavelength', 'ENVI')
+    # note the required underscore in wavelength_units
+    wlu: str = ds.GetMetadataItem('wavelength_units', 'ENVI')
+    fwhm: str = ds.GetMetadataItem('fwhm', 'ENVI')
+
+All values are returned as strings, e.g. **wavelength** as **'{0.46, 0.465, 0.47, ..., 2.393, 2.401, 2.409}'**.
+
+Since version 3.10, GDAL supports reading and writing of **wavelength** and **fwhm** at band level.
+
+.. code-block:: python
+
+    ds: gdal.Dataset = gdal.Open(path_envifile)
+    band: gdal.Band = ds.GetRasterBand(1)
+    wl = float(band.GetMetadataItem('CENTRAL_WAVELENGTH_UM', 'IMAGERY')))
+    fwhm: float(band.GetMetadataItem('FWHM_UM', 'IMAGERY')))
+
+If implemented by the GDAL driver, the returned strings can be converted directly
+into float values. As now, this is supported by the GTiff, SENTINEL2, ENVI and VRT driver.
+
+*Problems*
+
+1. Spectral information can be found in different locations of the GDAL Metadata system: as band metadata, as dataset metadata, in different metadata domains.
+
+2. Since GDAL 3.10, a standardized way exists to access wavelength and fwhm, but not the bad band multiplier.
+
+3. Depending on data providers, spectral information may still be defined in different places of the GDAL metadata model.
+
+4. GDAL is flexible to write spectral information into different locations. If not handled by the driver,
+   GDAL will write it into a separated **aux.xml** file:
+
+   .. code-block:: text
 
     <Metadata domain="ENVI">
       ...
@@ -53,107 +97,107 @@ and the list of bad band multipliers (**bbl**)::
       <MDI key="wavelength_units">Micrometers</MDI>
     </Metadata>
 
+5. Correcting or supplementing missing spectral information requires write permissions, which may not be available.
+   Furthermore, while being opened in QGIS as QgsRasterLayer, modifications of the datasource's GDAL metadata may
+   get overridden by QGIS. This can lead to the problem that the EnMAP-Box cannot modify metadata from rasters
+   when they are opened in QGIS / EnMAP Box.
 
-GDAL will store the **wavelength units** inside the default dataset domain::
-
-    <Metadata>
-      <MDI key="wavelength_units">Micrometers</MDI>
-    </Metadata>
-
-
-For each band, GDAL will store center **wavelength** and **wavelength units** inside the band default domain::
-
-    <PAMRasterBand band="1">
-      <Metadata>
-        <MDI key="wavelength">0.46</MDI>
-        <MDI key="wavelength_units">Micrometers</MDI>
-      </Metadata>
-    </PAMRasterBand>
-    <PAMRasterBand band="2">
-      <Metadata>
-        <MDI key="wavelength">0.465</MDI>
-        <MDI key="wavelength_units">Micrometers</MDI>
-      </Metadata>
-    </PAMRasterBand>
-    ...
-
-
-Given that ENVI specific behaviour, we propose the following approach for fetching band-specific spectral properties.
 
 Approach
 --------
 
-Band-wise spectral properties like **wavelength**, **wavelength units**, full width at half maximum (**fwhm**),
-and **bad band multiplier** values, are fetched with the following priorisation:
-
-1. Look at **QGIS PAM** band default domain.
-This is mainly relevant for GUI applications, where we need to set/update spectral properties using **QgsRasterLayer** objects::
-
-    wavelengthUnits = layer.customProperty('QGISPAM/band/42//wavelength_units')
-    wavelength = layer.customProperty('QGISPAM/band/42//wavelength')
-    fwhm = layer.customProperty('QGISPAM/band/42//fwhm')
-    badBandMultiplier = layer.customProperty('QGISPAM/band/42//bad_band_multiplier')
+Band-wise spectral properties like *wavelength*, *wavelength units*, full width at half maximum (*fwhm*),
+and bad band multiplier (*bbl*) values, are fetched with the following prioritization:
 
 
-2. Look at **GDAL PAM** band default domain.
-This follows the behaviour of the ENVI driver, that sets **wavelength** and **wavelength units** to this location.
-We consequently also look for **fwhm** and **bad band multiplier** here::
+.. todo::
+    Add support for QgsRasterLayer::customProperties to overwrite GDAL properties
+..
+    1. Look into the QgsRasterLayer custom properties and search for keys with *enmapbox/* prefix.
+       This is mainly relevant for GUI applications, where we need to modify spectral properties using QgsRasterLayer
+       objects, without being able to modify the underlying raster source:
 
-    wavelengthUnits = gdalDataset.GetRasterBand(42).GetMetadataItem('wavelength_units')
-    wavelength = gdalDataset.GetRasterBand(42).GetMetadataItem('wavelength')
-    fwhm = gdalDataset.GetRasterBand(42).GetMetadataItem('fwhm')
-    badBandMultiplier = gdalDataset.GetRasterBand(42).GetMetadataItem('bbl')
+       .. code-block:: python
+
+            layer = QgsRasterLayer(path)
+            pam: dict = layer.customProperty('enmapbox/pam')
+
+            layer.setCustomProperty('enmapbox/wavelength', [400, 420, 300])
+
+            wavelength = pam['dataset'] == ds.GetMetadata_Dict()
+            wavelength_band1 = pam['bands'][0]['']['wavelength'] == ds.GetRasterBand(1).GetMetadata_Dict()
+            fwhm = layer.customProperty('enmapbox/fwhm')
+            bbl = layer.customProperty('enmapbox/bbl')
 
 
-3. Look at **GDAL PAM** dataset ENVI domain.
-This follows the behaviour of the ENVI driver, that sets lists of **wavelength**, **fwhm** and bad band multipliers (**bbl**) and the **wavelength units** to this location::
+1. Search in GDAL band metadata. Search first within the IMAGERY, standard and ENVI domains:
 
-    wavelengthUnit = gdalDataset.GetMetadataItem('wavelength_unit', 'ENVI')
-    wavelength = parseEnviString(gdalDataset.GetMetadataItem('wavelength', 'ENVI'))[42 - 1]
-    fwhm = parseEnviString(gdalDataset.GetMetadataItem('fwhm', 'ENVI'))[42 - 1]
-    badBandMultiplier = parseEnviString(gdalDataset.GetMetadataItem('bbl', 'ENVI'))[42 - 1]
+   .. code-block:: python
+
+        ds = gdal.Dataset(path)
+        band = ds.GetRasterBand(42)
+
+        # test IMAGERY domain
+        fwhm = band.GetMetadataItem('FWHM_UM', 'IMAGERY')
+        wl =   band.GetMetadataItem('CENTRAL_WAVELENGTH_UM', 'IMAGERY')
+
+        # bad band multiplier
+        bbl = band.GetMetadataItem('bbl')
+
+        # test other domains
+        if wl is None:
+            for domain in ['', 'ENVI']:
+                wlu = band.GetMetadataItem('wavelength_units', domain)
+                fwhm = band.GetMetadataItem('fwhm', domain)
+                wl = band.GetMetadataItem('wavelength', domain)
 
 
-4. Look at **GDAL PAM** dataset default domain::
-This follows the behaviour of the ENVI driver, that set the **wavelength units** to this location.
-We consequently also look for lists of **wavelength**, **fwhm** and bad band multipliers (**bbl**) here::
+2. If still undefined, search GDAL dataset metadata. Search first within the standard and ENVI domain:
 
-    wavelengthUnit = gdalDataset.GetMetadataItem('wavelength_unit')
-    wavelengthList = parseEnviString(gdalDataset.GetMetadataItem('wavelength'))[42 - 1]
-    badBandMultiplier = parseEnviString(gdalDataset.GetMetadataItem('bbl'))[42 - 1]
+   .. code-block:: python
 
-Note that the *parseEnviString* function is assumed to parse ENVI list string like '{1, 2, 3}' into Python lists like [1, 2, 3].
+        ds = gdal.Dataset(path)
+
+        for domain in ['', 'ENVI']:
+            # bad band multiplier
+            bbl = band.GetMetadataItem('bbl')
+            wlu = band.GetMetadataItem('wavelength_units', domain)
+            wl = band.GetMetadataItem('wavelength', domain)
+            fwhm = band.GetMetadataItem('fwhm', domain)
+
+
+
+Note that the *parseEnviString* function helps to parse returned ENVI list string like '{1, 2, 3}' into Python lists like [1, 2, 3].
 
 Guide line 1:
-    If you need to set band-wise spectral properties in a processing algorithm:
-    set it to the **GDAL PAM** band default domain.
+    If you need to set band-wise spectral properties for **GDAL** processing output:
+    set it to the **gdal.Band** *IMAGERY* or default ('') domain.
     This way, i) the information is accessible with the GDAL API,
     and ii) consecutive band subsetting via gdal.Translate and gdal.BuildVrt can easily copy the band domains to the destination dataset.
 
 Guide line 2:
-    If you need to set/update metadata in a GUI application: set it to **QGIS PAM**.
-    This is most flexible and secure.
-    The spectral properties are i) available as custom layer properties,
-    ii) stored in the QGIS project,
-    and iii) can be saved to QML layer style files.
+    If you need to set band-wise metadata for a **QgsRasterLayer** in an EnMAP-Box GUI application: set it to layer's custom properties
+    This is most flexible and secure. The spectral properties are i) available from the layer instance, ii) can be
+    inspected in the layer property dialog, and iii) can be saved to and reloaded from the QGIS project and QML layer style files.
 
 Guide line 3:
-    Do not update **GDAL PAM** \*.aux.xml file,
-    while the corresponding source is opened as a **QgsRasterLayer** in QGIS.
-    QGIS will potentially overwrite any changes, when closing the layer.
+    Do not update the GDAL Metadata model (\*.aux.xml files),
+    while the corresponding source is opened as a QgsRasterLayer in QGIS.
+    QGIS may overwrite theses changes, e.g. when closing the layer or calculating new band statistics.
 
 Implementation
 --------------
 
-Technically, we don't need any new functions or methods, because we fully rely on **QGIS PAM**.
+Example implementations are given by the **QgsRasterLayerSpectralProperties** and **RasterReader** classes:
 
-But, the handling of property keys, and the assurance of fetching priorities,
-can be tedious and should be encapsulated in util functions or methods.
-An example implementation is given by the **RasterReader** class.
+.. code-block:: python
 
-To query spectral properties for band 42 (in nanometers), we can use::
-
+    from enmapbox.qgispluginsupport.qps.qgsrasterlayerproperties import QgsRasterLayerSpectralProperties
     from enmapboxprocessing.rasterreader import RasterReader
+
+    properties = QgsRasterLayerSpectralProperties(layer)
+    wavelengths: List[float] = properties.wavelength()
+    wavelength_subset = properties.bandValues([1,2,3], 'wavelength')
 
     reader = RasterReader(layer)
     wavelength = reader.wavelength(42)
