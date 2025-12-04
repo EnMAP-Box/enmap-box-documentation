@@ -13,15 +13,45 @@ Upcoming Events
         - Location
         - Comments
 
-    *   - Release of EnMAP-Box 3.17
-        - Oct 2025
-        - `QGIS Plugin Repository <https://plugins.qgis.org/plugins/enmapboxplugin/>`_
-        - This will be the last EnMAP-Box version running on QGIS 3.*
+    *   - EnMAP Webinar
+        - 29.+30. Jan 2026
+        - online
+        - Registration link will follow
 
-    *   - `Big Data From Space (BiDS) 2025 <https://bigdatafromspace2025.org>`_
-        - 29.09. \- 03.10. 2025
-        - Riga, Latvia
-        - EnMAP-Box live demo, Oct2, 12:35-12:55, Demo Area
+    *   - `FOSSGIS 2026 <https://www.fossgis-konferenz.de/2026>`_
+        - 25.-28. March 2026
+        - Georg-August-Universität Göttingen, Germany
+        - EnMAP-Box Demo Thu 26. March 09:35-10:30 `Hyperspektrale Erdbeobachtung in der Praxis - Die EnMAP-Box in QGIS <https://www.fossgis-konferenz.de/2026/programm/>`_
+
+    *   - `14th EARSeL Workshop on Imaging Spectroscopy <https://is.earsel.org/workshop/14-IS-Helsinki2026>`_
+        - 2.-5. June 2026
+        - Helsinki Metropolitan area, Finland
+        - Tutorial day 5. June `Environmental Mapping and Analysis Program (EnMAP) tutorials <https://is.earsel.org/workshop/14-IS-Helsinki2026/tutorials/>`_
+
+Release EnMAP-Box 3.17
+======================
+
+*17. Nov 2025*
+
+We are in the process of releasing EnMAP Box 3.17. A first preview is already available for download as `an experimental plugin <https://plugins.qgis.org/plugins/enmapboxplugin/version/3.17.0/>`_.
+Further updates will follow.
+
+.. image:: /general/img/splashscreen_enmapbox3.17.png
+
+
+
+
+Big Data From Space 2025
+========================
+
+*3. Nov 2025*
+
+On October 2, the EnMAP-Box was presented in a live demo at ESA
+`Big Data From Space (BiDS) 2025 <https://bigdatafromspace2025.org>`_ conference in Riga, Latvia.
+
+.. image:: /general/img/bids2025demo2.jpg
+
+
 
 
 Workshop Multi-Source Remote Sensing for Agriculture
@@ -49,8 +79,8 @@ It was especially exciting to see the high interest for our brand-new EnMAP-Box 
 
 
 .. image:: /img/events/enmapbox_lps25.png
-    :width: 100%
-    :height: 250px
+    :width: 75%
+
 
 .. raw:: html
 
