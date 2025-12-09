@@ -4,19 +4,17 @@
 Spectral Libraries
 ##################
 
-Spectral Libraries are collections of (i) spectral profiles and (ii) attributes to describe these profiles.
+Spectral Libraries are collections of spectral profiles and attribute to describe these profiles.
+The EnMAP-Box stores spectral profile in vector layers. Compared with *"traditional"*
+spectral library formats, this offers several advantages:
 
-The EnMAP-Box stores spectral profile in vector layers, i.e. a single spectral profile is one of many other attributes
-related to a vector feature. Compared with *"traditional"* spectral library formats, this offers a couple of advantages:
+* we can link spectral profiles to spatial geometries (points, lines, polygons) and display them in GIS maps
 
-* Spectral profiles can easily linked with spatial coordinates or more general, geometries (points, lines, polygons)
+* we can use existing QGIS functionality to ensure data integrity and avoid incorrect or inconsistent attribute values by design.
+  For example, QGIS can ensures that values of a categorical attribute "material_type" need to exist in a
+  list of predefined material names.
 
-* QGIS functionality can be used to ensure data integrity of profile attribute values by design. This reduces the risk of
-  incorrect or inconsistent information.
-  For example, QGIS can ensures that values of a categorical attribute "material_type" need to be taken from a
-  list of defined material names.
-
-* User can store spectral profiles in a wide range of data backends, ranging from local file types like
+* we can store spectral profiles in a wide range of data backends, ranging from local file types like
   `GeoJSON <https://geojson.org/>`_ or `GeoPackage <https://www.geopackage.org/>`_ to remote server hosted databases like `PostgreSQL. <https://www.postgresql.org/>`_
 
 .. figure:: img/speclib_overview.png
@@ -26,10 +24,10 @@ related to a vector feature. Compared with *"traditional"* spectral library form
 Spectral Profile
 ----------------
 
-A single spectral profile consists of a minimum information required to draw a profile.
-For that we use a dictionary, that contains a list `y` with profile values:
+A single spectral profile contains the minimum information that is required to draw a profile.
+This information is stored in a JSON dictionary that contains at least a list `y` with profile values:
 
-.. code-block:: json
+.. code-block:: text
 
     {
         "y": [0.1011, 0.1018, ... , 0.1080]
@@ -38,7 +36,7 @@ For that we use a dictionary, that contains a list `y` with profile values:
 Optionally, we can specify the position of the spectral values (`y`) along the x-axis, axis units (`yUnit`, 'xUnit'), and a
 list of bad band multipliers (`bbl`):
 
-.. code-block:: json
+.. code-block:: text
 
     {
         "y": [0.1011, 0.1018, ... , 0.1080],
@@ -76,9 +74,11 @@ from or to any vector layer that supports on of the following data types:
       -
 
 
-Any other information to describe the spectral profile (`y`) should be stored on other layer fields, as
-QGIS already provided adequate support for them. The observation time, for example,
-could be stored in a text field with activate Date/Time widget, and filepaths in a field with attachments widget.
+Any other metadata to describe spectral profiles should be stored in different fields.
+This way we can use standard QGIS/GDAL functions to filter spectral profile based on their attributes.
+
+Import and Export Profiles
+--------------------------
 
 Attribute Table
 ---------------
