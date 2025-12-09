@@ -1,5 +1,3 @@
-.. include:: ../../external_links.rst
-
 2. Graphical User Interfaces
 ############################
 

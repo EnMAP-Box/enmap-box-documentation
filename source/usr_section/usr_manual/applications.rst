@@ -1,5 +1,3 @@
-
-
 .. _applications:
 
 Applications
@@ -35,11 +33,13 @@ Usage
 GUI
     .. figure:: ./img/ClassificationDatasetManager_1a.png
         :align: center
+        :width: 100%
 
     |
 
     .. figure:: ./img/ClassificationDatasetManager_1b.png
         :align: center
+        :width: 100%
 
 
 Live demonstration
@@ -55,6 +55,7 @@ Select one of the dataset creation options and follow the subsequent algorithm d
 GUI
     .. figure:: ./img/ClassificationDatasetManager.png
        :align: center
+       :width: 100%
 
 Example data
     Datasets used below are available in of the following locations:
@@ -79,6 +80,7 @@ From categorized vector layer and feature raster
 
     .. figure:: ./img/ClassificationDatasetManager_2a.png
        :align: center
+       :width: 100%
 
     For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedVectorLayerAndFeatureRaster>`.
 
@@ -98,6 +100,7 @@ From categorized raster layer and feature raster
 
     .. figure:: ./img/ClassificationDatasetManager_2b.png
        :align: center
+       :width: 100%
 
     For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedRasterLayerAndFeatureRaster>`.
 
@@ -111,6 +114,7 @@ From categorized spectral library
 
     .. figure:: ./img/ClassificationDatasetManager_2c.png
        :align: center
+       :width: 100%
 
     For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedSpectralLibrary>`.
 
@@ -123,40 +127,47 @@ From categorized vector layer with attribute table
 
     .. figure:: ./img/ClassificationDatasetManager_2d_dataset.png
         :align: center
+        :width: 100%
 
         Attribute table with fields Sample_1, Sample_2, ... Sample_177 used as features.
 
     .. figure:: ./img/ClassificationDatasetManager_2d.png
         :align: center
+        :width: 100%
 
     For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromCategorizedVectorLayerWithAttributeTable>`.
 
 From table with categories and feature fields
     .. figure:: ./img/ClassificationDatasetManager_2e_dataset.png
         :align: center
+        :width: 100%
 
         Attribute table with fields Band_1, Band_2, ... Band_177 used as features.
 
     .. figure:: ./img/ClassificationDatasetManager_2e.png
         :align: center
+        :width: 100%
 
     For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromTableWithCategoriesAndFeatureFields>`.
 
 From Python code
     .. figure:: ./img/ClassificationDatasetManager_2f.png
        :align: center
+       :width: 100%
 
     For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromPythonCode>`.
 
 From text files
     .. figure:: ./img/ClassificationDatasetManager_2g.png
        :align: center
+       :width: 100%
 
     For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromTextFiles>`.
 
 From JSON file
     .. figure:: ./img/ClassificationDatasetManager_2h.png
        :align: center
+       :width: 100%
 
     For details see the :ref:`algorithm description <alg-enmapbox-CreateClassificationDatasetFromJsonFile>`.
 
@@ -216,6 +227,7 @@ Usage
 GUI
     .. figure:: ./img/ClassificationWorkflowAlgorithm.png
         :align: center
+        :width: 100%
 
 Live demonstration
     ..  youtube:: Tt2XmNuLf5Y
@@ -443,6 +455,9 @@ Image Math (deprecated)
 
 Deprecated, use `Raster math`_
 
+
+.. _raster_math_app:
+
 Raster math
 ===========
 
@@ -476,6 +491,7 @@ Usage
 GUI
     .. figure:: ./img/RasterMath.png
         :align: center
+        :width: 100%
 
 Single-line expressions
 -----------------------
@@ -513,6 +529,7 @@ Note that prominent target wavelength from the Landsat/Sentinel-2 sensors can be
 
     .. figure:: ./img/RasterMath_2.png
         :align: center
+        :width: 100%
 
 All raster bands can be accessed at once using the `<layer name>` syntax, e.g.::
 
@@ -565,6 +582,7 @@ Example - mask a raster using a polygon-vector
 
     .. figure:: ./img/RasterMath_3.png
         :align: center
+        :width: 100%
 
     Note that the output raster is correctly masked, but we haven't set an appropriate no data value,
     nor have we taken care of wavelength information or any other metadata.
@@ -702,6 +720,7 @@ and the :guilabel:`Data / Metadata` tab.
 
     .. figure:: ./img/RasterMath_4.png
         :align: center
+        :width: 100%
 
 Example - calculate the NDVI index and set up metadata properly
     This example shows how to properly calculate the NDVI index, masking no data pixel and set up output metadata::
@@ -816,19 +835,7 @@ Spectral Index Creator
 todo
 
 
-
-
-
-
-
-
-
-
-.. Substitutions definitions - AVOID EDITING PAST THIS LINE
-   This will be automatically updated by the find_set_subst.py script.
-   If you need to create a new substitution manually,
-   please add it also to the substitutions.txt file in the
-   source folder.
+.. AUTOGENERATED SUBSTITUTIONS - DO NOT EDIT PAST THIS LINE
 
 .. |action| image:: /img/icons/action.svg
    :width: 28px

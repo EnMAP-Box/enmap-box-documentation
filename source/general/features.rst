@@ -5,6 +5,116 @@
 Features
 ========
 
+GUI
+===
+
+The EnMAP-Box offers a powerful graphical user interface (GUI) for an integrated visualization of raster, vector and spectral library data.
+Move the mouse over the GUI sections for further information.
+
+.. raw:: html
+
+    <svg
+      width="1085"
+      height="682"
+      viewBox="0 15 385.22895 202.58583"
+      style="display: block; margin: auto; font-family: Arial, sans-serif;">
+
+      <style>
+        rect {
+          fill: transparent;
+          stroke: none;
+          pointer-events: all;
+          transition: stroke 0.3s ease, fill-opacity 0.3s ease;
+        }
+        rect:hover {
+          stroke: red;
+          stroke-width: 1;
+          fill-opacity: 0.1;
+          cursor: pointer;
+        }
+        text.label {
+          font-size: 8px;
+          fill: red;
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          font-weight: normal;
+          user-select: none;
+        }
+        rect.bg {
+          fill: beige;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+          rx: 2;
+          ry: 2;
+        }
+        rect:hover + rect.bg {
+          opacity: 1;
+        }
+        rect:hover + rect.bg + text.label {
+          opacity: 1;
+        }
+      </style>
+
+      <!-- Base image -->
+      <image
+        href="../_static/img/EnMAP_GUI.png"
+        x="0" y="0"
+        width="385.22895"
+        height="202.58583"
+        preserveAspectRatio="none" />
+
+      <a href="../usr_section/usr_manual/gui.html#the-gui">
+        <rect x="0.2717" y="5.977" width="65.747" height="4.8903" />
+        <rect class="bg" x="8" y="12" width="45" height="12" />
+        <text class="label" x="10" y="20">Menu</text>
+      </a>
+
+      <a href="../usr_section/usr_manual/gui.html#toolbar" target="_self">
+        <rect x="0.5434" y="11.4107" width="236.092" height="9.2372" />
+        <rect class="bg" x="95" y="22" width="40" height="12" />
+        <text class="label" x="100" y="30">Toolbar</text>
+      </a>
+
+      <a href="../usr_section/usr_manual/gui.html#gui-panels-data-sources" target="_self">
+        <rect x="0.5434" y="21.4629" width="53.521" height="77.1579" />
+        <rect class="bg" x="10" y="58" width="75" height="14" />
+        <text class="label" x="12" y="70">Data Sources Panel</text>
+      </a>
+
+      <a href="../usr_section/usr_manual/gui.html#data-views" target="_self">
+        <rect x="0.5434" y="99.4359" width="53.25" height="99.1642" />
+        <rect class="bg" x="10" y="158" width="68" height="14" />
+        <text class="label" x="12" y="170">Data Views Panel</text>
+      </a>
+
+      <a href="../usr_section/usr_manual/gui.html#map-view" target="_self">
+        <rect x="54.0649" y="20.3762" width="265.706" height="89.927" />
+        <rect class="bg" x="145" y="58" width="50" height="14" />
+        <text class="label" x="147" y="70">Map Viewer</text>
+      </a>
+
+      <a href="../usr_section/usr_manual/gui.html#spectral-library-view" target="_self">
+        <rect x="54.0649" y="109.7598" width="265.977" height="88.8402" />
+        <rect class="bg" x="145" y="158" width="90" height="14" />
+        <text class="label" x="147" y="170">Spectral Library Viewer</text>
+      </a>
+
+      <a href="../usr_section/usr_manual/gui.html#processing-toolbox" target="_self">
+        <rect x="320.0422" y="20.6479" width="65.204" height="118.454" />
+        <rect class="bg" x="255" y="58" width="75" height="14" />
+        <text class="label" x="257" y="70">Processing Toolbox</text>
+      </a>
+
+      <a href="../usr_section/usr_manual/gui.html#collect-profiles" target="_self">
+        <rect x="320.0422" y="139.1015" width="65.747" height="59.4985" />
+        <rect class="bg" x="255" y="183" width="90" height="14" />
+        <text class="label" x="257" y="190">Spectral Profile Sources</text>
+      </a>
+
+    </svg>
+
 Visualization
 =============
 
@@ -31,6 +141,11 @@ Visualization
         * link raster visualization spectrally to  always show similar wavelength combinations,
           no-matter how many bands your raster sources have
 
+        .. image:: img/rasterlayer_stylingpanel.png
+            :width: 100%
+            :align: center
+
+
     .. tab:: Raster Rendering
 
         *Explore your raster data interactively*
@@ -49,27 +164,32 @@ Visualization
 
                   Visualize two bands using a 2d color ramp.
                 - .. image:: /usr_section/usr_manual/img/BivariateColorRasterRenderer.png
+                    :width: 100%
 
             *   - **Class-fraction or probability rendering**
 
                   Visualizes multiple class factions/probabilities at the same time using the original class colors.
                 - .. image:: /usr_section/usr_manual/img//ClassFractionRenderer.png
+                    :width: 100%
 
             *   - **HSV color rendering**
 
                   Visualizes 3 bands using the HSV (Hue, Saturation, Value/Black) color model
                 - .. image:: /usr_section/usr_manual/img/HSVColorRasterRenderer.png
+                    :width: 100%
 
 
             *   - **CMYK Color Raster Renderer**
 
                   Visualizes 4 bands using the CMYK (Cyan, Magenta, Yellow, and Key/Black) color model
                 - .. image:: /usr_section/usr_manual/img/CMYKColorRasterRenderer.png
+                    :width: 100%
 
             *   - **Decorelation Stretch Renderer**
 
                   Removing the high correlation between 3 band for a more colorful color composite image.
                 - .. image:: /usr_section/usr_manual/img/DecorrelationStretchRenderer.png
+                    :width: 100%
 
 
 Spectral Libraries
@@ -93,6 +213,7 @@ The EnMAP box offers a wide range of options for creating spectral libraries and
 * Plot profiles from different instruments simultaneously against wavelength units, e.g. nanometers, micrometers
 
 .. figure:: /usr_section/application_tutorials/spectral_library/img/add_profiles.gif
+    :width: 100%
 
 Algorithms
 ==========
@@ -106,6 +227,7 @@ connect them with algorithms from other plugins in the QGIS Model Builder.
     .. tab:: GUI
 
         .. image:: /img/fit_classification.png
+            :width: 100%
 
     .. tab:: Python
 
@@ -142,6 +264,7 @@ connect them with algorithms from other plugins in the QGIS Model Builder.
         can connect EnMAP processing algorithms with others and create powerful processing models.
 
         .. image:: /img/graphical_model_classification.png
+            :width: 100%
 
 Applications
 ============
@@ -149,116 +272,6 @@ Applications
 Various applications enhance the EnMAP-Box to make it ready
 for different thematic uses, e.g.:
 
-.. list-table::
+.. csv-table::
     :header-rows: 1
-    :class: sphinx-datatable
-
-    *   - Application
-        - Keywords
-        - Description
-
-    *   - `EnMAP Preprocessing Tools (EnPT) <https://enmap.git-pages.gfz-potsdam.de/GFZ_Tools_EnMAP_BOX/EnPT/doc/>`_
-        - preprocessing
-        - Scheffler et al. 2023, EnPT – an Alternative Pre-Processing Chain for Hyperspectral EnMAP Data,
-          https://doi.org/10.1109/igarss52108.2023.10281805.
-
-    *   - Regression-based unmixing
-        - unmixing
-        - Okujeni et al. 2017, Ensemble Learning From Synthetically Mixed Training
-          Data for Quantifying Urban Land Cover With Support Vector Regression.
-          https://doi.org/10.1109/jstars.2016.2634859
-
-    *   - Plant Water Retrieval
-        - vegetation
-        - Wocher et al. 2018, Physically-Based Retrieval of Canopy Equivalent Water Thickness Using Hyperspectral Data, Remote Sensing
-          https://doi.org/10.3390/rs10121924.
-
-    *   - Analyze Spectral Integral (ASI)
-        - vegetation
-        - Wocher et al. 2020, RTM-based dynamic absorption integrals for the retrieval of biochemical vegetation traits,
-          doi: https://doi.org/10.1016/j.jag.2020.102219.
-
-    *   - Vegetation Processor
-        - vegetation
-        - Danner et al. 2021, "Efficient RTM-based training of machine learning regression algorithms to quantify biophysical & biochemical traits of agricultural crops",
-          ISPRS J Photogramm Remote Sens, 09242716, 173 (2021), pp. 278-296, doi: https://doi.org/10.1016/j.isprsjprs.2021.01.017
-
-    *   - Interactive Visualization of Vegetation Reflectance Models (IVVRM)
-        - vegetation, data visualization
-        - Danner et al. 2018, "Developing a sandbox environment for prosail, suitable for education and research"
-          IEEE international geoscience and remote sensing symposium (2018), pp. 783-786,
-          doi: https://doi.org/10.1109/IGARSS.2018.8519378
-
-    *   - Interactive Red-Edge Inflection Point (iREIP)
-        - vegetation
-        - Hank et al. 2021, "Introducing the potential of the EnMAP-box for agricultural applications using desis and prisma data",
-          IEEE international geoscience and remote sensing symposium (2021), pp. 467-470,
-          doi: https://doi.org/10.1109/IGARSS47720.2021.9554729
-
-    *   - Vegetation Index Toolbox and Spectral Index Creator
-        - spectral indices
-        - Hank et al. 2021, "Introducing the potential of the EnMAP-box for agricultural applications using desis and prisma data",
-          IEEE international geoscience and remote sensing symposium (2021), pp. 467-470,
-          doi: https://doi.org/10.1109/IGARSS47720.2021.9554729
-
-    *   - EnMAP Soil Mapper (EnSoMap)
-        - soil
-        - Mielke et al. 2018, “Engeomap and Ensomap: Software Interfaces for Mineral and Soil Mapping under Development
-          in the Frame of the Enmap Mission,” in IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium,
-          IEEE, Jul. 2018, pp. 8369–8372.
-          doi: https://doi.org/10.1109/igarss.2018.8517902
-
-    *   - EnMAP Geological Mapper (EnGeoMap)
-        - geology
-        - Mielke et al. 2018, “Engeomap and Ensomap: Software Interfaces for Mineral and Soil Mapping under Development
-          in the Frame of the Enmap Mission,” in IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium,
-          IEEE, Jul. 2018, pp. 8369–8372.
-          doi: https://doi.org/10.1109/igarss.2018.8517902
-
-    *   - EO Time Series Viewer
-        - timeseries
-        - Jakimow et al. 2020, "Visualizing and labeling dense multi-sensor earth observation time series: The EO time series viewer",
-          Environmental Modelling & Software, 13648152, 125 (2020),
-          doi: https://doi.org/10.1016/j.envsoft.2020.104631
-
-    *   - GEE Time Series Explorer
-        - timeseries
-        - Rufin et al. 2021, "GEE Timeseries Explorer for QGIS – Instant Access to Petabytes of Earth Observation Data."
-          The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 2194-9034, XLVI-4/W2-2021 (2021), pp. 155-158,
-          doi: https://doi.org/10.5194/isprs-archives-XLVI-4-W2-2021-155-2021
-
-    *   - Scatter Plots
-        - data visualization
-        -
-
-    *   - OLCI Neural Network Swarm (ONNS)
-        - water
-        - Ocean color analysis
-
-          Hieronymi et al. 2017, "The OLCI neural network swarm (ONNS): A bio-geo-optical algorithm for open ocean and coastal waters"
-          Front Mar Sci, 2296-7745, 4 (2017), p. 140,
-          doi: https://doi.org/10.3389/fmars.2017.00140
-
-    *   - OC-PFT
-        - water
-        - Retrieval of Phytoplankton Functional Types (PFTs) from satellite or in situ chlorophyll-a (Chl-a) measurements.
-
-          Alvarado et al. 2022, "Retrievals of the main phytoplankton groups at Lake Constance using OLCI, DESIS, and evaluated with fieldobservations".
-          12th EARSeL workshop. 2022.
-
-    *   - Image Cube
-        - general, data visualization
-        -
-
-    *   - Raster Math
-        - general
-        -
-
-    *   - Classification Workflow
-        - general, classification
-        -
-
-    *   - Regression Workflow
-        - general, regression
-        -
-
+    :file: enmapboxapplications.csv
