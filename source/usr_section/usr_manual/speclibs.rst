@@ -4,27 +4,66 @@
 Spectral Libraries
 ##################
 
-Spectral Libraries are collections of spectral profiles with additional attributes to describe these profiles.
+Spectral Libraries are collections of spectral profiles and attributes that describe these profiles.
 The EnMAP-Box stores spectral profile in vector layers. Compared to *"traditional"*
-spectral library formats, this offers some advantages:
+spectral library formats like CSV text files or the ENVI Spectral library format, this offers some advantages:
 
 * we can link spectral profiles to spatial geometries (points, lines, polygons) and display them in GIS maps.
-  For example locations of image endmembers
-  or where measurments have been takenn with a field spectrometer,
+  For example to show the locations of collected image endmembers or where measurements have been taken with a field spectrometer.
 
-* we can use QGIS/GDAL functionality to ensure data integrity by design to avoid incorrect or inconsistent attribute values.
-  For example, we can ensure that the values of a numerical attribute *leaf area index* have to be within a reasonable ranges,
-  and the values of a categorical attribute *material_type* need to be taken from a list of predefined material names.
+* we can store spectral profiles in a wide range of well-known data formats, ranging from local file types like
+  `GeoJSON <https://geojson.org/>`_ or `GeoPackage <https://www.geopackage.org/>`_ to powerful
+  database management systems like `PostgreSQL. <https://www.postgresql.org/>`_
 
-* we can store spectral profiles in a wide range of well-known and widely supported data backends, ranging from local file types like
-  `GeoJSON <https://geojson.org/>`_ or `GeoPackage <https://www.geopackage.org/>`_ to remote server hosted databases like `PostgreSQL. <https://www.postgresql.org/>`_
+* we can link spectral profiles with an arbitrary number of numeric, textual or categorical attributes, each having a dedicated data types
 
-.. figure:: img/speclib_overview.png
+* we can link spectral profiles with other spectral profiles, e.g. pairs of "white reference" and "target" measurements
+
+* we can use QGIS/GDAL or data format-specific features to prevent incorrect values and ensure data integrity by design.
+  For example, we can ensure that values of a numerical attribute *leaf area index* have to be within a reasonable range,
+  or that values of a categorical attribute *material_type* need to be taken from a list of predefined material names.
+
+
+.. figure:: img/speclibs/overview.png
     :width: 60%
 
 
-Spectral Profile
-----------------
+Spectral Library Viewer
+-----------------------
+
+The main tool to display spectral profiles in the EnMAP-Box is the Spectral Library Viewer.
+It can be used to show profiles from different profile fields and different spectral libraries.
+
+.. figure:: img/speclibs/speclibviewer.png
+
+The settings tree define the *profile visualizations*, where each visualization defines:
+
+* the profile source: the vector layer and field to read spectral profiles from
+* the profile style: line type, symbol type, color
+* the profile name: a QGIS expression to generate a name that is used in the legend
+* an optional filter, e.g. to display only profiles that match a criterion, like `class_type='vegetation'`
+
+Selecting profiles in the profile plot does select their features in linked views, e.g. the geometries in a map or rows in an attribute table which show the same vector layer.
+
+.. figure:: img/speclibs/speclibviewer_selected_features.png
+
+    When profiles are selected in the spectral library viewer, the corresponding vector features will also be selected in the map (top) and attribute table (bottom).
+
+Attribute Table
+---------------
+
+The Attribute Table widget is used to inspect profile attribute values. This can be done in *table view* or *form view*. In the View form, the values of an individual spectral profile can be displayed either as a graph, as JSON text, or in a table.
+
+.. figure:: img/speclibs/attributetable_tableview.png
+
+    Spectral Library in attribute table widget with table view.
+
+.. figure:: img/speclibs/attributetable_formview.png
+
+    Spectral Library in attribute table widget with form view.
+
+Profile Data
+------------
 
 A single spectral profile contains the minimum information that is required to draw a profile.
 This information is stored in a JSON dictionary that contains at least a list `y` with profile values:
@@ -48,8 +87,8 @@ list of bad band multipliers (`bbl`):
         "bbl" : [1, 0, ... , 1]
     }
 
-The EnMAP-Box reads and writes these dictionaries of spectral profile values
-from any vector layer field of the following data types:
+
+The EnMAP-Box can read and write spectral profile from or to any vector layer field that is of the following data types:
 
 .. list-table:: Datatypes to store spectral profiles
     :header-rows: 1
@@ -73,52 +112,115 @@ from any vector layer field of the following data types:
       - BLOB
       -
       - `QByteArray <https://qthub.com/static/doc/qt5/qtcore/qmetatype.html#details>`_
-      - deprecated, please use TEXT, VARCHAR or JSON data tyoes
+      - deprecated, please use TEXT, VARCHAR or JSON data types
 
-But how does the EnMAP-Box know which fields contain spectral profiles and which contain other text values?
-Fields from vector layers that are intended to contain spectral profiles must be assigned the widget type *Spectral Profiles*.
-This can be done in the Vector Layer Properties or using the QGIS API.
+Profile Fields
+--------------
 
-.. figure:: img/speclib/attribute.png
-    :width: 60%
+Text, json or blob fields of a vector layer may be used for different purposes. It is therefore required to inform the EnMAP-Box which of them contain spectral profiles. This is achieved by assigning the *SpectralProfile* widget type to a layer field, either using the Layer Property Dialog or Python:
 
-Other attributes used to describe spectral profiles, such as a *name* or the *date* on which the profile was measured,
-are best stored in conventional vector attributes with a suitable data type.
-This makes them easy to search using QGIS/GDAL functions, for example to filter spectral profiles based on
-their attributes.
+.. tabs::
 
+    .. tab:: Layer Property Dialog
+        To use a vector layer field for storing spectral profiles
 
+        1. Open the *Layer Properties* and select the *Attributes Form* page
+        2. Select the text or JSON field to store profiles
+        3. Choose *SpectralProfile* as *Widget Type*
 
-Spectral Library Viewer
------------------------
+        .. figure:: img/speclibs/layerproperties_attributeform.png
 
-The main tool to display spectral profiles in the EnMAP-Box is the Spectral Library Viewer.
-It can be used to visualize profile from different spectral libraries / vector layers and allows to
-customize the visualization along vector layer attributes.
+            The *SpectralProfile* widget type tells the EnMAP-Box, which layer fields can contain vector spectral profiles.
 
-Simlar to a map canvas, where you can display different raster and vector layers,
-the Spectral Library Viewer displays different profile fields from vector layers.
-This is organized in *profile visualizations*, where each single visualization defines the profile's:
+    .. tab:: PyQGIS
 
-* source: vector layer and field the profiles are stored in
-* style: line type, symbol type, color
-* name:
-* filter: this allows you to display only thoose profiles that match a specific QGIS expression, e.g. `class_type='vegetation'`
+        .. code-block:: python
 
+            from qgis.core import QgsVectorLayer, QgsEditorWidgetSetup
 
-Import and Export Profiles
---------------------------
+            layer = QgsVectorLayer('myspeclib.gpkg')
+            # other code
+            i = layer.fields().indexOf('profiles')
+            layer.setEditorWidgetField(i, QgsEditorWidgetSetup('SpectralProfile', {}))
 
 
 
-Attribute Table
+The profile fields of vector layers that opened in the EnMAP-Box, e.g. as layer in a map, can be selected as source for a profile visualization
+
+.. figure:: img/speclibs/speclibview_multiple_speclibs.png
+
+    Selection of a profile field as source for a visualization.
+
+Collect Profiles
+----------------
+
+The identify map tool can be used to collect spectral profiles from displayed raster layers.
+
+1. Activate the *Identify map tool* and its option *Identify pixel profiles*.
+2. Click on a raster pixel
+
+By default, this create a new in-memory vector layer "Profiles #1" and opens a spectral library viewto show it. The *Spectral Profile Sources* panel can be used to specify how profiles are collected, e.g. from which raster layer, and to which vector layer field they will be written. In addition it allows to specify values for other other fields of the vector layer too, e.g. to generate a profile name automatically.
+
+.. figure:: img/speclibs/profilesourcepanel.png
+
+    The spectral profile source panel described how profiles are collected and written to vector layers.
+
+Import Profiles
 ---------------
 
-In der QGIS Attribut Tabelle können
-The QGIS attribute table can be switched into the editor view mode
+The *Import Spectral Profiles* (``enmapbox:importspectralprofiles``) algorithm loads profiles from different sources into a new vector layer. The algorithm tries to identify the format of each source file on its own.
+However, to improve speed it is useful to specify the file input type explicitly:
 
 
+.. list-table:: File types from which spectral profiles can be imported
+    :header-rows: 1
 
-Spectral Library API
---------------------
+    * - Input File Type
+      - Description
+    * - ASD
+      - Binary file output created by `ASD Field Spectrometers <https://www.malvernpanalytical.com/en/products/product-range/asd-range/fieldspec-range>`_
+    * - ECOSTRESS
+      - CSV text files from the NASA JPL ECOSTRESS Spectral Library https://speclib.jpl.nasa.gov/
+    * - ENVI
+      - `ENVI Spectral Library <https://www.nv5geospatialsoftware.com/docs/enviheaderfiles.html>`_ binary format
+    * - EcoSIS
+      - CSV text files from the `Ecological Spectral Information System (EcoSIS) <https://ecosis.org/>`_
+    * - GeoJSON
+      - EnMAP-Box Spectral Library, saved as GeoJSON
+    * - GeoPackage
+      - EnMAP-box Spectral Library, saved as GeoPackage
+    * - SED
+      - Text file output created by `Spectral Evolution Spectroradiometers <https://spectralevolution.com/>`_
+    * - SVC
+      - Text file output created by `Spectral Vista Corporation Spectroradiometers <https://spectravista.com/>`_
+
+.. figure:: img/speclibs/import_profiles.png
+
+
+Export Profiles
+---------------
+
+The *Export Spectral Profiles* (``enmapbox:exportspectralprofiles``) algorithm allows to spectral profiles in
+other file formats. It requires to specify the *Profile Field* to take the profile data from and a field or expression
+to generate for each profile a name.
+
+
+.. list-table:: File types into which spectral profiles can be exported
+    :header-rows: 1
+
+    * - Export File Type
+      - Extension
+      - Description
+    * - ENVI Spectral Library
+      - `*.sli`
+      - `ENVI Spectral Library <https://www.nv5geospatialsoftware.com/docs/enviheaderfiles.html>`_ binary format
+    * - EcoSIS
+      - `*.csv`
+      - CSV text files used by `Ecological Spectral Information System (EcoSIS) <https://ecosis.org/>`_
+    * - GeoJSON
+      - EnMAP-Box Spectral Library, saved as GeoJSON
+    * - GeoPackage
+      - EnMAP-box Spectral Library, saved as GeoPackage
+
+.. figure:: img/speclibs/export_profiles.png
 
