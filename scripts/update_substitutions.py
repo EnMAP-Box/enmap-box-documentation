@@ -438,8 +438,8 @@ if __name__ == '__main__':
         print(f'Read icons from {d}')
         collection.readIcons(d)
 
-    collection.updateRST(
-        r'D:\Repositories\enmap-box-documentation\source\usr_section\usr_cookbook\graphical_modeler.rst')
+    #collection.updateRST(
+    #    r'D:\Repositories\enmap-box-documentation\source\usr_section\usr_cookbook\graphical_modeler.rst')
 
     for file in find_by_ext(DIR_SOURCE, 'rst'):
         collection.updateRST(file)
