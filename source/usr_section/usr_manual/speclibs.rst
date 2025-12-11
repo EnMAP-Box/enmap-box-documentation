@@ -295,7 +295,7 @@ However, to improve speed it is recommended to specify the file input type manua
 .. _speclib_export_profiles:
 
 |speclib_save| Export Profiles
------------------------------
+------------------------------
 
 The *Export Spectral Profiles* algorithm allows to save spectral profiles in
 other file formats. It can be opened either from the Spectral Library Viewer, using the |speclib_save| button,
@@ -319,8 +319,10 @@ to get a profile name from.
       - CSV text files used by `Ecological Spectral Information System (EcoSIS) <https://ecosis.org/>`_
     * - GeoJSON
       - EnMAP-Box Spectral Library, saved as GeoJSON
+      -
     * - GeoPackage
       - EnMAP-box Spectral Library, saved as GeoPackage
+      -
 
 .. figure:: img/speclibs/export_profiles.png
 
