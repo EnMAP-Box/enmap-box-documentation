@@ -72,6 +72,18 @@ If you never have used git before, we recommend to read a basic git tutorial fir
 8. When done, publish your modifications in the official EnMAP-Box documentation creating a 
    [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
+
+# Preview the documentation locally
+
+Open a bash shell and run `./scripts/preview_docs.sh`. 
+If run successfully, the documentation will be available at http://localhost:8000/
+
+`preview_docs.sh` is a wrapper for [sphinx-autobuild](https://github.com/sphinx-doc/sphinx-autobuild#readme****)
+````bash
+cd <repo dir>/enmap-box-documentation
+`sphinx-autobuild source build`
+````
+
 # Build the documentation
 
 * open a bash shell and run `./scripts/create_docs.sh` (windows/linux bash shell), or 
