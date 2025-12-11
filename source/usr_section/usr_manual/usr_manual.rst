@@ -7,6 +7,7 @@ User Manual
 
    gui.rst
    tools.rst
+   speclibs.rst
    applications.rst
    eo4q.rst
    example_data.rst
