@@ -163,12 +163,12 @@ The EnMAP-Box can read and write profile data into any vector layer field of the
     * - JavaScript Object Notation
       - `JSON, JSONB <https://www.postgresql.org/docs/current/datatype-json.html>`_
       -
-      - `QVariantMap <https://qthub.com/static/doc/qt5/qtcore/qmetatype.html#details>`_
+      - `QVariantMap <https://doc.qt.io/qt-6/qvariant.html#QVariantMap-typedef>`_
       -
     * - Binary Large Objects
       - BLOB
       -
-      - `QByteArray <https://qthub.com/static/doc/qt5/qtcore/qmetatype.html#details>`_
+      - `QByteArray <https://doc.qt.io/qt-6/qbytearray.html>`_
       - deprecated, please use TEXT, VARCHAR or JSON data types
 
 However, many text, JSON and BLOB may be used for different purposes. It is therefore required
