@@ -13,10 +13,10 @@ Upcoming Events
         - Location
         - Comments
 
-    *   - EnMAP Webinar
+    *   - Webinar `Applications and Commercialisation Potential of EnMAP <https://www.enmap.org/data/news/EnMAP-Webinar_Preliminary_Agenda_Webinar_en01.pdf>`_
         - 29.+30. Jan 2026
         - online
-        - Registration link will follow
+        - Registration: https://dlr-ar.webex.com/weblink/register/r01da31f2416852298cdded24a28885e1
 
     *   - `FOSSGIS 2026 <https://www.fossgis-konferenz.de/2026>`_
         - 25.-28. March 2026
