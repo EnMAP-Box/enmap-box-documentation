@@ -16,7 +16,7 @@ Start the EnMAP-Box
 
 * Launch QGIS and click the |enmapbox| icon in the toolbar to open the EnMAP-Box. The EnMAP-Box GUI comprises a **Menu** and a **Toolbar**, panels for **Data Sources** and **Data Views**, and the **QGIS Processing Toolbox**, which includes the **EnMAP-Box Processing Algorithms**.
 
-    .. figure:: img/01_enmapbox_surface.png
+    .. figure:: img/speclib_6.1.1.png
 
         The EnMAP-Box main GUI.
 
@@ -31,7 +31,7 @@ For this introduction the Example Data of the EnMAP-Box will be used.
   to download the data.
 * After clicking **yes** the example data will be saved into the plugin installation folder.
 
-    .. figure:: img/02_add_expldt.gif
+    .. figure:: img/speclib_6.1.2.gif
 
         Loading the EnMAP-Box example data.
 
@@ -48,7 +48,7 @@ backend for a spectral library.
 
 * Open the spectral library  :file:`EnMAP Spectral Response Function (224 Bands)` from the Example Data, using drag and drop:
 
-    .. figure:: img/03_load_spec_lib.gif
+    .. figure:: img/speclib_6.1.3.gif
 
         Opening a spectral library with EnMAP spectral response functions.
 
@@ -60,7 +60,7 @@ Basic Visualization Steps
 
 * The spectral library viewer should look like this:
 
-    .. figure:: img/04_spec_lib_window_explained.png
+    .. figure:: img/speclib_6.1.4.png
 
         Overview Spectral Library Viewer.
 
@@ -85,7 +85,7 @@ Basic Visualization Steps
 * These are the tools you already know from the QGIS attribute table (`here is a link to the website  <https://docs.qgis.org/3.34/en/docs/user_manual/working_with_vector/attribute_table.html>`_)
 * Some functions of the toolbar are shown below. There are multiple possibilities, to organize and edit the different profiles in the **Attribute Table**:
 
-    .. figure:: img/07_functions_speclib_toolbar.gif
+    .. figure:: img/speclib_6.1.5.gif
 
         Selecting spectral profiles from attribute table.
 
@@ -115,7 +115,7 @@ Let's open a spectral library that provides coordinates for each spectral profil
 * Use the context menu **Open Spectral Library Viewer** to visualize the spectral profiles.
 * Use the **Map View** context menu to add the speclib_potsdam vector layer
 
-    .. figure:: img/load_speclib_potsdam_with_map.gif
+    .. figure:: img/speclib_6.2.1.gif
 
       Opening the speclib_potsdam.gpkg library in a Spectral Library View and a Map View.
 
@@ -143,7 +143,7 @@ In this introduction we like to collect additional profiles for the following cl
 
 * In order to collect profiles from the EnMAP image only, select :file:`enmap_potsdam` as profile source .
 
-    .. figure:: img/spec_prof_to_enmap.gif
+    .. figure:: img/speclib_6.2.2.gif
 
        Collecting spectral profiles from an EnMAP image.
 
@@ -152,7 +152,7 @@ In this introduction we like to collect additional profiles for the following cl
 
 * To see the EnMAP pixel size underneath, open the Map View context menu, then click on **Crosshair**, **Pixel Grid** and select :file:`enmap_potsdam`.
 
-    .. figure:: img/crosshair.gif
+    .. figure:: img/speclib_6.2.3.gif
 
          Showing underneath pixel borders.
 
