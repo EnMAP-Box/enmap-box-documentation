@@ -160,7 +160,7 @@ In this introduction we like to collect additional profiles for the following cl
 
 * With |profile_add_auto| the new spectral profiles candidates are added automatically.
 
-    .. figure:: img/add_profiles_automatically.gif
+    .. figure:: img/speclib_6.2.4.gif
 
         Automatic profile collection.
 
@@ -173,7 +173,7 @@ In this introduction we like to collect additional profiles for the following cl
 * For a clearer organization you can add columns |mActionNewAttribute| to add information.
   Insert a column name and select a type (e.g. integer or string).
 
-    .. figure:: img/add_profiles.gif
+    .. figure:: img/speclib_6.2.5.gif
 
         Collecting and describing spectral profiles from image data.
 
