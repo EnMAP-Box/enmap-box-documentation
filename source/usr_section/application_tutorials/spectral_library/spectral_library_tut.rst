@@ -193,16 +193,16 @@ Spectral Profile Source Panel
 
 First, let's focus on the definition of how spectral profiles are collected:
 
-    .. image:: img/spec_prof_pan_prof.gif
+    .. image:: img/speclib_source.png
 
 * **Profiles** specifies how the profiles are stored in the Profiles field in the spectral library attribute table.
 * You can specify the raster source from which the profile is sampled. Choose :file:`enmap_potsdam`.
 
-    .. image:: img/spec_prof_pan_col.gif
+    .. image:: img/speclib_style.png
 
 * **Style** lets you specify how the sampled profiles are displayed when overlaid in the Spectral Library view.
 
-    .. image:: img/spec_prof_pan_sampling.gif
+    .. image:: img/speclib_sampling.png
 
 * **Sampling** can be used to define how the profiles are sampled around the mouse coordinate.
 
@@ -299,18 +299,11 @@ Geopackage
   we can add spectral profiles to.
 * Click on |speclib_add| to open the **Import Spectral Profiles** window.
 
-    .. figure:: img/import_a_speclib.gif
+    .. figure:: img/speclib_6.4.1.gif
 
         The dialog to import spectral profiles into a spectral library.
 
 * Choose **Geopackage** and set the path to the downloaded ``speclib_potsdam.gpkg`` filename.
-* The *Field Value Import* table specifies which attribute we like to import into our speclib.
-* Use the *Copy missing source fields* dialog to create a new *notes* field in our in-memory speclib
-
-    .. figure:: img/import_gpkg.png
-
-        Import of profiles from a GeoPackage library.
-
 * Click **OK**
 
 
@@ -327,7 +320,7 @@ ASD Field Spectrometer
 * Click **OK**
 * Select some of the new imported features in the attribute table and zoom to.
 
-    .. figure:: img/import_asd_files.gif
+    .. figure:: img/speclib_6.4.3.gif
 
         Importing spectral profiles (White Reference + Target) from an ASD Field Spectrometer into an empty Spectral Library.
 
@@ -349,7 +342,7 @@ Raster Layer
 * To import the columns of your choice, click on |mSourceFields| and select the columns.
 * Click **OK**
 
-    .. figure:: img/import_rasterprofiles.gif
+    .. figure:: img/speclib_6.4.4.gif
 
         Importing spectral profiles from a raster layer and a vector layer that specifies the profile locations.
 
@@ -429,7 +422,7 @@ ENVI Spectral Library
 
 * The new ENVI Spectral Library (``*.sli``) is accompanied by a ``.csv`` file that lists additional values from, like the point coordinates in WKT notation.
 
-    .. image:: img/exported_envi_files.png
+    .. image:: img/speclib_envi.png
 
 .. note::
 
