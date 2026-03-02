@@ -139,6 +139,41 @@ Values in `xUnit` should use SI-symbols wherever possible, e.g. ``μm`` instead 
         "bbl" : [1, 0, ... , 1]
     }
 
+Spectral Processing
+----------------------------------------
+
+The EnMAP-Box is highly generic in how it supports raster and spectral data. When you import spectral profiles, such as those from the USGS Spectral Library, they are imported in their original spectral bands.
+
+However, you can resample a spectral raster to match a specific target sensor. You can use raster algorithms to process your spectral profiles directly within the spectral library viewer, a workflow we refer to as **Spectral Processing**.
+
+Example: Resampling EnMAP Profiles to Sentinel-2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To demonstrate this, we will resample collected EnMAP profiles to match the Sentinel-2 sensor. Showing the transition from EnMAP to Sentinel-2 highlights the clear visual differences between the two sensor specifications.
+
+1. Open the spectral library viewer and load your EnMAP profiles.
+2. Click the **Spectral Processing** icon in the top toolbar of the viewer.
+
+.. image:: img/speclibs/spectral_processing_button.png
+   :alt: Spectral Processing Button in the Toolbar
+   :align: center
+
+3. The **Spectral Processing Dialog** will open.
+4. Click the Algorithm button, select **Spectral resampling (to Sentinel-2A MSI)** or **Spectral resampling (to Sentinel-2B MSI)**.
+5. Under Parameters, set your original EnMAP profile as the **Spectral raster layer**.
+6. Choose a destination name for your **Output raster layer**.
+
+.. image:: img/speclibs/spectral_processing_dialog.png
+   :alt: Spectral Processing Dialog Box
+   :align: center
+
+7. Click **Run**.
+
+.. image:: img/speclibs/spectral_sampling_sentinel.png
+   :alt: Visual Comparison of EnMAP and Sentinel-2 Profiles
+   :align: center
+
+Once processed, the new Sentinel-2 profile will be generated. Comparing the two profiles visually demonstrates how the 224 bands of the EnMAP sensor are resampled into the broader multispectral bands of Sentinel-2. To load the new profile in the view, just click on the plus icon highlighted under the red circle, and then select the new field that you created (in this case 'sentinel') in the Field section of the dropdown and adjust the color and style according to your preference.
 
 .. _profile_fields:
 
