@@ -139,17 +139,46 @@ Values in `xUnit` should use SI-symbols wherever possible, e.g. ``μm`` instead 
         "bbl" : [1, 0, ... , 1]
     }
 
+Modify spectral profiles
+------------------------
+
+The EnMAP-Box is highly generic in how it supports raster and spectral data. After importing spectral profiles from
+field measurements or a published sources the USGS Spectral Library, you may want to modify them as well.
+
+With the EnMAP Box, spectral profiles can be modified using the *Spectral Processing Tool*, the *QGIS Field Calculator*,
+and of course Python.
+
+
 Spectral Processing
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^
 
-The EnMAP-Box is highly generic in how it supports raster and spectral data. When you import spectral profiles, such as those from the USGS Spectral Library, they are imported in their original spectral bands.
+The *Spectral Processing* tool allows to apply QGIS Processing Algorithms, which process raster images, on
+spectral profiles.
 
-However, you can resample a spectral raster to match a specific target sensor. You can use raster algorithms to process your spectral profiles directly within the spectral library viewer, a workflow we refer to as **Spectral Processing**.
+1. Open the Spectral Library viewer
+2. In case of multiple profile views, ensure that you have selected a view whose library you like to process
+3. Click  the *Spectral Processing* icon to open the Spectral Processing Dialog.
+4. Select the processing algorithm
+5. Set the processing parameters. Vector field values are mapped to temporary raster images with 1 line as following:
 
-Example: Resampling EnMAP Profiles to Sentinel-2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   * spectral profile field -> float raster with n > 1 bands
+   * int / float field -> int / float raster with n = 1 band
+   * string / other fields -> int classification images with n  = 1 band. Each unique string value is represented as by
+     an individual class value
 
-To demonstrate this, we will resample collected EnMAP profiles to match the Sentinel-2 sensor. Showing the transition from EnMAP to Sentinel-2 highlights the clear visual differences between the two sensor specifications.
+6. Set output field names.
+7. Click *Run* to start the processing. Created raster outputs will be mapped to existing / new fields as following:
+
+   * raster with n > 1 band -> spectral profile
+   * raster with n = 1 band -> int / float column
+   * classification raster with n = 1 band -> string field with class names
+
+
+
+*Example: Resample EnMAP-Profiles to Sentinel-2*
+
+To demonstrate this, we will resample collected EnMAP profiles to match the Sentinel-2 sensor.
+Showing the transition from EnMAP to Sentinel-2 highlights the clear visual differences between the two sensor specifications.
 
 1. Open the spectral library viewer and load your EnMAP profiles.
 2. Click the **Spectral Processing** icon in the top toolbar of the viewer.
@@ -159,7 +188,8 @@ To demonstrate this, we will resample collected EnMAP profiles to match the Sent
    :align: center
 
 3. The **Spectral Processing Dialog** will open.
-4. Click the Algorithm button, select **Spectral resampling (to Sentinel-2A MSI)** or **Spectral resampling (to Sentinel-2B MSI)**.
+4. Click the Algorithm button, select **Spectral resampling (to Sentinel-2A MSI)** or
+   **Spectral resampling (to Sentinel-2B MSI)**.
 5. Under Parameters, set your original EnMAP profile as the **Spectral raster layer**.
 6. Choose a destination name for your **Output raster layer**.
 
@@ -173,7 +203,39 @@ To demonstrate this, we will resample collected EnMAP profiles to match the Sent
    :alt: Visual Comparison of EnMAP and Sentinel-2 Profiles
    :align: center
 
-Once processed, the new Sentinel-2 profile will be generated. Comparing the two profiles visually demonstrates how the 224 bands of the EnMAP sensor are resampled into the broader multispectral bands of Sentinel-2. To load the new profile in the view, just click on the plus icon highlighted under the red circle, and then select the new field that you created (in this case 'sentinel') in the Field section of the dropdown and adjust the color and style according to your preference.
+Once processed, the new Sentinel-2 profile will be generated.
+Comparing the two profiles visually demonstrates how the 224 bands of the EnMAP sensor are resampled into the broader
+multispectral bands of Sentinel-2.
+To load the new profile in the view, just click on the plus icon highlighted under the red circle, and then select
+the new field that you created (in this case 'sentinel') in the Field section of the dropdown and adjust the color and
+style according to your preference.
+
+
+Field Calculator
+^^^^^^^^^^^^^^^^
+
+Simple calculations can be done using the *QGIS Field Calculator*.
+
+1. Open an attribute table
+2. Open the Field Calculator
+3. Set a new field name or the name of a field you like to update
+4. Use the spectral_math function to calculate new profiles using a python expression
+5. In a new field was created, use the layer settings to ensure it's editor widget is set to *Spectral Profile*
+
+*Example: Calculate reflectance profiles*
+
+Let's assume we have imported radiance measurements made with an ASD Field Spectrometer.
+For each measurement we have two radiance profiles: the radiance  profile of the white reference panel,
+and the target profile, e.g. of vegetation (https://eol.pages.cms.hu-berlin.de/geo_rs/S04_Lab_and_field_spectroscopy.html).
+
+
+
+To calculate the reflectance profile with values betweeen 0 and 100%,
+we like to calculate :math:`` devide target radiances by white reference radiances.
+
+1. Open an attribute table
+2. Click the Field Calculator button
+3. Create a
 
 .. _profile_fields:
 
