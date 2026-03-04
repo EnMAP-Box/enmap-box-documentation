@@ -42,7 +42,6 @@ the EnMAP-Box supports to :ref:`import profiles <speclib_import_profiles>` from 
 -----------------------------------------------
 
 
-
 The *Spectral Library Viewer* is the main tool to display spectral profiles in the EnMAP-Box.
 It shows profiles that can be stored in different :ref:`profile_fields` and in different vector layers.
 
@@ -142,17 +141,25 @@ Values in `xUnit` should use SI-symbols wherever possible, e.g. ``μm`` instead 
 Modify spectral profiles
 ------------------------
 
-The EnMAP-Box is highly generic in how it supports raster and spectral data. After importing spectral profiles from
-field measurements or a published sources the USGS Spectral Library, you may want to modify them as well.
+The EnMAP-Box is highly generic in how it supports raster and spectral data. After collecting spectral profiles
+from raster images or importing them from field measurements or other sources, like the USGS Spectral Library,
+you can modify them. The EnMAP Box offers different tools to ease this:
 
-With the EnMAP Box, spectral profiles can be modified using the *Spectral Processing Tool*, the *QGIS Field Calculator*,
-and of course Python.
+Profile Editor Widget
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The profile editor widget allow to change the values of a single spectral profile.
+
+1. Open the attribute table of a spectral library
+2. Activate the form view
+3. Activate the layer edit mode
+3. Select the JSON or Table view to edit a spectral profiles' values
 
 
-Spectral Processing
-^^^^^^^^^^^^^^^^^^^
+Spectral Processing Tools
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The *Spectral Processing* tool allows to apply QGIS Processing Algorithms, which process raster images, on
+The *Spectral Processing* tool allows to use *QGIS Processing Algorithms*, which process raster images, on
 spectral profiles.
 
 1. Open the Spectral Library viewer
@@ -214,6 +221,7 @@ style according to your preference.
 Field Calculator
 ^^^^^^^^^^^^^^^^
 
+
 Simple calculations can be done using the *QGIS Field Calculator*.
 
 1. Open an attribute table
@@ -238,6 +246,13 @@ we like to calculate :math:`` devide target radiances by white reference radianc
 3. Create a
 
 .. _profile_fields:
+
+Python Code
+^^^^^^^^^^^
+
+tbd.
+
+
 
 |profile_fields| Profile Fields
 -------------------------------
