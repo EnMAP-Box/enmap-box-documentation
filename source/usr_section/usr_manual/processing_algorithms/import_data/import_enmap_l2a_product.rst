@@ -35,21 +35,17 @@ Usage:
 
 **Parameters**
 
-:guilabel:`Metadata file` [file]
-    The metadata XML file associated with the product.
+:guilabel:`Metadata file or ZIP file` [file]
+    The metadata XML file or the ZIP file associated with the product.
     Instead of executing this algorithm, you may drag&drop the metadata XML file directly from your system file browser a\) onto the EnMAP-Box map view area, or b\) onto the Sensor Product Import panel.
 
-:guilabel:`Set bad bands` [boolean]
-    Whether to mark no data `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ as `bad bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-bad-band>`_.
-    Default: *True*
-
-:guilabel:`Exclude bad bands` [boolean]
-    Whether to exclude `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
+:guilabel:`Exclude no data bands` [boolean]
+    Whether to exclude no data `bands <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_.
     Default: *True*
 
 :guilabel:`Detector overlap region` [enum]
     Different options for handling the detector overlap region from 900 to 1000 nanometers. For the Moving average filter, a kernel size of 3 is used.
-    Default: *4*
+    Default: *3*
 
 **Outputs**
 
@@ -70,19 +66,11 @@ Usage:
     Arguments
     ----------------
 
-    file: Metadata file
+    file: Metadata file or ZIP file
         Argument type:    file
         Acceptable values:
             - Path to a file
-    setBadBands: Set bad bands (optional)
-        Default value:    true
-        Argument type:    boolean
-        Acceptable values:
-            - 1 for true/yes
-            - 0 for false/no
-            - field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
-            - expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
-    excludeBadBands: Exclude bad bands (optional)
+    excludeNoDataBands: Exclude no data bands (optional)
         Default value:    true
         Argument type:    boolean
         Acceptable values:
@@ -91,14 +79,13 @@ Usage:
             - field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
             - expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     detectorOverlap: Detector overlap region
-        Default value:    4
+        Default value:    3
         Argument type:    enum
         Available values:
             - 0: Order by detector (VNIR, SWIR)
             - 1: Order by wavelength (default order)
-            - 2: Moving average filter
-            - 3: VNIR only
-            - 4: SWIR only
+            - 2: VNIR only
+            - 3: SWIR only
         Acceptable values:
             - Number of selected option, e.g. '1'
             - Comma separated list of options, e.g. '1,3'

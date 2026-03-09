@@ -34,6 +34,9 @@ As a prerequisite, download `usgs_splib07.zip <https://www.sciencebase.gov/catal
 :guilabel:`Selected spectrometers` [enum]
     Filter spectra to be imported by spectrometer.
 
+:guilabel:`Spectral characteristic` [enum]
+    Select spectral `output <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ characteristic.
+
 **Outputs**
 
 :guilabel:`Output spectral library` [fileDestination]
@@ -74,9 +77,44 @@ As a prerequisite, download `usgs_splib07.zip <https://www.sciencebase.gov/catal
         Argument type:    enum
         Available values:
             - 0: Beckman 5270 (0.2 to 3 Âµm)
-            - 1: hi-resNG ASD (0.35 to 2.5 Âµm
-            - 2: Nicolet FTIR (0.1 to 21.6 Âµm
+            - 1: hi-resNG ASD (0.35 to 2.5 Âµm)
+            - 2: Nicolet FTIR (1 to 216 Âµm)
             - 3: AVIRIS (0.37 to 2.5 Âµm)
+        Acceptable values:
+            - Number of selected option, e.g. '1'
+            - Comma separated list of options, e.g. '1,3'
+    spectralCharacteristic: Spectral characteristic (optional)
+        Argument type:    enum
+        Available values:
+            - 0: original sampling positions
+            - 1: oversampled cubic-spline interpolation
+            - 2: cvASD â€“ ASD spectrometer
+            - 3: cvAVIRISc1995 â€“ AVIRIS-Classic 1995
+            - 4: cvAVIRISc1996 â€“ AVIRIS-Classic 1996
+            - 5: cvAVIRISc1997 â€“ AVIRIS-Classic 1997
+            - 6: cvAVIRISc1998 â€“ AVIRIS-Classic 1998
+            - 7: cvAVIRISc1999 â€“ AVIRIS-Classic 1999
+            - 8: cvAVIRISc2000 â€“ AVIRIS-Classic 2000
+            - 9: cvAVIRISc2001 â€“ AVIRIS-Classic 2001
+            - 10: cvAVIRISc2005 â€“ AVIRIS-Classic 2005
+            - 11: cvAVIRISc2006 â€“ AVIRIS-Classic 2006
+            - 12: cvAVIRISc2009 â€“ AVIRIS-Classic 2009
+            - 13: cvAVIRISc2010 â€“ AVIRIS-Classic 2010
+            - 14: cvAVIRISc2011 â€“ AVIRIS-Classic 2011
+            - 15: cvAVIRISc2012 â€“ AVIRIS-Classic 2012
+            - 16: cvAVIRISc2013 â€“ AVIRIS-Classic 2013
+            - 17: cvAVIRISc2014 â€“ AVIRIS-Classic 2014
+            - 18: cvHYMAP2007 â€“ HyMap 2007
+            - 19: cvHYMAP2014 â€“ HyMap 2014
+            - 20: cvHYPERION - Hyperion
+            - 21: cvVIMS â€“ Cassini VIMS
+            - 22: cvCRISM-global â€“ Mars Reconnaissance Orbiter CRISM (global mode)
+            - 23: cvCRISMjMTR3 â€“ Mars Reconnaissance Orbiter CRISM (targeted mode)
+            - 24: cvM3-target â€“ Moon Mineralogy Mapper
+            - 25: rsASTER â€“ ASTER
+            - 26: rsLandsat8 â€“ Landsat-8 OLI
+            - 27: rsSentinel2 â€“ Sentinel-2 MSI
+            - 28: rsWorldView3 â€“ WorldView3
         Acceptable values:
             - Number of selected option, e.g. '1'
             - Comma separated list of options, e.g. '1,3'

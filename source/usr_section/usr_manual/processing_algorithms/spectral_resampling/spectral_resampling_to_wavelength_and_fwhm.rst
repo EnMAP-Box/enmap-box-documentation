@@ -45,7 +45,7 @@ Usage:
 **Outputs**
 
 :guilabel:`Output spectral response function library` [fileDestination]
-    GEOJSON file destination.
+    GeoJSON file destination.
 
 :guilabel:`Output raster layer` [rasterDestination]
     Raster file destination.

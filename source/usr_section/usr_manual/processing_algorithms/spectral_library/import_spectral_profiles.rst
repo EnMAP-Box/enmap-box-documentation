@@ -22,56 +22,38 @@ Import spectral profiles
 **Parameters**
 
 :guilabel:`Input Sources` [multilayer]
-
-.. raw:: html
-
-       Files or folders to read spectral profiles from
+    Files or folders to read `spectral profiles <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-profile>`_ from
 
 :guilabel:`Input file type` [enum]
-
-.. raw:: html
-
-       Define the reader for the input files:
-    <ul>
-    <li><code>All</code>: Try to find the input format automatically. May be slow.</li>
-    <li><code>ASD</code>: Malvern Panalytical ASD Spectrometer (<a href="https://www.malvernpanalytical.com/en/products/product-range/asd-range">https://www.malvernpanalytical.com/en/products/product-range/asd-range</a>)</li>
-    <li><code>EcoSIS</code>: Ecological Spectral Information System (<a href="https://ecosis.org/">https://ecosis.org/</a>)</li>
-    <li><code>ENVI</code>: ENVI Spectral Library (<a href="https://www.nv5geospatialsoftware.com/docs/enviheaderfiles.html#HeaderFields">https://www.nv5geospatialsoftware.com/docs/enviheaderfiles.html#HeaderFields></a>)</li>
-    <li><code>GeoJSON</code>: GeoJSON</li>
-    <li><code>GeoPackage</code>: GeoPackage</li>
-    <li><code>SED</code>: Spectral Evolution (<a href="https://spectralevolution.com">https://spectralevolution.com</a>)</li>
-    <li><code>SVC</code>: SVC</li>
-    <li><code>ECOSTRESS</code>: NASA JPL ECOSTRESS Spectral Library (<a href="https://speclib.jpl.nasa.gov/library">https://speclib.jpl.nasa.gov/library</a>)</li>
-    </ul>
+    Define the reader for the input files:
+    \<ul\>
+    \<li\>\<code\>All\</code\>: Try to find the input format automatically. May be slow.\</li\>
+    \<li\>\<code\>ASD\</code\>: Malvern Panalytical ASD Spectrometer \(`https://www.malvernpanalytical.com/en/products/product-range/asd-range <https://www.malvernpanalytical.com/en/products/product-range/asd-range>`_\)\</li\>
+    \<li\>\<code\>EcoSIS\</code\>: Ecological Spectral Information System \(`https://ecosis.org/ <https://ecosis.org/>`_\)\</li\>
+    \<li\>\<code\>ENVI\</code\>: ENVI Spectral Library \(`https://www.nv5geospatialsoftware.com/docs/enviheaderfiles.html#HeaderFields> <https://www.nv5geospatialsoftware.com/docs/enviheaderfiles.html#HeaderFields>`_\)\</li\>
+    \<li\>\<code\>GeoJSON\</code\>: GeoJSON\</li\>
+    \<li\>\<code\>GeoPackage\</code\>: GeoPackage\</li\>
+    \<li\>\<code\>SED\</code\>: Spectral Evolution \(`https://spectralevolution.com <https://spectralevolution.com>`_\)\</li\>
+    \<li\>\<code\>SVC\</code\>: SVC\</li\>
+    \<li\>\<code\>ECOSTRESS\</code\>: NASA JPL ECOSTRESS Spectral Library \(`https://speclib.jpl.nasa.gov/library <https://speclib.jpl.nasa.gov/library>`_\)\</li\>
+    \</ul\>
     Default: *All*
 
 :guilabel:`Recursive search` [boolean]
-
-.. raw:: html
-
-       Search recursively in sub-folders
+    Search recursively in sub-folders
     Default: *False*
 
 :guilabel:`Relative paths` [boolean]
-
-.. raw:: html
-
-       Write filepaths relative to output spectral library.
+    Write filepaths relative to output `spectral library <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-library>`_.
     Default: *False*
 
 :guilabel:`Date-time format code` [string]
-
-.. raw:: html
-
-       Allows to set the date-time format code to read localized / none-ISO time stamps. For example, "%d.%m.%Y %H:%M:%S" to read "27.05.2025 09:39:32". <br>See <a href="https://docs.python.org/3/library/datetime.html#format-codes">https://docs.python.org/3/library/datetime.html#format-codes</a> for details.
+    Allows to set the date-time format code to read localized / none-ISO time stamps.For example, "%d.%m.%`Y <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-y>`_ %H:%M:%S" to read "27.05.2025 09:39:32". \<br\>See `https://docs.python.org/3/library/datetime.html#format-codes <https://docs.python.org/3/library/datetime.html#format-codes>`_ for details.
 
 **Outputs**
 
 :guilabel:`Spectral library` [sink]
-
-.. raw:: html
-
-       Vector layer with one or more fields that contain spectral profiles
+    `Vector layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-vector-layer>`_ with one or more `fields <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-field>`_ that contain `spectral profiles <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-profile>`_
     Default: *TEMPORARY_OUTPUT*
 
 ..
