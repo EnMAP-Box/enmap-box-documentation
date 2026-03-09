@@ -479,4 +479,3 @@ EcoSIS Spectral Library
    :width: 28px
 .. |viewlist_spectrumdock| image:: /img/icons/viewlist_spectrumdock.svg
    :width: 28px
-

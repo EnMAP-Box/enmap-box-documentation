@@ -75,9 +75,9 @@ Selecting vector features in a map or attribute table does highlight the related
 ---------------------------------------------
 
 The *Attribute Table* widget can be used to inspect and modify profile attributes. It
-displays vector data either in a *table view* or a *form view*.
-The form view shows attribute values in specialized widgets, that can be configured in the layer properties.
-The *SpectralProfile* form allows to show spectral profile values as graph, JSON text, or in a small table.
+displays vector data either in *table view* |mActionOpenTable| or using the *form view* |mActionFormView|.
+The form view for *Spectral Profile* fields allows to show spectral profile values as
+graph, JSON document or in a table.
 
 .. tabs::
 
@@ -89,7 +89,7 @@ The *SpectralProfile* form allows to show spectral profile values as graph, JSON
 
     .. tab:: |mActionFormView| Form View
 
-        .. figure:: img/speclibs/attributetable_formview.png
+        .. figure:: img/speclibs/speclib_table_formview.gif
 
             Attribute table widget, showing spectral library attributes in form view.
 
@@ -141,81 +141,25 @@ Values in `xUnit` should use SI-symbols wherever possible, e.g. ``μm`` instead 
 Modify spectral profiles
 ------------------------
 
-The EnMAP-Box is highly generic in how it supports raster and spectral data. After collecting spectral profiles
-from raster images or importing them from field measurements or other sources, like the USGS Spectral Library,
-you can modify them. The EnMAP Box offers different tools to ease this:
+The EnMAP-Box is highly generic in how it supports raster and spectral data.
+After collecting spectral profiles, e.g. from raster images, by importing them from field measurements
+or sources like the USGS Spectral Library, the EnMAP Box offers different ways to modify them.
 
-Profile Editor Widget
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Profile Editor
+^^^^^^^^^^^^^^
 
-The profile editor widget allow to change the values of a single spectral profile.
+Using the attribute table widget, the *Form View* |mActionFormView| for *Spectral Profile* fields can be used
+to edit profile values, either using an JSON editor or a table that lists the profile values.
 
 1. Open the attribute table of a spectral library
-2. Activate the form view
+2. Activate the form view |mActionFormView|
 3. Activate the layer edit mode
-3. Select the JSON or Table view to edit a spectral profiles' values
+4. Select the JSON or Table view
+5. Edit the profile values
 
+.. figure:: img/speclibs/speclib_table_formview.gif
 
-Spectral Processing Tools
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The *Spectral Processing* tool allows to use *QGIS Processing Algorithms*, which process raster images, on
-spectral profiles.
-
-1. Open the Spectral Library viewer
-2. In case of multiple profile views, ensure that you have selected a view whose library you like to process
-3. Click  the *Spectral Processing* icon to open the Spectral Processing Dialog.
-4. Select the processing algorithm
-5. Set the processing parameters. Vector field values are mapped to temporary raster images with 1 line as following:
-
-   * spectral profile field -> float raster with n > 1 bands
-   * int / float field -> int / float raster with n = 1 band
-   * string / other fields -> int classification images with n  = 1 band. Each unique string value is represented as by
-     an individual class value
-
-6. Set output field names.
-7. Click *Run* to start the processing. Created raster outputs will be mapped to existing / new fields as following:
-
-   * raster with n > 1 band -> spectral profile
-   * raster with n = 1 band -> int / float column
-   * classification raster with n = 1 band -> string field with class names
-
-
-
-*Example: Resample EnMAP-Profiles to Sentinel-2*
-
-To demonstrate this, we will resample collected EnMAP profiles to match the Sentinel-2 sensor.
-Showing the transition from EnMAP to Sentinel-2 highlights the clear visual differences between the two sensor specifications.
-
-1. Open the spectral library viewer and load your EnMAP profiles.
-2. Click the **Spectral Processing** icon in the top toolbar of the viewer.
-
-.. image:: img/speclibs/spectral_processing_button.png
-   :alt: Spectral Processing Button in the Toolbar
-   :align: center
-
-3. The **Spectral Processing Dialog** will open.
-4. Click the Algorithm button, select **Spectral resampling (to Sentinel-2A MSI)** or
-   **Spectral resampling (to Sentinel-2B MSI)**.
-5. Under Parameters, set your original EnMAP profile as the **Spectral raster layer**.
-6. Choose a destination name for your **Output raster layer**.
-
-.. image:: img/speclibs/spectral_processing_dialog.png
-   :alt: Spectral Processing Dialog Box
-   :align: center
-
-7. Click **Run**.
-
-.. image:: img/speclibs/spectral_sampling_sentinel.png
-   :alt: Visual Comparison of EnMAP and Sentinel-2 Profiles
-   :align: center
-
-Once processed, the new Sentinel-2 profile will be generated.
-Comparing the two profiles visually demonstrates how the 224 bands of the EnMAP sensor are resampled into the broader
-multispectral bands of Sentinel-2.
-To load the new profile in the view, just click on the plus icon highlighted under the red circle, and then select
-the new field that you created (in this case 'sentinel') in the Field section of the dropdown and adjust the color and
-style according to your preference.
+        Setting an outlier value to NaN.
 
 
 Field Calculator
@@ -227,31 +171,123 @@ Simple calculations can be done using the *QGIS Field Calculator*.
 1. Open an attribute table
 2. Open the Field Calculator
 3. Set a new field name or the name of a field you like to update
-4. Use the spectral_math function to calculate new profiles using a python expression
-5. In a new field was created, use the layer settings to ensure it's editor widget is set to *Spectral Profile*
+4. Use the *spectral_math* function to calculate new profiles using a python expression. Ensure that the
+   output type meets the field type.
+5. If a new field was created, use the layer settings to ensure that the editor widget type is set to *Spectral Profile*
 
 *Example: Calculate reflectance profiles*
 
-Let's assume we have imported radiance measurements made with an ASD Field Spectrometer.
-For each measurement we have two radiance profiles: the radiance  profile of the white reference panel,
-and the target profile, e.g. of vegetation (https://eol.pages.cms.hu-berlin.de/geo_rs/S04_Lab_and_field_spectroscopy.html).
+Let's assume we have imported radiance measurements made with an ASD Field Spectrometer (for example the `*.asd` files available
+`here <https://github.com/EnMAP-Box/qgispluginsupport/tree/master/qpstestdata/asd/gps>`_).
 
+For each measurement we have the radiance profile of the white reference panel (*reference*) and the target surface (*target*).
+To obtain the surface reflectance, we like to divide the target radiance by the corresponding white reference radiance
+(https://eol.pages.cms.hu-berlin.de/geo_rs/S04_Lab_and_field_spectroscopy.html).
 
-
-To calculate the reflectance profile with values betweeen 0 and 100%,
-we like to calculate :math:`` devide target radiances by white reference radiances.
 
 1. Open an attribute table
-2. Click the Field Calculator button
-3. Create a
+2. Open the *Field Calculator* |mActionCalculateField|
+3. Define the output field. This can be a new field or an existing one.
+4. Use the *spectral_math* function to calculate new profiles
 
-.. _profile_fields:
+   * define the input profiles. E.g. let `p1` be the field with the reference radiance profiles and
+     `p2` the field with target radiance profiles.
+   * define a python expression that calculates output profiles. For example:
+     ``y = y2 / y1`` to divide target radiance by the reference radiance and obtain a reflectance profile.
+   * ensure that the *spectral_math* functions output type meets the type of the output field.
+     For example, use ``format='text'`` if profiles are written into a string / varchar field.
+
+5. Press 'OK'
+
+
+.. figure:: img/speclibs/speclib_fieldcalculator_spectralmath.png
+
+    QGIS field calculator with spectral_math function to calculate profile reflectances.
+
+
+The *spectral_math* function makes input `profile data <profile_data>`_ available to the python expression as following:
+
+* `y` -> ``y<n>``, 1D numpy array, e.g. ``y1`` for y values of the first input profile
+* `x` -> ``x<n>``, 1D numpy array, e.g. ``x1`` for x values of the first input profile
+* `xUnit` -> ``xUnit<n>``, string, e.g. ``xUnit1`` for the xUnit string of the first input profile
+
+The output profile is specified using the following variables and default values:
+
+* `y` numpy array or list with y values, defaults to `y1`
+* `x` numpy array or list with x values, defaults to `x1`
+* `xUnit` string with x unit, e.g. `nanometers`, , defaults to `xUnit1`
+
+
+.. figure:: img/speclibs/speclib_field_calculator_reflectance.gif
+
+    Calculating profile reflectances using the QGIS Field Calculator.
+
+
+Spectral Processing
+^^^^^^^^^^^^^^^^^^^
+
+The *Spectral Processing* tool uses *QGIS Processing Algorithms* to process spectral profiles.
+
+1. Open an EnMAP-Box Spectral Library viewer
+2. Within the plot settings tree, select a profile source which you like to process.
+3. Click the *Spectral Processing* button |profile_processing| to open the Spectral Processing Dialog.
+4. Select a processing algorithm that uses raster layers as input
+5. Set your processing parameters.
+6. Define the processing output. File names will be mapped into existing or new vector layer fields.
+7. Click *Run* to start the processing.
+
+.. figure:: img/speclibs/speclib_resampling_landsat.gif
+
+    Using the Spectral Processing dialog to resample EnMAP profiles to Landsat.
+
+Vector attributes are mapped to temporary raster files, which then are input to QGIS Processing Algorithms.
+The mapping is done as following:
+
+.. list-table:: Mapping of vector attributes field values to temporary raster files
+    :header-rows: 1
+
+    *   - Field Type
+        - Raster File
+    *   - Spectral Profile
+        - float raster with n > 1 bands
+    *   - int / float
+        - int / float raster with n = 1 band
+    *   - string / any other datatype
+        - int classification image with n = 1 band. <br> Each unique string value is an individual class value
+
+If the QGIS processing algorithm produces raster files, their values are written back into the vector layer as following:
+
+.. list-table:: Mapping of raster files into vector layer attribute fields
+    :header-rows: 1
+
+    *   - Raster File
+        - Vector Field
+    *   - n > 1 bands
+        - Spectral profile
+    *   - n = 1 band, int / float
+        - int / float
+    *   - n = 1 band, classification
+        - string field containing the class name of each input pixel
+
+
 
 Python Code
 ^^^^^^^^^^^
 
-tbd.
 
+
+.. tabs::
+
+    .. tab:: QGIS API
+
+        .. todo:: Add example
+
+    .. tab:: GDAL only
+
+        .. todo:: Add example
+
+
+.. _profile_fields:
 
 
 |profile_fields| Profile Fields
@@ -443,6 +479,8 @@ to get a profile name from.
 
 .. |legend| image:: /img/icons/legend.svg
    :width: 28px
+.. |mActionCalculateField| image:: /img/icons/mActionCalculateField.svg
+   :width: 28px
 .. |mActionFormView| image:: /img/icons/mActionFormView.svg
    :width: 28px
 .. |mActionOpenTable| image:: /img/icons/mActionOpenTable.svg
@@ -450,6 +488,8 @@ to get a profile name from.
 .. |profile| image:: /img/icons/profile.svg
    :width: 28px
 .. |profile_fields| image:: /img/icons/profile_fields.svg
+   :width: 28px
+.. |profile_processing| image:: /img/icons/profile_processing.svg
    :width: 28px
 .. |select_location| image:: /img/icons/select_location.svg
    :width: 28px
