@@ -46,7 +46,7 @@ Tile EnMAP L2A product into given tiling scheme.
 
 :guilabel:`Detector overlap region` [enum]
     Different options for handling the detector overlap region from 900 to 1000 nanometers. For the Moving average filter, a kernel size of 3 is used.
-    Default: *4*
+    Default: *3*
 
 :guilabel:`Output basename` [string]
     `Output <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-output>`_ basename. If not specified, the original basename is used.
@@ -106,14 +106,13 @@ Tile EnMAP L2A product into given tiling scheme.
             - field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
             - expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     detectorOverlap: Detector overlap region
-        Default value:    4
+        Default value:    3
         Argument type:    enum
         Available values:
             - 0: Order by detector (VNIR, SWIR)
             - 1: Order by wavelength (default order)
-            - 2: Moving average filter
-            - 3: VNIR only
-            - 4: SWIR only
+            - 2: VNIR only
+            - 3: SWIR only
         Acceptable values:
             - Number of selected option, e.g. '1'
             - Comma separated list of options, e.g. '1,3'
