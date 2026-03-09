@@ -27,8 +27,8 @@ formats like CSV text files or the ENVI Spectral library format, this has some a
   its own advantages, often specific to the project, user and metadata to be stored together with
   spectral profiles.
 
-Since spectral profiles and their metadata are usually offered in different formats (ENVI, ASD, text files, ...)
-the EnMAP-Box supports to :ref:`import profiles <speclib_import_profiles>` from wide range of file types.
+Since spectral profiles and their metadata are usually offered in different formats (ENVI, ASD, text files, ...),
+the EnMAP-Box supports :ref:`importing profiles <speclib_import_profiles>` from a wide range of file types.
 
 .. figure:: img/speclibs/overview.png
     :width: 60%
@@ -46,12 +46,12 @@ The *Spectral Library Viewer* is the main tool to display spectral profiles in t
 It shows profiles that can be stored in different :ref:`profile_fields` and in different vector layers.
 
 The plot settings panel on the right of the viewer is shown by activating the |legend| button.
-The panel is used to setup one or multiple *profile visualizations*. Each defines:
+The panel is used to set up one or multiple *profile visualizations*. Each defines:
 
 * The vector layer and :ref:`profile_fields`  to read the spectral profiles
-* The profile styling: line type, symbol type, color. The color can be set static or using a QGIS expression.
+* The profile styling: line type, symbol type, color. The color can be set statically or using a QGIS expression.
 * The profile name: a QGIS expression that generates the name that is used in the legend
-* An optional filter, for example to display only profiles matching with a criterion like `class_type='vegetation'`
+* An optional filter, for example to display only profiles matching a criterion like `class_type='vegetation'`
 
 
 The *General Settings* node allows to adjust the general appearance of the plot, e.g. by
@@ -93,15 +93,15 @@ graph, JSON document or in a table.
 
             Attribute table widget, showing spectral library attributes in form view.
 
-The attribute table widget can be opened from different places, e.g. the context menu of a
-vector data source in the data sources panel or a vector layer in a layer tree of the data view panel.
+The attribute table widget can be opened from different places, e.g., the context menu of a
+vector data source in the data sources panel or a vector layer in the layer tree of the data view panel.
 
 In the Spectral Library Viewer it can be selected from the toolbar and the context menu of
 a profile visualization node, whose vector layer will then be opened in the attribute table widget.
 
 .. figure:: img/speclibs/speclibviewer_open_attributetable.png
 
-    Opening the attribute for a vector layer whose profiles are shown in the spectral library viewer.
+    Opening the attribute table for a vector layer whose profiles are shown in the spectral library viewer.
 
 
 .. _profile_data:
@@ -123,10 +123,10 @@ In addition it is possible to specify:
 * ``x`` a list of position values along the x-axis, e.g. the band wavelength
 * ``xUnit`` a string describing the unit of the x values
 * ``yUnit`` a string describing the unit of the y values
-* ``bbl`` a list of bad band multipliers values:
+* ``bbl`` a list of bad band multiplier values
 
-If defined, the lists for ``x`` and ``bbl`` need to have the same length like ``y``.
-Values in `xUnit` should use SI-symbols wherever possible, e.g. ``μm`` instead of ``um`` or ``micrometers``.
+If defined, the lists for ``x`` and ``bbl`` need to have the same length as ``y``.
+Values in `xUnit` should use SI symbols wherever possible, e.g., ``μm`` instead of ``um`` or ``micrometers``.
 
 .. code-block:: text
 
@@ -149,7 +149,7 @@ Profile Editor
 ^^^^^^^^^^^^^^
 
 Using the attribute table widget, the *Form View* |mActionFormView| for *Spectral Profile* fields can be used
-to edit profile values, either using an JSON editor or a table that lists the profile values.
+to edit profile values, either using a JSON editor or a table that lists the profile values.
 
 1. Open the attribute table of a spectral library
 2. Activate the form view |mActionFormView|
@@ -170,18 +170,18 @@ Simple calculations can be done using the *QGIS Field Calculator*.
 
 1. Open an attribute table
 2. Open the Field Calculator
-3. Set a new field name or the name of a field you like to update
-4. Use the *spectral_math* function to calculate new profiles using a python expression. Ensure that the
+3. Set a new field name or the name of a field you would like to update
+4. Use the *spectral_math* function to calculate new profiles using a Python expression. Ensure that the
    output type meets the field type.
 5. If a new field was created, use the layer settings to ensure that the editor widget type is set to *Spectral Profile*
 
 *Example: Calculate reflectance profiles*
 
-Let's assume we have imported radiance measurements made with an ASD Field Spectrometer (for example the `*.asd` files available
+Let's assume we have imported radiance measurements made with an ASD Field Spectrometer (for example, the `*.asd` files available
 `here <https://github.com/EnMAP-Box/qgispluginsupport/tree/master/qpstestdata/asd/gps>`_).
 
 For each measurement we have the radiance profile of the white reference panel (*reference*) and the target surface (*target*).
-To obtain the surface reflectance, we like to divide the target radiance by the corresponding white reference radiance
+To obtain the surface reflectance, we need to divide the target radiance by the corresponding white reference radiance
 (https://eol.pages.cms.hu-berlin.de/geo_rs/S04_Lab_and_field_spectroscopy.html).
 
 
@@ -190,12 +190,12 @@ To obtain the surface reflectance, we like to divide the target radiance by the 
 3. Define the output field. This can be a new field or an existing one.
 4. Use the *spectral_math* function to calculate new profiles
 
-   * define the input profiles. E.g. let `p1` be the field with the reference radiance profiles and
+   * define the input profiles. E.g., let `p1` be the field with the reference radiance profiles and
      `p2` the field with target radiance profiles.
-   * define a python expression that calculates output profiles. For example:
+   * define a Python expression that calculates output profiles. For example:
      ``y = y2 / y1`` to divide target radiance by the reference radiance and obtain a reflectance profile.
-   * ensure that the *spectral_math* functions output type meets the type of the output field.
-     For example, use ``format='text'`` if profiles are written into a string / varchar field.
+   * ensure that the *spectral_math* function's output type meets the type of the output field.
+     For example, use ``format='text'`` if profiles are written into a string/varchar field.
 
 5. Press 'OK'
 
@@ -205,17 +205,17 @@ To obtain the surface reflectance, we like to divide the target radiance by the 
     QGIS field calculator with spectral_math function to calculate profile reflectances.
 
 
-The *spectral_math* function makes input `profile data <profile_data>`_ available to the python expression as following:
+The *spectral_math* function makes input `profile data <profile_data>`_ available to the Python expression as follows:
 
-* `y` -> ``y<n>``, 1D numpy array, e.g. ``y1`` for y values of the first input profile
-* `x` -> ``x<n>``, 1D numpy array, e.g. ``x1`` for x values of the first input profile
-* `xUnit` -> ``xUnit<n>``, string, e.g. ``xUnit1`` for the xUnit string of the first input profile
+* `y` -> ``y<n>``, 1D numpy array, e.g., ``y1`` for y values of the first input profile
+* `x` -> ``x<n>``, 1D numpy array, e.g., ``x1`` for x values of the first input profile
+* `xUnit` -> ``xUnit<n>``, string, e.g., ``xUnit1`` for the xUnit string of the first input profile
 
 The output profile is specified using the following variables and default values:
 
 * `y` numpy array or list with y values, defaults to `y1`
 * `x` numpy array or list with x values, defaults to `x1`
-* `xUnit` string with x unit, e.g. `nanometers`, , defaults to `xUnit1`
+* `xUnit` string with x unit, e.g., `nanometers`, defaults to `xUnit1`
 
 
 .. figure:: img/speclibs/speclib_field_calculator_reflectance.gif
@@ -229,19 +229,29 @@ Spectral Processing
 The *Spectral Processing* tool uses *QGIS Processing Algorithms* to process spectral profiles.
 
 1. Open an EnMAP-Box Spectral Library viewer
-2. Within the plot settings tree, select a profile source which you like to process.
+2. Within the plot settings tree, select a profile source you would like to process.
 3. Click the *Spectral Processing* button |profile_processing| to open the Spectral Processing Dialog.
 4. Select a processing algorithm that uses raster layers as input
 5. Set your processing parameters.
 6. Define the processing output. File names will be mapped into existing or new vector layer fields.
 7. Click *Run* to start the processing.
 
+
 .. figure:: img/speclibs/speclib_resampling_landsat.gif
 
     Using the Spectral Processing dialog to resample EnMAP profiles to Landsat.
 
-Vector attributes are mapped to temporary raster files, which then are input to QGIS Processing Algorithms.
-The mapping is done as following:
+.. figure:: img/speclibs/spectral_processing_workflow.png
+
+    The data flow handled by the Spectral Processing Dialog to use vector attribute values as raster inputs for
+    QGIS Processing algorithms.
+
+
+The Spectral Processing Dialog maps the attributes of a spectral library vector layer to temporary raster files.
+These files are then used as input for QGIS Processing Algorithms. Created raster outputs are converted back into
+attribute values for the spectral library vector layer. For example, the attribute fields of a spectral library
+with n = 20 features (aka rows in the Table view) are converted into rasters with one line and 20 pixels.
+The data type and number of bands of these temporary raster files depend on the input vector attributes.
 
 .. list-table:: Mapping of vector attributes field values to temporary raster files
     :header-rows: 1
@@ -252,12 +262,10 @@ The mapping is done as following:
         - float raster with n > 1 bands
     *   - int / float
         - int / float raster with n = 1 band
-    *   - string / any other datatype
+    *   - string / any other data type
         - int classification image with n = 1 band. <br> Each unique string value is an individual class value
 
-If the QGIS processing algorithm produces raster files, their values are written back into the vector layer as following:
-
-.. list-table:: Mapping of raster files into vector layer attribute fields
+.. list-table:: Mapping of raster outputs into vector layer attributes
     :header-rows: 1
 
     *   - Raster File
@@ -319,12 +327,12 @@ The EnMAP-Box can read and write profile data into any vector layer field of the
       - `QByteArray <https://doc.qt.io/qt-6/qbytearray.html>`_
       - deprecated, please use TEXT, VARCHAR or JSON data types
 
-However, many text, JSON and BLOB may be used for different purposes. It is therefore required
+However, many text, JSON, and BLOB fields may be used for different purposes. It is therefore required
 to flag those fields that are used to store spectral profiles by setting the field's editor
-widget type to *SpectralProfile*. This can be done in the *Layer Property Dialog* or Python.
+widget type to *SpectralProfile*. This can be done in the *Layer Property Dialog* or via Python.
 
-A \*.qml sidecar file, e.g. `myspeclib.qml` next to `myspeclib.gpkg`, allows to
-save layer properties like the editor widget type persistently. This way QGIS can restore it
+A \*.qml sidecar file, e.g., `myspeclib.qml` next to `myspeclib.gpkg`, allows you to
+save layer properties like the editor widget type persistently. This way QGIS can restore them
 automatically when loading the vector source again.
 
 
@@ -344,8 +352,8 @@ automatically when loading the vector source again.
 
     .. tab:: PyQGIS
 
-        This exmaple shows how to use the QGIS Python API to set the editor widget type
-        to `SpectralProfiles` and to save these settings as default style.
+        This example shows how to use the QGIS Python API to set the editor widget type
+        to `SpectralProfiles` and save these settings as the default style.
 
         .. code-block:: python
 
@@ -361,7 +369,7 @@ automatically when loading the vector source again.
 
     .. tab:: QML
 
-        A minimal QML file to ensure, that data from the vector field "profiles" is used as profile field.
+        A minimal QML file to ensure that data from the vector field "profiles" is used as a profile field.
 
         .. code-block:: xml
 
@@ -380,11 +388,11 @@ automatically when loading the vector source again.
 
 
 
-The profile fields of vector layers that opened in the EnMAP-Box, e.g. as layer in a map, can be selected as source for a profile visualization
+The profile fields of vector layers that are opened in the EnMAP-Box, e.g., as a layer in a map, can be selected as a source for a profile visualization
 
 .. figure:: img/speclibs/speclibview_multiple_speclibs.png
 
-    Selection of a profile field as source for a visualization.
+    Selection of a profile field as a source for a visualization.
 
 .. _speclib_collect_profiles:
 
@@ -395,11 +403,11 @@ The profile fields of vector layers that opened in the EnMAP-Box, e.g. as layer 
 To collect spectral profiles from raster layers, go into the toolbar and
 activate the *Identify map tool* |select_location| with option *Identify pixel profiles* |profile|.
 
-Now click on a raster pixel. By default, this create a new in-memory vector layer "Profiles #1" and opens a spectral library view to show it. The *Spectral Profile Sources* panel can be used to specify how profiles are collected, e.g. from which raster layer, and to which vector layer field they will be written. In addition it allows to specify values for other fields of the vector layer too, e.g. to generate a profile name automatically.
+Now click on a raster pixel. By default, this creates a new in-memory vector layer "Profiles #1" and opens a spectral library view to show it. The *Spectral Profile Sources* panel can be used to specify how profiles are collected, e.g., from which raster layer, and to which vector layer field they will be written. In addition, it allows you to specify values for other fields of the vector layer, e.g., to generate a profile name automatically.
 
 .. figure:: img/speclibs/profilesourcepanel.png
 
-    The spectral profile source panel described how profiles are collected and written to vector layers.
+    The spectral profile source panel describes how profiles are collected and written to vector layers.
 
 
 .. _speclib_import_profiles:
