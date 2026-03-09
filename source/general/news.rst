@@ -13,10 +13,10 @@ Upcoming Events
         - Location
         - Comments
 
-    *   - Webinar `Applications and Commercialisation Potential of EnMAP <https://www.enmap.org/data/news/EnMAP-Webinar_Preliminary_Agenda_Webinar_en01.pdf>`_
-        - 29.+30. Jan 2026
-        - online
-        - Registration: https://dlr-ar.webex.com/weblink/register/r01da31f2416852298cdded24a28885e1
+    *   - `UNOOSA/UNU-INWEH/CEOS Training on EO for Resilience and Humanitarian Aid <https://www.unoosa.org/oosa/en/ourwork/psa/schedule/2026/unoosa-unuinweh-ceos-workshop.html>`_
+        - 23.-27. March 2026
+        - United Nations Office for Outer Space Affairs, Vienna, Austria
+        - EnMAP-Box Demo Thu 26. March 11:00 - 12:30 Practical: Access and Initial Landcover and Crop Type Mapping using Sentinel-2 Multispectral Data.
 
     *   - `FOSSGIS 2026 <https://www.fossgis-konferenz.de/2026>`_
         - 25.-28. March 2026
@@ -27,6 +27,19 @@ Upcoming Events
         - 2.-5. June 2026
         - Helsinki Metropolitan area, Finland
         - Tutorial day 5. June `Environmental Mapping and Analysis Program (EnMAP) tutorials <https://is.earsel.org/workshop/14-IS-Helsinki2026/tutorials/>`_
+
+EnMAP Webinar
+=============
+*07. Feb 2026*
+
+On 29th and 30th January 2025 two
+`EnMAP Webinars <https://www.enmap.org/data/news/EnMAP-Webinar_Preliminary_Agenda_Webinar_en01.pdf>`_
+informed the user community about the EnMAP mission, EnMAP Applications and the commercialisation potential of EnMAP.
+Examples of scientific applications, online education materials (HyperEDU) and other
+EnMAP funded projects were presented. Participants learned how they can task EnMAP-observations and
+get data access to archives observations, as well how to visualize and analyse the using the EnMAP-Box
+The webinars had a high resonance with >130 international participants online each day.
+
 
 Release EnMAP-Box 3.17
 ======================
