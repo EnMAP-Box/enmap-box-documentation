@@ -131,6 +131,10 @@ Visualization
         * maps can be linked spatially, e.g. to always have the same map scale, show the same map-center, or both
         * raster layers can be linked spectrally to always show band combinations with similar wavelengths
 
+        .. image:: img/rasterlayer_styling.gif
+            :width: 100%
+            :align: center
+
     .. tab:: Hyperspectral Data
 
         *Think in wavelengths, not band numbers*
@@ -212,8 +216,12 @@ The EnMAP box offers a wide range of options for creating spectral libraries and
 * Query your profiles using powerful SQL expressions
 * Plot profiles from different instruments simultaneously against wavelength units, e.g. nanometers, micrometers
 
-.. figure:: /usr_section/application_tutorials/spectral_library/img/add_profiles.gif
+.. figure:: img/spectral_library_profiles.gif
     :width: 100%
+
+..
+    .. figure:: img/spectral_library_enmap_vs_sentinel2.gif
+        :width: 100%
 
 Algorithms
 ==========
