@@ -162,8 +162,8 @@ Visualization
 
               Visualize two bands using a 2d color ramp.
 
-              .. image:: /usr_section/usr_manual/img/BivariateColorRasterRenderer.png
-                  :width: 50%
+              .. image:: /usr_section/usr_manual/img/rasrender_bivariate.gif
+                  :width: 100%
                   :align: center
 
             * **Class-fraction or probability rendering**
@@ -178,24 +178,24 @@ Visualization
 
               Visualizes 3 bands using the HSV (Hue, Saturation, Value/Black) color model
 
-              .. image:: /usr_section/usr_manual/img/HSVColorRasterRenderer.png
-                  :width: 50%
+              .. image:: /usr_section/usr_manual/img/rasrender_HSV.gif
+                  :width: 100%
                   :align: center
 
             * **CMYK Color Raster Renderer**
 
               Visualizes 4 bands using the CMYK (Cyan, Magenta, Yellow, and Key/Black) color model
 
-              .. image:: /usr_section/usr_manual/img/CMYKColorRasterRenderer.png
-                  :width: 50%
+              .. image:: /usr_section/usr_manual/img/rasrender_CMYK.gif
+                  :width: 100%
                   :align: center
 
             * **Decorelation Stretch Renderer**
 
               Removing the high correlation between 3 band for a more colorful color composite image.
 
-              .. image:: /usr_section/usr_manual/img/DecorrelationStretchRenderer.png
-                  :width: 50%
+              .. image:: /usr_section/usr_manual/img/rasrender_decorrelation.gif
+                  :width: 100%
                   :align: center
 
 Spectral Libraries

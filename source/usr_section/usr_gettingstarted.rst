@@ -44,7 +44,7 @@ You can load an :ref:`example dataset <example_data>` into your project by selec
 On a fresh installation you will be asked to download the dataset, confirm with :guilabel:`OK`.
 The data will be added automatically into a single map view and will be listed in the :guilabel:`Data Sources` panel as well.
 
-    .. figure:: ../img/add_exampledata.png
+    .. figure:: ../img/add_exampledata.gif
         :width: 100%
         :align: center
 
@@ -135,9 +135,7 @@ classification raster, i.e., we are going to rasterize the vector dataset.
 
 * :ref:`Spectral Libraries <speclib>`
 * :ref:`Download EnMAP data <data_access>`
-* Application Examples
-    * :ref:`Classification Workflow <classification_workflow_app>`
-    * :ref:`Regression <tutorial_biomass>`
+* :ref:`Check out Application Tutorials <appli_tuto>`
 
 .. seealso::
 
