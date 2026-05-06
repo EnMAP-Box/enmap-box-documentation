@@ -162,7 +162,7 @@ Visualization
 
               Visualize two bands using a 2d color ramp.
 
-              .. image:: /usr_section/usr_manual/img/rasrender_bivariate.gif
+              .. image:: /usr_section/usr_manual/img/rasrenderer_bivariate.gif
                   :width: 100%
                   :align: center
 
@@ -170,15 +170,15 @@ Visualization
 
               Visualizes multiple class factions/probabilities at the same time using the original class colors.
 
-              .. image:: /usr_section/usr_manual/img//ClassFractionRenderer.png
-                  :width: 50%
+              .. image:: /usr_section/usr_manual/img/rasrenderer_classfraction.gif
+                  :width: 100%
                   :align: center
 
             * **HSV color rendering**
 
               Visualizes 3 bands using the HSV (Hue, Saturation, Value/Black) color model
 
-              .. image:: /usr_section/usr_manual/img/rasrender_HSV.gif
+              .. image:: /usr_section/usr_manual/img/rasrenderer_HSV.gif
                   :width: 100%
                   :align: center
 
@@ -186,7 +186,7 @@ Visualization
 
               Visualizes 4 bands using the CMYK (Cyan, Magenta, Yellow, and Key/Black) color model
 
-              .. image:: /usr_section/usr_manual/img/rasrender_CMYK.gif
+              .. image:: /usr_section/usr_manual/img/rasrenderer_CMYK.gif
                   :width: 100%
                   :align: center
 
@@ -194,7 +194,7 @@ Visualization
 
               Removing the high correlation between 3 band for a more colorful color composite image.
 
-              .. image:: /usr_section/usr_manual/img/rasrender_decorrelation.gif
+              .. image:: /usr_section/usr_manual/img/rasrenderer_decorrelation.gif
                   :width: 100%
                   :align: center
 
