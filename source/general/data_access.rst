@@ -1,13 +1,16 @@
 .. _data_access:
 
-==============
+===========
+Data Access
+===========
+
 DLR Geoservice
-==============
+--------------
 
 The DLR Earth Observation Center (EOC) Geoservice provides programmatic and immediate access to Earth Observation datasets, including EnMAP Hyperspectral Imagery (HSI), without the need for manual downloading through the web portal.
 
 1. Registering for DLR Geoservice
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To access and download EnMAP data, you must have a registered account.
 
@@ -20,7 +23,7 @@ To access and download EnMAP data, you must have a registered account.
 3. Fill out your affiliation details and accept the EnMAP Data License Agreement.
 
 2. Connecting from QGIS with Native STAC
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can access the DLR Geoservice directly within QGIS using its native SpatioTemporal Asset Catalog (STAC) support. This is the most stable method for connecting to OGC-compliant APIs.
 
@@ -44,7 +47,7 @@ You can access the DLR Geoservice directly within QGIS using its native SpatioTe
    QGIS STAC Connection Setup Dialog
 
 3. Searching for EnMAP HSI Data (Example: New Delhi)
-----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once connected, you can query specific collections using a spatial subset. Here is how to find EnMAP Level 2A data over New Delhi:
 
@@ -69,7 +72,7 @@ Once connected, you can query specific collections using a spatial subset. Here 
    Searching for New Delhi EnMAP Data via Data Source Manager
 
 Troubleshooting
----------------
+^^^^^^^^^^^^^^^
 
 Because the Geoservice provides direct access to live institutional servers, you may occasionally experience connection timeouts.
 
@@ -77,9 +80,8 @@ Because the Geoservice provides direct access to live institutional servers, you
    **Encountering a "Bad Gateway" (HTTP 502) Error?**
    This indicates that your QGIS connection is configured perfectly, but the DLR server is temporarily undergoing maintenance or experiencing heavy load. If this occurs, verify your URL is correct, wait a short while, and try expanding the folder again.
 
-========================
 EnMAP Data Access Portal
-========================
+------------------------
 
 .. admonition:: Info
 
@@ -106,7 +108,7 @@ To access the EnMAP image archive, a primary registration to the IPP is necessar
        Overview of the EnMAP Data Access Portals
 
 Step 1: Instrument Planning Portal (IPP)
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The IPP enables the user registration, the submission of user proposals, and the planning and submitting of future orders.
 
@@ -135,7 +137,7 @@ The IPP enables the user registration, the submission of user proposals, and the
     5. Once the role has been assigned, a new box will appear in the User Portal, allowing you tp access the EOWEB |reg| GeoPortal to search the EnMAP Data archive and order images.
 
 Step 2: EOWEB |reg| GeoPortal
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The EOWEB |reg| GeoPortal access link is created for Cat-1 users after the requested role has been approved by the reviewer.
 The login button appears on the User Portal page, which automatically directs to the EOWEB |reg| GeoPortal login page.
@@ -161,7 +163,7 @@ The login button appears on the User Portal page, which automatically directs to
     5. Place your order and wait until you get notified.
 
 Step 3: Download data from the FTP Delivery Server
---------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After the order is placed, an e-mail is sent including a link to the FTP server and the zipped data.
 
@@ -172,7 +174,7 @@ a look at `Downloading Ordered Data <https://eoweb.dlr.de/egp/docs/user/download
 
     .. figure:: /img/enmap_downloadData.png
        :align: center
-       :width: 100%
+       :width: 60%
 
        Example of FTPS settings in FileZill
 
