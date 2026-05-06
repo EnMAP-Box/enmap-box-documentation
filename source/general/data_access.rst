@@ -1,5 +1,82 @@
 .. _data_access:
 
+==============
+DLR Geoservice
+==============
+
+The DLR Earth Observation Center (EOC) Geoservice provides programmatic and immediate access to Earth Observation datasets, including EnMAP Hyperspectral Imagery (HSI), without the need for manual downloading through the web portal.
+
+1. Registering for DLR Geoservice
+---------------------------------
+
+To access and download EnMAP data, you must have a registered account.
+
+1. Navigate to the EnMAP Instrument Planning Portal or the EOWEB |reg| GeoPortal.
+2. Click on :guilabel:`Registration` or :guilabel:`Sign-up`.
+
+.. important::
+   Under current EnMAP data policies, you must register using an **institutional or company email address** (e.g., affiliated with a university, research center, or commercial enterprise). If you do not have an institutional email address, you must apply for a special exemption by writing directly to ``enmap_registration@dlr.de``.
+
+3. Fill out your affiliation details and accept the EnMAP Data License Agreement.
+
+2. Connecting from QGIS with Native STAC
+----------------------------------------
+
+You can access the DLR Geoservice directly within QGIS using its native SpatioTemporal Asset Catalog (STAC) support. This is the most stable method for connecting to OGC-compliant APIs.
+
+.. tip::
+   **Pro Tip:** While older workflows relied on the external ``qgis_stac`` plugin, QGIS 3.40+ includes native STAC support directly in the Browser Panel. Using this native integration avoids plugin dependency conflicts and is highly recommended!
+
+1. Open QGIS and locate the **Browser Panel** on the left side of your screen.
+2. Scroll down until you see the **STAC** icon.
+3. Right-click on **STAC** and select **New STAC Connection**.
+4. Enter the following connection details:
+
+   * **Name:** ``DLR EOC Geoservice``
+   * **URL:** ``https://geoservice.dlr.de/eoc/ogc/stac/v1/``
+
+5. Click :guilabel:`OK`.
+
+.. figure:: /img/STAC_conn_dialog.png
+   :align: center
+   :width: 80%
+
+   QGIS STAC Connection Setup Dialog
+
+3. Searching for EnMAP HSI Data (Example: New Delhi)
+----------------------------------------------------
+
+Once connected, you can query specific collections using a spatial subset. Here is how to find EnMAP Level 2A data over New Delhi:
+
+1. Expand the new **DLR EOC Geoservice** connection in your Browser Panel.
+2. Expand the **Collections** folder.
+3. Scroll down to find ``EnMAP HSI - Level 2A Hyperspectral Images - Global``.
+4. Right-click it and select **Open in Data Source Manager** (or simply double-click).
+5. In the Data Source Manager, apply a **Spatial Filter** (Bounding Box) to search for your Area of Interest (e.g. New Delhi). Enter the following coordinates:
+
+   * **West:** ``76.83``
+   * **South:** ``28.40``
+   * **East:** ``77.34``
+   * **North:** ``28.88``
+
+6. Click :guilabel:`Filter/Search`.
+7. Drag and drop the resulting COG (Cloud-Optimized GeoTIFF) assets directly onto your QGIS map canvas to load the hyperspectral imagery.
+
+.. figure:: /img/placeholder_search.gif
+   :align: center
+   :width: 90%
+
+   Searching for New Delhi EnMAP Data via Data Source Manager
+
+Troubleshooting
+---------------
+
+Because the Geoservice provides direct access to live institutional servers, you may occasionally experience connection timeouts.
+
+.. note::
+   **Encountering a "Bad Gateway" (HTTP 502) Error?**
+   This indicates that your QGIS connection is configured perfectly, but the DLR server is temporarily undergoing maintenance or experiencing heavy load. If this occurs, verify your URL is correct, wait a short while, and try expanding the folder again.
+
 ========================
 EnMAP Data Access Portal
 ========================
