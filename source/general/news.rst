@@ -33,7 +33,11 @@ how hyperspectral EnMAP and multispectral Sentinel-2 data can be visualized toge
 The session provided valuable insights into the latest features of the EnMAP-Box
 and its integration within the QGIS environment.
 
-<iframe width="1024" height="576" src="https://app.media.ccc.de/v/fossgis2026-82991-hyperspektrale-erdbeobachtung-in-der-praxis-die-enmap-box-in-qgis/oembed" frameborder="0" allowfullscreen></iframe>
+.. raw:: html
+
+   <div style="text-align: left;">
+   <iframe width="100%" height="576" src="https://app.media.ccc.de/v/fossgis2026-82991-hyperspektrale-erdbeobachtung-in-der-praxis-die-enmap-box-in-qgis/oembed" frameborder="0" allowfullscreen></iframe>
+   </div>
 
 UNOOSA / CEOS Training
 ======================
@@ -85,9 +89,13 @@ On October 2, the EnMAP-Box was presented in a live demo at ESA
 
 
 
+Older news ...
+==============
+
+
 
 Workshop Multi-Source Remote Sensing for Agriculture
-====================================================
+----------------------------------------------------
 
 *16. Sep 2025*
 
@@ -97,8 +105,9 @@ The workshop was organized by the ZALF in Müncheberg, Germany.
 The participants learned how to use the EnMAP-Box to visualize
 hyper- and multispectral raster data together with spectral profiles from field measurements.
 
+
 Living Planet Symposium 2025
-============================
+----------------------------
 
 *09. July 2025*
 
@@ -124,7 +133,7 @@ It was especially exciting to see the high interest for our brand-new EnMAP-Box 
 
 
 2nd EnMAP User Workshop
-=======================
+-----------------------
 
 *14. April 2025*
 
@@ -133,7 +142,7 @@ Here, the EnMAP-Box was presented, and participants could join an *Introduction 
 
 
 EnMAP Webinar
-=============
+-------------
 
 *31. January 2025*
 
@@ -141,8 +150,6 @@ More than 100 participants joined the
 `EnMAP - Webinar on the application and Commercialisation potential <https://live.invitario.com/data/uploads/files/27034/Agenda_EnMAP_Webinar.pdf>`_
 in which the EnMAP-Box was demonstrated as well.
 
-Older news ...
-==============
 
 New tutorial: EnMAP-Box in High Performance Computing environments
 ------------------------------------------------------------------
