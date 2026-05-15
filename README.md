@@ -75,6 +75,7 @@ If you never have used git before, we recommend to read a basic git tutorial fir
 
 # Preview the documentation locally
 
+## Classic
 Open a bash shell and run `./scripts/preview_docs.sh`. 
 If run successfully, the documentation will be available at http://localhost:8000/
 
@@ -83,6 +84,12 @@ If run successfully, the documentation will be available at http://localhost:800
 cd <repo dir>/enmap-box-documentation
 `sphinx-autobuild source build`
 ````
+
+## Docker
+
+1. Run `docker-compose up` in the root directory of the repository.
+2. Open a browser and go to http://localhost:8000/
+
 
 # Build the documentation
 
