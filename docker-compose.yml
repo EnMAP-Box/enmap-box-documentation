@@ -1,0 +1,18 @@
+services:
+  docs:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/docs
+    command:
+      - /bin/sh
+      - -c
+      - |
+        echo ''
+        echo '-------------------------------------------------------'
+        echo ' Docs preview will be available at:'
+        echo '   http://localhost:8000'
+        echo '-------------------------------------------------------'
+        echo ''
+        exec sphinx-autobuild source build --host 0.0.0.0 --port 8000
