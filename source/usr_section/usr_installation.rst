@@ -265,12 +265,11 @@ Here we describe how you can install QGIS, the required python packages and the 
 
    .. group-tab:: Conda
 
-         **Install a python environment for the EnMAP-Box**
+         **Install a python environment for QGIS and EnMAP-Box**
 
+         1. Open a conda terminal
 
-         1. Open the `Miniforge <https://conda-forge.org>`__ prompt
               .. image:: /img/windows_start_miniforge.png
-
 
          2. Ensure to use the libmamba solver.
 
@@ -287,54 +286,21 @@ Here we describe how you can install QGIS, the required python packages and the 
 
             For more details, see the `Anaconda blog post <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ on this topic.
 
-         2. Install QGIS and python dependencies, using one of the conda environment files (`enmapbox_*.yml`) from
-            https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda, e.g.
+         2. Install QGIS and Python dependencies
 
             .. code-block:: batch
 
-                conda env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full.yml
+                conda env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml
 
-            ``--file=<uri>`` specifies the path to the \*.yml file that defines the environment.
+            * use ``-n <name>`` or ``--name <name>`` to change the environment name
 
-            ``-n <name>`` or ``--name <name>`` can be used to change the environment name.
+            * use ``--file=<uri>`` to install different set of packages, e.g.:
 
-            The environment files provided for download vary by used QGIS release and python packages to be:
+              | `enmapbox-base.yml` for all packages that are required to run the EnMAP-Box GUI and most machine-learning applications
+              | ``--file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-base.yml``
 
-            * *full* environments contains *all* python packages, including those used by single EnMAP-Box applications only
-            * *light* environments contain python packages that are required to run most and all core EnMAP-Box applications
-            * *ltr* environments use the current
-              `QGIS Long Term release <https://qgis.org/resources/roadmap/#release-schedule>`_ instead of the
-              latest (and newer) QGIS release that is available in conda.
-
-
-            Use the *raw content* url to download and install an EnMAP-Box conda environment from github.
-
-            .. list-table::
-               :header-rows: 1
-               :widths: 15 10 70
-
-               *  - Environment
-                  - Size
-                  - Path
-
-               *  - `enmapbox_light`
-                  - 4.58 GB
-                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_light.yml
-
-               *  - `enmapbox_light_ltr`
-                  - 4.65 GB
-                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_light_ltr.yml
-
-               *  - `enmapbox_full`
-                  - 6.46 GB
-                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full.yml
-
-               *  - `enmapbox_full_ltr`
-                  - 6.90 GB
-                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full_ltr.yml
-
-
-
+              | `enmapbox-full.yml` for ``enmapbox-base.yml`` and all additional requirements, e.g. to run EnPT, EnFROSP and SpecDeepMap
+              | ``--file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml``
 
          3. Activate the conda environment and start QGIS:
 
@@ -356,6 +322,18 @@ Here we describe how you can install QGIS, the required python packages and the 
                 .. code-block:: bash
 
                     conda env remove -n <env_name>
+
+                To use a specific package version, call ``conda install <package>=<version>``.
+                Such a step may require an update of various other packages. For example to use a specific QGIS version:
+
+                .. code-block:: bash
+
+                    conda activate <env_name>
+                    (<env_name) conda install qgis=3.40
+
+
+
+
 
 
 
