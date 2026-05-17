@@ -12,8 +12,10 @@ EnMAP-Box Introduction and basic features:
    <iframe width="100%" height="380" src="https://www.youtube-nocookie.com/embed/31FQ5zXl2Rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
    </div>
 
-|
-##THE VIDEO IS OUTDATED, NEEDS UPDATE##
+.. note::
+
+   This video is a bit older and may not show the most recent EnMAP-Box GUI.
+
 
 1. Launching the EnMAP-Box
 ##########################
