@@ -184,9 +184,10 @@ Usage
     4. Interactively explore the map.
 
 GUI
-    .. figure:: ./img/DecorrelationStretchRenderer.png
+    .. figure:: ./img/rasrenderer_decorrelation.gif
        :align: center
        :width: 100%
+
 
 Enhanced Multiband Color Renderer
 =================================
@@ -219,7 +220,7 @@ Usage
     3. Interactively explore the map.
 
 GUI
-    .. figure:: ./img/HSVColorRasterRenderer.png
+    .. figure:: ./img/rasrenderer_HSV.gif
        :align: center
        :width: 100%
 

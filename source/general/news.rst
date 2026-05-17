@@ -18,6 +18,11 @@ Upcoming Events
         - Helsinki Metropolitan area, Finland
         - Tutorial day 5. June `Environmental Mapping and Analysis Program (EnMAP) tutorials <https://is.earsel.org/workshop/14-IS-Helsinki2026/tutorials/>`_
 
+    *   - `45th EARSeL Symposium <https://athens2026.earsel.org/>`_
+        - 29. Sep - 02. June 2026
+        - Athens, Greece
+        - Presentation
+
 
 FOSSGIS 2026
 ============
