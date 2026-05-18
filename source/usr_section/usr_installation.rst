@@ -295,12 +295,9 @@ Here we describe how you can install QGIS, the required python packages and the 
             * use ``-n <name>`` or ``--name <name>`` to change the environment name
 
             * use ``--file=<uri>`` to install different set of packages, e.g.:
+             | `enmapbox-base.yml <https://github.com/EnMAP-Box/enmap-box/blob/main/.env/conda/enmapbox-base.yml>`_: for all packages that are required to run the EnMAP-Box GUI and most machine-learning applications
+             | `enmapbox-full.yml <https://github.com/EnMAP-Box/enmap-box/blob/main/.env/conda/enmapbox-full.yml>`_: for `enmapbox-base.yml + all additional requirements`, e.g. to run EnPT, EnFROSP and SpecDeepMap
 
-              | `enmapbox-base.yml` for all packages that are required to run the EnMAP-Box GUI and most machine-learning applications
-              | ``--file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-base.yml``
-
-              | `enmapbox-full.yml` for ``enmapbox-base.yml`` and all additional requirements, e.g. to run EnPT, EnFROSP and SpecDeepMap
-              | ``--file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml``
 
          3. Activate the conda environment and start QGIS:
 
