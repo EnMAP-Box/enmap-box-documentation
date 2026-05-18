@@ -306,7 +306,7 @@ Here we describe how you can install QGIS, the required python packages and the 
 
             .. code-block:: batch
 
-               activate enmapbox
+               conda activate enmapbox
                qgis
 
          .. note::
