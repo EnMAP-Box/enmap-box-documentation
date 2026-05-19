@@ -13,23 +13,51 @@ Upcoming Events
         - Location
         - Comments
 
-    *   - `UNOOSA/UNU-INWEH/CEOS Training on EO for Resilience and Humanitarian Aid <https://www.unoosa.org/oosa/en/ourwork/psa/schedule/2026/unoosa-unuinweh-ceos-workshop.html>`_
-        - 23.-27. March 2026
-        - United Nations Office for Outer Space Affairs, Vienna, Austria
-        - EnMAP-Box Demo Thu 26. March 11:00 - 12:30 Practical: Access and Initial Landcover and Crop Type Mapping using Sentinel-2 Multispectral Data.
-
-    *   - `FOSSGIS 2026 <https://www.fossgis-konferenz.de/2026>`_
-        - 25.-28. March 2026
-        - Georg-August-Universität Göttingen, Germany
-        - EnMAP-Box Demo Thu 26. March 09:35-10:30 `Hyperspektrale Erdbeobachtung in der Praxis - Die EnMAP-Box in QGIS <https://www.fossgis-konferenz.de/2026/programm/>`_
-
     *   - `14th EARSeL Workshop on Imaging Spectroscopy <https://is.earsel.org/workshop/14-IS-Helsinki2026>`_
         - 2.-5. June 2026
         - Helsinki Metropolitan area, Finland
         - Tutorial day 5. June `Environmental Mapping and Analysis Program (EnMAP) tutorials <https://is.earsel.org/workshop/14-IS-Helsinki2026/tutorials/>`_
 
+    *   - `45th EARSeL Symposium <https://athens2026.earsel.org/>`_
+        - 29. Sep - 02. June 2026
+        - Athens, Greece
+        - Presentation
+
+
+FOSSGIS 2026
+============
+
+*02. Apr 2026*
+
+The FOSSGIS Conference, the leading German-language conference for Free and Open Source Software (FOSS) for GIS and Open Street Map
+, took place in Göttingen, Germany, from March 25–28, 2026.
+
+A highlight of the program was a dedicated 45-minute demo session
+showcasing the EnMAP-Box. Attendees were given a practical look into
+how hyperspectral EnMAP and multispectral Sentinel-2 data can be visualized together with measurements made by field spectrometers.
+The session provided valuable insights into the latest features of the EnMAP-Box
+and its integration within the QGIS environment.
+
+.. raw:: html
+
+   <div style="text-align: left;">
+   <iframe width="100%" height="576" src="https://app.media.ccc.de/v/fossgis2026-82991-hyperspektrale-erdbeobachtung-in-der-praxis-die-enmap-box-in-qgis/oembed" frameborder="0" allowfullscreen></iframe>
+   </div>
+
+UNOOSA / CEOS Training
+======================
+
+*02. Apr 2026*
+
+As part of the UNOOSA/UNU-INWEH/CEOS Training on EO for Resilience and Humanitarian Aid (March 23–27, 2026, Vienna),
+the EnMAP-Box was presented in a hands-on session. The session EO Data Visualization and Analysis with EnMAP-Box:
+Land Cover and Crop Type Mapping Using Sentinel-2, (March 26) introduced participants to
+fundamental functionality and workflows for analyzing multispectral and hyperspectral satellite data using the EnMAP-Box.
+
+
 EnMAP Webinar
 =============
+
 *07. Feb 2026*
 
 On 29th and 30th January 2025 two
@@ -66,9 +94,13 @@ On October 2, the EnMAP-Box was presented in a live demo at ESA
 
 
 
+Older news ...
+==============
+
+
 
 Workshop Multi-Source Remote Sensing for Agriculture
-====================================================
+----------------------------------------------------
 
 *16. Sep 2025*
 
@@ -78,8 +110,9 @@ The workshop was organized by the ZALF in Müncheberg, Germany.
 The participants learned how to use the EnMAP-Box to visualize
 hyper- and multispectral raster data together with spectral profiles from field measurements.
 
+
 Living Planet Symposium 2025
-============================
+----------------------------
 
 *09. July 2025*
 
@@ -105,7 +138,7 @@ It was especially exciting to see the high interest for our brand-new EnMAP-Box 
 
 
 2nd EnMAP User Workshop
-=======================
+-----------------------
 
 *14. April 2025*
 
@@ -114,7 +147,7 @@ Here, the EnMAP-Box was presented, and participants could join an *Introduction 
 
 
 EnMAP Webinar
-=============
+-------------
 
 *31. January 2025*
 
@@ -122,8 +155,6 @@ More than 100 participants joined the
 `EnMAP - Webinar on the application and Commercialisation potential <https://live.invitario.com/data/uploads/files/27034/Agenda_EnMAP_Webinar.pdf>`_
 in which the EnMAP-Box was demonstrated as well.
 
-Older news ...
-==============
 
 New tutorial: EnMAP-Box in High Performance Computing environments
 ------------------------------------------------------------------
