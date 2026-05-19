@@ -8,12 +8,69 @@ Installation
 Overview
 ========
 
-If you like to develop an EnMAP-Box application, or more general, a QGIS and Qt application, we recommend to use
-a state-of-the-art Integrated Development Environment (IDE) like |PyCharm|. It offers run-time debugging,
-code completion, spell-checking, syntax highlighting, SCM support, unit-testing and many other helpful things.
+Depending on your goals, there are two different ways to set up your environment:
+
+* **For API Users & Scripters:** If you simply want to use EnMAP-Box algorithms and API functions in your own Python scripts, you can use the code directly from your standard QGIS plugin installation.
+* **For Contributors:** If you want to develop new EnMAP-Box applications, improve the core code, or fix bugs, you need to clone the repository and set up a full development environment.
+
+Regardless of your path, if you are writing Python code or developing QGIS/Qt applications, we recommend using a state-of-the-art Integrated Development Environment (IDE) like |PyCharm|. It offers run-time debugging, code completion, spell-checking, syntax highlighting, SCM support, unit-testing and many other helpful things.
+
+For API Users & Scripters
+=========================
+
+If you only want to use EnMAP-Box algorithms and tools in your own standalone Python scripts, you do not need to clone the GitHub repository. You can simply hook into the code that comes with your standard QGIS plugin installation.
+
+Here is how you can set up a PyCharm project to use the EnMAP-Box API natively:
+
+1. **Set the QGIS Python Interpreter:** Setup a PyCharm Project and use the Python Interpreter that comes with QGIS.
+
+   .. figure:: /usr_section/usr_manual/img/Pycharm_algo_use1.png
+      :align: center
+      :width: 100%
+
+2. **Add the Plugin Directory to your PYTHONPATH:** Include the installed EnMAP-Box Plugin as a Sources Root. This tells your environment where the plugins are stored. Depending on your OS, the active QGIS profile's plugin folder is usually located here:
+
+   * **Windows:** ``%APPDATA%\QGIS\QGIS3\profiles\default\python\plugins``
+   * **Linux:** ``~/.local/share/QGIS/QGIS3/profiles/default/python/plugins``
+   * **macOS:** ``~/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins``
+
+   .. figure:: /usr_section/usr_manual/img/Pycharm_algo_use2.png
+      :align: center
+      :width: 100%
+
+3. **Run the Code:** Now you can import the EnMAP-Box API (e.g., the ``enmapbox`` and ``enmapboxprocessing`` modules) just like any other Python library.
+
+   .. code-block:: python
+
+       import processing
+
+       from enmapbox import initAll
+       from enmapbox.testing import start_app
+
+       # Initialize the application
+       start_app()
+       initAll()
+
+       # Run an EnMAP-Box algorithm
+       processing.run(
+           "enmapbox:Build3DCube",
+           {
+               'raster':'C:/Users/YOUR_USER/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/exampledata/aerial_potsdam.tif',
+               'spectralScale':1,
+               'dx':1,
+               'dy':1,
+               'outputCubeFace':'TEMPORARY_OUTPUT',
+               'outputCubeSide':'TEMPORARY_OUTPUT'
+           }
+       )
+
+For Contributors
+================
+
+If you intend to modify the EnMAP-Box source code and provide code via pull requests, follow these steps to set up a full repository-based development environment.
 
 1. Have Git Installed
-=====================
+---------------------
 .. tabs::
 
     .. group-tab:: Windows
@@ -36,7 +93,7 @@ code completion, spell-checking, syntax highlighting, SCM support, unit-testing 
 
 
 2. Clone the EnMAP-Box Repository
-=================================
+---------------------------------
 .. tabs::
 
     .. group-tab:: Windows
@@ -52,7 +109,6 @@ code completion, spell-checking, syntax highlighting, SCM support, unit-testing 
             git config --local include.path ../.gitconfig
 
         The last line ensures that pull requests will update submodules as well.
-
         Now you can use `git pull <https://git-scm.com/docs/git-pull>`__ to update your local copy of the
         EnMAP-Box repository:
 
@@ -67,20 +123,18 @@ code completion, spell-checking, syntax highlighting, SCM support, unit-testing 
                 Replace the repo url with that of your EnMAP-Box repo fork, if you like to
                 provide code via pull requests.
 
-        .. _dev_installation_create_conda_qgis:
-
     .. group-tab:: Linux
         under construction...
-
 
     .. group-tab:: MacOS
         under construction...
 
 
 3. Setup the QGIS Environment
-=============================
+-----------------------------
 
-This section gives examples how you can setup a QGIS & EnMAP-Box development environment, e.g. to be used by PyCharm.
+This section gives examples how you can setup a QGIS & EnMAP-Box development environment, e.g.
+to be used by PyCharm.
 
 .. tabs::
 
@@ -139,13 +193,12 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
         3. Call `start_pycharm.bat` to open PyCharm within the latest QGIS release.
            You can modify the start script to start a different QGIS build. E.g.
 
-            .. code-block:: batch
+           .. code-block:: batch
 
                 call "%~dp0\qgis-env.bat" qgis-ltr
                 start "PYCHARM" /B %PYCHARM_EXE%
 
            will start the QGIS Long Term Release (if installed) instead of the latest QGIS release (`qgis`).
-
            Possible QGIS versions provided by the OSGeo4W installer are:
 
            +----------------+--------------------------------------------------+
@@ -165,7 +218,9 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
         Due to the much simpler installation and maintenance, we recommend to install QGIS for Linux and macOS
         using conda.
 
-    .. group-tab:: Conda
+    .. group-tab:: Conda Environment
+
+        .. _dev_installation_create_conda_qgis:
 
         The installation of QGIS within `conda <https://docs.conda.io/en/latest>`_
         is (almost) the same on macOS, Windows or Linux. Using conda
@@ -184,9 +239,7 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
                 conda env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full.yml
 
             ``--file=<uri>`` specifies the path to the \*.yml file that defines the environment.
-
             ``-n <name>`` or ``--name <nam>`` can be used to change the environment name.
-
             The environment files provided for download vary by used QGIS release and python packages to be:
 
             * *full* environments contains *all* python packages, including those used by single EnMAP-Box applications only
@@ -195,32 +248,27 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
               `QGIS Long Term release <https://qgis.org/resources/roadmap/#release-schedule>`_ instead of the
               latest (and newer) QGIS release that is available in conda.
 
-
             Use the *raw content* url to download and install an EnMAP-Box conda environment from github.
 
             .. list-table::
                :header-rows: 1
                :widths: 15 10 70
 
-               *  - Environment
-                  - Size
-                  - Path
-
-               *  - `enmapbox_light`
-                  - 4.58 GB
-                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_light.yml
-
-               *  - `enmapbox_light_ltr`
-                  - 4.65 GB
-                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_light_ltr.yml
-
-               *  - `enmapbox_full`
-                  - 6.46 GB
-                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full.yml
-
-               *  - `enmapbox_full_ltr`
-                  - 6.90 GB
-                  - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full_ltr.yml
+               * - Environment
+                 - Size
+                 - Path
+               * - `enmapbox_light`
+                 - 4.58 GB
+                 - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_light.yml
+               * - `enmapbox_light_ltr`
+                 - 4.65 GB
+                 - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_light_ltr.yml
+               * - `enmapbox_full`
+                 - 6.46 GB
+                 - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full.yml
+               * - `enmapbox_full_ltr`
+                 - 6.90 GB
+                 - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full_ltr.yml
 
 
         3.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
@@ -287,7 +335,7 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
 .. _dev_setup_pycharm:
 
 4. Setup the IDE
-================
+----------------
 
 .. tabs::
 
@@ -318,8 +366,6 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
 
         3.  Switch to *Project: enmap-box > Project Interpreter* and select the QGIS python as python interpreter.
 
-
-
             .. figure:: img/pycharm_conda_interpreter_add.png
                 :width: 100%
 
@@ -347,7 +393,6 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
 
             Right-click on the ``plugins`` subfolder and select :guilabel:`Sources`.
             This makes QGIS internal plugins like the "processing" plugin available to PyCharm.
-
             Now the PyQGIS API is available to your Python installation.
 
             .. tip::
@@ -364,12 +409,13 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
 
    .. group-tab:: VS Code
 
-        .. todo:
+        .. todo::
 
             Describe Setup with VS Code
 
 
-5.  PyCharm and PyQGIS may need the environmental variable ``QGIS_PREFIX_PATH``. Typical paths are:
+5.  PyCharm and PyQGIS may need the environmental variable ``QGIS_PREFIX_PATH``.
+    Typical paths are:
 
     ================= ===============================================================================
     QGIS Installation QGIS_PREFIX_PATH
@@ -389,7 +435,8 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
         :width: 100%
 
 
-    Also define the Environment variables for the Python console. Go to *File > Settings > Build, Execution, Deployment > Console > Python Console*
+    Also define the Environment variables for the Python console.
+    Go to *File > Settings > Build, Execution, Deployment > Console > Python Console*
     and add *QGIS_PREFIX_PATH* to the Environment variables.
 
     .. figure:: img/pycharm_qgispath_console.png
@@ -424,7 +471,6 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
         QgsApplication.instance() is None
 
     The output should return ``True``, as we have not initialized any QgsApplication.
-
     Now check if we can use the EnMAP-Box API to start the EnMAP-Box
 
     .. code-block:: python
@@ -462,19 +508,21 @@ This section gives examples how you can setup a QGIS & EnMAP-Box development env
 Additional Tools
 ================
 
-The Qt company provides various tools that help to create Qt applications. They are useful for PyQt and PyQGIS users
+The Qt company provides various tools that help to create Qt applications.
+They are useful for PyQt and PyQGIS users
 as well.
 
 .. _dev_additional_tools:
 
 .. tabs::
 
-    .. _dev_qt_assistant:
     .. group-tab:: Qt Assistant
 
-        The Qt Assistant allows to discover and read `*.qch` files, which are provided for the
-        Qt and QGIS APIs. Although written to document the C++ code, most descriptions apply 1:1 to the Python API.
+        .. _dev_qt_assistant:
 
+        The Qt Assistant allows to discover and read `*.qch` files, which are provided for the
+        Qt and QGIS APIs.
+        Although written to document the C++ code, most descriptions apply 1:1 to the Python API.
         The Qt Assistant browses `*.qch` files super fast and also offline, which is why it is often a better
         alternative to the slower Python online documentation.
         In addition, the `*.qch` docs link into the QGIS C++ source code,
@@ -505,26 +553,29 @@ as well.
                  :width: 100%
 
 
-        1.  Start the Qt Assistant, e.g. from your PyCharm terminal:
+        1.  Start the Qt Assistant, e.g.
+            from your PyCharm terminal:
 
             .. code-block:: bat
 
                 (enmapbox) $>assistant
 
 
-    The following script can be used to regularly update the QGIS documentation:
+            The following script can be used to regularly update the QGIS documentation:
 
-    .. code-block:: bash
+            .. code-block:: bash
 
-        curl --output <path_to>/qgis.qch --url https://api.qgis.org/api/qgis.qch
-        assistant -register <path_to>/qgis.qch -quiet
+                curl --output <path_to>/qgis.qch --url https://api.qgis.org/api/qgis.qch
+                assistant -register <path_to>/qgis.qch -quiet
 
 
     .. group-tab:: Qt Designer
 
         The Qt Designer is a powerful tool to create GUI frontends by drawing, drag and drop.
-        Created GUI form files are saved in a XML file ending with ``*.ui``. These can be called from
-        python to automatically create the entire GUI backend, e.g. windows and buttons defined with the Qt Designer.
+        Created GUI form files are saved in a XML file ending with ``*.ui``.
+        These can be called from
+        python to automatically create the entire GUI backend, e.g.
+        windows and buttons defined with the Qt Designer.
 
         You can start the Qt Designer from your PyCharm terminal by:
 
@@ -540,8 +591,10 @@ as well.
 
     .. group-tab:: Qt Creator
 
-        The Qt Creator is the one-in-all IDE to develop Qt C++ applications. It includes the functionality covered by Qt Assistant
-        (here called Help) and Qt Designer (here called form designer) and helps to browse C++ code. It is the preferred tool to
+        The Qt Creator is the one-in-all IDE to develop Qt C++ applications.
+        It includes the functionality covered by Qt Assistant
+        (here called Help) and Qt Designer (here called form designer) and helps to browse C++ code.
+        It is the preferred tool to
         explore the QGIS C++ source code, for example if you like to better understand what it does behind the QGIS python API.
 
         Qt and the Qt Creator are available at https://www.qt.io/download. Ensure to install the code documentation for the same
@@ -552,8 +605,8 @@ as well.
 
              Qt Creator with opened metadataeditor.ui.
 
-        ..
-                SSH access on windows
+    .. group-tab:: SSH access on windows
+
                 1. create a ssh key pair
                 2. upload public key to repository of choice
                 3. install Putty
@@ -575,20 +628,16 @@ different QGIS versions in parallel.
     :widths: 30 50
     :header-rows: 1
 
-    *   - Package
-        - Descriptions
-
-    *   - ``qgis``
-        - Latest QGIS release (LR)
-
-    *   - ``qgis-ltr``
-        - QGIS long term release (LTR)
-
-    *   - ``qgis-dev``
-        - Nightly build of QGIS developer branch
-
-    *   - ``qgis-qt6``
-        -   QGIS Desktop using Qt6 (QGIS 4.0)
+    * - Package
+      - Description
+    * - ``qgis``
+      - Latest QGIS release (LR)
+    * - ``qgis-ltr``
+      - QGIS long term release (LTR)
+    * - ``qgis-dev``
+      - Nightly build of QGIS developer branch
+    * - ``qgis-qt6``
+      - QGIS Desktop using Qt6 (QGIS 4.0)
 
 
 
@@ -601,7 +650,8 @@ Setup Environment
 2. Install the nightly build branch `qgis-dev` and related debug symbols `qgis-dev-pdb`.
 
 3. Install other required packages, e.g. pip3 etc. Later on.
-   In case of missing packages, search and install via OSGeo4W installer first. If not available there, use
+   In case of missing packages, search and install via OSGeo4W installer first.
+   If not available there, use
    the OSGeo4W shell and call `pip`.
 
 4. Create a `qgis-dev-env.bat` to setup your QGIS environment
@@ -673,7 +723,8 @@ Debug QGIS with Visual Studio
 
 2. Install Visual Studio and open the QGIS repo
 
-3. Start a QGIS desktop, e.g. with `qgis-dev` from the OSGeo4W shell
+3. Start a QGIS desktop, e.g.
+   with `qgis-dev` from the OSGeo4W shell
 
 4. Attach the Visual Studio debugger to a QGIS desktop instance
 
