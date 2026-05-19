@@ -148,31 +148,7 @@ Here we describe how you can install QGIS, the required python packages and the 
                  >>> print(site.USER_SITE)
                  C:\Users\Andreas\AppData\Roaming\Python\Python39\site-packages
 
-         #. (Optional) Install additional Python dependencies for SpecDeepMap (torch, lightning, tensorboard, torchvision, and segmentation-models-pytorch)
-
-            The dependencies are only required for using algorithms of the SpecDeepMap Application. Run the following command in the OSGeo4W Shell.
-
-            .. code-block:: batch
-
-               pip install --user lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0 pandas==2.2.3 --no-warn-script-location
-
-         #. (Optional) Install **h5py** and **gdal-hdf5** dependencies via the OSGeo4W installer:
-
-            The dependencies are only required for importing PRISMA products.
-
-            Start the OSGeo4W installer by executing:
-
-            .. code-block:: batch
-
-               setup
-
-            Search for **h5py**, select the latest version of the *python3-h5py* package.
-
-            .. image:: /img/osgeo4w_install_h5py.png
-
-            Now search for **gdal-hdf5**, select the latest version and finish the installation.
-
-         #. Open QGIS from the start menu.
+         #. Open QGIS from the start menu. If you are running into Installation issues, check out the :ref:`faq` for help.
 
    .. group-tab:: Linux
 
