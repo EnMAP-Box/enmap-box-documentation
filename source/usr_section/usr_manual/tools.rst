@@ -68,7 +68,7 @@ Usage
 
 Renderers
 =========
-Renderers in EnMAP‑Box are methods to display raster data by mapping pixel values to colors, transparencies, or symbols so patterns become visually interpretable. They include specialized options such as bivariate color, class fraction/probability, and other raster renderers tailored to hyperspectral and multispectral data.
+Renderers in EnMAP‑Box are methods to display raster data by mapping pixel values to colors, transparencies, or symbols so patterns become visually interpretable. They include specialized options such as bivariate color, class fraction/probability, and other raster renderers tailored to hyperspectral and multispectral data. You can find more about QGIS Renderers `here <https://docs.qgis.org/latest/en/docs/user_manual/working_with_raster/raster_properties.html#band-rendering>`_ .
 
 Bivariate Color Raster Renderer
 -------------------------------

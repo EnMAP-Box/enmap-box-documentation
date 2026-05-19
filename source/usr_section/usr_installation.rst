@@ -10,7 +10,9 @@ Installation
 
 The Installation section explains how to set up EnMAP‑Box as a QGIS plugin on your computer. It guides you through installing a compatible
 QGIS version, preparing the required Python environment, and then adding EnMAP‑Box via the QGIS
-Plugin Manager or from a specific release. Clear, step‑by‑step instructions are provided for Windows, Linux, and macOS, including notes on common
+Plugin Manager or from a specific release.
+
+Clear, step‑by‑step instructions are provided for Windows, Linux, and macOS, including notes on common
 issues, how to verify a successful installation, and how to switch between different EnMAP‑Box versions if needed.
 
 .. _usr_installation_install_qgis:
