@@ -8,9 +8,12 @@
 Installation
 ############
 
-The EnMAP-Box is a plugin for QGIS. It requires the QGIS Python API and various other Python packages.
-Here we describe how you can install QGIS, the required python packages and the EnMAP-Box plugin.
+The Installation section explains how to set up EnMAP‑Box as a QGIS plugin on your computer. It guides you through installing a compatible
+QGIS version, preparing the required Python environment, and then adding EnMAP‑Box via the QGIS
+Plugin Manager or from a specific release.
 
+Clear, step‑by‑step instructions are provided for Windows, Linux, and macOS, including notes on common
+issues, how to verify a successful installation, and how to switch between different EnMAP‑Box versions if needed.
 
 .. _usr_installation_install_qgis:
 
@@ -23,13 +26,13 @@ Here we describe how you can install QGIS, the required python packages and the 
 
       **Install QGIS via the official Standalone/OSGeo4W Installer**
 
-         Install either the current QGIS Long Term Release (LTR) or the current QGIS Latest Release (LR) to run the latest EnMAP-Box
+         Install the current QGIS 3.44 to run the latest EnMAP-Box
          using the QGIS installer from https://www.qgis.org/en/site/forusers/alldownloads.html#windows.
 
          For beginners, we recommend using the standalone installers. More advanced QGIS users can use OSGeo4W installer,
          which eases updates of existing QGIS installation.
 
-         In case you already have the current QGIS LTR or LR version installed, you can skip this step.
+         In case you already have the current QGIS 3.44 version installed, you can skip this step.
 
          In case you have an outdated QGIS version, make sure to install a current version.
 
@@ -385,46 +388,3 @@ Here we describe how you can install QGIS, the required python packages and the 
 
        # install the EnMAP-Box
        qgis-plugin-manger install 'EnMAP-Box 3'
-
-
-
-4. How to include EnMAP-box into your Python project
-====================================================
-
-Here is how you can use an algorithm from Python using the PyCharm IDE:
-
-#. Setup a PyCharm Project and use the Python Interpreter that comes with QGIS.
-
-    .. figure:: usr_manual/img/Pycharm_algo_use1.png
-       :align: center
-       :width: 100%
-
-#. Include the installed EnMAP-Box Plugin as a Sources Root.
-
-    .. figure:: usr_manual/img/Pycharm_algo_use2.png
-       :align: center
-       :width: 100%
-
-#. Now you can use the EnMAP-Box API, i.e. enmapbox and enmapboxprocessing modules.
-
-    .. code-block:: batch
-
-        import processing
-
-        from enmapbox import initAll
-        from enmapbox.testing import start_app
-
-        start_app()
-        initAll()
-
-        processing.run(
-            "enmapbox:Build3DCube",
-            {
-                'raster':'C:/Users/Aryan/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins/enmapboxplugin/enmapbox/exampledata/aerial_potsdam.tif',
-                'spectralScale':1,
-                'dx':1,
-                'dy':1,
-                'outputCubeFace':'TEMPORARY_OUTPUT',
-                'outputCubeSide':'TEMPORARY_OUTPUT'
-            }
-        )
