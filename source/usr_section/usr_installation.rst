@@ -14,8 +14,8 @@ Here we describe how you can install QGIS, the required python packages and the 
 
 .. _usr_installation_install_qgis:
 
-1. Install QGIS
-===============
+Install QGIS
+============
 
 .. tabs::
 
@@ -33,100 +33,13 @@ Here we describe how you can install QGIS, the required python packages and the 
 
          In case you have an outdated QGIS version, make sure to install a current version.
 
-
-   .. group-tab:: Linux
-
-     **Install QGIS on Linux**
-
-     Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu ,
-     or follow the instructions for conda.
-
-   .. group-tab:: MacOS
-
-      **Install QGIS on MacOS**
-
-      .. note::
-
-         As of June 2025, the official QGIS page https://qgis.org/en/site/forusers/download.html
-         has the following notice:
-
-         .. image:: /img/installation_macos_qgiswarning.png
-
-
-
-         We have made better experiences in using conda to
-         install QGIS and all Python packages required to run the EnMAP-Box
-         (tested on macOS Sequoia 15.5 (24F74), Intel MacBook 2010 and Mac Mini 2024).
-
-         Therefore, please follow the installation guide given in the *Conda* tab.
-
-
-
-      ..
-         Therefore, please install QGIS either using **conda**, or using
-         the installer provided `OpenGIS.ch <https://www.opengis.ch/>`_:
-
-
-         #. Download the latest package installer from https://github.com/opengisch/qgis-conda-builder/releases.
-         #. Open the installer in Finder using the context menu.
-
-             .. figure:: /img/macos/opengisch/install_exp_finder.png
-                :width: 60%
-
-                Call *Open* from the finder's context menu ...
-
-             .. figure:: /img/macos/opengisch/install_exp_open.png
-                :width: 35%
-
-                ... to show and use the *Open* button in the next dialog.
-
-          #. Select a location to install the QGIS.app (e.g., ``QGIS-3.36.app``), such as `/System/Applications`.
-
-             .. figure:: /img/macos/opengisch/install_exp_folder.png
-
-
-   .. group-tab:: Conda
-
-      .. _usr_installation_qgis_conda:
-
-      **Install QGIS with conda (cross-platform)**
-
-      Conda is a cross-platform package manager that allows to install software in separated environments. We recommend
-      installing conda using `Miniforge <https://conda-forge.org/download>`__, a minimal installer which
-      by default installs conda packages from the `conda-forge <https://conda-forge.org/>`_ channel.
-
-      *Linux / Unix / MacOS:*
-
-          .. code-block:: bash
-
-            # download install script
-            curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
-
-            # run install script
-            sh Miniforge3-$(uname)-$(uname -m).sh
-
-      *Windows:*
-
-            Download and run the miniforge installer from https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe
-
-
-      When done, continue with the installation of `QGIS and python dependencies <usr_installation_install_dependencies_>`_ in conda.
-
-
-.. _usr_installation_install_dependencies:
-
-2. Install Python Dependencies
-==============================
-
-.. tabs::
-
-   .. group-tab:: Windows
-
-         **Install Python Dependencies**
+      **Install Python Dependencies**
 
          #. Close QGIS, if it is open.
 
-         #. Open the OSGeo4W Shell from the start menu.
+         #. Search for OSGeo4W setup from the start menu and run the installation.
+
+         #. Now, Open the OSGeo4W Shell from the start menu.
 
             .. image:: /img/windows_start_osgeo.png
 
@@ -150,9 +63,15 @@ Here we describe how you can install QGIS, the required python packages and the 
 
          #. Open QGIS from the start menu. If you are running into Installation issues, check out the :ref:`faq` for help.
 
+
    .. group-tab:: Linux
 
-       **Install Python Dependencies**
+     **Install QGIS on Linux**
+
+      Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu ,
+      or follow the instructions for conda.
+
+     **Install Python Dependencies**
 
        #. Open the Terminal (:kbd:`Ctrl` + :kbd:`Alt` + :kbd:`T`).
 
@@ -226,22 +145,88 @@ Here we describe how you can install QGIS, the required python packages and the 
 
    .. group-tab:: MacOS
 
-       **Install Python Dependencies**
+      **Install QGIS on MacOS**
 
-       Use the *QGIS-<version>.app* internal pip3 to install or update missing python packages:
+      .. note::
 
-       .. code-block:: bash
+         As of June 2025, the official QGIS page https://qgis.org/en/site/forusers/download.html
+         has the following notice:
 
-         /Applications/QGIS-3.36.app/Contents/bin/pip3 install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/macos/requirements_macos.txt
+         .. image:: /img/installation_macos_qgiswarning.png
 
-       .. note::
-         This step needs to be repeated after updates to the QGIS.app.
 
-         Do not-update packages like numpy or GDAL with pip, as this might break parts of your QGIS application.
+
+         We have made better experiences in using conda to
+         install QGIS and all Python packages required to run the EnMAP-Box
+         (tested on macOS Sequoia 15.5 (24F74), Intel MacBook 2010 and Mac Mini 2024).
+
+         Therefore, please follow the installation guide given in the *Conda* tab.
+
+
+
+      ..
+         Therefore, please install QGIS either using **conda**, or using
+         the installer provided `OpenGIS.ch <https://www.opengis.ch/>`_:
+
+
+         #. Download the latest package installer from https://github.com/opengisch/qgis-conda-builder/releases.
+         #. Open the installer in Finder using the context menu.
+
+             .. figure:: /img/macos/opengisch/install_exp_finder.png
+                :width: 60%
+
+                Call *Open* from the finder's context menu ...
+
+             .. figure:: /img/macos/opengisch/install_exp_open.png
+                :width: 35%
+
+                ... to show and use the *Open* button in the next dialog.
+
+          #. Select a location to install the QGIS.app (e.g., ``QGIS-3.36.app``), such as `/System/Applications`.
+
+             .. figure:: /img/macos/opengisch/install_exp_folder.png
+
+      **Install Python Dependencies**
+
+           Use the *QGIS-<version>.app* internal pip3 to install or update missing python packages:
+
+           .. code-block:: bash
+
+             /Applications/QGIS-3.36.app/Contents/bin/pip3 install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/macos/requirements_macos.txt
+
+           .. note::
+             This step needs to be repeated after updates to the QGIS.app.
+
+             Do not-update packages like numpy or GDAL with pip, as this might break parts of your QGIS application.
 
    .. group-tab:: Conda
 
-         **Install a python environment for the EnMAP-Box**
+      .. _usr_installation_qgis_conda:
+
+      **Install QGIS with conda (cross-platform)**
+
+          Conda is a cross-platform package manager that allows to install software in separated environments. We recommend
+          installing conda using `Miniforge <https://conda-forge.org/download>`__, a minimal installer which
+          by default installs conda packages from the `conda-forge <https://conda-forge.org/>`_ channel.
+
+          *Linux / Unix / MacOS:*
+
+              .. code-block:: bash
+
+                # download install script
+                curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+
+                # run install script
+                sh Miniforge3-$(uname)-$(uname -m).sh
+
+          *Windows:*
+
+                Download and run the miniforge installer from https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe
+
+
+          When done, continue with the installation of QGIS and python dependencies in conda below.
+
+      **Install a python environment for the EnMAP-Box**
 
 
          1. Open the `Miniforge <https://conda-forge.org>`__ prompt
@@ -309,9 +294,6 @@ Here we describe how you can install QGIS, the required python packages and the 
                   - 6.90 GB
                   - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full_ltr.yml
 
-
-
-
          3. Activate the conda environment and start QGIS:
 
             .. code-block:: batch
@@ -333,12 +315,11 @@ Here we describe how you can install QGIS, the required python packages and the 
 
                     conda env remove -n <env_name>
 
-
-
-3. Install EnMAP-Box
-====================
+Install EnMAP-Box
+=================
 
 .. tabs::
+
    .. tab:: QGIS GUI
 
       **Install EnMAP-Box Plugin via the QGIS Plugin Manager**
@@ -359,9 +340,6 @@ Here we describe how you can install QGIS, the required python packages and the 
       .. figure:: /img/QgisGUI_Experimental.gif
         :align: center
         :width: 120%
-
-
-
 
    .. tab:: Command Line (Bash)
 
