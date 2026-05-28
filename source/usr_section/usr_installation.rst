@@ -145,59 +145,60 @@ Install QGIS
 
    .. group-tab:: MacOS
 
-      **Install QGIS on MacOS**
+       **Install QGIS on MacOS**
 
-      .. note::
+       You can install QGIS using the standard official macOS installer (e.g., version 3.44 LTR) directly from the `QGIS Download Page <https://qgis.org/en/site/forusers/download.html>`_. Simply download the ``.dmg`` file, open it, and drag QGIS to your Applications folder.
 
-         As of June 2025, the official QGIS page https://qgis.org/en/site/forusers/download.html
-         has the following notice:
+       .. note::
+          **When to use Conda instead:**
+          Installing via the official QGIS ``.dmg`` covers all core EnMAP-Box functionalities (including Machine Learning algorithms and 3D visualization). However, if your workflow specifically requires the **EnMAP Processing Tool wrapper (** ``enpt-enmapboxapp`` **)**, we highly recommend using **Conda** (see the *Conda* tab).
 
-         .. image:: /img/installation_macos_qgiswarning.png
+          The internal Python environment in the macOS QGIS app restricts isolated package builds required by EnPT. Furthermore, Conda is generally recommended as it makes it significantly easier to manage, update, and resolve complex geospatial dependencies over time.
 
+       **Install Python Dependencies**
 
+       Modern QGIS installations on macOS embed Python deeply within the application framework, meaning traditional terminal commands (like calling ``pip3`` from the ``bin`` folder) are no longer reliable. To safely install dependencies to the correct environment, you must execute the installation directly from within QGIS.
 
-         We have made better experiences in using conda to
-         install QGIS and all Python packages required to run the EnMAP-Box
-         (tested on macOS Sequoia 15.5 (24F74), Intel MacBook 2010 and Mac Mini 2024).
+       1. Launch QGIS.
+       2. Navigate to **Plugins** ‣ **Python Console** in the top menu bar.
+       3. Copy the script below, paste it into the console prompt (``>>>``), and press **Enter**:
 
-         Therefore, please follow the installation guide given in the *Conda* tab.
+       .. code-block:: python
 
+          import sys
+          import os
+          import runpy
 
+          # 1. Manually create the missing 'bin' directory so pip stops crashing
+          broken_bin_path = "/Applications/QGIS.app/Contents/Frameworks/bin"
+          os.makedirs(broken_bin_path, exist_ok=True)
 
-      ..
-         Therefore, please install QGIS either using **conda**, or using
-         the installer provided `OpenGIS.ch <https://www.opengis.ch/>`_:
+          print("Created missing bin directory. Finishing installation...")
 
+          original_argv = sys.argv
+          enmap_packages = [
+              "colorama", "astropy", "PyOpenGL", "xgboost", "lightgbm",
+              "catboost", "sympy", "numba>=0.57", "scikit-learn>=1.0"
+          ]
 
-         #. Download the latest package installer from https://github.com/opengisch/qgis-conda-builder/releases.
-         #. Open the installer in Finder using the context menu.
+          # 2. run pip with a flag to silence the script warnings
+          sys.argv = ["pip", "install", "-U", "--no-warn-script-location"] + enmap_packages
 
-             .. figure:: /img/macos/opengisch/install_exp_finder.png
-                :width: 60%
+          try:
+              runpy.run_module("pip", run_name="__main__")
+          except SystemExit:
+              pass
+          except Exception as e:
+              print(f"An error occurred: {e}")
+          finally:
+              sys.argv = original_argv
+              print("=========================================")
+              print("All packages are now fully installed!")
+              print("You can safely activate EnMAP-Box 3.")
+              print("=========================================")
 
-                Call *Open* from the finder's context menu ...
-
-             .. figure:: /img/macos/opengisch/install_exp_open.png
-                :width: 35%
-
-                ... to show and use the *Open* button in the next dialog.
-
-          #. Select a location to install the QGIS.app (e.g., ``QGIS-3.36.app``), such as `/System/Applications`.
-
-             .. figure:: /img/macos/opengisch/install_exp_folder.png
-
-      **Install Python Dependencies**
-
-           Use the *QGIS-<version>.app* internal pip3 to install or update missing python packages:
-
-           .. code-block:: bash
-
-             /Applications/QGIS-3.36.app/Contents/bin/pip3 install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/macos/requirements_macos.txt
-
-           .. note::
-             This step needs to be repeated after updates to the QGIS.app.
-
-             Do not-update packages like numpy or GDAL with pip, as this might break parts of your QGIS application.
+       4. Wait for the packages to download and compile. Once the console prints the success message, you can close the Python Console.
+       5. Go to **Plugins** ‣ **Manage and Install Plugins...**, search for **EnMAP-Box 3**, and check the box to activate it.
 
    .. group-tab:: Conda
 
