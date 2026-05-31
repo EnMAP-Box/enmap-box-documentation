@@ -15,8 +15,8 @@ Plugin Manager or from a specific release.
 
 .. _usr_installation_install_qgis:
 
-Install QGIS
-============
+1. QGIS and Python Dependencies
+===============================
 
 .. tabs::
 
@@ -24,27 +24,26 @@ Install QGIS
 
       **Install QGIS via the official Standalone/OSGeo4W Installer**
 
-         Install the current QGIS 3.44 to run the latest EnMAP-Box
+         Install the current QGIS 3.44 LTR to run the latest EnMAP-Box
          using the QGIS installer from https://www.qgis.org/en/site/forusers/alldownloads.html#windows.
 
          For beginners, we recommend using the standalone installers. More advanced QGIS users can use OSGeo4W installer,
          which eases updates of existing QGIS installation.
 
-         In case you already have the current QGIS 3.44 version installed, you can skip this step.
-
-         In case you have an outdated QGIS version, make sure to install a current version.
+         In case you have an outdated QGIS, make sure to install a current version (3.44).
 
       **Install Python Dependencies**
 
          #. Close QGIS, if it is open.
 
-         #. Search for OSGeo4W setup from the start menu and run the installation.
+         #. Search for OSGeo4W shell from the start menu. In case the OSgeo4W does not exists,
+            run the Setup to install it.
 
-         #. Now, Open the OSGeo4W Shell from the start menu.
+            .. image:: /img/installation_osgeo4w_executables.png
 
             .. image:: /img/windows_start_osgeo.png
 
-         #. Install Python dependencies via PIP by executing:
+         #. Open the OSGeo4 shell and to install Python dependencies using PIP:
 
             .. code-block:: batch
 
@@ -60,7 +59,7 @@ Install QGIS
 
                  >>> import site
                  >>> print(site.USER_SITE)
-                 C:\Users\Andreas\AppData\Roaming\Python\Python39\site-packages
+                 C:\Users\<user name>\AppData\Roaming\Python\Python39\site-packages
 
          #. Open QGIS from the start menu. If you are running into Installation issues, check out the :ref:`faq` for help.
 
@@ -69,7 +68,7 @@ Install QGIS
 
      **Install QGIS on Linux**
 
-      Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu ,
+      Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
       or follow the instructions for conda.
 
      **Install Python Dependencies**
@@ -146,15 +145,20 @@ Install QGIS
 
    .. group-tab:: MacOS
 
+       .. warning::
+
+          The internal Python environment in macOS QGIS.app's restricts isolated package builds, but these
+          are required by EnMAP-Box applications like the **EnMAP Processing Tool (EnPT)**.
+
+          We therefore recommend to install QGIS and the Python dependencies required to run
+          the EnMAP-Box using **Conda (see the *Conda* tab)**.
+          This is significantly easier to manage, update, and resolve QGIS and dependency versions over time.
+
+
        **Install QGIS on MacOS**
 
-       You can install QGIS using the standard official macOS installer (e.g., version 3.44 LTR) directly from the `QGIS Download Page <https://qgis.org/en/site/forusers/download.html>`_. Simply download the ``.dmg`` file, open it, and drag QGIS to your Applications folder.
+       Install QGIS using the official macOS installer (e.g., version 3.44 LTR) from the `QGIS Download Page <https://qgis.org/en/site/forusers/download.html>`_. Download the ``.dmg`` file, open it, and drag QGIS to your Applications folder.
 
-       .. note::
-          **When to use Conda instead:**
-          Installing via the official QGIS ``.dmg`` covers all core EnMAP-Box functionalities (including Machine Learning algorithms and 3D visualization). However, if your workflow specifically requires the **EnMAP Processing Tool wrapper (** ``enpt-enmapboxapp`` **)**, we highly recommend using **Conda** (see the *Conda* tab).
-
-          The internal Python environment in the macOS QGIS app restricts isolated package builds required by EnPT. Furthermore, Conda is generally recommended as it makes it significantly easier to manage, update, and resolve complex geospatial dependencies over time.
 
        **Install Python Dependencies**
 
@@ -199,18 +203,18 @@ Install QGIS
               print("=========================================")
 
        4. Wait for the packages to download and compile. Once the console prints the success message, you can close the Python Console.
-       5. Go to **Plugins** ‣ **Manage and Install Plugins...**, search for **EnMAP-Box 3**, and check the box to activate it.
 
    .. group-tab:: Conda
 
       .. _usr_installation_qgis_conda:
 
-      **Install QGIS with conda (cross-platform)**
+      **Install QGIS and Python dependencies with conda (cross-platform)**
 
-          Conda is a cross-platform package manager that allows to install software in separated environments. We recommend
-          installing conda using `Miniforge <https://conda-forge.org/download>`__, a minimal installer which
-          by default installs conda packages from the `conda-forge <https://conda-forge.org/>`_ channel.
+      Conda is a cross-platform package manager that allows to install software in separated environments.
+      We recommend to install and use `Miniforge <https://conda-forge.org/download>`__, a minimal conda installer specific to
+      packages from `conda-forge <https://conda-forge.org/>`_ channel.
 
+      ..
           *Linux / Unix / MacOS:*
 
               .. code-block:: bash
@@ -225,89 +229,74 @@ Install QGIS
 
                 Download and run the miniforge installer from https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe
 
+      1. Open a conda terminal
 
-          When done, continue with the installation of QGIS and python dependencies in conda below.
+        .. image:: /img/windows_start_miniforge.png
 
-      **Install a python environment for the EnMAP-Box**
+      ..
+          2. Ensure to use the libmamba solver.
 
-         1. Open a conda terminal
+                To significantly speed up the environment creation, it is highly recommended to use the ``libmamba`` solver.
+                First, check which solver is used::
 
-         1. Open the `Miniforge <https://conda-forge.org>`__ prompt
-              .. image:: /img/windows_start_miniforge.png
+                    conda config --show solver
 
-         2. Ensure to use the libmamba solver.
+                If the used is not *libmamba*, you can install it with the following commands::
 
-            To significantly speed up the environment creation, it is highly recommended to use the ``libmamba`` solver.
-            First, check which solver is used::
+                     conda update -n base conda
+                     conda install -n base conda-libmamba-solver
+                     conda config --set solver libmamba
 
-                conda config --show solver
+                For more details, see the `Anaconda blog post <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ on this topic.
 
-            If the used is not *libmamba*, you can install it with the following commands::
+      2. Install a conda environment with QGIS and all Python dependencies
 
-                 conda update -n base conda
-                 conda install -n base conda-libmamba-solver
-                 conda config --set solver libmamba
+        .. code-block:: batch
 
-            For more details, see the `Anaconda blog post <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ on this topic.
+            conda env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml
 
-         2. Install QGIS and Python dependencies
+        * use ``-n <name>`` or ``--name <name>`` to change the environment name
 
-            .. code-block:: batch
-
-                conda env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml
-
-            * use ``-n <name>`` or ``--name <name>`` to change the environment name
-
-            * use ``--file=<uri>`` to install different set of packages, e.g.:
-             | `enmapbox-base.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-base.yml>`_: for all packages that are required to run the EnMAP-Box GUI and most machine-learning applications
-             | `enmapbox-full.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml>`_: for `enmapbox-base.yml + all additional requirements`, e.g. to run EnPT, EnFROSP and SpecDeepMap
+        * use ``--file=<uri>`` to install different set of packages, e.g.:
+          | `enmapbox-base.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-base.yml>`_: for all packages that are required to run the EnMAP-Box GUI and most machine-learning applications
+          | `enmapbox-full.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml>`_: for `enmapbox-base.yml + all additional requirements`, e.g. to run EnPT, EnFROSP and SpecDeepMap
 
 
-         3. Activate the conda environment and start QGIS:
+      3. Activate the conda environment and start QGIS:
 
-            .. code-block:: batch
+        .. code-block:: batch
 
-               conda activate enmapbox
-               qgis
+          conda activate enmapbox
+          qgis
 
-         .. note::
+      .. note::
 
-                QGIS is developing rapidly. To keep an environment *<env_name>* up to date, call:
+            QGIS is developing rapidly. To keep an environment *<env_name>* up to date, call:
 
-                .. code-block:: bash
+            .. code-block:: bash
 
-                    conda env update -n <env_name> --file=<env_name>.yml --prune
+                conda env update -n <env_name> --file=<env_name>.yml --prune
 
-                To delete a conda environment, call:
+            To delete a conda environment, call:
 
-                .. code-block:: bash
+            .. code-block:: bash
 
-                    conda env remove -n <env_name>
+                conda env remove -n <env_name>
 
-                To use a specific package version, call ``conda install <package>=<version>``.
-                Such a step may require an update of various other packages. For example to use a specific QGIS version:
+            To use a specific package version, call ``conda install <package>=<version>``.
+            Such a step may require an update of various other packages. For example to use a specific QGIS version:
 
-                .. code-block:: bash
+            .. code-block:: bash
 
-                    conda activate <env_name>
-                    (<env_name) conda install qgis=3.40
+                conda activate <env_name>
+                (<env_name) conda install qgis=3.40
 
-Install EnMAP-Box
-=================
-
-
-
-
-
-
-
-
-3. Install EnMAP-Box
+2. Install EnMAP-Box
 ====================
 
 .. tabs::
 
-   .. tab:: QGIS GUI
+   .. tab:: QGIS Plugin Manager
 
       **Install EnMAP-Box Plugin via the QGIS Plugin Manager**
 

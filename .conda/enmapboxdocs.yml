@@ -11,6 +11,7 @@ dependencies:
   - sphinx-copybutton
   - sphinx-autobuild
   - sphinx-tabs
+  - setuptools
   - flake8
   - doc8
   - pip

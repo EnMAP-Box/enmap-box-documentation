@@ -9,8 +9,6 @@ DLR Geoservice
 
 The DLR Earth Observation Center (EOC) Geoservice provides programmatic and immediate access to Earth Observation datasets, including EnMAP Hyperspectral Imagery (HSI), without the need for manual downloading through the web portal.
 
-1. Registering for DLR Geoservice
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To access and download EnMAP data, you must have a registered account.
 
@@ -22,54 +20,78 @@ To access and download EnMAP data, you must have a registered account.
 
 3. Fill out your affiliation details and accept the EnMAP Data License Agreement.
 
-2. Connecting from QGIS with Native STAC
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Search and Download with QGIS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can access the DLR Geoservice directly within QGIS using its native SpatioTemporal Asset Catalog (STAC) support. This is the most stable method for connecting to OGC-compliant APIs.
+.. hint::
 
-.. tip::
-   **Pro Tip:** While older workflows relied on the external ``qgis_stac`` plugin, QGIS 3.40+ includes native STAC support directly in the Browser Panel. Using this native integration avoids plugin dependency conflicts and is highly recommended!
+    QGIS has native STAC support since version 3.40. However, as now (2026-05-31), it does not allow to use
+    STAC authentification differing between *search* and *download* (`QGIS issue #60752 <https://github.com/qgis/QGIS/issues/60752#issuecomment-4442747402>`_).
 
-1. Open QGIS and locate the **Browser Panel** on the left side of your screen.
-2. Scroll down until you see the **STAC** icon.
-3. Right-click on **STAC** and select **New STAC Connection**.
-4. Enter the following connection details:
+    To download EOC Geoservice STAC assets in QGIS, you need to provide your user credentials using the GDAL_HTTP_USERPWD environmental variable.
 
-   * **Name:** ``DLR EOC Geoservice``
-   * **URL:** ``https://geoservice.dlr.de/eoc/ogc/stac/v1/``
+1. Set the environmental variables GDAL_HTTP_AUTH and GDAL_HTTP_USERPWD
 
-5. Click :guilabel:`OK`.
+   .. code-block:: bash
 
-.. figure:: /img/STAC_conn_dialog.png
-   :align: center
-   :width: 80%
+        GDAL_HTTP_AUTH=BASIC
+        GDAL_HTTP_USERPWD=<your Geoservice user name>:<your Geoservice password>
 
-   QGIS STAC Connection Setup Dialog
+   E.g. open *Settings* > *Options*, select the *System* panel, go to *Environment*, define the missing environmental variables and restart QGIS
 
-3. Searching for EnMAP HSI Data (Example: New Delhi)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. figure:: img/stac_dlr_gdalvariables.png
 
-Once connected, you can query specific collections using a spatial subset. Here is how to find EnMAP Level 2A data over New Delhi:
 
-1. Expand the new **DLR EOC Geoservice** connection in your Browser Panel.
-2. Expand the **Collections** folder.
-3. Scroll down to find ``EnMAP HSI - Level 2A Hyperspectral Images - Global``.
-4. Right-click it and select **Open in Data Source Manager** (or simply double-click).
-5. In the Data Source Manager, apply a **Spatial Filter** (Bounding Box) to search for your Area of Interest (e.g. New Delhi). Enter the following coordinates:
+2. Open QGIS and zoom to your region of interest, e.g. "New Delhi". Then open *Layer* > *Add Layer* > *Add Layer from STAC Catalog ...*
 
-   * **West:** ``76.83``
-   * **South:** ``28.40``
-   * **East:** ``77.34``
-   * **North:** ``28.88``
+   .. figure:: img/stac_newdelhi.png
 
-6. Click :guilabel:`Filter/Search`.
-7. Drag and drop the resulting COG (Cloud-Optimized GeoTIFF) assets directly onto your QGIS map canvas to load the hyperspectral imagery.
+3. Now add the DLR EOC Geoservice (`https://geoservice.dlr.de/eoc/ogc/stac/v1/ <https://geoservice.dlr.de/eoc/ogc/stac/v1/>`_)as STAC connection
 
-.. figure:: /img/placeholder_search.gif
-   :align: center
-   :width: 90%
+   .. figure:: img/stac_connection_details.png
 
-   Searching for New Delhi EnMAP Data via Data Source Manager
+4. Edit *Filter...*. Set the spatial extent to the current map extent / any other region of interest and search for EnMAP L2A HSI Products only
+
+   .. figure:: img/stac_filters.png
+
+5. Wait until the search results are returned. Click on a result to see its spatial extent in the QGIS map.
+   Use the context menu to download STAC assets.
+
+   .. figure:: img/stac_filter_selection.png
+
+..
+    3. Searching for EnMAP HSI Data (Example: New Delhi)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    Once connected, you can query specific collections using a spatial subset. Here is how to find EnMAP Level 2A data over New Delhi:
+
+    1. Expand the new **DLR EOC Geoservice** connection in your Browser Panel.
+    2. Expand the **Collections** folder.
+    3. Scroll down to find ``EnMAP HSI - Level 2A Hyperspectral Images - Global``.
+    4. Right-click it and select **Open in Data Source Manager** (or simply double-click).
+    5. In the Data Source Manager, apply a **Spatial Filter** (Bounding Box) to search for your Area of Interest (e.g. New Delhi). Enter the following coordinates:
+
+       * **West:** ``76.83``
+       * **South:** ``28.40``
+       * **East:** ``77.34``
+       * **North:** ``28.88``
+
+    6. Click :guilabel:`Filter/Search`.
+    7. Drag and drop the resulting COG (Cloud-Optimized GeoTIFF) assets directly onto your QGIS map canvas to load the hyperspectral imagery.
+
+    .. figure:: /img/placeholder_search.gif
+       :align: center
+       :width: 90%
+
+       Searching for New Delhi EnMAP Data via Data Source Manager
+
+EODAG
+^^^^^
+
+The Earth Observation Data Access Gateway (EODAG, https://eodag.readthedocs.io) provides unified access to different data providers.
+
+Tbd.
+
 
 Troubleshooting
 ^^^^^^^^^^^^^^^

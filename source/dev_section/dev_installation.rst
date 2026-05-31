@@ -11,9 +11,9 @@ Overview
 Depending on your goals, there are two different ways to set up your environment:
 
 * **For API Users & Scripters:** If you simply want to use EnMAP-Box algorithms and API functions in your own Python scripts, you can use the code directly from your standard QGIS plugin installation.
-* **For Contributors:** If you want to develop new EnMAP-Box applications, improve the core code, or fix bugs, you need to clone the repository and set up a full development environment.
+* **For Contributors:** This is the wy to setup your environment if you want to develop new EnMAP-Box applications, improve the EnMAP-Box code, fix bugs, or simply feel comfortable in using git and dev-ops stuff.
 
-Regardless of your path, if you are writing Python code or developing QGIS/Qt applications, we recommend using a state-of-the-art Integrated Development Environment (IDE) like |PyCharm|. It offers run-time debugging, code completion, spell-checking, syntax highlighting, SCM support, unit-testing and many other helpful things.
+Regardless of your path, if you are writing Python code or developing QGIS/Qt applications, we recommend using a state-of-the-art Integrated Development Environment (IDE) like |PyCharm|, `VS Code <https://code.visualstudio.com/>`_ or `VS Codium <https://github.com/VSCodium/vscodium>`_. It offers run-time debugging, code completion, spell-checking, syntax highlighting, SCM support, unit-testing and many other helpful things.
 
 For API Users & Scripting
 =========================
@@ -71,25 +71,14 @@ If you intend to modify the EnMAP-Box source code and provide code via pull requ
 
 1. Have Git Installed
 ---------------------
-.. tabs::
 
-    .. group-tab:: Windows
+1. Download and install *Git* as described on https://git-scm.com/install/
 
-        If not, download and install *Git* from https://git-scm.com/downloads
+2. Open a terminal an test if git is available:
 
-        Check if git is installed to your local shell, e.g. as:
+    .. code-block:: bash
 
-        .. code-block:: bat
-
-            C:\Windows\System32>git --version
-            git version 2.26.0.windows.1
-
-    .. group-tab:: Linux
-        under construction...
-
-
-    .. group-tab:: MacOS
-        under construction...
+        git --version
 
 
 2. Clone the EnMAP-Box Repository
@@ -218,57 +207,29 @@ to be used by PyCharm.
         Due to the much simpler installation and maintenance, we recommend to install QGIS for Linux and macOS
         using conda.
 
-    .. group-tab:: Conda Environment
+    .. group-tab:: Conda
 
         .. _dev_installation_create_conda_qgis:
 
         The installation of QGIS within `conda <https://docs.conda.io/en/latest>`_
-        is (almost) the same on macOS, Windows or Linux. Using conda
-        it is often much easier to install additional python packages, and
-        admin rights are not required.
+        is (almost) the same on macOS, Windows or Linux. Conda makes it easier
+        to install and update QGIS versions and Python packages.
 
-        1. Make sure `conda <https://docs.conda.io/projects/conda/en/stable/>`_ is installed on your system.
-           We recommend to use the `miniforge <https://github.com/conda-forge/miniforge>`_
-           installer, which defaults to packages from the `conda-forge channel <https://conda-forge.org/>`_.
+        1. Install conda. We recommend to use the miniforge installer from  https://conda-forge.org/download
 
-        2. Install QGIS and python dependencies, using one of the conda environment files (`enmapbox_*.yml`) from
+        2. Install QGIS and python dependencies, using one of the `enmapbox_*.yml` files from
            https://github.com/EnMAP-Box/enmap-box/tree/main/.env/conda, e.g.
 
-            .. code-block:: batch
+           .. code-block:: batch
 
-                conda env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full.yml
+              conda env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml
 
-            ``--file=<uri>`` specifies the path to the \*.yml file that defines the environment.
-            ``-n <name>`` or ``--name <nam>`` can be used to change the environment name.
-            The environment files provided for download vary by used QGIS release and python packages to be:
+           * use ``-n <name>`` or ``--name <name>`` to change the environment name
 
-            * *full* environments contains *all* python packages, including those used by single EnMAP-Box applications only
-            * *light* environments contain python packages that are required to run most and all core EnMAP-Box applications
-            * *ltr* environments use the current
-              `QGIS Long Term release <https://qgis.org/resources/roadmap/#release-schedule>`_ instead of the
-              latest (and newer) QGIS release that is available in conda.
+           * use ``--file=<uri>`` to install different set of packages, e.g.:
+             | `enmapbox-base.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-base.yml>`_: for all packages that are required to run the EnMAP-Box GUI and most machine-learning applications
+             | `enmapbox-full.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml>`_: for `enmapbox-base.yml + all additional requirements`, e.g. to run EnPT, EnFROSP and SpecDeepMap
 
-            Use the *raw content* url to download and install an EnMAP-Box conda environment from github.
-
-            .. list-table::
-               :header-rows: 1
-               :widths: 15 10 70
-
-               * - Environment
-                 - Size
-                 - Path
-               * - `enmapbox_light`
-                 - 4.58 GB
-                 - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_light.yml
-               * - `enmapbox_light_ltr`
-                 - 4.65 GB
-                 - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_light_ltr.yml
-               * - `enmapbox_full`
-                 - 6.46 GB
-                 - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full.yml
-               * - `enmapbox_full_ltr`
-                 - 6.90 GB
-                 - https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox_full_ltr.yml
 
 
         3.  `Activate <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=manage%20environments#activating-an-environment>`_
@@ -279,7 +240,7 @@ to be used by PyCharm.
                conda activate enmapbox
 
 
-        4.  Now you can start `|QGIS`|, the :ref:`Qt Designer <dev_additional_tools>` and
+        4.  Now you can start |QGIS|, the :ref:`Qt Designer <dev_additional_tools>` and
             :ref:`Qt Assistant <dev_additional_tools>` from your conda shell:
 
             .. code-block:: batch
@@ -289,12 +250,13 @@ to be used by PyCharm.
                assistant
 
 
-        5. To easily start applications in this environment that have not been installed by conda, you might
-           define aliases during the activation of the environment, e.g. to start PyCharm
+        .. tip::
+            *Define Aliases*
 
-            * Create an activation script and define an alias for PyCharm:
+            To easily start applications from conda which have not bee installed by conda,
+            you might define aliases. For example to start PyCharm, create an activate script:
 
-                Windows: *<your conda installation>/envs/enmapbox/etc/conda/activate.d/pycharm-activate.bat*
+            Windows: *<your conda installation>/envs/enmapbox/etc/conda/activate.d/pycharm-activate.bat*
 
                 .. code-block:: batch
 
@@ -302,13 +264,13 @@ to be used by PyCharm.
                  doskey pycharm="<path to pycharm executable>"
 
 
-                MacOS: *<your conda installation>/envs/enmapbox/etc.conda/activate.d/pycharm-activate.sh*
+                MacOS/Linux: *<your conda installation>/envs/enmapbox/etc.conda/activate.d/pycharm-activate.sh*
 
                 .. code-block:: bash
 
                  alias pycharm='open -a PyCharm\ CE.app'
 
-            * For completeness, also create a deactivation script:
+            For completeness, create a deactivation script:
 
                 Windows: *<your conda installation>/envs/enmapbox/etc/conda/deactivate.d/others-deactivate.bat*
 
