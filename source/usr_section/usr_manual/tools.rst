@@ -66,8 +66,12 @@ Usage
        :align: center
        :width: 100%
 
+Renderers
+=========
+Renderers in EnMAP‑Box are methods to display raster data by mapping pixel values to colors, transparencies, or symbols so patterns become visually interpretable. They include specialized options such as bivariate color, class fraction/probability, and other raster renderers tailored to hyperspectral and multispectral data. You can find more about QGIS Renderers `here <https://docs.qgis.org/latest/en/docs/user_manual/working_with_raster/raster_properties.html#band-rendering>`_ .
+
 Bivariate Color Raster Renderer
-===============================
+-------------------------------
 
 The :guilabel:`Bivariate Color Raster Renderer` allows to visualize two bands using a 2d color ramp.
 Find a mapping example here: https://www.joshuastevens.net/cartography/make-a-bivariate-choropleth-map/
@@ -78,13 +82,12 @@ Usage
     3. Select two bands and select/define a color plane.
     4. Interactively explore the map.
 
-    .. figure:: ./img/gifs/BCRR.gif
+    .. figure:: /usr_section/usr_manual/img/rasrenderer_bivariate.gif
        :align: center
        :width: 100%
 
-
 Class Fraction/Probability Renderer and Statistics
-==================================================
+--------------------------------------------------
 
 The :guilabel:`Class Fraction/Probability Renderer and Statistics` tool allows to visualize arbitrary many fraction/probability bands
 at the same time, using a weighted average of the original class colors, where the weights are given by the
@@ -96,33 +99,14 @@ Usage
     3. Select approriate class colors or paste a matching style from another layer.
     4. Interactively explore the map.
 
-    .. figure:: ./img/gifs/ClassFrac.gif
+    .. figure:: /usr_section/usr_manual/img/rasrenderer_classfraction.gif
        :align: center
        :width: 100%
 
     Note that the visibility of individual classes can be turned on and off.
 
-Classification Statistics
-=========================
-
-The :guilabel:`Classification Statistics` tool reports class histograms and area covered in percentage, pixel and map units.
-
-Usage
-    1. Start the tool from the :guilabel:`Tools > Class Fraction/Probability Renderer and Statistics` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
-    2. Select a :term:`categorized raster layer`.
-
-    .. figure:: ./img/gifs/classStats1.gif
-       :align: center
-       :width: 100%
-
-    3. Tweak the settings according to your parameters and interactively explore the map.
-
-    .. figure:: ./img/gifs/classStats2.gif
-       :align: center
-       :width: 100%
-
 CMYK Color Raster Renderer
-==========================
+--------------------------
 
 The :guilabel:`CMYK Color Raster Renderer` allows to visualize 4 bands using the CMYK (Cyan, Magenta, Yellow, and Key/Black)
 color model. Find a mapping example here: https://adventuresinmapping.com/2018/10/31/cmyk-vice/
@@ -132,12 +116,71 @@ Usage
     2. Select a :term:`raster layer`.
     3. Select CMYK bands and interactively explore the map.
 
-    .. figure:: ./img/gifs/CMYKrenderer.gif
+    .. figure:: /usr_section/usr_manual/img/rasrenderer_CMYK.gif
        :align: center
        :width: 100%
 
+Decorrelation Stretch Renderer
+------------------------------
+
+The :guilabel:`Decorrelation Stretch Renderer` allows to visualize 3 band. It removes the high correlation commonly found in
+optical bands to produce a more colorful color composite image.
+
+Usage
+    1. Start the tool from the :guilabel:`Tools > Decorrelation Stretch Renderer` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
+
+    2. Select a :term:`raster layer`.
+
+    3. Select RGB bands.
+
+    4. Interactively explore the map.
+
+GUI
+    .. figure:: /usr_section/usr_manual/img/rasrenderer_decorrelation.gif
+       :align: center
+       :width: 100%
+
+Enhanced Multiband Color Renderer
+---------------------------------
+
+The :guilabel:`Ehanced Multiband Color Renderer` allows to visualize arbitrary many bands at the same time using individual
+color canons for each band.
+
+Usage
+    1. Start the tool from the :guilabel:`Tools > Enhanced Multiband Color Renderer` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
+
+    2. Select a color for each band.
+
+    3. Interactively explore the map.
+
+GUI
+    .. figure:: ./img/EnhancedMultibandColorRenderer.png
+       :align: center
+       :width: 100%
+
+HSV Color Raster Renderer
+-------------------------
+
+The :guilabel:`HSV Color Raster Renderer` allows to visualize 3 bands using the HSV (Hue, Saturation, Value/Black) color model.
+
+Usage
+    1. Start the tool from the :guilabel:`Tools > HSV Color Raster Renderer` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
+
+    2. Select HSV bands.
+
+    3. Interactively explore the map.
+
+GUI
+    .. figure:: /usr_section/usr_manual/img/rasrenderer_HSV.gif
+       :align: center
+       :width: 100%
+
+.. todo::
+
+    Find a good dataset, that is comparable to the *Global Landcover Dynamics 2016-2020* from GeoVille.
+
 Color Space Explorer
-====================
+--------------------
 
 The :guilabel:`Color Space Explorer` allows
 a) to select random and predefined RBG band combinations, and
@@ -168,65 +211,29 @@ Usage
        :align: center
        :width: 100%
 
-Decorrelation Stretch Renderer
-==============================
+Multisource Multiband Color Raster Renderer
+-------------------------------------------
 
-The :guilabel:`Decorrelation Stretch Renderer` allows to visualize 3 band. It removes the high correlation commonly found in
-optical bands to produce a more colorful color composite image.
+.. todo:: WriteTheDocs (use FORCE TSI stacks with TCB/G/W)
 
-Usage
-    1. Start the tool from the :guilabel:`Tools > Decorrelation Stretch Renderer` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
-
-    2. Select a :term:`raster layer`.
-
-    3. Select RGB bands.
-
-    4. Interactively explore the map.
-
-GUI
-    .. figure:: ./img/DecorrelationStretchRenderer.png
-       :align: center
-       :width: 100%
-
-Enhanced Multiband Color Renderer
-=================================
-
-The :guilabel:`Ehanced Multiband Color Renderer` allows to visualize arbitrary many bands at the same time using individual
-color canons for each band.
-
-Usage
-    1. Start the tool from the :guilabel:`Tools > Enhanced Multiband Color Renderer` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
-
-    2. Select a color for each band.
-
-    3. Interactively explore the map.
-
-GUI
-    .. figure:: ./img/EnhancedMultibandColorRenderer.png
-       :align: center
-       :width: 100%
-
-HSV Color Raster Renderer
+Classification Statistics
 =========================
 
-The :guilabel:`HSV Color Raster Renderer` allows to visualize 3 bands using the HSV (Hue, Saturation, Value/Black) color model.
+The :guilabel:`Classification Statistics` tool reports class histograms and area covered in percentage, pixel and map units.
 
 Usage
-    1. Start the tool from the :guilabel:`Tools > HSV Color Raster Renderer` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
+    1. Start the tool from the :guilabel:`Tools > Class Fraction/Probability Renderer and Statistics` menu or from the layer context menu inside the :guilabel:`Data Views` panel.
+    2. Select a :term:`categorized raster layer`.
 
-    2. Select HSV bands.
-
-    3. Interactively explore the map.
-
-GUI
-    .. figure:: ./img/HSVColorRasterRenderer.png
+    .. figure:: ./img/gifs/classStats1.gif
        :align: center
        :width: 100%
 
-.. todo::
+    3. Tweak the settings according to your parameters and interactively explore the map.
 
-    Find a good dataset, that is comparable to the *Global Landcover Dynamics 2016-2020* from GeoVille.
-
+    .. figure:: ./img/gifs/classStats2.gif
+       :align: center
+       :width: 100%
 
 Image Cube
 ==========
@@ -284,10 +291,6 @@ GUI
        :align: center
        :width: 100%
 
-Multisource Multiband Color Raster Renderer
-===========================================
-
-.. todo:: WriteTheDocs (use FORCE TSI stacks with TCB/G/W)
 
 Raster Layer Styling
 ====================

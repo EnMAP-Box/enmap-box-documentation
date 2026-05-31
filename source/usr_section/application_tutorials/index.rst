@@ -1,3 +1,5 @@
+.. _appli_tuto:
+
 Application Tutorials
 #####################
 

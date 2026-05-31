@@ -145,56 +145,58 @@ Visualization
         * link raster visualization spectrally to  always show similar wavelength combinations,
           no-matter how many bands your raster sources have
 
-        .. image:: img/rasterlayer_stylingpanel.png
+
+        .. image:: img/Raster_Layer_styling.gif
             :width: 100%
             :align: center
 
 
     .. tab:: Raster Rendering
 
-        *Explore your raster data interactively*
+            *Explore your raster data interactively*
 
-        The EnMAP-Box provides new raster renderers that enhance the visualization of imaging spectroscopy data
-        and other raster outputs, e.g.:
+            The EnMAP-Box provides new raster renderers that enhance the visualization of imaging spectroscopy data
+            and other raster outputs, e.g.:
 
+            * **Bivariate Color Renderer**
 
-        .. list-table::
-            :header-rows: 1
+              Visualize two bands using a 2d color ramp.
 
-            *   - Renderer
-                - Example
+              .. image:: /usr_section/usr_manual/img/rasrenderer_bivariate.gif
+                  :width: 100%
+                  :align: center
 
-            *   - **Bivariate Color Renderer**
+            * **Class-fraction or probability rendering**
 
-                  Visualize two bands using a 2d color ramp.
-                - .. image:: /usr_section/usr_manual/img/BivariateColorRasterRenderer.png
-                    :width: 100%
+              Visualizes multiple class factions/probabilities at the same time using the original class colors.
 
-            *   - **Class-fraction or probability rendering**
+              .. image:: /usr_section/usr_manual/img/rasrenderer_classfraction.gif
+                  :width: 100%
+                  :align: center
 
-                  Visualizes multiple class factions/probabilities at the same time using the original class colors.
-                - .. image:: /usr_section/usr_manual/img//ClassFractionRenderer.png
-                    :width: 100%
+            * **HSV color rendering**
 
-            *   - **HSV color rendering**
+              Visualizes 3 bands using the HSV (Hue, Saturation, Value/Black) color model
 
-                  Visualizes 3 bands using the HSV (Hue, Saturation, Value/Black) color model
-                - .. image:: /usr_section/usr_manual/img/HSVColorRasterRenderer.png
-                    :width: 100%
+              .. image:: /usr_section/usr_manual/img/rasrenderer_HSV.gif
+                  :width: 100%
+                  :align: center
 
+            * **CMYK Color Raster Renderer**
 
-            *   - **CMYK Color Raster Renderer**
+              Visualizes 4 bands using the CMYK (Cyan, Magenta, Yellow, and Key/Black) color model
 
-                  Visualizes 4 bands using the CMYK (Cyan, Magenta, Yellow, and Key/Black) color model
-                - .. image:: /usr_section/usr_manual/img/CMYKColorRasterRenderer.png
-                    :width: 100%
+              .. image:: /usr_section/usr_manual/img/rasrenderer_CMYK.gif
+                  :width: 100%
+                  :align: center
 
-            *   - **Decorelation Stretch Renderer**
+            * **Decorelation Stretch Renderer**
 
-                  Removing the high correlation between 3 band for a more colorful color composite image.
-                - .. image:: /usr_section/usr_manual/img/DecorrelationStretchRenderer.png
-                    :width: 100%
+              Removing the high correlation between 3 band for a more colorful color composite image.
 
+              .. image:: /usr_section/usr_manual/img/rasrenderer_decorrelation.gif
+                  :width: 100%
+                  :align: center
 
 Spectral Libraries
 ==================
@@ -218,7 +220,7 @@ The EnMAP box offers a wide range of options for creating spectral libraries and
 
 .. figure:: img/spectral_library_profiles.gif
     :width: 100%
-
+    :align: center
 ..
     .. figure:: img/spectral_library_enmap_vs_sentinel2.gif
         :width: 100%

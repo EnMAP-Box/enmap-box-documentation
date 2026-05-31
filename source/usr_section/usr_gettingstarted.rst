@@ -12,7 +12,10 @@ EnMAP-Box Introduction and basic features:
    <iframe width="100%" height="380" src="https://www.youtube-nocookie.com/embed/31FQ5zXl2Rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
    </div>
 
-|
+.. note::
+
+   This video is a bit older and may not show the most recent EnMAP-Box GUI.
+
 
 1. Launching the EnMAP-Box
 ##########################
@@ -21,7 +24,13 @@ Once you successfully :ref:`installed the EnMAP-Box <usr_installation>`, you can
 in the QGIS toolbar or via :menuselection:`Raster --> EnMAP-Box` from the menubar.
 Furthermore, the EnMAP-Box :ref:`Processing Algorithms` provider is available in the Processing Toolbox.
 
-    .. figure:: ../img/manual_gui.png
+    .. figure:: ../img/enmapbox_qgisbutton.png
+        :width: 100%
+        :align: center
+
+        The EnMAP-Box button in the QGIS Toolbar interface
+
+    .. figure:: ../img/enmapbox_freshstarted.png
         :width: 100%
         :align: center
 
@@ -30,13 +39,16 @@ Furthermore, the EnMAP-Box :ref:`Processing Algorithms` provider is available in
 .. tip:: Have a look at the :ref:`User Manual <gui>` for a detailed description of the GUI.
 
 
-2. Loading data
-###############
+2. Add Example data
+###################
 
 You can load an :ref:`example dataset <example_data>` into your project by selecting :menuselection:`Project --> Add Example Data` in the menu bar.
 On a fresh installation you will be asked to download the dataset, confirm with :guilabel:`OK`.
 The data will be added automatically into a single map view and will be listed in the :guilabel:`Data Sources` panel as well.
 
+    .. figure:: ../img/add_exampledata.gif
+        :width: 100%
+        :align: center
 
 3. First steps in the GUI
 #########################
@@ -71,7 +83,7 @@ Now we want to change the RGB representation of the :file:`enmap_potsdam.tif` im
 7. In the RGB tab, look for :guilabel:`Predefined` and click on the dropdown menu |combo|. You will find several band
    combination presets. Select `Colour infrared`.
 
-  .. figure:: /img/rasterlayerstyling.png
+  .. figure:: ../general/img/Raster_Layer_styling.gif
      :align: center
      :width: 100%
 
@@ -95,7 +107,17 @@ classification raster, i.e., we are going to rasterize the vector dataset.
 
 1. First of all, make sure the :ref:`Processing Toolbox <processing_toolbox>` window is opened. If not, activate it via
    :menuselection:`View --> Panels --> Processing Toolbox`
+
+    .. figure:: /img/processingalgo_panel.png
+       :align: center
+       :width: 100%
+
 2. Open the :guilabel:`Rasterize categorized vector layer` algorithm under :menuselection:`EnMAP-Box --> Vector conversion`
+
+    .. figure:: /img/vector_conversion_proalgo.png
+       :align: center
+       :width: 40%
+
 3. Use the following settings:
 
   * :guilabel:`Categorized vector layer`: :file:`landcover_potsdam_polygon.gpkg`
@@ -113,9 +135,9 @@ classification raster, i.e., we are going to rasterize the vector dataset.
 5. What's next?
 ###############
 
-* `Introduction to spectral libraries (video) <https://www.youtube.com/watch?v=qVoi0CoJheI>`_
+* :ref:`Spectral Libraries <speclib>`
 * :ref:`Download EnMAP data <data_access>`
-* :ref:`Classification <classification_workflow_app>`
+* :ref:`Check out Application Tutorials <appli_tuto>`
 
 .. seealso::
 
