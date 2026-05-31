@@ -4,25 +4,14 @@
 FAQ & Troubleshooting
 =====================
 
-
-Bug report & feedback
-=====================
-
-.. note:: Your feedback is more than welcome! In case you encounter any problems with the EnMAP-Box or have
-          suggestions of any kind for improving it (or this documentation), please let us know!
-
-          **Please report issues** `here <https://github.com/EnMAP-Box/enmap-box/issues/new>`__
-
-          **For questions use** `GitHub Discussions <https://github.com/EnMAP-Box/enmap-box/discussions>`__
-
-FAQ
-===
+Frequently Asked Questions
+==========================
 
 This is a list of Frequently Asked Questions about the EnMAP-Box. Feel free to
 suggest new entries!
 
-Installation FAQs
------------------
+Installation
+------------
 
 .. tabs::
 
@@ -152,6 +141,16 @@ and/or only affect a specific version of QGIS or operating system:
 
 * https://github.com/EnMAP-Box/enmap-box/labels/known%20issue
 * Historic (old repository): https://bitbucket.org/hu-geomatics/enmap-box/issues?component=known+issue&status=on+hold
+
+Bug report & feedback
+=====================
+
+.. note:: Your feedback is more than welcome! In case you encounter any problems with the EnMAP-Box or have
+          suggestions of any kind for improving it (or this documentation), please let us know!
+
+          **Please report issues** `here <https://github.com/EnMAP-Box/enmap-box/issues/new>`__
+
+          **For questions use** `GitHub Discussions <https://github.com/EnMAP-Box/enmap-box/discussions>`__
 
 Contact
 =======

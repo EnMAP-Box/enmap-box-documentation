@@ -15,7 +15,7 @@ Depending on your goals, there are two different ways to set up your environment
 
 Regardless of your path, if you are writing Python code or developing QGIS/Qt applications, we recommend using a state-of-the-art Integrated Development Environment (IDE) like |PyCharm|. It offers run-time debugging, code completion, spell-checking, syntax highlighting, SCM support, unit-testing and many other helpful things.
 
-For API Users & Scripters
+For API Users & Scripting
 =========================
 
 If you only want to use EnMAP-Box algorithms and tools in your own standalone Python scripts, you do not need to clone the GitHub repository. You can simply hook into the code that comes with your standard QGIS plugin installation.
