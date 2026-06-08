@@ -1,8 +1,109 @@
 .. _data_access:
 
-========================
+===========
+Data Access
+===========
+
+DLR Geoservice
+--------------
+
+The DLR Earth Observation Center (EOC) Geoservice provides programmatic and immediate access to Earth Observation datasets, including EnMAP Hyperspectral Imagery (HSI), without the need for manual downloading through the web portal.
+
+
+To access and download EnMAP data, you must have a registered account.
+
+1. Navigate to the EnMAP Instrument Planning Portal or the EOWEB |reg| GeoPortal.
+2. Click on :guilabel:`Registration` or :guilabel:`Sign-up`.
+
+.. important::
+   Under current EnMAP data policies, you must register using an **institutional or company email address** (e.g., affiliated with a university, research center, or commercial enterprise). If you do not have an institutional email address, you must apply for a special exemption by writing directly to ``enmap_registration@dlr.de``.
+
+3. Fill out your affiliation details and accept the EnMAP Data License Agreement.
+
+Search and Download with QGIS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. hint::
+
+    QGIS has native STAC support since version 3.40. However, as now (2026-05-31), it does not allow to use
+    STAC authentification differing between *search* and *download* (`QGIS issue #60752 <https://github.com/qgis/QGIS/issues/60752#issuecomment-4442747402>`_).
+
+    To download EOC Geoservice STAC assets in QGIS, you need to provide your user credentials using the GDAL_HTTP_USERPWD environmental variable.
+
+1. Set the environmental variables GDAL_HTTP_AUTH and GDAL_HTTP_USERPWD
+
+   .. code-block:: bash
+
+        GDAL_HTTP_AUTH=BASIC
+        GDAL_HTTP_USERPWD=<your Geoservice user name>:<your Geoservice password>
+
+   E.g. open *Settings* > *Options*, select the *System* panel, go to *Environment*, define the missing environmental variables and restart QGIS
+
+   .. figure:: img/stac_dlr_gdalvariables.png
+
+
+2. Open QGIS and zoom to your region of interest, e.g. "New Delhi". Then open *Layer* > *Add Layer* > *Add Layer from STAC Catalog ...*
+
+   .. figure:: img/stac_newdelhi.png
+
+3. Now add the DLR EOC Geoservice (`https://geoservice.dlr.de/eoc/ogc/stac/v1/ <https://geoservice.dlr.de/eoc/ogc/stac/v1/>`_)as STAC connection
+
+   .. figure:: img/stac_connection_details.png
+
+4. Edit *Filter...*. Set the spatial extent to the current map extent / any other region of interest and search for EnMAP L2A HSI Products only
+
+   .. figure:: img/stac_filters.png
+
+5. Wait until the search results are returned. Click on a result to see its spatial extent in the QGIS map.
+   Use the context menu to download STAC assets.
+
+   .. figure:: img/stac_filter_selection.png
+
+..
+    3. Searching for EnMAP HSI Data (Example: New Delhi)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    Once connected, you can query specific collections using a spatial subset. Here is how to find EnMAP Level 2A data over New Delhi:
+
+    1. Expand the new **DLR EOC Geoservice** connection in your Browser Panel.
+    2. Expand the **Collections** folder.
+    3. Scroll down to find ``EnMAP HSI - Level 2A Hyperspectral Images - Global``.
+    4. Right-click it and select **Open in Data Source Manager** (or simply double-click).
+    5. In the Data Source Manager, apply a **Spatial Filter** (Bounding Box) to search for your Area of Interest (e.g. New Delhi). Enter the following coordinates:
+
+       * **West:** ``76.83``
+       * **South:** ``28.40``
+       * **East:** ``77.34``
+       * **North:** ``28.88``
+
+    6. Click :guilabel:`Filter/Search`.
+    7. Drag and drop the resulting COG (Cloud-Optimized GeoTIFF) assets directly onto your QGIS map canvas to load the hyperspectral imagery.
+
+    .. figure:: /img/placeholder_search.gif
+       :align: center
+       :width: 90%
+
+       Searching for New Delhi EnMAP Data via Data Source Manager
+
+EODAG
+^^^^^
+
+The Earth Observation Data Access Gateway (EODAG, https://eodag.readthedocs.io) provides unified access to different data providers.
+
+Tbd.
+
+
+Troubleshooting
+^^^^^^^^^^^^^^^
+
+Because the Geoservice provides direct access to live institutional servers, you may occasionally experience connection timeouts.
+
+.. note::
+   **Encountering a "Bad Gateway" (HTTP 502) Error?**
+   This indicates that your QGIS connection is configured perfectly, but the DLR server is temporarily undergoing maintenance or experiencing heavy load. If this occurs, verify your URL is correct, wait a short while, and try expanding the folder again.
+
 EnMAP Data Access Portal
-========================
+------------------------
 
 .. admonition:: Info
 
@@ -29,7 +130,7 @@ To access the EnMAP image archive, a primary registration to the IPP is necessar
        Overview of the EnMAP Data Access Portals
 
 Step 1: Instrument Planning Portal (IPP)
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The IPP enables the user registration, the submission of user proposals, and the planning and submitting of future orders.
 
@@ -58,7 +159,7 @@ The IPP enables the user registration, the submission of user proposals, and the
     5. Once the role has been assigned, a new box will appear in the User Portal, allowing you tp access the EOWEB |reg| GeoPortal to search the EnMAP Data archive and order images.
 
 Step 2: EOWEB |reg| GeoPortal
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The EOWEB |reg| GeoPortal access link is created for Cat-1 users after the requested role has been approved by the reviewer.
 The login button appears on the User Portal page, which automatically directs to the EOWEB |reg| GeoPortal login page.
@@ -84,7 +185,7 @@ The login button appears on the User Portal page, which automatically directs to
     5. Place your order and wait until you get notified.
 
 Step 3: Download data from the FTP Delivery Server
---------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After the order is placed, an e-mail is sent including a link to the FTP server and the zipped data.
 
@@ -95,7 +196,7 @@ a look at `Downloading Ordered Data <https://eoweb.dlr.de/egp/docs/user/download
 
     .. figure:: /img/enmap_downloadData.png
        :align: center
-       :width: 100%
+       :width: 60%
 
        Example of FTPS settings in FileZill
 
