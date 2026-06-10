@@ -212,7 +212,7 @@ Plugin Manager or from a specific release.
 
       Conda is a cross-platform package manager that allows to install software in separated environments.
       We recommend to install and use `Miniforge <https://conda-forge.org/download>`__, a minimal conda installer specific to
-      packages from `conda-forge <https://conda-forge.org/>`_ channel.
+      packages from `conda-forge <https://conda-forge.org/>`_ channel. It contains a meta-package for packages needed by the EnMAP-Box https://anaconda.org/channels/conda-forge/packages/enmapbox
 
       ..
           *Linux / Unix / MacOS:*
@@ -229,40 +229,22 @@ Plugin Manager or from a specific release.
 
                 Download and run the miniforge installer from https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe
 
-      1. Open a conda terminal
+      1. Open a conda terminal and create a conda environment that contains QGIS and all required packages.
 
-        .. image:: /img/windows_start_miniforge.png
+         a) Use the **enmapbox** recipe to install packages required to run the EnMAP-Box, including EnPT, EnFROSP, SpecDeepMap
 
-      ..
-          2. Ensure to use the libmamba solver.
+            .. code-block:: bash
 
-                To significantly speed up the environment creation, it is highly recommended to use the ``libmamba`` solver.
-                First, check which solver is used::
+               conda create -n enmapbox -c conda-forge enmapbox
 
-                    conda config --show solver
+         b) Use the **enmapbox-lite** recipe to install packages required to run the EnMAP-Box and *most* machine-learning applications
 
-                If the used is not *libmamba*, you can install it with the following commands::
+            .. code-block:: bash
 
-                     conda update -n base conda
-                     conda install -n base conda-libmamba-solver
-                     conda config --set solver libmamba
-
-                For more details, see the `Anaconda blog post <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ on this topic.
-
-      2. Install a conda environment with QGIS and all Python dependencies
-
-        .. code-block:: batch
-
-            conda env create -n enmapbox --file=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml
-
-        * use ``-n <name>`` or ``--name <name>`` to change the environment name
-
-        * use ``--file=<uri>`` to install different set of packages, e.g.:
-          | `enmapbox-base.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-base.yml>`_: for all packages that are required to run the EnMAP-Box GUI and most machine-learning applications
-          | `enmapbox-full.yml <https://raw.githubusercontent.com/EnMAP-Box/enmap-box/refs/heads/main/.env/conda/enmapbox-full.yml>`_: for `enmapbox-base.yml + all additional requirements`, e.g. to run EnPT, EnFROSP and SpecDeepMap
+               conda create -n enmapbox -c conda-forge enmapbox-lite
 
 
-      3. Activate the conda environment and start QGIS:
+      2. Activate the conda environment and start QGIS:
 
         .. code-block:: batch
 
@@ -271,11 +253,12 @@ Plugin Manager or from a specific release.
 
       .. note::
 
-            QGIS is developing rapidly. To keep an environment *<env_name>* up to date, call:
+            QGIS, GDAL and other packages are developing rapidly. To keep an environment *<env_name>* up to date, call:
 
             .. code-block:: bash
 
-                conda env update -n <env_name> --file=<env_name>.yml --prune
+                conda activate <env_name>
+                (<env_name>) conda update --all
 
             To delete a conda environment, call:
 
@@ -284,7 +267,7 @@ Plugin Manager or from a specific release.
                 conda env remove -n <env_name>
 
             To use a specific package version, call ``conda install <package>=<version>``.
-            Such a step may require an update of various other packages. For example to use a specific QGIS version:
+            Such a step may require an update of various other packages. For example to use a specific QGIS version, call:
 
             .. code-block:: bash
 

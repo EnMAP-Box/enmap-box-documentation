@@ -84,7 +84,7 @@ Installation
 
       .. _faq_numba:
 
-      * **error ensomap / numba / TypeError jitdebug**
+      * **Error ensomap / numba / TypeError jitdebug**
 
         EnSoMAP requires |Numba|, a JIT compiler that translates python code into fast machine code. Numba is not part of a standard QGIS installation, and installing it on standard Windows/macOS installations can be tricky.
         If you want to use EnSoMAP and numba, we recommend using a Conda-based QGIS environment instead.
@@ -104,6 +104,23 @@ Installation
                 (qgis_stable) $>qgis
 
         4.  If not already done, install the EnMAP-Box to your Conda-QGIS with the QGIS Plugin Manager.
+
+      * **Installing packages is terrible slow / takes too long**
+
+        Conda can use different approaches to check which packages can be installed on your OS. To significantly speed
+        up this process, it is highly recommended to use the ``libmamba`` solver.
+
+        1. First, check which solver is used::
+
+            conda config --show solver
+
+        2. If the used solver is not *libmamba*, you can install it with the following commands::
+
+           conda update -n base conda
+           conda install -n base conda-libmamba-solver
+           conda config --set solver libmamba
+
+        For more details, see the `Anaconda blog post <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ on this topic.
 
 General Installation Issues
 ---------------------------
