@@ -1,6 +1,8 @@
 services:
   docs:
-    build: .
+    build:
+      context: .
+      target: docs
     ports:
       - "8000:8000"
     volumes:
@@ -16,3 +18,18 @@ services:
         echo '-------------------------------------------------------'
         echo ''
         exec sphinx-autobuild source build --host 0.0.0.0 --port 8000
+
+  qgis:
+    profiles:
+      - qgis
+    build:
+      context: .
+      target: qgis-enmapbox
+    environment:
+      DISPLAY: ${DISPLAY:-}
+      QT_QPA_PLATFORM: xcb
+      QT_X11_NO_MITSHM: "1"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command:
+      - qgis

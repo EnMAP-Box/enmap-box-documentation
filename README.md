@@ -87,8 +87,39 @@ cd <repo dir>/enmap-box-documentation
 
 ## Docker
 
-1. Run `docker-compose up` in the root directory of the repository.
+### Documentation preview
+
+1. Run `docker compose up docs` in the root directory of the repository.
 2. Open a browser and go to http://localhost:8000/
+
+### QGIS + EnMAP-Box runtime image
+
+The Dockerfile also contains a `qgis-enmapbox` target. This image installs QGIS from the QGIS LTR
+Ubuntu packages, installs the Linux Python dependencies without conda, creates a QGIS user profile
+named `EnMAP-Box`, and installs the latest `EnMAP-Box 3` plugin from the QGIS plugin repository into
+that profile.
+
+Build the image:
+
+````bash
+docker build --target qgis-enmapbox -t enmapbox-qgis .
+````
+
+Run a non-GUI smoke test:
+
+````bash
+docker run --rm enmapbox-qgis qgis-plugin-manager check --version 3.44
+````
+
+Run QGIS on a Linux/X11 desktop:
+
+````bash
+xhost +local:docker
+docker compose --profile qgis up qgis
+````
+
+The QGIS profile is created inside the container at
+`/home/enmapbox/.local/share/QGIS/QGIS3/profiles/EnMAP-Box`.
 
 
 # Build the documentation
@@ -105,5 +136,3 @@ Substitute allow you to "recycle" code definitions
 2. Use ``|my_icon|`  in any *.rst file you like.
 3. Run ``python scripts/create_substitutes.py`` to append the ``|my_icon|`` to any *.rst file where it is used
 4. Run ``make.bat html`` to build the documentation.
-
-
