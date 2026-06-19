@@ -66,82 +66,92 @@ Plugin Manager or from a specific release.
 
    .. group-tab:: Linux
 
-     **Install QGIS on Linux**
+      .. warning::
+
+         The internal Python environment in Linux QGIS.app's restricts isolated package builds, but these
+         are required by EnMAP-Box applications like the **EnMAP Processing Tool (EnPT)**.
+
+         We therefore recommend to install QGIS and the Python dependencies required to run
+         the EnMAP-Box using **Conda (see the *Conda* tab)**.
+         This is significantly easier to manage, update, and resolve QGIS and dependency versions over time.
+
+
+      **Install QGIS on Linux**
 
       Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
       or follow the instructions for conda.
 
-     **Install Python Dependencies**
+      **Install Python Dependencies**
 
-       #. Open the Terminal (:kbd:`Ctrl` + :kbd:`Alt` + :kbd:`T`).
+      #. Open the Terminal (:kbd:`Ctrl` + :kbd:`Alt` + :kbd:`T`).
 
-       #. Make sure the following packages are installed using the system package manager:
+      #. Make sure the following packages are installed using the system package manager:
 
-          .. code-block:: console
+         .. code-block:: console
 
-             sudo apt install python3-pip python3-venv pyqt5-dev-tools python3-matplotlib
+            sudo apt install python3-pip python3-venv pyqt5-dev-tools python3-matplotlib
 
-       #. **(Optional)** For some EnMAP-Box tools you may also need the following packages:
+      #. **(Optional)** For some EnMAP-Box tools you may also need the following packages:
 
-          .. code-block:: console
+         .. code-block:: console
 
-             sudo apt install python3-h5py python3-pyqt5.qtopengl python3-netcdf4
+            sudo apt install python3-h5py python3-pyqt5.qtopengl python3-netcdf4
 
-       #. Open QGIS and the QGIS Python Console (:kbd:`Ctrl` + :kbd:`Alt` + :kbd:`P`). Type the following and confirm with enter:
+      #. Open QGIS and the QGIS Python Console (:kbd:`Ctrl` + :kbd:`Alt` + :kbd:`P`). Type the following and confirm with enter:
 
-          .. code-block:: python
+         .. code-block:: python
 
-             import sys; sys.executable
+            import sys; sys.executable
 
-          This shows the path of the Python executable that QGIS is using, usually it is ``/usr/bin/python3``.
-          We need to ensure that additional Python packages get installed into the same Python environment.
-          This is the case if the command ``which python3`` returns the path of the Python executable shown in QGIS!
+         This shows the path of the Python executable that QGIS is using, usually it is ``/usr/bin/python3``.
+         We need to ensure that additional Python packages get installed into the same Python environment.
+         This is the case if the command ``which python3`` returns the path of the Python executable shown in QGIS!
 
-          If not, please use the full path, e.g. ``/usr/bin/python3`` instead of ``python3`` in the following steps.
+         If not, please use the full path, e.g. ``/usr/bin/python3`` instead of ``python3`` in the following steps.
 
-          Close QGIS.
+         Close QGIS.
 
-       #. Create a `virtual python environment <https://docs.python.org/3/library/venv.html>`_ in a directory of your choice (e.g. ``~/.virtualenvs/enmapbox``):
+      #. Create a `virtual python environment <https://docs.python.org/3/library/venv.html>`_ in a directory of your choice (e.g. ``~/.virtualenvs/enmapbox``):
 
-          .. code-block:: console
+         .. code-block:: console
 
-             python3 -m venv --upgrade-deps --system-site-packages ~/.virtualenvs/enmapbox
+            python3 -m venv --upgrade-deps --system-site-packages ~/.virtualenvs/enmapbox
 
-       #. Activate the environment:
+      #. Activate the environment:
 
-          .. code-block:: console
+         .. code-block:: console
 
-             source ~/.virtualenvs/enmapbox/bin/activate
+            source ~/.virtualenvs/enmapbox/bin/activate
 
-          Now you should see the environment name in brackets at the beginning of your prompt, e.g. ``(enmapbox)``.
+         Now you should see the environment name in brackets at the beginning of your prompt, e.g. ``(enmapbox)``.
 
-       #. Install missing Python dependencies with pip inside the virtual environment:
+      #. Install missing Python dependencies with pip inside the virtual environment:
 
-          .. code-block:: console
+         .. code-block:: console
 
-             python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements_ubuntu.txt
+            python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements_ubuntu.txt
 
-       #. Start QGIS (from the activated environment, see step 6):
+      #. Start QGIS (from the activated environment, see step 6):
 
-          .. code-block:: console
+         .. code-block:: console
 
-             qgis
+            qgis
 
-       .. hint::
+      .. hint::
 
          You can add a shortcut to your applications menu, so you do not have to open a Terminal and type the above-mentioned commands (6 & 8) every time you want to start QGIS with the EnMAP-Box environment:
 
          Create the file :file:`~/.local/share/applications/enmapbox.desktop` with the following content (if you used another installation path in the instructions above, change accordingly):
 
-          .. code-block:: text
+         .. code-block:: text
 
-             [Desktop Entry]
-             Name=QGIS (EnMAP-Box)
-             Exec=/bin/bash -c "source ~/.virtualenvs/enmapbox/bin/activate && qgis %F"
-             Terminal=false
-             Icon=qgis
-             Type=Application
-             Categories=Education;Science;Geography;
+            [Desktop Entry]
+            Name=QGIS (EnMAP-Box)
+            Exec=/bin/bash -c "source ~/.virtualenvs/enmapbox/bin/activate && qgis %F"
+            Terminal=false
+            Icon=qgis
+            Type=Application
+            Categories=Education;Science;Geography;
 
    .. group-tab:: MacOS
 
