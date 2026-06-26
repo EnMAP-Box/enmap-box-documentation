@@ -49,7 +49,8 @@ Usage:
 
         from scipy.ndimage.filters import gaussian_gradient_magnitude
 
-        function = lambda array: gaussian_gradient_magnitude\(array, sigma=1\)
+        def function\(array\):
+            return gaussian_gradient_magnitude\(array, sigma=1\)
 
 **Outputs**
 
@@ -77,7 +78,9 @@ Usage:
     function: Function
         Default value:    from scipy.ndimage.filters import gaussian_gradient_magnitude
 
-    function = lambda array: gaussian_gradient_magnitude(array, sigma=1)
+    def function(array):
+        return gaussian_gradient_magnitude(array, sigma=1)
+
         Argument type:    string
         Acceptable values:
             - String value

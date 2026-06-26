@@ -114,9 +114,9 @@ Visualize land cover change statistics via Sankey plot.
         Available values:
             - 0: Percentages (%)
             - 1: Pixels (px)
-            - 2: Square meters (mÂ²)
+            - 2: Square meters (m²)
             - 3: Hectares (ha)
-            - 4: Square kilometers (kmÂ²)
+            - 4: Square kilometers (km²)
         Acceptable values:
             - Number of selected option, e.g. '1'
             - Comma separated list of options, e.g. '1,3'

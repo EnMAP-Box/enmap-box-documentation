@@ -49,7 +49,8 @@ Usage:
 
         from scipy.ndimage.filters import maximum_filter
 
-        function = lambda array: maximum_filter\(array, size=3\)
+        def function\(array\):
+            return maximum_filter\(array, size=3\)
 
 **Outputs**
 
@@ -77,7 +78,9 @@ Usage:
     function: Function
         Default value:    from scipy.ndimage.filters import maximum_filter
 
-    function = lambda array: maximum_filter(array, size=3)
+    def function(array):
+        return maximum_filter(array, size=3)
+
         Argument type:    string
         Acceptable values:
             - String value

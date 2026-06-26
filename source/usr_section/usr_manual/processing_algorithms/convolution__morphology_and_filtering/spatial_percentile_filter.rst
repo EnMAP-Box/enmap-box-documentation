@@ -49,7 +49,8 @@ Usage:
 
         from scipy.ndimage.filters import percentile_filter
 
-        function = lambda array: percentile_filter\(array, percentile=50, size=3\)
+        def function\(array\):
+            return percentile_filter\(array, percentile=50, size=3\)
 
 **Outputs**
 
@@ -77,7 +78,9 @@ Usage:
     function: Function
         Default value:    from scipy.ndimage.filters import percentile_filter
 
-    function = lambda array: percentile_filter(array, percentile=50, size=3)
+    def function(array):
+        return percentile_filter(array, percentile=50, size=3)
+
         Argument type:    string
         Acceptable values:
             - String value

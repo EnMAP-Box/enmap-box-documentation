@@ -49,7 +49,8 @@ Usage:
 
         from scipy.ndimage.filters import laplace
 
-        function = lambda array: laplace\(array\)
+        def function\(array\):
+            return laplace\(array\)
 
 **Outputs**
 
@@ -77,7 +78,9 @@ Usage:
     function: Function
         Default value:    from scipy.ndimage.filters import laplace
 
-    function = lambda array: laplace(array)
+    def function(array):
+        return laplace(array)
+
         Argument type:    string
         Acceptable values:
             - String value

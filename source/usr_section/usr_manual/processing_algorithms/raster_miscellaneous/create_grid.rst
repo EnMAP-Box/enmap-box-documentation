@@ -73,8 +73,8 @@ Usage:
         Argument type:    crs
         Acceptable values:
             - CRS as an auth ID (e.g. 'EPSG:3111')
-            - CRS as a PROJ4 string (e.g. 'PROJ4:â€¦')
-            - CRS as a WKT string (e.g. 'WKT:â€¦')
+            - CRS as a PROJ4 string (e.g. 'PROJ4:…')
+            - CRS as a WKT string (e.g. 'WKT:…')
             - Path to a layer. The CRS of the layer is used.
     extent: Extent
         Argument type:    extent

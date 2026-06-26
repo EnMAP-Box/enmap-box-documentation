@@ -49,7 +49,8 @@ UUsage:
 
         from scipy.ndimage.filters import median_filter
 
-        function = lambda array: median_filter\(array, size=3\)
+        def function\(array\):
+            return median_filter\(array, size=3\)
 
 **Outputs**
 
@@ -77,7 +78,9 @@ UUsage:
     function: Function
         Default value:    from scipy.ndimage.filters import median_filter
 
-    function = lambda array: median_filter(array, size=3)
+    def function(array):
+        return median_filter(array, size=3)
+
         Argument type:    string
         Acceptable values:
             - String value

@@ -60,7 +60,7 @@ Usage:
 
 :guilabel:`Write ENVI header` [boolean]
     Whether to write an ENVI header \*.hdr sidecar file with spectral metadata required for proper visualization in ENVI software.
-    Default: *True*
+    Default: *False*
 
 :guilabel:`Spectral raster layer for band subsetting` [raster]
     A `spectral raster layer <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-spectral-raster-layer>`_ used for specifying a `band <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-band>`_ subset by matching the `center wavelength <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-center-wavelength>`_.
@@ -175,7 +175,7 @@ Usage:
             - field:FIELD_NAME to use a data defined value taken from the FIELD_NAME field
             - expression:SOME EXPRESSION to use a data defined value calculated using a custom QGIS expression
     writeEnviHeader: Write ENVI header
-        Default value:    true
+        Default value:    false
         Argument type:    boolean
         Acceptable values:
             - 1 for true/yes

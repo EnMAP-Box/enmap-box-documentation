@@ -51,7 +51,8 @@ Usage:
 
         from scipy.ndimage.filters import sobel
 
-        function = lambda array: sobel\(array, axis=0\)
+        def function\(array\):
+            return sobel\(array, axis=0\)
 
 **Outputs**
 
@@ -79,7 +80,9 @@ Usage:
     function: Function
         Default value:    from scipy.ndimage.filters import sobel
 
-    function = lambda array: sobel(array, axis=0)
+    def function(array):
+        return sobel(array, axis=0)
+
         Argument type:    string
         Acceptable values:
             - String value

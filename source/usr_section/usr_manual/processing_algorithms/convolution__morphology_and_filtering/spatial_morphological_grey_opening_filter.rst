@@ -51,7 +51,9 @@ Usage:
 
         structure = generate_binary_structure\(rank=2, connectivity=1\)
         structure = iterate_structure\(structure=structure, iterations=1\)
-        function = lambda array: grey_opening\(array, structure=structure\)
+
+        def function\(array\):
+            return grey_opening\(array, structure=structure\)
 
 **Outputs**
 
@@ -81,7 +83,10 @@ Usage:
 
     structure = generate_binary_structure(rank=2, connectivity=1)
     structure = iterate_structure(structure=structure, iterations=1)
-    function = lambda array: grey_opening(array, structure=structure)
+
+    def function(array):
+        return grey_opening(array, structure=structure)
+
         Argument type:    string
         Acceptable values:
             - String value

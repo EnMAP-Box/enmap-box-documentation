@@ -62,7 +62,7 @@ Usage:
 
 **Command-line usage**
 
-``>qgis_process help enmapbox:FitMeanshift``::
+``>qgis_process help enmapbox:fitmeanshift``::
 
     ----------------
     Arguments

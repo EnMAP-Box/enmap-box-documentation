@@ -55,7 +55,9 @@ Usage:
 
         structure = generate_binary_structure\(rank=2, connectivity=1\)
         structure = iterate_structure\(structure=structure, iterations=1\)
-        function = lambda array: binary_erosion\(array, structure=structure, iterations=1\)
+
+        def function\(array\):
+            return binary_erosion\(array, structure=structure, iterations=1\)
 
 **Outputs**
 
@@ -85,7 +87,10 @@ Usage:
 
     structure = generate_binary_structure(rank=2, connectivity=1)
     structure = iterate_structure(structure=structure, iterations=1)
-    function = lambda array: binary_erosion(array, structure=structure, iterations=1)
+
+    def function(array):
+        return binary_erosion(array, structure=structure, iterations=1)
+
         Argument type:    string
         Acceptable values:
             - String value

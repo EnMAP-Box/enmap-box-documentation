@@ -53,7 +53,7 @@ Usage:
         ...
         # Option 2: Use band center wavelength as dict-key,
         #           together with band full width at half maximum \(FWHM\) as dict-value.
-        #           The response function is modelled as an RBF around the center wavelength with a width of FWHM / 2.355.
+        #           Response function is modelled as an RBF around the center wavelength with a width of FWHM / 2.355.
         #           See https://en.wikipedia.org/wiki/Full_width_at_half_maximum for details.
         responses\[460\] = 5.8
         ...
@@ -99,7 +99,7 @@ Usage:
     ...
     # Option 2: Use band center wavelength as dict-key,
     #           together with band full width at half maximum (FWHM) as dict-value.
-    #           The response function is modelled as an RBF around the center wavelength with a width of FWHM / 2.355.
+    #           Response function is modelled as an RBF around the center wavelength with a width of FWHM / 2.355.
     #           See https://en.wikipedia.org/wiki/Full_width_at_half_maximum for details.
     responses[460] = 5.8
     ...
