@@ -222,7 +222,8 @@ Plugin Manager or from a specific release.
 
       Conda is a cross-platform package manager that allows to install software in separated environments.
       We recommend to install and use `Miniforge <https://conda-forge.org/download>`__, a minimal conda installer specific to
-      packages from `conda-forge <https://conda-forge.org/>`_ channel. It contains a meta-package for packages needed by the EnMAP-Box https://anaconda.org/channels/conda-forge/packages/enmapbox
+      packages from `conda-forge <https://conda-forge.org/>`_ channel. It contains a meta-package for packages needed
+      by the EnMAP-Box https://anaconda.org/channels/conda-forge/packages/enmapbox/overview
 
       ..
           *Linux / Unix / MacOS:*
