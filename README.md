@@ -121,6 +121,52 @@ docker compose --profile qgis up qgis
 The QGIS profile is created inside the container at
 `/home/enmapbox/.local/share/QGIS/QGIS3/profiles/EnMAP-Box`.
 
+### Interactive testing inside the container
+
+If you want to explore the plugin from Python, import the EnMAP-Box package itself, not
+`enmapboxplugin.plugin`.
+
+Headless smoke test:
+
+````bash
+docker run --rm qgis-enmapbox:latest python3 -u - <<'PY'
+from enmapbox.testing import start_app
+from enmapbox import initAll
+
+app = start_app()
+initAll()
+print("EnMAP-Box initialized successfully")
+PY
+````
+
+Interactive shell:
+
+````bash
+docker run -it --rm qgis-enmapbox:latest python3
+````
+
+Then run:
+
+````python
+from enmapbox.testing import start_app
+from enmapbox import initAll, EnMAPBox
+
+app = start_app()
+initAll()
+
+enmapbox = EnMAPBox(None)
+print(enmapbox)
+````
+
+If you want to work with the plugin path directly, add the installed plugin root directory to `sys.path`
+and import `enmapbox`, not `plugin`:
+
+````python
+import sys
+sys.path.insert(0, '/home/enmapbox/.local/share/QGIS/QGIS3/profiles/EnMAP-Box/python/plugins/enmapboxplugin')
+from enmapbox.gui.enmapboxgui import EnMAPBox
+````
+
 
 # Build the documentation
 

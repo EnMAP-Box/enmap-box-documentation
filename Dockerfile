@@ -28,6 +28,7 @@ ARG QGIS_REPOSITORY=https://qgis.org/ubuntu-ltr
 ARG QGIS_SUITE=noble
 ARG QGIS_PLUGIN_QGIS_VERSION=3.44
 ARG ENMAPBOX_REQUIREMENTS_URL=https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements_ubuntu.txt
+ARG ENMAPBOX_PLUGIN_NAME="EnMAP-Box 3"
 ARG ENMAPBOX_PLUGIN_ID=enmapboxplugin
 ARG ENMAPBOX_USER=enmapbox
 ARG ENMAPBOX_UID=1000
@@ -71,7 +72,11 @@ RUN apt-get update \
 
 RUN python3 -m pip install --no-cache-dir --break-system-packages --ignore-installed \
        -r "${ENMAPBOX_REQUIREMENTS_URL}" \
-       qgis-plugin-manager
+       qgis-plugin-manager && \
+    python3 -m pip install --no-cache-dir --break-system-packages --force-reinstall \
+        "numpy==1.26.4" \
+        "scipy==1.14.1" \
+        "scikit-learn==1.5.2"
 
 RUN set -eux; \
     if getent group "${ENMAPBOX_GID}" >/dev/null; then \
@@ -104,21 +109,41 @@ ENV HOME=/home/${ENMAPBOX_USER}
 ENV QGIS_PROFILE=EnMAP-Box
 ENV QGIS_PROFILE_HOME=${HOME}/.local/share/QGIS/QGIS3/profiles/${QGIS_PROFILE}
 ENV QGIS_PLUGINPATH=${QGIS_PROFILE_HOME}/python/plugins
+ENV PYTHONPATH=/usr/share/qgis/python/plugins:${QGIS_PLUGINPATH}/enmapboxplugin
 ENV QGIS_PLUGIN_MANAGER_SOURCES_FILE=${QGIS_PROFILE_HOME}/python/plugins/sources.list
 ENV QGIS_PLUGIN_MANAGER_CACHE_DIR=${HOME}/.cache/qgis-plugin-manager
 ENV QT_QPA_PLATFORM=offscreen
 
 FROM qgis-enmapbox-base AS qgis-enmapbox
 
-RUN mkdir -p "${QGIS_PLUGINPATH}" "${QGIS_PROFILE_HOME}/QGIS" "${QGIS_PLUGIN_MANAGER_CACHE_DIR}" \
-    && qgis-plugin-manager init --qgis-version "${QGIS_PLUGIN_QGIS_VERSION}" --update
+ARG ENMAPBOX_PLUGIN_NAME="EnMAP-Box 3"
+ARG QGIS_PLUGIN_QGIS_VERSION=3.44
 
-RUN qgis-plugin-manager install "${ENMAPBOX_PLUGIN_ID}" --upgrade --fix-permissions
+# Create required directories
+RUN mkdir -p "${QGIS_PLUGINPATH}" "${QGIS_PROFILE_HOME}/QGIS" "${QGIS_PLUGIN_MANAGER_CACHE_DIR}"
 
+# Initialize plugin manager with the correct QGIS version
+RUN qgis-plugin-manager init --qgis-version "${QGIS_PLUGIN_QGIS_VERSION}"
+
+# Update plugin sources from QGIS repository
+RUN qgis-plugin-manager update
+
+# Install the EnMAP-Box plugin
+RUN qgis-plugin-manager install "${ENMAPBOX_PLUGIN_NAME}" --upgrade --fix-permissions
+
+# Configure QGIS profile to enable the plugin
 RUN printf '[PythonPlugins]\nenmapboxplugin=true\n' \
-       | tee "${QGIS_PROFILE_HOME}/QGIS/QGIS.ini" "${QGIS_PROFILE_HOME}/QGIS/QGIS3.ini" > /dev/null \
-    && test -d "${QGIS_PLUGINPATH}/enmapboxplugin" \
+       | tee "${QGIS_PROFILE_HOME}/QGIS/QGIS.ini" "${QGIS_PROFILE_HOME}/QGIS/QGIS3.ini" > /dev/null
+
+# Verify the plugin installation
+RUN test -d "${QGIS_PLUGINPATH}/enmapboxplugin" \
     && python3 -c "from qgis.core import Qgis; print(Qgis.QGIS_VERSION)"
 
 ENTRYPOINT ["qgis-enmapbox-entrypoint"]
 CMD ["qgis"]
+
+
+
+#Do not use
+#qgs.initQgisSettings() -this method does not exist.
+#from enmapboxplugin import plugin -this is not the right import for this packaged build.
