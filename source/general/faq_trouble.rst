@@ -56,13 +56,13 @@ Installation
 
       ....
 
-      * **Optional Python dependencies for SpecDeepMap**
-
-        These dependencies are only required for using algorithms of the SpecDeepMap Application. Run the following command in the OSGeo4W Shell:
-
-        .. code-block:: batch
-
-           pip install --user lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0 pandas==2.2.3 --no-warn-script-location
+      .. * **Optional Python dependencies for SpecDeepMap**
+      ..
+      ..   These dependencies are only required for using algorithms of the SpecDeepMap Application. Run the following command in the OSGeo4W Shell:
+      ..
+      ..   .. code-block:: batch
+      ..
+      ..      pip install --user lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0 pandas==2.2.3 --no-warn-script-location
 
       ....
 
@@ -157,7 +157,6 @@ Here is a list of known issues, that aren't fixed easily,
 and/or only affect a specific version of QGIS or operating system:
 
 * https://github.com/EnMAP-Box/enmap-box/labels/known%20issue
-* Historic (old repository): https://bitbucket.org/hu-geomatics/enmap-box/issues?component=known+issue&status=on+hold
 
 Bug report & feedback
 =====================
