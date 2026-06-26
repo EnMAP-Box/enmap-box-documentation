@@ -34,10 +34,12 @@ Creates a new `point layer <https://enmap-box.readthedocs.io/en/latest/general/g
 
 :guilabel:`Maximum temporal offset` [string]
     Maximum allowed time difference between the `target <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-target>`_ date and a candidate observation. The value must be specified as a combination of time units using the format:\<years\>`y <https://enmap-box.readthedocs.io/en/latest/general/glossary.html#term-y>`_ \<months\>M \<days\>d \<hours\>h \<minutes\>m \<seconds\>s
-    Examples:  30d → 30 days
-      2M 15d → 2 months and 15 days
-      1y 6M → 1 year and 6 months
-      2y 3M 5d 4h 30m 15s → 2 years, 3 months, 5 days, 4 hours, 30 minutes, and 15 seconds
+    Examples:
+        * 30d → 30 days
+        * 2M 15d → 2 months and 15 days
+        * 1y 6M → 1 year and 6 months
+        * 2y 3M 5d 4h 30m 15s → 2 years, 3 months, 5 days, 4 hours, 30 minutes, and 15 seconds
+
     Units may be omitted if not needed. Use uppercase M for months and lowercase m for minutes.
 
 :guilabel:`Extract pixel profiles` [boolean]

@@ -8,3 +8,5 @@ Cookbook
    :maxdepth: 4
 
    dev_gettingstarted.rst
+
+   dev_speclibs.rst
