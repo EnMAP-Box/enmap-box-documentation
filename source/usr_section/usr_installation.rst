@@ -27,8 +27,11 @@ Plugin Manager or from a specific release.
          Install the current QGIS 3.44 LTR to run the latest EnMAP-Box
          using the QGIS installer from https://www.qgis.org/en/site/forusers/alldownloads.html#windows.
 
-         For beginners, we recommend using the standalone installers. More advanced QGIS users can use OSGeo4W installer,
+         For beginners, we recommend using the standalone installers.
+
+         More advanced QGIS users can use the OSGeo4W installer,
          which eases updates of existing QGIS installation.
+         Make sure to select **qgis**, **matplotlib** and **scipy** during the installation process.
 
          In case you have an outdated QGIS, make sure to install a current version (3.44).
 
