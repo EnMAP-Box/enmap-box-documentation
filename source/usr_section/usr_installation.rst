@@ -39,7 +39,7 @@ Plugin Manager or from a specific release.
 
             .. code-block:: batch
 
-               setup -q -g -P python3-scipy,python3-matplotlib,python3-colorama,h5py,gdal-hdf5,python3-pip,python3-setuptools
+               setup -q -g -P python3-scipy,python3-matplotlib,python3-colorama,python3-defusedxml,python3-sympy,python3-h5py,gdal-hdf5,python3-pip,python3-setuptools,python3-sympy,python3-numba,python3-netcdf4,python3-pyopengl,python3-scikit-learn
 
 
          #. Install PIP managed dependencies:
