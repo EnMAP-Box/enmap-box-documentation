@@ -27,26 +27,22 @@ Plugin Manager or from a specific release.
          Install the current QGIS 3.44 LTR to run the latest EnMAP-Box
          using the QGIS installer from https://www.qgis.org/en/site/forusers/alldownloads.html#windows.
 
-         For beginners, we recommend using the standalone installers.
-
-         More advanced QGIS users can use the OSGeo4W installer,
-         which eases updates of existing QGIS installation.
-         Make sure to select **qgis**, **matplotlib** and **scipy** during the installation process.
-
-         In case you have an outdated QGIS, make sure to install a current version (3.44).
-
       **Install Python Dependencies**
 
-         #. Close QGIS, if it is open.
+         #. Close QGIS.
 
-         #. Search for OSGeo4W shell from the start menu. In case the OSgeo4W does not exists,
-            run the Setup to install it.
-
-            .. image:: /img/installation_osgeo4w_executables.png
+         #. Open the OSGeo4W shell.
 
             .. image:: /img/windows_start_osgeo.png
 
-         #. Open the OSGeo4 shell and to install Python dependencies using PIP:
+         #. Install OSGeo4W managed dependencies (and update QGIS):
+
+            .. code-block:: batch
+
+               setup -q -g -P python3-scipy,python3-matplotlib,python3-colorama,h5py,gdal-hdf5,python3-pip,python3-setuptools
+
+
+         #. Install PIP managed dependencies:
 
             .. code-block:: batch
 
@@ -54,9 +50,9 @@ Plugin Manager or from a specific release.
 
             .. note::
 
-              In rare cases, the user folder may contain wrongly installed packages,
+              In rare cases, the user site-packages folder may contain wrongly installed packages,
               which are interfering with the package version managed by OSGeo4W, e.g. numpy, scipy or gdal.
-              Wrongly installed packages can be deleted manually from the user folder.
+              Wrongly installed packages can be deleted manually.
 
               To locate the user folder used by your QGIS instance, run the following inside your QGIS Python console::
 
@@ -64,7 +60,7 @@ Plugin Manager or from a specific release.
                  >>> print(site.USER_SITE)
                  C:\Users\<user name>\AppData\Roaming\Python\Python39\site-packages
 
-         #. Open QGIS from the start menu. If you are running into Installation issues, check out the :ref:`faq` for help.
+         #. Open QGIS.
 
 
    .. group-tab:: Linux
