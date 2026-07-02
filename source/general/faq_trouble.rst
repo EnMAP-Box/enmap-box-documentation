@@ -125,6 +125,16 @@ Installation
 General Installation Issues
 ---------------------------
 
+* **Missing core packages dialog**
+
+  If EnMAP-Box core packages that are required to start the application are missing, you may see this dialog:
+
+  .. image:: ../img/corepackages_missing_dialog.png
+     :width: 50%
+     :align: center
+
+....
+
 * **Image Cube tool missing qtopengl / Missing OpenGL / QtOpenGL packages**
 
   On some systems we experience problems related to missing OpenGL support.
