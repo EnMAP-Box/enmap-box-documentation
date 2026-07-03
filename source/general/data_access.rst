@@ -87,11 +87,67 @@ Search and Download with QGIS
 
 EODAG
 ^^^^^
+The `Earth Observation Data Access Gateway (EODAG) <https://eodag.readthedocs.io>`_ provides unified programmatic access to different Earth Observation data providers. You can use EODAG via Python to automatically search and download EnMAP Analysis Ready Data (Level-2A) directly from the DLR EOC Geoservice.
 
-The Earth Observation Data Access Gateway (EODAG, https://eodag.readthedocs.io) provides unified access to different data providers.
+.. note::
+   Ensure you are using an up-to-date version of EODAG (``pip install --upgrade eodag``), as native support for the DLR Geoservice was added in recent releases.
 
-Tbd.
+1. Configure DLR Credentials
+****************************
 
+To access EnMAP data via EODAG, you must configure it to use your DLR Geoservice credentials (the same account you use for the EOWEB® GeoPortal).
+
+Add the ``dlr_eoc_geoservice`` provider to your EODAG configuration file. By default, this file is located at ``~/.config/eodag/eodag.yml`` on Linux/macOS or ``%USERPROFILE%\.config\eodag\eodag.yml`` on Windows.
+
+.. code-block:: yaml
+
+    dlr_eoc_geoservice:
+      auth:
+        credentials:
+          username: "YOUR_EOWEB_USERNAME"
+          password: "YOUR_EOWEB_PASSWORD"
+
+2. Search and Download via Python
+*********************************
+
+Once configured, use the EODAG Python API to query the ``ENMAP_HSI_L2A`` collection. The following script searches for EnMAP scenes over a specific bounding box and downloads them to a local directory.
+
+.. code-block:: python
+
+    import os
+    from eodag import EODataAccessGateway
+
+    # Initialize EODAG and prioritize the DLR Geoservice
+    dag = EODataAccessGateway()
+    dag.set_preferred_provider("dlr_eoc_geoservice")
+
+    # Define your search parameters
+    search_criteria = {
+        "collection": "ENMAP_HSI_L2A",
+        "geom": {"lonmin": 13.0, "latmin": 52.0, "lonmax": 13.5, "latmax": 52.5}, # Example: Berlin area bounding box
+        "start": "2023-05-01",
+        "end": "2023-09-30"
+    }
+
+    print("Searching DLR Geoservice for EnMAP products...")
+    search_results = dag.search(**search_criteria)
+    print(f"Found {len(search_results)} products.")
+
+    # Define where to save the files
+    download_dir = os.path.join(os.getcwd(), "enmap_downloads")
+    os.makedirs(download_dir, exist_ok=True)
+
+    # Download and automatically extract the products
+    print("Downloading products...")
+    downloaded_paths = dag.download_all(
+        search_results,
+        outputs_prefix=download_dir,
+        extract=True
+    )
+
+    print(f"Download complete. Files saved to: {download_dir}")
+
+After the download and extraction finish, you can load the resulting imagery directly into QGIS by dragging the files into the EnMAP-Box **Data Views** panel.
 
 Troubleshooting
 ^^^^^^^^^^^^^^^

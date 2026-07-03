@@ -135,6 +135,48 @@ h4, h5, h6 {
   padding-right: 3px;
 }
 
+/* Application tutorial index */
+.rst-content .tutorial-summary {
+  margin: 18px 0 24px;
+  padding: 14px 18px;
+  border: 1px solid #d8e4dd;
+  border-left: 4px solid #6D9353;
+  background: #f7faf8;
+}
+
+.rst-content .tutorial-summary p {
+  margin-bottom: 0;
+}
+
+.rst-content table.tutorial-catalog {
+  border: 1px solid #d8e4dd;
+  font-size: 95%;
+}
+
+.rst-content table.tutorial-catalog th {
+  background: #edf4f1;
+  color: #1F497D;
+}
+
+.rst-content table.tutorial-catalog td {
+  vertical-align: top;
+}
+
+.rst-content table.tutorial-catalog td:first-child {
+  width: 4rem;
+  text-align: center;
+  font-weight: 700;
+  color: #6D9353;
+}
+
+.rst-content table.tutorial-catalog td:nth-child(2) {
+  font-weight: 700;
+}
+
+.rst-content table.tutorial-catalog td:nth-child(4) {
+  color: #4b5563;
+}
+
 
 /* table fix for wrapping text. thanks to https://rackerlabs.github.io/docs-rackspace/tools/rtd-tables.html */
 /* override table width restrictions */
