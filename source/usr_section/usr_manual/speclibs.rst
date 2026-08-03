@@ -32,6 +32,7 @@ the EnMAP-Box supports :ref:`importing profiles <speclib_import_profiles>` from 
 
 .. figure:: img/speclibs/overview.png
     :width: 60%
+    :align: center
 
     EnMAP-Box, showing profiles from the `speclib_potsdam.zip` example library, together with profiles collected from an EnMAP example image.
 
@@ -58,6 +59,7 @@ The *General Settings* node allows to adjust the general appearance of the plot,
 changing the background and foreground color, or activating the legend.
 
 .. figure:: img/speclibs/speclibviewer.png
+    :align: center
 
     Spectral Library Viewer
 
@@ -66,8 +68,37 @@ Selecting profiles in the profile plot does select the vector features the profi
 Selecting vector features in a map or attribute table does highlight the related profiles in the profile plot.
 
 .. figure:: img/speclibs/speclibviewer_selected_features.png
+    :align: center
 
     When profiles are selected in the spectral library viewer, the corresponding vector features will also be selected in the map (top) and attribute table (bottom).
+
+Collecting profiles from raster layers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can also create profiles by right clicking a raster in the *Data Views* panel and choosing *Show spectral profile*.
+Then select *In new profile view* to open it in the spectral library viewer.
+
+.. figure:: img/speclibs/speclib_shrtct.png
+    :align: center
+
+    Right click a raster in the *Data Views* panel and open its spectral profile in a new profile view.
+
+Comparing spectral profiles from different sources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To compare spectral profiles from different sources, use the same *Data Views* panel workflow for a second raster.
+Instead of opening it in a new view, choose *In view "Profiles #1"* so both sources are shown in the same viewer.
+This makes it easy to compare, for example, EnMAP profiles with Sentinel-2 L2A profiles.
+
+.. figure:: img/speclibs/spec_prof_comparison1.png
+    :align: center
+
+    Opening the second raster in the existing profile view.
+
+.. figure:: img/speclibs/spec_prof_comparison2.png
+    :align: center
+
+    Example comparison of EnMAP and Sentinel-2 L2A spectral profiles in the same viewer.
 
 .. _attribute_table:
 
@@ -84,12 +115,14 @@ graph, JSON document or in a table.
     .. tab:: |mActionOpenTable| Table View
 
         .. figure:: img/speclibs/attributetable_tableview.png
+            :align: center
 
             Attribute table widget, showing spectral library attributes in table view.
 
     .. tab:: |mActionFormView| Form View
 
         .. figure:: img/speclibs/speclib_table_formview.gif
+            :align: center
 
             Attribute table widget, showing spectral library attributes in form view.
 
@@ -100,6 +133,7 @@ In the Spectral Library Viewer it can be selected from the toolbar and the conte
 a profile visualization node, whose vector layer will then be opened in the attribute table widget.
 
 .. figure:: img/speclibs/speclibviewer_open_attributetable.png
+    :align: center
 
     Opening the attribute table for a vector layer whose profiles are shown in the spectral library viewer.
 
@@ -158,8 +192,30 @@ to edit profile values, either using a JSON editor or a table that lists the pro
 5. Edit the profile values
 
 .. figure:: img/speclibs/speclib_table_formview.gif
+    :align: center
 
-        Setting an outlier value to NaN.
+      Setting an outlier value to NaN.
+
+Copy/Paste profiles
+^^^^^^^^^^^^^^^^^^^
+
+You can copy spectral profiles from one attribute table to another when both tables are in edit mode.
+Select the features you want to copy, then click the copy button at the top of the table or press ``Ctrl+C``.
+After that, click the target table and use the paste button or press ``Ctrl+V``.
+
+.. figure:: img/speclibs/attr_table_copypaste1.gif
+    :align: center
+
+    Copying spectral profiles from one table and pasting them into another.
+
+If a field is missing or has a different name in the target table, the copy/paste operation cannot map it and the cell will be set to ``NULL``.
+For example, this happens when one table has a field named ``name`` while the other uses ``Names``.
+
+.. figure:: img/speclibs/attr_table_copypaste2.png
+    :align: center
+    :width: 50%
+
+    Copy/paste only works when matching fields are available in both tables.
 
 
 Field Calculator
@@ -201,6 +257,7 @@ To obtain the surface reflectance, we need to divide the target radiance by the 
 
 
 .. figure:: img/speclibs/speclib_fieldcalculator_spectralmath.png
+    :align: center
 
     QGIS field calculator with spectral_math function to calculate profile reflectances.
 
@@ -219,6 +276,7 @@ The output profile is specified using the following variables and default values
 
 
 .. figure:: img/speclibs/speclib_field_calculator_reflectance.gif
+    :align: center
 
     Calculating profile reflectances using the QGIS Field Calculator.
 
@@ -238,10 +296,12 @@ The *Spectral Processing* tool uses *QGIS Processing Algorithms* to process spec
 
 
 .. figure:: img/speclibs/speclib_resampling_landsat.gif
+    :align: center
 
     Using the Spectral Processing dialog to resample EnMAP profiles to Landsat.
 
 .. figure:: img/speclibs/spectral_processing_workflow.png
+    :align: center
 
     The data flow handled by the Spectral Processing Dialog to use vector attribute values as raster inputs for
     QGIS Processing algorithms.
@@ -391,6 +451,7 @@ automatically when loading the vector source again.
 The profile fields of vector layers that are opened in the EnMAP-Box, e.g., as a layer in a map, can be selected as a source for a profile visualization
 
 .. figure:: img/speclibs/speclibview_multiple_speclibs.png
+    :align: center
 
     Selection of a profile field as a source for a visualization.
 
@@ -406,6 +467,7 @@ activate the *Identify map tool* |select_location| with option *Identify pixel p
 Now click on a raster pixel. By default, this creates a new in-memory vector layer "Profiles #1" and opens a spectral library view to show it. The *Spectral Profile Sources* panel can be used to specify how profiles are collected, e.g., from which raster layer, and to which vector layer field they will be written. In addition, it allows you to specify values for other fields of the vector layer, e.g., to generate a profile name automatically.
 
 .. figure:: img/speclibs/profilesourcepanel.png
+    :align: center
 
     The spectral profile source panel describes how profiles are collected and written to vector layers.
 
@@ -446,6 +508,7 @@ However, to improve speed it is recommended to specify the file input type manua
       - Text file output created by `Spectral Vista Corporation Spectroradiometers <https://spectravista.com/>`_
 
 .. figure:: img/speclibs/import_profiles.png
+    :align: center
 
 
 .. _speclib_export_profiles:
@@ -481,6 +544,7 @@ to get a profile name from.
       -
 
 .. figure:: img/speclibs/export_profiles.png
+    :align: center
 
 
 .. AUTOGENERATED SUBSTITUTIONS - DO NOT EDIT PAST THIS LINE
