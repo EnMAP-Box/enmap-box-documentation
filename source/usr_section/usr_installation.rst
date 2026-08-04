@@ -27,23 +27,22 @@ Plugin Manager or from a specific release.
          Install the current QGIS 3.44 LTR to run the latest EnMAP-Box
          using the QGIS installer from https://www.qgis.org/en/site/forusers/alldownloads.html#windows.
 
-         For beginners, we recommend using the standalone installers. More advanced QGIS users can use OSGeo4W installer,
-         which eases updates of existing QGIS installation.
-
-         In case you have an outdated QGIS, make sure to install a current version (3.44).
-
       **Install Python Dependencies**
 
-         #. Close QGIS, if it is open.
+         #. Close QGIS.
 
-         #. Search for OSGeo4W shell from the start menu. In case the OSgeo4W does not exists,
-            run the Setup to install it.
-
-            .. image:: /img/installation_osgeo4w_executables.png
+         #. Open the OSGeo4W shell.
 
             .. image:: /img/windows_start_osgeo.png
 
-         #. Open the OSGeo4 shell and to install Python dependencies using PIP:
+         #. Install OSGeo4W managed dependencies (and update QGIS):
+
+            .. code-block:: batch
+
+               setup -q -g -P python3-scipy,python3-matplotlib,python3-colorama,python3-defusedxml,python3-sympy,python3-h5py,gdal-hdf5,python3-pip,python3-setuptools,python3-sympy,python3-numba,python3-netcdf4,python3-pyopengl,python3-scikit-learn
+
+
+         #. Install PIP managed dependencies:
 
             .. code-block:: batch
 
@@ -51,9 +50,9 @@ Plugin Manager or from a specific release.
 
             .. note::
 
-              In rare cases, the user folder may contain wrongly installed packages,
+              In rare cases, the user site-packages folder may contain wrongly installed packages,
               which are interfering with the package version managed by OSGeo4W, e.g. numpy, scipy or gdal.
-              Wrongly installed packages can be deleted manually from the user folder.
+              Wrongly installed packages can be deleted manually.
 
               To locate the user folder used by your QGIS instance, run the following inside your QGIS Python console::
 
@@ -61,7 +60,7 @@ Plugin Manager or from a specific release.
                  >>> print(site.USER_SITE)
                  C:\Users\<user name>\AppData\Roaming\Python\Python39\site-packages
 
-         #. Open QGIS from the start menu. If you are running into Installation issues, check out the :ref:`faq` for help.
+         #. Open QGIS.
 
 
    .. group-tab:: Linux
@@ -144,6 +143,22 @@ Plugin Manager or from a specific release.
 
             qgis
 
+      .. hint::
+
+         You can add a shortcut to your applications menu, so you do not have to open a Terminal and type the above-mentioned commands (6 & 8) every time you want to start QGIS with the EnMAP-Box environment:
+
+         Create the file :file:`~/.local/share/applications/enmapbox.desktop` with the following content (if you used another installation path in the instructions above, change accordingly):
+
+         .. code-block:: text
+
+            [Desktop Entry]
+            Name=QGIS (EnMAP-Box)
+            Exec=/bin/bash -c "source ~/.virtualenvs/enmapbox/bin/activate && qgis %F"
+            Terminal=false
+            Icon=qgis
+            Type=Application
+            Categories=Education;Science;Geography;
+
    .. group-tab:: MacOS
 
        .. warning::
@@ -213,7 +228,8 @@ Plugin Manager or from a specific release.
 
       Conda is a cross-platform package manager that allows to install software in separated environments.
       We recommend to install and use `Miniforge <https://conda-forge.org/download>`__, a minimal conda installer specific to
-      packages from `conda-forge <https://conda-forge.org/>`_ channel. It contains a meta-package for packages needed by the EnMAP-Box https://anaconda.org/channels/conda-forge/packages/enmapbox
+      packages from `conda-forge <https://conda-forge.org/>`_ channel. It contains a meta-package for packages needed
+      by the EnMAP-Box https://anaconda.org/channels/conda-forge/packages/enmapbox/overview
 
       ..
           *Linux / Unix / MacOS:*

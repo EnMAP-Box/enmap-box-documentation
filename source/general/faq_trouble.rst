@@ -56,13 +56,13 @@ Installation
 
       ....
 
-      * **Optional Python dependencies for SpecDeepMap**
-
-        These dependencies are only required for using algorithms of the SpecDeepMap Application. Run the following command in the OSGeo4W Shell:
-
-        .. code-block:: batch
-
-           pip install --user lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0 pandas==2.2.3 --no-warn-script-location
+      .. * **Optional Python dependencies for SpecDeepMap**
+      ..
+      ..   These dependencies are only required for using algorithms of the SpecDeepMap Application. Run the following command in the OSGeo4W Shell:
+      ..
+      ..   .. code-block:: batch
+      ..
+      ..      pip install --user lightning==2.5.0.post0 segmentation-models-pytorch==0.5.0 tensorboard==2.19.0 torch==2.6.0 torchvision==0.21.0 pandas==2.2.3 --no-warn-script-location
 
       ....
 
@@ -125,6 +125,16 @@ Installation
 General Installation Issues
 ---------------------------
 
+* **Missing core packages dialog**
+
+  If EnMAP-Box core packages that are required to start the application are missing, you may see this dialog:
+
+  .. image:: ../img/corepackages_missing_dialog.png
+     :width: 50%
+     :align: center
+
+....
+
 * **Image Cube tool missing qtopengl / Missing OpenGL / QtOpenGL packages**
 
   On some systems we experience problems related to missing OpenGL support.
@@ -157,7 +167,6 @@ Here is a list of known issues, that aren't fixed easily,
 and/or only affect a specific version of QGIS or operating system:
 
 * https://github.com/EnMAP-Box/enmap-box/labels/known%20issue
-* Historic (old repository): https://bitbucket.org/hu-geomatics/enmap-box/issues?component=known+issue&status=on+hold
 
 Bug report & feedback
 =====================
