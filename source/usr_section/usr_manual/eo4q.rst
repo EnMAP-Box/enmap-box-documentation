@@ -373,7 +373,7 @@ Spectral Index Explorer
 
 The :guilabel:`Spectral Index Explorer` panel allows to derive spectral indices for a spectral raster.
 Indices can be selected from the ready-to-use curated list of
-`Awesome Spectral Indices <https://awesome-ee-spectral-indices.readthedocs.io/en/latest/list.html>`_
+`Awesome Spectral Indices <https://awesome-spectral-indices.github.io/awesome-spectral-indices/>`_
 for Remote Sensing applications, maintained by David Montero Loaiza.
 
 Usage
