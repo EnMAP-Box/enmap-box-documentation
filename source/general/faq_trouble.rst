@@ -110,15 +110,19 @@ Installation
         Conda can use different approaches to check which packages can be installed on your OS. To significantly speed
         up this process, it is highly recommended to use the ``libmamba`` solver.
 
-        1. First, check which solver is used::
+        1. First, check which solver is used:
 
-            conda config --show solver
+           .. code-block:: bash
 
-        2. If the used solver is not *libmamba*, you can install it with the following commands::
+                 conda config --show solver
 
-           conda update -n base conda
-           conda install -n base conda-libmamba-solver
-           conda config --set solver libmamba
+        2. If the used solver is not *libmamba*, you can install it with the following commands:
+
+           .. code-block:: bash
+
+                 conda update -n base conda
+                 conda install -n base conda-libmamba-solver
+                 conda config --set solver libmamba
 
         For more details, see the `Anaconda blog post <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ on this topic.
 
