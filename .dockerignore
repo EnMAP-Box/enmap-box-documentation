@@ -1,0 +1,14 @@
+.git
+.idea
+.venv
+__pycache__
+*.py[cod]
+.DS_Store
+build
+dist
+downloads
+htmlcov
+.pytest_cache
+.tox
+.nox
+tmp

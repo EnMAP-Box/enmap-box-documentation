@@ -31,7 +31,7 @@ It provides the main GUI loop that receives user interactions, like mouse clicks
 
 Now we can start and open the EnMAP-Box and load some example data::
 
-    from enmapbox import EnMAPBox
+    from enmapbox.gui.enmapboxgui import EnMAPBox
     enmapBox = EnMAPBox(None)
     enmapBox.openExampleData()
     qgsApp.exec_()
@@ -41,7 +41,7 @@ If we would'nt call the GUI loop with ``qgsApp.exec_()``, our program will termi
 The EnMAPBox object is a singleton, which means that there exist only one EnMAPBox instance. You can connect
 to a running EnMAP-Box instance like this::
 
-    from enmapbox import EnMAPBox
+    from enmapbox.gui.enmapboxgui import EnMAPBox
     enmapBox = EnMAPBox.instance()
     print(enmapBox)
 

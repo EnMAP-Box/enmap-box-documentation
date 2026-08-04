@@ -69,14 +69,15 @@ just open ``doc/build/html/index.html`` in your webbrowser of choice.
 Publish the EnMAP-Box
 =====================
 
-Official EnMAP-Box plugin *master* versions are named like ``enmapboxplugin.3.3.20190214T1125.main.zip``. They need to be uploaded
-to https://plugins.qgis.org/plugins/ using an OSGeo account.
+Official EnMAP-Box plugin *master* versions are named like ``enmapboxplugin-3.17.8.zip``. They are uploaded
+to https://plugins.qgis.org/plugins/ using an OSGeo account. A backup should also be added to
+https://github.com/EnMAP-Box/enmap-box/releases.
 
-Other versions, e.g. *development snapshots* are named like ``enmapboxplugin.3.3.20190214T1125.develop.zip`` or ``enmapboxplugin.3.3.20190214T1125.my_feature_branch.zip``
-and might be distributed using the repositories download section https://bitbucket.org/hu-geomatics/enmap-box/downloads/.
+Other versions, e.g. *development snapshots* are named like ``enmapboxplugin-3.17.8.20190214T1125.develop.zip``.
+They might be distributed via https://github.com/EnMAP-Box/enmap-box/releases.
 
 Updates to the EnMAP-Box documentation (folder ``doc/source``) are detected by readthedocs
-when pushed to the *develop* or *master* branch of the EnMAP-Box repository.
+when pushed to the *develop* or *main* branch of the EnMAP-Box repository.
 
 
 
