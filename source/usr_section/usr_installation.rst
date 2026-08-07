@@ -65,82 +65,99 @@ Plugin Manager or from a specific release.
 
    .. group-tab:: Linux
 
-     **Install QGIS on Linux**
+      .. warning::
 
-      Install QGIS as described here https://www.qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
-      or follow the instructions for conda.
+         The Linux bare-metal installation uses the operating-system QGIS and Python environment.
+         This is useful when you want a native QGIS installation without conda, but it is less isolated
+         than the Conda setup. If dependency versions become difficult to resolve, use the *Conda* tab.
 
-     **Install Python Dependencies**
+      **Install QGIS on Linux (bare-metal / apt)**
 
-       #. Open the Terminal (:kbd:`Ctrl` + :kbd:`Alt` + :kbd:`T`).
+      The commands below install the QGIS 3.44 LTR packages on Ubuntu. For Debian, use the
+      corresponding ``https://qgis.org/debian-ltr`` repository and Debian suite name.
 
-       #. Make sure the following packages are installed using the system package manager:
+      #. Open the Terminal (:kbd:`Ctrl` + :kbd:`Alt` + :kbd:`T`).
 
-          .. code-block:: console
+      #. Install the packages needed to add the QGIS package repository:
 
-             sudo apt install python3-pip python3-venv pyqt5-dev-tools python3-matplotlib
+         .. code-block:: console
 
-       #. **(Optional)** For some EnMAP-Box tools you may also need the following packages:
+            sudo apt update
+            sudo apt install ca-certificates gnupg wget
+            sudo install -d -m 0755 /etc/apt/keyrings
+            sudo wget -qO /etc/apt/keyrings/qgis-archive-keyring.gpg https://download.qgis.org/downloads/qgis-archive-keyring.gpg
 
-          .. code-block:: console
+      #. Add the QGIS LTR repository. Use ``noble`` for Ubuntu 24.04 and ``jammy`` for Ubuntu 22.04.
 
-             sudo apt install python3-h5py python3-pyqt5.qtopengl python3-netcdf4
+         .. code-block:: console
 
-       #. Open QGIS and the QGIS Python Console (:kbd:`Ctrl` + :kbd:`Alt` + :kbd:`P`). Type the following and confirm with enter:
+            sudo tee /etc/apt/sources.list.d/qgis.sources >/dev/null <<'EOF'
+            Types: deb deb-src
+            URIs: https://qgis.org/ubuntu-ltr
+            Suites: noble
+            Architectures: amd64
+            Components: main
+            Signed-By: /etc/apt/keyrings/qgis-archive-keyring.gpg
+            EOF
 
-          .. code-block:: python
+      #. Install QGIS and PyQGIS:
 
-             import sys; sys.executable
+         .. code-block:: console
 
-          This shows the path of the Python executable that QGIS is using, usually it is ``/usr/bin/python3``.
-          We need to ensure that additional Python packages get installed into the same Python environment.
-          This is the case if the command ``which python3`` returns the path of the Python executable shown in QGIS!
+            sudo apt update
+            sudo apt install qgis python3-qgis qgis-plugin-grass
 
-          If not, please use the full path, e.g. ``/usr/bin/python3`` instead of ``python3`` in the following steps.
+      **Install Python Dependencies**
 
-          Close QGIS.
+      #. Install the system packages required by common EnMAP-Box workflows:
 
-       #. Create a `virtual python environment <https://docs.python.org/3/library/venv.html>`_ in a directory of your choice (e.g. ``~/.virtualenvs/enmapbox``):
+         .. code-block:: console
 
-          .. code-block:: console
+            sudo apt install python3-pip python3-venv pyqt5-dev-tools python3-matplotlib
 
-             python3 -m venv --upgrade-deps --system-site-packages ~/.virtualenvs/enmapbox
+      #. **(Optional)** For some EnMAP-Box tools you may also need the following packages:
 
-       #. Activate the environment:
+         .. code-block:: console
 
-          .. code-block:: console
+            sudo apt install python3-h5py python3-pyqt5.qtopengl python3-netcdf4
 
-             source ~/.virtualenvs/enmapbox/bin/activate
+      #. Install the remaining EnMAP-Box Python dependencies into your user Python site:
 
-          Now you should see the environment name in brackets at the beginning of your prompt, e.g. ``(enmapbox)``.
+         .. code-block:: console
 
-       #. Install missing Python dependencies with pip inside the virtual environment:
+            python3 -m pip install --user --upgrade --ignore-installed -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements_ubuntu.txt || \
+            python3 -m pip install --user --upgrade --ignore-installed --break-system-packages -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements_ubuntu.txt
 
-          .. code-block:: console
+         On Ubuntu 24.04, pip may require ``--break-system-packages`` for user-site installs because
+         the system Python environment is externally managed.
 
-             python3 -m pip install -r https://raw.githubusercontent.com/EnMAP-Box/enmap-box/main/.env/linux/requirements_ubuntu.txt
+      #. Verify that QGIS uses the same Python installation:
 
-       #. Start QGIS (from the activated environment, see step 6):
+         .. code-block:: console
 
-          .. code-block:: console
+            python3 -c "from qgis.core import Qgis; print(Qgis.QGIS_VERSION)"
 
-             qgis
+      #. Start QGIS:
 
-       .. hint::
+         .. code-block:: console
+
+            qgis
+
+      .. hint::
 
          You can add a shortcut to your applications menu, so you do not have to open a Terminal and type the above-mentioned commands (6 & 8) every time you want to start QGIS with the EnMAP-Box environment:
 
          Create the file :file:`~/.local/share/applications/enmapbox.desktop` with the following content (if you used another installation path in the instructions above, change accordingly):
 
-          .. code-block:: text
+         .. code-block:: text
 
-             [Desktop Entry]
-             Name=QGIS (EnMAP-Box)
-             Exec=/bin/bash -c "source ~/.virtualenvs/enmapbox/bin/activate && qgis %F"
-             Terminal=false
-             Icon=qgis
-             Type=Application
-             Categories=Education;Science;Geography;
+            [Desktop Entry]
+            Name=QGIS (EnMAP-Box)
+            Exec=/bin/bash -c "source ~/.virtualenvs/enmapbox/bin/activate && qgis %F"
+            Terminal=false
+            Icon=qgis
+            Type=Application
+            Categories=Education;Science;Geography;
 
    .. group-tab:: MacOS
 
@@ -211,7 +228,8 @@ Plugin Manager or from a specific release.
 
       Conda is a cross-platform package manager that allows to install software in separated environments.
       We recommend to install and use `Miniforge <https://conda-forge.org/download>`__, a minimal conda installer specific to
-      packages from `conda-forge <https://conda-forge.org/>`_ channel. It contains a meta-package for packages needed by the EnMAP-Box https://anaconda.org/channels/conda-forge/packages/enmapbox
+      packages from `conda-forge <https://conda-forge.org/>`_ channel. It contains a meta-package for packages needed
+      by the EnMAP-Box https://anaconda.org/channels/conda-forge/packages/enmapbox/overview
 
       ..
           *Linux / Unix / MacOS:*
@@ -282,18 +300,21 @@ Plugin Manager or from a specific release.
 
       **Install EnMAP-Box Plugin via the QGIS Plugin Manager**
 
-      1. Start QGIS
-      2. Go to Plugins -> Manage and Install Plugins
-      3. Search for 'EnMAP-Box'
-      4. Click on 'Install Plugin'
+      1. Start QGIS.
+      2. Go to **Settings** ‣ **User Profiles** ‣ **New Profile...** and create a profile named ``EnMAP-Box``.
+      3. Restart QGIS in the ``EnMAP-Box`` profile if QGIS does not switch automatically.
+      4. Go to **Plugins** ‣ **Manage and Install Plugins**.
+      5. Search for ``EnMAP-Box``.
+      6. Click **Install Plugin**.
 
       .. figure:: /img/QgisGUI_InstallPlugin.gif
         :align: center
         :width: 100%
 
       **Activate Experimental Plugins (Optional)**
-       5. Go to Plugins -> Manage and Install Plugins -> Settings
-       6. Enable *Show also Experimental Plugins*
+
+      #. Go to **Plugins** ‣ **Manage and Install Plugins** ‣ **Settings**.
+      #. Enable **Show also Experimental Plugins**.
 
       .. figure:: /img/QgisGUI_Experimental.gif
         :align: center
@@ -301,21 +322,26 @@ Plugin Manager or from a specific release.
 
    .. tab:: Command Line (Bash)
 
-    The install the `qgis-plugin-manager <https://github.com/3liz/qgis-plugin-manager>`_ allows to install
-    QGIS plugins like the EnMAP-Box from the command line:
+      The `qgis-plugin-manager <https://github.com/3liz/qgis-plugin-manager>`_ allows you to install
+      QGIS plugins like EnMAP-Box from the command line. The commands below create a dedicated
+      QGIS profile named ``EnMAP-Box`` and install the plugin into that profile.
 
-    .. code-block:: bash
+      .. code-block:: bash
 
-       **Install EnMAP-Box Plugin via the QGIS Plugin Manager**
+         export QGIS_PROFILE="EnMAP-Box"
+         export QGIS_PROFILE_HOME="${HOME}/.local/share/QGIS/QGIS3/profiles/${QGIS_PROFILE}"
+         export QGIS_PLUGINPATH="${QGIS_PROFILE_HOME}/python/plugins"
+         export PATH="${HOME}/.local/bin:${PATH}"
 
-       # define the path where your plugins are stored
-       export QGIS_PLUGINPATH=~/.local/share/QGIS/QGIS3/profiles/default/python/plugins
-       mkdir $QGIS_PLUGINPATH
+         mkdir -p "${QGIS_PLUGINPATH}" "${QGIS_PROFILE_HOME}/QGIS"
 
-       # install the 3Liz qgis-plugin-manager
-       conda install qgis-plugin-manager
-       qgis-plugin-manager init
-       qgis-plugin-manager update
+         python3 -m pip install --user --upgrade --ignore-installed qgis-plugin-manager || \
+         python3 -m pip install --user --upgrade --ignore-installed --break-system-packages qgis-plugin-manager
 
-       # install the EnMAP-Box
-       qgis-plugin-manger install 'EnMAP-Box 3'
+         qgis-plugin-manager init --qgis-version 3.44 --update
+         qgis-plugin-manager install "EnMAP-Box 3" --upgrade --fix-permissions
+
+         printf '[PythonPlugins]\nenmapboxplugin=true\n' \
+           | tee "${QGIS_PROFILE_HOME}/QGIS/QGIS.ini" "${QGIS_PROFILE_HOME}/QGIS/QGIS3.ini" > /dev/null
+
+         qgis --profile "${QGIS_PROFILE}"

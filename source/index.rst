@@ -66,11 +66,12 @@ Related Sites
     dev_section/dev_enmapboxrepository
     dev_section/dev_publish_enmapbox.rst
     dev_section/cookbook/index.rst
-    dev_section/tutorials/index.rst
+
     dev_section/rfc_list/index.rst
     dev_section/styleguide.rst
     dev_section/icon_links_viewer.rst
 
+..   dev_section/tutorials/index.rst
 ..    dev_section/api/modules.rst
 ..    dev_section/programming_tutorials/index.rst
 
