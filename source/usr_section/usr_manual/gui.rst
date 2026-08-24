@@ -434,7 +434,7 @@ It directly interacts with the Map View(s), which means spectra can be directly 
 
 Add a new spectral library view by using the *Add Spectral Library Window* |viewlist_spectrumdock| button in the toolbar or open a new window from the menu :menuselection:`View --> Add Spectral Library Window`.
 
-    .. figure:: /img/SpecLib_overview.PNG
+    .. figure:: /img/SpecLib_overview.png
        :align: center
        :width: 100%
 
@@ -474,7 +474,7 @@ Collect profiles
 
     .. figure:: /img/collectProfiles.png
        :align: center
-       :width: 400
+       :width: 40%
 
 2. Click on a desired pixel position in the opened raster image and a new Spectral Library window opens with the spectral profile of the respective pixel.
 3. Profiles obtained from pixel positions are considered as current or temporary profile candidates. The last profile candidate will be replaced by a new one each time you click on a new pixel position.
@@ -518,7 +518,7 @@ Sometimes, you want to compare spectral profiles from different raster sources. 
 
 .. tip::
 
-        Change the color of one of the profile by changing the :guilabel:`Style` in the Spectral Profile Sources.
+        Change the color of one of the profile by changing the :guilabel:`Style` in the Profile view settings.
 
 In a similar way you can compare profiles from the same raster image but using a different sampling methods.
 
