@@ -447,22 +447,10 @@ Add a new spectral library view by using the *Add Spectral Library Window* |view
    :widths: auto
    :align: center
 
-   |plus_green|, "Add currently overlaid profiles to the spectral library", |profile_add_auto|, "Activate to add profiles automatically into the spectral library"
+   |plus_green|, "Add currently overlaid profiles to the spectral library", |mActionRefresh|, "Refresh the Spectral Library Plot"
    |speclib_add|, "Import Spectral Library", |speclib_save|, "Save Spectral Library"
-   |legend|, "Activate to change spectra representation", |speclib_usevectorrenderer|, "Activate to use colors from map vector symbology"
-   |system|, "Enter the Spectral Library Layer Properties", |mActionToggleEditing|, "Toggle editing mode"
-   |mActionMultiEdit|, "Toggle multi editing mode", |mActionSaveAllEdits|, "Save edits"
-   |mActionRefresh|, "Reload the table", |mActionNewTableRow|, "Add feature"
-   |mActionDeleteSelected|, "Delete selected features", |mActionEditCut|, "Cut selected rows to clipboard"
-   |mActionEditCopy|, "Copy selected rows to clipboard", |mActionEditPaste|, "Paste features from clipboard"
-   |mIconExpressionSelect|, "Select by Expression", |mActionSelectAll|, "Select all elements in the spectral library"
-   |mActionInvertSelection|, "Invert the current selection", |mActionDeselectAll|, "Remove selection (deselect everything)"
-   |mActionSelectedToTop|, "Move selection to the top", |mActionFilter2|, "Select / filter features using form"
-   |mActionPanToSelected|, "Pan map to selected rows", |mActionZoomToSelected|, "Zoom map to selected rows"
-   |mActionNewAttribute|, "Add New field", |mActionDeleteAttribute|, "Delete field"
-   |mActionConditionalFormatting|, "Conditional formatting", |mAction|, "Actions"
-   |mActionFormView|, "Switch to form view", |mActionOpenTable|, "Switch to table view"
-   |profile_processing|, "Spectral Processing Dialog", |mActionCalculateField|, "Enable to calculate new attribute fields"
+   |legend|, "Activate to change spectra representation", |profile_processing|, "Spectral Processing Dialog"
+   |system|, "Enter the Spectral Library Layer Properties",|mActionOpenTable|, "Open Attribute Table"
 
 .. _spectral_profile_sources:
 
@@ -941,6 +929,25 @@ The Attribute Table View offers two alternative presentations of the same data:
 the **Table View**, which shows all features in a spreadsheet-like grid, and the
 **Form View**, which shows the attributes of a single, selected feature in a structured form.
 
+**Buttons of the Attribute Table**
+
+.. csv-table::
+   :header: "Button", "Description", "Button", "Description"
+   :widths: auto
+   :align: center
+
+   |mActionCalculateField|, "Enable to calculate new attribute fields", |mActionToggleEditing|, "Toggle editing mode"
+   |mActionMultiEdit|, "Toggle multi editing mode", |mActionSaveAllEdits|, "Save edits"
+   |mActionRefresh|, "Reload the table", |mActionNewTableRow|, "Add feature"
+   |mActionDeleteSelected|, "Delete selected features", |mActionEditCut|, "Cut selected rows to clipboard"
+   |mActionEditCopy|, "Copy selected rows to clipboard", |mActionEditPaste|, "Paste features from clipboard"
+   |mIconExpressionSelect|, "Select by Expression", |mActionSelectAll|, "Select all elements in the spectral library"
+   |mActionInvertSelection|, "Invert the current selection", |mActionDeselectAll|, "Remove selection (deselect everything)"
+   |mActionSelectedToTop|, "Move selection to the top", |mActionFilter2|, "Select / filter features using form"
+   |mActionPanToSelected|, "Pan map to selected rows", |mActionZoomToSelected|, "Zoom map to selected rows"
+   |mActionNewAttribute|, "Add New field", |mActionDeleteAttribute|, "Delete field"
+   |mActionConditionalFormatting|, "Conditional formatting", |mAction|, "Actions"
+   |mActionFormView|, "Switch to form view", |mActionOpenTable|, "Switch to table view"
 
 Table View
 ^^^^^^^^^^
