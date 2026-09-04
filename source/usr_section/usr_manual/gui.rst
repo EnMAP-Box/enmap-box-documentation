@@ -447,22 +447,10 @@ Add a new spectral library view by using the *Add Spectral Library Window* |view
    :widths: auto
    :align: center
 
-   |plus_green|, "Add currently overlaid profiles to the spectral library", |profile_add_auto|, "Activate to add profiles automatically into the spectral library"
+   |plus_green|, "Add currently overlaid profiles to the spectral library", |mActionRefresh|, "Refresh the Spectral Library Plot"
    |speclib_add|, "Import Spectral Library", |speclib_save|, "Save Spectral Library"
-   |legend|, "Activate to change spectra representation", |speclib_usevectorrenderer|, "Activate to use colors from map vector symbology"
-   |system|, "Enter the Spectral Library Layer Properties", |mActionToggleEditing|, "Toggle editing mode"
-   |mActionMultiEdit|, "Toggle multi editing mode", |mActionSaveAllEdits|, "Save edits"
-   |mActionRefresh|, "Reload the table", |mActionNewTableRow|, "Add feature"
-   |mActionDeleteSelected|, "Delete selected features", |mActionEditCut|, "Cut selected rows to clipboard"
-   |mActionEditCopy|, "Copy selected rows to clipboard", |mActionEditPaste|, "Paste features from clipboard"
-   |mIconExpressionSelect|, "Select by Expression", |mActionSelectAll|, "Select all elements in the spectral library"
-   |mActionInvertSelection|, "Invert the current selection", |mActionDeselectAll|, "Remove selection (deselect everything)"
-   |mActionSelectedToTop|, "Move selection to the top", |mActionFilter2|, "Select / filter features using form"
-   |mActionPanToSelected|, "Pan map to selected rows", |mActionZoomToSelected|, "Zoom map to selected rows"
-   |mActionNewAttribute|, "Add New field", |mActionDeleteAttribute|, "Delete field"
-   |mActionConditionalFormatting|, "Conditional formatting", |mAction|, "Actions"
-   |mActionFormView|, "Switch to form view", |mActionOpenTable|, "Switch to table view"
-   |profile_processing|, "Spectral Processing Dialog", |mActionCalculateField|, "Enable to calculate new attribute fields"
+   |legend|, "Activate to change spectra representation", |profile_processing|, "Spectral Processing Dialog"
+   |system|, "Enter the Spectral Library Layer Properties",|mActionOpenTable|, "Open Attribute Table"
 
 .. _spectral_profile_sources:
 
@@ -881,7 +869,6 @@ Importing Profiles
        :align: center
        :width: 500
 
-
 Spectral Profile JSON format
 """"""""""""""""""""""""""""
 
@@ -933,7 +920,131 @@ Text View
 Attribute Table View
 --------------------
 
-.. todo:: ...
+The *Attribute Table View* lists the attribute data of a vector layer feature by feature.
+It can be opened in different ways, e.g., from the context menu of a vector data source
+in the *Data Sources* panel or a vector layer in the layer tree of a *Data View*,
+using the |mActionOpenTable| button, or via *Layer* | *Open Attribute Table* in QGIS.
+
+The Attribute Table View offers two alternative presentations of the same data:
+the **Table View**, which shows all features in a spreadsheet-like grid, and the
+**Form View**, which shows the attributes of a single, selected feature in a structured form.
+
+**Buttons of the Attribute Table**
+
+.. csv-table::
+   :header: "Button", "Description", "Button", "Description"
+   :widths: auto
+   :align: center
+
+   |mActionCalculateField|, "Enable to calculate new attribute fields", |mActionToggleEditing|, "Toggle editing mode"
+   |mActionMultiEdit|, "Toggle multi editing mode", |mActionSaveAllEdits|, "Save edits"
+   |mActionRefresh|, "Reload the table", |mActionNewTableRow|, "Add feature"
+   |mActionDeleteSelected|, "Delete selected features", |mActionEditCut|, "Cut selected rows to clipboard"
+   |mActionEditCopy|, "Copy selected rows to clipboard", |mActionEditPaste|, "Paste features from clipboard"
+   |mIconExpressionSelect|, "Select by Expression", |mActionSelectAll|, "Select all elements in the spectral library"
+   |mActionInvertSelection|, "Invert the current selection", |mActionDeselectAll|, "Remove selection (deselect everything)"
+   |mActionSelectedToTop|, "Move selection to the top", |mActionFilter2|, "Select / filter features using form"
+   |mActionPanToSelected|, "Pan map to selected rows", |mActionZoomToSelected|, "Zoom map to selected rows"
+   |mActionNewAttribute|, "Add New field", |mActionDeleteAttribute|, "Delete field"
+   |mActionConditionalFormatting|, "Conditional formatting", |mAction|, "Actions"
+   |mActionFormView|, "Switch to form view", |mActionOpenTable|, "Switch to table view"
+
+Table View
+^^^^^^^^^^
+
+In the *Table View* (|mActionOpenTable|), each row corresponds to a single feature and
+each column to one of its attributes (fields). This is the best choice when you want to
+inspect many features at once, sort or filter them, edit values in bulk, or select features
+by an attribute query.
+
+.. figure:: /img/attributetable_tableview.png
+   :align: center
+   :width: 40%
+
+   Attribute Table View of the ``speclib_potsdam`` layer, shown in *Table View*.
+   The selected feature (green) is also selected in the map and in the spectral library plot.
+
+The toolbar at the top provides the usual editing and selection tools, e.g., toggle editing
+(|mActionToggleEditing|), the field calculator (|mActionCalculateField|) and filtering (|mActionFilter2|). The bar at the bottom allows you
+to filter the displayed features (e.g., *Show all features*, *Selected features*,
+*Visible features*, *Edited features* or a custom expression).
+
+
+Form View
+^^^^^^^^^
+
+In the *Form View* (|mActionFormView|), the attributes of the currently selected feature are
+displayed one at a time, using a dedicated widget for each field. This is particularly useful
+for attributes with a specialised widget, such as the *Spectral Profile* field of a spectral
+library, which is rendered as an interactive plot rather than as plain text. The Form View is
+the right choice when you want to inspect or edit a single feature in detail.
+
+.. figure:: /img/attributetable_formview.png
+   :align: center
+
+   The same ``speclib_potsdam`` layer, shown in *Form View*. The left panel lists the
+   features (here: 1 / 15) and the right panel shows the attributes of the selected feature,
+   including the spectral profile plotted as a graph.
+
+Use the navigation controls at the bottom of the feature list (first, previous, next, last)
+to step through the features. The form updates automatically to the selected feature.
+
+
+Table View vs. Form View
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table:: Differences between the two presentations
+   :header-rows: 1
+   :align: center
+
+   * - Aspect
+     - Table View
+     - Form View
+   * - Layout
+     - Grid of rows (features) and columns (fields)
+     - One feature at a time, with labelled fields
+   * - Best for
+     - Overview, sorting, filtering, bulk edits
+     - Detailed inspection and editing of a single feature
+   * - Selection
+     - Row selection highlights the feature in map/plot
+     - Steps through features with navigation controls
+   * - Special widgets
+     - Not shown (values only)
+     - Rendered, e.g. spectral profile as a plot
+
+
+Optimizing the Form View with the Drag and Drop Designer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default, the Form View lists all attributes in the order they appear in the data source.
+You can re-order and group the fields, and even organise them into tabs, using the
+*Drag and Drop Designer* in the layer's *Attributes Form* settings.
+
+#. Open the layer properties (e.g., right-click the layer |mActionOpenTable| in the layer tree
+   and select *Properties*), then go to the *Attributes Form* tab.
+#. At the top, switch the designer from *Autogenerate* to **Drag and Drop Designer**.
+#. Drag the fields you want to group from the *Available Widgets* panel into the *Form Layout*
+   panel. Use the green plus button to add a **Group** or **Tab** container and
+   give it a title (e.g., ``My Attributes``).
+#. Optionally set a user-friendly *Alias* or a dedicated *Widget Type* for individual fields.
+#. Confirm with *OK*. The next time you open the attribute table in *Form View*, the fields
+   appear in the optimised, grouped layout.
+
+.. figure:: /img/atttributetab_drag&drop_attform.png
+   :align: center
+
+   *Layer Properties* | *Attributes Form* with the *Drag and Drop Designer* active.
+   The fields ``level_1``, ``level_2`` and ``level_3`` are grouped under a tab named
+   ``My Attributes``.
+
+The optimised layout is also reflected when the attribute table is opened in *Form View*:
+
+.. figure:: /img/atttributetab_drag&drop.png
+   :align: center
+
+   Resulting *Form View* of the ``landcover_potsdam`` layer, with the fields
+   ``level_1``, ``level_2`` and ``level_3`` neatly grouped under the ``My Attributes`` tab.
 
 
 .. AUTOGENERATED SUBSTITUTIONS - DO NOT EDIT PAST THIS LINE
