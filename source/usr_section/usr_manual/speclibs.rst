@@ -138,6 +138,47 @@ Values in `xUnit` should use SI symbols wherever possible, e.g., ``μm`` instead
         "bbl" : [1, 0, ... , 1]
     }
 
+Visualization settings
+----------------------
+
+The plot settings panel is opened with the viewer's visualization button. It can be hidden
+when more space is needed for the attribute table. The plot range and units can be changed
+from the plot context menu, by dragging with the right mouse button, or in the settings panel.
+The plot can also be exported from its context menu.
+
+.. figure:: /img/SpecLib_units.png
+    :align: center
+    :width: 100%
+
+    Plot units and range settings.
+
+Visualization groups can use different profile fields, labels, filters, colors, and line
+styles. This makes it possible to compare profile fields or display classes from one field
+with separate styles. General settings also control the background, foreground, legend,
+crosshair, and viewer theme.
+
+.. figure:: /img/SpecLib_VisualSettings.png
+    :align: center
+    :width: 100%
+
+    Visualization settings and profile groups.
+
+.. figure:: /img/SpecLib_visualization2.PNG
+    :align: center
+    :width: 100%
+
+    Filtering profile groups by an attribute expression.
+
+Profiles can also be colorized from a categorized vector renderer. Configure the layer
+symbology, then choose *Use vector symbol colors* for the visualization group's color.
+
+.. figure:: /img/SpecLib_visualization.gif
+    :align: center
+    :width: 100%
+
+    Colorizing profiles from vector attributes.
+
+
 Modify spectral profiles
 ------------------------
 
@@ -217,6 +258,12 @@ The output profile is specified using the following variables and default values
 * `x` numpy array or list with x values, defaults to `x1`
 * `xUnit` string with x unit, e.g., `nanometers`, defaults to `xUnit1`
 
+The field calculator can also be opened from the viewer workflow to create or update profile
+fields. The output format must match the configured field type.
+
+.. figure:: img/speclibs/speclib_fieldcalculator_spectralmath.png
+
+    Calculating profile values with the QGIS Field Calculator.
 
 .. figure:: img/speclibs/speclib_field_calculator_reflectance.gif
 
@@ -253,6 +300,13 @@ attribute values for the spectral library vector layer. For example, the attribu
 with n = 20 features (aka rows in the Table view) are converted into rasters with one line and 20 pixels.
 The data type and number of bands of these temporary raster files depend on the input vector attributes.
 
+The same workflow is available from the viewer's *Spectral Processing* button. Select a
+profile source, choose an algorithm, and map the outputs to existing or new vector fields.
+
+.. figure:: img/speclibs/spectral_processing_dialog.png
+
+    Spectral Processing dialog.
+
 .. list-table:: Mapping of vector attributes field values to temporary raster files
     :header-rows: 1
 
@@ -276,7 +330,6 @@ The data type and number of bands of these temporary raster files depend on the 
         - int / float
     *   - n = 1 band, classification
         - string field containing the class name of each input pixel
-
 
 
 Python Code
@@ -409,6 +462,98 @@ Now click on a raster pixel. By default, this creates a new in-memory vector lay
 
     The spectral profile source panel describes how profiles are collected and written to vector layers.
 
+Profile collection shortcuts and comparisons
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The map crosshair can be used to identify profiles without repeatedly clicking the map. Activate
+:menuselection:`Crosshair --> Pixel Grid` for the raster image, then use the following shortcuts:
+
+.. list-table::
+    :header-rows: 1
+
+    * - Shortcut
+      - Action
+    * - :kbd:`Left`/:kbd:`Up`/:kbd:`Down`/:kbd:`Right`
+      - Move the map
+    * - :kbd:`Ctrl` + arrow key
+      - Select the next pixel in the arrow direction
+    * - :kbd:`Ctrl` + :kbd:`S`
+      - Add the selected pixel profile candidate
+
+.. figure:: /img/crosshair.png
+    :align: center
+    :width: 100%
+
+    Crosshair-based profile selection.
+
+To compare profiles from different raster sources, add another profile source relation in the
+*Spectral Profile Sources* panel and select the desired raster in the *Source* column. New
+profiles then appear in the same viewer. The same raster can also be selected more than once
+with different sampling methods, such as a 3x3 kernel mean.
+
+.. figure:: /img/TwoProfileSources.png
+    :align: center
+    :width: 800
+
+    Profiles collected from two raster sources.
+
+.. figure:: /img/KernelProfile.png
+    :align: center
+    :width: 800
+
+    Profiles collected with different sampling methods.
+
+Viewer toolbar and profile selection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The viewer toolbar provides shortcuts for adding current profiles, refreshing the plot,
+importing and exporting libraries, opening layer properties and the attribute table, and
+opening spectral processing. The plot and the attribute table share the selection: selecting
+a profile highlights its vector feature, while selecting a feature in the map or attribute
+table highlights the corresponding profile.
+
+.. figure:: /img/SpecLib_SelectSpectra.gif
+    :align: center
+    :width: 100%
+
+    Selecting profiles in the plot and attribute table.
+
+Profiles can also be filtered with the standard vector selection tools, for example by
+expression. If profile geometries are available, they can be displayed as points in a map by
+right-clicking the map and selecting :menuselection:`Add Spectral Library`.
+
+.. figure:: /img/SpecLib_SelectByExpr.png
+    :align: center
+    :width: 100%
+
+    Selecting profiles by expression.
+
+.. figure:: /img/SpecLib_AddCoords.png
+    :align: center
+    :width: 400
+
+    Adding profile locations to a map.
+
+Adding attributes and configuring fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Additional attributes such as identifiers, names, and class labels can be added in the
+attribute table while editing. Layer Properties can also be used to add fields and configure
+their widgets. A text, JSON, or binary field must be configured with the *SpectralProfile*
+widget type before it can store profile data; see :ref:`profile_fields` for the complete
+configuration procedure.
+
+.. figure:: /img/LayerProperties_addField.png
+    :align: center
+    :width: 100%
+
+    Adding a field in Layer Properties.
+
+.. figure:: /img/SpecLib_AddWidget.png
+    :align: center
+    :width: 100%
+
+    Configuring a field widget.
 
 .. _speclib_import_profiles:
 
@@ -481,6 +626,30 @@ to get a profile name from.
       -
 
 .. figure:: img/speclibs/export_profiles.png
+
+Loading and saving vector-backed libraries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The viewer can open any vector source from the Data Sources panel, including a source that
+does not yet contain a profile field. An empty viewer may use an in-memory layer; its contents
+are lost when the layer is closed, so export collected profiles before closing it.
+
+For file-backed libraries, layer styling and the profile-field widget configuration are stored
+in the QGIS project or in a QML sidecar file rather than in the data file itself. Save the
+default layer style after configuring profile fields so the settings are restored when the
+library is opened again.
+
+.. figure:: /img/Load_SpecLib.png
+    :align: center
+    :width: 300
+
+    Loading a vector source into the Spectral Library Viewer.
+
+.. figure:: /img/SpecLib_defaultStyle.png
+    :align: center
+    :width: 100%
+
+    Saving the default layer style.
 
 Remove spectral profiles
 ------------------------
