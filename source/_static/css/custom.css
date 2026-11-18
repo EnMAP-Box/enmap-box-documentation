@@ -1,3 +1,7 @@
+.strike {
+    text-decoration: line-through;
+}
+
 /* Increase main content div size */
 .wy-nav-content {
 	max-width: 1260px;

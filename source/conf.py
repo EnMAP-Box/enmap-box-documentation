@@ -131,6 +131,11 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+rst_prolog = """
+.. role:: strike
+   :class: strike
+"""
+
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
