@@ -32,12 +32,32 @@ Many thanks to Stefan Erasmi, Marcel Schwieder and their team for the excellent 
 At the conference, the EnMAP Box was presented during a well-attended tutorial and on a poster.
 
 
+.. list-table::
+   :widths: 50 50
+   :class: borderless
+
+   * - .. image:: /general/img/news/AK_FE_EnMAP-Poster.jpeg
+          :alt: AK FE EnMAP-Poster
+          :width: 100%
+          :align: center
+     - .. image:: /general/img/news/AK_FE_EnMAP-Tutorial.jpg
+          :alt: AK FE EnMAP-Poster
+          :width: 100%
+          :align: center
+
+
 EARSeL Symposium 2026
 =====================
 
 The `45th EARSeL Symposium <https://athens2026.earsel.org/>`_ took place in Athens from September 29 to October 2 2026.
 In the special session on "Recent Developments in Field-/Lab-, Air- and Spaceborne Spectroscopy", we presented the
 latest developments for the EnMAP-Box (thank you Theodora Angelopoulou for the picture).
+
+.. image:: /general/img/news/EARSeLSymp2026-Presentation.jpg
+   :alt: AK FE EnMAP-Poster
+   :width: 50%
+   :align: center
+
 
 Release EnMAP-Box 3.17.9
 ========================
@@ -50,6 +70,7 @@ QGIS 3 API (e.g. QGIS 3.44).
 
 .. image:: /general/img/splashscreen_enmapbox3.17.png
 
+
 EARSeL Workshop on Imaging Spectroscopy
 =======================================
 
@@ -60,6 +81,7 @@ to exchange ideas on topics related to hyperspectral remote sensing. During the 
 the EnMAP-Box with a poster and a tutorial.
 
 
+.. image:: /general/img/news/EARSeL_IS_2026.png
 
 
 Older news ...
@@ -83,7 +105,7 @@ and its integration within the QGIS environment.
 .. raw:: html
 
    <div style="text-align: left;">
-   <iframe width="100%" height="576" src="https://app.media.ccc.de/v/fossgis2026-82991-hyperspektrale-erdbeobachtung-in-der-praxis-die-enmap-box-in-qgis/oembed" frameborder="0" allowfullscreen></iframe>
+   <iframe width="100%" height="576" src="https://app.media.ccc.de/v/fossgis2026-82991-hyperspektrale-erdbeobachtung-in-der-praxis-die-enmap-box-in-qgis/oembed?autoplay=0" frameborder="0" allowfullscreen></iframe>
    </div>
 
 UNOOSA / CEOS Training
