@@ -13,19 +13,61 @@ Upcoming Events
         - Location
         - Comments
 
-    *   - `14th EARSeL Workshop on Imaging Spectroscopy <https://is.earsel.org/workshop/14-IS-Helsinki2026>`_
-        - 2.-5. June 2026
-        - Helsinki Metropolitan area, Finland
-        - Tutorial day 5. June `Environmental Mapping and Analysis Program (EnMAP) tutorials <https://is.earsel.org/workshop/14-IS-Helsinki2026/tutorials/>`_
+    *   - FOSSGIS 2027
+        - 9.-13. Mar 2027
+        - Heidelberg, Germany
+        - https://www.fossgis-konferenz.de/2027/
 
-    *   - `45th EARSeL Symposium <https://athens2026.earsel.org/>`_
-        - 29. Sep - 02. June 2026
-        - Athens, Greece
-        - Presentation
+    *   - 3rd EnMAP USer Workshop and 4th WICSIS
+        - 5.-8. Oct 2027
+        - Potsdam, Germany
+        - https://hyperspectral2027.esa.int/
+
+
+AK Fernerkundung 2026
+=====================
+
+From Oct 7 to 8, we attended the meeting of the `AK Fernerkundung <https://arbeitskreis-fernerkundung.de/2026-treffen-des-arbeitskreises-fernerkundung-in-braunschweig/>`_ at the Thünen Institute in Braunschweig, Germany.
+Many thanks to Stefan Erasmi, Marcel Schwieder and their team for the excellent organization.
+At the conference, the EnMAP Box was presented during a well-attended tutorial and on a poster.
+
+
+EARSeL Symposium 2026
+=====================
+
+The `45th EARSeL Symposium <https://athens2026.earsel.org/>`_ took place in Athens from September 29 to October 2 2026.
+In the special session on "Recent Developments in Field-/Lab-, Air- and Spaceborne Spectroscopy", we presented the
+latest developments for the EnMAP-Box (thank you Theodora Angelopoulou for the picture).
+
+Release EnMAP-Box 3.17.9
+========================
+
+*2. Sep 2026*
+
+We just released `EnMAP-Box 3.17.9 <https://plugins.qgis.org/plugins/enmapboxplugin/version/3.17.9/>`_
+This latest update for EnMAP-Box 3.17 contains several improvements and is supposed to be the last running with the
+QGIS 3 API (e.g. QGIS 3.44).
+
+.. image:: /general/img/splashscreen_enmapbox3.17.png
+
+EARSeL Workshop on Imaging Spectroscopy
+=======================================
+
+The `14th EARSeL Workshop on Imaging Spectroscopy <https://is.earsel.org/workshop/14-IS-Helsinki2026>`_
+took place at the Aalto University in the Helsinki Metropolitan Areas from June 2 to 5.
+This perfectly organized conference is certainly one of the most important opportunities for the international community
+to exchange ideas on topics related to hyperspectral remote sensing. During the conference, we also presented
+the EnMAP-Box with a poster and a tutorial.
+
+
+
+
+Older news ...
+==============
 
 
 FOSSGIS 2026
-============
+------------
 
 *02. Apr 2026*
 
@@ -45,7 +87,7 @@ and its integration within the QGIS environment.
    </div>
 
 UNOOSA / CEOS Training
-======================
+----------------------
 
 *02. Apr 2026*
 
@@ -56,7 +98,7 @@ fundamental functionality and workflows for analyzing multispectral and hyperspe
 
 
 EnMAP Webinar
-=============
+-------------
 
 *07. Feb 2026*
 
@@ -70,7 +112,7 @@ The webinars had a high resonance with >130 international participants online ea
 
 
 Release EnMAP-Box 3.17
-======================
+----------------------
 
 *17. Nov 2025*
 
@@ -83,7 +125,7 @@ Further updates will follow.
 
 
 Big Data From Space 2025
-========================
+------------------------
 
 *3. Nov 2025*
 
@@ -91,12 +133,6 @@ On October 2, the EnMAP-Box was presented in a live demo at ESA
 `Big Data From Space (BiDS) 2025 <https://bigdatafromspace2025.org>`_ conference in Riga, Latvia.
 
 .. image:: /general/img/bids2025demo2.jpg
-
-
-
-Older news ...
-==============
-
 
 
 Workshop Multi-Source Remote Sensing for Agriculture
